@@ -113,6 +113,12 @@ the block's `versions` subcollection. Version records are append-only:
 administrators may read or create valid snapshots, but Firestore rules reject
 updates and deletion.
 
+When two or more snapshots exist, a clinician can choose any timeline entry as
+the baseline and any other entry for comparison. The review workspace defaults
+to the oldest and newest revisions, displays the two snapshots side by side,
+and summarizes learner-copy and source-attachment changes. The comparison is
+read-only and never changes version history.
+
 ### Local Emulator Suite
 
 Set the following development-only values to connect the app to local Auth and Firestore emulators:

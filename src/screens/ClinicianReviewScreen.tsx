@@ -152,6 +152,8 @@ export function ClinicianReviewScreen({
     versions: [],
     error: null,
   });
+  const [baselineVersionId, setBaselineVersionId] = useState<string | null>(null);
+  const [comparisonVersionId, setComparisonVersionId] = useState<string | null>(null);
   const [reviewNotes, setReviewNotes] = useState('');
   const [nextReviewDate, setNextReviewDate] = useState(reviewDateOneYearFromNow);
   const [freezeReason, setFreezeReason] = useState('');
@@ -249,6 +251,34 @@ export function ClinicianReviewScreen({
   }, [selectedBlock]);
 
   useEffect(() => {
+    const versions = versionHistory.versions;
+    if (versions.length < 2) {
+      setBaselineVersionId(null);
+      setComparisonVersionId(null);
+      return;
+    }
+
+    const versionIds = new Set(versions.map((version) => version.id));
+    const nextBaselineVersionId =
+      baselineVersionId && versionIds.has(baselineVersionId)
+        ? baselineVersionId
+        : versions[versions.length - 1].id;
+    const nextComparisonVersionId =
+      comparisonVersionId &&
+      versionIds.has(comparisonVersionId) &&
+      comparisonVersionId !== nextBaselineVersionId
+        ? comparisonVersionId
+        : versions.find((version) => version.id !== nextBaselineVersionId)?.id ?? null;
+
+    if (baselineVersionId !== nextBaselineVersionId) {
+      setBaselineVersionId(nextBaselineVersionId);
+    }
+    if (comparisonVersionId !== nextComparisonVersionId) {
+      setComparisonVersionId(nextComparisonVersionId);
+    }
+  }, [baselineVersionId, comparisonVersionId, versionHistory.versions]);
+
+  useEffect(() => {
     if (!selectedBlock) {
       setVersionHistory({ status: 'ready', versions: [], error: null });
       return undefined;
@@ -266,6 +296,58 @@ export function ClinicianReviewScreen({
     setShowFreezeForm(false);
     setActionFeedback(null);
   }, [selectedBlock?.id]);
+
+  const baselineVersion = useMemo(
+    () =>
+      versionHistory.versions.find(
+        (version) => version.id === baselineVersionId,
+      ) ?? null,
+    [baselineVersionId, versionHistory.versions],
+  );
+  const comparisonVersion = useMemo(
+    () =>
+      versionHistory.versions.find(
+        (version) => version.id === comparisonVersionId,
+      ) ?? null,
+    [comparisonVersionId, versionHistory.versions],
+  );
+  const sourceComparison = useMemo(() => {
+    if (!baselineVersion || !comparisonVersion) {
+      return null;
+    }
+
+    const baselineSources = new Set(baselineVersion.snapshot.sourceIds);
+    const comparisonSources = new Set(comparisonVersion.snapshot.sourceIds);
+
+    return {
+      added: comparisonVersion.snapshot.sourceIds.filter(
+        (sourceId) => !baselineSources.has(sourceId),
+      ),
+      removed: baselineVersion.snapshot.sourceIds.filter(
+        (sourceId) => !comparisonSources.has(sourceId),
+      ),
+    };
+  }, [baselineVersion, comparisonVersion]);
+
+  const selectBaselineVersion = (versionId: string) => {
+    setBaselineVersionId(versionId);
+    if (comparisonVersionId === versionId) {
+      const alternative = versionHistory.versions.find(
+        (version) => version.id !== versionId,
+      );
+      setComparisonVersionId(alternative?.id ?? null);
+    }
+  };
+
+  const selectComparisonVersion = (versionId: string) => {
+    setComparisonVersionId(versionId);
+    if (baselineVersionId === versionId) {
+      const alternative = versionHistory.versions.find(
+        (version) => version.id !== versionId,
+      );
+      setBaselineVersionId(alternative?.id ?? null);
+    }
+  };
 
   const runAction = async (
     action: NonNullable<typeof actionInFlight>,
@@ -603,6 +685,76 @@ export function ClinicianReviewScreen({
                         </Text>
                       ) : null}
 
+                      {baselineVersion && comparisonVersion && sourceComparison ? (
+                        <View style={styles.comparisonPanel}>
+                          <Text style={styles.comparisonEyebrow}>
+                            VERSION COMPARISON
+                          </Text>
+                          <Text style={styles.comparisonTitle}>
+                            v{baselineVersion.versionNumber} compared with v
+                            {comparisonVersion.versionNumber}
+                          </Text>
+                          <Text style={styles.comparisonSummary}>
+                            Learner copy{' '}
+                            {baselineVersion.snapshot.body ===
+                            comparisonVersion.snapshot.body
+                              ? 'is unchanged'
+                              : 'changed'}
+                            . {sourceComparison.added.length} source
+                            {sourceComparison.added.length === 1 ? '' : 's'} added
+                            {' · '}
+                            {sourceComparison.removed.length} removed.
+                          </Text>
+
+                          <View style={styles.comparisonColumns}>
+                            <View style={styles.comparisonColumn}>
+                              <Text style={styles.comparisonColumnLabel}>
+                                BASELINE · V{baselineVersion.versionNumber}
+                              </Text>
+                              <Text style={styles.comparisonAction}>
+                                {formatVersionAction(baselineVersion.action)}
+                              </Text>
+                              <Text style={styles.comparisonBody}>
+                                {baselineVersion.snapshot.body}
+                              </Text>
+                              <Text style={styles.comparisonSources}>
+                                Sources: {baselineVersion.snapshot.sourceIds.join(', ') || 'None'}
+                              </Text>
+                            </View>
+                            <View style={styles.comparisonColumn}>
+                              <Text style={styles.comparisonColumnLabel}>
+                                COMPARE · V{comparisonVersion.versionNumber}
+                              </Text>
+                              <Text style={styles.comparisonAction}>
+                                {formatVersionAction(comparisonVersion.action)}
+                              </Text>
+                              <Text style={styles.comparisonBody}>
+                                {comparisonVersion.snapshot.body}
+                              </Text>
+                              <Text style={styles.comparisonSources}>
+                                Sources: {comparisonVersion.snapshot.sourceIds.join(', ') || 'None'}
+                              </Text>
+                            </View>
+                          </View>
+
+                          {sourceComparison.added.length > 0 ||
+                          sourceComparison.removed.length > 0 ? (
+                            <View style={styles.sourceChanges}>
+                              {sourceComparison.added.length > 0 ? (
+                                <Text style={styles.sourceAdded}>
+                                  Added: {sourceComparison.added.join(', ')}
+                                </Text>
+                              ) : null}
+                              {sourceComparison.removed.length > 0 ? (
+                                <Text style={styles.sourceRemoved}>
+                                  Removed: {sourceComparison.removed.join(', ')}
+                                </Text>
+                              ) : null}
+                            </View>
+                          ) : null}
+                        </View>
+                      ) : null}
+
                       {versionHistory.versions.map((version) => (
                         <View key={version.id} style={styles.versionRow}>
                           <View style={styles.versionNumber}>
@@ -625,6 +777,56 @@ export function ClinicianReviewScreen({
                             {version.note ? (
                               <Text style={styles.versionNote}>{version.note}</Text>
                             ) : null}
+                            <View style={styles.versionSelectionActions}>
+                              <Pressable
+                                accessibilityLabel={`Set version ${version.versionNumber} as comparison baseline`}
+                                accessibilityRole="button"
+                                disabled={version.id === baselineVersionId}
+                                onPress={() => selectBaselineVersion(version.id)}
+                                style={[
+                                  styles.versionSelectionButton,
+                                  version.id === baselineVersionId &&
+                                    styles.versionSelectionButtonSelected,
+                                ]}
+                                testID={`button-set-baseline-${version.versionNumber}`}
+                              >
+                                <Text
+                                  style={[
+                                    styles.versionSelectionButtonText,
+                                    version.id === baselineVersionId &&
+                                      styles.versionSelectionButtonTextSelected,
+                                  ]}
+                                >
+                                  {version.id === baselineVersionId
+                                    ? 'Baseline'
+                                    : 'Set baseline'}
+                                </Text>
+                              </Pressable>
+                              <Pressable
+                                accessibilityLabel={`Set version ${version.versionNumber} as comparison revision`}
+                                accessibilityRole="button"
+                                disabled={version.id === comparisonVersionId}
+                                onPress={() => selectComparisonVersion(version.id)}
+                                style={[
+                                  styles.versionSelectionButton,
+                                  version.id === comparisonVersionId &&
+                                    styles.versionSelectionButtonSelected,
+                                ]}
+                                testID={`button-set-comparison-${version.versionNumber}`}
+                              >
+                                <Text
+                                  style={[
+                                    styles.versionSelectionButtonText,
+                                    version.id === comparisonVersionId &&
+                                      styles.versionSelectionButtonTextSelected,
+                                  ]}
+                                >
+                                  {version.id === comparisonVersionId
+                                    ? 'Comparing'
+                                    : 'Compare'}
+                                </Text>
+                              </Pressable>
+                            </View>
                           </View>
                         </View>
                       ))}
@@ -1141,6 +1343,83 @@ const styles = StyleSheet.create({
     lineHeight: 19,
     marginTop: 12,
   },
+  comparisonPanel: {
+    backgroundColor: '#EAF4F1',
+    borderColor: '#92BFB8',
+    borderRadius: 14,
+    borderWidth: 1,
+    marginTop: 14,
+    padding: 13,
+  },
+  comparisonEyebrow: {
+    color: '#0C4E54',
+    fontSize: 10,
+    fontWeight: '800',
+    letterSpacing: 0.9,
+  },
+  comparisonTitle: {
+    color: '#28251D',
+    fontSize: 16,
+    fontWeight: '800',
+    marginTop: 4,
+  },
+  comparisonSummary: {
+    color: '#365553',
+    fontSize: 12,
+    lineHeight: 18,
+    marginTop: 4,
+  },
+  comparisonColumns: {
+    flexDirection: 'row',
+    gap: 8,
+    marginTop: 12,
+  },
+  comparisonColumn: {
+    backgroundColor: '#FFFFFF',
+    borderColor: '#C8DDD7',
+    borderRadius: 10,
+    borderWidth: 1,
+    flex: 1,
+    padding: 10,
+  },
+  comparisonColumnLabel: {
+    color: '#0C4E54',
+    fontSize: 10,
+    fontWeight: '800',
+    letterSpacing: 0.5,
+  },
+  comparisonAction: {
+    color: '#28251D',
+    fontSize: 12,
+    fontWeight: '800',
+    marginTop: 4,
+  },
+  comparisonBody: {
+    color: '#3E3C36',
+    fontSize: 12,
+    lineHeight: 18,
+    marginTop: 7,
+  },
+  comparisonSources: {
+    color: '#696761',
+    fontSize: 11,
+    lineHeight: 16,
+    marginTop: 8,
+  },
+  sourceChanges: {
+    gap: 3,
+    marginTop: 10,
+  },
+  sourceAdded: {
+    color: '#2E6B3B',
+    fontSize: 12,
+    lineHeight: 17,
+  },
+  sourceRemoved: {
+    color: '#8C3B21',
+    fontSize: 12,
+    lineHeight: 17,
+  },
   versionRow: {
     alignItems: 'flex-start',
     borderTopColor: '#E3E0DA',
@@ -1189,6 +1468,32 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
     lineHeight: 18,
     marginTop: 4,
+  },
+  versionSelectionActions: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 7,
+    marginTop: 9,
+  },
+  versionSelectionButton: {
+    borderColor: '#92BFB8',
+    borderRadius: 8,
+    borderWidth: 1,
+    minHeight: 32,
+    justifyContent: 'center',
+    paddingHorizontal: 9,
+  },
+  versionSelectionButtonSelected: {
+    backgroundColor: '#0C4E54',
+    borderColor: '#0C4E54',
+  },
+  versionSelectionButtonText: {
+    color: '#0C4E54',
+    fontSize: 11,
+    fontWeight: '800',
+  },
+  versionSelectionButtonTextSelected: {
+    color: '#FFFFFF',
   },
   evidenceSection: {
     borderTopColor: '#E3E0DA',
