@@ -1,0 +1,103 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function isAdmin() {
+      return signedIn() && request.auth.token.admin == true;
+    }
+
+    function owns(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    function courseIsPublished(courseId) {
+      return get(/databases/$(database)/documents/courses/$(courseId)).data.publicationState == 'published';
+    }
+
+    function sharedWithCurrentUser() {
+      return signedIn()
+        && (resource.data.ownerId == request.auth.uid || resource.data.guestId == request.auth.uid);
+    }
+
+    function inviteOwner() {
+      return signedIn() && resource.data.ownerId == request.auth.uid;
+    }
+
+    function inviteGuest() {
+      return signedIn() && resource.data.guestId == request.auth.uid;
+    }
+
+    // Clinically reviewed curriculum is write-protected behind a server-side
+    // admin workflow. Users may read only currently published material.
+    match /courses/{courseId} {
+      allow read: if resource.data.publicationState == 'published' || isAdmin();
+      allow write: if isAdmin();
+
+      match /modules/{moduleId} {
+        allow read: if courseIsPublished(courseId) || isAdmin();
+        allow write: if isAdmin();
+
+        match /lessons/{lessonId} {
+          allow read: if courseIsPublished(courseId) || isAdmin();
+          allow write: if isAdmin();
+
+          match /contentBlocks/{contentBlockId} {
+            allow read: if courseIsPublished(courseId) || isAdmin();
+            allow write: if isAdmin();
+          }
+        }
+      }
+    }
+
+    match /sources/{sourceId} {
+      allow read: if resource.data.publicationState == 'published' || isAdmin();
+      allow write: if isAdmin();
+    }
+
+    // All user-owned data stays in a user namespace to make ownership explicit.
+    match /users/{userId} {
+      allow read, write: if owns(userId);
+
+      match /courseProgress/{progressId} {
+        allow read, write: if owns(userId);
+      }
+
+      match /planArtifacts/{artifactId} {
+        allow read, write: if owns(userId);
+      }
+
+      match /careTeamContacts/{contactId} {
+        allow read, write: if owns(userId);
+      }
+
+      // Safety events should be written only by a trusted server process.
+      match /safetyEvents/{eventId} {
+        allow read: if owns(userId) || isAdmin();
+        allow write: if isAdmin();
+      }
+    }
+
+    // Support sharing is scope-limited and must never open a user’s private
+    // health record, private AI chats, or unshared plan artifacts.
+    match /supportInvites/{inviteId} {
+      allow read: if sharedWithCurrentUser() || isAdmin();
+      allow create: if signedIn()
+        && request.resource.data.ownerId == request.auth.uid
+        && request.resource.data.guestId is string;
+      // Owners may manage scope and revoke access, but cannot silently replace
+      // either party. Guests can only accept or decline their own invitation.
+      allow update: if isAdmin()
+        || (inviteOwner()
+          && request.resource.data.ownerId == resource.data.ownerId
+          && request.resource.data.guestId == resource.data.guestId)
+        || (inviteGuest()
+          && request.resource.data.diff(resource.data).affectedKeys()
+            .hasOnly(['status', 'acceptedAt']));
+      allow delete: if inviteOwner() || isAdmin();
+    }
+  }
+}
