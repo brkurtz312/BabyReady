@@ -32,6 +32,31 @@ type UpsertContentBlockInput = Omit<
   publicationState?: ContentPublicationState;
 };
 
+function validateContentBlockInput(input: UpsertContentBlockInput): void {
+  const identifierFields = [
+    ['course ID', input.courseId],
+    ['module ID', input.moduleId],
+    ['lesson ID', input.lessonId],
+    ['content block ID', input.id],
+  ] as const;
+
+  if (
+    identifierFields.some(
+      ([, value]) => !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value),
+    )
+  ) {
+    throw new Error(
+      'Use lowercase letters, numbers, and single hyphens for course, module, lesson, and content block IDs.',
+    );
+  }
+  if (!input.body.trim()) {
+    throw new Error('Add learner-facing content before saving this block.');
+  }
+  if (input.sourceIds.some((sourceId) => !sourceId.trim())) {
+    throw new Error('Remove any empty source attachments before saving.');
+  }
+}
+
 async function requireAdminClaim(): Promise<string> {
   const auth = requireAuth();
   const user = auth.currentUser;
@@ -89,6 +114,7 @@ export async function upsertClinicalContentBlock(
   input: UpsertContentBlockInput,
 ): Promise<void> {
   await requireAdminClaim();
+  validateContentBlockInput(input);
 
   const reference = contentBlockReference(
     input.courseId,
@@ -122,7 +148,37 @@ export async function submitContentBlockForClinicalReview(
   contentBlockId: string,
 ): Promise<void> {
   const adminId = await requireAdminClaim();
+  const db = requireFirestore();
   const reference = contentBlockReference(courseId, moduleId, lessonId, contentBlockId);
+  const snapshot = await getDoc(reference);
+
+  if (!snapshot.exists()) {
+    throw new Error('Save the clinical content block before submitting it for review.');
+  }
+
+  const content = snapshot.data() as Partial<ClinicalContentBlock>;
+  if (!content.body?.trim()) {
+    throw new Error('Add learner-facing content before submitting this block.');
+  }
+  if (content.isClinicalClaim) {
+    if (!content.sourceIds?.length) {
+      throw new Error('Attach at least one published source before submitting a clinical claim.');
+    }
+
+    const sourceSnapshots = await Promise.all(
+      content.sourceIds.map((sourceId) => getDoc(doc(db, 'sources', sourceId))),
+    );
+    if (
+      sourceSnapshots.some(
+        (source) =>
+          !source.exists() || source.data().publicationState !== 'published',
+      )
+    ) {
+      throw new Error(
+        'Every attached source must still be published before review submission.',
+      );
+    }
+  }
 
   await setDoc(
     reference,

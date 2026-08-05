@@ -94,6 +94,15 @@ records; and freeze a source with a documented reason. Publishing is deliberatel
 separate from drafting so referenced content cannot be approved until its
 supporting source has been reviewed and published.
 
+### Clinician content authoring
+
+Clinicians can author structured content blocks for a course, module, and
+lesson; select the learner-facing content format; mark whether the block is a
+clinical claim; attach one or more currently published sources; save a draft;
+and submit the completed block to the clinical review queue. Submission
+revalidates every source attachment so a frozen or unpublished source cannot
+reach review as supporting evidence.
+
 ### Local Emulator Suite
 
 Set the following development-only values to connect the app to local Auth and Firestore emulators:
@@ -139,6 +148,7 @@ Custom claims must be minted only by a trusted server-side Admin SDK workflow. T
 │   ├── data/course.ts               # Six-module seed data
 │   ├── lib/firebase.ts              # Auth, Firestore, and emulator initialization
 │   ├── models/course.ts              # Shared domain types
+│   ├── screens/ClinicianContentAuthoringScreen.tsx # Clinical content composer
 │   ├── screens/ClinicianReviewScreen.tsx # Admin-gated content review workspace
 │   ├── screens/ClinicianSourceLibraryScreen.tsx # Source authoring and publishing
 │   └── services/

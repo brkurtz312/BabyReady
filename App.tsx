@@ -10,6 +10,7 @@ import {
 import { courseModules, recommendedModule } from './src/data/course';
 import { firebaseIsConfigured } from './src/lib/firebase';
 import { ClinicianReviewScreen } from './src/screens/ClinicianReviewScreen';
+import { ClinicianContentAuthoringScreen } from './src/screens/ClinicianContentAuthoringScreen';
 import { ClinicianSourceLibraryScreen } from './src/screens/ClinicianSourceLibraryScreen';
 
 const currentPregnancyWeek = 25;
@@ -26,7 +27,7 @@ function BabyReadyApp() {
   const recommended = recommendedModule(currentPregnancyWeek);
   const authState = useBabyReadyAuth();
   const [activeView, setActiveView] = useState<
-    'learner' | 'review' | 'sources'
+    'learner' | 'review' | 'sources' | 'author'
   >('learner');
 
   const showUrgentGuidance = () => {
@@ -46,10 +47,20 @@ function BabyReadyApp() {
     );
   }
 
+  if (activeView === 'author' && authState.status === 'ready') {
+    return (
+      <ClinicianContentAuthoringScreen
+        onExit={() => setActiveView('review')}
+        user={authState.user}
+      />
+    );
+  }
+
   if (activeView === 'review' && authState.status === 'ready') {
     return (
       <ClinicianReviewScreen
         onExit={() => setActiveView('learner')}
+        onOpenContentAuthoring={() => setActiveView('author')}
         onOpenSourceLibrary={() => setActiveView('sources')}
         user={authState.user}
       />

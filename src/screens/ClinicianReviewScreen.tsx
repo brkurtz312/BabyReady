@@ -35,6 +35,7 @@ type ClinicianReviewScreenProps = {
   user: User;
   onExit: () => void;
   onOpenSourceLibrary: () => void;
+  onOpenContentAuthoring: () => void;
 };
 
 const queueStates: ContentPublicationState[] = [
@@ -90,6 +91,7 @@ export function ClinicianReviewScreen({
   user,
   onExit,
   onOpenSourceLibrary,
+  onOpenContentAuthoring,
 }: ClinicianReviewScreenProps) {
   const [access, setAccess] = useState<AccessState>('checking');
   const [queueState, setQueueState] = useState<ReviewQueueState>({
@@ -350,17 +352,28 @@ export function ClinicianReviewScreen({
         <Text style={styles.subtitle}>
           Review source-grounded learning content before it reaches families.
         </Text>
-        <Pressable
-          accessibilityLabel="Open clinician source library"
-          accessibilityRole="button"
-          onPress={onOpenSourceLibrary}
-          style={styles.sourceLibraryButton}
-          testID="button-open-source-library"
-        >
-          <Text style={styles.sourceLibraryButtonText}>
-            Manage source library
-          </Text>
-        </Pressable>
+        <View style={styles.workspaceActions}>
+          <Pressable
+            accessibilityLabel="Open clinician content authoring"
+            accessibilityRole="button"
+            onPress={onOpenContentAuthoring}
+            style={styles.authorContentButton}
+            testID="button-open-content-authoring"
+          >
+            <Text style={styles.authorContentButtonText}>Author content</Text>
+          </Pressable>
+          <Pressable
+            accessibilityLabel="Open clinician source library"
+            accessibilityRole="button"
+            onPress={onOpenSourceLibrary}
+            style={styles.sourceLibraryButton}
+            testID="button-open-source-library"
+          >
+            <Text style={styles.sourceLibraryButtonText}>
+              Manage source library
+            </Text>
+          </Pressable>
+        </View>
 
         {access === 'checking' ? (
           <View style={styles.centeredState}>
@@ -724,13 +737,29 @@ const styles = StyleSheet.create({
     marginTop: 6,
     maxWidth: 360,
   },
+  workspaceActions: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 10,
+    marginTop: 16,
+  },
+  authorContentButton: {
+    backgroundColor: '#01696F',
+    borderRadius: 9,
+    justifyContent: 'center',
+    minHeight: 44,
+    paddingHorizontal: 12,
+  },
+  authorContentButtonText: {
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: '800',
+  },
   sourceLibraryButton: {
-    alignSelf: 'flex-start',
     borderColor: '#0C4E54',
     borderRadius: 9,
     borderWidth: 1,
     justifyContent: 'center',
-    marginTop: 16,
     minHeight: 44,
     paddingHorizontal: 12,
   },
