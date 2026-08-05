@@ -5,11 +5,13 @@ BabyReady is a private Expo and Firebase foundation for a clinically governed vi
 ## What this scaffold includes
 
 - **Expo + TypeScript app shell** with a mobile-first six-module birth-preparation roadmap.
-- **Firebase boundary** that initializes only when public client configuration is present.
-- **Typed domain model** for course modules, progress, clinical content blocks, sources, and care-team contacts.
+- **Firebase Authentication** with persisted mobile sessions, anonymous starter access, and Email/Password service boundaries.
+- **User bootstrap flow** that provisions `users/{uid}` only after Authentication establishes a session.
+- **Typed domain model** for course modules, progress, clinical content blocks, source records, reviews, and care-team contacts.
 - **Demo course data** matching the six-module MVP.
 - **Secure local contact store** using `expo-secure-store` for care-team contact scaffolding. Secure local storage is a convenience cache, not the system of record for irreplaceable information.
-- **Firestore rules and Firebase configuration** that separate clinician-published curriculum from user-owned progress, plans, contacts, and future support-person sharing.
+- **Clinical-content governance services** for source records, draft/review/approve/publish/freeze states, and Firebase admin-claim checks.
+- **Firestore Security Rules, Emulator Suite tests, and CI** that separate clinician-published curriculum from user-owned progress, plans, contacts, and future support-person sharing.
 - **Environment template** that keeps Firebase configuration out of source control.
 
 ## Safety and product boundary
@@ -34,16 +36,24 @@ The app must keep deterministic maternal/newborn safety routing ahead of all gen
 
 3. Create or select a Firebase project, then add its **public web app configuration** to `.env`.
 
-4. Start Expo:
+4. In Firebase Authentication, enable **Anonymous** access for the starter experience. Enable **Email/Password** only when its user-facing registration and sign-in screens are ready.
+
+5. Start Expo:
 
    ```bash
    npm start
    ```
 
-5. Run TypeScript validation:
+6. Run TypeScript validation:
 
    ```bash
    npm run typecheck
+   ```
+
+7. Run the authorization suite against local Firebase emulators:
+
+   ```bash
+   npm run test:emulators
    ```
 
 ## Firebase setup
@@ -63,32 +73,67 @@ EXPO_PUBLIC_FIREBASE_APP_ID=
 
 These are public Firebase app configuration values. They are not Firebase Admin SDK credentials and they do not replace Firestore Security Rules. Never add Admin SDK service-account JSON, private AI-provider keys, or server-only credentials to the Expo client.
 
+### Authentication and profile bootstrap
+
+The app presents the course shell when Firebase is unconfigured. Once Firebase is configured, `BabyReadyAuthProvider` watches the auth session, starts an anonymous session when no user is present, and attempts to provision `users/{uid}` in Firestore.
+
+Email/Password registration and sign-in are available as service functions for the forthcoming onboarding screens. They are intentionally not exposed in the current starter UI. Mobile Auth persistence uses AsyncStorage; web uses Firebase's standard web Auth session handling.
+
+### Local Emulator Suite
+
+Set the following development-only values to connect the app to local Auth and Firestore emulators:
+
+```bash
+EXPO_PUBLIC_USE_FIREBASE_EMULATORS=true
+EXPO_PUBLIC_FIREBASE_EMULATOR_HOST=127.0.0.1
+EXPO_PUBLIC_FIREBASE_AUTH_EMULATOR_PORT=9099
+EXPO_PUBLIC_FIREBASE_FIRESTORE_EMULATOR_PORT=8080
+```
+
+Use a reachable LAN IP instead of `127.0.0.1` for a physical device. The repository's test command starts isolated Auth and Firestore emulators automatically:
+
+```bash
+npm run test:emulators
+```
+
 ### Firestore rules
 
-`firestore.rules` is a Sprint 1 starting policy:
+`firestore.rules` now enforces this Sprint 1 policy:
 
-- Published course content is readable; only a trusted admin workflow can write or freeze it.
+- Published course content and sources are readable; drafts and review material remain admin-only.
+- Only Firebase users with an `admin: true` custom claim can create, review, approve, publish, freeze, or update clinical content and source records.
+- A clinical claim cannot enter the `published` state without source IDs, a reviewer ID, and review timestamps.
 - Progress, plans, and care-team contacts remain inside `users/{uid}`.
 - Safety events are server-write only.
-- Support-person access is intentionally scoped and must not expose private health history, private AI chats, or unshared artifacts.
+- Support-person invitations are scoped and revocable; invitees can only accept or decline and cannot alter sharing scope.
 
-Before production, use Firebase Emulator Suite tests and deploy rules through a controlled CI/CD path. Do not use broad `allow read, write: if true` rules at any stage.
+The `tests/firestore.rules.test.mjs` suite covers public/draft content visibility, admin-only curriculum writes, clinical-claim metadata, source-record completeness, user data isolation, safety-event protection, and constrained support invitations. GitHub Actions runs type checking and this emulator suite on pull requests and updates to `main`.
+
+Custom claims must be minted only by a trusted server-side Admin SDK workflow. The Expo client checks the claim for early feedback, while Firestore Security Rules remain the authoritative enforcement layer. Do not use broad `allow read, write: if true` rules at any stage.
 
 ## Project layout
 
 ```text
 .
-├── App.tsx                         # Sprint 1 course-shell experience
+├── App.tsx                         # Course shell with Firebase auth status
+├── .github/workflows/verify.yml    # Typecheck + Firestore Emulator CI
 ├── src/
+│   ├── auth/AuthProvider.tsx        # Auth session context and bootstrap
 │   ├── components/ModuleCard.tsx    # Reusable roadmap module card
 │   ├── config/env.ts                # Public Expo Firebase config boundary
 │   ├── data/course.ts               # Six-module seed data
-│   ├── lib/firebase.ts              # Guarded Firebase/Firestore initialization
+│   ├── lib/firebase.ts              # Auth, Firestore, and emulator initialization
 │   ├── models/course.ts              # Shared domain types
-│   └── services/contactStore.ts      # Secure local care-team contact cache
+│   └── services/
+│       ├── authService.ts            # Anonymous and email/password flows
+│       ├── contentGovernanceService.ts # Clinical-content lifecycle
+│       ├── sourceService.ts          # Source-record lifecycle
+│       ├── userProfileService.ts     # users/{uid} provisioning
+│       └── contactStore.ts           # Secure local care-team contact cache
 ├── firestore.rules                  # Firestore security baseline
 ├── firestore.indexes.json
 ├── firebase.json
+├── tests/firestore.rules.test.mjs    # Emulator authorization suite
 └── .env.example
 ```
 
@@ -107,12 +152,11 @@ The private GitHub repository contains the planned work under eight sprint miles
 
 ## Next implementation steps
 
-1. Create the Firebase project and populate local `.env`.
-2. Implement Firebase Authentication and attach users to `users/{uid}` data.
-3. Build the clinician-reviewed content authoring/review workflow before publishing clinical curriculum.
-4. Add Firebase Emulator Suite tests for `firestore.rules`.
-5. Replace the demo course seed with clinically reviewed content only after content-review metadata and approval workflow are working.
-6. Implement the emergency safety router before enabling any generative AI lesson companion.
+1. Create the Firebase project, populate local `.env`, and enable Anonymous Authentication for development.
+2. Implement a trusted Admin SDK workflow for setting clinician/admin custom claims; never mint claims in the client.
+3. Build the clinician content authoring and review screens on top of the Sprint 1 governance services.
+4. Replace demo seed material only after it passes clinical review, has source records, and is published through the protected workflow.
+5. Implement the emergency safety router before enabling any generative AI lesson companion.
 
 ## References
 

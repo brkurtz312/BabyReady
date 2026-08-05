@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "dependencies": {
+    "@react-native-async-storage/async-storage": "2.2.0",
     "expo": "~57.0.10",
     "expo-secure-store": "^57.0.1",
     "expo-status-bar": "~57.0.1",
@@ -13,7 +14,9 @@
     "react-native-web": "^0.21.2"
   },
   "devDependencies": {
+    "@firebase/rules-unit-testing": "^5.0.1",
     "@types/react": "~19.2.2",
+    "firebase-tools": "^15.25.1",
     "typescript": "~6.0.3"
   },
   "scripts": {
@@ -21,7 +24,9 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:rules": "node --test tests/firestore.rules.test.mjs",
+    "test:emulators": "firebase emulators:exec --project babyready-rules-test --only auth,firestore \"npm run test:rules\""
   },
   "private": true
 }

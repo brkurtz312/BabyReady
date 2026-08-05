@@ -2,13 +2,26 @@ import { StatusBar } from 'expo-status-bar';
 import { Alert, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { ModuleCard } from './src/components/ModuleCard';
+import {
+  BabyReadyAuthProvider,
+  useBabyReadyAuth,
+} from './src/auth/AuthProvider';
 import { courseModules, recommendedModule } from './src/data/course';
 import { firebaseIsConfigured } from './src/lib/firebase';
 
 const currentPregnancyWeek = 25;
 
 export default function App() {
+  return (
+    <BabyReadyAuthProvider>
+      <BabyReadyApp />
+    </BabyReadyAuthProvider>
+  );
+}
+
+function BabyReadyApp() {
   const recommended = recommendedModule(currentPregnancyWeek);
+  const authState = useBabyReadyAuth();
 
   const showUrgentGuidance = () => {
     Alert.alert(
@@ -108,11 +121,17 @@ export default function App() {
           <Text style={styles.foundationTitle}>Sprint 1 foundation</Text>
           <Text style={styles.foundationText}>
             {firebaseIsConfigured
-              ? 'Firebase is configured. Course content, user plans, and security rules are ready to connect.'
+              ? authState.status === 'ready'
+                ? `Firebase Authentication is ready. You are using a private ${authState.user.isAnonymous ? 'starter' : 'account'} session.`
+                : authState.status === 'error'
+                  ? 'Firebase is configured, but sign-in needs attention. Confirm that Anonymous Authentication is enabled in Firebase.'
+                  : 'Firebase is configured. Establishing a private BabyReady session…'
               : 'Add your Firebase values in .env to connect secure course content, user plans, and care-team contacts.'}
           </Text>
           <Text style={styles.foundationMeta}>
-            Secure local storage and Firestore rules are included in this scaffold.
+            {authState.status === 'error'
+              ? authState.error
+              : 'Secure local storage, Auth persistence, and Firestore rules are included in this scaffold.'}
           </Text>
         </View>
       </ScrollView>

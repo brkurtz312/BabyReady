@@ -9,6 +9,35 @@ export type CourseModule = {
 
 export type LessonState = 'not_started' | 'in_progress' | 'completed' | 'not_relevant';
 
+export type ContentPublicationState =
+  | 'draft'
+  | 'submitted'
+  | 'approved'
+  | 'published'
+  | 'frozen';
+
+export type CourseRecord = {
+  id: string;
+  title: string;
+  summary: string;
+  locale: string;
+  publicationState: ContentPublicationState;
+  createdBy: string;
+  createdAt?: unknown;
+  updatedAt?: unknown;
+};
+
+export type ClinicalReview = {
+  id: string;
+  courseId: string;
+  moduleId: string;
+  lessonId: string;
+  contentBlockId: string;
+  reviewerId: string;
+  reviewNotes: string;
+  approvedAt: string;
+};
+
 export type CourseProgress = {
   userId: string;
   moduleId: string;
@@ -35,12 +64,16 @@ export type ContentSource = {
   organization: string;
   title: string;
   url: string;
-  lastReviewedAt: string;
-  nextReviewAt: string;
+  lastReviewedAt: unknown;
+  nextReviewAt: unknown;
+  publicationState: ContentPublicationState;
+  updatedAt?: unknown;
 };
 
 export type ClinicalContentBlock = {
   id: string;
+  courseId: string;
+  moduleId: string;
   lessonId: string;
   type:
     | 'text'
@@ -54,8 +87,9 @@ export type ClinicalContentBlock = {
     | 'artifact_prompt';
   body: string;
   sourceIds: string[];
+  isClinicalClaim: boolean;
   clinicalReviewerId?: string;
-  lastReviewedAt?: string;
-  nextReviewAt?: string;
-  publicationState: 'draft' | 'submitted' | 'approved' | 'published' | 'frozen';
+  lastReviewedAt?: unknown;
+  nextReviewAt?: unknown;
+  publicationState: ContentPublicationState;
 };

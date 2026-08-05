@@ -31,6 +31,35 @@ service cloud.firestore {
       return signedIn() && resource.data.guestId == request.auth.uid;
     }
 
+    function isPublicationState(state) {
+      return state in ['draft', 'submitted', 'approved', 'published', 'frozen'];
+    }
+
+    function validClinicalContentBlock() {
+      return isPublicationState(request.resource.data.publicationState)
+        && (
+          request.resource.data.isClinicalClaim != true
+          || request.resource.data.publicationState != 'published'
+          || (
+            request.resource.data.sourceIds is list
+            && request.resource.data.sourceIds.size() > 0
+            && request.resource.data.clinicalReviewerId is string
+            && request.resource.data.lastReviewedAt is timestamp
+            && request.resource.data.nextReviewAt is timestamp
+          )
+        );
+    }
+
+    function validSourceRecord() {
+      return request.resource.data.id is string
+        && request.resource.data.organization is string
+        && request.resource.data.title is string
+        && request.resource.data.url is string
+        && request.resource.data.lastReviewedAt is timestamp
+        && request.resource.data.nextReviewAt is timestamp
+        && isPublicationState(request.resource.data.publicationState);
+    }
+
     // Clinically reviewed curriculum is write-protected behind a server-side
     // admin workflow. Users may read only currently published material.
     match /courses/{courseId} {
@@ -47,7 +76,7 @@ service cloud.firestore {
 
           match /contentBlocks/{contentBlockId} {
             allow read: if courseIsPublished(courseId) || isAdmin();
-            allow write: if isAdmin();
+            allow write: if isAdmin() && validClinicalContentBlock();
           }
         }
       }
@@ -55,7 +84,11 @@ service cloud.firestore {
 
     match /sources/{sourceId} {
       allow read: if resource.data.publicationState == 'published' || isAdmin();
-      allow write: if isAdmin();
+      allow write: if isAdmin() && validSourceRecord();
+    }
+
+    match /clinicalReviews/{reviewId} {
+      allow read, write: if isAdmin();
     }
 
     // All user-owned data stays in a user namespace to make ownership explicit.
@@ -96,7 +129,8 @@ service cloud.firestore {
           && request.resource.data.guestId == resource.data.guestId)
         || (inviteGuest()
           && request.resource.data.diff(resource.data).affectedKeys()
-            .hasOnly(['status', 'acceptedAt']));
+            .hasOnly(['status', 'acceptedAt'])
+          && request.resource.data.status in ['accepted', 'declined']);
       allow delete: if inviteOwner() || isAdmin();
     }
   }
