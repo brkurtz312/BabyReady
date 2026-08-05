@@ -33,6 +33,10 @@ import {
   type ReviewQueueState,
 } from '../services/clinicalReviewQueueService';
 import { buildWordDiff } from '../lib/wordDiff';
+import {
+  exportComparisonAuditPdf,
+  type ComparisonAuditPdfExportResult,
+} from '../services/comparisonAuditPdfService';
 
 type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
 
@@ -132,6 +136,19 @@ function formatVersionDate(value: unknown): string {
   return 'Timestamp pending';
 }
 
+function auditExportMessage(result: ComparisonAuditPdfExportResult): string {
+  switch (result) {
+    case 'print-dialog-opened':
+      return 'The print dialog is open. Choose Save as PDF to retain the audit record.';
+    case 'share-dialog-opened':
+      return 'The audit PDF is ready to share or save from the system share sheet.';
+    case 'file-created':
+      return 'The audit PDF was created on this device.';
+    default:
+      return 'The audit PDF is ready.';
+  }
+}
+
 export function ClinicianReviewScreen({
   user,
   onExit,
@@ -155,6 +172,8 @@ export function ClinicianReviewScreen({
   });
   const [baselineVersionId, setBaselineVersionId] = useState<string | null>(null);
   const [comparisonVersionId, setComparisonVersionId] = useState<string | null>(null);
+  const [auditExportInFlight, setAuditExportInFlight] = useState(false);
+  const [auditExportFeedback, setAuditExportFeedback] = useState<string | null>(null);
   const [reviewNotes, setReviewNotes] = useState('');
   const [nextReviewDate, setNextReviewDate] = useState(reviewDateOneYearFromNow);
   const [freezeReason, setFreezeReason] = useState('');
@@ -296,6 +315,7 @@ export function ClinicianReviewScreen({
     setFreezeReason('');
     setShowFreezeForm(false);
     setActionFeedback(null);
+    setAuditExportFeedback(null);
   }, [selectedBlock?.id]);
 
   const baselineVersion = useMemo(
@@ -360,6 +380,63 @@ export function ClinicianReviewScreen({
         (version) => version.id !== versionId,
       );
       setBaselineVersionId(alternative?.id ?? null);
+    }
+  };
+
+  const exportComparisonAudit = async () => {
+    if (
+      !selectedBlock ||
+      !baselineVersion ||
+      !comparisonVersion ||
+      !sourceComparison
+    ) {
+      return;
+    }
+
+    setAuditExportInFlight(true);
+    setAuditExportFeedback(null);
+
+    try {
+      const result = await exportComparisonAuditPdf({
+        blockId: selectedBlock.id,
+        courseId: selectedBlock.courseId,
+        moduleId: selectedBlock.moduleId,
+        lessonId: selectedBlock.lessonId,
+        contentType: selectedBlock.type,
+        isClinicalClaim: selectedBlock.isClinicalClaim,
+        baseline: {
+          versionNumber: baselineVersion.versionNumber,
+          action: formatVersionAction(baselineVersion.action),
+          createdAt: formatVersionDate(baselineVersion.createdAt),
+          actorId: baselineVersion.actorId,
+          body: baselineVersion.snapshot.body,
+          sourceIds: baselineVersion.snapshot.sourceIds,
+        },
+        comparison: {
+          versionNumber: comparisonVersion.versionNumber,
+          action: formatVersionAction(comparisonVersion.action),
+          createdAt: formatVersionDate(comparisonVersion.createdAt),
+          actorId: comparisonVersion.actorId,
+          body: comparisonVersion.snapshot.body,
+          sourceIds: comparisonVersion.snapshot.sourceIds,
+        },
+        wordDiff,
+        addedSourceIds: sourceComparison.added,
+        removedSourceIds: sourceComparison.removed,
+        generatedAt: new Date().toLocaleString(),
+        generatedBy: user.uid,
+      });
+      setAuditExportFeedback(
+        auditExportMessage(result),
+      );
+    } catch (error) {
+      setAuditExportFeedback(
+        error instanceof Error
+          ? error.message
+          : 'BabyReady could not prepare the comparison audit PDF.',
+      );
+    } finally {
+      setAuditExportInFlight(false);
     }
   };
 
@@ -701,13 +778,34 @@ export function ClinicianReviewScreen({
 
                       {baselineVersion && comparisonVersion && sourceComparison ? (
                         <View style={styles.comparisonPanel}>
-                          <Text style={styles.comparisonEyebrow}>
-                            VERSION COMPARISON
-                          </Text>
-                          <Text style={styles.comparisonTitle}>
-                            v{baselineVersion.versionNumber} compared with v
-                            {comparisonVersion.versionNumber}
-                          </Text>
+                          <View style={styles.comparisonHeader}>
+                            <View style={styles.comparisonHeaderCopy}>
+                              <Text style={styles.comparisonEyebrow}>
+                                VERSION COMPARISON
+                              </Text>
+                              <Text style={styles.comparisonTitle}>
+                                v{baselineVersion.versionNumber} compared with v
+                                {comparisonVersion.versionNumber}
+                              </Text>
+                            </View>
+                            <Pressable
+                              accessibilityLabel="Export this version comparison as a clinician audit PDF"
+                              accessibilityRole="button"
+                              disabled={auditExportInFlight}
+                              onPress={() => {
+                                void exportComparisonAudit();
+                              }}
+                              style={[
+                                styles.auditExportButton,
+                                auditExportInFlight && styles.auditExportButtonDisabled,
+                              ]}
+                              testID="button-export-comparison-audit-pdf"
+                            >
+                              <Text style={styles.auditExportButtonText}>
+                                {auditExportInFlight ? 'Preparing…' : 'Export audit PDF'}
+                              </Text>
+                            </Pressable>
+                          </View>
                           <Text style={styles.comparisonSummary}>
                             Learner copy{' '}
                             {baselineVersion.snapshot.body ===
@@ -719,6 +817,14 @@ export function ClinicianReviewScreen({
                             {' · '}
                             {sourceComparison.removed.length} removed.
                           </Text>
+                          {auditExportFeedback ? (
+                            <Text
+                              style={styles.auditExportFeedback}
+                              testID="text-comparison-audit-export-feedback"
+                            >
+                              {auditExportFeedback}
+                            </Text>
+                          ) : null}
 
                           <View style={styles.copyDiffSection}>
                             <Text style={styles.copyDiffTitle}>
@@ -1414,6 +1520,15 @@ const styles = StyleSheet.create({
     marginTop: 14,
     padding: 13,
   },
+  comparisonHeader: {
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+    gap: 8,
+    justifyContent: 'space-between',
+  },
+  comparisonHeaderCopy: {
+    flex: 1,
+  },
   comparisonEyebrow: {
     color: '#0C4E54',
     fontSize: 10,
@@ -1426,11 +1541,34 @@ const styles = StyleSheet.create({
     fontWeight: '800',
     marginTop: 4,
   },
+  auditExportButton: {
+    alignItems: 'center',
+    backgroundColor: '#0C4E54',
+    borderRadius: 8,
+    justifyContent: 'center',
+    minHeight: 36,
+    paddingHorizontal: 9,
+  },
+  auditExportButtonDisabled: {
+    backgroundColor: '#6C908C',
+  },
+  auditExportButtonText: {
+    color: '#FFFFFF',
+    fontSize: 11,
+    fontWeight: '800',
+    textAlign: 'center',
+  },
   comparisonSummary: {
     color: '#365553',
     fontSize: 12,
     lineHeight: 18,
     marginTop: 4,
+  },
+  auditExportFeedback: {
+    color: '#285A57',
+    fontSize: 12,
+    lineHeight: 18,
+    marginTop: 7,
   },
   copyDiffSection: {
     backgroundColor: '#FFFFFF',

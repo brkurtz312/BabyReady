@@ -12,7 +12,8 @@
         {
           "configureAndroidBackup": true
         }
-      ]
+      ],
+      "expo-sharing"
     ],
     "ios": {
       "supportsTablet": true,

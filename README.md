@@ -121,6 +121,13 @@ word-level copy diff. Removed passages are shown with a strike-through and
 inserted passages are highlighted. The comparison is read-only and never
 changes version history.
 
+Clinicians can export the selected two-revision comparison as a clinician-ready
+PDF audit. The report includes immutable snapshot metadata, workflow actions,
+the word-level copy diff, attached source record IDs and source changes, the
+exporting user ID, and a point-in-time export timestamp. Native apps create a
+PDF and open the system share sheet; the web app opens the browser print dialog
+so the reviewer can save the report as a PDF.
+
 ### Local Emulator Suite
 
 Set the following development-only values to connect the app to local Auth and Firestore emulators:
