@@ -34,6 +34,7 @@ type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
 type ClinicianReviewScreenProps = {
   user: User;
   onExit: () => void;
+  onOpenSourceLibrary: () => void;
 };
 
 const queueStates: ContentPublicationState[] = [
@@ -88,6 +89,7 @@ function statusStyle(state: ContentPublicationState) {
 export function ClinicianReviewScreen({
   user,
   onExit,
+  onOpenSourceLibrary,
 }: ClinicianReviewScreenProps) {
   const [access, setAccess] = useState<AccessState>('checking');
   const [queueState, setQueueState] = useState<ReviewQueueState>({
@@ -348,6 +350,17 @@ export function ClinicianReviewScreen({
         <Text style={styles.subtitle}>
           Review source-grounded learning content before it reaches families.
         </Text>
+        <Pressable
+          accessibilityLabel="Open clinician source library"
+          accessibilityRole="button"
+          onPress={onOpenSourceLibrary}
+          style={styles.sourceLibraryButton}
+          testID="button-open-source-library"
+        >
+          <Text style={styles.sourceLibraryButtonText}>
+            Manage source library
+          </Text>
+        </Pressable>
 
         {access === 'checking' ? (
           <View style={styles.centeredState}>
@@ -710,6 +723,21 @@ const styles = StyleSheet.create({
     lineHeight: 22,
     marginTop: 6,
     maxWidth: 360,
+  },
+  sourceLibraryButton: {
+    alignSelf: 'flex-start',
+    borderColor: '#0C4E54',
+    borderRadius: 9,
+    borderWidth: 1,
+    justifyContent: 'center',
+    marginTop: 16,
+    minHeight: 44,
+    paddingHorizontal: 12,
+  },
+  sourceLibraryButtonText: {
+    color: '#0C4E54',
+    fontSize: 14,
+    fontWeight: '700',
   },
   centeredState: {
     alignItems: 'center',

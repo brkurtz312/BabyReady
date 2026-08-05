@@ -67,6 +67,10 @@ export type ContentSource = {
   lastReviewedAt: unknown;
   nextReviewAt: unknown;
   publicationState: ContentPublicationState;
+  publishedAt?: unknown;
+  frozenAt?: unknown;
+  frozenBy?: string;
+  freezeReason?: string;
   updatedAt?: unknown;
 };
 

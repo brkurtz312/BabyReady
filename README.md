@@ -85,6 +85,15 @@ The learner shell includes an explicit **Open clinician content review** entry p
 
 For a selected content block, reviewers can inspect learner-facing copy and linked source records, write review notes, set the next review date, submit a draft, approve submitted content, publish approved content, or freeze content with a documented reason. Approval independently verifies that each linked source record exists and is in the `published` state. Publication requires the protected approval metadata already enforced by Firestore rules.
 
+### Clinician source library
+
+The clinician workspace includes a source-record authoring and publishing screen.
+Clinicians can create records with a stable ID, organization, title, canonical
+URL, and review dates; save records as drafts; publish only complete, current
+records; and freeze a source with a documented reason. Publishing is deliberately
+separate from drafting so referenced content cannot be approved until its
+supporting source has been reviewed and published.
+
 ### Local Emulator Suite
 
 Set the following development-only values to connect the app to local Auth and Firestore emulators:
@@ -131,11 +140,12 @@ Custom claims must be minted only by a trusted server-side Admin SDK workflow. T
 │   ├── lib/firebase.ts              # Auth, Firestore, and emulator initialization
 │   ├── models/course.ts              # Shared domain types
 │   ├── screens/ClinicianReviewScreen.tsx # Admin-gated content review workspace
+│   ├── screens/ClinicianSourceLibraryScreen.tsx # Source authoring and publishing
 │   └── services/
 │       ├── authService.ts            # Anonymous and email/password flows
 │       ├── clinicalReviewQueueService.ts # Live review queue and source lookup
 │       ├── contentGovernanceService.ts # Clinical-content lifecycle
-│       ├── sourceService.ts          # Source-record lifecycle
+│       ├── sourceService.ts          # Source draft, publishing, and freeze lifecycle
 │       ├── userProfileService.ts     # users/{uid} provisioning
 │       └── contactStore.ts           # Secure local care-team contact cache
 ├── firestore.rules                  # Firestore security baseline

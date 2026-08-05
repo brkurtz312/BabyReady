@@ -10,6 +10,7 @@ import {
 import { courseModules, recommendedModule } from './src/data/course';
 import { firebaseIsConfigured } from './src/lib/firebase';
 import { ClinicianReviewScreen } from './src/screens/ClinicianReviewScreen';
+import { ClinicianSourceLibraryScreen } from './src/screens/ClinicianSourceLibraryScreen';
 
 const currentPregnancyWeek = 25;
 
@@ -24,7 +25,9 @@ export default function App() {
 function BabyReadyApp() {
   const recommended = recommendedModule(currentPregnancyWeek);
   const authState = useBabyReadyAuth();
-  const [activeView, setActiveView] = useState<'learner' | 'clinician'>('learner');
+  const [activeView, setActiveView] = useState<
+    'learner' | 'review' | 'sources'
+  >('learner');
 
   const showUrgentGuidance = () => {
     Alert.alert(
@@ -34,10 +37,20 @@ function BabyReadyApp() {
     );
   };
 
-  if (activeView === 'clinician' && authState.status === 'ready') {
+  if (activeView === 'sources' && authState.status === 'ready') {
+    return (
+      <ClinicianSourceLibraryScreen
+        onExit={() => setActiveView('review')}
+        user={authState.user}
+      />
+    );
+  }
+
+  if (activeView === 'review' && authState.status === 'ready') {
     return (
       <ClinicianReviewScreen
         onExit={() => setActiveView('learner')}
+        onOpenSourceLibrary={() => setActiveView('sources')}
         user={authState.user}
       />
     );
@@ -157,7 +170,7 @@ function BabyReadyApp() {
                 return;
               }
 
-              setActiveView('clinician');
+              setActiveView('review');
             }}
             style={styles.clinicianLink}
           >
