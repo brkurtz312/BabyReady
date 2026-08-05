@@ -32,6 +32,7 @@ import {
   type ContentVersionHistoryState,
   type ReviewQueueState,
 } from '../services/clinicalReviewQueueService';
+import { buildWordDiff } from '../lib/wordDiff';
 
 type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
 
@@ -328,6 +329,19 @@ export function ClinicianReviewScreen({
       ),
     };
   }, [baselineVersion, comparisonVersion]);
+  const wordDiff = useMemo(
+    () =>
+      baselineVersion && comparisonVersion
+        ? buildWordDiff(
+            baselineVersion.snapshot.body,
+            comparisonVersion.snapshot.body,
+          )
+        : [],
+    [baselineVersion, comparisonVersion],
+  );
+  const hasWordLevelChanges = wordDiff.some(
+    (segment) => segment.kind !== 'unchanged',
+  );
 
   const selectBaselineVersion = (versionId: string) => {
     setBaselineVersionId(versionId);
@@ -705,6 +719,55 @@ export function ClinicianReviewScreen({
                             {' · '}
                             {sourceComparison.removed.length} removed.
                           </Text>
+
+                          <View style={styles.copyDiffSection}>
+                            <Text style={styles.copyDiffTitle}>
+                              WORD-LEVEL COPY DIFF
+                            </Text>
+                            {hasWordLevelChanges ? (
+                              <>
+                                <View style={styles.copyDiffLegend}>
+                                  <View style={styles.copyDiffRemovedLegend}>
+                                    <Text style={styles.copyDiffRemovedLegendText}>
+                                      Removed
+                                    </Text>
+                                  </View>
+                                  <View style={styles.copyDiffAddedLegend}>
+                                    <Text style={styles.copyDiffAddedLegendText}>
+                                      Added
+                                    </Text>
+                                  </View>
+                                </View>
+                                <Text
+                                  accessibilityLabel="Word-level copy comparison. Removed text is struck through and inserted text is highlighted."
+                                  style={styles.copyDiffText}
+                                  testID="text-version-word-diff"
+                                >
+                                  {wordDiff.map((segment, index) => (
+                                    <Text
+                                      key={`${segment.kind}-${index}`}
+                                      style={
+                                        segment.kind === 'added'
+                                          ? styles.copyDiffAddedText
+                                          : segment.kind === 'removed'
+                                            ? styles.copyDiffRemovedText
+                                            : undefined
+                                      }
+                                    >
+                                      {segment.value}
+                                    </Text>
+                                  ))}
+                                </Text>
+                              </>
+                            ) : (
+                              <Text
+                                style={styles.copyDiffUnchanged}
+                                testID="text-version-word-diff-unchanged"
+                              >
+                                No word-level changes between these revisions.
+                              </Text>
+                            )}
+                          </View>
 
                           <View style={styles.comparisonColumns}>
                             <View style={styles.comparisonColumn}>
@@ -1368,6 +1431,68 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 18,
     marginTop: 4,
+  },
+  copyDiffSection: {
+    backgroundColor: '#FFFFFF',
+    borderColor: '#C8DDD7',
+    borderRadius: 10,
+    borderWidth: 1,
+    marginTop: 12,
+    padding: 10,
+  },
+  copyDiffTitle: {
+    color: '#0C4E54',
+    fontSize: 10,
+    fontWeight: '800',
+    letterSpacing: 0.5,
+  },
+  copyDiffLegend: {
+    flexDirection: 'row',
+    gap: 6,
+    marginTop: 7,
+  },
+  copyDiffRemovedLegend: {
+    backgroundColor: '#FDE7DF',
+    borderRadius: 99,
+    paddingHorizontal: 7,
+    paddingVertical: 3,
+  },
+  copyDiffRemovedLegendText: {
+    color: '#8C3B21',
+    fontSize: 10,
+    fontWeight: '800',
+  },
+  copyDiffAddedLegend: {
+    backgroundColor: '#E5F3E8',
+    borderRadius: 99,
+    paddingHorizontal: 7,
+    paddingVertical: 3,
+  },
+  copyDiffAddedLegendText: {
+    color: '#2E6B3B',
+    fontSize: 10,
+    fontWeight: '800',
+  },
+  copyDiffText: {
+    color: '#3E3C36',
+    fontSize: 13,
+    lineHeight: 21,
+    marginTop: 9,
+  },
+  copyDiffAddedText: {
+    backgroundColor: '#D8F0DE',
+    color: '#205F31',
+  },
+  copyDiffRemovedText: {
+    backgroundColor: '#FDE7DF',
+    color: '#8C3B21',
+    textDecorationLine: 'line-through',
+  },
+  copyDiffUnchanged: {
+    color: '#696761',
+    fontSize: 12,
+    lineHeight: 18,
+    marginTop: 7,
   },
   comparisonColumns: {
     flexDirection: 'row',

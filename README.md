@@ -116,8 +116,10 @@ updates and deletion.
 When two or more snapshots exist, a clinician can choose any timeline entry as
 the baseline and any other entry for comparison. The review workspace defaults
 to the oldest and newest revisions, displays the two snapshots side by side,
-and summarizes learner-copy and source-attachment changes. The comparison is
-read-only and never changes version history.
+summarizes learner-copy and source-attachment changes, and provides a
+word-level copy diff. Removed passages are shown with a strike-through and
+inserted passages are highlighted. The comparison is read-only and never
+changes version history.
 
 ### Local Emulator Suite
 
