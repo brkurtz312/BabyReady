@@ -1,5 +1,6 @@
 import {
   collection,
+  collectionGroup,
   doc,
   limit,
   onSnapshot,
@@ -18,6 +19,12 @@ import type {
 } from '../models/course';
 
 export type ComparisonAuditExportLogState =
+  | { status: 'unconfigured'; entries: []; error: null }
+  | { status: 'loading'; entries: ComparisonAuditExportLog[]; error: null }
+  | { status: 'ready'; entries: ComparisonAuditExportLog[]; error: null }
+  | { status: 'error'; entries: ComparisonAuditExportLog[]; error: string };
+
+export type ComparisonAuditExportDashboardState =
   | { status: 'unconfigured'; entries: []; error: null }
   | { status: 'loading'; entries: ComparisonAuditExportLog[]; error: null }
   | { status: 'ready'; entries: ComparisonAuditExportLog[]; error: null }
@@ -116,6 +123,41 @@ export function subscribeToComparisonAuditExportLog(
       auditExportCollection(block, firestore),
       orderBy('exportedAt', 'desc'),
       limit(10),
+    ),
+    (snapshot) => {
+      onChange({
+        status: 'ready',
+        entries: snapshot.docs.map((entry) => ({
+          ...(entry.data() as ComparisonAuditExportLog),
+          id: entry.id,
+        })),
+        error: null,
+      });
+    },
+    (error) => {
+      onChange({
+        status: 'error',
+        entries: [],
+        error: readableAuditLogError(error),
+      });
+    },
+  );
+}
+
+export function subscribeToComparisonAuditExportDashboard(
+  onChange: (state: ComparisonAuditExportDashboardState) => void,
+): Unsubscribe | null {
+  if (!db) {
+    onChange({ status: 'unconfigured', entries: [], error: null });
+    return null;
+  }
+
+  onChange({ status: 'loading', entries: [], error: null });
+  return onSnapshot(
+    query(
+      collectionGroup(db, 'comparisonAuditExports'),
+      orderBy('exportedAt', 'desc'),
+      limit(200),
     ),
     (snapshot) => {
       onChange({

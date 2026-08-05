@@ -126,6 +126,13 @@ service cloud.firestore {
         && request.resource.data.exportedAt == request.time;
     }
 
+    // Collection-group queries need an explicit recursive match even though
+    // every individual audit record has an administrator-only nested match.
+    // This grants no create, update, or delete capability.
+    match /{path=**}/comparisonAuditExports/{auditExportId} {
+      allow read: if isAdmin();
+    }
+
     // Clinically reviewed curriculum is write-protected behind a server-side
     // admin workflow. Users may read only currently published material.
     match /courses/{courseId} {

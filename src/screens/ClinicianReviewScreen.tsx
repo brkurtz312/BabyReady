@@ -51,6 +51,7 @@ type ClinicianReviewScreenProps = {
   onExit: () => void;
   onOpenSourceLibrary: () => void;
   onOpenContentAuthoring: () => void;
+  onOpenAuditLog: () => void;
   onEditDraft: (block: ClinicalContentBlock) => void;
 };
 
@@ -188,6 +189,7 @@ export function ClinicianReviewScreen({
   onExit,
   onOpenSourceLibrary,
   onOpenContentAuthoring,
+  onOpenAuditLog,
   onEditDraft,
 }: ClinicianReviewScreenProps) {
   const [access, setAccess] = useState<AccessState>('checking');
@@ -658,6 +660,15 @@ export function ClinicianReviewScreen({
           Review source-grounded learning content before it reaches families.
         </Text>
         <View style={styles.workspaceActions}>
+          <Pressable
+            accessibilityLabel="Open cross-content audit export log"
+            accessibilityRole="button"
+            onPress={onOpenAuditLog}
+            style={styles.auditLogButton}
+            testID="button-open-audit-log-dashboard"
+          >
+            <Text style={styles.auditLogButtonText}>Audit export log</Text>
+          </Pressable>
           <Pressable
             accessibilityLabel="Open clinician content authoring"
             accessibilityRole="button"
@@ -1361,6 +1372,20 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     gap: 10,
     marginTop: 16,
+  },
+  auditLogButton: {
+    backgroundColor: '#E3F0ED',
+    borderColor: '#92BFB8',
+    borderRadius: 9,
+    borderWidth: 1,
+    justifyContent: 'center',
+    minHeight: 44,
+    paddingHorizontal: 12,
+  },
+  auditLogButtonText: {
+    color: '#0C4E54',
+    fontSize: 14,
+    fontWeight: '800',
   },
   authorContentButton: {
     backgroundColor: '#01696F',

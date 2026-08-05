@@ -10,6 +10,7 @@ import {
 import { courseModules, recommendedModule } from './src/data/course';
 import { firebaseIsConfigured } from './src/lib/firebase';
 import type { ClinicalContentBlock } from './src/models/course';
+import { ClinicianAuditLogScreen } from './src/screens/ClinicianAuditLogScreen';
 import { ClinicianReviewScreen } from './src/screens/ClinicianReviewScreen';
 import { ClinicianContentAuthoringScreen } from './src/screens/ClinicianContentAuthoringScreen';
 import { ClinicianSourceLibraryScreen } from './src/screens/ClinicianSourceLibraryScreen';
@@ -28,7 +29,7 @@ function BabyReadyApp() {
   const recommended = recommendedModule(currentPregnancyWeek);
   const authState = useBabyReadyAuth();
   const [activeView, setActiveView] = useState<
-    'learner' | 'review' | 'sources' | 'author'
+    'learner' | 'review' | 'sources' | 'author' | 'audit-log'
   >('learner');
   const [draftToEdit, setDraftToEdit] = useState<ClinicalContentBlock | null>(
     null,
@@ -64,6 +65,15 @@ function BabyReadyApp() {
     );
   }
 
+  if (activeView === 'audit-log' && authState.status === 'ready') {
+    return (
+      <ClinicianAuditLogScreen
+        onExit={() => setActiveView('review')}
+        user={authState.user}
+      />
+    );
+  }
+
   if (activeView === 'review' && authState.status === 'ready') {
     return (
       <ClinicianReviewScreen
@@ -76,6 +86,7 @@ function BabyReadyApp() {
           setDraftToEdit(null);
           setActiveView('author');
         }}
+        onOpenAuditLog={() => setActiveView('audit-log')}
         onOpenSourceLibrary={() => setActiveView('sources')}
         user={authState.user}
       />

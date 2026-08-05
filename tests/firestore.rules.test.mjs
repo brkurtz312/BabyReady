@@ -11,9 +11,14 @@ import {
 } from '@firebase/rules-unit-testing';
 import {
   Timestamp,
+  collectionGroup,
   deleteDoc,
   doc,
+  getDocs,
   getDoc,
+  limit,
+  orderBy,
+  query,
   serverTimestamp,
   setDoc,
   updateDoc,
@@ -205,6 +210,57 @@ test('comparison audit exports are admin-only, attributable, and append-only', a
       exportedAt: serverTimestamp(),
     }),
   );
+});
+
+test('administrators can query cross-content comparison audit exports', async () => {
+  const author = userDb('author');
+  const admin = userDb('admin', { admin: true });
+  const firstAuditPath =
+    'courses/birthready/modules/module-1/lessons/lesson-1/contentBlocks/welcome/comparisonAuditExports/export-1';
+  const secondAuditPath =
+    'courses/birthready/modules/module-2/lessons/lesson-2/contentBlocks/breathing/comparisonAuditExports/export-2';
+  const firstAudit = {
+    id: 'export-1',
+    courseId: 'birthready',
+    moduleId: 'module-1',
+    lessonId: 'lesson-1',
+    contentBlockId: 'welcome',
+    baselineVersionId: 'version-1',
+    baselineVersionNumber: 1,
+    comparisonVersionId: 'version-2',
+    comparisonVersionNumber: 2,
+    exportFormat: 'pdf',
+    exportRoute: 'web_print',
+    exportedBy: 'admin',
+    exportedAt: Timestamp.fromDate(new Date('2026-08-05T00:00:00.000Z')),
+  };
+
+  await seed(firstAuditPath, firstAudit);
+  await seed(secondAuditPath, {
+    ...firstAudit,
+    id: 'export-2',
+    moduleId: 'module-2',
+    lessonId: 'lesson-2',
+    contentBlockId: 'breathing',
+    exportRoute: 'native_share',
+    exportedAt: Timestamp.fromDate(new Date('2026-08-05T01:00:00.000Z')),
+  });
+
+  const adminQuery = query(
+    collectionGroup(admin, 'comparisonAuditExports'),
+    orderBy('exportedAt', 'desc'),
+    limit(200),
+  );
+  const results = await assertSucceeds(getDocs(adminQuery));
+  assert.equal(results.size, 2);
+  assert.equal(results.docs[0].id, 'export-2');
+
+  const authorQuery = query(
+    collectionGroup(author, 'comparisonAuditExports'),
+    orderBy('exportedAt', 'desc'),
+    limit(200),
+  );
+  await assertFails(getDocs(authorQuery));
 });
 
 test('only complete, published source records are publicly readable', async () => {

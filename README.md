@@ -134,6 +134,11 @@ entry contains the content scope, compared revision IDs and version numbers,
 PDF route, clinician ID, and a server timestamp. The review workspace shows the
 ten most recent audit exports for the selected content block.
 
+The clinician workspace also includes a cross-content audit-export dashboard.
+It reads the 200 most recent immutable records through a Firestore
+collection-group query and filters them by content scope, exporting clinician,
+PDF route, date range, and either compared version number.
+
 ### Local Emulator Suite
 
 Set the following development-only values to connect the app to local Auth and Firestore emulators:
