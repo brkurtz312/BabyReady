@@ -11,9 +11,11 @@ import {
   View,
 } from 'react-native';
 import type { User } from 'firebase/auth';
+import { Timestamp } from 'firebase/firestore';
 
 import type {
   ClinicalContentBlock,
+  ClinicalContentVersion,
   ContentPublicationState,
   ContentSource,
 } from '../models/course';
@@ -25,7 +27,9 @@ import {
 } from '../services/contentGovernanceService';
 import {
   loadContentSources,
+  subscribeToContentVersionHistory,
   subscribeToClinicalReviewQueue,
+  type ContentVersionHistoryState,
   type ReviewQueueState,
 } from '../services/clinicalReviewQueueService';
 
@@ -36,6 +40,7 @@ type ClinicianReviewScreenProps = {
   onExit: () => void;
   onOpenSourceLibrary: () => void;
   onOpenContentAuthoring: () => void;
+  onEditDraft: (block: ClinicalContentBlock) => void;
 };
 
 const queueStates: ContentPublicationState[] = [
@@ -87,11 +92,51 @@ function statusStyle(state: ContentPublicationState) {
   }
 }
 
+function formatVersionAction(action: ClinicalContentVersion['action']): string {
+  switch (action) {
+    case 'draft_saved':
+      return 'Draft saved';
+    case 'submitted':
+      return 'Submitted for review';
+    case 'approved':
+      return 'Approved for release';
+    case 'published':
+      return 'Published to learners';
+    case 'frozen':
+      return 'Frozen for follow-up';
+    default:
+      return action;
+  }
+}
+
+function formatVersionDate(value: unknown): string {
+  if (value instanceof Timestamp) {
+    return value.toDate().toLocaleString();
+  }
+  if (value instanceof Date) {
+    return value.toLocaleString();
+  }
+  if (
+    typeof value === 'object' &&
+    value &&
+    'toDate' in value &&
+    typeof value.toDate === 'function'
+  ) {
+    const date = value.toDate();
+    if (date instanceof Date) {
+      return date.toLocaleString();
+    }
+  }
+
+  return 'Timestamp pending';
+}
+
 export function ClinicianReviewScreen({
   user,
   onExit,
   onOpenSourceLibrary,
   onOpenContentAuthoring,
+  onEditDraft,
 }: ClinicianReviewScreenProps) {
   const [access, setAccess] = useState<AccessState>('checking');
   const [queueState, setQueueState] = useState<ReviewQueueState>({
@@ -102,6 +147,11 @@ export function ClinicianReviewScreen({
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [sources, setSources] = useState<ContentSource[]>([]);
   const [sourcesLoading, setSourcesLoading] = useState(false);
+  const [versionHistory, setVersionHistory] = useState<ContentVersionHistoryState>({
+    status: 'loading',
+    versions: [],
+    error: null,
+  });
   const [reviewNotes, setReviewNotes] = useState('');
   const [nextReviewDate, setNextReviewDate] = useState(reviewDateOneYearFromNow);
   const [freezeReason, setFreezeReason] = useState('');
@@ -196,6 +246,18 @@ export function ClinicianReviewScreen({
     return () => {
       active = false;
     };
+  }, [selectedBlock]);
+
+  useEffect(() => {
+    if (!selectedBlock) {
+      setVersionHistory({ status: 'ready', versions: [], error: null });
+      return undefined;
+    }
+
+    return (
+      subscribeToContentVersionHistory(selectedBlock, setVersionHistory) ??
+      undefined
+    );
   }, [selectedBlock]);
 
   useEffect(() => {
@@ -508,6 +570,66 @@ export function ClinicianReviewScreen({
                       <Text style={styles.contentPreviewText}>{selectedBlock.body}</Text>
                     </View>
 
+                    <View style={styles.historySection}>
+                      <View style={styles.historyHeader}>
+                        <View>
+                          <Text style={styles.sectionLabel}>VERSION HISTORY</Text>
+                          <Text style={styles.historyTitle}>
+                            {selectedBlock.versionCount ?? versionHistory.versions.length} recorded versions
+                          </Text>
+                        </View>
+                      </View>
+
+                      {versionHistory.status === 'loading' ? (
+                        <View style={styles.historyLoading}>
+                          <ActivityIndicator color="#01696F" />
+                          <Text style={styles.historyLoadingText}>
+                            Loading version history…
+                          </Text>
+                        </View>
+                      ) : null}
+
+                      {versionHistory.status === 'error' ? (
+                        <Text style={styles.historyError}>
+                          {versionHistory.error}
+                        </Text>
+                      ) : null}
+
+                      {versionHistory.status === 'ready' &&
+                      versionHistory.versions.length === 0 ? (
+                        <Text style={styles.historyEmpty}>
+                          No saved versions yet. The next draft save or workflow
+                          action will create an immutable snapshot.
+                        </Text>
+                      ) : null}
+
+                      {versionHistory.versions.map((version) => (
+                        <View key={version.id} style={styles.versionRow}>
+                          <View style={styles.versionNumber}>
+                            <Text style={styles.versionNumberText}>
+                              v{version.versionNumber}
+                            </Text>
+                          </View>
+                          <View style={styles.versionCopy}>
+                            <Text style={styles.versionAction}>
+                              {formatVersionAction(version.action)}
+                            </Text>
+                            <Text style={styles.versionMetadata}>
+                              {formatVersionDate(version.createdAt)} · {version.actorId}
+                            </Text>
+                            <Text style={styles.versionSnapshot}>
+                              {formatState(version.snapshot.publicationState)} ·{' '}
+                              {version.snapshot.sourceIds.length} source
+                              {version.snapshot.sourceIds.length === 1 ? '' : 's'}
+                            </Text>
+                            {version.note ? (
+                              <Text style={styles.versionNote}>{version.note}</Text>
+                            ) : null}
+                          </View>
+                        </View>
+                      ))}
+                    </View>
+
                     <View style={styles.evidenceSection}>
                       <Text style={styles.evidenceTitle}>Evidence and review controls</Text>
                       <Text style={styles.evidenceText}>
@@ -573,34 +695,50 @@ export function ClinicianReviewScreen({
 
                     <View style={styles.actionStack}>
                       {selectedBlock.publicationState === 'draft' ? (
-                        <Pressable
-                          accessibilityRole="button"
-                          accessibilityLabel="Submit selected content for clinical review"
-                          disabled={actionInFlight !== null}
-                          onPress={() =>
-                            void runAction(
-                              'submit',
-                              () =>
-                                submitContentBlockForClinicalReview(
-                                  selectedBlock.courseId,
-                                  selectedBlock.moduleId,
-                                  selectedBlock.lessonId,
-                                  selectedBlock.id,
-                                ),
-                              'Content was submitted for clinical review.',
-                            )
-                          }
-                          style={[
-                            styles.primaryAction,
-                            actionInFlight !== null && styles.disabledAction,
-                          ]}
-                        >
-                          <Text style={styles.primaryActionText}>
-                            {actionInFlight === 'submit'
-                              ? 'Submitting…'
-                              : 'Submit for clinical review'}
-                          </Text>
-                        </Pressable>
+                        <>
+                          <Pressable
+                            accessibilityRole="button"
+                            accessibilityLabel="Edit selected draft"
+                            disabled={actionInFlight !== null}
+                            onPress={() => onEditDraft(selectedBlock)}
+                            style={[
+                              styles.primaryAction,
+                              actionInFlight !== null && styles.disabledAction,
+                            ]}
+                            testID="button-edit-selected-draft"
+                          >
+                            <Text style={styles.primaryActionText}>Edit draft</Text>
+                          </Pressable>
+                          <Pressable
+                            accessibilityRole="button"
+                            accessibilityLabel="Submit selected content for clinical review"
+                            disabled={actionInFlight !== null}
+                            onPress={() =>
+                              void runAction(
+                                'submit',
+                                () =>
+                                  submitContentBlockForClinicalReview(
+                                    selectedBlock.courseId,
+                                    selectedBlock.moduleId,
+                                    selectedBlock.lessonId,
+                                    selectedBlock.id,
+                                  ),
+                                'Content was submitted for clinical review.',
+                              )
+                            }
+                            style={[
+                              styles.secondaryAction,
+                              actionInFlight !== null && styles.disabledAction,
+                            ]}
+                            testID="button-submit-selected-content"
+                          >
+                            <Text style={styles.secondaryActionText}>
+                              {actionInFlight === 'submit'
+                                ? 'Submitting…'
+                                : 'Submit for clinical review'}
+                            </Text>
+                          </Pressable>
+                        </>
                       ) : null}
 
                       {selectedBlock.publicationState === 'submitted' ? (
@@ -964,6 +1102,93 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     marginTop: 8,
+  },
+  historySection: {
+    borderTopColor: '#E3E0DA',
+    borderTopWidth: 1,
+    marginTop: 20,
+    paddingTop: 18,
+  },
+  historyHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  historyTitle: {
+    color: '#28251D',
+    fontSize: 17,
+    fontWeight: '800',
+    marginTop: 4,
+  },
+  historyLoading: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 9,
+    marginTop: 14,
+  },
+  historyLoadingText: {
+    color: '#696761',
+    fontSize: 13,
+  },
+  historyError: {
+    color: '#713417',
+    fontSize: 13,
+    lineHeight: 19,
+    marginTop: 12,
+  },
+  historyEmpty: {
+    color: '#696761',
+    fontSize: 13,
+    lineHeight: 19,
+    marginTop: 12,
+  },
+  versionRow: {
+    alignItems: 'flex-start',
+    borderTopColor: '#E3E0DA',
+    borderTopWidth: 1,
+    flexDirection: 'row',
+    marginTop: 12,
+    paddingTop: 12,
+  },
+  versionNumber: {
+    alignItems: 'center',
+    backgroundColor: '#E3F0ED',
+    borderRadius: 99,
+    justifyContent: 'center',
+    minHeight: 28,
+    minWidth: 38,
+  },
+  versionNumberText: {
+    color: '#0C4E54',
+    fontSize: 11,
+    fontWeight: '800',
+  },
+  versionCopy: {
+    flex: 1,
+    marginLeft: 10,
+  },
+  versionAction: {
+    color: '#28251D',
+    fontSize: 14,
+    fontWeight: '800',
+  },
+  versionMetadata: {
+    color: '#696761',
+    fontSize: 12,
+    lineHeight: 18,
+    marginTop: 2,
+  },
+  versionSnapshot: {
+    color: '#0C4E54',
+    fontSize: 12,
+    fontWeight: '700',
+    marginTop: 4,
+  },
+  versionNote: {
+    color: '#3E3C36',
+    fontSize: 12,
+    fontStyle: 'italic',
+    lineHeight: 18,
+    marginTop: 4,
   },
   evidenceSection: {
     borderTopColor: '#E3E0DA',

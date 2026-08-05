@@ -96,4 +96,29 @@ export type ClinicalContentBlock = {
   lastReviewedAt?: unknown;
   nextReviewAt?: unknown;
   publicationState: ContentPublicationState;
+  versionCount?: number;
+};
+
+export type ClinicalContentVersionAction =
+  | 'draft_saved'
+  | 'submitted'
+  | 'approved'
+  | 'published'
+  | 'frozen';
+
+export type ClinicalContentVersion = {
+  id: string;
+  versionNumber: number;
+  action: ClinicalContentVersionAction;
+  actorId: string;
+  createdAt: unknown;
+  note?: string;
+  snapshot: {
+    contentBlockId: string;
+    type: ClinicalContentBlock['type'];
+    body: string;
+    sourceIds: string[];
+    isClinicalClaim: boolean;
+    publicationState: ContentPublicationState;
+  };
 };

@@ -11,6 +11,7 @@ import {
 } from '@firebase/rules-unit-testing';
 import {
   Timestamp,
+  deleteDoc,
   doc,
   getDoc,
   setDoc,
@@ -123,6 +124,38 @@ test('a clinical block cannot publish without sources, reviewer, and review date
   );
 
   await assertSucceeds(setDoc(doc(admin, blockPath), clinicalBlock()));
+});
+
+test('clinical content version history is admin-readable and append-only', async () => {
+  const author = userDb('author');
+  const admin = userDb('admin', { admin: true });
+  const anonymous = testEnvironment.unauthenticatedContext().firestore();
+  const versionPath =
+    'courses/birthready/modules/module-1/lessons/lesson-1/contentBlocks/welcome/versions/version-1';
+  const version = {
+    id: 'version-1',
+    versionNumber: 1,
+    action: 'draft_saved',
+    actorId: 'admin',
+    createdAt: Timestamp.fromDate(new Date('2026-08-05T00:00:00.000Z')),
+    snapshot: {
+      contentBlockId: 'welcome',
+      type: 'text',
+      body: 'Draft learner-facing educational copy.',
+      sourceIds: ['acog-labor-delivery'],
+      isClinicalClaim: true,
+      publicationState: 'draft',
+    },
+  };
+
+  await assertFails(setDoc(doc(author, versionPath), version));
+  await assertSucceeds(setDoc(doc(admin, versionPath), version));
+  await assertSucceeds(getDoc(doc(admin, versionPath)));
+  await assertFails(getDoc(doc(anonymous, versionPath)));
+  await assertFails(
+    updateDoc(doc(admin, versionPath), { note: 'An immutable version cannot be edited.' }),
+  );
+  await assertFails(deleteDoc(doc(admin, versionPath)));
 });
 
 test('only complete, published source records are publicly readable', async () => {

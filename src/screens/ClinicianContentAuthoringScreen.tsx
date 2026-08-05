@@ -40,6 +40,7 @@ type ContentForm = {
 type ClinicianContentAuthoringScreenProps = {
   user: User;
   onExit: () => void;
+  initialBlock?: ClinicalContentBlock | null;
 };
 
 const contentTypes: Array<{ value: ContentBlockType; label: string }> = [
@@ -67,6 +68,19 @@ function emptyContentForm(): ContentForm {
   };
 }
 
+function formFromBlock(block: ClinicalContentBlock): ContentForm {
+  return {
+    courseId: block.courseId,
+    moduleId: block.moduleId,
+    lessonId: block.lessonId,
+    id: block.id,
+    type: block.type,
+    body: block.body,
+    isClinicalClaim: block.isClinicalClaim,
+    sourceIds: block.sourceIds,
+  };
+}
+
 function readableError(error: unknown): string {
   return error instanceof Error
     ? error.message
@@ -76,6 +90,7 @@ function readableError(error: unknown): string {
 export function ClinicianContentAuthoringScreen({
   user,
   onExit,
+  initialBlock = null,
 }: ClinicianContentAuthoringScreenProps) {
   const [access, setAccess] = useState<AccessState>('checking');
   const [sourceLibrary, setSourceLibrary] = useState<SourceLibraryState>({
@@ -83,7 +98,9 @@ export function ClinicianContentAuthoringScreen({
     sources: [],
     error: null,
   });
-  const [form, setForm] = useState<ContentForm>(emptyContentForm);
+  const [form, setForm] = useState<ContentForm>(() =>
+    initialBlock ? formFromBlock(initialBlock) : emptyContentForm(),
+  );
   const [actionInFlight, setActionInFlight] = useState<AuthoringAction>(null);
   const [feedback, setFeedback] = useState<string | null>(null);
 
@@ -115,6 +132,11 @@ export function ClinicianContentAuthoringScreen({
 
     return subscribeToContentSourceLibrary(setSourceLibrary) ?? undefined;
   }, [access]);
+
+  useEffect(() => {
+    setForm(initialBlock ? formFromBlock(initialBlock) : emptyContentForm());
+    setFeedback(null);
+  }, [initialBlock]);
 
   const publishedSources = useMemo(
     () =>
@@ -208,6 +230,8 @@ export function ClinicianContentAuthoringScreen({
     });
   };
 
+  const isEditingDraft = initialBlock !== null;
+
   const runAction = async (
     action: NonNullable<AuthoringAction>,
     callback: () => Promise<void>,
@@ -236,7 +260,9 @@ export function ClinicianContentAuthoringScreen({
     void runAction(
       'save',
       () => saveDraft(input),
-      'Draft saved. You can continue editing or submit it for clinical review.',
+      isEditingDraft
+        ? 'Draft revision saved as the next immutable version.'
+        : 'Draft saved. You can continue editing or submit it for clinical review.',
     );
   };
 
@@ -294,10 +320,13 @@ export function ClinicianContentAuthoringScreen({
           <Text style={styles.brand}>BABYREADY / AUTHOR</Text>
         </View>
 
-        <Text style={styles.title}>Author clinical content</Text>
+        <Text style={styles.title}>
+          {isEditingDraft ? 'Edit clinical draft' : 'Author clinical content'}
+        </Text>
         <Text style={styles.subtitle}>
-          Create structured learner content, attach published evidence, and send
-          the block to clinical review.
+          {isEditingDraft
+            ? 'Revise the learner-facing content and evidence, then save a new version or submit it for review.'
+            : 'Create structured learner content, attach published evidence, and send the block to clinical review.'}
         </Text>
 
         {access === 'checking' ? (
@@ -342,10 +371,13 @@ export function ClinicianContentAuthoringScreen({
 
             <View style={styles.formPanel}>
               <Text style={styles.sectionLabel}>CONTENT SCOPE</Text>
-              <Text style={styles.formTitle}>Placement in the course</Text>
+              <Text style={styles.formTitle}>
+                {isEditingDraft ? 'Draft version details' : 'Placement in the course'}
+              </Text>
               <Text style={styles.formHint}>
-                Use stable IDs so a draft can be revised without breaking its
-                review history.
+                {isEditingDraft
+                  ? 'Scope IDs are locked while revising a draft so its version history remains connected.'
+                  : 'Use stable IDs so a draft can be revised without breaking its review history.'}
               </Text>
 
               <Text style={styles.fieldLabel}>Course ID</Text>
@@ -353,10 +385,11 @@ export function ClinicianContentAuthoringScreen({
                 accessibilityLabel="Course ID"
                 autoCapitalize="none"
                 autoCorrect={false}
+                editable={!isEditingDraft}
                 onChangeText={(value) => updateForm('courseId', value)}
                 placeholder="virtual-childbirth"
                 placeholderTextColor="#8B8881"
-                style={styles.input}
+                style={[styles.input, isEditingDraft && styles.disabledInput]}
                 testID="input-course-id"
                 value={form.courseId}
               />
@@ -368,10 +401,11 @@ export function ClinicianContentAuthoringScreen({
                     accessibilityLabel="Module ID"
                     autoCapitalize="none"
                     autoCorrect={false}
+                    editable={!isEditingDraft}
                     onChangeText={(value) => updateForm('moduleId', value)}
                     placeholder="labor-and-birth"
                     placeholderTextColor="#8B8881"
-                    style={styles.input}
+                    style={[styles.input, isEditingDraft && styles.disabledInput]}
                     testID="input-module-id"
                     value={form.moduleId}
                   />
@@ -382,10 +416,11 @@ export function ClinicianContentAuthoringScreen({
                     accessibilityLabel="Lesson ID"
                     autoCapitalize="none"
                     autoCorrect={false}
+                    editable={!isEditingDraft}
                     onChangeText={(value) => updateForm('lessonId', value)}
                     placeholder="early-labor"
                     placeholderTextColor="#8B8881"
-                    style={styles.input}
+                    style={[styles.input, isEditingDraft && styles.disabledInput]}
                     testID="input-lesson-id"
                     value={form.lessonId}
                   />
@@ -397,10 +432,11 @@ export function ClinicianContentAuthoringScreen({
                 accessibilityLabel="Content block ID"
                 autoCapitalize="none"
                 autoCorrect={false}
+                editable={!isEditingDraft}
                 onChangeText={(value) => updateForm('id', value)}
                 placeholder="when-to-call-your-team"
                 placeholderTextColor="#8B8881"
-                style={styles.input}
+                style={[styles.input, isEditingDraft && styles.disabledInput]}
                 testID="input-content-block-id"
                 value={form.id}
               />
@@ -755,6 +791,10 @@ const styles = StyleSheet.create({
     marginTop: 7,
     minHeight: 46,
     paddingHorizontal: 12,
+  },
+  disabledInput: {
+    backgroundColor: '#EEECE7',
+    color: '#696761',
   },
   idRow: {
     flexDirection: 'row',

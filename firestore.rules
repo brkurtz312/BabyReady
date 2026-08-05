@@ -60,6 +60,28 @@ service cloud.firestore {
         && isPublicationState(request.resource.data.publicationState);
     }
 
+    function validClinicalContentVersion(contentBlockId) {
+      return request.resource.data.id is string
+        && request.resource.data.versionNumber is int
+        && request.resource.data.versionNumber > 0
+        && request.resource.data.action in [
+          'draft_saved',
+          'submitted',
+          'approved',
+          'published',
+          'frozen'
+        ]
+        && request.resource.data.actorId is string
+        && request.resource.data.createdAt is timestamp
+        && request.resource.data.snapshot is map
+        && request.resource.data.snapshot.contentBlockId == contentBlockId
+        && request.resource.data.snapshot.type is string
+        && request.resource.data.snapshot.body is string
+        && request.resource.data.snapshot.sourceIds is list
+        && request.resource.data.snapshot.isClinicalClaim is bool
+        && isPublicationState(request.resource.data.snapshot.publicationState);
+    }
+
     // Clinically reviewed curriculum is write-protected behind a server-side
     // admin workflow. Users may read only currently published material.
     match /courses/{courseId} {
@@ -77,6 +99,12 @@ service cloud.firestore {
           match /contentBlocks/{contentBlockId} {
             allow read: if courseIsPublished(courseId) || isAdmin();
             allow write: if isAdmin() && validClinicalContentBlock();
+
+            match /versions/{versionId} {
+              allow read: if isAdmin();
+              allow create: if isAdmin() && validClinicalContentVersion(contentBlockId);
+              allow update, delete: if false;
+            }
           }
         }
       }

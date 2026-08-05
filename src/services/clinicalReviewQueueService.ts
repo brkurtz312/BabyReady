@@ -1,4 +1,5 @@
 import {
+  collection,
   collectionGroup,
   doc,
   getDoc,
@@ -10,13 +11,23 @@ import {
 } from 'firebase/firestore';
 
 import { db } from '../lib/firebase';
-import type { ClinicalContentBlock, ContentSource } from '../models/course';
+import type {
+  ClinicalContentBlock,
+  ClinicalContentVersion,
+  ContentSource,
+} from '../models/course';
 
 export type ReviewQueueState =
   | { status: 'unconfigured'; blocks: []; error: null }
   | { status: 'loading'; blocks: ClinicalContentBlock[]; error: null }
   | { status: 'ready'; blocks: ClinicalContentBlock[]; error: null }
   | { status: 'error'; blocks: ClinicalContentBlock[]; error: string };
+
+export type ContentVersionHistoryState =
+  | { status: 'unconfigured'; versions: []; error: null }
+  | { status: 'loading'; versions: ClinicalContentVersion[]; error: null }
+  | { status: 'ready'; versions: ClinicalContentVersion[]; error: null }
+  | { status: 'error'; versions: ClinicalContentVersion[]; error: string };
 
 function readableQueueError(error: unknown): string {
   if (typeof error === 'object' && error && 'message' in error) {
@@ -50,6 +61,51 @@ export function subscribeToClinicalReviewQueue(
     },
     (error) => {
       onChange({ status: 'error', blocks: [], error: readableQueueError(error) });
+    },
+  );
+}
+
+export function subscribeToContentVersionHistory(
+  block: ClinicalContentBlock,
+  onChange: (state: ContentVersionHistoryState) => void,
+): Unsubscribe | null {
+  if (!db) {
+    onChange({ status: 'unconfigured', versions: [], error: null });
+    return null;
+  }
+
+  onChange({ status: 'loading', versions: [], error: null });
+
+  const reference = doc(
+    db,
+    'courses',
+    block.courseId,
+    'modules',
+    block.moduleId,
+    'lessons',
+    block.lessonId,
+    'contentBlocks',
+    block.id,
+  );
+
+  return onSnapshot(
+    query(collection(reference, 'versions'), orderBy('versionNumber', 'desc'), limit(25)),
+    (snapshot) => {
+      onChange({
+        status: 'ready',
+        versions: snapshot.docs.map((version) => ({
+          ...(version.data() as ClinicalContentVersion),
+          id: version.id,
+        })),
+        error: null,
+      });
+    },
+    (error) => {
+      onChange({
+        status: 'error',
+        versions: [],
+        error: readableQueueError(error),
+      });
     },
   );
 }

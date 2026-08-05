@@ -9,6 +9,7 @@ import {
 } from './src/auth/AuthProvider';
 import { courseModules, recommendedModule } from './src/data/course';
 import { firebaseIsConfigured } from './src/lib/firebase';
+import type { ClinicalContentBlock } from './src/models/course';
 import { ClinicianReviewScreen } from './src/screens/ClinicianReviewScreen';
 import { ClinicianContentAuthoringScreen } from './src/screens/ClinicianContentAuthoringScreen';
 import { ClinicianSourceLibraryScreen } from './src/screens/ClinicianSourceLibraryScreen';
@@ -29,6 +30,9 @@ function BabyReadyApp() {
   const [activeView, setActiveView] = useState<
     'learner' | 'review' | 'sources' | 'author'
   >('learner');
+  const [draftToEdit, setDraftToEdit] = useState<ClinicalContentBlock | null>(
+    null,
+  );
 
   const showUrgentGuidance = () => {
     Alert.alert(
@@ -50,7 +54,11 @@ function BabyReadyApp() {
   if (activeView === 'author' && authState.status === 'ready') {
     return (
       <ClinicianContentAuthoringScreen
-        onExit={() => setActiveView('review')}
+        initialBlock={draftToEdit}
+        onExit={() => {
+          setDraftToEdit(null);
+          setActiveView('review');
+        }}
         user={authState.user}
       />
     );
@@ -60,7 +68,14 @@ function BabyReadyApp() {
     return (
       <ClinicianReviewScreen
         onExit={() => setActiveView('learner')}
-        onOpenContentAuthoring={() => setActiveView('author')}
+        onEditDraft={(block) => {
+          setDraftToEdit(block);
+          setActiveView('author');
+        }}
+        onOpenContentAuthoring={() => {
+          setDraftToEdit(null);
+          setActiveView('author');
+        }}
         onOpenSourceLibrary={() => setActiveView('sources')}
         user={authState.user}
       />

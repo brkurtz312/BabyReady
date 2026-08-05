@@ -2,6 +2,7 @@ import {
   collection,
   doc,
   getDoc,
+  runTransaction,
   serverTimestamp,
   setDoc,
   Timestamp,
@@ -11,6 +12,8 @@ import {
 import { requireAuth, requireFirestore } from '../lib/firebase';
 import type {
   ClinicalContentBlock,
+  ClinicalContentVersion,
+  ClinicalContentVersionAction,
   ClinicalReview,
   ContentPublicationState,
   CourseRecord,
@@ -95,6 +98,77 @@ function contentBlockReference(
   );
 }
 
+type VersionedContentUpdate = {
+  actorId: string;
+  action: ClinicalContentVersionAction;
+  note?: string;
+  requireExisting?: boolean;
+  update: Record<string, unknown>;
+};
+
+function snapshotForVersion(
+  content: Partial<ClinicalContentBlock>,
+  fallbackId: string,
+): ClinicalContentVersion['snapshot'] {
+  return {
+    contentBlockId:
+      typeof content.id === 'string' ? content.id : fallbackId,
+    type: content.type ?? 'text',
+    body: typeof content.body === 'string' ? content.body : '',
+    sourceIds: Array.isArray(content.sourceIds) ? content.sourceIds : [],
+    isClinicalClaim: content.isClinicalClaim === true,
+    publicationState: content.publicationState ?? 'draft',
+  };
+}
+
+async function writeVersionedContentBlock(
+  reference: DocumentReference,
+  context: VersionedContentUpdate,
+): Promise<void> {
+  const firestore = requireFirestore();
+
+  await runTransaction(firestore, async (transaction) => {
+    const existingSnapshot = await transaction.get(reference);
+    if (context.requireExisting && !existingSnapshot.exists()) {
+      throw new Error('The clinical content block does not exist.');
+    }
+
+    const existing = existingSnapshot.exists()
+      ? (existingSnapshot.data() as Partial<ClinicalContentBlock>)
+      : {};
+    const merged = {
+      ...existing,
+      ...context.update,
+    } as Partial<ClinicalContentBlock>;
+    const priorVersionCount =
+      typeof existing.versionCount === 'number' ? existing.versionCount : 0;
+    const versionNumber = priorVersionCount + 1;
+    const versionReference = doc(collection(reference, 'versions'));
+
+    transaction.set(
+      reference,
+      {
+        ...context.update,
+        versionCount: versionNumber,
+        updatedAt: serverTimestamp(),
+      },
+      { merge: true },
+    );
+    transaction.set(
+      versionReference,
+      {
+        id: versionReference.id,
+        versionNumber,
+        action: context.action,
+        actorId: context.actorId,
+        createdAt: serverTimestamp(),
+        ...(context.note ? { note: context.note } : {}),
+        snapshot: snapshotForVersion(merged, reference.id),
+      } satisfies ClinicalContentVersion,
+    );
+  });
+}
+
 export async function createCourseDraft(input: CreateCourseInput): Promise<void> {
   const adminId = await requireAdminClaim();
 
@@ -113,7 +187,7 @@ export async function createCourseDraft(input: CreateCourseInput): Promise<void>
 export async function upsertClinicalContentBlock(
   input: UpsertContentBlockInput,
 ): Promise<void> {
-  await requireAdminClaim();
+  const adminId = await requireAdminClaim();
   validateContentBlockInput(input);
 
   const reference = contentBlockReference(
@@ -122,22 +196,27 @@ export async function upsertClinicalContentBlock(
     input.lessonId,
     input.id,
   );
+  const {
+    lastReviewedAt: _lastReviewedAt,
+    nextReviewAt: _nextReviewAt,
+    publicationState: _publicationState,
+    ...content
+  } = input;
 
-  await setDoc(
+  await writeVersionedContentBlock(
     reference,
     {
-      ...input,
-      sourceIds: input.sourceIds ?? [],
-      publicationState: input.publicationState ?? 'draft',
-      lastReviewedAt: input.lastReviewedAt
-        ? Timestamp.fromDate(input.lastReviewedAt)
-        : null,
-      nextReviewAt: input.nextReviewAt
-        ? Timestamp.fromDate(input.nextReviewAt)
-        : null,
-      updatedAt: serverTimestamp(),
+      actorId: adminId,
+      action: 'draft_saved',
+      update: {
+        ...content,
+        sourceIds: input.sourceIds ?? [],
+        publicationState: 'draft',
+        clinicalReviewerId: null,
+        lastReviewedAt: null,
+        nextReviewAt: null,
+      },
     },
-    { merge: true },
   );
 }
 
@@ -180,15 +259,18 @@ export async function submitContentBlockForClinicalReview(
     }
   }
 
-  await setDoc(
+  await writeVersionedContentBlock(
     reference,
     {
-      publicationState: 'submitted',
-      submittedBy: adminId,
-      submittedAt: serverTimestamp(),
-      updatedAt: serverTimestamp(),
+      actorId: adminId,
+      action: 'submitted',
+      requireExisting: true,
+      update: {
+        publicationState: 'submitted',
+        submittedBy: adminId,
+        submittedAt: serverTimestamp(),
+      },
     },
-    { merge: true },
   );
 }
 
@@ -251,16 +333,20 @@ export async function approveContentBlock(
       ...review,
       approvedAt: serverTimestamp(),
     }),
-    setDoc(
+    writeVersionedContentBlock(
       contentBlock,
       {
-        publicationState: 'approved',
-        clinicalReviewerId: reviewerId,
-        lastReviewedAt: serverTimestamp(),
-        nextReviewAt: Timestamp.fromDate(nextReviewAt),
-        updatedAt: serverTimestamp(),
+        actorId: reviewerId,
+        action: 'approved',
+        note: reviewNotes.trim(),
+        requireExisting: true,
+        update: {
+          publicationState: 'approved',
+          clinicalReviewerId: reviewerId,
+          lastReviewedAt: serverTimestamp(),
+          nextReviewAt: Timestamp.fromDate(nextReviewAt),
+        },
       },
-      { merge: true },
     ),
   ]);
 }
@@ -271,7 +357,7 @@ export async function publishContentBlock(
   lessonId: string,
   contentBlockId: string,
 ): Promise<void> {
-  await requireAdminClaim();
+  const adminId = await requireAdminClaim();
   const reference = contentBlockReference(courseId, moduleId, lessonId, contentBlockId);
   const snapshot = await getDoc(reference);
 
@@ -292,14 +378,17 @@ export async function publishContentBlock(
     );
   }
 
-  await setDoc(
+  await writeVersionedContentBlock(
     reference,
     {
-      publicationState: 'published',
-      publishedAt: serverTimestamp(),
-      updatedAt: serverTimestamp(),
+      actorId: adminId,
+      action: 'published',
+      requireExisting: true,
+      update: {
+        publicationState: 'published',
+        publishedAt: serverTimestamp(),
+      },
     },
-    { merge: true },
   );
 }
 
@@ -313,15 +402,19 @@ export async function freezeContentBlock(
   const adminId = await requireAdminClaim();
   const reference = contentBlockReference(courseId, moduleId, lessonId, contentBlockId);
 
-  await setDoc(
+  await writeVersionedContentBlock(
     reference,
     {
-      publicationState: 'frozen',
-      frozenAt: serverTimestamp(),
-      frozenBy: adminId,
-      freezeReason,
-      updatedAt: serverTimestamp(),
+      actorId: adminId,
+      action: 'frozen',
+      note: freezeReason.trim(),
+      requireExisting: true,
+      update: {
+        publicationState: 'frozen',
+        frozenAt: serverTimestamp(),
+        frozenBy: adminId,
+        freezeReason: freezeReason.trim(),
+      },
     },
-    { merge: true },
   );
 }

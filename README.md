@@ -103,6 +103,16 @@ and submit the completed block to the clinical review queue. Submission
 revalidates every source attachment so a frozen or unpublished source cannot
 reach review as supporting evidence.
 
+### Draft revisions and version history
+
+The clinical review queue offers an **Edit draft** action that reopens a draft
+in the authoring workspace while preserving and locking its course, module,
+lesson, and block identifiers. Every draft save and workflow transition
+(submission, approval, publication, or freeze) creates a numbered snapshot in
+the block's `versions` subcollection. Version records are append-only:
+administrators may read or create valid snapshots, but Firestore rules reject
+updates and deletion.
+
 ### Local Emulator Suite
 
 Set the following development-only values to connect the app to local Auth and Firestore emulators:
