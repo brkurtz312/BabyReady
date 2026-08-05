@@ -79,6 +79,12 @@ The app presents the course shell when Firebase is unconfigured. Once Firebase i
 
 Email/Password registration and sign-in are available as service functions for the forthcoming onboarding screens. They are intentionally not exposed in the current starter UI. Mobile Auth persistence uses AsyncStorage; web uses Firebase's standard web Auth session handling.
 
+### Clinician content review workspace
+
+The learner shell includes an explicit **Open clinician content review** entry point for Sprint 1 testing. The workspace verifies the current Firebase ID token before it subscribes to a live Firestore review queue. Accounts without the `admin: true` custom claim see an access explanation and cannot load clinical content.
+
+For a selected content block, reviewers can inspect learner-facing copy and linked source records, write review notes, set the next review date, submit a draft, approve submitted content, publish approved content, or freeze content with a documented reason. Approval independently verifies that each linked source record exists and is in the `published` state. Publication requires the protected approval metadata already enforced by Firestore rules.
+
 ### Local Emulator Suite
 
 Set the following development-only values to connect the app to local Auth and Firestore emulators:
@@ -124,8 +130,10 @@ Custom claims must be minted only by a trusted server-side Admin SDK workflow. T
 │   ├── data/course.ts               # Six-module seed data
 │   ├── lib/firebase.ts              # Auth, Firestore, and emulator initialization
 │   ├── models/course.ts              # Shared domain types
+│   ├── screens/ClinicianReviewScreen.tsx # Admin-gated content review workspace
 │   └── services/
 │       ├── authService.ts            # Anonymous and email/password flows
+│       ├── clinicalReviewQueueService.ts # Live review queue and source lookup
 │       ├── contentGovernanceService.ts # Clinical-content lifecycle
 │       ├── sourceService.ts          # Source-record lifecycle
 │       ├── userProfileService.ts     # users/{uid} provisioning

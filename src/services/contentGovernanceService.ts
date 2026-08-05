@@ -142,10 +142,41 @@ export async function approveContentBlock(
   lessonId: string,
   contentBlockId: string,
   reviewNotes: string,
+  nextReviewAt: Date,
 ): Promise<void> {
   const reviewerId = await requireAdminClaim();
   const db = requireFirestore();
   const contentBlock = contentBlockReference(courseId, moduleId, lessonId, contentBlockId);
+  const contentSnapshot = await getDoc(contentBlock);
+
+  if (!contentSnapshot.exists()) {
+    throw new Error('The clinical content block does not exist.');
+  }
+
+  const content = contentSnapshot.data() as Partial<ClinicalContentBlock>;
+  if (content.isClinicalClaim) {
+    if (!content.sourceIds?.length) {
+      throw new Error('Clinical claims need at least one linked source before approval.');
+    }
+    if (nextReviewAt.getTime() <= Date.now()) {
+      throw new Error('Set the next clinical review date in the future before approval.');
+    }
+
+    const sourceSnapshots = await Promise.all(
+      content.sourceIds.map((sourceId) => getDoc(doc(db, 'sources', sourceId))),
+    );
+    if (
+      sourceSnapshots.some(
+        (source) =>
+          !source.exists() || source.data().publicationState !== 'published',
+      )
+    ) {
+      throw new Error(
+        'Every linked source must exist and be published before clinical approval.',
+      );
+    }
+  }
+
   const reviewReference = doc(collection(db, 'clinicalReviews'));
 
   const review: ClinicalReview = {
@@ -170,6 +201,7 @@ export async function approveContentBlock(
         publicationState: 'approved',
         clinicalReviewerId: reviewerId,
         lastReviewedAt: serverTimestamp(),
+        nextReviewAt: Timestamp.fromDate(nextReviewAt),
         updatedAt: serverTimestamp(),
       },
       { merge: true },

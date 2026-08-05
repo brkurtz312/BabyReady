@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { Alert, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
 
@@ -8,6 +9,7 @@ import {
 } from './src/auth/AuthProvider';
 import { courseModules, recommendedModule } from './src/data/course';
 import { firebaseIsConfigured } from './src/lib/firebase';
+import { ClinicianReviewScreen } from './src/screens/ClinicianReviewScreen';
 
 const currentPregnancyWeek = 25;
 
@@ -22,6 +24,7 @@ export default function App() {
 function BabyReadyApp() {
   const recommended = recommendedModule(currentPregnancyWeek);
   const authState = useBabyReadyAuth();
+  const [activeView, setActiveView] = useState<'learner' | 'clinician'>('learner');
 
   const showUrgentGuidance = () => {
     Alert.alert(
@@ -30,6 +33,15 @@ function BabyReadyApp() {
       [{ text: 'I understand' }],
     );
   };
+
+  if (activeView === 'clinician' && authState.status === 'ready') {
+    return (
+      <ClinicianReviewScreen
+        onExit={() => setActiveView('learner')}
+        user={authState.user}
+      />
+    );
+  }
 
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -133,6 +145,24 @@ function BabyReadyApp() {
               ? authState.error
               : 'Secure local storage, Auth persistence, and Firestore rules are included in this scaffold.'}
           </Text>
+          <Pressable
+            accessibilityRole="button"
+            accessibilityLabel="Open the clinician content review workspace"
+            onPress={() => {
+              if (authState.status !== 'ready') {
+                Alert.alert(
+                  'Sign-in required',
+                  'Finish Firebase Authentication before opening the clinician review workspace.',
+                );
+                return;
+              }
+
+              setActiveView('clinician');
+            }}
+            style={styles.clinicianLink}
+          >
+            <Text style={styles.clinicianLinkText}>Open clinician content review</Text>
+          </Pressable>
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -344,5 +374,16 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 17,
     marginTop: 9,
+  },
+  clinicianLink: {
+    alignSelf: 'flex-start',
+    marginTop: 14,
+    minHeight: 44,
+    justifyContent: 'center',
+  },
+  clinicianLinkText: {
+    color: '#0C4E54',
+    fontSize: 14,
+    fontWeight: '800',
   },
 });
