@@ -128,6 +128,12 @@ exporting user ID, and a point-in-time export timestamp. Native apps create a
 PDF and open the system share sheet; the web app opens the browser print dialog
 so the reviewer can save the report as a PDF.
 
+Every successful export attempt is also recorded in an immutable,
+administrator-only `comparisonAuditExports` Firestore subcollection. Each log
+entry contains the content scope, compared revision IDs and version numbers,
+PDF route, clinician ID, and a server timestamp. The review workspace shows the
+ten most recent audit exports for the selected content block.
+
 ### Local Emulator Suite
 
 Set the following development-only values to connect the app to local Auth and Firestore emulators:

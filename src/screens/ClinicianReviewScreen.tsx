@@ -37,6 +37,12 @@ import {
   exportComparisonAuditPdf,
   type ComparisonAuditPdfExportResult,
 } from '../services/comparisonAuditPdfService';
+import {
+  recordComparisonAuditExport,
+  subscribeToComparisonAuditExportLog,
+  type ComparisonAuditExportLogState,
+} from '../services/comparisonAuditLogService';
+import type { ComparisonAuditExportRoute } from '../models/course';
 
 type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
 
@@ -149,6 +155,34 @@ function auditExportMessage(result: ComparisonAuditPdfExportResult): string {
   }
 }
 
+function auditExportRoute(
+  result: ComparisonAuditPdfExportResult,
+): ComparisonAuditExportRoute {
+  switch (result) {
+    case 'print-dialog-opened':
+      return 'web_print';
+    case 'share-dialog-opened':
+      return 'native_share';
+    case 'file-created':
+      return 'file_created';
+    default:
+      return 'file_created';
+  }
+}
+
+function formatAuditExportRoute(route: ComparisonAuditExportRoute): string {
+  switch (route) {
+    case 'web_print':
+      return 'Browser print';
+    case 'native_share':
+      return 'System share sheet';
+    case 'file_created':
+      return 'PDF file created';
+    default:
+      return route;
+  }
+}
+
 export function ClinicianReviewScreen({
   user,
   onExit,
@@ -170,6 +204,12 @@ export function ClinicianReviewScreen({
     versions: [],
     error: null,
   });
+  const [auditExportLog, setAuditExportLog] =
+    useState<ComparisonAuditExportLogState>({
+      status: 'loading',
+      entries: [],
+      error: null,
+    });
   const [baselineVersionId, setBaselineVersionId] = useState<string | null>(null);
   const [comparisonVersionId, setComparisonVersionId] = useState<string | null>(null);
   const [auditExportInFlight, setAuditExportInFlight] = useState(false);
@@ -268,6 +308,18 @@ export function ClinicianReviewScreen({
     return () => {
       active = false;
     };
+  }, [selectedBlock]);
+
+  useEffect(() => {
+    if (!selectedBlock) {
+      setAuditExportLog({ status: 'ready', entries: [], error: null });
+      return undefined;
+    }
+
+    return (
+      subscribeToComparisonAuditExportLog(selectedBlock, setAuditExportLog) ??
+      undefined
+    );
   }, [selectedBlock]);
 
   useEffect(() => {
@@ -426,9 +478,27 @@ export function ClinicianReviewScreen({
         generatedAt: new Date().toLocaleString(),
         generatedBy: user.uid,
       });
-      setAuditExportFeedback(
-        auditExportMessage(result),
-      );
+      const exportMessage = auditExportMessage(result);
+
+      try {
+        await recordComparisonAuditExport({
+          block: selectedBlock,
+          baselineVersionId: baselineVersion.id,
+          baselineVersionNumber: baselineVersion.versionNumber,
+          comparisonVersionId: comparisonVersion.id,
+          comparisonVersionNumber: comparisonVersion.versionNumber,
+          exportRoute: auditExportRoute(result),
+        });
+        setAuditExportFeedback(`${exportMessage} The export was logged.`);
+      } catch (logError) {
+        setAuditExportFeedback(
+          `${exportMessage} The PDF was prepared, but the export log could not be saved: ${
+            logError instanceof Error
+              ? logError.message
+              : 'Unknown logging error.'
+          }`,
+        );
+      }
     } catch (error) {
       setAuditExportFeedback(
         error instanceof Error
@@ -825,6 +895,46 @@ export function ClinicianReviewScreen({
                               {auditExportFeedback}
                             </Text>
                           ) : null}
+                          <View style={styles.auditLogSection}>
+                            <Text style={styles.auditLogTitle}>
+                              RECENT AUDIT EXPORTS
+                            </Text>
+                            {auditExportLog.status === 'loading' ? (
+                              <Text style={styles.auditLogText}>
+                                Loading export history…
+                              </Text>
+                            ) : null}
+                            {auditExportLog.status === 'error' ? (
+                              <Text style={styles.auditLogError}>
+                                {auditExportLog.error}
+                              </Text>
+                            ) : null}
+                            {auditExportLog.status === 'ready' &&
+                            auditExportLog.entries.length === 0 ? (
+                              <Text style={styles.auditLogText}>
+                                No comparison audits have been exported for this content block.
+                              </Text>
+                            ) : null}
+                            {auditExportLog.entries.map((entry) => (
+                              <View
+                                key={entry.id}
+                                style={styles.auditLogEntry}
+                                testID={`audit-export-log-entry-${entry.id}`}
+                              >
+                                <Text style={styles.auditLogEntryTitle}>
+                                  v{entry.baselineVersionNumber} compared with v
+                                  {entry.comparisonVersionNumber}
+                                </Text>
+                                <Text style={styles.auditLogEntryMeta}>
+                                  {formatAuditExportRoute(entry.exportRoute)} ·{' '}
+                                  {formatVersionDate(entry.exportedAt)}
+                                </Text>
+                                <Text style={styles.auditLogEntryMeta}>
+                                  Exported by {entry.exportedBy}
+                                </Text>
+                              </View>
+                            ))}
+                          </View>
 
                           <View style={styles.copyDiffSection}>
                             <Text style={styles.copyDiffTitle}>
@@ -1569,6 +1679,49 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 18,
     marginTop: 7,
+  },
+  auditLogSection: {
+    borderTopColor: '#C8DDD7',
+    borderTopWidth: 1,
+    marginTop: 12,
+    paddingTop: 10,
+  },
+  auditLogTitle: {
+    color: '#0C4E54',
+    fontSize: 10,
+    fontWeight: '800',
+    letterSpacing: 0.5,
+  },
+  auditLogText: {
+    color: '#696761',
+    fontSize: 12,
+    lineHeight: 18,
+    marginTop: 6,
+  },
+  auditLogError: {
+    color: '#8C3B21',
+    fontSize: 12,
+    lineHeight: 18,
+    marginTop: 6,
+  },
+  auditLogEntry: {
+    backgroundColor: '#FFFFFF',
+    borderColor: '#C8DDD7',
+    borderRadius: 8,
+    borderWidth: 1,
+    marginTop: 7,
+    padding: 8,
+  },
+  auditLogEntryTitle: {
+    color: '#28251D',
+    fontSize: 12,
+    fontWeight: '800',
+  },
+  auditLogEntryMeta: {
+    color: '#696761',
+    fontSize: 11,
+    lineHeight: 16,
+    marginTop: 2,
   },
   copyDiffSection: {
     backgroundColor: '#FFFFFF',

@@ -122,3 +122,24 @@ export type ClinicalContentVersion = {
     publicationState: ContentPublicationState;
   };
 };
+
+export type ComparisonAuditExportRoute =
+  | 'web_print'
+  | 'native_share'
+  | 'file_created';
+
+export type ComparisonAuditExportLog = {
+  id: string;
+  courseId: string;
+  moduleId: string;
+  lessonId: string;
+  contentBlockId: string;
+  baselineVersionId: string;
+  baselineVersionNumber: number;
+  comparisonVersionId: string;
+  comparisonVersionNumber: number;
+  exportFormat: 'pdf';
+  exportRoute: ComparisonAuditExportRoute;
+  exportedBy: string;
+  exportedAt: unknown;
+};

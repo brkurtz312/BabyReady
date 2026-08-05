@@ -14,6 +14,7 @@ import {
   deleteDoc,
   doc,
   getDoc,
+  serverTimestamp,
   setDoc,
   updateDoc,
 } from 'firebase/firestore';
@@ -156,6 +157,54 @@ test('clinical content version history is admin-readable and append-only', async
     updateDoc(doc(admin, versionPath), { note: 'An immutable version cannot be edited.' }),
   );
   await assertFails(deleteDoc(doc(admin, versionPath)));
+});
+
+test('comparison audit exports are admin-only, attributable, and append-only', async () => {
+  const author = userDb('author');
+  const admin = userDb('admin', { admin: true });
+  const anonymous = testEnvironment.unauthenticatedContext().firestore();
+  const auditPath =
+    'courses/birthready/modules/module-1/lessons/lesson-1/contentBlocks/welcome/comparisonAuditExports/export-1';
+  const auditExport = {
+    id: 'export-1',
+    courseId: 'birthready',
+    moduleId: 'module-1',
+    lessonId: 'lesson-1',
+    contentBlockId: 'welcome',
+    baselineVersionId: 'version-1',
+    baselineVersionNumber: 1,
+    comparisonVersionId: 'version-2',
+    comparisonVersionNumber: 2,
+    exportFormat: 'pdf',
+    exportRoute: 'web_print',
+    exportedBy: 'admin',
+    exportedAt: serverTimestamp(),
+  };
+
+  await assertFails(setDoc(doc(author, auditPath), auditExport));
+  await assertSucceeds(setDoc(doc(admin, auditPath), auditExport));
+  await assertSucceeds(getDoc(doc(admin, auditPath)));
+  await assertFails(getDoc(doc(anonymous, auditPath)));
+  await assertFails(
+    updateDoc(doc(admin, auditPath), { exportRoute: 'file_created' }),
+  );
+  await assertFails(deleteDoc(doc(admin, auditPath)));
+  await assertFails(
+    setDoc(doc(admin, `${auditPath}-wrong-actor`), {
+      ...auditExport,
+      id: `${auditExport.id}-wrong-actor`,
+      exportedBy: 'other-clinician',
+      exportedAt: serverTimestamp(),
+    }),
+  );
+  await assertFails(
+    setDoc(doc(admin, `${auditPath}-invalid`), {
+      ...auditExport,
+      id: `${auditExport.id}-invalid`,
+      comparisonVersionId: auditExport.baselineVersionId,
+      exportedAt: serverTimestamp(),
+    }),
+  );
 });
 
 test('only complete, published source records are publicly readable', async () => {

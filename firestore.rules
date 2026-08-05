@@ -82,6 +82,50 @@ service cloud.firestore {
         && isPublicationState(request.resource.data.snapshot.publicationState);
     }
 
+    function validComparisonAuditExport(
+      courseId,
+      moduleId,
+      lessonId,
+      contentBlockId,
+      auditExportId
+    ) {
+      return request.resource.data.keys().hasOnly([
+          'id',
+          'courseId',
+          'moduleId',
+          'lessonId',
+          'contentBlockId',
+          'baselineVersionId',
+          'baselineVersionNumber',
+          'comparisonVersionId',
+          'comparisonVersionNumber',
+          'exportFormat',
+          'exportRoute',
+          'exportedBy',
+          'exportedAt'
+        ])
+        && request.resource.data.id == auditExportId
+        && request.resource.data.courseId == courseId
+        && request.resource.data.moduleId == moduleId
+        && request.resource.data.lessonId == lessonId
+        && request.resource.data.contentBlockId == contentBlockId
+        && request.resource.data.baselineVersionId is string
+        && request.resource.data.baselineVersionNumber is int
+        && request.resource.data.baselineVersionNumber > 0
+        && request.resource.data.comparisonVersionId is string
+        && request.resource.data.comparisonVersionId != request.resource.data.baselineVersionId
+        && request.resource.data.comparisonVersionNumber is int
+        && request.resource.data.comparisonVersionNumber > 0
+        && request.resource.data.exportFormat == 'pdf'
+        && request.resource.data.exportRoute in [
+          'web_print',
+          'native_share',
+          'file_created'
+        ]
+        && request.resource.data.exportedBy == request.auth.uid
+        && request.resource.data.exportedAt == request.time;
+    }
+
     // Clinically reviewed curriculum is write-protected behind a server-side
     // admin workflow. Users may read only currently published material.
     match /courses/{courseId} {
@@ -103,6 +147,19 @@ service cloud.firestore {
             match /versions/{versionId} {
               allow read: if isAdmin();
               allow create: if isAdmin() && validClinicalContentVersion(contentBlockId);
+              allow update, delete: if false;
+            }
+
+            match /comparisonAuditExports/{auditExportId} {
+              allow read: if isAdmin();
+              allow create: if isAdmin()
+                && validComparisonAuditExport(
+                  courseId,
+                  moduleId,
+                  lessonId,
+                  contentBlockId,
+                  auditExportId
+                );
               allow update, delete: if false;
             }
           }
