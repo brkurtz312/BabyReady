@@ -20,6 +20,10 @@ import {
   subscribeToComparisonAuditExportDashboard,
   type ComparisonAuditExportDashboardState,
 } from '../services/comparisonAuditLogService';
+import {
+  exportAuditLogCsv,
+  type AuditExportCsvResult,
+} from '../services/auditExportCsvService';
 
 type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
 
@@ -177,6 +181,19 @@ function matchingAuditEntries(
   });
 }
 
+function csvExportMessage(result: AuditExportCsvResult): string {
+  switch (result) {
+    case 'browser-download-started':
+      return 'The filtered audit CSV download has started.';
+    case 'share-dialog-opened':
+      return 'The filtered audit CSV is ready in the system share sheet.';
+    case 'file-created':
+      return 'The filtered audit CSV was created on this device.';
+    default:
+      return 'The filtered audit CSV is ready.';
+  }
+}
+
 export function ClinicianAuditLogScreen({
   user,
   onExit,
@@ -189,6 +206,10 @@ export function ClinicianAuditLogScreen({
       error: null,
     });
   const [filters, setFilters] = useState<AuditFilters>(initialFilters);
+  const [csvExportInFlight, setCsvExportInFlight] = useState(false);
+  const [csvExportFeedback, setCsvExportFeedback] = useState<string | null>(
+    null,
+  );
 
   useEffect(() => {
     let active = true;
@@ -238,6 +259,30 @@ export function ClinicianAuditLogScreen({
     value: AuditFilters[Key],
   ) => {
     setFilters((current) => ({ ...current, [key]: value }));
+  };
+
+  const exportFilteredAuditLog = async () => {
+    if (filteredEntries.length === 0) {
+      setCsvExportFeedback(
+        'Adjust the dashboard filters so at least one audit record is included.',
+      );
+      return;
+    }
+
+    setCsvExportInFlight(true);
+    setCsvExportFeedback(null);
+    try {
+      const result = await exportAuditLogCsv(filteredEntries);
+      setCsvExportFeedback(csvExportMessage(result));
+    } catch (error) {
+      setCsvExportFeedback(
+        error instanceof Error
+          ? error.message
+          : 'BabyReady could not prepare the filtered audit CSV.',
+      );
+    } finally {
+      setCsvExportInFlight(false);
+    }
   };
 
   return (
@@ -446,6 +491,41 @@ export function ClinicianAuditLogScreen({
 
             {dashboardState.status === 'ready' ? (
               <>
+                <View style={styles.exportCard}>
+                  <View style={styles.exportCopy}>
+                    <Text style={styles.sectionLabel}>EXPORT FILTERED RESULTS</Text>
+                    <Text style={styles.exportDescription}>
+                      Download the {filteredEntries.length} matching audit record
+                      {filteredEntries.length === 1 ? '' : 's'} as a CSV.
+                    </Text>
+                  </View>
+                  <Pressable
+                    accessibilityLabel="Export filtered audit records as CSV"
+                    accessibilityRole="button"
+                    disabled={csvExportInFlight || filteredEntries.length === 0}
+                    onPress={() => {
+                      void exportFilteredAuditLog();
+                    }}
+                    style={[
+                      styles.csvExportButton,
+                      (csvExportInFlight || filteredEntries.length === 0) &&
+                        styles.csvExportButtonDisabled,
+                    ]}
+                    testID="button-export-filtered-audit-csv"
+                  >
+                    <Text style={styles.csvExportButtonText}>
+                      {csvExportInFlight ? 'Preparing…' : 'Export CSV'}
+                    </Text>
+                  </Pressable>
+                </View>
+                {csvExportFeedback ? (
+                  <Text
+                    style={styles.csvExportFeedback}
+                    testID="text-audit-csv-export-feedback"
+                  >
+                    {csvExportFeedback}
+                  </Text>
+                ) : null}
                 <Text style={styles.resultsLabel}>
                   {filteredEntries.length} matching record
                   {filteredEntries.length === 1 ? '' : 's'}
@@ -691,6 +771,48 @@ const styles = StyleSheet.create({
     letterSpacing: 0.4,
     marginBottom: 10,
     textTransform: 'uppercase',
+  },
+  exportCard: {
+    alignItems: 'center',
+    backgroundColor: '#EAF4F1',
+    borderColor: '#92BFB8',
+    borderRadius: 14,
+    borderWidth: 1,
+    flexDirection: 'row',
+    gap: 14,
+    justifyContent: 'space-between',
+    marginBottom: 12,
+    padding: 15,
+  },
+  exportCopy: {
+    flex: 1,
+  },
+  exportDescription: {
+    color: '#3E5D58',
+    fontSize: 13,
+    lineHeight: 19,
+    marginTop: 4,
+  },
+  csvExportButton: {
+    backgroundColor: '#01696F',
+    borderRadius: 9,
+    minHeight: 42,
+    paddingHorizontal: 13,
+    paddingVertical: 10,
+  },
+  csvExportButtonDisabled: {
+    backgroundColor: '#94AAA7',
+  },
+  csvExportButtonText: {
+    color: '#FFFFFF',
+    fontSize: 13,
+    fontWeight: '800',
+  },
+  csvExportFeedback: {
+    color: '#0C4E54',
+    fontSize: 13,
+    lineHeight: 19,
+    marginBottom: 12,
   },
   emptyState: {
     backgroundColor: '#FBFBF9',

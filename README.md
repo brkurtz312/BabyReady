@@ -138,6 +138,8 @@ The clinician workspace also includes a cross-content audit-export dashboard.
 It reads the 200 most recent immutable records through a Firestore
 collection-group query and filters them by content scope, exporting clinician,
 PDF route, date range, and either compared version number.
+Clinicians can export the current filtered record set as a spreadsheet-safe CSV,
+with browser download on web and a saved file plus share sheet on native apps.
 
 ### Local Emulator Suite
 
