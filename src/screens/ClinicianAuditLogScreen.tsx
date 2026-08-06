@@ -28,7 +28,10 @@ import {
   exportAuditDashboardPdf,
   type AuditDashboardPdfExportResult,
 } from '../services/auditDashboardPdfService';
-import type { AuditDashboardPdfFilter } from '../lib/auditDashboardPdfHtml';
+import {
+  createAuditDashboardReportId,
+  type AuditDashboardPdfFilter,
+} from '../lib/auditDashboardPdfHtml';
 
 type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
 
@@ -363,11 +366,13 @@ export function ClinicianAuditLogScreen({
     setPdfExportInFlight(true);
     setPdfExportFeedback(null);
     try {
+      const generatedAt = new Date();
       const result = await exportAuditDashboardPdf({
         entries: filteredEntries,
         filters: appliedPdfFilters(filters),
-        generatedAt: new Date().toLocaleString(),
+        generatedAt: generatedAt.toLocaleString(),
         generatedBy: user.uid,
+        reportId: createAuditDashboardReportId(generatedAt),
       });
       setPdfExportFeedback(pdfExportMessage(result));
     } catch (error) {

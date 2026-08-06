@@ -142,9 +142,10 @@ Clinicians can export the current filtered record set as a spreadsheet-safe CSV,
 with browser download on web and a saved file plus share sheet on native apps.
 They can also export the same result set as a clinician-ready PDF dashboard
 report. That report includes the applied filters, reporting clinician,
-point-in-time timestamp, and each matching immutable audit record. On web,
-the app opens the browser print dialog so the reviewer can save the report as
-a PDF; native apps create a PDF and open the system share sheet.
+point-in-time timestamp, date-stamped report ID, page numbering, and each
+matching immutable audit record. On web, the app opens the browser print
+dialog so the reviewer can save the report as a PDF; native apps create a PDF
+and open the system share sheet.
 
 ### Local Emulator Suite
 
