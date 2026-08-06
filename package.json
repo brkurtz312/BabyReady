@@ -28,9 +28,12 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
+    "export:web": "expo export --platform web",
     "typecheck": "tsc --noEmit",
     "test:rules": "node --test tests/firestore.rules.test.mjs",
-    "test:emulators": "firebase emulators:exec --project babyready-rules-test --only auth,firestore \"npm run test:rules\""
+    "test:emulators": "firebase emulators:exec --project babyready-rules-test --only auth,firestore \"npm run test:rules\"",
+    "check:production-env": "node scripts/check-production-env.mjs",
+    "deploy:production": "node scripts/deploy-production.mjs"
   },
   "private": true
 }

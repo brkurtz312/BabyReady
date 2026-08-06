@@ -86,6 +86,64 @@ clinician sign-in and resolves the administrator-only immutable manifest. The
 default is `https://babyready.app/verify`; override it for staging, a custom
 domain, or any alternate production host.
 
+## Production deployment
+
+BabyReady uses Firebase Hosting for the static Expo web export and Firestore
+for its governed clinical-content and audit-verification data. The repository
+keeps the emulator project (`babyready-rules-test`) as the local-test default;
+production deployment always requires an explicit `FIREBASE_PROJECT_ID`.
+
+### Configure the production project
+
+1. In the Firebase console, select the production **BabyReady** project and
+   note its canonical Project ID. The display name and Project ID can differ.
+2. Add a Firebase **Web app** to that project and copy its public configuration
+   values.
+3. Copy `.env.production.example` to `.env` and populate every value. The
+   Firebase web configuration is intended to be exposed to the client; do not
+   put Admin SDK credentials, service-account JSON, or other server secrets in
+   this file.
+4. In Firebase Authentication, enable Anonymous sign-in for the current
+   starter experience. Enable Email/Password only after the user-facing
+   registration and sign-in screens are ready.
+5. Establish the first clinician administrator through a trusted Admin SDK or
+   Firebase Admin workflow by assigning the `admin: true` custom claim. The
+   Expo client must never grant this claim.
+
+### Deploy the web app and Firestore controls
+
+Run the following from an authenticated Firebase CLI session:
+
+```bash
+npm run deploy:production
+```
+
+The production deploy script:
+
+- validates that all public Firebase values are present;
+- requires the Firebase CLI target and public client Project ID to match;
+- rejects emulator-enabled builds;
+- exports the static Expo web app to `dist`;
+- deploys Firebase Hosting plus Firestore rules and indexes to the explicit
+  production project.
+
+`firebase.json` routes every hosted path to `index.html`, so
+`/verify?reportId=...` resolves to the browser-based audit verification view.
+The hosting configuration also applies `nosniff` and Referrer-Policy headers,
+plus long-lived cache headers for versioned static assets.
+
+### Connect `babyready.app`
+
+After the first successful Hosting deployment, add `babyready.app` and
+`www.babyready.app` as custom domains in Firebase Hosting. Firebase will
+provide the exact DNS verification and hosting records. Add only those
+provider-generated records in Cloudflare, then confirm that
+`https://babyready.app/verify` loads before producing clinician audit PDFs.
+
+For a staging host, set `EXPO_PUBLIC_AUDIT_REPORT_VERIFY_URL` to that host's
+HTTPS `/verify` route before exporting the app. Production QR codes must use
+the final canonical URL.
+
 ### Authentication and profile bootstrap
 
 The app presents the course shell when Firebase is unconfigured. Once Firebase is configured, `BabyReadyAuthProvider` watches the auth session, starts an anonymous session when no user is present, and attempts to provision `users/{uid}` in Firestore.
