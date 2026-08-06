@@ -34,6 +34,18 @@ export function createAuditDashboardReportId(generatedAt: Date): string {
   return `BR-AUDIT-${year}${month}${day}-${hours}${minutes}${seconds}${milliseconds}Z`;
 }
 
+export function getAuditDashboardReportPageCount(entryCount: number): number {
+  const normalizedEntryCount = Math.max(0, Math.trunc(entryCount));
+
+  return (
+    1 +
+    Math.ceil(
+      Math.max(0, normalizedEntryCount - FIRST_PAGE_ENTRY_COUNT) /
+        FOLLOWING_PAGE_ENTRY_COUNT,
+    )
+  );
+}
+
 function escapeHtml(value: string): string {
   return value
     .replaceAll('&', '&amp;')
@@ -161,7 +173,7 @@ function renderReportPages(input: AuditDashboardPdfHtmlInput): string {
     input.entries.slice(FIRST_PAGE_ENTRY_COUNT),
     FOLLOWING_PAGE_ENTRY_COUNT,
   );
-  const pageCount = 1 + followingPages.length;
+  const pageCount = getAuditDashboardReportPageCount(input.entries.length);
   const firstPage = `<article class="report-page report-page-first">
     <header class="header">
       <div>

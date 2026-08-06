@@ -126,11 +126,94 @@ service cloud.firestore {
         && request.resource.data.exportedAt == request.time;
     }
 
+    function validAuditReportManifest(reportId) {
+      return request.resource.data.keys().hasAll([
+          'id',
+          'reportId',
+          'exportFormat',
+          'exportRoute',
+          'exportedBy',
+          'exportedAt',
+          'filterSnapshot',
+          'recordCount',
+          'pageCount',
+          'auditRecordIds',
+          'auditRecordPaths'
+        ])
+        && request.resource.data.keys().hasOnly([
+          'id',
+          'reportId',
+          'exportFormat',
+          'exportRoute',
+          'exportedBy',
+          'exportedAt',
+          'filterSnapshot',
+          'recordCount',
+          'pageCount',
+          'auditRecordIds',
+          'auditRecordPaths'
+        ])
+        && request.resource.data.id == reportId
+        && request.resource.data.reportId == reportId
+        && request.resource.data.exportFormat == 'pdf'
+        && request.resource.data.exportRoute in [
+          'web_print',
+          'native_share',
+          'file_created'
+        ]
+        && request.resource.data.exportedBy == request.auth.uid
+        && request.resource.data.exportedAt == request.time
+        && request.resource.data.filterSnapshot is map
+        && request.resource.data.filterSnapshot.keys().hasAll([
+          'scope',
+          'clinicianId',
+          'exportRoute',
+          'startDate',
+          'endDate',
+          'versionNumber'
+        ])
+        && request.resource.data.filterSnapshot.keys().hasOnly([
+          'scope',
+          'clinicianId',
+          'exportRoute',
+          'startDate',
+          'endDate',
+          'versionNumber'
+        ])
+        && request.resource.data.filterSnapshot.scope is string
+        && request.resource.data.filterSnapshot.clinicianId is string
+        && request.resource.data.filterSnapshot.exportRoute in [
+          'all',
+          'web_print',
+          'native_share',
+          'file_created'
+        ]
+        && request.resource.data.filterSnapshot.startDate is string
+        && request.resource.data.filterSnapshot.endDate is string
+        && request.resource.data.filterSnapshot.versionNumber is string
+        && request.resource.data.recordCount is int
+        && request.resource.data.recordCount > 0
+        && request.resource.data.pageCount is int
+        && request.resource.data.pageCount > 0
+        && request.resource.data.auditRecordIds is list
+        && request.resource.data.auditRecordIds.size() == request.resource.data.recordCount
+        && request.resource.data.auditRecordPaths is list
+        && request.resource.data.auditRecordPaths.size() == request.resource.data.recordCount;
+    }
+
     // Collection-group queries need an explicit recursive match even though
     // every individual audit record has an administrator-only nested match.
     // This grants no create, update, or delete capability.
     match /{path=**}/comparisonAuditExports/{auditExportId} {
       allow read: if isAdmin();
+    }
+
+    // Dashboard report manifests preserve the exact immutable audit-record set
+    // and original filters behind the report ID printed in the PDF.
+    match /auditReportManifests/{reportId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin() && validAuditReportManifest(reportId);
+      allow update, delete: if false;
     }
 
     // Clinically reviewed curriculum is write-protected behind a server-side

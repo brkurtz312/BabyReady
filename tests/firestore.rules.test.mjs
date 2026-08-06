@@ -60,6 +60,31 @@ const clinicalBlock = (overrides = {}) => ({
   ...overrides,
 });
 
+const auditReportManifest = (overrides = {}) => ({
+  id: 'BR-AUDIT-20260805-010203004Z',
+  reportId: 'BR-AUDIT-20260805-010203004Z',
+  exportFormat: 'pdf',
+  exportRoute: 'web_print',
+  exportedBy: 'admin',
+  exportedAt: serverTimestamp(),
+  filterSnapshot: {
+    scope: 'module-1',
+    clinicianId: '',
+    exportRoute: 'all',
+    startDate: '',
+    endDate: '',
+    versionNumber: '',
+  },
+  recordCount: 2,
+  pageCount: 1,
+  auditRecordIds: ['export-1', 'export-2'],
+  auditRecordPaths: [
+    'courses/birthready/modules/module-1/lessons/lesson-1/contentBlocks/welcome/comparisonAuditExports/export-1',
+    'courses/birthready/modules/module-2/lessons/lesson-2/contentBlocks/breathing/comparisonAuditExports/export-2',
+  ],
+  ...overrides,
+});
+
 async function seed(path, data) {
   await testEnvironment.withSecurityRulesDisabled(async (context) => {
     await setDoc(doc(context.firestore(), path), data);
@@ -261,6 +286,48 @@ test('administrators can query cross-content comparison audit exports', async ()
     limit(200),
   );
   await assertFails(getDocs(authorQuery));
+});
+
+test('audit report manifests are admin-only, attributable, and append-only', async () => {
+  const author = userDb('author');
+  const admin = userDb('admin', { admin: true });
+  const anonymous = testEnvironment.unauthenticatedContext().firestore();
+  const reportId = 'BR-AUDIT-20260805-010203004Z';
+  const manifestPath = `auditReportManifests/${reportId}`;
+  const manifest = auditReportManifest();
+
+  await assertFails(setDoc(doc(author, manifestPath), manifest));
+  await assertSucceeds(setDoc(doc(admin, manifestPath), manifest));
+  await assertSucceeds(getDoc(doc(admin, manifestPath)));
+  await assertFails(getDoc(doc(author, manifestPath)));
+  await assertFails(getDoc(doc(anonymous, manifestPath)));
+  await assertFails(
+    updateDoc(doc(admin, manifestPath), { recordCount: 3 }),
+  );
+  await assertFails(deleteDoc(doc(admin, manifestPath)));
+  await assertFails(
+    setDoc(
+      doc(admin, 'auditReportManifests/BR-AUDIT-20260805-WRONG'),
+      auditReportManifest({
+        exportedAt: serverTimestamp(),
+      }),
+    ),
+  );
+  await assertFails(
+    setDoc(
+      doc(admin, 'auditReportManifests/BR-AUDIT-20260805-INVALID'),
+      auditReportManifest({
+        id: 'BR-AUDIT-20260805-INVALID',
+        reportId: 'BR-AUDIT-20260805-INVALID',
+        recordCount: 2,
+        auditRecordIds: ['export-1'],
+        auditRecordPaths: [
+          'courses/birthready/modules/module-1/lessons/lesson-1/contentBlocks/welcome/comparisonAuditExports/export-1',
+        ],
+        exportedAt: serverTimestamp(),
+      }),
+    ),
+  );
 });
 
 test('only complete, published source records are publicly readable', async () => {

@@ -147,6 +147,16 @@ matching immutable audit record. On web, the app opens the browser print
 dialog so the reviewer can save the report as a PDF; native apps create a PDF
 and open the system share sheet.
 
+After a filtered PDF has been prepared, the app writes an immutable,
+administrator-only `auditReportManifests/{reportId}` record. The manifest is
+keyed by the report ID printed in the PDF and captures the reporting
+clinician, authoritative server timestamp, actual delivery route, original
+filter snapshot, page count, record count, and the canonical Firestore paths
+of the exact immutable audit records included in that report. The dashboard’s
+administrator-only verification panel resolves a report ID back to this
+manifest and can reveal the preserved record set without depending on the
+dashboard’s current 200-record query window.
+
 ### Local Emulator Suite
 
 Set the following development-only values to connect the app to local Auth and Firestore emulators:

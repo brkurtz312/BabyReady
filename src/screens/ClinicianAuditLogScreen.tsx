@@ -13,7 +13,9 @@ import type { User } from 'firebase/auth';
 import { Timestamp } from 'firebase/firestore';
 
 import type {
-  ComparisonAuditExportLog,
+  AuditReportFilterSnapshot,
+  AuditReportManifest,
+  ComparisonAuditExportDashboardEntry,
   ComparisonAuditExportRoute,
 } from '../models/course';
 import {
@@ -32,6 +34,11 @@ import {
   createAuditDashboardReportId,
   type AuditDashboardPdfFilter,
 } from '../lib/auditDashboardPdfHtml';
+import {
+  lookupAuditReportManifest,
+  normalizeAuditReportId,
+  recordAuditReportManifest,
+} from '../services/auditReportManifestService';
 
 type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
 
@@ -40,14 +47,14 @@ type ClinicianAuditLogScreenProps = {
   onExit: () => void;
 };
 
-type AuditFilters = {
-  scope: string;
-  clinicianId: string;
-  exportRoute: 'all' | ComparisonAuditExportRoute;
-  startDate: string;
-  endDate: string;
-  versionNumber: string;
-};
+type AuditFilters = AuditReportFilterSnapshot;
+
+type ManifestVerificationState =
+  | { status: 'idle'; manifest: null; error: null }
+  | { status: 'loading'; manifest: null; error: null }
+  | { status: 'ready'; manifest: AuditReportManifest; error: null }
+  | { status: 'not-found'; manifest: null; error: null }
+  | { status: 'error'; manifest: null; error: string };
 
 const initialFilters: AuditFilters = {
   scope: '',
@@ -136,9 +143,9 @@ function parseFilterDate(value: string, endOfDay = false): Date | null {
 }
 
 function matchingAuditEntries(
-  entries: ComparisonAuditExportLog[],
+  entries: ComparisonAuditExportDashboardEntry[],
   filters: AuditFilters,
-): ComparisonAuditExportLog[] {
+): ComparisonAuditExportDashboardEntry[] {
   const scopeQuery = filters.scope.trim().toLowerCase();
   const clinicianQuery = filters.clinicianId.trim().toLowerCase();
   const versionQuery = Number.parseInt(filters.versionNumber, 10);
@@ -215,6 +222,21 @@ function pdfExportMessage(result: AuditDashboardPdfExportResult): string {
   }
 }
 
+function auditDashboardExportRoute(
+  result: AuditDashboardPdfExportResult,
+): ComparisonAuditExportRoute {
+  switch (result) {
+    case 'print-dialog-opened':
+      return 'web_print';
+    case 'share-dialog-opened':
+      return 'native_share';
+    case 'file-created':
+      return 'file_created';
+    default:
+      return 'web_print';
+  }
+}
+
 function appliedPdfFilters(filters: AuditFilters): AuditDashboardPdfFilter[] {
   const activeFilters: AuditDashboardPdfFilter[] = [];
 
@@ -260,6 +282,12 @@ function appliedPdfFilters(filters: AuditFilters): AuditDashboardPdfFilter[] {
     : [{ label: 'Dashboard scope', value: 'All loaded audit records' }];
 }
 
+function manifestFilterSummary(
+  filterSnapshot: AuditReportFilterSnapshot,
+): AuditDashboardPdfFilter[] {
+  return appliedPdfFilters(filterSnapshot);
+}
+
 export function ClinicianAuditLogScreen({
   user,
   onExit,
@@ -280,6 +308,14 @@ export function ClinicianAuditLogScreen({
   const [pdfExportFeedback, setPdfExportFeedback] = useState<string | null>(
     null,
   );
+  const [reportIdInput, setReportIdInput] = useState('');
+  const [verificationState, setVerificationState] =
+    useState<ManifestVerificationState>({
+      status: 'idle',
+      manifest: null,
+      error: null,
+    });
+  const [showVerifiedRecordSet, setShowVerifiedRecordSet] = useState(false);
 
   useEffect(() => {
     let active = true;
@@ -367,14 +403,42 @@ export function ClinicianAuditLogScreen({
     setPdfExportFeedback(null);
     try {
       const generatedAt = new Date();
+      const reportId = createAuditDashboardReportId(generatedAt);
       const result = await exportAuditDashboardPdf({
         entries: filteredEntries,
         filters: appliedPdfFilters(filters),
         generatedAt: generatedAt.toLocaleString(),
         generatedBy: user.uid,
-        reportId: createAuditDashboardReportId(generatedAt),
+        reportId,
       });
-      setPdfExportFeedback(pdfExportMessage(result));
+      const exportMessage = pdfExportMessage(result);
+
+      try {
+        await recordAuditReportManifest({
+          reportId,
+          exportRoute: auditDashboardExportRoute(result),
+          filterSnapshot: { ...filters },
+          entries: filteredEntries,
+        });
+        setReportIdInput(reportId);
+        setVerificationState({
+          status: 'idle',
+          manifest: null,
+          error: null,
+        });
+        setShowVerifiedRecordSet(false);
+        setPdfExportFeedback(
+          `${exportMessage} Report ID ${reportId} is ready for administrator verification.`,
+        );
+      } catch (manifestError) {
+        const message =
+          manifestError instanceof Error
+            ? manifestError.message
+            : 'BabyReady could not save the report verification manifest.';
+        setPdfExportFeedback(
+          `${exportMessage} The PDF was prepared, but its verification manifest could not be saved: ${message}`,
+        );
+      }
     } catch (error) {
       setPdfExportFeedback(
         error instanceof Error
@@ -384,6 +448,54 @@ export function ClinicianAuditLogScreen({
     } finally {
       setPdfExportInFlight(false);
     }
+  };
+
+  const verifyAuditReport = async () => {
+    const reportId = normalizeAuditReportId(reportIdInput);
+    if (!reportId) {
+      setVerificationState({
+        status: 'error',
+        manifest: null,
+        error: 'Enter the report ID shown in the audit PDF footer.',
+      });
+      return;
+    }
+
+    setReportIdInput(reportId);
+    setShowVerifiedRecordSet(false);
+    setVerificationState({
+      status: 'loading',
+      manifest: null,
+      error: null,
+    });
+
+    try {
+      const manifest = await lookupAuditReportManifest(reportId);
+      setVerificationState(
+        manifest
+          ? { status: 'ready', manifest, error: null }
+          : { status: 'not-found', manifest: null, error: null },
+      );
+    } catch (error) {
+      setVerificationState({
+        status: 'error',
+        manifest: null,
+        error:
+          error instanceof Error
+            ? error.message
+            : 'BabyReady could not verify this audit report.',
+      });
+    }
+  };
+
+  const clearAuditReportVerification = () => {
+    setReportIdInput('');
+    setShowVerifiedRecordSet(false);
+    setVerificationState({
+      status: 'idle',
+      manifest: null,
+      error: null,
+    });
   };
 
   return (
@@ -447,6 +559,219 @@ export function ClinicianAuditLogScreen({
                   ? 'Showing the 200 most recent records. Narrow the filters to review a specific audit trail.'
                   : 'Live records across all clinician-reviewed content.'}
               </Text>
+            </View>
+
+            <View style={styles.verificationCard}>
+              <Text style={styles.sectionLabel}>VERIFY A REPORT</Text>
+              <Text style={styles.verificationDescription}>
+                Enter the report ID printed in a filtered audit PDF to resolve
+                its original export metadata, filter snapshot, and immutable
+                audit-record set.
+              </Text>
+              <Text style={styles.fieldLabel}>Report ID</Text>
+              <TextInput
+                accessibilityLabel="Audit PDF report ID"
+                autoCapitalize="characters"
+                autoCorrect={false}
+                onChangeText={(value) => {
+                  setReportIdInput(value);
+                  if (verificationState.status !== 'idle') {
+                    setVerificationState({
+                      status: 'idle',
+                      manifest: null,
+                      error: null,
+                    });
+                    setShowVerifiedRecordSet(false);
+                  }
+                }}
+                placeholder="BR-AUDIT-YYYYMMDD-HHMMSSmmmZ"
+                placeholderTextColor="#8B8881"
+                style={styles.textInput}
+                testID="input-audit-report-id"
+                value={reportIdInput}
+              />
+              <View style={styles.verificationActions}>
+                <Pressable
+                  accessibilityLabel="Verify audit PDF report ID"
+                  accessibilityRole="button"
+                  disabled={
+                    verificationState.status === 'loading' ||
+                    reportIdInput.trim().length === 0
+                  }
+                  onPress={() => {
+                    void verifyAuditReport();
+                  }}
+                  style={[
+                    styles.verifyButton,
+                    (verificationState.status === 'loading' ||
+                      reportIdInput.trim().length === 0) &&
+                      styles.verifyButtonDisabled,
+                  ]}
+                  testID="button-verify-audit-report"
+                >
+                  <Text style={styles.verifyButtonText}>
+                    {verificationState.status === 'loading'
+                      ? 'Verifying…'
+                      : 'Verify report'}
+                  </Text>
+                </Pressable>
+                {(verificationState.status !== 'idle' ||
+                  reportIdInput.length > 0) && (
+                  <Pressable
+                    accessibilityLabel="Clear audit report verification"
+                    accessibilityRole="button"
+                    onPress={clearAuditReportVerification}
+                    style={styles.clearVerificationButton}
+                    testID="button-clear-audit-report-verification"
+                  >
+                    <Text style={styles.clearVerificationButtonText}>
+                      Clear
+                    </Text>
+                  </Pressable>
+                )}
+              </View>
+
+              {verificationState.status === 'not-found' ? (
+                <Text
+                  style={styles.verificationNotFound}
+                  testID="text-audit-report-not-found"
+                >
+                  No immutable manifest matches that report ID. Confirm the ID
+                  exactly as it appears in the PDF footer.
+                </Text>
+              ) : null}
+
+              {verificationState.status === 'error' ? (
+                <Text
+                  style={styles.verificationError}
+                  testID="text-audit-report-verification-error"
+                >
+                  {verificationState.error}
+                </Text>
+              ) : null}
+
+              {verificationState.status === 'ready' ? (
+                <View
+                  style={styles.verifiedManifest}
+                  testID="card-verified-audit-report"
+                >
+                  <Text style={styles.verifiedManifestLabel}>
+                    VERIFIED REPORT
+                  </Text>
+                  <Text
+                    style={styles.verifiedReportId}
+                    testID="text-verified-audit-report-id"
+                  >
+                    {verificationState.manifest.reportId}
+                  </Text>
+                  <Text style={styles.verifiedManifestSummary}>
+                    This immutable manifest preserves{' '}
+                    {verificationState.manifest.recordCount} audit record
+                    {verificationState.manifest.recordCount === 1 ? '' : 's'}{' '}
+                    across {verificationState.manifest.pageCount} PDF page
+                    {verificationState.manifest.pageCount === 1 ? '' : 's'}.
+                  </Text>
+                  <View style={styles.verifiedMetadataGrid}>
+                    <View style={styles.verifiedMetadataCell}>
+                      <Text style={styles.verifiedMetadataLabel}>
+                        CREATED BY
+                      </Text>
+                      <Text
+                        style={styles.verifiedMetadataValue}
+                        testID="text-verified-audit-report-creator"
+                      >
+                        {verificationState.manifest.exportedBy}
+                      </Text>
+                    </View>
+                    <View style={styles.verifiedMetadataCell}>
+                      <Text style={styles.verifiedMetadataLabel}>
+                        RECORDED
+                      </Text>
+                      <Text
+                        style={styles.verifiedMetadataValue}
+                        testID="text-verified-audit-report-timestamp"
+                      >
+                        {formatDate(verificationState.manifest.exportedAt)}
+                      </Text>
+                    </View>
+                    <View style={styles.verifiedMetadataCell}>
+                      <Text style={styles.verifiedMetadataLabel}>ROUTE</Text>
+                      <Text
+                        style={styles.verifiedMetadataValue}
+                        testID="text-verified-audit-report-route"
+                      >
+                        {formatExportRoute(
+                          verificationState.manifest.exportRoute,
+                        )}
+                      </Text>
+                    </View>
+                  </View>
+
+                  <Text style={styles.verifiedSubheading}>
+                    Original filter snapshot
+                  </Text>
+                  <View style={styles.verifiedFilters}>
+                    {manifestFilterSummary(
+                      verificationState.manifest.filterSnapshot,
+                    ).map((filter) => (
+                      <View key={filter.label} style={styles.verifiedFilter}>
+                        <Text style={styles.verifiedFilterLabel}>
+                          {filter.label}
+                        </Text>
+                        <Text style={styles.verifiedFilterValue}>
+                          {filter.value}
+                        </Text>
+                      </View>
+                    ))}
+                  </View>
+
+                  <Pressable
+                    accessibilityLabel={
+                      showVerifiedRecordSet
+                        ? 'Hide immutable audit record set'
+                        : 'Show immutable audit record set'
+                    }
+                    accessibilityRole="button"
+                    onPress={() =>
+                      setShowVerifiedRecordSet((current) => !current)
+                    }
+                    style={styles.recordSetToggle}
+                    testID="button-toggle-verified-audit-record-set"
+                  >
+                    <Text style={styles.recordSetToggleText}>
+                      {showVerifiedRecordSet
+                        ? 'Hide immutable record set'
+                        : `Show ${verificationState.manifest.recordCount} immutable record${verificationState.manifest.recordCount === 1 ? '' : 's'}`}
+                    </Text>
+                  </Pressable>
+
+                  {showVerifiedRecordSet ? (
+                    <View
+                      style={styles.verifiedRecordSet}
+                      testID="verified-audit-record-set"
+                    >
+                      {verificationState.manifest.auditRecordPaths.map(
+                        (path, index) => (
+                          <View key={path} style={styles.verifiedRecordItem}>
+                            <Text style={styles.verifiedRecordId}>
+                              {verificationState.manifest.auditRecordIds[
+                                index
+                              ] ?? `Audit record ${index + 1}`}
+                            </Text>
+                            <Text
+                              selectable
+                              style={styles.verifiedRecordPath}
+                              testID={`text-verified-audit-record-path-${index}`}
+                            >
+                              {path}
+                            </Text>
+                          </View>
+                        ),
+                      )}
+                    </View>
+                  ) : null}
+                </View>
+              ) : null}
             </View>
 
             <View style={styles.filtersCard}>
@@ -805,6 +1130,190 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 20,
     marginTop: 3,
+  },
+  verificationCard: {
+    backgroundColor: '#FBFBF9',
+    borderColor: '#D4D1CA',
+    borderRadius: 16,
+    borderWidth: 1,
+    marginBottom: 24,
+    padding: 16,
+  },
+  verificationDescription: {
+    color: '#55534D',
+    fontSize: 13,
+    lineHeight: 19,
+    marginTop: 4,
+  },
+  verificationActions: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 10,
+    marginTop: 12,
+  },
+  verifyButton: {
+    alignItems: 'center',
+    backgroundColor: '#01696F',
+    borderRadius: 9,
+    justifyContent: 'center',
+    minHeight: 44,
+    paddingHorizontal: 16,
+  },
+  verifyButtonDisabled: {
+    backgroundColor: '#94AAA7',
+  },
+  verifyButtonText: {
+    color: '#FFFFFF',
+    fontSize: 13,
+    fontWeight: '800',
+  },
+  clearVerificationButton: {
+    borderColor: '#01696F',
+    borderRadius: 9,
+    borderWidth: 1,
+    minHeight: 44,
+    paddingHorizontal: 14,
+    paddingVertical: 11,
+  },
+  clearVerificationButtonText: {
+    color: '#01696F',
+    fontSize: 13,
+    fontWeight: '800',
+  },
+  verificationNotFound: {
+    color: '#7D3A19',
+    fontSize: 13,
+    lineHeight: 19,
+    marginTop: 12,
+  },
+  verificationError: {
+    color: '#A12C7B',
+    fontSize: 13,
+    lineHeight: 19,
+    marginTop: 12,
+  },
+  verifiedManifest: {
+    backgroundColor: '#EAF4F1',
+    borderColor: '#92BFB8',
+    borderRadius: 12,
+    borderWidth: 1,
+    marginTop: 16,
+    padding: 14,
+  },
+  verifiedManifestLabel: {
+    color: '#01696F',
+    fontSize: 11,
+    fontWeight: '800',
+    letterSpacing: 1.1,
+  },
+  verifiedReportId: {
+    color: '#28251D',
+    fontFamily: 'monospace',
+    fontSize: 13,
+    fontWeight: '800',
+    marginTop: 5,
+  },
+  verifiedManifestSummary: {
+    color: '#3E5D58',
+    fontSize: 13,
+    lineHeight: 19,
+    marginTop: 8,
+  },
+  verifiedMetadataGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    marginTop: 14,
+  },
+  verifiedMetadataCell: {
+    backgroundColor: '#FFFFFF',
+    borderColor: '#C1D8D3',
+    borderRadius: 8,
+    borderWidth: 1,
+    flexGrow: 1,
+    minWidth: 110,
+    padding: 9,
+  },
+  verifiedMetadataLabel: {
+    color: '#607570',
+    fontSize: 10,
+    fontWeight: '800',
+    letterSpacing: 0.7,
+  },
+  verifiedMetadataValue: {
+    color: '#28251D',
+    fontSize: 12,
+    fontWeight: '700',
+    marginTop: 4,
+  },
+  verifiedSubheading: {
+    color: '#28251D',
+    fontSize: 14,
+    fontWeight: '800',
+    marginTop: 18,
+  },
+  verifiedFilters: {
+    gap: 7,
+    marginTop: 9,
+  },
+  verifiedFilter: {
+    backgroundColor: '#FFFFFF',
+    borderColor: '#C1D8D3',
+    borderRadius: 8,
+    borderWidth: 1,
+    padding: 9,
+  },
+  verifiedFilterLabel: {
+    color: '#607570',
+    fontSize: 10,
+    fontWeight: '800',
+    letterSpacing: 0.7,
+    textTransform: 'uppercase',
+  },
+  verifiedFilterValue: {
+    color: '#28251D',
+    fontSize: 13,
+    fontWeight: '700',
+    marginTop: 3,
+  },
+  recordSetToggle: {
+    alignItems: 'center',
+    borderColor: '#01696F',
+    borderRadius: 9,
+    borderWidth: 1,
+    justifyContent: 'center',
+    marginTop: 16,
+    minHeight: 44,
+    paddingHorizontal: 14,
+  },
+  recordSetToggleText: {
+    color: '#01696F',
+    fontSize: 13,
+    fontWeight: '800',
+  },
+  verifiedRecordSet: {
+    gap: 8,
+    marginTop: 12,
+  },
+  verifiedRecordItem: {
+    backgroundColor: '#FFFFFF',
+    borderColor: '#C1D8D3',
+    borderRadius: 8,
+    borderWidth: 1,
+    padding: 10,
+  },
+  verifiedRecordId: {
+    color: '#01696F',
+    fontFamily: 'monospace',
+    fontSize: 12,
+    fontWeight: '800',
+  },
+  verifiedRecordPath: {
+    color: '#55534D',
+    fontFamily: 'monospace',
+    fontSize: 11,
+    lineHeight: 16,
+    marginTop: 4,
   },
   filtersCard: {
     backgroundColor: '#FBFBF9',

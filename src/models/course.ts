@@ -143,3 +143,31 @@ export type ComparisonAuditExportLog = {
   exportedBy: string;
   exportedAt: unknown;
 };
+
+export type ComparisonAuditExportDashboardEntry =
+  ComparisonAuditExportLog & {
+    documentPath: string;
+  };
+
+export type AuditReportFilterSnapshot = {
+  scope: string;
+  clinicianId: string;
+  exportRoute: 'all' | ComparisonAuditExportRoute;
+  startDate: string;
+  endDate: string;
+  versionNumber: string;
+};
+
+export type AuditReportManifest = {
+  id: string;
+  reportId: string;
+  exportFormat: 'pdf';
+  exportRoute: ComparisonAuditExportRoute;
+  exportedBy: string;
+  exportedAt: unknown;
+  filterSnapshot: AuditReportFilterSnapshot;
+  recordCount: number;
+  pageCount: number;
+  auditRecordIds: string[];
+  auditRecordPaths: string[];
+};

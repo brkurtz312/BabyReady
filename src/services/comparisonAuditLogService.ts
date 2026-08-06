@@ -14,6 +14,7 @@ import {
 import { db, requireAuth, requireFirestore } from '../lib/firebase';
 import type {
   ClinicalContentBlock,
+  ComparisonAuditExportDashboardEntry,
   ComparisonAuditExportLog,
   ComparisonAuditExportRoute,
 } from '../models/course';
@@ -26,9 +27,21 @@ export type ComparisonAuditExportLogState =
 
 export type ComparisonAuditExportDashboardState =
   | { status: 'unconfigured'; entries: []; error: null }
-  | { status: 'loading'; entries: ComparisonAuditExportLog[]; error: null }
-  | { status: 'ready'; entries: ComparisonAuditExportLog[]; error: null }
-  | { status: 'error'; entries: ComparisonAuditExportLog[]; error: string };
+  | {
+      status: 'loading';
+      entries: ComparisonAuditExportDashboardEntry[];
+      error: null;
+    }
+  | {
+      status: 'ready';
+      entries: ComparisonAuditExportDashboardEntry[];
+      error: null;
+    }
+  | {
+      status: 'error';
+      entries: ComparisonAuditExportDashboardEntry[];
+      error: string;
+    };
 
 type RecordComparisonAuditExportInput = {
   block: ClinicalContentBlock;
@@ -165,6 +178,7 @@ export function subscribeToComparisonAuditExportDashboard(
         entries: snapshot.docs.map((entry) => ({
           ...(entry.data() as ComparisonAuditExportLog),
           id: entry.id,
+          documentPath: entry.ref.path,
         })),
         error: null,
       });
