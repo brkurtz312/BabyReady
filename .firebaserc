@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "babyready-rules-test"
+    "default": "babyready-rules-test",
+    "production": "babyready-8bfd6"
   }
 }

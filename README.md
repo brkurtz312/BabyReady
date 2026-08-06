@@ -96,7 +96,8 @@ production deployment always requires an explicit `FIREBASE_PROJECT_ID`.
 ### Configure the production project
 
 1. In the Firebase console, select the production **BabyReady** project and
-   note its canonical Project ID. The display name and Project ID can differ.
+   note its canonical Project ID. The configured production alias is
+   `babyready-8bfd6`; the display name and Project ID can differ.
 2. Add a Firebase **Web app** to that project and copy its public configuration
    values.
 3. Copy `.env.production.example` to `.env` and populate every value. The
