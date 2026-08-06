@@ -20,6 +20,7 @@
   "devDependencies": {
     "@firebase/rules-unit-testing": "^5.0.1",
     "@types/react": "~19.2.2",
+    "firebase-admin": "^13.10.0",
     "firebase-tools": "^15.25.1",
     "typescript": "~6.0.3"
   },
@@ -33,7 +34,8 @@
     "test:rules": "node --test tests/firestore.rules.test.mjs",
     "test:emulators": "firebase emulators:exec --project babyready-rules-test --only auth,firestore \"npm run test:rules\"",
     "check:production-env": "node scripts/check-production-env.mjs",
-    "deploy:production": "node scripts/deploy-production.mjs"
+    "deploy:production": "node scripts/deploy-production.mjs",
+    "clinician-admin": "node scripts/manage-clinician-admin.mjs"
   },
   "private": true
 }

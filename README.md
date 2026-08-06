@@ -107,9 +107,11 @@ production deployment always requires an explicit `FIREBASE_PROJECT_ID`.
 4. In Firebase Authentication, enable Anonymous sign-in for the current
    starter experience. Enable Email/Password only after the user-facing
    registration and sign-in screens are ready.
-5. Establish the first clinician administrator through a trusted Admin SDK or
-   Firebase Admin workflow by assigning the `admin: true` custom claim. The
-   Expo client must never grant this claim.
+5. Establish the first clinician administrator with the guarded
+   `npm run clinician-admin` command and
+   [production runbook](docs/production/clinician-administrator-runbook.md).
+   It assigns the `admin: true` custom claim only through a trusted Admin SDK
+   workflow; the Expo client must never grant this claim.
 
 ### Deploy the web app and Firestore controls
 
