@@ -24,6 +24,11 @@ import {
   exportAuditLogCsv,
   type AuditExportCsvResult,
 } from '../services/auditExportCsvService';
+import {
+  exportAuditDashboardPdf,
+  type AuditDashboardPdfExportResult,
+} from '../services/auditDashboardPdfService';
+import type { AuditDashboardPdfFilter } from '../lib/auditDashboardPdfHtml';
 
 type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
 
@@ -194,6 +199,64 @@ function csvExportMessage(result: AuditExportCsvResult): string {
   }
 }
 
+function pdfExportMessage(result: AuditDashboardPdfExportResult): string {
+  switch (result) {
+    case 'print-dialog-opened':
+      return 'The print dialog is open. Choose Save as PDF to retain the filtered audit report.';
+    case 'share-dialog-opened':
+      return 'The filtered audit PDF is ready in the system share sheet.';
+    case 'file-created':
+      return 'The filtered audit PDF was created on this device.';
+    default:
+      return 'The filtered audit PDF is ready.';
+  }
+}
+
+function appliedPdfFilters(filters: AuditFilters): AuditDashboardPdfFilter[] {
+  const activeFilters: AuditDashboardPdfFilter[] = [];
+
+  if (filters.scope.trim()) {
+    activeFilters.push({
+      label: 'Content scope',
+      value: filters.scope.trim(),
+    });
+  }
+  if (filters.clinicianId.trim()) {
+    activeFilters.push({
+      label: 'Exporting clinician ID',
+      value: filters.clinicianId.trim(),
+    });
+  }
+  if (filters.exportRoute !== 'all') {
+    activeFilters.push({
+      label: 'Original PDF route',
+      value: formatExportRoute(filters.exportRoute),
+    });
+  }
+  if (filters.startDate.trim()) {
+    activeFilters.push({
+      label: 'From date',
+      value: filters.startDate.trim(),
+    });
+  }
+  if (filters.endDate.trim()) {
+    activeFilters.push({
+      label: 'Through date',
+      value: filters.endDate.trim(),
+    });
+  }
+  if (filters.versionNumber.trim()) {
+    activeFilters.push({
+      label: 'Compared version number',
+      value: filters.versionNumber.trim(),
+    });
+  }
+
+  return activeFilters.length > 0
+    ? activeFilters
+    : [{ label: 'Dashboard scope', value: 'All loaded audit records' }];
+}
+
 export function ClinicianAuditLogScreen({
   user,
   onExit,
@@ -208,6 +271,10 @@ export function ClinicianAuditLogScreen({
   const [filters, setFilters] = useState<AuditFilters>(initialFilters);
   const [csvExportInFlight, setCsvExportInFlight] = useState(false);
   const [csvExportFeedback, setCsvExportFeedback] = useState<string | null>(
+    null,
+  );
+  const [pdfExportInFlight, setPdfExportInFlight] = useState(false);
+  const [pdfExportFeedback, setPdfExportFeedback] = useState<string | null>(
     null,
   );
 
@@ -282,6 +349,35 @@ export function ClinicianAuditLogScreen({
       );
     } finally {
       setCsvExportInFlight(false);
+    }
+  };
+
+  const exportFilteredAuditPdf = async () => {
+    if (filteredEntries.length === 0) {
+      setPdfExportFeedback(
+        'Adjust the dashboard filters so at least one audit record is included.',
+      );
+      return;
+    }
+
+    setPdfExportInFlight(true);
+    setPdfExportFeedback(null);
+    try {
+      const result = await exportAuditDashboardPdf({
+        entries: filteredEntries,
+        filters: appliedPdfFilters(filters),
+        generatedAt: new Date().toLocaleString(),
+        generatedBy: user.uid,
+      });
+      setPdfExportFeedback(pdfExportMessage(result));
+    } catch (error) {
+      setPdfExportFeedback(
+        error instanceof Error
+          ? error.message
+          : 'BabyReady could not prepare the filtered audit PDF.',
+      );
+    } finally {
+      setPdfExportInFlight(false);
     }
   };
 
@@ -496,27 +592,48 @@ export function ClinicianAuditLogScreen({
                     <Text style={styles.sectionLabel}>EXPORT FILTERED RESULTS</Text>
                     <Text style={styles.exportDescription}>
                       Download the {filteredEntries.length} matching audit record
-                      {filteredEntries.length === 1 ? '' : 's'} as a CSV.
+                      {filteredEntries.length === 1 ? '' : 's'} as CSV or a
+                      clinician-ready PDF.
                     </Text>
                   </View>
-                  <Pressable
-                    accessibilityLabel="Export filtered audit records as CSV"
-                    accessibilityRole="button"
-                    disabled={csvExportInFlight || filteredEntries.length === 0}
-                    onPress={() => {
-                      void exportFilteredAuditLog();
-                    }}
-                    style={[
-                      styles.csvExportButton,
-                      (csvExportInFlight || filteredEntries.length === 0) &&
-                        styles.csvExportButtonDisabled,
-                    ]}
-                    testID="button-export-filtered-audit-csv"
-                  >
-                    <Text style={styles.csvExportButtonText}>
-                      {csvExportInFlight ? 'Preparing…' : 'Export CSV'}
-                    </Text>
-                  </Pressable>
+                  <View style={styles.exportActions}>
+                    <Pressable
+                      accessibilityLabel="Export filtered audit records as CSV"
+                      accessibilityRole="button"
+                      disabled={csvExportInFlight || filteredEntries.length === 0}
+                      onPress={() => {
+                        void exportFilteredAuditLog();
+                      }}
+                      style={[
+                        styles.csvExportButton,
+                        (csvExportInFlight || filteredEntries.length === 0) &&
+                          styles.csvExportButtonDisabled,
+                      ]}
+                      testID="button-export-filtered-audit-csv"
+                    >
+                      <Text style={styles.csvExportButtonText}>
+                        {csvExportInFlight ? 'Preparing…' : 'Export CSV'}
+                      </Text>
+                    </Pressable>
+                    <Pressable
+                      accessibilityLabel="Export filtered audit records as PDF"
+                      accessibilityRole="button"
+                      disabled={pdfExportInFlight || filteredEntries.length === 0}
+                      onPress={() => {
+                        void exportFilteredAuditPdf();
+                      }}
+                      style={[
+                        styles.pdfExportButton,
+                        (pdfExportInFlight || filteredEntries.length === 0) &&
+                          styles.pdfExportButtonDisabled,
+                      ]}
+                      testID="button-export-filtered-audit-pdf"
+                    >
+                      <Text style={styles.pdfExportButtonText}>
+                        {pdfExportInFlight ? 'Preparing…' : 'Export PDF'}
+                      </Text>
+                    </Pressable>
+                  </View>
                 </View>
                 {csvExportFeedback ? (
                   <Text
@@ -524,6 +641,14 @@ export function ClinicianAuditLogScreen({
                     testID="text-audit-csv-export-feedback"
                   >
                     {csvExportFeedback}
+                  </Text>
+                ) : null}
+                {pdfExportFeedback ? (
+                  <Text
+                    style={styles.pdfExportFeedback}
+                    testID="text-audit-pdf-export-feedback"
+                  >
+                    {pdfExportFeedback}
                   </Text>
                 ) : null}
                 <Text style={styles.resultsLabel}>
@@ -787,6 +912,9 @@ const styles = StyleSheet.create({
   exportCopy: {
     flex: 1,
   },
+  exportActions: {
+    gap: 8,
+  },
   exportDescription: {
     color: '#3E5D58',
     fontSize: 13,
@@ -809,6 +937,30 @@ const styles = StyleSheet.create({
     fontWeight: '800',
   },
   csvExportFeedback: {
+    color: '#0C4E54',
+    fontSize: 13,
+    lineHeight: 19,
+    marginBottom: 12,
+  },
+  pdfExportButton: {
+    backgroundColor: '#FFFFFF',
+    borderColor: '#01696F',
+    borderRadius: 9,
+    borderWidth: 1,
+    minHeight: 42,
+    paddingHorizontal: 13,
+    paddingVertical: 10,
+  },
+  pdfExportButtonDisabled: {
+    backgroundColor: '#F1F3F1',
+    borderColor: '#B0BFBC',
+  },
+  pdfExportButtonText: {
+    color: '#01696F',
+    fontSize: 13,
+    fontWeight: '800',
+  },
+  pdfExportFeedback: {
     color: '#0C4E54',
     fontSize: 13,
     lineHeight: 19,
