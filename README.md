@@ -73,6 +73,19 @@ EXPO_PUBLIC_FIREBASE_APP_ID=
 
 These are public Firebase app configuration values. They are not Firebase Admin SDK credentials and they do not replace Firestore Security Rules. Never add Admin SDK service-account JSON, private AI-provider keys, or server-only credentials to the Expo client.
 
+### Optional public audit-verification route
+
+```bash
+EXPO_PUBLIC_AUDIT_REPORT_VERIFY_URL=https://babyready.app/verify
+```
+
+Set this to the deployed HTTPS BabyReady web route that serves the app. Audit
+PDF QR codes and their primary clickable verification links carry the generated
+report ID to this route as `?reportId=...`. The app reads that parameter after
+clinician sign-in and resolves the administrator-only immutable manifest. The
+default is `https://babyready.app/verify`; override it for staging, a custom
+domain, or any alternate production host.
+
 ### Authentication and profile bootstrap
 
 The app presents the course shell when Firebase is unconfigured. Once Firebase is configured, `BabyReadyAuthProvider` watches the auth session, starts an anonymous session when no user is present, and attempts to provision `users/{uid}` in Firestore.
@@ -158,9 +171,13 @@ manifest and can reveal the preserved record set without depending on the
 dashboard’s current 200-record query window.
 
 Every audit PDF page footer also includes a vector QR code and a clickable
-`babyready://audit-report?reportId=...` deep link. Scanning the QR code opens
-the installed BabyReady app directly to the administrator-only verification
-view with that report ID prefilled and resolved.
+browser verification URL with the report ID prefilled. Set
+`EXPO_PUBLIC_AUDIT_REPORT_VERIFY_URL` to the deployed HTTPS BabyReady web
+verification route, such as `https://app.example.com/verify`. This route opens
+the administrator-only verification view in the browser and preserves the
+report ID through sign-in. The footer also retains a
+`babyready://audit-report?reportId=...` link for opening the installed app
+directly.
 
 ### Local Emulator Suite
 

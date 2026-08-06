@@ -1,6 +1,9 @@
 import qrcode from 'qrcode-generator';
 
-import { createAuditReportVerificationUrl } from './auditReportVerification';
+import {
+  createAuditReportAppVerificationUrl,
+  createAuditReportBrowserVerificationUrl,
+} from './auditReportVerification';
 import type {
   ComparisonAuditExportLog,
   ComparisonAuditExportRoute,
@@ -163,22 +166,32 @@ function renderPageFooter(
   reportId: string,
   pageNumber: number,
   pageCount: number,
-  verificationUrl: string,
+  browserVerificationUrl: string,
+  appVerificationUrl: string,
   verificationQrSvg: string,
 ): string {
   return `<footer class="page-footer">
     <span class="footer-report-id">Report ID: ${escapeHtml(reportId)}</span>
-    <a
-      class="verification-qr"
-      href="${escapeHtml(verificationUrl)}"
-      aria-label="Open BabyReady audit report verification for ${escapeHtml(reportId)}"
-    >
-      <span class="verification-qr-art" aria-hidden="true">${verificationQrSvg}</span>
+    <span class="verification-links">
+      <a
+        class="verification-qr"
+        href="${escapeHtml(browserVerificationUrl)}"
+        aria-label="Open browser verification for BabyReady audit report ${escapeHtml(reportId)}"
+      >
+        <span class="verification-qr-art" aria-hidden="true">${verificationQrSvg}</span>
+      </a>
       <span class="verification-qr-copy">
-        <strong>Scan to verify</strong>
-        <small>Open BabyReady audit verification</small>
+        <a
+          class="browser-verification-link"
+          href="${escapeHtml(browserVerificationUrl)}"
+        >Scan to verify online</a>
+        <small>Browser verification with report ID prefilled</small>
+        <a
+          class="app-verification-link"
+          href="${escapeHtml(appVerificationUrl)}"
+        >Use installed app</a>
       </span>
-    </a>
+    </span>
     <span class="page-number">Page ${pageNumber} of ${pageCount}</span>
   </footer>`;
 }
@@ -190,9 +203,12 @@ function renderReportPages(input: AuditDashboardPdfHtmlInput): string {
     FOLLOWING_PAGE_ENTRY_COUNT,
   );
   const pageCount = getAuditDashboardReportPageCount(input.entries.length);
-  const verificationUrl = createAuditReportVerificationUrl(input.reportId);
+  const browserVerificationUrl = createAuditReportBrowserVerificationUrl(
+    input.reportId,
+  );
+  const appVerificationUrl = createAuditReportAppVerificationUrl(input.reportId);
   const verificationQr = qrcode(0, 'M');
-  verificationQr.addData(verificationUrl, 'Byte');
+  verificationQr.addData(browserVerificationUrl, 'Byte');
   verificationQr.make();
   const verificationQrSvg = verificationQr.createSvgTag({
     cellSize: 3,
@@ -235,7 +251,14 @@ function renderReportPages(input: AuditDashboardPdfHtmlInput): string {
       <h2>Matching audit records</h2>
       ${renderAuditTable(firstPageEntries)}
     </section>
-    ${renderPageFooter(input.reportId, 1, pageCount, verificationUrl, verificationQrSvg)}
+    ${renderPageFooter(
+      input.reportId,
+      1,
+      pageCount,
+      browserVerificationUrl,
+      appVerificationUrl,
+      verificationQrSvg,
+    )}
   </article>`;
 
   const continuationPages = followingPages
@@ -256,7 +279,8 @@ function renderReportPages(input: AuditDashboardPdfHtmlInput): string {
           input.reportId,
           index + 2,
           pageCount,
-          verificationUrl,
+          browserVerificationUrl,
+          appVerificationUrl,
           verificationQrSvg,
         )}
       </article>`,
@@ -391,21 +415,27 @@ export function buildAuditDashboardPdfHtml(
         padding-top: 7pt;
       }
       .footer-report-id { justify-self: start; overflow-wrap: anywhere; }
-      .verification-qr {
+      .verification-links {
         align-items: center;
-        color: #01696F;
         display: flex;
         gap: 5pt;
         justify-self: center;
+      }
+      .verification-qr {
+        color: #01696F;
         text-decoration: none;
       }
       .verification-qr-art { display: block; height: 17mm; width: 17mm; }
       .verification-qr-art svg { display: block; height: 100%; width: 100%; }
-      .verification-qr-copy { display: block; max-width: 105pt; }
-      .verification-qr-copy strong,
+      .verification-qr-copy { display: block; max-width: 125pt; }
+      .browser-verification-link,
+      .app-verification-link,
       .verification-qr-copy small { display: block; }
-      .verification-qr-copy strong { font-size: 8pt; }
+      .browser-verification-link,
+      .app-verification-link { color: #01696F; font-weight: 700; text-decoration: none; }
+      .browser-verification-link { font-size: 8pt; }
       .verification-qr-copy small { color: #696761; font-size: 6.8pt; line-height: 1.25; margin-top: 1pt; }
+      .app-verification-link { font-size: 6.8pt; margin-top: 2pt; text-decoration: underline; }
       .page-number { justify-self: end; white-space: nowrap; }
       @media print {
         thead { display: table-header-group; }
