@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import {
+  ActivityIndicator,
   Alert,
   Linking,
   Pressable,
@@ -8,6 +9,7 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  TextInput,
   View,
 } from 'react-native';
 
@@ -24,6 +26,10 @@ import { ClinicianAuditLogScreen } from './src/screens/ClinicianAuditLogScreen';
 import { ClinicianReviewScreen } from './src/screens/ClinicianReviewScreen';
 import { ClinicianContentAuthoringScreen } from './src/screens/ClinicianContentAuthoringScreen';
 import { ClinicianSourceLibraryScreen } from './src/screens/ClinicianSourceLibraryScreen';
+import {
+  signInWithEmail,
+  signOutFromBabyReady,
+} from './src/services/authService';
 
 const currentPregnancyWeek = 25;
 
@@ -47,6 +53,11 @@ function BabyReadyApp() {
   const [draftToEdit, setDraftToEdit] = useState<ClinicalContentBlock | null>(
     null,
   );
+  const [clinicianSignInOpen, setClinicianSignInOpen] = useState(false);
+  const [clinicianEmail, setClinicianEmail] = useState('');
+  const [clinicianPassword, setClinicianPassword] = useState('');
+  const [clinicianSignInError, setClinicianSignInError] = useState<string | null>(null);
+  const [clinicianSignInBusy, setClinicianSignInBusy] = useState(false);
 
   useEffect(() => {
     const openAuditReportVerification = (url: string | null) => {
@@ -75,6 +86,42 @@ function BabyReadyApp() {
       'For severe symptoms or immediate danger, call 911 or your local emergency number now. For concerns that are not immediately life-threatening, contact your obstetric triage team or your baby’s pediatric team right away.',
       [{ text: 'I understand' }],
     );
+  };
+
+  const handleClinicianSignIn = async () => {
+    if (!clinicianEmail.trim() || !clinicianPassword) {
+      setClinicianSignInError('Enter the clinician email address and password.');
+      return;
+    }
+
+    setClinicianSignInBusy(true);
+    setClinicianSignInError(null);
+
+    try {
+      await signInWithEmail(clinicianEmail.trim(), clinicianPassword);
+      setClinicianPassword('');
+      setClinicianSignInOpen(false);
+    } catch {
+      setClinicianSignInError(
+        'BabyReady could not sign in with those credentials. Check the email address and password, then try again.',
+      );
+    } finally {
+      setClinicianSignInBusy(false);
+    }
+  };
+
+  const handleClinicianSignOut = async () => {
+    try {
+      await signOutFromBabyReady();
+      setClinicianEmail('');
+      setClinicianPassword('');
+      setClinicianSignInError(null);
+    } catch {
+      Alert.alert(
+        'Sign-out needs attention',
+        'BabyReady could not sign out. Close and reopen the app before trying again.',
+      );
+    }
   };
 
   if (activeView === 'sources' && authState.status === 'ready') {
@@ -233,6 +280,103 @@ function BabyReadyApp() {
               ? authState.error
               : 'Secure local storage, Auth persistence, and Firestore rules are included in this scaffold.'}
           </Text>
+          {authState.status === 'ready' && authState.user.isAnonymous ? (
+            clinicianSignInOpen ? (
+              <View style={styles.clinicianSignInCard}>
+                <Text style={styles.clinicianSignInTitle}>Clinician sign in</Text>
+                <Text style={styles.clinicianSignInText}>
+                  Use the clinician administrator account. Learner sessions remain separate.
+                </Text>
+                <Text style={styles.fieldLabel}>Email address</Text>
+                <TextInput
+                  accessibilityLabel="Clinician email address"
+                  autoCapitalize="none"
+                  autoComplete="email"
+                  autoCorrect={false}
+                  editable={!clinicianSignInBusy}
+                  keyboardType="email-address"
+                  onChangeText={setClinicianEmail}
+                  placeholder="clinician@example.com"
+                  placeholderTextColor="#77746D"
+                  style={styles.textInput}
+                  textContentType="username"
+                  value={clinicianEmail}
+                />
+                <Text style={styles.fieldLabel}>Password</Text>
+                <TextInput
+                  accessibilityLabel="Clinician password"
+                  autoComplete="current-password"
+                  editable={!clinicianSignInBusy}
+                  onChangeText={setClinicianPassword}
+                  placeholder="Enter password"
+                  placeholderTextColor="#77746D"
+                  secureTextEntry
+                  style={styles.textInput}
+                  textContentType="password"
+                  value={clinicianPassword}
+                />
+                {clinicianSignInError ? (
+                  <Text accessibilityRole="alert" style={styles.signInError}>
+                    {clinicianSignInError}
+                  </Text>
+                ) : null}
+                <View style={styles.clinicianSignInActions}>
+                  <Pressable
+                    accessibilityRole="button"
+                    accessibilityLabel="Cancel clinician sign in"
+                    disabled={clinicianSignInBusy}
+                    onPress={() => {
+                      setClinicianSignInOpen(false);
+                      setClinicianPassword('');
+                      setClinicianSignInError(null);
+                    }}
+                    style={styles.secondaryButton}
+                  >
+                    <Text style={styles.secondaryButtonText}>Cancel</Text>
+                  </Pressable>
+                  <Pressable
+                    accessibilityRole="button"
+                    accessibilityLabel="Sign in to the clinician workspace"
+                    disabled={clinicianSignInBusy}
+                    onPress={() => void handleClinicianSignIn()}
+                    style={[
+                      styles.signInButton,
+                      clinicianSignInBusy && styles.signInButtonDisabled,
+                    ]}
+                  >
+                    {clinicianSignInBusy ? (
+                      <ActivityIndicator color="#FFFFFF" />
+                    ) : (
+                      <Text style={styles.signInButtonText}>Sign in</Text>
+                    )}
+                  </Pressable>
+                </View>
+              </View>
+            ) : (
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel="Sign in as a clinician"
+                onPress={() => setClinicianSignInOpen(true)}
+                style={styles.clinicianSignInLink}
+              >
+                <Text style={styles.clinicianSignInLinkText}>Clinician sign in</Text>
+              </Pressable>
+            )
+          ) : authState.status === 'ready' ? (
+            <View style={styles.clinicianAccountRow}>
+              <Text style={styles.clinicianAccountText}>
+                Signed in as {authState.user.email ?? 'a clinician account'}.
+              </Text>
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel="Sign out of clinician account"
+                onPress={() => void handleClinicianSignOut()}
+                style={styles.signOutButton}
+              >
+                <Text style={styles.signOutButtonText}>Sign out</Text>
+              </Pressable>
+            </View>
+          ) : null}
           <Pressable
             accessibilityRole="button"
             accessibilityLabel="Open the clinician content review workspace"
@@ -462,6 +606,119 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 17,
     marginTop: 9,
+  },
+  clinicianSignInLink: {
+    alignSelf: 'flex-start',
+    marginTop: 14,
+    minHeight: 44,
+    justifyContent: 'center',
+  },
+  clinicianSignInLinkText: {
+    color: '#0C4E54',
+    fontSize: 14,
+    fontWeight: '800',
+  },
+  clinicianSignInCard: {
+    backgroundColor: '#FBFBF9',
+    borderColor: '#D4D1CA',
+    borderRadius: 12,
+    borderWidth: 1,
+    marginTop: 14,
+    padding: 14,
+  },
+  clinicianSignInTitle: {
+    color: '#28251D',
+    fontSize: 16,
+    fontWeight: '800',
+  },
+  clinicianSignInText: {
+    color: '#55534D',
+    fontSize: 13,
+    lineHeight: 18,
+    marginTop: 4,
+  },
+  fieldLabel: {
+    color: '#55534D',
+    fontSize: 13,
+    fontWeight: '800',
+    marginTop: 12,
+  },
+  textInput: {
+    backgroundColor: '#FFFFFF',
+    borderColor: '#B8B4AC',
+    borderRadius: 9,
+    borderWidth: 1,
+    color: '#28251D',
+    fontSize: 16,
+    marginTop: 5,
+    minHeight: 46,
+    paddingHorizontal: 12,
+  },
+  signInError: {
+    color: '#8A1F5D',
+    fontSize: 13,
+    lineHeight: 18,
+    marginTop: 10,
+  },
+  clinicianSignInActions: {
+    flexDirection: 'row',
+    gap: 10,
+    justifyContent: 'flex-end',
+    marginTop: 14,
+  },
+  secondaryButton: {
+    alignItems: 'center',
+    borderColor: '#8D8981',
+    borderRadius: 9,
+    borderWidth: 1,
+    justifyContent: 'center',
+    minHeight: 44,
+    minWidth: 88,
+    paddingHorizontal: 12,
+  },
+  secondaryButtonText: {
+    color: '#55534D',
+    fontSize: 14,
+    fontWeight: '800',
+  },
+  signInButton: {
+    alignItems: 'center',
+    backgroundColor: '#01696F',
+    borderRadius: 9,
+    justifyContent: 'center',
+    minHeight: 44,
+    minWidth: 100,
+    paddingHorizontal: 14,
+  },
+  signInButtonDisabled: {
+    backgroundColor: '#6F9B98',
+  },
+  signInButtonText: {
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: '800',
+  },
+  clinicianAccountRow: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 14,
+  },
+  clinicianAccountText: {
+    color: '#55534D',
+    flex: 1,
+    fontSize: 13,
+    lineHeight: 18,
+    marginRight: 12,
+  },
+  signOutButton: {
+    minHeight: 44,
+    justifyContent: 'center',
+  },
+  signOutButtonText: {
+    color: '#7B1F5C',
+    fontSize: 14,
+    fontWeight: '800',
   },
   clinicianLink: {
     alignSelf: 'flex-start',
