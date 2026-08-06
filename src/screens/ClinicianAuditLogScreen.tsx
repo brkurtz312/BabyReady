@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Pressable,
@@ -43,6 +43,7 @@ import {
 type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
 
 type ClinicianAuditLogScreenProps = {
+  initialReportId?: string | null;
   user: User;
   onExit: () => void;
 };
@@ -289,6 +290,7 @@ function manifestFilterSummary(
 }
 
 export function ClinicianAuditLogScreen({
+  initialReportId = null,
   user,
   onExit,
 }: ClinicianAuditLogScreenProps) {
@@ -316,6 +318,7 @@ export function ClinicianAuditLogScreen({
       error: null,
     });
   const [showVerifiedRecordSet, setShowVerifiedRecordSet] = useState(false);
+  const autoVerifiedReportId = useRef<string | null>(null);
 
   useEffect(() => {
     let active = true;
@@ -450,8 +453,8 @@ export function ClinicianAuditLogScreen({
     }
   };
 
-  const verifyAuditReport = async () => {
-    const reportId = normalizeAuditReportId(reportIdInput);
+  const verifyAuditReport = async (reportIdCandidate = reportIdInput) => {
+    const reportId = normalizeAuditReportId(reportIdCandidate);
     if (!reportId) {
       setVerificationState({
         status: 'error',
@@ -487,6 +490,24 @@ export function ClinicianAuditLogScreen({
       });
     }
   };
+
+  useEffect(() => {
+    const reportId = initialReportId
+      ? normalizeAuditReportId(initialReportId)
+      : '';
+
+    if (
+      access !== 'authorized' ||
+      !reportId ||
+      autoVerifiedReportId.current === reportId
+    ) {
+      return;
+    }
+
+    autoVerifiedReportId.current = reportId;
+    setReportIdInput(reportId);
+    void verifyAuditReport(reportId);
+  }, [access, initialReportId]);
 
   const clearAuditReportVerification = () => {
     setReportIdInput('');

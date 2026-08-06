@@ -1,3 +1,6 @@
+import qrcode from 'qrcode-generator';
+
+import { createAuditReportVerificationUrl } from './auditReportVerification';
 import type {
   ComparisonAuditExportLog,
   ComparisonAuditExportRoute,
@@ -160,10 +163,23 @@ function renderPageFooter(
   reportId: string,
   pageNumber: number,
   pageCount: number,
+  verificationUrl: string,
+  verificationQrSvg: string,
 ): string {
   return `<footer class="page-footer">
-    <span>Report ID: ${escapeHtml(reportId)}</span>
-    <span>Page ${pageNumber} of ${pageCount}</span>
+    <span class="footer-report-id">Report ID: ${escapeHtml(reportId)}</span>
+    <a
+      class="verification-qr"
+      href="${escapeHtml(verificationUrl)}"
+      aria-label="Open BabyReady audit report verification for ${escapeHtml(reportId)}"
+    >
+      <span class="verification-qr-art" aria-hidden="true">${verificationQrSvg}</span>
+      <span class="verification-qr-copy">
+        <strong>Scan to verify</strong>
+        <small>Open BabyReady audit verification</small>
+      </span>
+    </a>
+    <span class="page-number">Page ${pageNumber} of ${pageCount}</span>
   </footer>`;
 }
 
@@ -174,6 +190,15 @@ function renderReportPages(input: AuditDashboardPdfHtmlInput): string {
     FOLLOWING_PAGE_ENTRY_COUNT,
   );
   const pageCount = getAuditDashboardReportPageCount(input.entries.length);
+  const verificationUrl = createAuditReportVerificationUrl(input.reportId);
+  const verificationQr = qrcode(0, 'M');
+  verificationQr.addData(verificationUrl, 'Byte');
+  verificationQr.make();
+  const verificationQrSvg = verificationQr.createSvgTag({
+    cellSize: 3,
+    margin: 2,
+    scalable: true,
+  });
   const firstPage = `<article class="report-page report-page-first">
     <header class="header">
       <div>
@@ -210,7 +235,7 @@ function renderReportPages(input: AuditDashboardPdfHtmlInput): string {
       <h2>Matching audit records</h2>
       ${renderAuditTable(firstPageEntries)}
     </section>
-    ${renderPageFooter(input.reportId, 1, pageCount)}
+    ${renderPageFooter(input.reportId, 1, pageCount, verificationUrl, verificationQrSvg)}
   </article>`;
 
   const continuationPages = followingPages
@@ -227,7 +252,13 @@ function renderReportPages(input: AuditDashboardPdfHtmlInput): string {
           <h2>Matching audit records continued</h2>
           ${renderAuditTable(entries)}
         </section>
-        ${renderPageFooter(input.reportId, index + 2, pageCount)}
+        ${renderPageFooter(
+          input.reportId,
+          index + 2,
+          pageCount,
+          verificationUrl,
+          verificationQrSvg,
+        )}
       </article>`,
     )
     .join('');
@@ -349,14 +380,33 @@ export function buildAuditDashboardPdfHtml(
       }
       .continuation-title { color: #28251D; font-size: 14pt; font-weight: 700; margin: 0; }
       .page-footer {
+        align-items: center;
         border-top: 1px solid #D4D1CA;
         color: #696761;
-        display: flex;
+        display: grid;
         font-size: 8pt;
-        justify-content: space-between;
+        gap: 12pt;
+        grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
         margin-top: auto;
         padding-top: 7pt;
       }
+      .footer-report-id { justify-self: start; overflow-wrap: anywhere; }
+      .verification-qr {
+        align-items: center;
+        color: #01696F;
+        display: flex;
+        gap: 5pt;
+        justify-self: center;
+        text-decoration: none;
+      }
+      .verification-qr-art { display: block; height: 17mm; width: 17mm; }
+      .verification-qr-art svg { display: block; height: 100%; width: 100%; }
+      .verification-qr-copy { display: block; max-width: 105pt; }
+      .verification-qr-copy strong,
+      .verification-qr-copy small { display: block; }
+      .verification-qr-copy strong { font-size: 8pt; }
+      .verification-qr-copy small { color: #696761; font-size: 6.8pt; line-height: 1.25; margin-top: 1pt; }
+      .page-number { justify-self: end; white-space: nowrap; }
       @media print {
         thead { display: table-header-group; }
         tr { break-inside: avoid; }

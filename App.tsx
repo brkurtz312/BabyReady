@@ -1,6 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { Alert, Pressable, SafeAreaView, ScrollView, StyleSheet, Text, View } from 'react-native';
+import {
+  Alert,
+  Linking,
+  Pressable,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 
 import { ModuleCard } from './src/components/ModuleCard';
 import {
@@ -9,6 +18,7 @@ import {
 } from './src/auth/AuthProvider';
 import { courseModules, recommendedModule } from './src/data/course';
 import { firebaseIsConfigured } from './src/lib/firebase';
+import { getAuditReportIdFromVerificationUrl } from './src/lib/auditReportVerification';
 import type { ClinicalContentBlock } from './src/models/course';
 import { ClinicianAuditLogScreen } from './src/screens/ClinicianAuditLogScreen';
 import { ClinicianReviewScreen } from './src/screens/ClinicianReviewScreen';
@@ -31,9 +41,33 @@ function BabyReadyApp() {
   const [activeView, setActiveView] = useState<
     'learner' | 'review' | 'sources' | 'author' | 'audit-log'
   >('learner');
+  const [auditReportIdFromLink, setAuditReportIdFromLink] = useState<
+    string | null
+  >(null);
   const [draftToEdit, setDraftToEdit] = useState<ClinicalContentBlock | null>(
     null,
   );
+
+  useEffect(() => {
+    const openAuditReportVerification = (url: string | null) => {
+      const reportId = getAuditReportIdFromVerificationUrl(url);
+      if (!reportId) {
+        return;
+      }
+
+      setAuditReportIdFromLink(reportId);
+      setActiveView('audit-log');
+    };
+
+    void Linking.getInitialURL().then(openAuditReportVerification).catch(() => {
+      // Opening the app without a deep-link remains the expected path.
+    });
+    const subscription = Linking.addEventListener('url', ({ url }) => {
+      openAuditReportVerification(url);
+    });
+
+    return () => subscription.remove();
+  }, []);
 
   const showUrgentGuidance = () => {
     Alert.alert(
@@ -68,7 +102,11 @@ function BabyReadyApp() {
   if (activeView === 'audit-log' && authState.status === 'ready') {
     return (
       <ClinicianAuditLogScreen
-        onExit={() => setActiveView('review')}
+        initialReportId={auditReportIdFromLink}
+        onExit={() => {
+          setAuditReportIdFromLink(null);
+          setActiveView('review');
+        }}
         user={authState.user}
       />
     );

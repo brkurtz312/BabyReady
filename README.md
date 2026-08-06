@@ -157,6 +157,11 @@ administrator-only verification panel resolves a report ID back to this
 manifest and can reveal the preserved record set without depending on the
 dashboard’s current 200-record query window.
 
+Every audit PDF page footer also includes a vector QR code and a clickable
+`babyready://audit-report?reportId=...` deep link. Scanning the QR code opens
+the installed BabyReady app directly to the administrator-only verification
+view with that report ID prefilled and resolved.
+
 ### Local Emulator Suite
 
 Set the following development-only values to connect the app to local Auth and Firestore emulators:
