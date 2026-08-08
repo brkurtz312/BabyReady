@@ -1,15 +1,15 @@
 {
-  "indexes": [
+  "indexes": [],
+  "fieldOverrides": [
     {
       "collectionGroup": "contentBlocks",
-      "queryScope": "COLLECTION_GROUP",
-      "fields": [
+      "fieldPath": "updatedAt",
+      "indexes": [
         {
-          "fieldPath": "updatedAt",
-          "order": "DESCENDING"
+          "order": "DESCENDING",
+          "queryScope": "COLLECTION_GROUP"
         }
       ]
     }
-  ],
-  "fieldOverrides": []
+  ]
 }
