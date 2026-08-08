@@ -208,6 +208,13 @@ service cloud.firestore {
       allow read: if isAdmin();
     }
 
+    // The clinical review queue uses a collection-group query across all
+    // content blocks. Keep this read path administrator-only; learner reads
+    // remain governed by the course-specific published-content rule below.
+    match /{path=**}/contentBlocks/{contentBlockId} {
+      allow read: if isAdmin();
+    }
+
     // Dashboard report manifests preserve the exact immutable audit-record set
     // and original filters behind the report ID printed in the PDF.
     match /auditReportManifests/{reportId} {

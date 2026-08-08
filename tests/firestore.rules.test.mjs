@@ -157,6 +157,46 @@ test('a clinical block cannot publish without sources, reviewer, and review date
   await assertSucceeds(setDoc(doc(admin, blockPath), clinicalBlock()));
 });
 
+test('only administrators can query clinical content across the review queue', async () => {
+  const author = userDb('author');
+  const admin = userDb('admin', { admin: true });
+  const firstBlockPath =
+    'courses/birthready/modules/module-1/lessons/lesson-1/contentBlocks/welcome';
+  const secondBlockPath =
+    'courses/birthready/modules/module-2/lessons/lesson-2/contentBlocks/check-in';
+
+  await seed(firstBlockPath, clinicalBlock({
+    publicationState: 'draft',
+    clinicalReviewerId: null,
+    lastReviewedAt: null,
+    nextReviewAt: null,
+    updatedAt: Timestamp.fromDate(new Date('2026-08-08T00:00:00.000Z')),
+  }));
+  await seed(secondBlockPath, clinicalBlock({
+    id: 'check-in',
+    moduleId: 'module-2',
+    lessonId: 'lesson-2',
+    publicationState: 'submitted',
+    updatedAt: Timestamp.fromDate(new Date('2026-08-08T01:00:00.000Z')),
+  }));
+
+  const adminQueue = query(
+    collectionGroup(admin, 'contentBlocks'),
+    orderBy('updatedAt', 'desc'),
+    limit(50),
+  );
+  const results = await assertSucceeds(getDocs(adminQueue));
+  assert.equal(results.size, 2);
+  assert.equal(results.docs[0].id, 'check-in');
+
+  const authorQueue = query(
+    collectionGroup(author, 'contentBlocks'),
+    orderBy('updatedAt', 'desc'),
+    limit(50),
+  );
+  await assertFails(getDocs(authorQueue));
+});
+
 test('clinical content version history is admin-readable and append-only', async () => {
   const author = userDb('author');
   const admin = userDb('admin', { admin: true });
