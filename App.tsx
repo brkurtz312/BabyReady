@@ -98,12 +98,18 @@ function BabyReadyApp() {
     setClinicianSignInError(null);
 
     try {
-      await signInWithEmail(clinicianEmail.trim(), clinicianPassword);
+      const user = await signInWithEmail(clinicianEmail.trim(), clinicianPassword);
+      const tokenResult = await user.getIdTokenResult(true);
+      if (tokenResult.claims.admin !== true) {
+        await signOutFromBabyReady();
+        throw new Error('The account does not have clinician administrator access.');
+      }
+
       setClinicianPassword('');
       setClinicianSignInOpen(false);
     } catch {
       setClinicianSignInError(
-        'BabyReady could not sign in with those credentials. Check the email address and password, then try again.',
+        'BabyReady could not complete clinician sign-in. Check the credentials and clinician administrator access, then try again.',
       );
     } finally {
       setClinicianSignInBusy(false);
@@ -271,8 +277,8 @@ function BabyReadyApp() {
               ? authState.status === 'ready'
                 ? `Firebase Authentication is ready. You are using a private ${authState.user.isAnonymous ? 'starter' : 'account'} session.`
                 : authState.status === 'error'
-                  ? 'Firebase is configured, but sign-in needs attention. Confirm that Anonymous Authentication is enabled in Firebase.'
-                  : 'Firebase is configured. Establishing a private BabyReady session…'
+                  ? 'Firebase is configured. The optional learner session needs attention, but clinician sign-in remains available.'
+                  : 'Firebase is configured. You can sign in as a clinician while the optional learner session starts.'
               : 'Add your Firebase values in .env to connect secure course content, user plans, and care-team contacts.'}
           </Text>
           <Text style={styles.foundationMeta}>
@@ -280,12 +286,14 @@ function BabyReadyApp() {
               ? authState.error
               : 'Secure local storage, Auth persistence, and Firestore rules are included in this scaffold.'}
           </Text>
-          {authState.status === 'ready' && authState.user.isAnonymous ? (
+          {firebaseIsConfigured &&
+          (authState.status !== 'ready' || authState.user.isAnonymous) ? (
             clinicianSignInOpen ? (
               <View style={styles.clinicianSignInCard}>
                 <Text style={styles.clinicianSignInTitle}>Clinician sign in</Text>
                 <Text style={styles.clinicianSignInText}>
-                  Use the clinician administrator account. Learner sessions remain separate.
+                  Use the clinician administrator account. This direct sign-in does not
+                  depend on a learner session.
                 </Text>
                 <Text style={styles.fieldLabel}>Email address</Text>
                 <TextInput
