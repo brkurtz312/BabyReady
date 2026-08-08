@@ -34,6 +34,10 @@ async function provisionProfile(user: User): Promise<void> {
   }
 }
 
+function provisionProfileInBackground(user: User): void {
+  void provisionProfile(user);
+}
+
 export function subscribeToBabyReadyAuth(
   onStateChange: (state: AuthState) => void,
 ): Unsubscribe | null {
@@ -47,15 +51,15 @@ export function subscribeToBabyReadyAuth(
 
   return onAuthStateChanged(babyReadyAuth, async (user) => {
     if (user) {
-      await provisionProfile(user);
       onStateChange({ status: 'ready', user, error: null });
+      provisionProfileInBackground(user);
       return;
     }
 
     try {
       const credential = await signInAnonymously(babyReadyAuth);
-      await provisionProfile(credential.user);
       onStateChange({ status: 'ready', user: credential.user, error: null });
+      provisionProfileInBackground(credential.user);
     } catch (error) {
       onStateChange({ status: 'error', user: null, error: readableAuthError(error) });
     }
@@ -64,13 +68,13 @@ export function subscribeToBabyReadyAuth(
 
 export async function registerWithEmail(email: string, password: string): Promise<User> {
   const credential = await createUserWithEmailAndPassword(requireAuth(), email, password);
-  await provisionProfile(credential.user);
+  provisionProfileInBackground(credential.user);
   return credential.user;
 }
 
 export async function signInWithEmail(email: string, password: string): Promise<User> {
   const credential = await signInWithEmailAndPassword(requireAuth(), email, password);
-  await provisionProfile(credential.user);
+  provisionProfileInBackground(credential.user);
   return credential.user;
 }
 
