@@ -139,6 +139,34 @@ function BabyReadyApp() {
     }
   };
 
+  const handleOpenClinicianReview = async () => {
+    if (authState.status !== 'ready') {
+      Alert.alert(
+        'Sign-in required',
+        'Finish Firebase Authentication before opening the clinician review workspace.',
+      );
+      return;
+    }
+
+    try {
+      const tokenResult = await authState.user.getIdTokenResult(true);
+      if (tokenResult.claims.admin !== true) {
+        Alert.alert(
+          'Clinician access required',
+          'This workspace is available only to clinician administrator accounts.',
+        );
+        return;
+      }
+
+      setActiveView('review');
+    } catch {
+      Alert.alert(
+        'Access check unavailable',
+        'BabyReady could not verify clinician administrator access. Please try again.',
+      );
+    }
+  };
+
   if (activeView === 'sources' && authState.status === 'ready') {
     return (
       <ClinicianSourceLibraryScreen
@@ -406,17 +434,7 @@ function BabyReadyApp() {
           <Pressable
             accessibilityRole="button"
             accessibilityLabel="Open the clinician content review workspace"
-            onPress={() => {
-              if (authState.status !== 'ready') {
-                Alert.alert(
-                  'Sign-in required',
-                  'Finish Firebase Authentication before opening the clinician review workspace.',
-                );
-                return;
-              }
-
-              setActiveView('review');
-            }}
+            onPress={() => void handleOpenClinicianReview()}
             style={styles.clinicianLink}
           >
             <Text style={styles.clinicianLinkText}>Open clinician content review</Text>
