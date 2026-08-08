@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import {
   ActivityIndicator,
   Alert,
+  KeyboardAvoidingView,
   Linking,
+  Platform,
   Pressable,
   SafeAreaView,
   ScrollView,
@@ -58,6 +60,13 @@ function BabyReadyApp() {
   const [clinicianPassword, setClinicianPassword] = useState('');
   const [clinicianSignInError, setClinicianSignInError] = useState<string | null>(null);
   const [clinicianSignInBusy, setClinicianSignInBusy] = useState(false);
+  const learnerScrollRef = useRef<ScrollView>(null);
+
+  const revealClinicianSignIn = () => {
+    setTimeout(() => {
+      learnerScrollRef.current?.scrollToEnd({ animated: true });
+    }, 120);
+  };
 
   useEffect(() => {
     const openAuditReportVerification = (url: string | null) => {
@@ -187,10 +196,17 @@ function BabyReadyApp() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar style="dark" />
-      <ScrollView
-        contentContainerStyle={styles.content}
-        showsVerticalScrollIndicator={false}
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        style={styles.keyboardAvoidingView}
       >
+        <ScrollView
+          ref={learnerScrollRef}
+          automaticallyAdjustKeyboardInsets
+          contentContainerStyle={styles.content}
+          keyboardShouldPersistTaps="handled"
+          showsVerticalScrollIndicator={false}
+        >
         <View style={styles.header}>
           <View>
             <Text style={styles.brand}>BABYREADY</Text>
@@ -304,6 +320,7 @@ function BabyReadyApp() {
                   editable={!clinicianSignInBusy}
                   keyboardType="email-address"
                   onChangeText={setClinicianEmail}
+                  onFocus={revealClinicianSignIn}
                   placeholder="clinician@example.com"
                   placeholderTextColor="#77746D"
                   style={styles.textInput}
@@ -316,6 +333,7 @@ function BabyReadyApp() {
                   autoComplete="current-password"
                   editable={!clinicianSignInBusy}
                   onChangeText={setClinicianPassword}
+                  onFocus={revealClinicianSignIn}
                   placeholder="Enter password"
                   placeholderTextColor="#77746D"
                   secureTextEntry
@@ -404,7 +422,8 @@ function BabyReadyApp() {
             <Text style={styles.clinicianLinkText}>Open clinician content review</Text>
           </Pressable>
         </View>
-      </ScrollView>
+        </ScrollView>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 }
@@ -413,6 +432,9 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: '#F7F6F2',
+  },
+  keyboardAvoidingView: {
+    flex: 1,
   },
   content: {
     paddingHorizontal: 20,
