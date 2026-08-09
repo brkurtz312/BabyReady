@@ -54,7 +54,20 @@ function lessonKey(selectedLesson: SelectedLesson): string {
   return `${selectedLesson.module.id}/${selectedLesson.lesson.id}`;
 }
 
+const learnerCardTitles: Record<string, string> = {
+  'first-trimester-common-changes-and-when-to-reach-out':
+    'Common Changes, Simple Support, and When to Reach Out',
+  'nausea-support-ideas-figure': 'Nausea-Support Ideas',
+  'bleeding-during-pregnancy-callout': 'Bleeding During Pregnancy',
+  'urgent-maternal-warning-signs-safety-card': 'Urgent Maternal Warning Signs',
+};
+
 function titleForBlock(block: ClinicalContentBlock): string | null {
+  const learnerTitle = learnerCardTitles[block.id];
+  if (learnerTitle) {
+    return learnerTitle;
+  }
+
   switch (block.type) {
     case 'callout':
       return 'Keep in mind';
@@ -173,8 +186,20 @@ function MediaFigure({
           <Text style={styles.figureExpandHintText}>Tap to expand</Text>
         </View>
       </Pressable>
-      <Text style={styles.figureTitle}>{media.title}</Text>
-      {media.caption ? <Text style={styles.figureCaption}>{media.caption}</Text> : null}
+      <View style={styles.figureDetails}>
+        <Text style={styles.figureTitle}>{media.title}</Text>
+        {media.caption ? <Text style={styles.figureCaption}>{media.caption}</Text> : null}
+        <Pressable
+          accessibilityHint="Opens this figure in a full-screen reader."
+          accessibilityLabel={`View figure full screen: ${media.title}`}
+          accessibilityRole="button"
+          onPress={() => onOpen(media)}
+          style={styles.figureOpenButton}
+          testID={`button-view-figure-fullscreen-${media.id}`}
+        >
+          <Text style={styles.figureOpenButtonText}>View full screen</Text>
+        </Pressable>
+      </View>
     </View>
   );
 }
@@ -472,6 +497,22 @@ export function LearnerCoursePlayerScreen({
   const [attachmentsError, setAttachmentsError] = useState<string | null>(null);
   const [expandedBlock, setExpandedBlock] = useState<ClinicalContentBlock | null>(null);
   const [expandedFigure, setExpandedFigure] = useState<ClinicalMedia | null>(null);
+  const [cardToRestoreAfterFigure, setCardToRestoreAfterFigure] =
+    useState<ClinicalContentBlock | null>(null);
+
+  const openFigureFromReader = (media: ClinicalMedia) => {
+    setCardToRestoreAfterFigure(expandedBlock);
+    setExpandedBlock(null);
+    setExpandedFigure(media);
+  };
+
+  const closeFigureViewer = () => {
+    setExpandedFigure(null);
+    if (cardToRestoreAfterFigure) {
+      setExpandedBlock(cardToRestoreAfterFigure);
+      setCardToRestoreAfterFigure(null);
+    }
+  };
 
   useEffect(() => {
     if (!selectedLesson) {
@@ -677,11 +718,14 @@ export function LearnerCoursePlayerScreen({
       <LessonCardViewer
         block={expandedBlock}
         mediaById={mediaById}
-        onClose={() => setExpandedBlock(null)}
-        onOpenFigure={setExpandedFigure}
+        onClose={() => {
+          setExpandedBlock(null);
+          setCardToRestoreAfterFigure(null);
+        }}
+        onOpenFigure={openFigureFromReader}
         sourcesById={sourcesById}
       />
-      <FigureViewer media={expandedFigure} onClose={() => setExpandedFigure(null)} />
+      <FigureViewer media={expandedFigure} onClose={closeFigureViewer} />
     </SafeAreaView>
   );
 }
@@ -888,8 +932,9 @@ const styles = StyleSheet.create({
   blockTitle: {
     color: '#0C4E54',
     flex: 1,
-    fontSize: 14,
+    fontSize: 16,
     fontWeight: '800',
+    lineHeight: 22,
   },
   emergencyBlockTitle: {
     color: '#7B1F5C',
@@ -989,15 +1034,31 @@ const styles = StyleSheet.create({
     color: '#28251D',
     fontSize: 14,
     fontWeight: '800',
-    marginHorizontal: 13,
-    marginTop: 12,
+  },
+  figureDetails: {
+    paddingHorizontal: 13,
+    paddingTop: 12,
   },
   figureCaption: {
     color: '#605D56',
     fontSize: 13,
     lineHeight: 18,
-    marginHorizontal: 13,
     marginTop: 4,
+  },
+  figureOpenButton: {
+    alignSelf: 'flex-start',
+    borderColor: '#01696F',
+    borderRadius: 8,
+    borderWidth: 1,
+    justifyContent: 'center',
+    marginTop: 12,
+    minHeight: 40,
+    paddingHorizontal: 12,
+  },
+  figureOpenButtonText: {
+    color: '#01696F',
+    fontSize: 13,
+    fontWeight: '800',
   },
   mediaFallback: {
     backgroundColor: '#EFEEE9',
