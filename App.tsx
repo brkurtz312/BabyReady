@@ -15,20 +15,20 @@ import {
   View,
 } from 'react-native';
 
-import { ModuleCard } from './src/components/ModuleCard';
 import {
   BabyReadyAuthProvider,
   useBabyReadyAuth,
 } from './src/auth/AuthProvider';
-import { courseModules, recommendedModule } from './src/data/course';
 import { firebaseIsConfigured } from './src/lib/firebase';
 import { getAuditReportIdFromVerificationUrl } from './src/lib/auditReportVerification';
-import type { ClinicalContentBlock } from './src/models/course';
+import type { ClinicalContentBlock, CourseRecord } from './src/models/course';
 import { ClinicianAuditLogScreen } from './src/screens/ClinicianAuditLogScreen';
 import { ClinicianReviewScreen } from './src/screens/ClinicianReviewScreen';
 import { ClinicianContentAuthoringScreen } from './src/screens/ClinicianContentAuthoringScreen';
 import { ClinicianMediaLibraryScreen } from './src/screens/ClinicianMediaLibraryScreen';
 import { ClinicianSourceLibraryScreen } from './src/screens/ClinicianSourceLibraryScreen';
+import { LearnerCourseCatalog } from './src/screens/LearnerCourseCatalog';
+import { LearnerCoursePlayerScreen } from './src/screens/LearnerCoursePlayerScreen';
 import {
   signInWithEmail,
   signOutFromBabyReady,
@@ -45,15 +45,23 @@ export default function App() {
 }
 
 function BabyReadyApp() {
-  const recommended = recommendedModule(currentPregnancyWeek);
   const authState = useBabyReadyAuth();
   const [activeView, setActiveView] = useState<
-    'learner' | 'review' | 'sources' | 'media' | 'author' | 'audit-log'
+    | 'learner'
+    | 'course-player'
+    | 'review'
+    | 'sources'
+    | 'media'
+    | 'author'
+    | 'audit-log'
   >('learner');
   const [auditReportIdFromLink, setAuditReportIdFromLink] = useState<
     string | null
   >(null);
   const [draftToEdit, setDraftToEdit] = useState<ClinicalContentBlock | null>(
+    null,
+  );
+  const [selectedCourse, setSelectedCourse] = useState<CourseRecord | null>(
     null,
   );
   const [clinicianSignInOpen, setClinicianSignInOpen] = useState(false);
@@ -232,6 +240,18 @@ function BabyReadyApp() {
     );
   }
 
+  if (activeView === 'course-player' && selectedCourse) {
+    return (
+      <LearnerCoursePlayerScreen
+        course={selectedCourse}
+        onExit={() => {
+          setSelectedCourse(null);
+          setActiveView('learner');
+        }}
+      />
+    );
+  }
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar style="dark" />
@@ -265,49 +285,12 @@ function BabyReadyApp() {
           </Text>
         </View>
 
-        <View style={styles.nextCard}>
-          <Text style={styles.eyebrow}>RECOMMENDED NEXT</Text>
-          <Text style={styles.nextTitle}>{recommended.title}</Text>
-          <Text style={styles.nextText}>{recommended.summary}</Text>
-          <View style={styles.nextMeta}>
-            <Text style={styles.nextMetaText}>{recommended.estimatedMinutes} minutes</Text>
-            <Text style={styles.dot}>•</Text>
-            <Text style={styles.nextMetaText}>Week {recommended.recommendedWeeks}</Text>
-          </View>
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel={`Start ${recommended.title}`}
-            onPress={() =>
-              Alert.alert(
-                'Course player scaffold',
-                'Lesson delivery, progress tracking, and clinician-reviewed content will be connected in Sprint 2.',
-              )
-            }
-            style={styles.primaryButton}
-          >
-            <Text style={styles.primaryButtonText}>Start module</Text>
-          </Pressable>
-        </View>
-
-        <View style={styles.sectionHeader}>
-          <View>
-            <Text style={styles.sectionTitle}>Your birth roadmap</Text>
-            <Text style={styles.sectionSubtitle}>
-              Six clinician-reviewed modules, released when they are most useful.
-            </Text>
-          </View>
-          <Text style={styles.progress}>0 / 6</Text>
-        </View>
-
-        <View style={styles.moduleList}>
-          {courseModules.map((module) => (
-            <ModuleCard
-              key={module.id}
-              module={module}
-              isRecommended={module.id === recommended.id}
-            />
-          ))}
-        </View>
+        <LearnerCourseCatalog
+          onOpenCourse={(course) => {
+            setSelectedCourse(course);
+            setActiveView('course-player');
+          }}
+        />
 
         <View style={styles.safetyCard}>
           <Text style={styles.safetyTitle}>Need urgent help?</Text>
@@ -326,7 +309,7 @@ function BabyReadyApp() {
         </View>
 
         <View style={styles.foundationCard}>
-          <Text style={styles.foundationTitle}>Sprint 1 foundation</Text>
+          <Text style={styles.foundationTitle}>Your BabyReady access</Text>
           <Text style={styles.foundationText}>
             {firebaseIsConfigured
               ? authState.status === 'ready'
@@ -339,7 +322,7 @@ function BabyReadyApp() {
           <Text style={styles.foundationMeta}>
             {authState.status === 'error'
               ? authState.error
-              : 'Secure local storage, Auth persistence, and Firestore rules are included in this scaffold.'}
+              : 'Secure local storage, Auth persistence, and published-content access controls are active.'}
           </Text>
           {firebaseIsConfigured &&
           (authState.status !== 'ready' || authState.user.isAnonymous) ? (

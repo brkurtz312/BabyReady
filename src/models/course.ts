@@ -16,6 +16,21 @@ export type ContentPublicationState =
   | 'published'
   | 'frozen';
 
+export type LearnerCourseLesson = {
+  id: string;
+  title: string;
+  summary?: string;
+  estimatedMinutes?: number;
+};
+
+export type LearnerCourseModule = {
+  id: string;
+  order: number;
+  title: string;
+  summary?: string;
+  lessons: LearnerCourseLesson[];
+};
+
 export type CourseRecord = {
   id: string;
   title: string;
@@ -23,6 +38,7 @@ export type CourseRecord = {
   locale: string;
   publicationState: ContentPublicationState;
   createdBy: string;
+  learnerOutline?: LearnerCourseModule[];
   createdAt?: unknown;
   updatedAt?: unknown;
 };

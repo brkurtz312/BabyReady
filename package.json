@@ -36,7 +36,8 @@
     "check:production-env": "node scripts/check-production-env.mjs",
     "deploy:production": "node scripts/deploy-production.mjs",
     "clinician-admin": "node scripts/manage-clinician-admin.mjs",
-    "seed:early-pregnancy-media": "node scripts/import-early-pregnancy-media.mjs"
+    "seed:early-pregnancy-media": "node scripts/import-early-pregnancy-media.mjs",
+    "seed:early-pregnancy-learner-outline": "node scripts/seed-early-pregnancy-learner-outline.mjs"
   },
   "private": true
 }

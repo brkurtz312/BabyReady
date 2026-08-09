@@ -268,7 +268,14 @@ service cloud.firestore {
           allow write: if isAdmin();
 
           match /contentBlocks/{contentBlockId} {
-            allow read: if courseIsPublished(courseId) || isAdmin();
+            // A course may be published while individual revisions are still
+            // in draft or review. Learners see only the blocks that have
+            // themselves completed publication; administrators retain full
+            // review-queue visibility.
+            allow read: if (
+              courseIsPublished(courseId)
+              && resource.data.publicationState == 'published'
+            ) || isAdmin();
             allow write: if isAdmin() && validClinicalContentBlock();
 
             match /versions/{versionId} {

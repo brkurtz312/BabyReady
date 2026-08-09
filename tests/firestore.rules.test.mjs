@@ -11,6 +11,7 @@ import {
 } from '@firebase/rules-unit-testing';
 import {
   Timestamp,
+  collection,
   collectionGroup,
   deleteDoc,
   doc,
@@ -22,6 +23,7 @@ import {
   serverTimestamp,
   setDoc,
   updateDoc,
+  where,
 } from 'firebase/firestore';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -125,6 +127,50 @@ test('published curriculum is readable, while draft curriculum stays private', a
 
   await assertSucceeds(getDoc(doc(anonymous, 'courses/birthready')));
   await assertFails(getDoc(doc(anonymous, 'courses/draft-course')));
+});
+
+test('learners can read only published blocks within a published course', async () => {
+  const publishedBlockPath =
+    'courses/birthready/modules/module-1/lessons/lesson-1/contentBlocks/published-welcome';
+  const draftBlockPath =
+    'courses/birthready/modules/module-1/lessons/lesson-1/contentBlocks/draft-welcome';
+  const anonymous = testEnvironment.unauthenticatedContext().firestore();
+
+  await seed('courses/birthready', courseData('published'));
+  await seed(
+    publishedBlockPath,
+    clinicalBlock({ id: 'published-welcome', publicationState: 'published' }),
+  );
+  await seed(
+    draftBlockPath,
+    clinicalBlock({
+      id: 'draft-welcome',
+      publicationState: 'draft',
+      clinicalReviewerId: null,
+      lastReviewedAt: null,
+      nextReviewAt: null,
+    }),
+  );
+
+  await assertSucceeds(getDoc(doc(anonymous, publishedBlockPath)));
+  await assertFails(getDoc(doc(anonymous, draftBlockPath)));
+
+  const publishedLessonQuery = query(
+    collection(
+      anonymous,
+      'courses',
+      'birthready',
+      'modules',
+      'module-1',
+      'lessons',
+      'lesson-1',
+      'contentBlocks',
+    ),
+    where('publicationState', '==', 'published'),
+  );
+  const publishedBlocks = await assertSucceeds(getDocs(publishedLessonQuery));
+  assert.equal(publishedBlocks.size, 1);
+  assert.equal(publishedBlocks.docs[0].id, 'published-welcome');
 });
 
 test('only an administrator can create or modify curriculum', async () => {
