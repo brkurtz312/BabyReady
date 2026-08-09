@@ -69,6 +69,8 @@ const assetLabels: Record<string, string> = {
   'nausea-support-ideas': 'Nausea-Support Ideas',
   'bleeding-during-pregnancy-contact-care':
     'Bleeding During Pregnancy: Contact Your Care Team',
+  'urgent-maternal-warning-signs-get-help-now':
+    'Urgent Warning Signs: Get Help Now',
 };
 
 function today(): string {

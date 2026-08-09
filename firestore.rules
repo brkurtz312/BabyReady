@@ -110,7 +110,8 @@ service cloud.firestore {
           'early-pregnancy-care-timeline',
           'folic-acid-early-pregnancy',
           'nausea-support-ideas',
-          'bleeding-during-pregnancy-contact-care'
+          'bleeding-during-pregnancy-contact-care',
+          'urgent-maternal-warning-signs-get-help-now'
         ]
         && request.resource.data.altText is string
         && request.resource.data.sourceIds is list

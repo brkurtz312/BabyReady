@@ -349,6 +349,14 @@ test('published clinical media is learner-readable, while drafts remain administ
       assetKey: 'bleeding-during-pregnancy-contact-care',
     }),
   );
+  await assertSucceeds(
+    setDoc(doc(admin, 'clinicalMedia', 'urgent-maternal-warning-signs-get-help-now'), {
+      ...publishedMedia,
+      id: 'urgent-maternal-warning-signs-get-help-now',
+      title: 'Urgent Warning Signs: Get Help Now',
+      assetKey: 'urgent-maternal-warning-signs-get-help-now',
+    }),
+  );
   await assertFails(
     setDoc(doc(admin, 'clinicalMedia', 'unapproved-figure'), {
       ...publishedMedia,

@@ -1,0 +1,34 @@
+{
+  "id": "urgent-maternal-warning-signs-get-help-now",
+  "title": "Urgent Warning Signs: Get Help Now",
+  "type": "figure",
+  "assetKey": "urgent-maternal-warning-signs-get-help-now",
+  "assetPath": "assets/clinical-media/urgent-maternal-warning-signs-get-help-now.png",
+  "altText": "An educational figure titled “Urgent warning signs.” It advises the learner to get medical help right away during pregnancy by contacting their obstetric care team or going to the emergency room if they cannot be reached. It lists warning signs involving trouble breathing, chest pain or a fast-beating heart, fainting, a headache that will not go away or gets worse, vision changes, dizziness, severe belly pain, vaginal bleeding or fluid leaking, severe nausea or vomiting with inability to keep fluids down, fever of 100.4 degrees Fahrenheit or 38 degrees Celsius or higher, extreme swelling of the face or hands, and severe pain, redness, or swelling in one leg or arm. It also directs anyone having thoughts of harming themselves or their baby to get help now.",
+  "caption": "Seek medical help right away during pregnancy for urgent warning signs. Contact your obstetric care team, go to the emergency room if you cannot reach them, and call 911 if you are in immediate danger.",
+  "sourceIds": [
+    "cdc-urgent-maternal-warning-signs-2026"
+  ],
+  "isClinicalClaim": true,
+  "publicationState": "draft",
+  "clinicalReviewerId": null,
+  "lastReviewedAt": "2026-08-09T12:00:00-05:00",
+  "nextReviewAt": "2027-08-09T12:00:00-05:00",
+  "createdBy": "draft-media-import",
+  "importReadiness": {
+    "status": "blocked_by_app_asset_allowlist",
+    "requiredBeforeImport": [
+      "Add the assetKey to src/lib/clinicalMediaAssets.ts.",
+      "Add the assetKey to the Firestore validClinicalMediaRecord allowlist.",
+      "Deploy the updated Firestore rules.",
+      "Build a new iOS binary so the bundled figure is available to learners."
+    ]
+  },
+  "publicationRequirements": [
+    "Verify the linked CDC source remains published.",
+    "Complete clinician review of the figure and its learner-facing caption.",
+    "Publish the media record from the clinician media library.",
+    "Attach the published figure to the intended lesson in a new immutable content version.",
+    "Submit the lesson version for clinical review before learner publication."
+  ]
+}
