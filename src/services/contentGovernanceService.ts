@@ -57,6 +57,14 @@ function validateContentBlockInput(input: UpsertContentBlockInput): void {
   if (!input.body.trim()) {
     throw new Error('Add learner-facing content before saving this block.');
   }
+  if (
+    !Number.isInteger(input.displayOrder) ||
+    (input.displayOrder ?? 0) < 1
+  ) {
+    throw new Error(
+      'Set a positive whole-number learner display order before saving this block.',
+    );
+  }
   if (input.sourceIds.some((sourceId) => !sourceId.trim())) {
     throw new Error('Remove any empty source attachments before saving.');
   }
@@ -115,6 +123,13 @@ function snapshotForVersion(
   content: Partial<ClinicalContentBlock>,
   fallbackId: string,
 ): ClinicalContentVersion['snapshot'] {
+  const displayOrder =
+    typeof content.displayOrder === 'number' &&
+    Number.isInteger(content.displayOrder) &&
+    content.displayOrder > 0
+      ? content.displayOrder
+      : undefined;
+
   return {
     contentBlockId:
       typeof content.id === 'string' ? content.id : fallbackId,
@@ -124,6 +139,7 @@ function snapshotForVersion(
     mediaIds: Array.isArray(content.mediaIds) ? content.mediaIds : [],
     isClinicalClaim: content.isClinicalClaim === true,
     publicationState: content.publicationState ?? 'draft',
+    ...(displayOrder ? { displayOrder } : {}),
   };
 }
 

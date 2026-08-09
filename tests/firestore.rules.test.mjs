@@ -51,6 +51,7 @@ const clinicalBlock = (overrides = {}) => ({
   courseId: 'birthready',
   moduleId: 'module-1',
   lessonId: 'lesson-1',
+  displayOrder: 1,
   type: 'text',
   body: 'Clinically reviewed educational copy.',
   isClinicalClaim: true,
@@ -258,6 +259,7 @@ test('clinical content version history is admin-readable and append-only', async
     createdAt: Timestamp.fromDate(new Date('2026-08-05T00:00:00.000Z')),
     snapshot: {
       contentBlockId: 'welcome',
+      displayOrder: 1,
       type: 'text',
       body: 'Draft learner-facing educational copy.',
       sourceIds: ['acog-labor-delivery'],
@@ -275,6 +277,44 @@ test('clinical content version history is admin-readable and append-only', async
     updateDoc(doc(admin, versionPath), { note: 'An immutable version cannot be edited.' }),
   );
   await assertFails(deleteDoc(doc(admin, versionPath)));
+});
+
+test('learner display order must be a positive whole number and is auditable', async () => {
+  const admin = userDb('admin', { admin: true });
+  const blockPath =
+    'courses/birthready/modules/module-1/lessons/lesson-1/contentBlocks/welcome';
+  const versionPath =
+    'courses/birthready/modules/module-1/lessons/lesson-1/contentBlocks/welcome/versions/order-update';
+
+  await assertSucceeds(
+    setDoc(doc(admin, blockPath), clinicalBlock({ displayOrder: 2 })),
+  );
+  await assertFails(
+    setDoc(
+      doc(admin, `${blockPath}-invalid-order`),
+      clinicalBlock({ id: 'invalid-order', displayOrder: 0 }),
+    ),
+  );
+
+  await assertSucceeds(
+    setDoc(doc(admin, versionPath), {
+      id: 'order-update',
+      versionNumber: 2,
+      action: 'order_updated',
+      actorId: 'admin',
+      createdAt: Timestamp.fromDate(new Date('2026-08-08T00:00:00.000Z')),
+      snapshot: {
+        contentBlockId: 'welcome',
+        displayOrder: 2,
+        type: 'text',
+        body: 'Clinically reviewed educational copy.',
+        sourceIds: ['acog-labor-delivery'],
+        mediaIds: [],
+        isClinicalClaim: true,
+        publicationState: 'published',
+      },
+    }),
+  );
 });
 
 test('published clinical media is learner-readable, while drafts remain administrator-only', async () => {

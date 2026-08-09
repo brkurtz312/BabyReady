@@ -41,6 +41,38 @@ function readableError(error: unknown, fallback: string): string {
   return fallback;
 }
 
+function validDisplayOrder(value: unknown): number | null {
+  return typeof value === 'number' &&
+    Number.isInteger(value) &&
+    value > 0
+    ? value
+    : null;
+}
+
+/**
+ * Gives clinically authored ordering precedence while retaining a predictable
+ * fallback for legacy records that predate displayOrder.
+ */
+export function compareClinicalContentBlocks(
+  left: ClinicalContentBlock,
+  right: ClinicalContentBlock,
+): number {
+  const leftOrder = validDisplayOrder(left.displayOrder);
+  const rightOrder = validDisplayOrder(right.displayOrder);
+
+  if (leftOrder !== null && rightOrder !== null && leftOrder !== rightOrder) {
+    return leftOrder - rightOrder;
+  }
+  if (leftOrder !== null && rightOrder === null) {
+    return -1;
+  }
+  if (leftOrder === null && rightOrder !== null) {
+    return 1;
+  }
+
+  return left.id.localeCompare(right.id);
+}
+
 export function subscribeToPublishedCourses(
   onChange: (state: PublishedCourseCatalogState) => void,
 ): Unsubscribe | null {
@@ -110,7 +142,7 @@ export function subscribeToPublishedLessonContent(
           ...(record.data() as ClinicalContentBlock),
           id: record.id,
         }))
-        .sort((left, right) => left.id.localeCompare(right.id));
+        .sort(compareClinicalContentBlocks);
 
       onChange({ status: 'ready', blocks, error: null });
     },

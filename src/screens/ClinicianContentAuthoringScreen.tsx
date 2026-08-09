@@ -39,6 +39,7 @@ type ContentForm = {
   moduleId: string;
   lessonId: string;
   id: string;
+  displayOrder: string;
   type: ContentBlockType;
   body: string;
   isClinicalClaim: boolean;
@@ -71,6 +72,7 @@ function emptyContentForm(): ContentForm {
     moduleId: '',
     lessonId: '',
     id: '',
+    displayOrder: '1',
     type: 'text',
     body: '',
     isClinicalClaim: true,
@@ -85,6 +87,7 @@ function formFromBlock(block: ClinicalContentBlock): ContentForm {
     moduleId: block.moduleId,
     lessonId: block.lessonId,
     id: block.id,
+    displayOrder: String(block.displayOrder ?? 1),
     type: block.type,
     body: block.body,
     isClinicalClaim: block.isClinicalClaim,
@@ -233,7 +236,11 @@ export function ClinicianContentAuthoringScreen({
 
   const validateForm = (
     requireClinicalSources: boolean,
-  ): { input: ContentForm | null; error: string | null } => {
+  ): {
+    input: (Omit<ContentForm, 'displayOrder'> & { displayOrder: number }) | null;
+    error: string | null;
+  } => {
+    const displayOrder = Number.parseInt(form.displayOrder, 10);
     const normalized: ContentForm = {
       ...form,
       courseId: form.courseId.trim(),
@@ -268,6 +275,12 @@ export function ClinicianContentAuthoringScreen({
         error: 'Add learner-facing content before saving this block.',
       };
     }
+    if (!Number.isInteger(displayOrder) || displayOrder < 1) {
+      return {
+        input: null,
+        error: 'Set a positive whole-number learner display order.',
+      };
+    }
     if (
       requireClinicalSources &&
       normalized.isClinicalClaim &&
@@ -280,10 +293,18 @@ export function ClinicianContentAuthoringScreen({
       };
     }
 
-    return { input: normalized, error: null };
+    return {
+      input: {
+        ...normalized,
+        displayOrder,
+      },
+      error: null,
+    };
   };
 
-  const saveDraft = async (input: ContentForm) => {
+  const saveDraft = async (
+    input: Omit<ContentForm, 'displayOrder'> & { displayOrder: number },
+  ) => {
     await upsertClinicalContentBlock({
       ...input,
       publicationState: 'draft',
@@ -500,6 +521,26 @@ export function ClinicianContentAuthoringScreen({
                 testID="input-content-block-id"
                 value={form.id}
               />
+
+              <Text style={styles.fieldLabel}>Learner display order</Text>
+              <TextInput
+                accessibilityHint="Use a positive whole number. Lower numbers appear first in the learner lesson."
+                accessibilityLabel="Learner display order"
+                inputMode="numeric"
+                keyboardType="number-pad"
+                onChangeText={(value) =>
+                  updateForm('displayOrder', value.replace(/[^\d]/g, ''))
+                }
+                placeholder="1"
+                placeholderTextColor="#8B8881"
+                style={styles.input}
+                testID="input-learner-display-order"
+                value={form.displayOrder}
+              />
+              <Text style={styles.fieldHint}>
+                Lower numbers appear first. This order is saved in the immutable
+                clinical-content history.
+              </Text>
 
               <Text style={[styles.sectionLabel, styles.formatLabel]}>
                 LEARNER FORMAT
@@ -933,6 +974,12 @@ const styles = StyleSheet.create({
     marginTop: 7,
     minHeight: 46,
     paddingHorizontal: 12,
+  },
+  fieldHint: {
+    color: '#696761',
+    fontSize: 12,
+    lineHeight: 18,
+    marginTop: 6,
   },
   disabledInput: {
     backgroundColor: '#EEECE7',

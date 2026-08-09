@@ -887,6 +887,12 @@ export function ClinicianReviewScreen({
                           {selectedBlock.isClinicalClaim ? 'Yes' : 'No'}
                         </Text>
                       </View>
+                      <View style={styles.metadataCell}>
+                        <Text style={styles.metadataLabel}>LEARNER ORDER</Text>
+                        <Text style={styles.metadataValue}>
+                          {selectedBlock.displayOrder ?? 'Legacy fallback'}
+                        </Text>
+                      </View>
                     </View>
 
                     <View style={styles.contentPreview}>

@@ -37,7 +37,8 @@
     "deploy:production": "node scripts/deploy-production.mjs",
     "clinician-admin": "node scripts/manage-clinician-admin.mjs",
     "seed:early-pregnancy-media": "node scripts/import-early-pregnancy-media.mjs",
-    "seed:early-pregnancy-learner-outline": "node scripts/seed-early-pregnancy-learner-outline.mjs"
+    "seed:early-pregnancy-learner-outline": "node scripts/seed-early-pregnancy-learner-outline.mjs",
+    "migrate:first-trimester-content-order": "node scripts/assign-first-trimester-content-order.mjs"
   },
   "private": true
 }

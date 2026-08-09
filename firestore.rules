@@ -39,6 +39,13 @@ service cloud.firestore {
       return isPublicationState(request.resource.data.publicationState)
         && request.resource.data.mediaIds is list
         && (
+          !request.resource.data.keys().hasAny(['displayOrder'])
+          || (
+            request.resource.data.displayOrder is int
+            && request.resource.data.displayOrder > 0
+          )
+        )
+        && (
           request.resource.data.isClinicalClaim != true
           || request.resource.data.publicationState != 'published'
           || (
@@ -70,7 +77,8 @@ service cloud.firestore {
           'submitted',
           'approved',
           'published',
-          'frozen'
+          'frozen',
+          'order_updated'
         ]
         && request.resource.data.actorId is string
         && request.resource.data.createdAt is timestamp
@@ -81,7 +89,14 @@ service cloud.firestore {
         && request.resource.data.snapshot.sourceIds is list
         && request.resource.data.snapshot.mediaIds is list
         && request.resource.data.snapshot.isClinicalClaim is bool
-        && isPublicationState(request.resource.data.snapshot.publicationState);
+        && isPublicationState(request.resource.data.snapshot.publicationState)
+        && (
+          !request.resource.data.snapshot.keys().hasAny(['displayOrder'])
+          || (
+            request.resource.data.snapshot.displayOrder is int
+            && request.resource.data.snapshot.displayOrder > 0
+          )
+        );
     }
 
     function validClinicalMediaRecord(mediaId) {

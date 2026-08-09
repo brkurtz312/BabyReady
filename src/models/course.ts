@@ -95,6 +95,11 @@ export type ClinicalContentBlock = {
   courseId: string;
   moduleId: string;
   lessonId: string;
+  /**
+   * Clinician-controlled sequence within a learner lesson. Lower numbers
+   * appear first; legacy blocks without this field use a stable ID fallback.
+   */
+  displayOrder?: number;
   type:
     | 'text'
     | 'callout'
@@ -122,7 +127,8 @@ export type ClinicalContentVersionAction =
   | 'submitted'
   | 'approved'
   | 'published'
-  | 'frozen';
+  | 'frozen'
+  | 'order_updated';
 
 export type ClinicalContentVersion = {
   id: string;
@@ -139,6 +145,7 @@ export type ClinicalContentVersion = {
     mediaIds: string[];
     isClinicalClaim: boolean;
     publicationState: ContentPublicationState;
+    displayOrder?: number;
   };
 };
 
