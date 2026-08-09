@@ -4,6 +4,7 @@ import {
   Alert,
   Image,
   Linking,
+  Modal,
   Pressable,
   SafeAreaView,
   ScrollView,
@@ -128,7 +129,13 @@ function SourceLinks({
   );
 }
 
-function MediaFigure({ media }: { media: ClinicalMedia }) {
+function MediaFigure({
+  media,
+  onOpen,
+}: {
+  media: ClinicalMedia;
+  onOpen: (media: ClinicalMedia) => void;
+}) {
   const [failed, setFailed] = useState(false);
   const imageSource = getBundledClinicalMediaAsset(media.assetKey);
 
@@ -143,13 +150,25 @@ function MediaFigure({ media }: { media: ClinicalMedia }) {
 
   return (
     <View style={styles.figureCard}>
-      <Image
-        accessibilityLabel={media.altText}
-        onError={() => setFailed(true)}
-        resizeMode="contain"
-        source={imageSource}
-        style={styles.figureImage}
-      />
+      <Pressable
+        accessibilityHint="Opens a full-screen view of this figure."
+        accessibilityLabel={`Open full-screen figure: ${media.title}`}
+        accessibilityRole="button"
+        onPress={() => onOpen(media)}
+        style={styles.figurePressable}
+        testID={`button-open-figure-${media.id}`}
+      >
+        <Image
+          accessibilityLabel={media.altText}
+          onError={() => setFailed(true)}
+          resizeMode="contain"
+          source={imageSource}
+          style={styles.figureImage}
+        />
+        <View pointerEvents="none" style={styles.figureExpandHint}>
+          <Text style={styles.figureExpandHintText}>Tap to expand</Text>
+        </View>
+      </Pressable>
       <Text style={styles.figureTitle}>{media.title}</Text>
       {media.caption ? <Text style={styles.figureCaption}>{media.caption}</Text> : null}
     </View>
@@ -159,10 +178,12 @@ function MediaFigure({ media }: { media: ClinicalMedia }) {
 function LessonBlock({
   block,
   mediaById,
+  onOpenFigure,
   sourcesById,
 }: {
   block: ClinicalContentBlock;
   mediaById: Map<string, ClinicalMedia>;
+  onOpenFigure: (media: ClinicalMedia) => void;
   sourcesById: Map<string, ContentSource>;
 }) {
   const [checkedItems, setCheckedItems] = useState<string[]>([]);
@@ -234,10 +255,74 @@ function LessonBlock({
       )}
 
       {media.map((item) => (
-        <MediaFigure key={item.id} media={item} />
+        <MediaFigure key={item.id} media={item} onOpen={onOpenFigure} />
       ))}
       <SourceLinks sourceIds={block.sourceIds ?? []} sourcesById={sourcesById} />
     </View>
+  );
+}
+
+function FigureViewer({
+  media,
+  onClose,
+}: {
+  media: ClinicalMedia | null;
+  onClose: () => void;
+}) {
+  const imageSource = media ? getBundledClinicalMediaAsset(media.assetKey) : null;
+
+  return (
+    <Modal
+      animationType="fade"
+      onRequestClose={onClose}
+      presentationStyle="fullScreen"
+      visible={media !== null}
+    >
+      <SafeAreaView style={styles.viewerSafeArea}>
+        <View style={styles.viewerHeader}>
+          <Text numberOfLines={2} style={styles.viewerHeaderTitle}>
+            {media?.title ?? 'Figure'}
+          </Text>
+          <Pressable
+            accessibilityLabel="Close full-screen figure"
+            accessibilityRole="button"
+            onPress={onClose}
+            style={styles.viewerCloseButton}
+            testID="button-close-figure-viewer"
+          >
+            <Text style={styles.viewerCloseButtonText}>Close</Text>
+          </Pressable>
+        </View>
+
+        <ScrollView
+          contentContainerStyle={styles.viewerContent}
+          showsVerticalScrollIndicator={false}
+        >
+          {imageSource ? (
+            <Image
+              accessibilityLabel={media?.altText}
+              resizeMode="contain"
+              source={imageSource}
+              style={styles.viewerImage}
+            />
+          ) : (
+            <View style={styles.viewerFallback}>
+              <Text style={styles.viewerFallbackTitle}>Figure preview unavailable</Text>
+              <Text style={styles.viewerFallbackText}>
+                {media?.altText ?? 'This figure could not be opened on this device.'}
+              </Text>
+            </View>
+          )}
+          {media?.caption ? <Text style={styles.viewerCaption}>{media.caption}</Text> : null}
+          {media?.altText ? (
+            <View style={styles.viewerDescription}>
+              <Text style={styles.viewerDescriptionLabel}>Figure description</Text>
+              <Text style={styles.viewerDescriptionText}>{media.altText}</Text>
+            </View>
+          ) : null}
+        </ScrollView>
+      </SafeAreaView>
+    </Modal>
   );
 }
 
@@ -263,6 +348,7 @@ export function LearnerCoursePlayerScreen({
     sources: ContentSource[];
   }>({ media: [], sources: [] });
   const [attachmentsError, setAttachmentsError] = useState<string | null>(null);
+  const [expandedFigure, setExpandedFigure] = useState<ClinicalMedia | null>(null);
 
   useEffect(() => {
     if (!selectedLesson) {
@@ -443,6 +529,7 @@ export function LearnerCoursePlayerScreen({
                   block={block}
                   key={block.id}
                   mediaById={mediaById}
+                  onOpenFigure={setExpandedFigure}
                   sourcesById={sourcesById}
                 />
               ))}
@@ -463,6 +550,7 @@ export function LearnerCoursePlayerScreen({
           </Text>
         </View>
       </ScrollView>
+      <FigureViewer media={expandedFigure} onClose={() => setExpandedFigure(null)} />
     </SafeAreaView>
   );
 }
@@ -723,10 +811,27 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     paddingBottom: 13,
   },
+  figurePressable: {
+    position: 'relative',
+  },
   figureImage: {
     backgroundColor: '#FFFFFF',
     height: 240,
     width: '100%',
+  },
+  figureExpandHint: {
+    backgroundColor: 'rgba(12, 78, 84, 0.9)',
+    borderRadius: 999,
+    bottom: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+    position: 'absolute',
+    right: 10,
+  },
+  figureExpandHintText: {
+    color: '#FFFFFF',
+    fontSize: 12,
+    fontWeight: '800',
   },
   figureTitle: {
     color: '#28251D',
@@ -810,5 +915,97 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 20,
     marginTop: 5,
+  },
+  viewerSafeArea: {
+    backgroundColor: '#F7F6F2',
+    flex: 1,
+  },
+  viewerHeader: {
+    alignItems: 'center',
+    borderBottomColor: '#D4D1CA',
+    borderBottomWidth: 1,
+    flexDirection: 'row',
+    gap: 12,
+    minHeight: 64,
+    paddingHorizontal: 20,
+  },
+  viewerHeaderTitle: {
+    color: '#28251D',
+    flex: 1,
+    fontSize: 17,
+    fontWeight: '800',
+  },
+  viewerCloseButton: {
+    alignItems: 'center',
+    borderColor: '#01696F',
+    borderRadius: 9,
+    borderWidth: 1,
+    justifyContent: 'center',
+    minHeight: 44,
+    paddingHorizontal: 13,
+  },
+  viewerCloseButtonText: {
+    color: '#01696F',
+    fontSize: 14,
+    fontWeight: '800',
+  },
+  viewerContent: {
+    padding: 20,
+    paddingBottom: 36,
+  },
+  viewerImage: {
+    backgroundColor: '#FFFFFF',
+    height: 560,
+    width: '100%',
+  },
+  viewerFallback: {
+    alignItems: 'center',
+    backgroundColor: '#EFEEE9',
+    borderColor: '#D4D1CA',
+    borderRadius: 12,
+    borderWidth: 1,
+    minHeight: 220,
+    justifyContent: 'center',
+    padding: 20,
+  },
+  viewerFallbackTitle: {
+    color: '#28251D',
+    fontSize: 16,
+    fontWeight: '800',
+    textAlign: 'center',
+  },
+  viewerFallbackText: {
+    color: '#55534D',
+    fontSize: 14,
+    lineHeight: 20,
+    marginTop: 7,
+    textAlign: 'center',
+  },
+  viewerCaption: {
+    color: '#38352E',
+    fontSize: 16,
+    lineHeight: 24,
+    marginTop: 18,
+  },
+  viewerDescription: {
+    backgroundColor: '#EAF4F2',
+    borderColor: '#92BFB8',
+    borderRadius: 12,
+    borderWidth: 1,
+    marginTop: 18,
+    padding: 15,
+  },
+  viewerDescriptionLabel: {
+    color: '#0C4E54',
+    fontSize: 12,
+    fontWeight: '800',
+    letterSpacing: 0.5,
+    textTransform: 'uppercase',
+  },
+  viewerDescriptionText: {
+    color: '#38352E',
+    fontSize: 15,
+    lineHeight: 22,
+    marginTop: 6,
   },
 });

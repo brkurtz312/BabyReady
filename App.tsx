@@ -34,8 +34,6 @@ import {
   signOutFromBabyReady,
 } from './src/services/authService';
 
-const currentPregnancyWeek = 25;
-
 export default function App() {
   return (
     <BabyReadyAuthProvider>
@@ -271,10 +269,6 @@ function BabyReadyApp() {
             <Text style={styles.brand}>BABYREADY</Text>
             <Text style={styles.title}>Prepare for birth, your way.</Text>
           </View>
-          <View style={styles.weekPill}>
-            <Text style={styles.weekLabel}>WEEK</Text>
-            <Text style={styles.weekValue}>{currentPregnancyWeek}</Text>
-          </View>
         </View>
 
         <View style={styles.notice}>
@@ -471,28 +465,6 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     letterSpacing: -0.6,
     marginTop: 4,
-  },
-  weekPill: {
-    alignItems: 'center',
-    backgroundColor: '#E3F0ED',
-    borderColor: '#92BFB8',
-    borderRadius: 16,
-    borderWidth: 1,
-    minWidth: 58,
-    paddingHorizontal: 10,
-    paddingVertical: 7,
-  },
-  weekLabel: {
-    color: '#0C4E54',
-    fontSize: 9,
-    fontWeight: '800',
-    letterSpacing: 1,
-  },
-  weekValue: {
-    color: '#0C4E54',
-    fontSize: 20,
-    fontWeight: '800',
-    lineHeight: 24,
   },
   notice: {
     backgroundColor: '#FBFBF9',
