@@ -431,13 +431,26 @@ function FigureViewer({
         testID={`figure-viewer-${media?.id ?? 'closed'}`}
       >
         {imageSource ? (
-          <Image
-            accessibilityLabel={media?.altText}
-            accessibilityRole="image"
-            resizeMode="contain"
-            source={imageSource}
-            style={styles.viewerImage}
-          />
+          <ScrollView
+            bouncesZoom
+            centerContent
+            contentContainerStyle={styles.viewerZoomContent}
+            maximumZoomScale={3}
+            minimumZoomScale={1}
+            scrollEventThrottle={16}
+            showsHorizontalScrollIndicator={false}
+            showsVerticalScrollIndicator={false}
+            style={styles.viewerZoomScroll}
+            testID={`scroll-zoom-figure-${media?.id ?? 'closed'}`}
+          >
+            <Image
+              accessibilityLabel={media?.altText}
+              accessibilityRole="image"
+              resizeMode="contain"
+              source={imageSource}
+              style={styles.viewerImage}
+            />
+          </ScrollView>
         ) : (
           <View style={styles.viewerFallback}>
             <Text style={styles.viewerFallbackTitle}>Figure preview unavailable</Text>
@@ -1127,6 +1140,13 @@ const styles = StyleSheet.create({
   viewerImage: {
     height: '100%',
     width: '100%',
+  },
+  viewerZoomScroll: {
+    flex: 1,
+    width: '100%',
+  },
+  viewerZoomContent: {
+    flexGrow: 1,
   },
   viewerCloseButton: {
     alignItems: 'center',
