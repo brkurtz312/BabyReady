@@ -4,8 +4,8 @@ import textwrap
 
 
 OUTPUT = Path(
-    "/home/user/workspace/BabyReady/assets/clinical-media/drafts/"
-    "bleeding-during-pregnancy-contact-care-draft.png"
+    "/home/user/workspace/BabyReady/assets/clinical-media/"
+    "bleeding-during-pregnancy-contact-care.png"
 )
 WIDTH, HEIGHT = 1600, 2000
 
@@ -80,14 +80,12 @@ image = Image.new("RGB", (WIDTH, HEIGHT), CREAM)
 draw = ImageDraw.Draw(image)
 
 # Header
-draw.rectangle((0, 0, WIDTH, 410), fill=TEAL)
-rounded(draw, (80, 72, 564, 123), 26, "#2F7377")
-draw.text((110, 83), "DRAFT • CLINICIAN REVIEW REQUIRED", font=font(24, True), fill=WHITE)
-draw.text((80, 168), "Bleeding During Pregnancy", font=font(70, True), fill=WHITE)
-draw.text((80, 254), "Contact Your Care Team", font=font(49, True), fill="#CFE7E2")
+draw.rectangle((0, 0, WIDTH, 350), fill=TEAL)
+draw.text((80, 78), "Bleeding During Pregnancy", font=font(70, True), fill=WHITE)
+draw.text((80, 164), "Contact Your Care Team", font=font(49, True), fill="#CFE7E2")
 draw_multiline(
     draw,
-    (80, 324),
+    (80, 238),
     "Bleeding can have many causes. Your care team can help you decide what to do next.",
     1190,
     font(29),
@@ -96,21 +94,21 @@ draw_multiline(
 )
 
 # Call panel
-rounded(draw, (80, 475, 1520, 840), 34, TEAL_LIGHT)
-icon_phone(draw, 130, 548, TEAL)
-draw.text((265, 535), "CONTACT YOUR OBSTETRIC CARE TEAM", font=font(32, True), fill=TEAL)
+rounded(draw, (80, 415, 1520, 780), 34, TEAL_LIGHT)
+icon_phone(draw, 130, 488, TEAL)
+draw.text((265, 475), "CONTACT YOUR OBSTETRIC CARE TEAM", font=font(32, True), fill=TEAL)
 draw_multiline(
     draw,
-    (265, 595),
-    "Call for any bleeding or spotting during pregnancy.",
+    (265, 535),
+    "Contact your care team about any bleeding or spotting during pregnancy.",
     1090,
-    font(45, True),
+    font(42, True),
     TEXT,
     line_gap=10,
 )
 draw_multiline(
     draw,
-    (265, 710),
+    (265, 662),
     "Do not try to determine the cause from this guide.",
     1090,
     font(29),
@@ -119,12 +117,12 @@ draw_multiline(
 )
 
 # Urgent panel
-rounded(draw, (80, 890, 1520, 1390), 34, RUST_LIGHT)
-icon_alert(draw, 128, 970, RUST)
-draw.text((265, 950), "GET URGENT HELP NOW", font=font(36, True), fill=RUST)
+rounded(draw, (80, 830, 1520, 1330), 34, RUST_LIGHT)
+icon_alert(draw, 128, 910, RUST)
+draw.text((265, 890), "GET URGENT HELP NOW", font=font(36, True), fill=RUST)
 draw_multiline(
     draw,
-    (265, 1017),
+    (265, 957),
     "Get immediate help for bleeding more than spotting, or bleeding with:",
     1080,
     font(32, True),
@@ -136,19 +134,19 @@ urgent_items = [
     "fainting or severe dizziness",
     "fluid leaking",
 ]
-bullet_y = 1137
+bullet_y = 1077
 for item in urgent_items:
     draw.ellipse((277, bullet_y + 13, 294, bullet_y + 30), fill=RUST)
     draw.text((325, bullet_y), item, font=font(31), fill=TEXT)
     bullet_y += 68
 
 # Call preparation
-rounded(draw, (80, 1440, 1520, 1736), 34, WHITE, outline=LINE, width=3)
-icon_note(draw, 130, 1525, TEAL)
-draw.text((265, 1504), "WHEN YOU CALL", font=font(32, True), fill=TEAL)
+rounded(draw, (80, 1380, 1520, 1676), 34, WHITE, outline=LINE, width=3)
+icon_note(draw, 130, 1465, TEAL)
+draw.text((265, 1444), "WHEN YOU CALL", font=font(32, True), fill=TEAL)
 draw_multiline(
     draw,
-    (265, 1566),
+    (265, 1506),
     "Share when it began, how much bleeding you notice, and whether you have pain, dizziness, or fluid leaking.",
     1080,
     font(30),
@@ -157,9 +155,9 @@ draw_multiline(
 )
 
 # Footer
-draw.line((80, 1812, 1520, 1812), fill=LINE, width=3)
-draw.text((80, 1855), "Clinical education draft • Linked source: ACOG, Bleeding During Pregnancy", font=font(24), fill=MUTED)
-draw.text((80, 1898), "The final wording and local emergency-routing instructions require clinical review.", font=font(22), fill=MUTED)
+draw.line((80, 1752, 1520, 1752), fill=LINE, width=3)
+draw.text((80, 1794), "Educational source: ACOG, Bleeding During Pregnancy", font=font(24), fill=MUTED)
+draw.text((80, 1837), "Follow the guidance from your own obstetric care team.", font=font(22), fill=MUTED)
 
 OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 image.save(OUTPUT, quality=95)
