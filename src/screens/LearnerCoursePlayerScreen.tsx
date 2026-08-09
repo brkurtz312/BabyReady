@@ -278,7 +278,7 @@ function FigureViewer({
       presentationStyle="fullScreen"
       visible={media !== null}
     >
-      <SafeAreaView style={styles.viewerSafeArea}>
+      <SafeAreaView accessibilityViewIsModal style={styles.viewerSafeArea}>
         <View style={styles.viewerHeader}>
           <Text numberOfLines={2} style={styles.viewerHeaderTitle}>
             {media?.title ?? 'Figure'}
