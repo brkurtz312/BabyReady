@@ -27,6 +27,7 @@ import type { ClinicalContentBlock } from './src/models/course';
 import { ClinicianAuditLogScreen } from './src/screens/ClinicianAuditLogScreen';
 import { ClinicianReviewScreen } from './src/screens/ClinicianReviewScreen';
 import { ClinicianContentAuthoringScreen } from './src/screens/ClinicianContentAuthoringScreen';
+import { ClinicianMediaLibraryScreen } from './src/screens/ClinicianMediaLibraryScreen';
 import { ClinicianSourceLibraryScreen } from './src/screens/ClinicianSourceLibraryScreen';
 import {
   signInWithEmail,
@@ -47,7 +48,7 @@ function BabyReadyApp() {
   const recommended = recommendedModule(currentPregnancyWeek);
   const authState = useBabyReadyAuth();
   const [activeView, setActiveView] = useState<
-    'learner' | 'review' | 'sources' | 'author' | 'audit-log'
+    'learner' | 'review' | 'sources' | 'media' | 'author' | 'audit-log'
   >('learner');
   const [auditReportIdFromLink, setAuditReportIdFromLink] = useState<
     string | null
@@ -176,6 +177,15 @@ function BabyReadyApp() {
     );
   }
 
+  if (activeView === 'media' && authState.status === 'ready') {
+    return (
+      <ClinicianMediaLibraryScreen
+        onExit={() => setActiveView('review')}
+        user={authState.user}
+      />
+    );
+  }
+
   if (activeView === 'author' && authState.status === 'ready') {
     return (
       <ClinicianContentAuthoringScreen
@@ -215,6 +225,7 @@ function BabyReadyApp() {
           setActiveView('author');
         }}
         onOpenAuditLog={() => setActiveView('audit-log')}
+        onOpenMediaLibrary={() => setActiveView('media')}
         onOpenSourceLibrary={() => setActiveView('sources')}
         user={authState.user}
       />

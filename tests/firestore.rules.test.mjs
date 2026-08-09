@@ -53,6 +53,7 @@ const clinicalBlock = (overrides = {}) => ({
   body: 'Clinically reviewed educational copy.',
   isClinicalClaim: true,
   sourceIds: ['acog-labor-delivery'],
+  mediaIds: [],
   clinicalReviewerId: 'admin',
   lastReviewedAt: Timestamp.fromDate(new Date('2026-08-01T00:00:00.000Z')),
   nextReviewAt: Timestamp.fromDate(new Date('2027-08-01T00:00:00.000Z')),
@@ -214,6 +215,7 @@ test('clinical content version history is admin-readable and append-only', async
       type: 'text',
       body: 'Draft learner-facing educational copy.',
       sourceIds: ['acog-labor-delivery'],
+      mediaIds: [],
       isClinicalClaim: true,
       publicationState: 'draft',
     },
@@ -227,6 +229,52 @@ test('clinical content version history is admin-readable and append-only', async
     updateDoc(doc(admin, versionPath), { note: 'An immutable version cannot be edited.' }),
   );
   await assertFails(deleteDoc(doc(admin, versionPath)));
+});
+
+test('published clinical media is learner-readable, while drafts remain administrator-only', async () => {
+  const anonymous = testEnvironment.unauthenticatedContext().firestore();
+  const author = userDb('author');
+  const admin = userDb('admin', { admin: true });
+  const publishedMedia = {
+    id: 'early-pregnancy-care-timeline',
+    title: 'Early Pregnancy Care Timeline',
+    type: 'figure',
+    assetKey: 'early-pregnancy-care-timeline',
+    altText: 'A timeline showing common early pregnancy care milestones.',
+    sourceIds: ['acog-prenatal-care-2026'],
+    isClinicalClaim: true,
+    clinicalReviewerId: 'admin',
+    lastReviewedAt: Timestamp.fromDate(new Date('2026-08-08T00:00:00.000Z')),
+    nextReviewAt: Timestamp.fromDate(new Date('2027-08-08T00:00:00.000Z')),
+    publicationState: 'published',
+  };
+
+  await assertFails(
+    setDoc(doc(author, 'clinicalMedia', publishedMedia.id), publishedMedia),
+  );
+  await assertSucceeds(
+    setDoc(doc(admin, 'clinicalMedia', publishedMedia.id), publishedMedia),
+  );
+  await assertFails(
+    setDoc(doc(admin, 'clinicalMedia', 'mismatched-media-id'), {
+      ...publishedMedia,
+      id: publishedMedia.id,
+    }),
+  );
+  await assertSucceeds(
+    getDoc(doc(anonymous, 'clinicalMedia', publishedMedia.id)),
+  );
+
+  await seed('clinicalMedia/draft-figure', {
+    ...publishedMedia,
+    id: 'draft-figure',
+    publicationState: 'draft',
+    clinicalReviewerId: null,
+    lastReviewedAt: null,
+    nextReviewAt: null,
+  });
+  await assertFails(getDoc(doc(anonymous, 'clinicalMedia/draft-figure')));
+  await assertSucceeds(getDoc(doc(admin, 'clinicalMedia/draft-figure')));
 });
 
 test('comparison audit exports are admin-only, attributable, and append-only', async () => {

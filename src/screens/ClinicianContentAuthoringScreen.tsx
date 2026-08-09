@@ -12,7 +12,11 @@ import {
 } from 'react-native';
 import type { User } from 'firebase/auth';
 
-import type { ClinicalContentBlock, ContentSource } from '../models/course';
+import type {
+  ClinicalContentBlock,
+  ClinicalMedia,
+  ContentSource,
+} from '../models/course';
 import {
   submitContentBlockForClinicalReview,
   upsertClinicalContentBlock,
@@ -21,6 +25,10 @@ import {
   subscribeToContentSourceLibrary,
   type SourceLibraryState,
 } from '../services/sourceService';
+import {
+  subscribeToClinicalMediaLibrary,
+  type ClinicalMediaLibraryState,
+} from '../services/clinicalMediaService';
 
 type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
 type AuthoringAction = 'save' | 'submit' | null;
@@ -35,6 +43,7 @@ type ContentForm = {
   body: string;
   isClinicalClaim: boolean;
   sourceIds: string[];
+  mediaIds: string[];
 };
 
 type ClinicianContentAuthoringScreenProps = {
@@ -52,6 +61,7 @@ const contentTypes: Array<{ value: ContentBlockType; label: string }> = [
   { value: 'emergency_card', label: 'Safety card' },
   { value: 'audio', label: 'Audio' },
   { value: 'video', label: 'Video' },
+  { value: 'figure', label: 'Figure' },
   { value: 'artifact_prompt', label: 'Prompt' },
 ];
 
@@ -65,6 +75,7 @@ function emptyContentForm(): ContentForm {
     body: '',
     isClinicalClaim: true,
     sourceIds: [],
+    mediaIds: [],
   };
 }
 
@@ -78,6 +89,7 @@ function formFromBlock(block: ClinicalContentBlock): ContentForm {
     body: block.body,
     isClinicalClaim: block.isClinicalClaim,
     sourceIds: block.sourceIds,
+    mediaIds: block.mediaIds ?? [],
   };
 }
 
@@ -96,6 +108,11 @@ export function ClinicianContentAuthoringScreen({
   const [sourceLibrary, setSourceLibrary] = useState<SourceLibraryState>({
     status: 'loading',
     sources: [],
+    error: null,
+  });
+  const [mediaLibrary, setMediaLibrary] = useState<ClinicalMediaLibraryState>({
+    status: 'loading',
+    media: [],
     error: null,
   });
   const [form, setForm] = useState<ContentForm>(() =>
@@ -130,7 +147,15 @@ export function ClinicianContentAuthoringScreen({
       return undefined;
     }
 
-    return subscribeToContentSourceLibrary(setSourceLibrary) ?? undefined;
+    const unsubscribeSources =
+      subscribeToContentSourceLibrary(setSourceLibrary) ?? undefined;
+    const unsubscribeMedia =
+      subscribeToClinicalMediaLibrary(setMediaLibrary) ?? undefined;
+
+    return () => {
+      unsubscribeSources?.();
+      unsubscribeMedia?.();
+    };
   }, [access]);
 
   useEffect(() => {
@@ -144,6 +169,13 @@ export function ClinicianContentAuthoringScreen({
         (source) => source.publicationState === 'published',
       ),
     [sourceLibrary.sources],
+  );
+  const publishedMedia = useMemo(
+    () =>
+      mediaLibrary.media.filter(
+        (media) => media.publicationState === 'published',
+      ),
+    [mediaLibrary.media],
   );
 
   useEffect(() => {
@@ -161,6 +193,19 @@ export function ClinicianContentAuthoringScreen({
     });
   }, [publishedSources]);
 
+  useEffect(() => {
+    setForm((current) => {
+      const availableMediaIds = new Set(publishedMedia.map((media) => media.id));
+      const mediaIds = current.mediaIds.filter((mediaId) =>
+        availableMediaIds.has(mediaId),
+      );
+
+      return mediaIds.length === current.mediaIds.length
+        ? current
+        : { ...current, mediaIds };
+    });
+  }, [publishedMedia]);
+
   const updateForm = <Key extends keyof ContentForm>(
     key: Key,
     value: ContentForm[Key],
@@ -174,6 +219,15 @@ export function ClinicianContentAuthoringScreen({
       sourceIds: current.sourceIds.includes(source.id)
         ? current.sourceIds.filter((sourceId) => sourceId !== source.id)
         : [...current.sourceIds, source.id],
+    }));
+  };
+
+  const toggleMedia = (media: ClinicalMedia) => {
+    setForm((current) => ({
+      ...current,
+      mediaIds: current.mediaIds.includes(media.id)
+        ? current.mediaIds.filter((mediaId) => mediaId !== media.id)
+        : [...current.mediaIds, media.id],
     }));
   };
 
@@ -200,6 +254,12 @@ export function ClinicianContentAuthoringScreen({
         input: null,
         error:
           'Use lowercase letters, numbers, and single hyphens for all content IDs.',
+      };
+    }
+    if (normalized.type === 'figure' && normalized.mediaIds.length === 0) {
+      return {
+        input: null,
+        error: 'Attach one published figure before saving a figure content block.',
       };
     }
     if (!normalized.body) {
@@ -599,6 +659,88 @@ export function ClinicianContentAuthoringScreen({
                 </View>
               ) : null}
 
+              <View style={styles.sourceHeader}>
+                <View>
+                  <Text style={styles.sectionLabel}>FIGURE AND MEDIA ATTACHMENTS</Text>
+                  <Text style={styles.formTitle}>Published clinical media</Text>
+                </View>
+                <View style={styles.sourceCount}>
+                  <Text style={styles.sourceCountText}>
+                    {form.mediaIds.length} selected
+                  </Text>
+                </View>
+              </View>
+              <Text style={styles.mediaHint}>
+                Media must be reviewed and published from the media library before it
+                can be attached here.
+              </Text>
+
+              {mediaLibrary.status === 'loading' ? (
+                <View style={styles.centeredState}>
+                  <ActivityIndicator color="#01696F" />
+                  <Text style={styles.stateText}>Loading published media…</Text>
+                </View>
+              ) : null}
+
+              {mediaLibrary.status === 'error' ? (
+                <View style={styles.sourceEmptyState}>
+                  <Text style={styles.sourceEmptyTitle}>
+                    Published media could not load
+                  </Text>
+                  <Text style={styles.sourceEmptyText}>{mediaLibrary.error}</Text>
+                </View>
+              ) : null}
+
+              {mediaLibrary.status === 'ready' && publishedMedia.length === 0 ? (
+                <View style={styles.sourceEmptyState}>
+                  <Text style={styles.sourceEmptyTitle}>
+                    No published figures or media are available
+                  </Text>
+                  <Text style={styles.sourceEmptyText}>
+                    Create and publish a media record from the media library before
+                    attaching it to content.
+                  </Text>
+                </View>
+              ) : null}
+
+              {publishedMedia.length > 0 ? (
+                <View style={styles.sourceList}>
+                  {publishedMedia.map((media) => {
+                    const isAttached = form.mediaIds.includes(media.id);
+                    return (
+                      <Pressable
+                        key={media.id}
+                        accessibilityLabel={`${isAttached ? 'Remove' : 'Attach'} ${media.title} media`}
+                        accessibilityRole="button"
+                        onPress={() => toggleMedia(media)}
+                        style={[
+                          styles.sourceRow,
+                          isAttached && styles.sourceRowSelected,
+                        ]}
+                        testID={`button-media-attachment-${media.id}`}
+                      >
+                        <View style={styles.sourceCheckbox}>
+                          <Text style={styles.sourceCheckboxText}>
+                            {isAttached ? '✓' : ''}
+                          </Text>
+                        </View>
+                        <View style={styles.sourceCopy}>
+                          <Text numberOfLines={2} style={styles.sourceTitle}>
+                            {media.title}
+                          </Text>
+                          <Text numberOfLines={1} style={styles.sourceOrganization}>
+                            {media.type} · {media.id}
+                          </Text>
+                        </View>
+                        <Text style={styles.sourceAction}>
+                          {isAttached ? 'Attached' : 'Attach'}
+                        </Text>
+                      </Pressable>
+                    );
+                  })}
+                </View>
+              ) : null}
+
               {feedback ? (
                 <View style={styles.feedback}>
                   <Text style={styles.feedbackText} testID="text-authoring-feedback">
@@ -961,6 +1103,12 @@ const styles = StyleSheet.create({
     color: '#0C4E54',
     fontSize: 12,
     fontWeight: '800',
+  },
+  mediaHint: {
+    color: '#696761',
+    fontSize: 13,
+    lineHeight: 19,
+    marginTop: 6,
   },
   sourceEmptyState: {
     backgroundColor: '#F7F6F2',

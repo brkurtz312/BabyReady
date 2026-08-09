@@ -37,6 +37,7 @@ service cloud.firestore {
 
     function validClinicalContentBlock() {
       return isPublicationState(request.resource.data.publicationState)
+        && request.resource.data.mediaIds is list
         && (
           request.resource.data.isClinicalClaim != true
           || request.resource.data.publicationState != 'published'
@@ -78,8 +79,37 @@ service cloud.firestore {
         && request.resource.data.snapshot.type is string
         && request.resource.data.snapshot.body is string
         && request.resource.data.snapshot.sourceIds is list
+        && request.resource.data.snapshot.mediaIds is list
         && request.resource.data.snapshot.isClinicalClaim is bool
         && isPublicationState(request.resource.data.snapshot.publicationState);
+    }
+
+    function validClinicalMediaRecord(mediaId) {
+      return request.resource.data.id == mediaId
+        && request.resource.data.title is string
+        // These three reviewed assets are bundled static figures. Broader
+        // image, audio, and video support will require separate storage and
+        // delivery controls before the allowable type set is expanded.
+        && request.resource.data.type == 'figure'
+        && request.resource.data.assetKey in [
+          'early-pregnancy-care-timeline',
+          'folic-acid-early-pregnancy',
+          'nausea-support-ideas'
+        ]
+        && request.resource.data.altText is string
+        && request.resource.data.sourceIds is list
+        && request.resource.data.isClinicalClaim is bool
+        && isPublicationState(request.resource.data.publicationState)
+        && (
+          request.resource.data.isClinicalClaim != true
+          || request.resource.data.publicationState != 'published'
+          || (
+            request.resource.data.sourceIds.size() > 0
+            && request.resource.data.clinicalReviewerId is string
+            && request.resource.data.lastReviewedAt is timestamp
+            && request.resource.data.nextReviewAt is timestamp
+          )
+        );
     }
 
     function validComparisonAuditExport(
@@ -267,6 +297,14 @@ service cloud.firestore {
     match /sources/{sourceId} {
       allow read: if resource.data.publicationState == 'published' || isAdmin();
       allow write: if isAdmin() && validSourceRecord();
+    }
+
+    // Clinical figures, images, audio, and video assets have the same
+    // published-only learner visibility and administrator-only governance
+    // model as clinical source records.
+    match /clinicalMedia/{mediaId} {
+      allow read: if resource.data.publicationState == 'published' || isAdmin();
+      allow write: if isAdmin() && validClinicalMediaRecord(mediaId);
     }
 
     match /clinicalReviews/{reviewId} {

@@ -86,13 +86,15 @@ export type ClinicalContentBlock = {
     | 'question'
     | 'audio'
     | 'video'
+    | 'figure'
     | 'citation'
     | 'emergency_card'
     | 'artifact_prompt';
   body: string;
   sourceIds: string[];
+  mediaIds: string[];
   isClinicalClaim: boolean;
-  clinicalReviewerId?: string;
+  clinicalReviewerId?: string | null;
   lastReviewedAt?: unknown;
   nextReviewAt?: unknown;
   publicationState: ContentPublicationState;
@@ -118,9 +120,33 @@ export type ClinicalContentVersion = {
     type: ClinicalContentBlock['type'];
     body: string;
     sourceIds: string[];
+    mediaIds: string[];
     isClinicalClaim: boolean;
     publicationState: ContentPublicationState;
   };
+};
+
+export type ClinicalMediaType = 'figure' | 'image' | 'audio' | 'video';
+
+export type ClinicalMedia = {
+  id: string;
+  title: string;
+  type: ClinicalMediaType;
+  assetKey: string;
+  altText: string;
+  caption?: string;
+  sourceIds: string[];
+  isClinicalClaim: boolean;
+  clinicalReviewerId?: string | null;
+  lastReviewedAt?: unknown;
+  nextReviewAt?: unknown;
+  publicationState: ContentPublicationState;
+  createdBy?: string;
+  publishedAt?: unknown;
+  frozenAt?: unknown;
+  frozenBy?: string;
+  freezeReason?: string;
+  updatedAt?: unknown;
 };
 
 export type ComparisonAuditExportRoute =

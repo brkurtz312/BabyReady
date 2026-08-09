@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
+  Image,
   KeyboardAvoidingView,
   Platform,
   Pressable,
@@ -18,6 +19,7 @@ import { Timestamp } from 'firebase/firestore';
 import type {
   ClinicalContentBlock,
   ClinicalContentVersion,
+  ClinicalMedia,
   ContentPublicationState,
   ContentSource,
 } from '../models/course';
@@ -45,6 +47,8 @@ import {
   type ComparisonAuditExportLogState,
 } from '../services/comparisonAuditLogService';
 import type { ComparisonAuditExportRoute } from '../models/course';
+import { getBundledClinicalMediaAsset } from '../lib/clinicalMediaAssets';
+import { loadClinicalMedia } from '../services/clinicalMediaService';
 
 type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
 
@@ -54,6 +58,7 @@ type ClinicianReviewScreenProps = {
   onOpenSourceLibrary: () => void;
   onOpenContentAuthoring: () => void;
   onOpenAuditLog: () => void;
+  onOpenMediaLibrary: () => void;
   onEditDraft: (block: ClinicalContentBlock) => void;
 };
 
@@ -192,6 +197,7 @@ export function ClinicianReviewScreen({
   onOpenSourceLibrary,
   onOpenContentAuthoring,
   onOpenAuditLog,
+  onOpenMediaLibrary,
   onEditDraft,
 }: ClinicianReviewScreenProps) {
   const [access, setAccess] = useState<AccessState>('checking');
@@ -203,6 +209,8 @@ export function ClinicianReviewScreen({
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [sources, setSources] = useState<ContentSource[]>([]);
   const [sourcesLoading, setSourcesLoading] = useState(false);
+  const [media, setMedia] = useState<ClinicalMedia[]>([]);
+  const [mediaLoading, setMediaLoading] = useState(false);
   const [versionHistory, setVersionHistory] = useState<ContentVersionHistoryState>({
     status: 'loading',
     versions: [],
@@ -306,6 +314,37 @@ export function ClinicianReviewScreen({
       .finally(() => {
         if (active) {
           setSourcesLoading(false);
+        }
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [selectedBlock]);
+
+  useEffect(() => {
+    let active = true;
+
+    if (!selectedBlock) {
+      setMedia([]);
+      return undefined;
+    }
+
+    setMediaLoading(true);
+    loadClinicalMedia(selectedBlock.mediaIds ?? [])
+      .then((loadedMedia) => {
+        if (active) {
+          setMedia(loadedMedia);
+        }
+      })
+      .catch(() => {
+        if (active) {
+          setMedia([]);
+        }
+      })
+      .finally(() => {
+        if (active) {
+          setMediaLoading(false);
         }
       });
 
@@ -562,6 +601,14 @@ export function ClinicianReviewScreen({
       setActionFeedback('Publish every linked source record before approving this block.');
       return;
     }
+    if (media.length !== (selectedBlock.mediaIds ?? []).length) {
+      setActionFeedback('Every attached figure or media record must exist before approval.');
+      return;
+    }
+    if (media.some((item) => item.publicationState !== 'published')) {
+      setActionFeedback('Publish every attached figure or media record before approving this block.');
+      return;
+    }
 
     void runAction(
       'approve',
@@ -701,6 +748,17 @@ export function ClinicianReviewScreen({
               Manage source library
             </Text>
           </Pressable>
+          <Pressable
+            accessibilityLabel="Open clinician figure and media library"
+            accessibilityRole="button"
+            onPress={onOpenMediaLibrary}
+            style={styles.mediaLibraryButton}
+            testID="button-open-media-library"
+          >
+            <Text style={styles.mediaLibraryButtonText}>
+              Manage figures and media
+            </Text>
+          </Pressable>
         </View>
 
         {access === 'checking' ? (
@@ -835,6 +893,53 @@ export function ClinicianReviewScreen({
                       <Text style={styles.sectionLabel}>LEARNER-FACING COPY</Text>
                       <Text style={styles.contentPreviewText}>{selectedBlock.body}</Text>
                     </View>
+
+                    {(selectedBlock.mediaIds ?? []).length > 0 ? (
+                      <View style={styles.mediaPreviewSection}>
+                        <Text style={styles.sectionLabel}>ATTACHED FIGURES AND MEDIA</Text>
+                        {mediaLoading ? (
+                          <View style={styles.mediaLoading}>
+                            <ActivityIndicator color="#01696F" />
+                            <Text style={styles.mediaLoadingText}>
+                              Loading attached media…
+                            </Text>
+                          </View>
+                        ) : null}
+                        {!mediaLoading && media.length === 0 ? (
+                          <Text style={styles.missingMediaText}>
+                            Attached media records were not found. Review the media library before approval.
+                          </Text>
+                        ) : null}
+                        {media.map((item) => {
+                          const asset = getBundledClinicalMediaAsset(item.assetKey);
+                          return (
+                            <View key={item.id} style={styles.mediaPreviewCard}>
+                              {asset ? (
+                                <Image
+                                  accessibilityLabel={item.altText}
+                                  resizeMode="contain"
+                                  source={asset}
+                                  style={styles.mediaPreviewImage}
+                                />
+                              ) : (
+                                <View style={styles.mediaPreviewUnavailable}>
+                                  <Text style={styles.mediaPreviewUnavailableText}>
+                                    Bundled asset unavailable
+                                  </Text>
+                                </View>
+                              )}
+                              <Text style={styles.mediaPreviewTitle}>{item.title}</Text>
+                              <Text style={styles.mediaPreviewMeta}>
+                                {formatState(item.publicationState)} {item.type} · {item.id}
+                              </Text>
+                              {item.caption ? (
+                                <Text style={styles.mediaPreviewCaption}>{item.caption}</Text>
+                              ) : null}
+                            </View>
+                          );
+                        })}
+                      </View>
+                    ) : null}
 
                     <View style={styles.historySection}>
                       <View style={styles.historyHeader}>
@@ -1138,7 +1243,7 @@ export function ClinicianReviewScreen({
                       <Text style={styles.evidenceTitle}>Evidence and review controls</Text>
                       <Text style={styles.evidenceText}>
                         Published clinical claims require at least one source, a named reviewer,
-                        and a future review date.
+                        a future review date, and published media attachments.
                       </Text>
 
                       <View style={styles.sourceList}>
@@ -1165,6 +1270,25 @@ export function ClinicianReviewScreen({
                           </Text>
                         )}
                       </View>
+
+                      {(selectedBlock.mediaIds ?? []).length > 0 ? (
+                        <View style={styles.evidenceMediaList}>
+                          <Text style={styles.evidenceMediaLabel}>ATTACHED MEDIA</Text>
+                          {mediaLoading ? (
+                            <Text style={styles.evidenceMediaText}>Loading media records…</Text>
+                          ) : media.length > 0 ? (
+                            media.map((item) => (
+                              <Text key={item.id} style={styles.evidenceMediaText}>
+                                {item.title} · {formatState(item.publicationState)}
+                              </Text>
+                            ))
+                          ) : (
+                            <Text style={styles.missingSourceText}>
+                              Media records not found: {(selectedBlock.mediaIds ?? []).join(', ')}
+                            </Text>
+                          )}
+                        </View>
+                      ) : null}
 
                       <Text style={styles.fieldLabel}>Clinical review notes</Text>
                       <TextInput
@@ -1428,6 +1552,20 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '700',
   },
+  mediaLibraryButton: {
+    backgroundColor: '#F4F2EE',
+    borderColor: '#D4D1CA',
+    borderRadius: 9,
+    borderWidth: 1,
+    justifyContent: 'center',
+    minHeight: 44,
+    paddingHorizontal: 12,
+  },
+  mediaLibraryButtonText: {
+    color: '#3E3C36',
+    fontSize: 14,
+    fontWeight: '700',
+  },
   centeredState: {
     alignItems: 'center',
     gap: 12,
@@ -1624,6 +1762,68 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     marginTop: 8,
+  },
+  mediaPreviewSection: {
+    borderTopColor: '#E3E0DA',
+    borderTopWidth: 1,
+    marginTop: 20,
+    paddingTop: 18,
+  },
+  mediaLoading: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 9,
+    paddingVertical: 16,
+  },
+  mediaLoadingText: {
+    color: '#696761',
+    fontSize: 13,
+  },
+  missingMediaText: {
+    color: '#A12C7B',
+    fontSize: 13,
+    lineHeight: 19,
+    marginTop: 10,
+  },
+  mediaPreviewCard: {
+    backgroundColor: '#F4F2EE',
+    borderRadius: 12,
+    marginTop: 12,
+    overflow: 'hidden',
+    padding: 12,
+  },
+  mediaPreviewImage: {
+    alignSelf: 'center',
+    height: 300,
+    width: '100%',
+  },
+  mediaPreviewUnavailable: {
+    alignItems: 'center',
+    backgroundColor: '#E8E5DD',
+    height: 140,
+    justifyContent: 'center',
+  },
+  mediaPreviewUnavailableText: {
+    color: '#696761',
+    fontSize: 13,
+    fontWeight: '700',
+  },
+  mediaPreviewTitle: {
+    color: '#28251D',
+    fontSize: 16,
+    fontWeight: '800',
+    marginTop: 9,
+  },
+  mediaPreviewMeta: {
+    color: '#696761',
+    fontSize: 12,
+    marginTop: 3,
+  },
+  mediaPreviewCaption: {
+    color: '#3E3C36',
+    fontSize: 13,
+    lineHeight: 19,
+    marginTop: 7,
   },
   historySection: {
     borderTopColor: '#E3E0DA',
@@ -1972,6 +2172,24 @@ const styles = StyleSheet.create({
   sourceList: {
     gap: 8,
     marginTop: 14,
+  },
+  evidenceMediaList: {
+    backgroundColor: '#F4F2EE',
+    borderRadius: 10,
+    marginTop: 12,
+    padding: 11,
+  },
+  evidenceMediaLabel: {
+    color: '#0C4E54',
+    fontSize: 10,
+    fontWeight: '800',
+    letterSpacing: 0.8,
+  },
+  evidenceMediaText: {
+    color: '#3E3C36',
+    fontSize: 13,
+    lineHeight: 19,
+    marginTop: 5,
   },
   sourceRow: {
     backgroundColor: '#F4F2EE',

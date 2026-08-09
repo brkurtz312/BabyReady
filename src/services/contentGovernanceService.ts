@@ -12,6 +12,7 @@ import {
 import { requireAuth, requireFirestore } from '../lib/firebase';
 import type {
   ClinicalContentBlock,
+  ClinicalMedia,
   ClinicalContentVersion,
   ClinicalContentVersionAction,
   ClinicalReview,
@@ -28,11 +29,12 @@ type CreateCourseInput = {
 
 type UpsertContentBlockInput = Omit<
   ClinicalContentBlock,
-  'lastReviewedAt' | 'nextReviewAt' | 'publicationState'
+  'lastReviewedAt' | 'nextReviewAt' | 'publicationState' | 'mediaIds'
 > & {
   lastReviewedAt?: Date;
   nextReviewAt?: Date;
   publicationState?: ContentPublicationState;
+  mediaIds?: string[];
 };
 
 function validateContentBlockInput(input: UpsertContentBlockInput): void {
@@ -57,6 +59,9 @@ function validateContentBlockInput(input: UpsertContentBlockInput): void {
   }
   if (input.sourceIds.some((sourceId) => !sourceId.trim())) {
     throw new Error('Remove any empty source attachments before saving.');
+  }
+  if ((input.mediaIds ?? []).some((mediaId) => !mediaId.trim())) {
+    throw new Error('Remove any empty media attachments before saving.');
   }
 }
 
@@ -116,6 +121,7 @@ function snapshotForVersion(
     type: content.type ?? 'text',
     body: typeof content.body === 'string' ? content.body : '',
     sourceIds: Array.isArray(content.sourceIds) ? content.sourceIds : [],
+    mediaIds: Array.isArray(content.mediaIds) ? content.mediaIds : [],
     isClinicalClaim: content.isClinicalClaim === true,
     publicationState: content.publicationState ?? 'draft',
   };
@@ -169,6 +175,42 @@ async function writeVersionedContentBlock(
   });
 }
 
+async function ensurePublishedAttachments(
+  db: ReturnType<typeof requireFirestore>,
+  sourceIds: string[],
+  mediaIds: string[],
+): Promise<void> {
+  const [sourceSnapshots, mediaSnapshots] = await Promise.all([
+    Promise.all(sourceIds.map((sourceId) => getDoc(doc(db, 'sources', sourceId)))),
+    Promise.all(
+      mediaIds.map((mediaId) => getDoc(doc(db, 'clinicalMedia', mediaId))),
+    ),
+  ]);
+
+  if (
+    sourceSnapshots.some(
+      (source) =>
+        !source.exists() || source.data().publicationState !== 'published',
+    )
+  ) {
+    throw new Error(
+      'Every attached source must still be published before continuing.',
+    );
+  }
+
+  if (
+    mediaSnapshots.some(
+      (media) =>
+        !media.exists() ||
+        (media.data() as ClinicalMedia).publicationState !== 'published',
+    )
+  ) {
+    throw new Error(
+      'Every attached figure or media record must be published before continuing.',
+    );
+  }
+}
+
 export async function createCourseDraft(input: CreateCourseInput): Promise<void> {
   const adminId = await requireAdminClaim();
 
@@ -211,6 +253,7 @@ export async function upsertClinicalContentBlock(
       update: {
         ...content,
         sourceIds: input.sourceIds ?? [],
+        mediaIds: input.mediaIds ?? [],
         publicationState: 'draft',
         clinicalReviewerId: null,
         lastReviewedAt: null,
@@ -244,20 +287,12 @@ export async function submitContentBlockForClinicalReview(
       throw new Error('Attach at least one published source before submitting a clinical claim.');
     }
 
-    const sourceSnapshots = await Promise.all(
-      content.sourceIds.map((sourceId) => getDoc(doc(db, 'sources', sourceId))),
-    );
-    if (
-      sourceSnapshots.some(
-        (source) =>
-          !source.exists() || source.data().publicationState !== 'published',
-      )
-    ) {
-      throw new Error(
-        'Every attached source must still be published before review submission.',
-      );
-    }
   }
+  await ensurePublishedAttachments(
+    db,
+    content.sourceIds ?? [],
+    content.mediaIds ?? [],
+  );
 
   await writeVersionedContentBlock(
     reference,
@@ -300,20 +335,12 @@ export async function approveContentBlock(
       throw new Error('Set the next clinical review date in the future before approval.');
     }
 
-    const sourceSnapshots = await Promise.all(
-      content.sourceIds.map((sourceId) => getDoc(doc(db, 'sources', sourceId))),
-    );
-    if (
-      sourceSnapshots.some(
-        (source) =>
-          !source.exists() || source.data().publicationState !== 'published',
-      )
-    ) {
-      throw new Error(
-        'Every linked source must exist and be published before clinical approval.',
-      );
-    }
   }
+  await ensurePublishedAttachments(
+    db,
+    content.sourceIds ?? [],
+    content.mediaIds ?? [],
+  );
 
   const reviewReference = doc(collection(db, 'clinicalReviews'));
 
@@ -377,6 +404,11 @@ export async function publishContentBlock(
       'Clinical content cannot be published without sources, a reviewer, and review dates.',
     );
   }
+  await ensurePublishedAttachments(
+    requireFirestore(),
+    contentBlock.sourceIds ?? [],
+    contentBlock.mediaIds ?? [],
+  );
 
   await writeVersionedContentBlock(
     reference,

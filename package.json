@@ -35,7 +35,8 @@
     "test:emulators": "firebase emulators:exec --project babyready-rules-test --only auth,firestore \"npm run test:rules\"",
     "check:production-env": "node scripts/check-production-env.mjs",
     "deploy:production": "node scripts/deploy-production.mjs",
-    "clinician-admin": "node scripts/manage-clinician-admin.mjs"
+    "clinician-admin": "node scripts/manage-clinician-admin.mjs",
+    "seed:early-pregnancy-media": "node scripts/import-early-pregnancy-media.mjs"
   },
   "private": true
 }
