@@ -341,6 +341,21 @@ test('published clinical media is learner-readable, while drafts remain administ
   await assertSucceeds(
     setDoc(doc(admin, 'clinicalMedia', publishedMedia.id), publishedMedia),
   );
+  await assertSucceeds(
+    setDoc(doc(admin, 'clinicalMedia', 'bleeding-during-pregnancy-contact-care'), {
+      ...publishedMedia,
+      id: 'bleeding-during-pregnancy-contact-care',
+      title: 'Bleeding During Pregnancy: Contact Your Care Team',
+      assetKey: 'bleeding-during-pregnancy-contact-care',
+    }),
+  );
+  await assertFails(
+    setDoc(doc(admin, 'clinicalMedia', 'unapproved-figure'), {
+      ...publishedMedia,
+      id: 'unapproved-figure',
+      assetKey: 'unapproved-figure',
+    }),
+  );
   await assertFails(
     setDoc(doc(admin, 'clinicalMedia', 'mismatched-media-id'), {
       ...publishedMedia,

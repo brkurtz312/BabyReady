@@ -102,14 +102,15 @@ service cloud.firestore {
     function validClinicalMediaRecord(mediaId) {
       return request.resource.data.id == mediaId
         && request.resource.data.title is string
-        // These three reviewed assets are bundled static figures. Broader
+        // These bundled assets are static figures. Broader
         // image, audio, and video support will require separate storage and
         // delivery controls before the allowable type set is expanded.
         && request.resource.data.type == 'figure'
         && request.resource.data.assetKey in [
           'early-pregnancy-care-timeline',
           'folic-acid-early-pregnancy',
-          'nausea-support-ideas'
+          'nausea-support-ideas',
+          'bleeding-during-pregnancy-contact-care'
         ]
         && request.resource.data.altText is string
         && request.resource.data.sourceIds is list

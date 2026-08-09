@@ -67,6 +67,8 @@ const assetLabels: Record<string, string> = {
   'early-pregnancy-care-timeline': 'Early Pregnancy Care Timeline',
   'folic-acid-early-pregnancy': 'Folic Acid in Early Pregnancy',
   'nausea-support-ideas': 'Nausea-Support Ideas',
+  'bleeding-during-pregnancy-contact-care':
+    'Bleeding During Pregnancy: Contact Your Care Team',
 };
 
 function today(): string {
