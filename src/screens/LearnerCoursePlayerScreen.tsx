@@ -425,49 +425,37 @@ function FigureViewer({
       presentationStyle="fullScreen"
       visible={media !== null}
     >
-      <SafeAreaView accessibilityViewIsModal style={styles.viewerSafeArea}>
-        <View style={styles.viewerHeader}>
-          <Text numberOfLines={2} style={styles.viewerHeaderTitle}>
-            {media?.title ?? 'Figure'}
-          </Text>
-          <Pressable
-            accessibilityLabel="Close full-screen figure"
-            accessibilityRole="button"
-            onPress={onClose}
-            style={styles.viewerCloseButton}
-            testID="button-close-figure-viewer"
-          >
-            <Text style={styles.viewerCloseButtonText}>Close</Text>
-          </Pressable>
-        </View>
-
-        <ScrollView
-          contentContainerStyle={styles.viewerContent}
-          showsVerticalScrollIndicator={false}
+      <SafeAreaView
+        accessibilityViewIsModal
+        style={styles.viewerSafeArea}
+        testID={`figure-viewer-${media?.id ?? 'closed'}`}
+      >
+        {imageSource ? (
+          <Image
+            accessibilityLabel={media?.altText}
+            accessibilityRole="image"
+            resizeMode="contain"
+            source={imageSource}
+            style={styles.viewerImage}
+          />
+        ) : (
+          <View style={styles.viewerFallback}>
+            <Text style={styles.viewerFallbackTitle}>Figure preview unavailable</Text>
+            <Text style={styles.viewerFallbackText}>
+              {media?.altText || 'This figure could not be opened on this device.'}
+            </Text>
+          </View>
+        )}
+        <Pressable
+          accessibilityHint="Returns to the lesson."
+          accessibilityLabel={`Close full-screen figure: ${media?.title ?? 'figure'}`}
+          accessibilityRole="button"
+          onPress={onClose}
+          style={styles.viewerCloseButton}
+          testID="button-close-figure-viewer"
         >
-          {imageSource ? (
-            <Image
-              accessibilityLabel={media?.altText}
-              resizeMode="contain"
-              source={imageSource}
-              style={styles.viewerImage}
-            />
-          ) : (
-            <View style={styles.viewerFallback}>
-              <Text style={styles.viewerFallbackTitle}>Figure preview unavailable</Text>
-              <Text style={styles.viewerFallbackText}>
-                {media?.altText ?? 'This figure could not be opened on this device.'}
-              </Text>
-            </View>
-          )}
-          {media?.caption ? <Text style={styles.viewerCaption}>{media.caption}</Text> : null}
-          {media?.altText ? (
-            <View style={styles.viewerDescription}>
-              <Text style={styles.viewerDescriptionLabel}>Figure description</Text>
-              <Text style={styles.viewerDescriptionText}>{media.altText}</Text>
-            </View>
-          ) : null}
-        </ScrollView>
+          <Text style={styles.viewerCloseButtonText}>×</Text>
+        </Pressable>
       </SafeAreaView>
     </Modal>
   );
@@ -1130,96 +1118,59 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   viewerSafeArea: {
-    backgroundColor: '#F7F6F2',
-    flex: 1,
-  },
-  viewerHeader: {
     alignItems: 'center',
-    borderBottomColor: '#D4D1CA',
-    borderBottomWidth: 1,
-    flexDirection: 'row',
-    gap: 12,
-    minHeight: 64,
-    paddingHorizontal: 20,
-  },
-  viewerHeaderTitle: {
-    color: '#28251D',
+    backgroundColor: '#171614',
     flex: 1,
-    fontSize: 17,
-    fontWeight: '800',
+    justifyContent: 'center',
+    position: 'relative',
+  },
+  viewerImage: {
+    height: '100%',
+    width: '100%',
   },
   viewerCloseButton: {
     alignItems: 'center',
-    borderColor: '#01696F',
-    borderRadius: 9,
+    backgroundColor: 'rgba(23, 22, 20, 0.72)',
+    borderColor: 'rgba(255, 255, 255, 0.72)',
+    borderRadius: 22,
     borderWidth: 1,
+    height: 44,
     justifyContent: 'center',
-    minHeight: 44,
-    paddingHorizontal: 13,
+    position: 'absolute',
+    right: 18,
+    top: 14,
+    width: 44,
   },
   viewerCloseButtonText: {
-    color: '#01696F',
-    fontSize: 14,
-    fontWeight: '800',
-  },
-  viewerContent: {
-    padding: 20,
-    paddingBottom: 36,
-  },
-  viewerImage: {
-    backgroundColor: '#FFFFFF',
-    height: 560,
-    width: '100%',
+    color: '#FFFFFF',
+    fontSize: 30,
+    fontWeight: '400',
+    lineHeight: 33,
+    marginTop: -3,
   },
   viewerFallback: {
     alignItems: 'center',
-    backgroundColor: '#EFEEE9',
-    borderColor: '#D4D1CA',
+    backgroundColor: '#292824',
+    borderColor: '#797876',
     borderRadius: 12,
     borderWidth: 1,
-    minHeight: 220,
     justifyContent: 'center',
+    marginHorizontal: 24,
+    minHeight: 220,
     padding: 20,
   },
   viewerFallbackTitle: {
-    color: '#28251D',
+    color: '#FFFFFF',
     fontSize: 16,
     fontWeight: '800',
     textAlign: 'center',
   },
   viewerFallbackText: {
-    color: '#55534D',
+    color: '#CDCCCA',
     fontSize: 14,
     lineHeight: 20,
     marginTop: 7,
     textAlign: 'center',
-  },
-  viewerCaption: {
-    color: '#38352E',
-    fontSize: 16,
-    lineHeight: 24,
-    marginTop: 18,
-  },
-  viewerDescription: {
-    backgroundColor: '#EAF4F2',
-    borderColor: '#92BFB8',
-    borderRadius: 12,
-    borderWidth: 1,
-    marginTop: 18,
-    padding: 15,
-  },
-  viewerDescriptionLabel: {
-    color: '#0C4E54',
-    fontSize: 12,
-    fontWeight: '800',
-    letterSpacing: 0.5,
-    textTransform: 'uppercase',
-  },
-  viewerDescriptionText: {
-    color: '#38352E',
-    fontSize: 15,
-    lineHeight: 22,
-    marginTop: 6,
   },
   readerSafeArea: {
     backgroundColor: '#F7F6F2',
