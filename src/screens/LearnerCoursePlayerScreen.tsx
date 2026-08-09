@@ -71,6 +71,10 @@ function titleForBlock(block: ClinicalContentBlock): string | null {
   }
 }
 
+function readerTitleForBlock(block: ClinicalContentBlock): string {
+  return titleForBlock(block) ?? 'Lesson content';
+}
+
 function checklistItems(body: string): string[] {
   return body
     .split('\n')
@@ -178,11 +182,13 @@ function MediaFigure({
 function LessonBlock({
   block,
   mediaById,
+  onOpenCard,
   onOpenFigure,
   sourcesById,
 }: {
   block: ClinicalContentBlock;
   mediaById: Map<string, ClinicalMedia>;
+  onOpenCard: (block: ClinicalContentBlock) => void;
   onOpenFigure: (media: ClinicalMedia) => void;
   sourcesById: Map<string, ContentSource>;
 }) {
@@ -201,16 +207,30 @@ function LessonBlock({
         block.type === 'emergency_card' && styles.emergencyBlock,
       ]}
     >
-      {title ? (
-        <Text
-          style={[
-            styles.blockTitle,
-            block.type === 'emergency_card' && styles.emergencyBlockTitle,
-          ]}
+      <View style={styles.blockHeader}>
+        {title ? (
+          <Text
+            style={[
+              styles.blockTitle,
+              block.type === 'emergency_card' && styles.emergencyBlockTitle,
+            ]}
+          >
+            {title}
+          </Text>
+        ) : (
+          <View />
+        )}
+        <Pressable
+          accessibilityHint="Opens this lesson card in a larger reading view."
+          accessibilityLabel={`Open full-screen reading view: ${readerTitleForBlock(block)}`}
+          accessibilityRole="button"
+          onPress={() => onOpenCard(block)}
+          style={styles.openCardButton}
+          testID={`button-open-card-${block.id}`}
         >
-          {title}
-        </Text>
-      ) : null}
+          <Text style={styles.openCardButtonText}>Full screen</Text>
+        </Pressable>
+      </View>
 
       {items.length > 0 ? (
         <View style={styles.checklist}>
@@ -259,6 +279,108 @@ function LessonBlock({
       ))}
       <SourceLinks sourceIds={block.sourceIds ?? []} sourcesById={sourcesById} />
     </View>
+  );
+}
+
+function LessonCardViewer({
+  block,
+  mediaById,
+  onClose,
+  onOpenFigure,
+  sourcesById,
+}: {
+  block: ClinicalContentBlock | null;
+  mediaById: Map<string, ClinicalMedia>;
+  onClose: () => void;
+  onOpenFigure: (media: ClinicalMedia) => void;
+  sourcesById: Map<string, ContentSource>;
+}) {
+  if (!block) {
+    return null;
+  }
+
+  const title = titleForBlock(block);
+  const items = block.type === 'checklist' ? checklistItems(block.body) : [];
+  const media = (block.mediaIds ?? [])
+    .map((mediaId) => mediaById.get(mediaId))
+    .filter((item): item is ClinicalMedia => Boolean(item));
+
+  return (
+    <Modal
+      animationType="slide"
+      onRequestClose={onClose}
+      presentationStyle="fullScreen"
+      visible
+    >
+      <SafeAreaView accessibilityViewIsModal style={styles.readerSafeArea}>
+        <View style={styles.readerHeader}>
+          <View style={styles.readerHeaderText}>
+            <Text style={styles.readerEyebrow}>LESSON CARD</Text>
+            <Text numberOfLines={2} style={styles.readerHeaderTitle}>
+              {readerTitleForBlock(block)}
+            </Text>
+          </View>
+          <Pressable
+            accessibilityLabel="Close full-screen lesson card"
+            accessibilityRole="button"
+            onPress={onClose}
+            style={styles.readerCloseButton}
+            testID="button-close-card-reader"
+          >
+            <Text style={styles.readerCloseButtonText}>Close</Text>
+          </Pressable>
+        </View>
+
+        <ScrollView
+          contentContainerStyle={styles.readerContent}
+          showsVerticalScrollIndicator={false}
+        >
+          <View
+            style={[
+              styles.readerCard,
+              block.type === 'callout' && styles.readerCalloutCard,
+              block.type === 'emergency_card' && styles.readerEmergencyCard,
+            ]}
+          >
+            {title ? (
+              <Text
+                style={[
+                  styles.readerCardTitle,
+                  block.type === 'emergency_card' && styles.readerEmergencyCardTitle,
+                ]}
+              >
+                {title}
+              </Text>
+            ) : null}
+
+            {items.length > 0 ? (
+              <View style={styles.readerChecklist}>
+                {items.map((item) => (
+                  <View key={item} style={styles.readerChecklistItem}>
+                    <Text style={styles.readerChecklistBullet}>•</Text>
+                    <Text style={styles.readerChecklistText}>{item}</Text>
+                  </View>
+                ))}
+              </View>
+            ) : (
+              <Text
+                style={[
+                  styles.readerText,
+                  block.type === 'emergency_card' && styles.readerEmergencyText,
+                ]}
+              >
+                {block.body}
+              </Text>
+            )}
+
+            {media.map((item) => (
+              <MediaFigure key={item.id} media={item} onOpen={onOpenFigure} />
+            ))}
+            <SourceLinks sourceIds={block.sourceIds ?? []} sourcesById={sourcesById} />
+          </View>
+        </ScrollView>
+      </SafeAreaView>
+    </Modal>
   );
 }
 
@@ -348,6 +470,7 @@ export function LearnerCoursePlayerScreen({
     sources: ContentSource[];
   }>({ media: [], sources: [] });
   const [attachmentsError, setAttachmentsError] = useState<string | null>(null);
+  const [expandedBlock, setExpandedBlock] = useState<ClinicalContentBlock | null>(null);
   const [expandedFigure, setExpandedFigure] = useState<ClinicalMedia | null>(null);
 
   useEffect(() => {
@@ -529,6 +652,7 @@ export function LearnerCoursePlayerScreen({
                   block={block}
                   key={block.id}
                   mediaById={mediaById}
+                  onOpenCard={setExpandedBlock}
                   onOpenFigure={setExpandedFigure}
                   sourcesById={sourcesById}
                 />
@@ -550,6 +674,13 @@ export function LearnerCoursePlayerScreen({
           </Text>
         </View>
       </ScrollView>
+      <LessonCardViewer
+        block={expandedBlock}
+        mediaById={mediaById}
+        onClose={() => setExpandedBlock(null)}
+        onOpenFigure={setExpandedFigure}
+        sourcesById={sourcesById}
+      />
       <FigureViewer media={expandedFigure} onClose={() => setExpandedFigure(null)} />
     </SafeAreaView>
   );
@@ -747,14 +878,35 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFF5F8',
     borderColor: '#A12C7B',
   },
+  blockHeader: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 10,
+    justifyContent: 'space-between',
+    marginBottom: 7,
+  },
   blockTitle: {
     color: '#0C4E54',
+    flex: 1,
     fontSize: 14,
     fontWeight: '800',
-    marginBottom: 7,
   },
   emergencyBlockTitle: {
     color: '#7B1F5C',
+  },
+  openCardButton: {
+    alignItems: 'center',
+    borderColor: '#01696F',
+    borderRadius: 8,
+    borderWidth: 1,
+    justifyContent: 'center',
+    minHeight: 36,
+    paddingHorizontal: 10,
+  },
+  openCardButtonText: {
+    color: '#01696F',
+    fontSize: 12,
+    fontWeight: '800',
   },
   blockText: {
     color: '#38352E',
@@ -1007,5 +1159,104 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 22,
     marginTop: 6,
+  },
+  readerSafeArea: {
+    backgroundColor: '#F7F6F2',
+    flex: 1,
+  },
+  readerHeader: {
+    alignItems: 'center',
+    borderBottomColor: '#D4D1CA',
+    borderBottomWidth: 1,
+    flexDirection: 'row',
+    gap: 12,
+    minHeight: 72,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+  },
+  readerHeaderText: {
+    flex: 1,
+  },
+  readerEyebrow: {
+    color: '#01696F',
+    fontSize: 10,
+    fontWeight: '800',
+    letterSpacing: 1,
+  },
+  readerHeaderTitle: {
+    color: '#28251D',
+    fontSize: 19,
+    fontWeight: '800',
+    letterSpacing: -0.2,
+    marginTop: 3,
+  },
+  readerCloseButton: {
+    alignItems: 'center',
+    borderColor: '#01696F',
+    borderRadius: 9,
+    borderWidth: 1,
+    justifyContent: 'center',
+    minHeight: 44,
+    paddingHorizontal: 13,
+  },
+  readerCloseButtonText: {
+    color: '#01696F',
+    fontSize: 14,
+    fontWeight: '800',
+  },
+  readerContent: {
+    padding: 20,
+    paddingBottom: 40,
+  },
+  readerCard: {
+    backgroundColor: '#FBFBF9',
+    borderColor: '#D4D1CA',
+    borderRadius: 18,
+    borderWidth: 1,
+    padding: 20,
+  },
+  readerCalloutCard: {
+    backgroundColor: '#EAF4F2',
+    borderColor: '#92BFB8',
+  },
+  readerEmergencyCard: {
+    backgroundColor: '#FFF5F8',
+    borderColor: '#A12C7B',
+  },
+  readerCardTitle: {
+    color: '#0C4E54',
+    fontSize: 18,
+    fontWeight: '800',
+    marginBottom: 12,
+  },
+  readerEmergencyCardTitle: {
+    color: '#7B1F5C',
+  },
+  readerText: {
+    color: '#38352E',
+    fontSize: 19,
+    lineHeight: 30,
+  },
+  readerEmergencyText: {
+    color: '#592546',
+  },
+  readerChecklist: {
+    gap: 15,
+  },
+  readerChecklistItem: {
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+  },
+  readerChecklistBullet: {
+    color: '#01696F',
+    fontSize: 23,
+    lineHeight: 30,
+    marginRight: 10,
+  },
+  readerChecklistText: {
+    color: '#38352E',
+    flex: 1,
+    fontSize: 19,
+    lineHeight: 30,
   },
 });
