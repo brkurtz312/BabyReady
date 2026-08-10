@@ -14,6 +14,7 @@ import { db } from '../lib/firebase';
 import type {
   ClinicalContentBlock,
   ClinicalContentVersion,
+  ClinicalMedia,
   ContentSource,
 } from '../models/course';
 
@@ -28,6 +29,12 @@ export type ContentVersionHistoryState =
   | { status: 'loading'; versions: ClinicalContentVersion[]; error: null }
   | { status: 'ready'; versions: ClinicalContentVersion[]; error: null }
   | { status: 'error'; versions: ClinicalContentVersion[]; error: string };
+
+export type ClinicalMediaReviewQueueState =
+  | { status: 'unconfigured'; media: []; error: null }
+  | { status: 'loading'; media: ClinicalMedia[]; error: null }
+  | { status: 'ready'; media: ClinicalMedia[]; error: null }
+  | { status: 'error'; media: ClinicalMedia[]; error: string };
 
 function readableQueueError(error: unknown): string {
   if (typeof error === 'object' && error && 'message' in error) {
@@ -61,6 +68,33 @@ export function subscribeToClinicalReviewQueue(
     },
     (error) => {
       onChange({ status: 'error', blocks: [], error: readableQueueError(error) });
+    },
+  );
+}
+
+export function subscribeToClinicalMediaReviewQueue(
+  onChange: (state: ClinicalMediaReviewQueueState) => void,
+): Unsubscribe | null {
+  if (!db) {
+    onChange({ status: 'unconfigured', media: [], error: null });
+    return null;
+  }
+
+  onChange({ status: 'loading', media: [], error: null });
+  return onSnapshot(
+    query(collection(db, 'clinicalMedia'), orderBy('updatedAt', 'desc'), limit(50)),
+    (snapshot) => {
+      onChange({
+        status: 'ready',
+        media: snapshot.docs.map((record) => ({
+          ...(record.data() as ClinicalMedia),
+          id: record.id,
+        })),
+        error: null,
+      });
+    },
+    (error) => {
+      onChange({ status: 'error', media: [], error: readableQueueError(error) });
     },
   );
 }

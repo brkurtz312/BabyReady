@@ -20,6 +20,7 @@ import type {
   ClinicalContentBlock,
   ClinicalContentVersion,
   ClinicalMedia,
+  ClinicalMediaVersion,
   ContentPublicationState,
   ContentSource,
 } from '../models/course';
@@ -30,9 +31,17 @@ import {
   submitContentBlockForClinicalReview,
 } from '../services/contentGovernanceService';
 import {
+  approveClinicalMedia,
+  publishClinicalMedia,
+  subscribeToClinicalMediaVersionHistory,
+  type ClinicalMediaVersionHistoryState,
+} from '../services/clinicalMediaService';
+import {
   loadContentSources,
+  subscribeToClinicalMediaReviewQueue,
   subscribeToContentVersionHistory,
   subscribeToClinicalReviewQueue,
+  type ClinicalMediaReviewQueueState,
   type ContentVersionHistoryState,
   type ReviewQueueState,
 } from '../services/clinicalReviewQueueService';
@@ -67,6 +76,10 @@ const queueStates: ContentPublicationState[] = [
   'approved',
   'draft',
   'frozen',
+];
+const mediaQueueStates: ContentPublicationState[] = [
+  'submitted',
+  'approved',
 ];
 
 function formatState(state: ContentPublicationState): string {
@@ -121,6 +134,23 @@ function formatVersionAction(action: ClinicalContentVersion['action']): string {
       return 'Approved for release';
     case 'published':
       return 'Published to learners';
+    case 'frozen':
+      return 'Frozen for follow-up';
+    default:
+      return action;
+  }
+}
+
+function formatMediaVersionAction(action: ClinicalMediaVersion['action']): string {
+  switch (action) {
+    case 'draft_saved':
+      return 'Draft saved';
+    case 'submitted':
+      return 'Submitted for review';
+    case 'approved':
+      return 'Clinical review approved';
+    case 'published':
+      return 'Published for learner use';
     case 'frozen':
       return 'Frozen for follow-up';
     default:
@@ -206,9 +236,18 @@ export function ClinicianReviewScreen({
     blocks: [],
     error: null,
   });
+  const [mediaQueueState, setMediaQueueState] =
+    useState<ClinicalMediaReviewQueueState>({
+      status: 'loading',
+      media: [],
+      error: null,
+    });
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [selectedMediaId, setSelectedMediaId] = useState<string | null>(null);
   const [sources, setSources] = useState<ContentSource[]>([]);
   const [sourcesLoading, setSourcesLoading] = useState(false);
+  const [mediaSources, setMediaSources] = useState<ContentSource[]>([]);
+  const [mediaSourcesLoading, setMediaSourcesLoading] = useState(false);
   const [media, setMedia] = useState<ClinicalMedia[]>([]);
   const [mediaLoading, setMediaLoading] = useState(false);
   const [versionHistory, setVersionHistory] = useState<ContentVersionHistoryState>({
@@ -216,6 +255,12 @@ export function ClinicianReviewScreen({
     versions: [],
     error: null,
   });
+  const [mediaVersionHistory, setMediaVersionHistory] =
+    useState<ClinicalMediaVersionHistoryState>({
+      status: 'loading',
+      versions: [],
+      error: null,
+    });
   const [auditExportLog, setAuditExportLog] =
     useState<ComparisonAuditExportLogState>({
       status: 'loading',
@@ -228,12 +273,19 @@ export function ClinicianReviewScreen({
   const [auditExportFeedback, setAuditExportFeedback] = useState<string | null>(null);
   const [reviewNotes, setReviewNotes] = useState('');
   const [nextReviewDate, setNextReviewDate] = useState(reviewDateOneYearFromNow);
+  const [mediaReviewNotes, setMediaReviewNotes] = useState('');
+  const [mediaNextReviewDate, setMediaNextReviewDate] = useState(
+    reviewDateOneYearFromNow,
+  );
   const [freezeReason, setFreezeReason] = useState('');
   const [showFreezeForm, setShowFreezeForm] = useState(false);
   const [actionInFlight, setActionInFlight] = useState<
-    'submit' | 'approve' | 'publish' | 'freeze' | null
+    'submit' | 'approve' | 'publish' | 'freeze' | 'approve-media' | 'publish-media' | null
   >(null);
   const [actionFeedback, setActionFeedback] = useState<string | null>(null);
+  const [mediaActionFeedback, setMediaActionFeedback] = useState<string | null>(
+    null,
+  );
 
   useEffect(() => {
     let active = true;
@@ -264,6 +316,16 @@ export function ClinicianReviewScreen({
     return subscribeToClinicalReviewQueue(setQueueState) ?? undefined;
   }, [access]);
 
+  useEffect(() => {
+    if (access !== 'authorized') {
+      return undefined;
+    }
+
+    return (
+      subscribeToClinicalMediaReviewQueue(setMediaQueueState) ?? undefined
+    );
+  }, [access]);
+
   const orderedBlocks = useMemo(
     () =>
       queueStates.flatMap((state) =>
@@ -280,6 +342,22 @@ export function ClinicianReviewScreen({
     [orderedBlocks, selectedId],
   );
 
+  const orderedReviewMedia = useMemo(
+    () =>
+      mediaQueueStates.flatMap((state) =>
+        mediaQueueState.media.filter((item) => item.publicationState === state),
+      ),
+    [mediaQueueState.media],
+  );
+
+  const selectedReviewMedia = useMemo(
+    () =>
+      orderedReviewMedia.find((item) => item.id === selectedMediaId) ??
+      orderedReviewMedia[0] ??
+      null,
+    [orderedReviewMedia, selectedMediaId],
+  );
+
   useEffect(() => {
     if (!selectedBlock) {
       setSelectedId(null);
@@ -290,6 +368,17 @@ export function ClinicianReviewScreen({
       setSelectedId(queueBlockKey(selectedBlock));
     }
   }, [orderedBlocks, selectedBlock, selectedId]);
+
+  useEffect(() => {
+    if (!selectedReviewMedia) {
+      setSelectedMediaId(null);
+      return;
+    }
+
+    if (!orderedReviewMedia.some((item) => item.id === selectedMediaId)) {
+      setSelectedMediaId(selectedReviewMedia.id);
+    }
+  }, [orderedReviewMedia, selectedMediaId, selectedReviewMedia]);
 
   useEffect(() => {
     let active = true;
@@ -321,6 +410,37 @@ export function ClinicianReviewScreen({
       active = false;
     };
   }, [selectedBlock]);
+
+  useEffect(() => {
+    let active = true;
+
+    if (!selectedReviewMedia) {
+      setMediaSources([]);
+      return undefined;
+    }
+
+    setMediaSourcesLoading(true);
+    loadContentSources(selectedReviewMedia.sourceIds ?? [])
+      .then((loadedSources) => {
+        if (active) {
+          setMediaSources(loadedSources);
+        }
+      })
+      .catch(() => {
+        if (active) {
+          setMediaSources([]);
+        }
+      })
+      .finally(() => {
+        if (active) {
+          setMediaSourcesLoading(false);
+        }
+      });
+
+    return () => {
+      active = false;
+    };
+  }, [selectedReviewMedia]);
 
   useEffect(() => {
     let active = true;
@@ -406,12 +526,32 @@ export function ClinicianReviewScreen({
   }, [selectedBlock]);
 
   useEffect(() => {
+    if (!selectedReviewMedia) {
+      setMediaVersionHistory({ status: 'ready', versions: [], error: null });
+      return undefined;
+    }
+
+    return (
+      subscribeToClinicalMediaVersionHistory(
+        selectedReviewMedia.id,
+        setMediaVersionHistory,
+      ) ?? undefined
+    );
+  }, [selectedReviewMedia?.id]);
+
+  useEffect(() => {
     setReviewNotes('');
     setFreezeReason('');
     setShowFreezeForm(false);
     setActionFeedback(null);
     setAuditExportFeedback(null);
   }, [selectedBlock?.id]);
+
+  useEffect(() => {
+    setMediaReviewNotes('');
+    setMediaNextReviewDate(reviewDateOneYearFromNow());
+    setMediaActionFeedback(null);
+  }, [selectedReviewMedia?.id]);
 
   const baselineVersion = useMemo(
     () =>
@@ -688,6 +828,100 @@ export function ClinicianReviewScreen({
     ]);
   };
 
+  const runMediaAction = async (
+    action: 'approve-media' | 'publish-media',
+    callback: () => Promise<void>,
+    successMessage: string,
+  ) => {
+    setActionInFlight(action);
+    setMediaActionFeedback(null);
+
+    try {
+      await callback();
+      setMediaActionFeedback(successMessage);
+    } catch (error) {
+      setMediaActionFeedback(
+        error instanceof Error
+          ? error.message
+          : 'BabyReady could not complete that media action.',
+      );
+    } finally {
+      setActionInFlight(null);
+    }
+  };
+
+  const approveSelectedMedia = () => {
+    if (!selectedReviewMedia) {
+      return;
+    }
+
+    const parsedNextReviewDate = parseReviewDate(mediaNextReviewDate);
+    if (!mediaReviewNotes.trim()) {
+      setMediaActionFeedback('Add clinical review notes before approving media.');
+      return;
+    }
+    if (!parsedNextReviewDate) {
+      setMediaActionFeedback('Use YYYY-MM-DD for the next clinical review date.');
+      return;
+    }
+    if (
+      selectedReviewMedia.isClinicalClaim &&
+      !selectedReviewMedia.sourceIds.length
+    ) {
+      setMediaActionFeedback(
+        'Clinical figures need at least one linked source before approval.',
+      );
+      return;
+    }
+    if (mediaSources.length !== selectedReviewMedia.sourceIds.length) {
+      setMediaActionFeedback(
+        'Every linked source record must exist before approving this media.',
+      );
+      return;
+    }
+    if (mediaSources.some((source) => source.publicationState !== 'published')) {
+      setMediaActionFeedback(
+        'Publish every linked source record before approving this media.',
+      );
+      return;
+    }
+
+    void runMediaAction(
+      'approve-media',
+      () =>
+        approveClinicalMedia(
+          selectedReviewMedia.id,
+          mediaReviewNotes.trim(),
+          parsedNextReviewDate,
+        ),
+      'Clinical media review recorded. This figure is approved and ready to publish.',
+    );
+  };
+
+  const confirmPublishMedia = () => {
+    if (!selectedReviewMedia) {
+      return;
+    }
+
+    Alert.alert(
+      'Publish this figure?',
+      'Publishing makes this reusable clinical figure available for learner content that references it.',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Publish',
+          onPress: () => {
+            void runMediaAction(
+              'publish-media',
+              () => publishClinicalMedia(selectedReviewMedia.id),
+              'Clinical media is now published for approved learner content.',
+            );
+          },
+        },
+      ],
+    );
+  };
+
   return (
     <SafeAreaView style={styles.safeArea}>
       <KeyboardAvoidingView
@@ -791,9 +1025,11 @@ export function ClinicianReviewScreen({
           <>
             <View style={styles.queueSummary}>
               <Text style={styles.queueSummaryLabel}>REVIEW QUEUE</Text>
-              <Text style={styles.queueSummaryValue}>{orderedBlocks.length}</Text>
+              <Text style={styles.queueSummaryValue}>
+                {orderedBlocks.length + orderedReviewMedia.length}
+              </Text>
               <Text style={styles.queueSummaryText}>
-                submitted, approved, draft, or frozen content blocks
+                clinical content records and reusable figures
               </Text>
             </View>
 
@@ -813,13 +1049,308 @@ export function ClinicianReviewScreen({
 
             {queueState.status === 'ready' && orderedBlocks.length === 0 ? (
               <View style={styles.emptyState}>
-                <Text style={styles.emptyTitle}>No content is awaiting review</Text>
+                <Text style={styles.emptyTitle}>No content records are awaiting review</Text>
                 <Text style={styles.emptyText}>
                   Submitted clinical blocks will appear here with their source records and
                   approval controls.
                 </Text>
               </View>
             ) : null}
+
+            <View style={styles.mediaQueueSection}>
+              <View style={styles.mediaQueueHeader}>
+                <View>
+                  <Text style={styles.sectionLabel}>FIGURE AND MEDIA QUEUE</Text>
+                  <Text style={styles.mediaQueueTitle}>
+                    {orderedReviewMedia.length} awaiting review or release
+                  </Text>
+                </View>
+                <Text style={styles.mediaQueueHint}>Reusable learner figures</Text>
+              </View>
+
+              {mediaQueueState.status === 'loading' ? (
+                <View style={styles.mediaQueueLoading}>
+                  <ActivityIndicator color="#01696F" />
+                  <Text style={styles.mediaQueueLoadingText}>
+                    Loading submitted figures…
+                  </Text>
+                </View>
+              ) : null}
+
+              {mediaQueueState.status === 'error' ? (
+                <View style={styles.mediaQueueError}>
+                  <Text style={styles.mediaQueueErrorText}>
+                    {mediaQueueState.error}
+                  </Text>
+                </View>
+              ) : null}
+
+              {mediaQueueState.status === 'ready' &&
+              orderedReviewMedia.length === 0 ? (
+                <Text style={styles.mediaQueueEmpty}>
+                  Submitted figures and approved figures ready to publish will
+                  appear here. Drafts remain in the media library until submitted.
+                </Text>
+              ) : null}
+
+              {orderedReviewMedia.length > 0 ? (
+                <>
+                  <ScrollView
+                    contentContainerStyle={styles.queueList}
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                  >
+                    {orderedReviewMedia.map((item) => {
+                      const isSelected = selectedReviewMedia?.id === item.id;
+                      return (
+                        <Pressable
+                          key={item.id}
+                          accessibilityRole="button"
+                          accessibilityLabel={`Review ${item.title}, ${formatState(item.publicationState)}`}
+                          onPress={() => setSelectedMediaId(item.id)}
+                          style={[
+                            styles.queueCard,
+                            isSelected && styles.queueCardSelected,
+                          ]}
+                          testID={`button-review-media-${item.id}`}
+                        >
+                          <View
+                            style={[
+                              styles.statusPill,
+                              statusStyle(item.publicationState),
+                            ]}
+                          >
+                            <Text style={styles.statusText}>
+                              {formatState(item.publicationState)}
+                            </Text>
+                          </View>
+                          <Text numberOfLines={2} style={styles.queueCardTitle}>
+                            {item.title}
+                          </Text>
+                          <Text numberOfLines={1} style={styles.queueCardScope}>
+                            Figure · {item.sourceIds.length} source
+                            {item.sourceIds.length === 1 ? '' : 's'}
+                          </Text>
+                        </Pressable>
+                      );
+                    })}
+                  </ScrollView>
+
+                  {selectedReviewMedia ? (
+                    <View style={styles.mediaReviewPanel}>
+                      <View style={styles.reviewPanelHeader}>
+                        <View style={styles.reviewPanelHeaderCopy}>
+                          <Text style={styles.sectionLabel}>SELECTED FIGURE</Text>
+                          <Text style={styles.blockTitle}>
+                            {selectedReviewMedia.title}
+                          </Text>
+                          <Text style={styles.blockScope}>
+                            {selectedReviewMedia.id} · {selectedReviewMedia.type}
+                          </Text>
+                        </View>
+                        <View
+                          style={[
+                            styles.statusPill,
+                            styles.reviewPanelStatus,
+                            statusStyle(selectedReviewMedia.publicationState),
+                          ]}
+                        >
+                          <Text style={styles.statusText}>
+                            {formatState(selectedReviewMedia.publicationState)}
+                          </Text>
+                        </View>
+                      </View>
+
+                      {getBundledClinicalMediaAsset(
+                        selectedReviewMedia.assetKey,
+                      ) ? (
+                        <View style={styles.selectedMediaPreview}>
+                          <Image
+                            accessibilityLabel={selectedReviewMedia.altText}
+                            resizeMode="contain"
+                            source={getBundledClinicalMediaAsset(
+                              selectedReviewMedia.assetKey,
+                            )!}
+                            style={styles.selectedMediaPreviewImage}
+                          />
+                        </View>
+                      ) : (
+                        <Text style={styles.missingMediaText}>
+                          The bundled figure asset is unavailable in this app build.
+                        </Text>
+                      )}
+
+                      <View style={styles.mediaDetailsSection}>
+                        <Text style={styles.sectionLabel}>ACCESSIBILITY AND EVIDENCE</Text>
+                        <Text style={styles.mediaAltText}>
+                          Alt text: {selectedReviewMedia.altText}
+                        </Text>
+                        {selectedReviewMedia.caption ? (
+                          <Text style={styles.mediaCaptionText}>
+                            Caption: {selectedReviewMedia.caption}
+                          </Text>
+                        ) : null}
+                        {mediaSourcesLoading ? (
+                          <View style={styles.mediaQueueLoading}>
+                            <ActivityIndicator color="#01696F" />
+                            <Text style={styles.mediaQueueLoadingText}>
+                              Loading linked sources…
+                            </Text>
+                          </View>
+                        ) : mediaSources.length > 0 ? (
+                          <View style={styles.sourceList}>
+                            {mediaSources.map((source) => (
+                              <View key={source.id} style={styles.sourceRow}>
+                                <Text style={styles.sourceOrganization}>
+                                  {source.organization}
+                                </Text>
+                                <Text style={styles.sourceTitle}>{source.title}</Text>
+                                <Text style={styles.sourceStatus}>
+                                  {formatState(source.publicationState)} source
+                                </Text>
+                              </View>
+                            ))}
+                          </View>
+                        ) : (
+                          <Text style={styles.missingSourceText}>
+                            {selectedReviewMedia.sourceIds.length
+                              ? `Source records not found: ${selectedReviewMedia.sourceIds.join(', ')}`
+                              : 'No linked sources. Clinical figures require evidence before approval.'}
+                          </Text>
+                        )}
+                      </View>
+
+                      <View style={styles.mediaHistorySection}>
+                        <Text style={styles.sectionLabel}>IMMUTABLE MEDIA HISTORY</Text>
+                        {mediaVersionHistory.status === 'loading' ? (
+                          <View style={styles.mediaQueueLoading}>
+                            <ActivityIndicator color="#01696F" />
+                            <Text style={styles.mediaQueueLoadingText}>
+                              Loading figure history…
+                            </Text>
+                          </View>
+                        ) : null}
+                        {mediaVersionHistory.status === 'error' ? (
+                          <Text style={styles.historyError}>
+                            {mediaVersionHistory.error}
+                          </Text>
+                        ) : null}
+                        {mediaVersionHistory.status === 'ready' &&
+                        mediaVersionHistory.versions.length === 0 ? (
+                          <Text style={styles.historyEmpty}>
+                            No immutable versions were found for this figure.
+                          </Text>
+                        ) : null}
+                        {mediaVersionHistory.versions.map((version) => (
+                          <View key={version.id} style={styles.versionRow}>
+                            <View style={styles.versionNumber}>
+                              <Text style={styles.versionNumberText}>
+                                v{version.versionNumber}
+                              </Text>
+                            </View>
+                            <View style={styles.versionCopy}>
+                              <Text style={styles.versionAction}>
+                                {formatMediaVersionAction(version.action)}
+                              </Text>
+                              <Text style={styles.versionMetadata}>
+                                {formatVersionDate(version.createdAt)} ·{' '}
+                                {version.actorId}
+                              </Text>
+                              {version.note ? (
+                                <Text style={styles.versionNote}>{version.note}</Text>
+                              ) : null}
+                            </View>
+                          </View>
+                        ))}
+                      </View>
+
+                      {mediaActionFeedback ? (
+                        <View style={styles.feedback}>
+                          <Text style={styles.feedbackText}>
+                            {mediaActionFeedback}
+                          </Text>
+                        </View>
+                      ) : null}
+
+                      {selectedReviewMedia.publicationState === 'submitted' ? (
+                        <View style={styles.mediaReviewControls}>
+                          <Text style={styles.fieldLabel}>Clinical review notes</Text>
+                          <TextInput
+                            accessibilityLabel="Clinical figure review notes"
+                            multiline
+                            onChangeText={setMediaReviewNotes}
+                            placeholder="Record the figure, linked sources, alt text, and learner-facing safety review."
+                            placeholderTextColor="#8B8881"
+                            style={styles.notesInput}
+                            textAlignVertical="top"
+                            value={mediaReviewNotes}
+                            testID="input-media-review-notes"
+                          />
+                          <Text style={styles.fieldLabel}>
+                            Next clinical review date
+                          </Text>
+                          <TextInput
+                            accessibilityLabel="Next clinical figure review date in YYYY-MM-DD format"
+                            autoCapitalize="none"
+                            keyboardType="numbers-and-punctuation"
+                            onChangeText={setMediaNextReviewDate}
+                            placeholder="YYYY-MM-DD"
+                            placeholderTextColor="#8B8881"
+                            style={styles.dateInput}
+                            value={mediaNextReviewDate}
+                            testID="input-media-next-review-date"
+                          />
+                          <Pressable
+                            accessibilityRole="button"
+                            accessibilityLabel="Approve selected figure for release"
+                            disabled={actionInFlight !== null}
+                            onPress={approveSelectedMedia}
+                            style={[
+                              styles.primaryAction,
+                              actionInFlight !== null && styles.disabledAction,
+                            ]}
+                            testID="button-approve-selected-media"
+                          >
+                            <Text style={styles.primaryActionText}>
+                              {actionInFlight === 'approve-media'
+                                ? 'Recording review…'
+                                : 'Approve figure for release'}
+                            </Text>
+                          </Pressable>
+                        </View>
+                      ) : null}
+
+                      {selectedReviewMedia.publicationState === 'approved' ? (
+                        <View style={styles.mediaReviewControls}>
+                          <Text style={styles.readyToPublishText}>
+                            The required clinical review is recorded. Publishing
+                            makes this figure available to approved learner content
+                            that references it.
+                          </Text>
+                          <Pressable
+                            accessibilityRole="button"
+                            accessibilityLabel="Publish selected figure for learners"
+                            disabled={actionInFlight !== null}
+                            onPress={confirmPublishMedia}
+                            style={[
+                              styles.primaryAction,
+                              actionInFlight !== null && styles.disabledAction,
+                            ]}
+                            testID="button-publish-selected-media"
+                          >
+                            <Text style={styles.primaryActionText}>
+                              {actionInFlight === 'publish-media'
+                                ? 'Publishing…'
+                                : 'Publish figure to learners'}
+                            </Text>
+                          </Pressable>
+                        </View>
+                      ) : null}
+                    </View>
+                  ) : null}
+                </>
+              ) : null}
+            </View>
 
             {orderedBlocks.length > 0 ? (
               <>
@@ -1624,6 +2155,118 @@ const styles = StyleSheet.create({
   queueSummaryText: {
     color: '#285A57',
     fontSize: 13,
+  },
+  mediaQueueSection: {
+    backgroundColor: '#FBFBF9',
+    borderColor: '#D4D1CA',
+    borderRadius: 16,
+    borderWidth: 1,
+    marginTop: 20,
+    padding: 16,
+  },
+  mediaQueueHeader: {
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+    gap: 10,
+    justifyContent: 'space-between',
+  },
+  mediaQueueTitle: {
+    color: '#28251D',
+    fontSize: 17,
+    fontWeight: '800',
+    marginTop: 4,
+  },
+  mediaQueueHint: {
+    color: '#696761',
+    flexShrink: 1,
+    fontSize: 12,
+    lineHeight: 18,
+    textAlign: 'right',
+  },
+  mediaQueueLoading: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 8,
+    marginTop: 12,
+  },
+  mediaQueueLoadingText: {
+    color: '#696761',
+    fontSize: 13,
+  },
+  mediaQueueError: {
+    backgroundColor: '#FFF1F4',
+    borderColor: '#E3B1C8',
+    borderRadius: 10,
+    borderWidth: 1,
+    marginTop: 14,
+    padding: 11,
+  },
+  mediaQueueErrorText: {
+    color: '#7A1E4F',
+    fontSize: 13,
+    lineHeight: 19,
+  },
+  mediaQueueEmpty: {
+    color: '#696761',
+    fontSize: 13,
+    lineHeight: 20,
+    marginTop: 12,
+  },
+  mediaReviewPanel: {
+    backgroundColor: '#FFFFFF',
+    borderColor: '#92BFB8',
+    borderRadius: 16,
+    borderWidth: 1,
+    marginTop: 12,
+    padding: 16,
+  },
+  selectedMediaPreview: {
+    alignItems: 'center',
+    backgroundColor: '#F4F2EE',
+    borderRadius: 12,
+    marginTop: 16,
+    overflow: 'hidden',
+  },
+  selectedMediaPreviewImage: {
+    height: 310,
+    width: '100%',
+  },
+  mediaDetailsSection: {
+    borderTopColor: '#E3E0DA',
+    borderTopWidth: 1,
+    marginTop: 18,
+    paddingTop: 16,
+  },
+  mediaAltText: {
+    color: '#3E3C36',
+    fontSize: 14,
+    lineHeight: 21,
+    marginTop: 8,
+  },
+  mediaCaptionText: {
+    color: '#3E3C36',
+    fontSize: 14,
+    lineHeight: 21,
+    marginTop: 6,
+  },
+  mediaHistorySection: {
+    borderTopColor: '#E3E0DA',
+    borderTopWidth: 1,
+    marginTop: 18,
+    paddingTop: 16,
+  },
+  mediaReviewControls: {
+    borderTopColor: '#E3E0DA',
+    borderTopWidth: 1,
+    marginTop: 18,
+    paddingTop: 2,
+  },
+  readyToPublishText: {
+    color: '#3E3C36',
+    fontSize: 14,
+    lineHeight: 21,
+    marginBottom: 14,
+    marginTop: 16,
   },
   emptyState: {
     alignItems: 'flex-start',

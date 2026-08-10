@@ -24,6 +24,7 @@ import {
   setDoc,
   updateDoc,
   where,
+  writeBatch,
 } from 'firebase/firestore';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -384,6 +385,114 @@ test('published clinical media is learner-readable, while drafts remain administ
   });
   await assertFails(getDoc(doc(anonymous, 'clinicalMedia/draft-figure')));
   await assertSucceeds(getDoc(doc(admin, 'clinicalMedia/draft-figure')));
+});
+
+test('media review queue, immutable versions, and clinical approval records are administrator-governed', async () => {
+  const author = userDb('author');
+  const admin = userDb('admin', { admin: true });
+  const anonymous = testEnvironment.unauthenticatedContext().firestore();
+  const mediaPath = 'clinicalMedia/nausea-support-ideas';
+  const versionPath = `${mediaPath}/versions/version-1`;
+  const reviewPath = 'clinicalMediaReviews/review-1';
+  const submittedMedia = {
+    id: 'nausea-support-ideas',
+    title: 'Nausea-Support Ideas',
+    type: 'figure',
+    assetKey: 'nausea-support-ideas',
+    altText: 'A figure with practical nausea-support ideas for early pregnancy.',
+    sourceIds: ['acog-morning-sickness-2025'],
+    isClinicalClaim: true,
+    clinicalReviewerId: null,
+    lastReviewedAt: Timestamp.fromDate(new Date('2026-08-08T00:00:00.000Z')),
+    nextReviewAt: Timestamp.fromDate(new Date('2027-08-08T00:00:00.000Z')),
+    publicationState: 'submitted',
+    versionCount: 1,
+    updatedAt: Timestamp.fromDate(new Date('2026-08-09T00:00:00.000Z')),
+  };
+  const submittedVersion = {
+    id: 'version-1',
+    versionNumber: 1,
+    action: 'submitted',
+    actorId: 'admin',
+    createdAt: Timestamp.fromDate(new Date('2026-08-09T00:00:00.000Z')),
+    snapshot: {
+      mediaId: 'nausea-support-ideas',
+      title: 'Nausea-Support Ideas',
+      type: 'figure',
+      assetKey: 'nausea-support-ideas',
+      altText: 'A figure with practical nausea-support ideas for early pregnancy.',
+      sourceIds: ['acog-morning-sickness-2025'],
+      isClinicalClaim: true,
+      publicationState: 'submitted',
+    },
+  };
+
+  await seed(mediaPath, submittedMedia);
+  await assertSucceeds(setDoc(doc(admin, versionPath), submittedVersion));
+  await assertFails(getDoc(doc(author, versionPath)));
+  await assertFails(getDoc(doc(anonymous, versionPath)));
+  await assertFails(
+    updateDoc(doc(admin, versionPath), { note: 'Immutable records cannot change.' }),
+  );
+  await assertFails(deleteDoc(doc(admin, versionPath)));
+
+  const adminQueue = query(
+    collection(admin, 'clinicalMedia'),
+    orderBy('updatedAt', 'desc'),
+    limit(50),
+  );
+  const queueResults = await assertSucceeds(getDocs(adminQueue));
+  assert.equal(queueResults.size, 1);
+  assert.equal(queueResults.docs[0].id, 'nausea-support-ideas');
+
+  const authorQueue = query(
+    collection(author, 'clinicalMedia'),
+    orderBy('updatedAt', 'desc'),
+    limit(50),
+  );
+  await assertFails(getDocs(authorQueue));
+
+  const approvalRecord = {
+    id: 'review-1',
+    mediaId: 'nausea-support-ideas',
+    reviewerId: 'admin',
+    reviewNotes: 'Reviewed linked source, learner-facing phrasing, and alt text.',
+    versionNumber: 2,
+    approvedAt: serverTimestamp(),
+  };
+  await assertFails(setDoc(doc(admin, reviewPath), approvalRecord));
+
+  const approvalVersion = {
+    ...submittedVersion,
+    id: 'version-2',
+    versionNumber: 2,
+    action: 'approved',
+    createdAt: serverTimestamp(),
+    snapshot: {
+      ...submittedVersion.snapshot,
+      publicationState: 'approved',
+    },
+  };
+  const approvalBatch = writeBatch(admin);
+  approvalBatch.update(doc(admin, mediaPath), {
+    publicationState: 'approved',
+    clinicalReviewerId: 'admin',
+    lastReviewedAt: serverTimestamp(),
+    nextReviewAt: Timestamp.fromDate(new Date('2027-08-10T00:00:00.000Z')),
+    versionCount: 2,
+    updatedAt: serverTimestamp(),
+  });
+  approvalBatch.set(doc(admin, `${mediaPath}/versions/version-2`), approvalVersion);
+  approvalBatch.set(doc(admin, reviewPath), approvalRecord);
+  await assertSucceeds(approvalBatch.commit());
+
+  await assertSucceeds(getDoc(doc(admin, reviewPath)));
+  await assertFails(getDoc(doc(author, reviewPath)));
+  await assertFails(getDoc(doc(anonymous, reviewPath)));
+  await assertFails(
+    updateDoc(doc(admin, reviewPath), { reviewNotes: 'Changed after the fact.' }),
+  );
+  await assertFails(deleteDoc(doc(admin, reviewPath)));
 });
 
 test('comparison audit exports are admin-only, attributable, and append-only', async () => {

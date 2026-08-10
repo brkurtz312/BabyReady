@@ -6,15 +6,21 @@ import {
   onSnapshot,
   orderBy,
   query,
+  runTransaction,
   serverTimestamp,
-  setDoc,
   Timestamp,
   type Unsubscribe,
 } from 'firebase/firestore';
 
 import { clinicalMediaAssetKeys } from '../lib/clinicalMediaAssets';
 import { db, requireAuth, requireFirestore } from '../lib/firebase';
-import type { ClinicalMedia, ClinicalMediaType } from '../models/course';
+import type {
+  ClinicalMedia,
+  ClinicalMediaReview,
+  ClinicalMediaType,
+  ClinicalMediaVersion,
+  ClinicalMediaVersionAction,
+} from '../models/course';
 
 export type SaveClinicalMediaInput = {
   id: string;
@@ -34,6 +40,12 @@ export type ClinicalMediaLibraryState =
   | { status: 'loading'; media: ClinicalMedia[]; error: null }
   | { status: 'ready'; media: ClinicalMedia[]; error: null }
   | { status: 'error'; media: ClinicalMedia[]; error: string };
+
+export type ClinicalMediaVersionHistoryState =
+  | { status: 'unconfigured'; versions: []; error: null }
+  | { status: 'loading'; versions: ClinicalMediaVersion[]; error: null }
+  | { status: 'ready'; versions: ClinicalMediaVersion[]; error: null }
+  | { status: 'error'; versions: ClinicalMediaVersion[]; error: string };
 
 async function requireAdminClaim(): Promise<string> {
   const user = requireAuth().currentUser;
@@ -107,6 +119,163 @@ async function ensurePublishedSources(sourceIds: string[]): Promise<void> {
   }
 }
 
+function dateFromUnknown(value: unknown): Date | undefined {
+  if (value instanceof Timestamp) {
+    return value.toDate();
+  }
+  return value instanceof Date ? value : undefined;
+}
+
+function versionSnapshot(
+  media: Partial<ClinicalMedia>,
+  fallbackId: string,
+): ClinicalMediaVersion['snapshot'] {
+  return {
+    mediaId: typeof media.id === 'string' ? media.id : fallbackId,
+    title: typeof media.title === 'string' ? media.title : '',
+    type: media.type ?? 'figure',
+    assetKey: typeof media.assetKey === 'string' ? media.assetKey : '',
+    altText: typeof media.altText === 'string' ? media.altText : '',
+    ...(typeof media.caption === 'string' && media.caption.trim()
+      ? { caption: media.caption.trim() }
+      : {}),
+    sourceIds: Array.isArray(media.sourceIds) ? media.sourceIds : [],
+    isClinicalClaim: media.isClinicalClaim === true,
+    publicationState: media.publicationState ?? 'draft',
+  };
+}
+
+type VersionedMediaUpdate = {
+  actorId: string;
+  action: ClinicalMediaVersionAction;
+  note?: string;
+  requireExisting?: boolean;
+  expectedState?: ClinicalMedia['publicationState'];
+  update: Record<string, unknown>;
+};
+
+async function writeVersionedClinicalMedia(
+  mediaId: string,
+  context: VersionedMediaUpdate,
+): Promise<void> {
+  const firestore = requireFirestore();
+  const reference = doc(firestore, 'clinicalMedia', mediaId);
+
+  await runTransaction(firestore, async (transaction) => {
+    const existingSnapshot = await transaction.get(reference);
+    if (context.requireExisting && !existingSnapshot.exists()) {
+      throw new Error('The clinical media record does not exist.');
+    }
+
+    const existing = existingSnapshot.exists()
+      ? (existingSnapshot.data() as Partial<ClinicalMedia>)
+      : {};
+    if (
+      context.expectedState &&
+      existing.publicationState !== context.expectedState
+    ) {
+      throw new Error(
+        `This media record is no longer ${context.expectedState}. Refresh the review queue and try again.`,
+      );
+    }
+    const update = { ...context.update };
+    if (existingSnapshot.exists() && 'createdBy' in update) {
+      delete update.createdBy;
+    }
+    const merged = { ...existing, ...update } as Partial<ClinicalMedia>;
+    const priorVersionCount =
+      typeof existing.versionCount === 'number' ? existing.versionCount : 0;
+    const versionNumber = priorVersionCount + 1;
+    const versionReference = doc(collection(reference, 'versions'));
+
+    transaction.set(
+      reference,
+      {
+        ...update,
+        versionCount: versionNumber,
+        updatedAt: serverTimestamp(),
+      },
+      { merge: true },
+    );
+    transaction.set(versionReference, {
+      id: versionReference.id,
+      versionNumber,
+      action: context.action,
+      actorId: context.actorId,
+      createdAt: serverTimestamp(),
+      ...(context.note?.trim() ? { note: context.note.trim() } : {}),
+      snapshot: versionSnapshot(merged, mediaId),
+    } satisfies ClinicalMediaVersion);
+  });
+}
+
+async function approveVersionedClinicalMedia(
+  mediaId: string,
+  reviewerId: string,
+  reviewNotes: string,
+  nextReviewAt: Date,
+): Promise<void> {
+  const firestore = requireFirestore();
+  const reference = doc(firestore, 'clinicalMedia', mediaId);
+  const reviewReference = doc(collection(firestore, 'clinicalMediaReviews'));
+
+  await runTransaction(firestore, async (transaction) => {
+    const existingSnapshot = await transaction.get(reference);
+    if (!existingSnapshot.exists()) {
+      throw new Error('The clinical media record does not exist.');
+    }
+
+    const media = {
+      ...(existingSnapshot.data() as ClinicalMedia),
+      id: existingSnapshot.id,
+    };
+    if (media.publicationState !== 'submitted') {
+      throw new Error(
+        `Only submitted media can be approved. Current state: ${media.publicationState}.`,
+      );
+    }
+
+    const priorVersionCount =
+      typeof media.versionCount === 'number' ? media.versionCount : 0;
+    const versionNumber = priorVersionCount + 1;
+    const versionReference = doc(collection(reference, 'versions'));
+    const update = {
+      publicationState: 'approved' as const,
+      clinicalReviewerId: reviewerId,
+      lastReviewedAt: serverTimestamp(),
+      nextReviewAt: Timestamp.fromDate(nextReviewAt),
+    };
+    const merged = { ...media, ...update } as Partial<ClinicalMedia>;
+
+    transaction.set(
+      reference,
+      {
+        ...update,
+        versionCount: versionNumber,
+        updatedAt: serverTimestamp(),
+      },
+      { merge: true },
+    );
+    transaction.set(versionReference, {
+      id: versionReference.id,
+      versionNumber,
+      action: 'approved',
+      actorId: reviewerId,
+      createdAt: serverTimestamp(),
+      note: reviewNotes.trim(),
+      snapshot: versionSnapshot(merged, mediaId),
+    } satisfies ClinicalMediaVersion);
+    transaction.set(reviewReference, {
+      id: reviewReference.id,
+      mediaId,
+      reviewerId,
+      reviewNotes: reviewNotes.trim(),
+      versionNumber,
+      approvedAt: serverTimestamp(),
+    } satisfies ClinicalMediaReview);
+  });
+}
+
 export function subscribeToClinicalMediaLibrary(
   onChange: (state: ClinicalMediaLibraryState) => void,
 ): Unsubscribe | null {
@@ -134,6 +303,42 @@ export function subscribeToClinicalMediaLibrary(
   );
 }
 
+export function subscribeToClinicalMediaVersionHistory(
+  mediaId: string | null,
+  onChange: (state: ClinicalMediaVersionHistoryState) => void,
+): Unsubscribe | null {
+  if (!db || !mediaId) {
+    onChange({ status: 'unconfigured', versions: [], error: null });
+    return null;
+  }
+
+  onChange({ status: 'loading', versions: [], error: null });
+  return onSnapshot(
+    query(
+      collection(doc(db, 'clinicalMedia', mediaId), 'versions'),
+      orderBy('versionNumber', 'desc'),
+      limit(25),
+    ),
+    (snapshot) => {
+      onChange({
+        status: 'ready',
+        versions: snapshot.docs.map((record) => ({
+          ...(record.data() as ClinicalMediaVersion),
+          id: record.id,
+        })),
+        error: null,
+      });
+    },
+    (error) => {
+      onChange({
+        status: 'error',
+        versions: [],
+        error: readableMediaError(error),
+      });
+    },
+  );
+}
+
 export async function loadClinicalMedia(
   mediaIds: string[],
 ): Promise<ClinicalMedia[]> {
@@ -156,9 +361,10 @@ export async function saveClinicalMediaDraft(
   const adminId = await requireAdminClaim();
   validateMediaInput(input);
 
-  await setDoc(
-    doc(requireFirestore(), 'clinicalMedia', input.id),
-    {
+  await writeVersionedClinicalMedia(input.id, {
+    actorId: adminId,
+    action: 'draft_saved',
+    update: {
       id: input.id,
       title: input.title.trim(),
       type: input.type,
@@ -176,22 +382,29 @@ export async function saveClinicalMediaDraft(
         ? Timestamp.fromDate(input.nextReviewAt)
         : null,
       createdBy: adminId,
-      updatedAt: serverTimestamp(),
-    } satisfies ClinicalMedia,
-    { merge: true },
-  );
+      submittedBy: null,
+      submittedAt: null,
+    },
+  });
 }
 
-export async function publishClinicalMedia(mediaId: string): Promise<void> {
-  const reviewerId = await requireAdminClaim();
+export async function submitClinicalMediaForClinicalReview(
+  mediaId: string,
+): Promise<void> {
+  const adminId = await requireAdminClaim();
   const firestore = requireFirestore();
   const reference = doc(firestore, 'clinicalMedia', mediaId);
   const snapshot = await getDoc(reference);
   if (!snapshot.exists()) {
-    throw new Error('Save the media record before publishing it.');
+    throw new Error('Save the media record before submitting it for review.');
   }
 
   const media = { ...(snapshot.data() as ClinicalMedia), id: snapshot.id };
+  if (media.publicationState !== 'draft') {
+    throw new Error(
+      `Only draft media can be submitted for review. Current state: ${media.publicationState}.`,
+    );
+  }
   validateMediaInput({
     id: media.id,
     title: media.title,
@@ -201,35 +414,110 @@ export async function publishClinicalMedia(mediaId: string): Promise<void> {
     caption: media.caption,
     sourceIds: media.sourceIds ?? [],
     isClinicalClaim: media.isClinicalClaim,
-    lastReviewedAt: media.lastReviewedAt instanceof Timestamp
-      ? media.lastReviewedAt.toDate()
-      : media.lastReviewedAt as Date | undefined,
-    nextReviewAt: media.nextReviewAt instanceof Timestamp
-      ? media.nextReviewAt.toDate()
-      : media.nextReviewAt as Date | undefined,
+    lastReviewedAt: dateFromUnknown(media.lastReviewedAt),
+    nextReviewAt: dateFromUnknown(media.nextReviewAt),
   });
 
   if (media.isClinicalClaim) {
     await ensurePublishedSources(media.sourceIds ?? []);
-    const nextReview =
-      media.nextReviewAt instanceof Timestamp
-        ? media.nextReviewAt.toDate()
-        : media.nextReviewAt as Date | undefined;
+  }
+
+  await writeVersionedClinicalMedia(mediaId, {
+    actorId: adminId,
+    action: 'submitted',
+    requireExisting: true,
+    expectedState: 'draft',
+    update: {
+      publicationState: 'submitted',
+      submittedBy: adminId,
+      submittedAt: serverTimestamp(),
+    },
+  });
+}
+
+export async function approveClinicalMedia(
+  mediaId: string,
+  reviewNotes: string,
+  nextReviewAt: Date,
+): Promise<void> {
+  const reviewerId = await requireAdminClaim();
+  const firestore = requireFirestore();
+  const snapshot = await getDoc(doc(firestore, 'clinicalMedia', mediaId));
+  if (!snapshot.exists()) {
+    throw new Error('The clinical media record does not exist.');
+  }
+
+  const media = { ...(snapshot.data() as ClinicalMedia), id: snapshot.id };
+  if (media.publicationState !== 'submitted') {
+    throw new Error(
+      `Only submitted media can be approved. Current state: ${media.publicationState}.`,
+    );
+  }
+  if (!reviewNotes.trim()) {
+    throw new Error('Add clinical review notes before approving media.');
+  }
+  if (nextReviewAt.getTime() <= Date.now()) {
+    throw new Error('Set the next clinical review date in the future before approval.');
+  }
+  if (media.isClinicalClaim) {
+    if (!media.sourceIds?.length) {
+      throw new Error('Clinical figures need at least one linked source before approval.');
+    }
+    await ensurePublishedSources(media.sourceIds);
+  }
+
+  await approveVersionedClinicalMedia(
+    mediaId,
+    reviewerId,
+    reviewNotes,
+    nextReviewAt,
+  );
+}
+
+export async function publishClinicalMedia(mediaId: string): Promise<void> {
+  const adminId = await requireAdminClaim();
+  const firestore = requireFirestore();
+  const reference = doc(firestore, 'clinicalMedia', mediaId);
+  const snapshot = await getDoc(reference);
+  if (!snapshot.exists()) {
+    throw new Error('The clinical media record does not exist.');
+  }
+
+  const media = { ...(snapshot.data() as ClinicalMedia), id: snapshot.id };
+  if (media.publicationState !== 'approved') {
+    throw new Error(
+      `Only approved media can be published. Current state: ${media.publicationState}.`,
+    );
+  }
+  if (
+    media.isClinicalClaim &&
+    (!media.sourceIds?.length ||
+      !media.clinicalReviewerId ||
+      !media.lastReviewedAt ||
+      !media.nextReviewAt)
+  ) {
+    throw new Error(
+      'Clinical media cannot be published without sources, a reviewer, and review dates.',
+    );
+  }
+  if (media.isClinicalClaim) {
+    await ensurePublishedSources(media.sourceIds);
+    const nextReview = dateFromUnknown(media.nextReviewAt);
     if (!nextReview || nextReview.getTime() <= Date.now()) {
       throw new Error('Set a future next-review date before publishing this media record.');
     }
   }
 
-  await setDoc(
-    reference,
-    {
+  await writeVersionedClinicalMedia(mediaId, {
+    actorId: adminId,
+    action: 'published',
+    requireExisting: true,
+    expectedState: 'approved',
+    update: {
       publicationState: 'published',
-      clinicalReviewerId: reviewerId,
       publishedAt: serverTimestamp(),
-      updatedAt: serverTimestamp(),
     },
-    { merge: true },
-  );
+  });
 }
 
 export async function freezeClinicalMedia(
@@ -241,15 +529,16 @@ export async function freezeClinicalMedia(
     throw new Error('Document why this media record is being frozen.');
   }
 
-  await setDoc(
-    doc(requireFirestore(), 'clinicalMedia', mediaId),
-    {
+  await writeVersionedClinicalMedia(mediaId, {
+    actorId: adminId,
+    action: 'frozen',
+    note: freezeReason,
+    requireExisting: true,
+    update: {
       publicationState: 'frozen',
       frozenAt: serverTimestamp(),
       frozenBy: adminId,
       freezeReason: freezeReason.trim(),
-      updatedAt: serverTimestamp(),
     },
-    { merge: true },
-  );
+  });
 }

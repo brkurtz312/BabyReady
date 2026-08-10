@@ -28,8 +28,8 @@ import type {
 } from '../models/course';
 import {
   freezeClinicalMedia,
-  publishClinicalMedia,
   saveClinicalMediaDraft,
+  submitClinicalMediaForClinicalReview,
   subscribeToClinicalMediaLibrary,
   type ClinicalMediaLibraryState,
 } from '../services/clinicalMediaService';
@@ -39,7 +39,7 @@ import {
 } from '../services/sourceService';
 
 type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
-type MediaAction = 'save' | 'publish' | 'freeze' | null;
+type MediaAction = 'save' | 'submit' | 'freeze' | null;
 
 type MediaForm = {
   id: string;
@@ -152,6 +152,10 @@ function statusStyle(state: ContentPublicationState) {
   switch (state) {
     case 'published':
       return styles.statusPublished;
+    case 'approved':
+      return styles.statusApproved;
+    case 'submitted':
+      return styles.statusSubmitted;
     case 'frozen':
       return styles.statusFrozen;
     default:
@@ -224,6 +228,9 @@ export function ClinicianMediaLibraryScreen({
   );
   const publishedMediaCount = mediaState.media.filter(
     (media) => media.publicationState === 'published',
+  ).length;
+  const mediaAwaitingReviewCount = mediaState.media.filter(
+    (media) => media.publicationState === 'submitted',
   ).length;
   const selectedAsset = getBundledClinicalMediaAsset(form.assetKey);
 
@@ -365,7 +372,7 @@ export function ClinicianMediaLibraryScreen({
     );
   };
 
-  const publishMedia = () => {
+  const submitMedia = () => {
     const { input, error } = validatedForm();
     if (!input) {
       setFeedback(error);
@@ -373,21 +380,21 @@ export function ClinicianMediaLibraryScreen({
     }
 
     Alert.alert(
-      'Publish this media?',
-      'Published figures can be attached to clinical content and viewed by learners only when their content is published.',
+      'Submit this media for clinical review?',
+      'Submission locks this draft for clinical review. Approval and publication happen from the Clinical Review queue.',
       [
         { text: 'Cancel', style: 'cancel' },
         {
-          text: 'Publish',
+          text: 'Submit',
           onPress: () => {
             setSelectedMediaId(input.id);
             void runAction(
-              'publish',
+              'submit',
               async () => {
                 await saveClinicalMediaDraft(input);
-                await publishClinicalMedia(input.id);
+                await submitClinicalMediaForClinicalReview(input.id);
               },
-              'Media is published and available for clinical content attachments.',
+              'Media was submitted for clinical review.',
             );
           },
         },
@@ -491,12 +498,12 @@ export function ClinicianMediaLibraryScreen({
               <View style={styles.governanceCard}>
                 <Text style={styles.governanceLabel}>STATIC MEDIA RELEASE</Text>
                 <Text style={styles.governanceTitle}>
-                  Three clinician-governed figures are bundled with the app.
+                  Bundled figures require a documented clinical release review.
                 </Text>
                 <Text style={styles.governanceText}>
-                  Link a source, record a review date, publish the media, then
-                  attach it to a content block. Audio and video record types are
-                  reserved for a future hosted-media release.
+                  Link published sources, save a draft, submit it for clinical
+                  review, then publish the approved media from the review queue
+                  before attaching it to learner content.
                 </Text>
               </View>
 
@@ -504,8 +511,8 @@ export function ClinicianMediaLibraryScreen({
                 <Text style={styles.summaryLabel}>MEDIA LIBRARY</Text>
                 <Text style={styles.summaryValue}>{mediaState.media.length}</Text>
                 <Text style={styles.summaryText}>
-                  {publishedMediaCount} published and ready for clinical content
-                  attachments
+                  {publishedMediaCount} published · {mediaAwaitingReviewCount}{' '}
+                  awaiting clinical review
                 </Text>
               </View>
 
@@ -615,11 +622,12 @@ export function ClinicianMediaLibraryScreen({
                   ) : null}
                 </View>
 
-                {selectedMedia?.publicationState === 'published' ? (
+                {selectedMedia &&
+                selectedMedia.publicationState !== 'draft' ? (
                   <View style={styles.draftNotice}>
                     <Text style={styles.draftNoticeText}>
-                      Saving changes creates a draft. Re-publish after final
-                      clinical review.
+                      Saving changes creates a new draft revision. Submit it
+                      again for clinical review before it can be published.
                     </Text>
                   </View>
                 ) : null}
@@ -928,21 +936,34 @@ export function ClinicianMediaLibraryScreen({
                     </Text>
                   </Pressable>
 
-                  <Pressable
-                    accessibilityLabel="Publish clinical media record"
-                    accessibilityRole="button"
-                    disabled={actionInFlight !== null}
-                    onPress={publishMedia}
-                    style={[
-                      styles.secondaryAction,
-                      actionInFlight !== null && styles.disabledAction,
-                    ]}
-                    testID="button-publish-media"
-                  >
-                    <Text style={styles.secondaryActionText}>
-                      {actionInFlight === 'publish' ? 'Publishing…' : 'Publish media'}
+                  {!selectedMedia ||
+                  selectedMedia.publicationState === 'draft' ? (
+                    <Pressable
+                      accessibilityLabel="Submit clinical media record for review"
+                      accessibilityRole="button"
+                      disabled={actionInFlight !== null}
+                      onPress={submitMedia}
+                      style={[
+                        styles.secondaryAction,
+                        actionInFlight !== null && styles.disabledAction,
+                      ]}
+                      testID="button-submit-media"
+                    >
+                      <Text style={styles.secondaryActionText}>
+                        {actionInFlight === 'submit'
+                          ? 'Submitting…'
+                          : 'Submit for clinical review'}
+                      </Text>
+                    </Pressable>
+                  ) : (
+                    <Text style={styles.workflowHint}>
+                      {selectedMedia.publicationState === 'submitted'
+                        ? 'This figure is in the clinical review queue.'
+                        : selectedMedia.publicationState === 'approved'
+                          ? 'This figure is approved and ready to publish from the clinical review queue.'
+                          : 'Frozen media must be revised as a draft before it can return to review.'}
                     </Text>
-                  </Pressable>
+                  )}
 
                   {selectedMedia &&
                   selectedMedia.publicationState !== 'frozen' ? (
@@ -1221,6 +1242,12 @@ const styles = StyleSheet.create({
   },
   statusPublished: {
     backgroundColor: '#CBE6E2',
+  },
+  statusSubmitted: {
+    backgroundColor: '#E9DFC7',
+  },
+  statusApproved: {
+    backgroundColor: '#D4DFCC',
   },
   statusFrozen: {
     backgroundColor: '#E0CED7',
@@ -1525,6 +1552,12 @@ const styles = StyleSheet.create({
     color: '#693619',
     fontSize: 13,
     lineHeight: 19,
+  },
+  workflowHint: {
+    color: '#696761',
+    fontSize: 13,
+    lineHeight: 19,
+    paddingVertical: 6,
   },
   actionStack: {
     gap: 10,

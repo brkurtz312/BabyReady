@@ -164,12 +164,51 @@ export type ClinicalMedia = {
   lastReviewedAt?: unknown;
   nextReviewAt?: unknown;
   publicationState: ContentPublicationState;
+  versionCount?: number;
   createdBy?: string;
+  submittedBy?: string;
+  submittedAt?: unknown;
   publishedAt?: unknown;
   frozenAt?: unknown;
   frozenBy?: string;
   freezeReason?: string;
   updatedAt?: unknown;
+};
+
+export type ClinicalMediaVersionAction =
+  | 'draft_saved'
+  | 'submitted'
+  | 'approved'
+  | 'published'
+  | 'frozen';
+
+export type ClinicalMediaVersion = {
+  id: string;
+  versionNumber: number;
+  action: ClinicalMediaVersionAction;
+  actorId: string;
+  createdAt: unknown;
+  note?: string;
+  snapshot: {
+    mediaId: string;
+    title: string;
+    type: ClinicalMediaType;
+    assetKey: string;
+    altText: string;
+    caption?: string;
+    sourceIds: string[];
+    isClinicalClaim: boolean;
+    publicationState: ContentPublicationState;
+  };
+};
+
+export type ClinicalMediaReview = {
+  id: string;
+  mediaId: string;
+  reviewerId: string;
+  reviewNotes: string;
+  versionNumber: number;
+  approvedAt: unknown;
 };
 
 export type ComparisonAuditExportRoute =

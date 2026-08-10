@@ -129,6 +129,65 @@ service cloud.firestore {
         );
     }
 
+    function validClinicalMediaVersion(mediaId) {
+      return request.resource.data.id is string
+        && request.resource.data.versionNumber is int
+        && request.resource.data.versionNumber > 0
+        && request.resource.data.action in [
+          'draft_saved',
+          'submitted',
+          'approved',
+          'published',
+          'frozen'
+        ]
+        && request.resource.data.actorId == request.auth.uid
+        && request.resource.data.createdAt is timestamp
+        && request.resource.data.snapshot is map
+        && request.resource.data.snapshot.mediaId == mediaId
+        && request.resource.data.snapshot.title is string
+        && request.resource.data.snapshot.type == 'figure'
+        && request.resource.data.snapshot.assetKey in [
+          'early-pregnancy-care-timeline',
+          'folic-acid-early-pregnancy',
+          'nausea-support-ideas',
+          'bleeding-during-pregnancy-contact-care',
+          'urgent-maternal-warning-signs-get-help-now'
+        ]
+        && request.resource.data.snapshot.altText is string
+        && request.resource.data.snapshot.sourceIds is list
+        && request.resource.data.snapshot.isClinicalClaim is bool
+        && isPublicationState(request.resource.data.snapshot.publicationState);
+    }
+
+    function validClinicalMediaReview() {
+      return request.resource.data.id is string
+        && request.resource.data.mediaId is string
+        && request.resource.data.reviewerId == request.auth.uid
+        && request.resource.data.reviewNotes is string
+        && request.resource.data.reviewNotes.size() > 0
+        && request.resource.data.versionNumber is int
+        && request.resource.data.versionNumber > 0
+        && request.resource.data.approvedAt is timestamp
+        && exists(
+          /databases/$(database)/documents/clinicalMedia/$(request.resource.data.mediaId)
+        )
+        && get(
+          /databases/$(database)/documents/clinicalMedia/$(request.resource.data.mediaId)
+        ).data.publicationState == 'submitted'
+        && existsAfter(
+          /databases/$(database)/documents/clinicalMedia/$(request.resource.data.mediaId)
+        )
+        && getAfter(
+          /databases/$(database)/documents/clinicalMedia/$(request.resource.data.mediaId)
+        ).data.publicationState == 'approved'
+        && getAfter(
+          /databases/$(database)/documents/clinicalMedia/$(request.resource.data.mediaId)
+        ).data.clinicalReviewerId == request.auth.uid
+        && getAfter(
+          /databases/$(database)/documents/clinicalMedia/$(request.resource.data.mediaId)
+        ).data.versionCount == request.resource.data.versionNumber;
+    }
+
     function validComparisonAuditExport(
       courseId,
       moduleId,
@@ -329,6 +388,18 @@ service cloud.firestore {
     match /clinicalMedia/{mediaId} {
       allow read: if resource.data.publicationState == 'published' || isAdmin();
       allow write: if isAdmin() && validClinicalMediaRecord(mediaId);
+
+      match /versions/{versionId} {
+        allow read: if isAdmin();
+        allow create: if isAdmin() && validClinicalMediaVersion(mediaId);
+        allow update, delete: if false;
+      }
+    }
+
+    match /clinicalMediaReviews/{reviewId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin() && validClinicalMediaReview();
+      allow update, delete: if false;
     }
 
     match /clinicalReviews/{reviewId} {
