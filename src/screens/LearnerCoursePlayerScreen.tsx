@@ -55,11 +55,15 @@ function lessonKey(selectedLesson: SelectedLesson): string {
 }
 
 const learnerCardTitles: Record<string, string> = {
+  'early-pregnancy-first-steps': 'Your First Steps',
   'first-trimester-common-changes-and-when-to-reach-out':
     'Common Changes, Simple Support, and When to Reach Out',
   'nausea-support-ideas-figure': 'Nausea-Support Ideas',
   'bleeding-during-pregnancy-callout': 'Bleeding During Pregnancy',
   'urgent-maternal-warning-signs-safety-card': 'Urgent Maternal Warning Signs',
+  'folic-acid-early-pregnancy-figure': 'Folic Acid in Early Pregnancy',
+  'your-first-prenatal-visit-overview': 'Your First Prenatal Visit',
+  'first-prenatal-visit-preparation-checklist': 'Bring What You Know',
 };
 
 function titleForBlock(block: ClinicalContentBlock): string | null {
@@ -206,18 +210,21 @@ function MediaFigure({
 
 function LessonBlock({
   block,
+  checkedItems,
   mediaById,
+  onToggleChecklistItem,
   onOpenCard,
   onOpenFigure,
   sourcesById,
 }: {
   block: ClinicalContentBlock;
+  checkedItems: string[];
   mediaById: Map<string, ClinicalMedia>;
+  onToggleChecklistItem: (itemKey: string) => void;
   onOpenCard: (block: ClinicalContentBlock) => void;
   onOpenFigure: (media: ClinicalMedia) => void;
   sourcesById: Map<string, ContentSource>;
 }) {
-  const [checkedItems, setCheckedItems] = useState<string[]>([]);
   const items = block.type === 'checklist' ? checklistItems(block.body) : [];
   const title = titleForBlock(block);
   const media = (block.mediaIds ?? [])
@@ -268,13 +275,7 @@ function LessonBlock({
                 accessibilityRole="checkbox"
                 accessibilityState={{ checked: complete }}
                 key={itemKey}
-                onPress={() =>
-                  setCheckedItems((current) =>
-                    complete
-                      ? current.filter((checked) => checked !== itemKey)
-                      : [...current, itemKey],
-                  )
-                }
+                onPress={() => onToggleChecklistItem(itemKey)}
                 style={styles.checklistItem}
                 testID={`button-checklist-${itemKey}`}
               >
@@ -309,13 +310,17 @@ function LessonBlock({
 
 function LessonCardViewer({
   block,
+  checkedItems,
   mediaById,
+  onToggleChecklistItem,
   onClose,
   onOpenFigure,
   sourcesById,
 }: {
   block: ClinicalContentBlock | null;
+  checkedItems: string[];
   mediaById: Map<string, ClinicalMedia>;
+  onToggleChecklistItem: (itemKey: string) => void;
   onClose: () => void;
   onOpenFigure: (media: ClinicalMedia) => void;
   sourcesById: Map<string, ContentSource>;
@@ -380,12 +385,41 @@ function LessonCardViewer({
 
             {items.length > 0 ? (
               <View style={styles.readerChecklist}>
-                {items.map((item) => (
-                  <View key={item} style={styles.readerChecklistItem}>
-                    <Text style={styles.readerChecklistBullet}>•</Text>
-                    <Text style={styles.readerChecklistText}>{item}</Text>
-                  </View>
-                ))}
+                {items.map((item, index) => {
+                  const itemKey = `${block.id}-${index}`;
+                  const complete = checkedItems.includes(itemKey);
+
+                  return (
+                    <Pressable
+                      accessibilityLabel={`${complete ? 'Mark incomplete' : 'Mark complete'}: ${item}`}
+                      accessibilityRole="checkbox"
+                      accessibilityState={{ checked: complete }}
+                      key={itemKey}
+                      onPress={() => onToggleChecklistItem(itemKey)}
+                      style={styles.readerChecklistItem}
+                      testID={`button-reader-checklist-${itemKey}`}
+                    >
+                      <View
+                        style={[
+                          styles.readerCheckbox,
+                          complete && styles.readerCheckboxChecked,
+                        ]}
+                      >
+                        {complete ? (
+                          <Text style={styles.readerCheckmark}>✓</Text>
+                        ) : null}
+                      </View>
+                      <Text
+                        style={[
+                          styles.readerChecklistText,
+                          complete && styles.readerChecklistTextComplete,
+                        ]}
+                      >
+                        {item}
+                      </Text>
+                    </Pressable>
+                  );
+                })}
               </View>
             ) : (
               <Text
@@ -430,6 +464,19 @@ function FigureViewer({
         style={styles.viewerSafeArea}
         testID={`figure-viewer-${media?.id ?? 'closed'}`}
       >
+        <View style={styles.viewerHeader}>
+          <View />
+          <Pressable
+            accessibilityHint="Returns to the lesson."
+            accessibilityLabel={`Close full-screen figure: ${media?.title ?? 'figure'}`}
+            accessibilityRole="button"
+            onPress={onClose}
+            style={styles.viewerCloseButton}
+            testID="button-close-figure-viewer"
+          >
+            <Text style={styles.viewerCloseButtonText}>Close</Text>
+          </Pressable>
+        </View>
         {imageSource ? (
           <ScrollView
             bouncesZoom
@@ -459,16 +506,6 @@ function FigureViewer({
             </Text>
           </View>
         )}
-        <Pressable
-          accessibilityHint="Returns to the lesson."
-          accessibilityLabel={`Close full-screen figure: ${media?.title ?? 'figure'}`}
-          accessibilityRole="button"
-          onPress={onClose}
-          style={styles.viewerCloseButton}
-          testID="button-close-figure-viewer"
-        >
-          <Text style={styles.viewerCloseButtonText}>×</Text>
-        </Pressable>
       </SafeAreaView>
     </Modal>
   );
@@ -498,8 +535,25 @@ export function LearnerCoursePlayerScreen({
   const [attachmentsError, setAttachmentsError] = useState<string | null>(null);
   const [expandedBlock, setExpandedBlock] = useState<ClinicalContentBlock | null>(null);
   const [expandedFigure, setExpandedFigure] = useState<ClinicalMedia | null>(null);
+  const [checkedItemsByBlock, setCheckedItemsByBlock] = useState<
+    Record<string, string[]>
+  >({});
   const [cardToRestoreAfterFigure, setCardToRestoreAfterFigure] =
     useState<ClinicalContentBlock | null>(null);
+
+  const toggleChecklistItem = (blockId: string, itemKey: string) => {
+    setCheckedItemsByBlock((current) => {
+      const checkedItems = current[blockId] ?? [];
+      const complete = checkedItems.includes(itemKey);
+
+      return {
+        ...current,
+        [blockId]: complete
+          ? checkedItems.filter((checked) => checked !== itemKey)
+          : [...checkedItems, itemKey],
+      };
+    });
+  };
 
   const openFigureFromReader = (media: ClinicalMedia) => {
     setCardToRestoreAfterFigure(expandedBlock);
@@ -692,8 +746,12 @@ export function LearnerCoursePlayerScreen({
               {lessonState.blocks.map((block) => (
                 <LessonBlock
                   block={block}
+                  checkedItems={checkedItemsByBlock[block.id] ?? []}
                   key={block.id}
                   mediaById={mediaById}
+                  onToggleChecklistItem={(itemKey) =>
+                    toggleChecklistItem(block.id, itemKey)
+                  }
                   onOpenCard={setExpandedBlock}
                   onOpenFigure={setExpandedFigure}
                   sourcesById={sourcesById}
@@ -718,7 +776,15 @@ export function LearnerCoursePlayerScreen({
       </ScrollView>
       <LessonCardViewer
         block={expandedBlock}
+        checkedItems={
+          expandedBlock ? checkedItemsByBlock[expandedBlock.id] ?? [] : []
+        }
         mediaById={mediaById}
+        onToggleChecklistItem={(itemKey) => {
+          if (expandedBlock) {
+            toggleChecklistItem(expandedBlock.id, itemKey);
+          }
+        }}
         onClose={() => {
           setExpandedBlock(null);
           setCardToRestoreAfterFigure(null);
@@ -1131,11 +1197,15 @@ const styles = StyleSheet.create({
     marginTop: 5,
   },
   viewerSafeArea: {
-    alignItems: 'center',
     backgroundColor: '#171614',
     flex: 1,
-    justifyContent: 'center',
-    position: 'relative',
+  },
+  viewerHeader: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    minHeight: 56,
+    paddingHorizontal: 16,
   },
   viewerImage: {
     height: '100%',
@@ -1152,21 +1222,17 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: 'rgba(23, 22, 20, 0.72)',
     borderColor: 'rgba(255, 255, 255, 0.72)',
-    borderRadius: 22,
+    borderRadius: 10,
     borderWidth: 1,
-    height: 44,
     justifyContent: 'center',
-    position: 'absolute',
-    right: 18,
-    top: 14,
-    width: 44,
+    minHeight: 44,
+    minWidth: 72,
+    paddingHorizontal: 14,
   },
   viewerCloseButtonText: {
     color: '#FFFFFF',
-    fontSize: 30,
-    fontWeight: '400',
-    lineHeight: 33,
-    marginTop: -3,
+    fontSize: 15,
+    fontWeight: '800',
   },
   viewerFallback: {
     alignItems: 'center',
@@ -1278,17 +1344,37 @@ const styles = StyleSheet.create({
   readerChecklistItem: {
     alignItems: 'flex-start',
     flexDirection: 'row',
+    minHeight: 44,
   },
-  readerChecklistBullet: {
-    color: '#01696F',
-    fontSize: 23,
-    lineHeight: 30,
+  readerCheckbox: {
+    alignItems: 'center',
+    borderColor: '#77746D',
+    borderRadius: 6,
+    borderWidth: 2,
+    height: 26,
+    justifyContent: 'center',
     marginRight: 10,
+    marginTop: 2,
+    width: 26,
+  },
+  readerCheckboxChecked: {
+    backgroundColor: '#01696F',
+    borderColor: '#01696F',
+  },
+  readerCheckmark: {
+    color: '#FFFFFF',
+    fontSize: 17,
+    fontWeight: '800',
+    lineHeight: 20,
   },
   readerChecklistText: {
     color: '#38352E',
     flex: 1,
     fontSize: 19,
     lineHeight: 30,
+  },
+  readerChecklistTextComplete: {
+    color: '#696761',
+    textDecorationLine: 'line-through',
   },
 });
