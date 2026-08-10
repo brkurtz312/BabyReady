@@ -12,6 +12,7 @@ import {
   subscribeToPublishedCourses,
   type PublishedCourseCatalogState,
 } from '../services/learnerCourseService';
+import { useLearnerLayout } from '../lib/learnerLayout';
 
 type LearnerCourseCatalogProps = {
   onOpenCourse: (course: CourseRecord) => void;
@@ -27,6 +28,7 @@ function lessonCount(course: CourseRecord): number {
 export function LearnerCourseCatalog({
   onOpenCourse,
 }: LearnerCourseCatalogProps) {
+  const { isTabletLayout } = useLearnerLayout();
   const [catalog, setCatalog] = useState<PublishedCourseCatalogState>({
     status: 'loading',
     courses: [],
@@ -46,9 +48,10 @@ export function LearnerCourseCatalog({
     [catalog.courses],
   );
   const coursesAwaitingOutline = catalog.courses.length - availableCourses.length;
+  const useCourseGrid = isTabletLayout && availableCourses.length > 1;
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, isTabletLayout && styles.tabletContainer]}>
       <View style={styles.headingRow}>
         <View>
           <Text style={styles.sectionTitle}>Your learning library</Text>
@@ -97,7 +100,14 @@ export function LearnerCourseCatalog({
         </View>
       ) : null}
 
-      <View style={styles.courseList}>
+      <View
+        style={[
+          styles.courseList,
+          isTabletLayout && styles.tabletCourseList,
+          useCourseGrid && styles.tabletCourseGrid,
+          isTabletLayout && !useCourseGrid && styles.tabletSingleCourseList,
+        ]}
+      >
         {availableCourses.map((course, index) => {
           const count = lessonCount(course);
           const firstLesson = course.learnerOutline
@@ -114,6 +124,7 @@ export function LearnerCourseCatalog({
               style={({ pressed }) => [
                 styles.courseCard,
                 index === 0 && styles.primaryCourseCard,
+                useCourseGrid && styles.tabletCourseCard,
                 pressed && styles.courseCardPressed,
               ]}
               testID={`button-open-course-${course.id}`}
@@ -163,6 +174,11 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 28,
   },
+  tabletContainer: {
+    alignSelf: 'center',
+    maxWidth: 960,
+    width: '100%',
+  },
   headingRow: {
     alignItems: 'flex-end',
     flexDirection: 'row',
@@ -190,12 +206,26 @@ const styles = StyleSheet.create({
   courseList: {
     gap: 11,
   },
+  tabletCourseList: {
+    width: '100%',
+  },
+  tabletCourseGrid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+  },
+  tabletSingleCourseList: {
+    maxWidth: 560,
+  },
   courseCard: {
     backgroundColor: '#FBFBF9',
     borderColor: '#D4D1CA',
     borderRadius: 16,
     borderWidth: 1,
     padding: 17,
+  },
+  tabletCourseCard: {
+    flexBasis: '48%',
+    flexGrow: 1,
   },
   primaryCourseCard: {
     backgroundColor: '#01696F',

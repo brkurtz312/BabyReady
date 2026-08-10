@@ -443,9 +443,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   content: {
+    alignSelf: 'center',
+    maxWidth: 960,
     paddingHorizontal: 20,
     paddingTop: 12,
     paddingBottom: 36,
+    width: '100%',
   },
   header: {
     alignItems: 'center',

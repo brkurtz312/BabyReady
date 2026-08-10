@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 
 import { getBundledClinicalMediaAsset } from '../lib/clinicalMediaAssets';
+import { useLearnerLayout } from '../lib/learnerLayout';
 import type {
   ClinicalContentBlock,
   ClinicalMedia,
@@ -152,11 +153,14 @@ function SourceLinks({
 
 function MediaFigure({
   media,
-  onOpen,
+  onOpenImage,
+  onOpenCard,
 }: {
   media: ClinicalMedia;
-  onOpen: (media: ClinicalMedia) => void;
+  onOpenImage: (media: ClinicalMedia) => void;
+  onOpenCard?: () => void;
 }) {
+  const { isTabletLayout } = useLearnerLayout();
   const [failed, setFailed] = useState(false);
   const imageSource = getBundledClinicalMediaAsset(media.assetKey);
 
@@ -175,7 +179,7 @@ function MediaFigure({
         accessibilityHint="Opens a full-screen view of this figure."
         accessibilityLabel={`Open full-screen figure: ${media.title}`}
         accessibilityRole="button"
-        onPress={() => onOpen(media)}
+        onPress={() => onOpenImage(media)}
         style={styles.figurePressable}
         testID={`button-open-figure-${media.id}`}
       >
@@ -184,7 +188,7 @@ function MediaFigure({
           onError={() => setFailed(true)}
           resizeMode="contain"
           source={imageSource}
-          style={styles.figureImage}
+          style={[styles.figureImage, isTabletLayout && styles.tabletFigureImage]}
         />
         <View pointerEvents="none" style={styles.figureExpandHint}>
           <Text style={styles.figureExpandHintText}>Tap to expand</Text>
@@ -193,16 +197,18 @@ function MediaFigure({
       <View style={styles.figureDetails}>
         <Text style={styles.figureTitle}>{media.title}</Text>
         {media.caption ? <Text style={styles.figureCaption}>{media.caption}</Text> : null}
-        <Pressable
-          accessibilityHint="Opens this figure in a full-screen reader."
-          accessibilityLabel={`View figure full screen: ${media.title}`}
-          accessibilityRole="button"
-          onPress={() => onOpen(media)}
-          style={styles.figureOpenButton}
-          testID={`button-view-figure-fullscreen-${media.id}`}
-        >
-          <Text style={styles.figureOpenButtonText}>View full screen</Text>
-        </Pressable>
+        {onOpenCard ? (
+          <Pressable
+            accessibilityHint="Opens the full lesson card, including its text and clinical source."
+            accessibilityLabel={`View full card: ${media.title}`}
+            accessibilityRole="button"
+            onPress={onOpenCard}
+            style={styles.figureOpenButton}
+            testID={`button-view-full-card-${media.id}`}
+          >
+            <Text style={styles.figureOpenButtonText}>View full card</Text>
+          </Pressable>
+        ) : null}
       </View>
     </View>
   );
@@ -253,14 +259,14 @@ function LessonBlock({
           <View />
         )}
         <Pressable
-          accessibilityHint="Opens this lesson card in a larger reading view."
-          accessibilityLabel={`Open full-screen reading view: ${readerTitleForBlock(block)}`}
+          accessibilityHint="Opens the full lesson card, including its text, figure, and clinical source."
+          accessibilityLabel={`View full card: ${readerTitleForBlock(block)}`}
           accessibilityRole="button"
           onPress={() => onOpenCard(block)}
           style={styles.openCardButton}
           testID={`button-open-card-${block.id}`}
         >
-          <Text style={styles.openCardButtonText}>Full screen</Text>
+          <Text style={styles.openCardButtonText}>View full card</Text>
         </Pressable>
       </View>
 
@@ -301,7 +307,12 @@ function LessonBlock({
       )}
 
       {media.map((item) => (
-        <MediaFigure key={item.id} media={item} onOpen={onOpenFigure} />
+        <MediaFigure
+          key={item.id}
+          media={item}
+          onOpenCard={() => onOpenCard(block)}
+          onOpenImage={onOpenFigure}
+        />
       ))}
       <SourceLinks sourceIds={block.sourceIds ?? []} sourcesById={sourcesById} />
     </View>
@@ -325,6 +336,7 @@ function LessonCardViewer({
   onOpenFigure: (media: ClinicalMedia) => void;
   sourcesById: Map<string, ContentSource>;
 }) {
+  const { isTabletLayout } = useLearnerLayout();
   if (!block) {
     return null;
   }
@@ -362,7 +374,10 @@ function LessonCardViewer({
         </View>
 
         <ScrollView
-          contentContainerStyle={styles.readerContent}
+          contentContainerStyle={[
+            styles.readerContent,
+            isTabletLayout && styles.readerTabletContent,
+          ]}
           showsVerticalScrollIndicator={false}
         >
           <View
@@ -370,6 +385,7 @@ function LessonCardViewer({
               styles.readerCard,
               block.type === 'callout' && styles.readerCalloutCard,
               block.type === 'emergency_card' && styles.readerEmergencyCard,
+              isTabletLayout && styles.readerTabletCard,
             ]}
           >
             {title ? (
@@ -433,7 +449,11 @@ function LessonCardViewer({
             )}
 
             {media.map((item) => (
-              <MediaFigure key={item.id} media={item} onOpen={onOpenFigure} />
+              <MediaFigure
+                key={item.id}
+                media={item}
+                onOpenImage={onOpenFigure}
+              />
             ))}
             <SourceLinks sourceIds={block.sourceIds ?? []} sourcesById={sourcesById} />
           </View>
@@ -515,6 +535,7 @@ export function LearnerCoursePlayerScreen({
   course,
   onExit,
 }: LearnerCoursePlayerScreenProps) {
+  const { isTabletLayout } = useLearnerLayout();
   const allLessons = useMemo(() => lessonsForCourse(course), [course]);
   const [selectedLessonKey, setSelectedLessonKey] = useState(
     allLessons[0] ? lessonKey(allLessons[0]) : '',
@@ -618,162 +639,222 @@ export function LearnerCoursePlayerScreen({
     () => new Map(attachments.sources.map((source) => [source.id, source])),
     [attachments.sources],
   );
+  const lessonNavigation = selectedLesson ? (
+    <View
+      style={[
+        styles.lessonNavigation,
+        isTabletLayout && styles.tabletLessonNavigation,
+      ]}
+    >
+      <Text style={styles.navigationLabel}>COURSE LESSONS</Text>
+      {allLessons.map((item, index) => {
+        const selected = lessonKey(item) === lessonKey(selectedLesson);
+        return (
+          <Pressable
+            accessibilityLabel={`Open lesson ${index + 1}: ${item.lesson.title}`}
+            accessibilityRole="button"
+            key={lessonKey(item)}
+            onPress={() => setSelectedLessonKey(lessonKey(item))}
+            style={[
+              styles.lessonButton,
+              selected && styles.lessonButtonSelected,
+            ]}
+            testID={`button-open-lesson-${item.module.id}-${item.lesson.id}`}
+          >
+            <Text
+              style={[
+                styles.lessonNumber,
+                selected && styles.lessonNumberSelected,
+              ]}
+            >
+              {index + 1}
+            </Text>
+            <View style={styles.lessonButtonContent}>
+              <Text
+                style={[
+                  styles.lessonModule,
+                  selected && styles.lessonModuleSelected,
+                ]}
+              >
+                {item.module.title}
+              </Text>
+              <Text
+                style={[
+                  styles.lessonButtonTitle,
+                  selected && styles.lessonButtonTitleSelected,
+                ]}
+              >
+                {item.lesson.title}
+              </Text>
+            </View>
+          </Pressable>
+        );
+      })}
+    </View>
+  ) : null;
+  const lessonReading = selectedLesson ? (
+    <View>
+      <View
+        style={[
+          styles.lessonHeader,
+          isTabletLayout && styles.tabletLessonHeader,
+        ]}
+      >
+        <Text style={styles.eyebrow}>{selectedLesson.module.title}</Text>
+        <Text style={styles.lessonTitle}>{selectedLesson.lesson.title}</Text>
+        {selectedLesson.lesson.summary ? (
+          <Text style={styles.lessonSummary}>{selectedLesson.lesson.summary}</Text>
+        ) : null}
+        {selectedLesson.lesson.estimatedMinutes ? (
+          <Text style={styles.lessonMeta}>
+            About {selectedLesson.lesson.estimatedMinutes} minutes
+          </Text>
+        ) : null}
+      </View>
+
+      {lessonState.status === 'loading' ? (
+        <View style={styles.statusCard}>
+          <ActivityIndicator color="#01696F" />
+          <Text style={styles.statusText}>Loading clinically reviewed lesson…</Text>
+        </View>
+      ) : null}
+
+      {lessonState.status === 'unconfigured' ? (
+        <View style={styles.statusCard}>
+          <Text style={styles.statusTitle}>Lesson content is not connected</Text>
+          <Text style={styles.statusText}>
+            Add the BabyReady Firebase configuration to load published lessons.
+          </Text>
+        </View>
+      ) : null}
+
+      {lessonState.status === 'error' ? (
+        <View style={styles.errorCard}>
+          <Text style={styles.errorTitle}>This lesson is temporarily unavailable</Text>
+          <Text style={styles.errorText}>
+            Check your connection and try again. {lessonState.error}
+          </Text>
+        </View>
+      ) : null}
+
+      {lessonState.status === 'ready' && lessonState.blocks.length === 0 ? (
+        <View style={styles.statusCard}>
+          <Text style={styles.statusTitle}>This lesson is being prepared</Text>
+          <Text style={styles.statusText}>
+            Learner content will appear here after it has completed clinical review
+            and publication.
+          </Text>
+        </View>
+      ) : null}
+
+      <View style={styles.blockList}>
+        {lessonState.blocks.map((block) => (
+          <LessonBlock
+            block={block}
+            checkedItems={checkedItemsByBlock[block.id] ?? []}
+            key={block.id}
+            mediaById={mediaById}
+            onToggleChecklistItem={(itemKey) =>
+              toggleChecklistItem(block.id, itemKey)
+            }
+            onOpenCard={setExpandedBlock}
+            onOpenFigure={setExpandedFigure}
+            sourcesById={sourcesById}
+          />
+        ))}
+      </View>
+
+      {attachmentsError ? (
+        <Text accessibilityRole="alert" style={styles.attachmentWarning}>
+          {attachmentsError}
+        </Text>
+      ) : null}
+    </View>
+  ) : null;
+  const courseHeader = (
+    <>
+      <Pressable
+        accessibilityLabel="Return to your learning library"
+        accessibilityRole="button"
+        onPress={onExit}
+        style={styles.backButton}
+        testID="button-return-to-learning-library"
+      >
+        <Text style={styles.backButtonText}>‹ Learning library</Text>
+      </Pressable>
+
+      <Text style={styles.brand}>BABYREADY</Text>
+      <Text style={styles.courseTitle}>{course.title}</Text>
+      <Text style={styles.courseSummary}>{course.summary}</Text>
+    </>
+  );
+  const unpreparedLessonState = (
+    <View style={styles.statusCard}>
+      <Text style={styles.statusTitle}>This course is being prepared</Text>
+      <Text style={styles.statusText}>
+        Learner lesson navigation has not been added to this course yet.
+      </Text>
+    </View>
+  );
+  const safetyContent = (
+    <View style={styles.safetyCard}>
+      <Text style={styles.safetyTitle}>For education, not urgent care</Text>
+      <Text style={styles.safetyText}>
+        Contact your obstetric team for personal medical advice. For severe symptoms
+        or immediate danger, call 911 or your local emergency number.
+      </Text>
+    </View>
+  );
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <ScrollView
-        contentContainerStyle={styles.content}
-        showsVerticalScrollIndicator={false}
-      >
-        <Pressable
-          accessibilityLabel="Return to your learning library"
-          accessibilityRole="button"
-          onPress={onExit}
-          style={styles.backButton}
-          testID="button-return-to-learning-library"
-        >
-          <Text style={styles.backButtonText}>‹ Learning library</Text>
-        </Pressable>
-
-        <Text style={styles.brand}>BABYREADY</Text>
-        <Text style={styles.courseTitle}>{course.title}</Text>
-        <Text style={styles.courseSummary}>{course.summary}</Text>
-
-        {!selectedLesson ? (
-          <View style={styles.statusCard}>
-            <Text style={styles.statusTitle}>This course is being prepared</Text>
-            <Text style={styles.statusText}>
-              Learner lesson navigation has not been added to this course yet.
-            </Text>
-          </View>
-        ) : (
-          <>
-            <View style={styles.lessonNavigation}>
-              <Text style={styles.navigationLabel}>COURSE LESSONS</Text>
-              {allLessons.map((item, index) => {
-                const selected = lessonKey(item) === lessonKey(selectedLesson);
-                return (
-                  <Pressable
-                    accessibilityLabel={`Open lesson ${index + 1}: ${item.lesson.title}`}
-                    accessibilityRole="button"
-                    key={lessonKey(item)}
-                    onPress={() => setSelectedLessonKey(lessonKey(item))}
-                    style={[
-                      styles.lessonButton,
-                      selected && styles.lessonButtonSelected,
-                    ]}
-                    testID={`button-open-lesson-${item.module.id}-${item.lesson.id}`}
-                  >
-                    <Text
-                      style={[
-                        styles.lessonNumber,
-                        selected && styles.lessonNumberSelected,
-                      ]}
-                    >
-                      {index + 1}
-                    </Text>
-                    <View style={styles.lessonButtonContent}>
-                      <Text
-                        style={[
-                          styles.lessonModule,
-                          selected && styles.lessonModuleSelected,
-                        ]}
-                      >
-                        {item.module.title}
-                      </Text>
-                      <Text
-                        style={[
-                          styles.lessonButtonTitle,
-                          selected && styles.lessonButtonTitleSelected,
-                        ]}
-                      >
-                        {item.lesson.title}
-                      </Text>
-                    </View>
-                  </Pressable>
-                );
-              })}
+      {isTabletLayout ? (
+        <View style={styles.tabletScreen}>
+          <View style={styles.tabletCourseHeader}>{courseHeader}</View>
+          {selectedLesson ? (
+            <View style={styles.tabletWorkspace}>
+              <ScrollView
+                contentContainerStyle={styles.tabletNavigationScrollContent}
+                showsVerticalScrollIndicator
+                style={styles.tabletNavigationScroll}
+              >
+                {lessonNavigation}
+              </ScrollView>
+              <ScrollView
+                contentContainerStyle={styles.tabletReadingScrollContent}
+                showsVerticalScrollIndicator
+                style={styles.tabletReadingScroll}
+              >
+                <View style={styles.tabletReadingColumn}>
+                  {lessonReading}
+                  {safetyContent}
+                </View>
+              </ScrollView>
             </View>
-
-            <View style={styles.lessonHeader}>
-              <Text style={styles.eyebrow}>{selectedLesson.module.title}</Text>
-              <Text style={styles.lessonTitle}>{selectedLesson.lesson.title}</Text>
-              {selectedLesson.lesson.summary ? (
-                <Text style={styles.lessonSummary}>{selectedLesson.lesson.summary}</Text>
-              ) : null}
-              {selectedLesson.lesson.estimatedMinutes ? (
-                <Text style={styles.lessonMeta}>
-                  About {selectedLesson.lesson.estimatedMinutes} minutes
-                </Text>
-              ) : null}
-            </View>
-
-            {lessonState.status === 'loading' ? (
-              <View style={styles.statusCard}>
-                <ActivityIndicator color="#01696F" />
-                <Text style={styles.statusText}>Loading clinically reviewed lesson…</Text>
-              </View>
-            ) : null}
-
-            {lessonState.status === 'unconfigured' ? (
-              <View style={styles.statusCard}>
-                <Text style={styles.statusTitle}>Lesson content is not connected</Text>
-                <Text style={styles.statusText}>
-                  Add the BabyReady Firebase configuration to load published lessons.
-                </Text>
-              </View>
-            ) : null}
-
-            {lessonState.status === 'error' ? (
-              <View style={styles.errorCard}>
-                <Text style={styles.errorTitle}>This lesson is temporarily unavailable</Text>
-                <Text style={styles.errorText}>
-                  Check your connection and try again. {lessonState.error}
-                </Text>
-              </View>
-            ) : null}
-
-            {lessonState.status === 'ready' && lessonState.blocks.length === 0 ? (
-              <View style={styles.statusCard}>
-                <Text style={styles.statusTitle}>This lesson is being prepared</Text>
-                <Text style={styles.statusText}>
-                  Learner content will appear here after it has completed clinical review and publication.
-                </Text>
-              </View>
-            ) : null}
-
-            <View style={styles.blockList}>
-              {lessonState.blocks.map((block) => (
-                <LessonBlock
-                  block={block}
-                  checkedItems={checkedItemsByBlock[block.id] ?? []}
-                  key={block.id}
-                  mediaById={mediaById}
-                  onToggleChecklistItem={(itemKey) =>
-                    toggleChecklistItem(block.id, itemKey)
-                  }
-                  onOpenCard={setExpandedBlock}
-                  onOpenFigure={setExpandedFigure}
-                  sourcesById={sourcesById}
-                />
-              ))}
-            </View>
-
-            {attachmentsError ? (
-              <Text accessibilityRole="alert" style={styles.attachmentWarning}>
-                {attachmentsError}
-              </Text>
-            ) : null}
-          </>
-        )}
-
-        <View style={styles.safetyCard}>
-          <Text style={styles.safetyTitle}>For education, not urgent care</Text>
-          <Text style={styles.safetyText}>
-            Contact your obstetric team for personal medical advice. For severe symptoms or immediate danger, call 911 or your local emergency number.
-          </Text>
+          ) : (
+            <ScrollView
+              contentContainerStyle={styles.tabletEmptyContent}
+              showsVerticalScrollIndicator={false}
+            >
+              {unpreparedLessonState}
+              {safetyContent}
+            </ScrollView>
+          )}
         </View>
-      </ScrollView>
+      ) : (
+        <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+          {courseHeader}
+          {!selectedLesson ? (
+            unpreparedLessonState
+          ) : (
+            <>
+              {lessonNavigation}
+              {lessonReading}
+            </>
+          )}
+          {safetyContent}
+        </ScrollView>
+      )}
       <LessonCardViewer
         block={expandedBlock}
         checkedItems={
@@ -841,6 +922,61 @@ const styles = StyleSheet.create({
     gap: 8,
     marginTop: 25,
   },
+  tabletLessonNavigation: {
+    marginTop: 0,
+  },
+  tabletScreen: {
+    flex: 1,
+  },
+  tabletCourseHeader: {
+    alignSelf: 'center',
+    borderBottomColor: '#D4D1CA',
+    borderBottomWidth: 1,
+    maxWidth: 1240,
+    paddingBottom: 18,
+    paddingHorizontal: 32,
+    paddingTop: 10,
+    width: '100%',
+  },
+  tabletWorkspace: {
+    alignSelf: 'center',
+    flexDirection: 'row',
+    flex: 1,
+    maxWidth: 1240,
+    width: '100%',
+  },
+  tabletNavigationScroll: {
+    backgroundColor: '#EFEEE9',
+    flexShrink: 0,
+    paddingHorizontal: 16,
+    width: 268,
+  },
+  tabletNavigationScrollContent: {
+    paddingBottom: 28,
+    paddingTop: 24,
+  },
+  tabletReadingScroll: {
+    flex: 1,
+    minWidth: 0,
+  },
+  tabletReadingScrollContent: {
+    alignItems: 'center',
+    paddingBottom: 48,
+    paddingHorizontal: 36,
+    paddingTop: 28,
+  },
+  tabletReadingColumn: {
+    maxWidth: 760,
+    width: '100%',
+  },
+  tabletEmptyContent: {
+    alignSelf: 'center',
+    maxWidth: 760,
+    paddingBottom: 48,
+    paddingHorizontal: 36,
+    paddingTop: 10,
+    width: '100%',
+  },
   navigationLabel: {
     color: '#77746D',
     fontSize: 10,
@@ -903,6 +1039,9 @@ const styles = StyleSheet.create({
   },
   lessonHeader: {
     marginTop: 27,
+  },
+  tabletLessonHeader: {
+    marginTop: 0,
   },
   eyebrow: {
     color: '#01696F',
@@ -1082,6 +1221,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     height: 240,
     width: '100%',
+  },
+  tabletFigureImage: {
+    height: 320,
   },
   figureExpandHint: {
     backgroundColor: 'rgba(12, 78, 84, 0.9)',
@@ -1306,12 +1448,20 @@ const styles = StyleSheet.create({
     padding: 20,
     paddingBottom: 40,
   },
+  readerTabletContent: {
+    alignItems: 'center',
+    paddingHorizontal: 32,
+  },
   readerCard: {
     backgroundColor: '#FBFBF9',
     borderColor: '#D4D1CA',
     borderRadius: 18,
     borderWidth: 1,
     padding: 20,
+  },
+  readerTabletCard: {
+    maxWidth: 760,
+    width: '100%',
   },
   readerCalloutCard: {
     backgroundColor: '#EAF4F2',
