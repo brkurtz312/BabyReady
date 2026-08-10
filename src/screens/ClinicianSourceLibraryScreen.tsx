@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
+  KeyboardAvoidingView,
+  Platform,
   Pressable,
   SafeAreaView,
   ScrollView,
@@ -341,7 +343,17 @@ export function ClinicianSourceLibraryScreen({
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        style={styles.keyboardAvoidingView}
+      >
+      <ScrollView
+        automaticallyAdjustKeyboardInsets
+        contentContainerStyle={styles.content}
+        keyboardDismissMode="interactive"
+        keyboardShouldPersistTaps="handled"
+        showsVerticalScrollIndicator={false}
+      >
         <View style={styles.header}>
           <Pressable
             accessibilityRole="button"
@@ -642,6 +654,7 @@ export function ClinicianSourceLibraryScreen({
           </>
         ) : null}
       </ScrollView>
+      </KeyboardAvoidingView>
     </SafeAreaView>
   );
 }
@@ -651,8 +664,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#F7F6F2',
     flex: 1,
   },
+  keyboardAvoidingView: {
+    flex: 1,
+  },
   content: {
-    paddingBottom: 40,
+    paddingBottom: 96,
     paddingHorizontal: 20,
     paddingTop: 12,
   },
