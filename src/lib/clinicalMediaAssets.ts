@@ -8,6 +8,8 @@ const bundledClinicalMedia: Record<string, ImageSourcePropType> = {
   'urgent-maternal-warning-signs-get-help-now': require('../../assets/clinical-media/urgent-maternal-warning-signs-get-help-now.png'),
 };
 
+export const externalVideoAssetKey = 'external-video';
+
 export const clinicalMediaAssetKeys = Object.keys(bundledClinicalMedia);
 
 export function getBundledClinicalMediaAsset(

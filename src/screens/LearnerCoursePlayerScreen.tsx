@@ -100,6 +100,16 @@ function checklistItems(body: string): string[] {
     .filter(Boolean);
 }
 
+function formatVideoDuration(durationSeconds: number | null | undefined): string | null {
+  if (!Number.isInteger(durationSeconds) || (durationSeconds ?? 0) <= 0) {
+    return null;
+  }
+
+  const minutes = Math.floor((durationSeconds ?? 0) / 60);
+  const seconds = (durationSeconds ?? 0) % 60;
+  return `${minutes}:${String(seconds).padStart(2, '0')}`;
+}
+
 function SourceLinks({
   sourceIds,
   sourcesById,
@@ -147,6 +157,73 @@ function SourceLinks({
           </Text>
         </Pressable>
       ))}
+    </View>
+  );
+}
+
+function ExternalVideoCard({ media }: { media: ClinicalMedia }) {
+  const openExternalVideo = async (url: string, label: string) => {
+    try {
+      const supported = await Linking.canOpenURL(url);
+      if (!supported) {
+        throw new Error('Unsupported URL');
+      }
+      await Linking.openURL(url);
+    } catch {
+      Alert.alert(
+        `${label} unavailable`,
+        'BabyReady could not open this external video link on your device.',
+      );
+    }
+  };
+
+  const duration = formatVideoDuration(media.durationSeconds);
+  const metadata = [
+    media.publisher?.trim(),
+    duration ? `${duration} video` : null,
+    media.language?.trim() ? media.language.trim().toUpperCase() : null,
+  ].filter((item): item is string => Boolean(item));
+
+  return (
+    <View style={styles.externalVideoCard}>
+      <Text style={styles.externalVideoEyebrow}>EXTERNAL VIDEO</Text>
+      <Text style={styles.externalVideoTitle}>{media.title}</Text>
+      {metadata.length > 0 ? (
+        <Text style={styles.externalVideoMetadata}>{metadata.join(' · ')}</Text>
+      ) : null}
+      {media.caption ? (
+        <Text style={styles.externalVideoCaption}>{media.caption}</Text>
+      ) : null}
+      {media.externalUrl ? (
+        <Pressable
+          accessibilityHint="Opens the reviewed video at its original publisher."
+          accessibilityLabel={`Watch external video: ${media.title}`}
+          accessibilityRole="link"
+          onPress={() => void openExternalVideo(media.externalUrl!, 'External video')}
+          style={styles.externalVideoPrimaryButton}
+          testID={`link-watch-external-video-${media.id}`}
+        >
+          <Text style={styles.externalVideoPrimaryButtonText}>
+            Watch on publisher site
+          </Text>
+        </Pressable>
+      ) : null}
+      {media.transcriptUrl ? (
+        <Pressable
+          accessibilityHint="Opens the transcript or captions supplied by the video publisher."
+          accessibilityLabel={`Open transcript or captions: ${media.title}`}
+          accessibilityRole="link"
+          onPress={() =>
+            void openExternalVideo(media.transcriptUrl!, 'Transcript or captions')
+          }
+          style={styles.externalVideoTranscriptButton}
+          testID={`link-external-video-transcript-${media.id}`}
+        >
+          <Text style={styles.externalVideoTranscriptButtonText}>
+            Transcript or captions
+          </Text>
+        </Pressable>
+      ) : null}
     </View>
   );
 }
@@ -306,14 +383,18 @@ function LessonBlock({
         </Text>
       )}
 
-      {media.map((item) => (
-        <MediaFigure
-          key={item.id}
-          media={item}
-          onOpenCard={() => onOpenCard(block)}
-          onOpenImage={onOpenFigure}
-        />
-      ))}
+      {media.map((item) =>
+        item.type === 'external_video' ? (
+          <ExternalVideoCard key={item.id} media={item} />
+        ) : (
+          <MediaFigure
+            key={item.id}
+            media={item}
+            onOpenCard={() => onOpenCard(block)}
+            onOpenImage={onOpenFigure}
+          />
+        ),
+      )}
       <SourceLinks sourceIds={block.sourceIds ?? []} sourcesById={sourcesById} />
     </View>
   );
@@ -448,13 +529,17 @@ function LessonCardViewer({
               </Text>
             )}
 
-            {media.map((item) => (
-              <MediaFigure
-                key={item.id}
-                media={item}
-                onOpenImage={onOpenFigure}
-              />
-            ))}
+            {media.map((item) =>
+              item.type === 'external_video' ? (
+                <ExternalVideoCard key={item.id} media={item} />
+              ) : (
+                <MediaFigure
+                  key={item.id}
+                  media={item}
+                  onOpenImage={onOpenFigure}
+                />
+              ),
+            )}
             <SourceLinks sourceIds={block.sourceIds ?? []} sourcesById={sourcesById} />
           </View>
         </ScrollView>
@@ -1268,6 +1353,67 @@ const styles = StyleSheet.create({
     color: '#01696F',
     fontSize: 13,
     fontWeight: '800',
+  },
+  externalVideoCard: {
+    backgroundColor: '#EFF6F5',
+    borderColor: '#92BFB8',
+    borderRadius: 11,
+    borderWidth: 1,
+    marginTop: 15,
+    padding: 14,
+  },
+  externalVideoEyebrow: {
+    color: '#0C4E54',
+    fontSize: 10,
+    fontWeight: '800',
+    letterSpacing: 1,
+  },
+  externalVideoTitle: {
+    color: '#28251D',
+    fontSize: 16,
+    fontWeight: '800',
+    lineHeight: 22,
+    marginTop: 5,
+  },
+  externalVideoMetadata: {
+    color: '#365553',
+    fontSize: 13,
+    fontWeight: '700',
+    lineHeight: 19,
+    marginTop: 4,
+  },
+  externalVideoCaption: {
+    color: '#55534D',
+    fontSize: 14,
+    lineHeight: 20,
+    marginTop: 9,
+  },
+  externalVideoPrimaryButton: {
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+    backgroundColor: '#01696F',
+    borderRadius: 8,
+    justifyContent: 'center',
+    marginTop: 13,
+    minHeight: 42,
+    paddingHorizontal: 13,
+  },
+  externalVideoPrimaryButtonText: {
+    color: '#FFFFFF',
+    fontSize: 13,
+    fontWeight: '800',
+  },
+  externalVideoTranscriptButton: {
+    alignSelf: 'flex-start',
+    justifyContent: 'center',
+    marginTop: 11,
+    minHeight: 30,
+  },
+  externalVideoTranscriptButtonText: {
+    color: '#01696F',
+    fontSize: 13,
+    fontWeight: '800',
+    textDecorationLine: 'underline',
   },
   mediaFallback: {
     backgroundColor: '#EFEEE9',

@@ -149,7 +149,7 @@ export type ClinicalContentVersion = {
   };
 };
 
-export type ClinicalMediaType = 'figure' | 'image' | 'audio' | 'video';
+export type ClinicalMediaType = 'figure' | 'external_video';
 
 export type ClinicalMedia = {
   id: string;
@@ -158,6 +158,11 @@ export type ClinicalMedia = {
   assetKey: string;
   altText: string;
   caption?: string;
+  externalUrl?: string | null;
+  transcriptUrl?: string | null;
+  publisher?: string | null;
+  language?: string | null;
+  durationSeconds?: number | null;
   sourceIds: string[];
   isClinicalClaim: boolean;
   clinicalReviewerId?: string | null;
@@ -196,6 +201,11 @@ export type ClinicalMediaVersion = {
     assetKey: string;
     altText: string;
     caption?: string;
+    externalUrl?: string;
+    transcriptUrl?: string;
+    publisher?: string;
+    language?: string;
+    durationSeconds?: number;
     sourceIds: string[];
     isClinicalClaim: boolean;
     publicationState: ContentPublicationState;

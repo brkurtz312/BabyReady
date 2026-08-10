@@ -387,6 +387,83 @@ test('published clinical media is learner-readable, while drafts remain administ
   await assertSucceeds(getDoc(doc(admin, 'clinicalMedia/draft-figure')));
 });
 
+test('published external videos require controlled provider, transcript, and immutable metadata', async () => {
+  const anonymous = testEnvironment.unauthenticatedContext().firestore();
+  const author = userDb('author');
+  const admin = userDb('admin', { admin: true });
+  const externalVideo = {
+    id: 'cdc-hear-her-allyson-felix',
+    title: 'CDC Hear Her: A Conversation with Allyson Felix',
+    type: 'external_video',
+    assetKey: 'external-video',
+    altText:
+      'A CDC video interview about urgent maternal warning signs and speaking up during pregnancy.',
+    externalUrl: 'https://www.youtube.com/watch?v=zG_W5Q9NbCE',
+    transcriptUrl: 'https://www.youtube.com/watch?v=zG_W5Q9NbCE',
+    publisher: 'Centers for Disease Control and Prevention',
+    language: 'en',
+    durationSeconds: 788,
+    sourceIds: ['cdc-urgent-maternal-warning-signs-2026'],
+    isClinicalClaim: true,
+    clinicalReviewerId: 'admin',
+    lastReviewedAt: Timestamp.fromDate(new Date('2026-08-08T00:00:00.000Z')),
+    nextReviewAt: Timestamp.fromDate(new Date('2027-08-08T00:00:00.000Z')),
+    publicationState: 'published',
+  };
+
+  await assertFails(
+    setDoc(doc(author, 'clinicalMedia', externalVideo.id), externalVideo),
+  );
+  await assertSucceeds(
+    setDoc(doc(admin, 'clinicalMedia', externalVideo.id), externalVideo),
+  );
+  await assertSucceeds(getDoc(doc(anonymous, 'clinicalMedia', externalVideo.id)));
+
+  await assertFails(
+    setDoc(doc(admin, 'clinicalMedia', 'unsafe-external-video'), {
+      ...externalVideo,
+      id: 'unsafe-external-video',
+      externalUrl: 'http://example.invalid/video',
+    }),
+  );
+  await assertFails(
+    setDoc(doc(admin, 'clinicalMedia', 'missing-video-transcript'), {
+      ...externalVideo,
+      id: 'missing-video-transcript',
+      transcriptUrl: '',
+    }),
+  );
+
+  const versionPath = `clinicalMedia/${externalVideo.id}/versions/version-1`;
+  await assertSucceeds(
+    setDoc(doc(admin, versionPath), {
+      id: 'version-1',
+      versionNumber: 1,
+      action: 'published',
+      actorId: 'admin',
+      createdAt: Timestamp.fromDate(new Date('2026-08-08T00:00:00.000Z')),
+      snapshot: {
+        mediaId: externalVideo.id,
+        title: externalVideo.title,
+        type: externalVideo.type,
+        assetKey: externalVideo.assetKey,
+        altText: externalVideo.altText,
+        externalUrl: externalVideo.externalUrl,
+        transcriptUrl: externalVideo.transcriptUrl,
+        publisher: externalVideo.publisher,
+        language: externalVideo.language,
+        durationSeconds: externalVideo.durationSeconds,
+        sourceIds: externalVideo.sourceIds,
+        isClinicalClaim: externalVideo.isClinicalClaim,
+        publicationState: externalVideo.publicationState,
+      },
+    }),
+  );
+  await assertFails(
+    updateDoc(doc(admin, versionPath), { title: 'Changed after publication.' }),
+  );
+});
+
 test('media review queue, immutable versions, and clinical approval records are administrator-governed', async () => {
   const author = userDb('author');
   const admin = userDb('admin', { admin: true });

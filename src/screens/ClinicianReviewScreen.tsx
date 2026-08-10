@@ -4,6 +4,7 @@ import {
   Alert,
   Image,
   KeyboardAvoidingView,
+  Linking,
   Platform,
   Pressable,
   SafeAreaView,
@@ -155,6 +156,35 @@ function formatMediaVersionAction(action: ClinicalMediaVersion['action']): strin
       return 'Frozen for follow-up';
     default:
       return action;
+  }
+}
+
+function formatMediaType(type: ClinicalMedia['type']): string {
+  return type === 'external_video' ? 'External video' : 'Static figure';
+}
+
+function formatMediaDuration(durationSeconds: number | null | undefined): string | null {
+  if (!Number.isInteger(durationSeconds) || (durationSeconds ?? 0) <= 0) {
+    return null;
+  }
+
+  const minutes = Math.floor((durationSeconds ?? 0) / 60);
+  const seconds = (durationSeconds ?? 0) % 60;
+  return `${minutes}:${String(seconds).padStart(2, '0')}`;
+}
+
+async function openExternalMediaLink(url: string, label: string): Promise<void> {
+  try {
+    const supported = await Linking.canOpenURL(url);
+    if (!supported) {
+      throw new Error('Unsupported URL');
+    }
+    await Linking.openURL(url);
+  } catch {
+    Alert.alert(
+      `${label} unavailable`,
+      'BabyReady could not open this external media link on your device.',
+    );
   }
 }
 
@@ -1128,7 +1158,7 @@ export function ClinicianReviewScreen({
                             {item.title}
                           </Text>
                           <Text numberOfLines={1} style={styles.queueCardScope}>
-                            Figure · {item.sourceIds.length} source
+                            {formatMediaType(item.type)} · {item.sourceIds.length} source
                             {item.sourceIds.length === 1 ? '' : 's'}
                           </Text>
                         </Pressable>
@@ -1140,7 +1170,7 @@ export function ClinicianReviewScreen({
                     <View style={styles.mediaReviewPanel}>
                       <View style={styles.reviewPanelHeader}>
                         <View style={styles.reviewPanelHeaderCopy}>
-                          <Text style={styles.sectionLabel}>SELECTED FIGURE</Text>
+                          <Text style={styles.sectionLabel}>SELECTED MEDIA</Text>
                           <Text style={styles.blockTitle}>
                             {selectedReviewMedia.title}
                           </Text>
@@ -1161,9 +1191,62 @@ export function ClinicianReviewScreen({
                         </View>
                       </View>
 
-                      {getBundledClinicalMediaAsset(
-                        selectedReviewMedia.assetKey,
-                      ) ? (
+                      {selectedReviewMedia.type === 'external_video' ? (
+                        <View style={styles.externalVideoReviewCard}>
+                          <Text style={styles.externalVideoReviewEyebrow}>
+                            EXTERNAL VIDEO LINK
+                          </Text>
+                          <Text style={styles.externalVideoReviewTitle}>
+                            {selectedReviewMedia.publisher ?? 'Publisher pending'}
+                          </Text>
+                          <Text style={styles.externalVideoReviewDetails}>
+                            {[
+                              formatMediaDuration(selectedReviewMedia.durationSeconds),
+                              selectedReviewMedia.language?.toUpperCase(),
+                            ]
+                              .filter(Boolean)
+                              .join(' · ')}
+                          </Text>
+                          {selectedReviewMedia.externalUrl ? (
+                            <Pressable
+                              accessibilityLabel={`Open external video for review: ${selectedReviewMedia.title}`}
+                              accessibilityRole="link"
+                              onPress={() =>
+                                void openExternalMediaLink(
+                                  selectedReviewMedia.externalUrl!,
+                                  'External video',
+                                )
+                              }
+                              style={styles.externalVideoReviewButton}
+                              testID="button-review-external-video"
+                            >
+                              <Text style={styles.externalVideoReviewButtonText}>
+                                Open video for review
+                              </Text>
+                            </Pressable>
+                          ) : null}
+                          {selectedReviewMedia.transcriptUrl ? (
+                            <Pressable
+                              accessibilityLabel={`Open transcript or captions for ${selectedReviewMedia.title}`}
+                              accessibilityRole="link"
+                              onPress={() =>
+                                void openExternalMediaLink(
+                                  selectedReviewMedia.transcriptUrl!,
+                                  'Transcript or captions',
+                                )
+                              }
+                              style={styles.externalVideoTranscriptButton}
+                              testID="button-review-external-video-transcript"
+                            >
+                              <Text style={styles.externalVideoTranscriptButtonText}>
+                                Open transcript or captions
+                              </Text>
+                            </Pressable>
+                          ) : null}
+                        </View>
+                      ) : getBundledClinicalMediaAsset(
+                          selectedReviewMedia.assetKey,
+                        ) ? (
                         <View style={styles.selectedMediaPreview}>
                           <Image
                             accessibilityLabel={selectedReviewMedia.altText}
@@ -1215,7 +1298,7 @@ export function ClinicianReviewScreen({
                           <Text style={styles.missingSourceText}>
                             {selectedReviewMedia.sourceIds.length
                               ? `Source records not found: ${selectedReviewMedia.sourceIds.join(', ')}`
-                              : 'No linked sources. Clinical figures require evidence before approval.'}
+                              : 'No linked sources. Clinical media requires evidence before approval.'}
                           </Text>
                         )}
                       </View>
@@ -1226,7 +1309,7 @@ export function ClinicianReviewScreen({
                           <View style={styles.mediaQueueLoading}>
                             <ActivityIndicator color="#01696F" />
                             <Text style={styles.mediaQueueLoadingText}>
-                              Loading figure history…
+                              Loading media history…
                             </Text>
                           </View>
                         ) : null}
@@ -1238,7 +1321,7 @@ export function ClinicianReviewScreen({
                         {mediaVersionHistory.status === 'ready' &&
                         mediaVersionHistory.versions.length === 0 ? (
                           <Text style={styles.historyEmpty}>
-                            No immutable versions were found for this figure.
+                            No immutable versions were found for this media record.
                           </Text>
                         ) : null}
                         {mediaVersionHistory.versions.map((version) => (
@@ -1276,10 +1359,10 @@ export function ClinicianReviewScreen({
                         <View style={styles.mediaReviewControls}>
                           <Text style={styles.fieldLabel}>Clinical review notes</Text>
                           <TextInput
-                            accessibilityLabel="Clinical figure review notes"
+                            accessibilityLabel="Clinical media review notes"
                             multiline
                             onChangeText={setMediaReviewNotes}
-                            placeholder="Record the figure, linked sources, alt text, and learner-facing safety review."
+                            placeholder="Record the media, linked sources, accessibility details, and learner-facing safety review."
                             placeholderTextColor="#8B8881"
                             style={styles.notesInput}
                             textAlignVertical="top"
@@ -1290,7 +1373,7 @@ export function ClinicianReviewScreen({
                             Next clinical review date
                           </Text>
                           <TextInput
-                            accessibilityLabel="Next clinical figure review date in YYYY-MM-DD format"
+                            accessibilityLabel="Next clinical media review date in YYYY-MM-DD format"
                             autoCapitalize="none"
                             keyboardType="numbers-and-punctuation"
                             onChangeText={setMediaNextReviewDate}
@@ -1302,7 +1385,7 @@ export function ClinicianReviewScreen({
                           />
                           <Pressable
                             accessibilityRole="button"
-                            accessibilityLabel="Approve selected figure for release"
+                            accessibilityLabel="Approve selected media for release"
                             disabled={actionInFlight !== null}
                             onPress={approveSelectedMedia}
                             style={[
@@ -1314,7 +1397,7 @@ export function ClinicianReviewScreen({
                             <Text style={styles.primaryActionText}>
                               {actionInFlight === 'approve-media'
                                 ? 'Recording review…'
-                                : 'Approve figure for release'}
+                                : 'Approve media for release'}
                             </Text>
                           </Pressable>
                         </View>
@@ -1324,12 +1407,12 @@ export function ClinicianReviewScreen({
                         <View style={styles.mediaReviewControls}>
                           <Text style={styles.readyToPublishText}>
                             The required clinical review is recorded. Publishing
-                            makes this figure available to approved learner content
+                            makes this media available to approved learner content
                             that references it.
                           </Text>
                           <Pressable
                             accessibilityRole="button"
-                            accessibilityLabel="Publish selected figure for learners"
+                            accessibilityLabel="Publish selected media for learners"
                             disabled={actionInFlight !== null}
                             onPress={confirmPublishMedia}
                             style={[
@@ -1341,7 +1424,7 @@ export function ClinicianReviewScreen({
                             <Text style={styles.primaryActionText}>
                               {actionInFlight === 'publish-media'
                                 ? 'Publishing…'
-                                : 'Publish figure to learners'}
+                                : 'Publish media to learners'}
                             </Text>
                           </Pressable>
                         </View>
@@ -1451,7 +1534,37 @@ export function ClinicianReviewScreen({
                           const asset = getBundledClinicalMediaAsset(item.assetKey);
                           return (
                             <View key={item.id} style={styles.mediaPreviewCard}>
-                              {asset ? (
+                              {item.type === 'external_video' ? (
+                                <View style={styles.mediaPreviewExternalVideo}>
+                                  <Text style={styles.mediaPreviewExternalVideoLabel}>
+                                    EXTERNAL VIDEO
+                                  </Text>
+                                  <Text style={styles.mediaPreviewExternalVideoText}>
+                                    {item.publisher ?? 'Publisher pending'}
+                                    {formatMediaDuration(item.durationSeconds)
+                                      ? ` · ${formatMediaDuration(item.durationSeconds)}`
+                                      : ''}
+                                  </Text>
+                                  {item.externalUrl ? (
+                                    <Pressable
+                                      accessibilityLabel={`Open attached external video: ${item.title}`}
+                                      accessibilityRole="link"
+                                      onPress={() =>
+                                        void openExternalMediaLink(
+                                          item.externalUrl!,
+                                          'External video',
+                                        )
+                                      }
+                                      style={styles.mediaPreviewExternalVideoButton}
+                                      testID={`button-open-attached-video-${item.id}`}
+                                    >
+                                      <Text style={styles.mediaPreviewExternalVideoButtonText}>
+                                        Open video
+                                      </Text>
+                                    </Pressable>
+                                  ) : null}
+                                </View>
+                              ) : asset ? (
                                 <Image
                                   accessibilityLabel={item.altText}
                                   resizeMode="contain"
@@ -1467,7 +1580,7 @@ export function ClinicianReviewScreen({
                               )}
                               <Text style={styles.mediaPreviewTitle}>{item.title}</Text>
                               <Text style={styles.mediaPreviewMeta}>
-                                {formatState(item.publicationState)} {item.type} · {item.id}
+                                {formatState(item.publicationState)} {formatMediaType(item.type)} · {item.id}
                               </Text>
                               {item.caption ? (
                                 <Text style={styles.mediaPreviewCaption}>{item.caption}</Text>
@@ -2231,6 +2344,61 @@ const styles = StyleSheet.create({
     height: 310,
     width: '100%',
   },
+  externalVideoReviewCard: {
+    backgroundColor: '#EAF4F1',
+    borderColor: '#92BFB8',
+    borderRadius: 12,
+    borderWidth: 1,
+    marginTop: 16,
+    padding: 14,
+  },
+  externalVideoReviewEyebrow: {
+    color: '#0C4E54',
+    fontSize: 10,
+    fontWeight: '800',
+    letterSpacing: 1,
+  },
+  externalVideoReviewTitle: {
+    color: '#28251D',
+    fontSize: 16,
+    fontWeight: '800',
+    marginTop: 5,
+  },
+  externalVideoReviewDetails: {
+    color: '#365553',
+    fontSize: 13,
+    lineHeight: 19,
+    marginTop: 3,
+  },
+  externalVideoReviewButton: {
+    alignItems: 'center',
+    backgroundColor: '#0C4E54',
+    borderRadius: 9,
+    justifyContent: 'center',
+    marginTop: 14,
+    minHeight: 44,
+    paddingHorizontal: 12,
+  },
+  externalVideoReviewButtonText: {
+    color: '#FFFFFF',
+    fontSize: 13,
+    fontWeight: '800',
+  },
+  externalVideoTranscriptButton: {
+    alignItems: 'center',
+    borderColor: '#0C4E54',
+    borderRadius: 9,
+    borderWidth: 1,
+    justifyContent: 'center',
+    marginTop: 10,
+    minHeight: 44,
+    paddingHorizontal: 12,
+  },
+  externalVideoTranscriptButtonText: {
+    color: '#0C4E54',
+    fontSize: 13,
+    fontWeight: '800',
+  },
   mediaDetailsSection: {
     borderTopColor: '#E3E0DA',
     borderTopWidth: 1,
@@ -2445,6 +2613,39 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     height: 300,
     width: '100%',
+  },
+  mediaPreviewExternalVideo: {
+    backgroundColor: '#EAF4F1',
+    borderColor: '#92BFB8',
+    borderRadius: 10,
+    borderWidth: 1,
+    padding: 12,
+  },
+  mediaPreviewExternalVideoLabel: {
+    color: '#0C4E54',
+    fontSize: 10,
+    fontWeight: '800',
+    letterSpacing: 0.9,
+  },
+  mediaPreviewExternalVideoText: {
+    color: '#365553',
+    fontSize: 13,
+    lineHeight: 19,
+    marginTop: 5,
+  },
+  mediaPreviewExternalVideoButton: {
+    alignItems: 'center',
+    backgroundColor: '#0C4E54',
+    borderRadius: 8,
+    justifyContent: 'center',
+    marginTop: 12,
+    minHeight: 40,
+    paddingHorizontal: 10,
+  },
+  mediaPreviewExternalVideoButtonText: {
+    color: '#FFFFFF',
+    fontSize: 12,
+    fontWeight: '800',
   },
   mediaPreviewUnavailable: {
     alignItems: 'center',

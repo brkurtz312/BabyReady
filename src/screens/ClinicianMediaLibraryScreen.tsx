@@ -4,6 +4,7 @@ import {
   Alert,
   Image,
   KeyboardAvoidingView,
+  Linking,
   Platform,
   Pressable,
   SafeAreaView,
@@ -18,6 +19,7 @@ import { Timestamp } from 'firebase/firestore';
 
 import {
   clinicalMediaAssetKeys,
+  externalVideoAssetKey,
   getBundledClinicalMediaAsset,
 } from '../lib/clinicalMediaAssets';
 import type {
@@ -48,6 +50,11 @@ type MediaForm = {
   assetKey: string;
   altText: string;
   caption: string;
+  externalUrl: string;
+  transcriptUrl: string;
+  publisher: string;
+  language: string;
+  durationSeconds: string;
   sourceIds: string[];
   isClinicalClaim: boolean;
   lastReviewedAt: string;
@@ -61,6 +68,7 @@ type ClinicianMediaLibraryScreenProps = {
 
 const mediaTypes: Array<{ value: ClinicalMediaType; label: string }> = [
   { value: 'figure', label: 'Static figure' },
+  { value: 'external_video', label: 'External video' },
 ];
 
 const assetLabels: Record<string, string> = {
@@ -91,6 +99,11 @@ function emptyMediaForm(): MediaForm {
     assetKey: clinicalMediaAssetKeys[0] ?? '',
     altText: '',
     caption: '',
+    externalUrl: '',
+    transcriptUrl: '',
+    publisher: '',
+    language: 'en',
+    durationSeconds: '',
     sourceIds: [],
     isClinicalClaim: true,
     lastReviewedAt: today(),
@@ -137,6 +150,14 @@ function formFromMedia(media: ClinicalMedia): MediaForm {
     assetKey: media.assetKey,
     altText: media.altText,
     caption: media.caption ?? '',
+    externalUrl: media.externalUrl ?? '',
+    transcriptUrl: media.transcriptUrl ?? '',
+    publisher: media.publisher ?? '',
+    language: media.language ?? 'en',
+    durationSeconds:
+      typeof media.durationSeconds === 'number'
+        ? String(media.durationSeconds)
+        : '',
     sourceIds: media.sourceIds ?? [],
     isClinicalClaim: media.isClinicalClaim,
     lastReviewedAt: formatStoredDate(media.lastReviewedAt, today()),
@@ -232,7 +253,10 @@ export function ClinicianMediaLibraryScreen({
   const mediaAwaitingReviewCount = mediaState.media.filter(
     (media) => media.publicationState === 'submitted',
   ).length;
-  const selectedAsset = getBundledClinicalMediaAsset(form.assetKey);
+  const selectedAsset =
+    form.type === 'figure'
+      ? getBundledClinicalMediaAsset(form.assetKey)
+      : null;
 
   useEffect(() => {
     if (
@@ -251,6 +275,34 @@ export function ClinicianMediaLibraryScreen({
     value: MediaForm[Key],
   ) => {
     setForm((current) => ({ ...current, [key]: value }));
+  };
+
+  const setMediaType = (type: ClinicalMediaType) => {
+    setForm((current) => ({
+      ...current,
+      type,
+      assetKey:
+        type === 'external_video'
+          ? externalVideoAssetKey
+          : current.assetKey === externalVideoAssetKey
+            ? clinicalMediaAssetKeys[0] ?? ''
+            : current.assetKey,
+    }));
+  };
+
+  const openExternalVideo = async (url: string, label: string) => {
+    try {
+      const supported = await Linking.canOpenURL(url);
+      if (!supported) {
+        throw new Error('Unsupported URL');
+      }
+      await Linking.openURL(url);
+    } catch {
+      Alert.alert(
+        `${label} unavailable`,
+        'BabyReady could not open this external video link on your device.',
+      );
+    }
   };
 
   const selectMedia = (media: ClinicalMedia) => {
@@ -287,6 +339,11 @@ export function ClinicianMediaLibraryScreen({
           assetKey: string;
           altText: string;
           caption?: string;
+          externalUrl?: string;
+          transcriptUrl?: string;
+          publisher?: string;
+          language?: string;
+          durationSeconds?: number;
           sourceIds: string[];
           isClinicalClaim: boolean;
           lastReviewedAt?: Date;
@@ -297,16 +354,35 @@ export function ClinicianMediaLibraryScreen({
   } => {
     const lastReviewedAt = parseDate(form.lastReviewedAt);
     const nextReviewAt = parseDate(form.nextReviewAt);
+    const durationSeconds = Number.parseInt(form.durationSeconds, 10);
     if (!form.id.trim() || !form.title.trim() || !form.altText.trim()) {
       return {
         input: null,
         error: 'Media ID, title, and accessible alt text are required.',
       };
     }
-    if (!clinicalMediaAssetKeys.includes(form.assetKey)) {
+    if (
+      form.type === 'figure' &&
+      !clinicalMediaAssetKeys.includes(form.assetKey)
+    ) {
       return {
         input: null,
         error: 'Choose one of the bundled BabyReady figure assets.',
+      };
+    }
+    if (
+      form.type === 'external_video' &&
+      (!form.externalUrl.trim() ||
+        !form.transcriptUrl.trim() ||
+        !form.publisher.trim() ||
+        !form.language.trim() ||
+        !Number.isInteger(durationSeconds) ||
+        durationSeconds <= 0)
+    ) {
+      return {
+        input: null,
+        error:
+          'External videos require an original URL, transcript or captions URL, publisher, language, and duration in whole seconds.',
       };
     }
     if (form.isClinicalClaim && (!lastReviewedAt || !nextReviewAt)) {
@@ -324,6 +400,15 @@ export function ClinicianMediaLibraryScreen({
         assetKey: form.assetKey,
         altText: form.altText.trim(),
         ...(form.caption.trim() ? { caption: form.caption.trim() } : {}),
+        ...(form.type === 'external_video'
+          ? {
+              externalUrl: form.externalUrl.trim(),
+              transcriptUrl: form.transcriptUrl.trim(),
+              publisher: form.publisher.trim(),
+              language: form.language.trim(),
+              durationSeconds,
+            }
+          : {}),
         sourceIds: form.sourceIds,
         isClinicalClaim: form.isClinicalClaim,
         ...(lastReviewedAt ? { lastReviewedAt } : {}),
@@ -496,14 +581,16 @@ export function ClinicianMediaLibraryScreen({
           {access === 'authorized' ? (
             <>
               <View style={styles.governanceCard}>
-                <Text style={styles.governanceLabel}>STATIC MEDIA RELEASE</Text>
+                <Text style={styles.governanceLabel}>CLINICAL MEDIA RELEASE</Text>
                 <Text style={styles.governanceTitle}>
-                  Bundled figures require a documented clinical release review.
+                  Figures and external videos require a documented clinical release review.
                 </Text>
                 <Text style={styles.governanceText}>
                   Link published sources, save a draft, submit it for clinical
                   review, then publish the approved media from the review queue
-                  before attaching it to learner content.
+                  before attaching it to learner content. External videos open at
+                  the original YouTube or Vimeo publisher and need a transcript
+                  or captions link.
                 </Text>
               </View>
 
@@ -658,7 +745,7 @@ export function ClinicianMediaLibraryScreen({
                   value={form.title}
                 />
 
-                <Text style={styles.fieldLabel}>Media type in this release</Text>
+                  <Text style={styles.fieldLabel}>Media type in this release</Text>
                 <View style={styles.typeOptions}>
                   {mediaTypes.map((type) => {
                     const selected = type.value === form.type;
@@ -667,7 +754,7 @@ export function ClinicianMediaLibraryScreen({
                         key={type.value}
                         accessibilityLabel={`Set media type to ${type.label}`}
                         accessibilityRole="button"
-                        onPress={() => updateForm('type', type.value)}
+                        onPress={() => setMediaType(type.value)}
                         style={[
                           styles.typeOption,
                           selected && styles.typeOptionSelected,
@@ -687,62 +774,145 @@ export function ClinicianMediaLibraryScreen({
                   })}
                 </View>
 
-                <Text style={styles.fieldLabel}>Bundled figure asset</Text>
-                <Text style={styles.fieldHint}>
-                  This release uses reviewable static figures bundled in the
-                  iOS app. Audio and video are not yet uploadable. Do not use
-                  a figure record to make a clinical claim without the linked
-                  sources below.
-                </Text>
-                <View style={styles.assetOptions}>
-                  {clinicalMediaAssetKeys.map((assetKey) => {
-                    const selected = assetKey === form.assetKey;
-                    const asset = getBundledClinicalMediaAsset(assetKey);
-                    return (
+                {form.type === 'figure' ? (
+                  <>
+                    <Text style={styles.fieldLabel}>Bundled figure asset</Text>
+                    <Text style={styles.fieldHint}>
+                      This release uses reviewable static figures bundled in the
+                      iOS app. Do not use a figure record to make a clinical claim
+                      without the linked sources below.
+                    </Text>
+                    <View style={styles.assetOptions}>
+                      {clinicalMediaAssetKeys.map((assetKey) => {
+                        const selected = assetKey === form.assetKey;
+                        const asset = getBundledClinicalMediaAsset(assetKey);
+                        return (
+                          <Pressable
+                            key={assetKey}
+                            accessibilityLabel={`Use ${assetLabels[assetKey] ?? assetKey} asset`}
+                            accessibilityRole="button"
+                            onPress={() => updateForm('assetKey', assetKey)}
+                            style={[
+                              styles.assetOption,
+                              selected && styles.assetOptionSelected,
+                            ]}
+                            testID={`button-media-asset-${assetKey}`}
+                          >
+                            {asset ? (
+                              <Image
+                                accessibilityLabel={`${assetLabels[assetKey] ?? assetKey} thumbnail`}
+                                resizeMode="cover"
+                                source={asset}
+                                style={styles.assetThumbnail}
+                              />
+                            ) : null}
+                            <Text
+                              numberOfLines={2}
+                              style={[
+                                styles.assetOptionText,
+                                selected && styles.assetOptionTextSelected,
+                              ]}
+                            >
+                              {assetLabels[assetKey] ?? assetKey}
+                            </Text>
+                          </Pressable>
+                        );
+                      })}
+                    </View>
+
+                    {selectedAsset ? (
+                      <View style={styles.previewCard}>
+                        <Text style={styles.previewLabel}>CLINICIAN PREVIEW</Text>
+                        <Image
+                          accessibilityLabel={`Preview of ${form.title || assetLabels[form.assetKey] || 'selected clinical media'}`}
+                          resizeMode="contain"
+                          source={selectedAsset}
+                          style={styles.previewImage}
+                        />
+                      </View>
+                    ) : null}
+                  </>
+                ) : (
+                  <View style={styles.externalVideoPanel}>
+                    <Text style={styles.fieldLabel}>External video delivery</Text>
+                    <Text style={styles.fieldHint}>
+                      BabyReady does not host or embed this video. Learners open it
+                      at the original publisher. Only HTTPS YouTube and Vimeo links
+                      are allowed.
+                    </Text>
+                    <TextInput
+                      accessibilityLabel="Original publisher video URL"
+                      autoCapitalize="none"
+                      autoCorrect={false}
+                      keyboardType="url"
+                      onChangeText={(value) => updateForm('externalUrl', value)}
+                      placeholder="https://www.youtube.com/watch?v=..."
+                      placeholderTextColor="#8B8881"
+                      style={styles.input}
+                      value={form.externalUrl}
+                    />
+                    <TextInput
+                      accessibilityLabel="Transcript or captions URL"
+                      autoCapitalize="none"
+                      autoCorrect={false}
+                      keyboardType="url"
+                      onChangeText={(value) => updateForm('transcriptUrl', value)}
+                      placeholder="https://www.youtube.com/watch?v=..."
+                      placeholderTextColor="#8B8881"
+                      style={[styles.input, styles.videoFieldSpacing]}
+                      value={form.transcriptUrl}
+                    />
+                    <TextInput
+                      accessibilityLabel="Video publisher"
+                      onChangeText={(value) => updateForm('publisher', value)}
+                      placeholder="Centers for Disease Control and Prevention"
+                      placeholderTextColor="#8B8881"
+                      style={[styles.input, styles.videoFieldSpacing]}
+                      value={form.publisher}
+                    />
+                    <View style={styles.dateRow}>
+                      <View style={styles.dateField}>
+                        <Text style={styles.fieldLabel}>Language</Text>
+                        <TextInput
+                          accessibilityLabel="Video language"
+                          autoCapitalize="none"
+                          onChangeText={(value) => updateForm('language', value)}
+                          placeholder="en"
+                          placeholderTextColor="#8B8881"
+                          style={styles.input}
+                          value={form.language}
+                        />
+                      </View>
+                      <View style={styles.dateField}>
+                        <Text style={styles.fieldLabel}>Duration seconds</Text>
+                        <TextInput
+                          accessibilityLabel="Video duration in whole seconds"
+                          keyboardType="number-pad"
+                          onChangeText={(value) => updateForm('durationSeconds', value)}
+                          placeholder="480"
+                          placeholderTextColor="#8B8881"
+                          style={styles.input}
+                          value={form.durationSeconds}
+                        />
+                      </View>
+                    </View>
+                    {form.externalUrl.trim() ? (
                       <Pressable
-                        key={assetKey}
-                        accessibilityLabel={`Use ${assetLabels[assetKey] ?? assetKey} asset`}
+                        accessibilityLabel="Open external video preview"
                         accessibilityRole="button"
-                        onPress={() => updateForm('assetKey', assetKey)}
-                        style={[
-                          styles.assetOption,
-                          selected && styles.assetOptionSelected,
-                        ]}
-                        testID={`button-media-asset-${assetKey}`}
+                        onPress={() =>
+                          void openExternalVideo(form.externalUrl.trim(), 'Video preview')
+                        }
+                        style={styles.previewExternalVideoButton}
+                        testID="button-preview-external-video"
                       >
-                        {asset ? (
-                          <Image
-                            accessibilityLabel={`${assetLabels[assetKey] ?? assetKey} thumbnail`}
-                            resizeMode="cover"
-                            source={asset}
-                            style={styles.assetThumbnail}
-                          />
-                        ) : null}
-                        <Text
-                          numberOfLines={2}
-                          style={[
-                            styles.assetOptionText,
-                            selected && styles.assetOptionTextSelected,
-                          ]}
-                        >
-                          {assetLabels[assetKey] ?? assetKey}
+                        <Text style={styles.previewExternalVideoButtonText}>
+                          Open video for clinician preview
                         </Text>
                       </Pressable>
-                    );
-                  })}
-                </View>
-
-                {selectedAsset ? (
-                  <View style={styles.previewCard}>
-                    <Text style={styles.previewLabel}>CLINICIAN PREVIEW</Text>
-                    <Image
-                      accessibilityLabel={`Preview of ${form.title || assetLabels[form.assetKey] || 'selected clinical media'}`}
-                      resizeMode="contain"
-                      source={selectedAsset}
-                      style={styles.previewImage}
-                    />
+                    ) : null}
                   </View>
-                ) : null}
+                )}
 
                 <Text style={styles.fieldLabel}>Accessible alt text</Text>
                 <TextInput
@@ -958,9 +1128,9 @@ export function ClinicianMediaLibraryScreen({
                   ) : (
                     <Text style={styles.workflowHint}>
                       {selectedMedia.publicationState === 'submitted'
-                        ? 'This figure is in the clinical review queue.'
+                        ? 'This media record is in the clinical review queue.'
                         : selectedMedia.publicationState === 'approved'
-                          ? 'This figure is approved and ready to publish from the clinical review queue.'
+                          ? 'This media record is approved and ready to publish from the clinical review queue.'
                           : 'Frozen media must be revised as a draft before it can return to review.'}
                     </Text>
                   )}
@@ -1402,6 +1572,31 @@ const styles = StyleSheet.create({
     height: 330,
     marginTop: 9,
     width: '100%',
+  },
+  externalVideoPanel: {
+    backgroundColor: '#F4F2EE',
+    borderColor: '#D4D1CA',
+    borderRadius: 12,
+    borderWidth: 1,
+    marginTop: 14,
+    padding: 14,
+  },
+  videoFieldSpacing: {
+    marginTop: 10,
+  },
+  previewExternalVideoButton: {
+    alignItems: 'center',
+    backgroundColor: '#0C4E54',
+    borderRadius: 9,
+    justifyContent: 'center',
+    marginTop: 14,
+    minHeight: 44,
+    paddingHorizontal: 12,
+  },
+  previewExternalVideoButtonText: {
+    color: '#FFFFFF',
+    fontSize: 13,
+    fontWeight: '800',
   },
   claimToggle: {
     alignItems: 'center',

@@ -99,20 +99,51 @@ service cloud.firestore {
         );
     }
 
+    function validExternalVideoUrl(url) {
+      return url is string
+        && (
+          url.matches('^https://(www[.])?youtube[.]com/.*$')
+          || url.matches('^https://m[.]youtube[.]com/.*$')
+          || url.matches('^https://youtu[.]be/.*$')
+          || url.matches('^https://(www[.])?vimeo[.]com/.*$')
+        );
+    }
+
+    function validExternalVideoFields(media) {
+      return media.externalUrl is string
+        && validExternalVideoUrl(media.externalUrl)
+        && media.transcriptUrl is string
+        && validExternalVideoUrl(media.transcriptUrl)
+        && media.publisher is string
+        && media.publisher.size() > 0
+        && media.language is string
+        && media.language.size() > 0
+        && media.durationSeconds is int
+        && media.durationSeconds > 0;
+    }
+
+    function validClinicalMediaDelivery(media) {
+      return (
+          media.type == 'figure'
+          && media.assetKey in [
+            'early-pregnancy-care-timeline',
+            'folic-acid-early-pregnancy',
+            'nausea-support-ideas',
+            'bleeding-during-pregnancy-contact-care',
+            'urgent-maternal-warning-signs-get-help-now'
+          ]
+        )
+        || (
+          media.type == 'external_video'
+          && media.assetKey == 'external-video'
+          && validExternalVideoFields(media)
+        );
+    }
+
     function validClinicalMediaRecord(mediaId) {
       return request.resource.data.id == mediaId
         && request.resource.data.title is string
-        // These bundled assets are static figures. Broader
-        // image, audio, and video support will require separate storage and
-        // delivery controls before the allowable type set is expanded.
-        && request.resource.data.type == 'figure'
-        && request.resource.data.assetKey in [
-          'early-pregnancy-care-timeline',
-          'folic-acid-early-pregnancy',
-          'nausea-support-ideas',
-          'bleeding-during-pregnancy-contact-care',
-          'urgent-maternal-warning-signs-get-help-now'
-        ]
+        && validClinicalMediaDelivery(request.resource.data)
         && request.resource.data.altText is string
         && request.resource.data.sourceIds is list
         && request.resource.data.isClinicalClaim is bool
@@ -145,14 +176,7 @@ service cloud.firestore {
         && request.resource.data.snapshot is map
         && request.resource.data.snapshot.mediaId == mediaId
         && request.resource.data.snapshot.title is string
-        && request.resource.data.snapshot.type == 'figure'
-        && request.resource.data.snapshot.assetKey in [
-          'early-pregnancy-care-timeline',
-          'folic-acid-early-pregnancy',
-          'nausea-support-ideas',
-          'bleeding-during-pregnancy-contact-care',
-          'urgent-maternal-warning-signs-get-help-now'
-        ]
+        && validClinicalMediaDelivery(request.resource.data.snapshot)
         && request.resource.data.snapshot.altText is string
         && request.resource.data.snapshot.sourceIds is list
         && request.resource.data.snapshot.isClinicalClaim is bool

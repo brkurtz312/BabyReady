@@ -12,7 +12,10 @@ import {
   type Unsubscribe,
 } from 'firebase/firestore';
 
-import { clinicalMediaAssetKeys } from '../lib/clinicalMediaAssets';
+import {
+  clinicalMediaAssetKeys,
+  externalVideoAssetKey,
+} from '../lib/clinicalMediaAssets';
 import { db, requireAuth, requireFirestore } from '../lib/firebase';
 import type {
   ClinicalMedia,
@@ -29,6 +32,11 @@ export type SaveClinicalMediaInput = {
   assetKey: string;
   altText: string;
   caption?: string;
+  externalUrl?: string;
+  transcriptUrl?: string;
+  publisher?: string;
+  language?: string;
+  durationSeconds?: number;
   sourceIds: string[];
   isClinicalClaim: boolean;
   lastReviewedAt?: Date;
@@ -69,6 +77,37 @@ function readableMediaError(error: unknown): string {
   return 'BabyReady could not load the clinical media library.';
 }
 
+const approvedExternalVideoHosts = new Set([
+  'youtube.com',
+  'www.youtube.com',
+  'm.youtube.com',
+  'youtu.be',
+  'vimeo.com',
+  'www.vimeo.com',
+]);
+
+function validateExternalVideoUrl(value: string | undefined, label: string): void {
+  if (!value?.trim()) {
+    throw new Error(`${label} is required for an external video.`);
+  }
+
+  let parsed: URL;
+  try {
+    parsed = new URL(value.trim());
+  } catch {
+    throw new Error(`${label} must be a valid HTTPS URL.`);
+  }
+
+  if (
+    parsed.protocol !== 'https:' ||
+    !approvedExternalVideoHosts.has(parsed.hostname.toLowerCase())
+  ) {
+    throw new Error(
+      `${label} must use HTTPS and point to an approved YouTube or Vimeo host.`,
+    );
+  }
+}
+
 function validateMediaInput(input: SaveClinicalMediaInput): void {
   if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(input.id)) {
     throw new Error('Use lowercase letters, numbers, and single hyphens for the media ID.');
@@ -76,25 +115,41 @@ function validateMediaInput(input: SaveClinicalMediaInput): void {
   if (!input.title.trim() || !input.altText.trim()) {
     throw new Error('A media title and accessible alt text are required.');
   }
-  if (input.type !== 'figure') {
-    throw new Error(
-      'This BabyReady release supports the bundled static figures only. Audio and video records need a future hosted-media release.',
-    );
-  }
-  if (!clinicalMediaAssetKeys.includes(input.assetKey)) {
-    throw new Error(
-      'Choose one of the bundled BabyReady figure assets before saving this record.',
-    );
+  if (input.type === 'figure') {
+    if (!clinicalMediaAssetKeys.includes(input.assetKey)) {
+      throw new Error(
+        'Choose one of the bundled BabyReady figure assets before saving this record.',
+      );
+    }
+  } else if (input.type === 'external_video') {
+    if (input.assetKey !== externalVideoAssetKey) {
+      throw new Error('External videos must use the controlled external-video delivery type.');
+    }
+    if (!input.publisher?.trim() || !input.language?.trim()) {
+      throw new Error(
+        'External videos require a publisher and language before they can be saved.',
+      );
+    }
+    if (
+      !Number.isInteger(input.durationSeconds) ||
+      (input.durationSeconds ?? 0) <= 0
+    ) {
+      throw new Error('External videos require a duration in whole seconds.');
+    }
+    validateExternalVideoUrl(input.externalUrl, 'Original publisher video URL');
+    validateExternalVideoUrl(input.transcriptUrl, 'Transcript or captions URL');
+  } else {
+    throw new Error('This media type is not supported by the current BabyReady release.');
   }
   if (input.sourceIds.some((sourceId) => !sourceId.trim())) {
     throw new Error('Remove any empty source attachments before saving.');
   }
   if (input.isClinicalClaim) {
     if (!input.sourceIds.length) {
-      throw new Error('Clinical figures need at least one linked source before publication.');
+      throw new Error('Clinical media needs at least one linked source before publication.');
     }
     if (!input.lastReviewedAt || !input.nextReviewAt) {
-      throw new Error('Clinical figures need last and next review dates.');
+      throw new Error('Clinical media needs last and next review dates.');
     }
     if (input.nextReviewAt.getTime() <= input.lastReviewedAt.getTime()) {
       throw new Error('The next review date must be later than the last review date.');
@@ -138,6 +193,24 @@ function versionSnapshot(
     altText: typeof media.altText === 'string' ? media.altText : '',
     ...(typeof media.caption === 'string' && media.caption.trim()
       ? { caption: media.caption.trim() }
+      : {}),
+    ...(media.type === 'external_video' &&
+    typeof media.externalUrl === 'string' &&
+    media.externalUrl.trim() &&
+    typeof media.transcriptUrl === 'string' &&
+    media.transcriptUrl.trim() &&
+    typeof media.publisher === 'string' &&
+    media.publisher.trim() &&
+    typeof media.language === 'string' &&
+    media.language.trim() &&
+    typeof media.durationSeconds === 'number'
+      ? {
+          externalUrl: media.externalUrl.trim(),
+          transcriptUrl: media.transcriptUrl.trim(),
+          publisher: media.publisher.trim(),
+          language: media.language.trim(),
+          durationSeconds: media.durationSeconds,
+        }
       : {}),
     sourceIds: Array.isArray(media.sourceIds) ? media.sourceIds : [],
     isClinicalClaim: media.isClinicalClaim === true,
@@ -371,6 +444,16 @@ export async function saveClinicalMediaDraft(
       assetKey: input.assetKey,
       altText: input.altText.trim(),
       ...(input.caption?.trim() ? { caption: input.caption.trim() } : {}),
+      externalUrl:
+        input.type === 'external_video' ? input.externalUrl?.trim() ?? null : null,
+      transcriptUrl:
+        input.type === 'external_video' ? input.transcriptUrl?.trim() ?? null : null,
+      publisher:
+        input.type === 'external_video' ? input.publisher?.trim() ?? null : null,
+      language:
+        input.type === 'external_video' ? input.language?.trim() ?? null : null,
+      durationSeconds:
+        input.type === 'external_video' ? input.durationSeconds ?? null : null,
       sourceIds: input.sourceIds,
       isClinicalClaim: input.isClinicalClaim,
       publicationState: 'draft',
@@ -412,6 +495,11 @@ export async function submitClinicalMediaForClinicalReview(
     assetKey: media.assetKey,
     altText: media.altText,
     caption: media.caption,
+    externalUrl: media.externalUrl ?? undefined,
+    transcriptUrl: media.transcriptUrl ?? undefined,
+    publisher: media.publisher ?? undefined,
+    language: media.language ?? undefined,
+    durationSeconds: media.durationSeconds ?? undefined,
     sourceIds: media.sourceIds ?? [],
     isClinicalClaim: media.isClinicalClaim,
     lastReviewedAt: dateFromUnknown(media.lastReviewedAt),
@@ -461,7 +549,7 @@ export async function approveClinicalMedia(
   }
   if (media.isClinicalClaim) {
     if (!media.sourceIds?.length) {
-      throw new Error('Clinical figures need at least one linked source before approval.');
+      throw new Error('Clinical media needs at least one linked source before approval.');
     }
     await ensurePublishedSources(media.sourceIds);
   }
