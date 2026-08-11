@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
@@ -68,7 +68,12 @@ const learnerCardTitles: Record<string, string> = {
   'healthy-pregnancy-tips-cdc-video': 'Healthy Pregnancy Tips',
 };
 
-function titleForBlock(block: ClinicalContentBlock): string | null {
+function titleForBlock(block: ClinicalContentBlock): string {
+  const authoredTitle = block.title?.trim();
+  if (authoredTitle) {
+    return authoredTitle;
+  }
+
   const learnerTitle = learnerCardTitles[block.id];
   if (learnerTitle) {
     return learnerTitle;
@@ -85,13 +90,22 @@ function titleForBlock(block: ClinicalContentBlock): string | null {
       return 'Get help now';
     case 'citation':
       return 'More context';
+    case 'figure':
+      return 'Figure';
+    case 'video':
+      return 'Video';
+    case 'audio':
+      return 'Audio';
+    case 'artifact_prompt':
+      return 'Your next step';
+    case 'text':
     default:
-      return null;
+      return 'Lesson content';
   }
 }
 
 function readerTitleForBlock(block: ClinicalContentBlock): string {
-  return titleForBlock(block) ?? 'Lesson content';
+  return titleForBlock(block);
 }
 
 function checklistItems(body: string): string[] {
@@ -299,6 +313,7 @@ function LessonBlock({
   onToggleChecklistItem,
   onOpenCard,
   onOpenFigure,
+  onLayout,
   sourcesById,
 }: {
   block: ClinicalContentBlock;
@@ -307,6 +322,7 @@ function LessonBlock({
   onToggleChecklistItem: (itemKey: string) => void;
   onOpenCard: (block: ClinicalContentBlock) => void;
   onOpenFigure: (media: ClinicalMedia) => void;
+  onLayout?: (event: { nativeEvent: { layout: { y: number } } }) => void;
   sourcesById: Map<string, ContentSource>;
 }) {
   const items = block.type === 'checklist' ? checklistItems(block.body) : [];
@@ -322,20 +338,17 @@ function LessonBlock({
         block.type === 'callout' && styles.calloutBlock,
         block.type === 'emergency_card' && styles.emergencyBlock,
       ]}
+      onLayout={onLayout}
     >
       <View style={styles.blockHeader}>
-        {title ? (
-          <Text
-            style={[
-              styles.blockTitle,
-              block.type === 'emergency_card' && styles.emergencyBlockTitle,
-            ]}
-          >
-            {title}
-          </Text>
-        ) : (
-          <View />
-        )}
+        <Text
+          style={[
+            styles.blockTitle,
+            block.type === 'emergency_card' && styles.emergencyBlockTitle,
+          ]}
+        >
+          {title}
+        </Text>
         <Pressable
           accessibilityHint="Opens the full lesson card, including its text, figure, and clinical source."
           accessibilityLabel={`View full card: ${readerTitleForBlock(block)}`}
@@ -642,11 +655,19 @@ export function LearnerCoursePlayerScreen({
   const [attachmentsError, setAttachmentsError] = useState<string | null>(null);
   const [expandedBlock, setExpandedBlock] = useState<ClinicalContentBlock | null>(null);
   const [expandedFigure, setExpandedFigure] = useState<ClinicalMedia | null>(null);
+  const [expandedTopicLessonKey, setExpandedTopicLessonKey] = useState<string | null>(
+    null,
+  );
   const [checkedItemsByBlock, setCheckedItemsByBlock] = useState<
     Record<string, string[]>
   >({});
   const [cardToRestoreAfterFigure, setCardToRestoreAfterFigure] =
     useState<ClinicalContentBlock | null>(null);
+  const phoneReadingScrollRef = useRef<ScrollView>(null);
+  const tabletReadingScrollRef = useRef<ScrollView>(null);
+  const topicBlockOffsetsRef = useRef<Record<string, number>>({});
+  const [readingTop, setReadingTop] = useState(0);
+  const [blockListTop, setBlockListTop] = useState(0);
 
   const toggleChecklistItem = (blockId: string, itemKey: string) => {
     setCheckedItemsByBlock((current) => {
@@ -674,6 +695,37 @@ export function LearnerCoursePlayerScreen({
       setExpandedBlock(cardToRestoreAfterFigure);
       setCardToRestoreAfterFigure(null);
     }
+  };
+
+  const scrollToTopic = (blockId: string) => {
+    const blockTop = topicBlockOffsetsRef.current[blockId];
+    if (typeof blockTop !== 'number') {
+      return;
+    }
+
+    const y = Math.max(0, readingTop + blockListTop + blockTop - 12);
+    const reader = isTabletLayout ? tabletReadingScrollRef : phoneReadingScrollRef;
+    reader.current?.scrollTo({ y, animated: true });
+  };
+
+  const openLessonTopics = (item: SelectedLesson) => {
+    const nextLessonKey = lessonKey(item);
+    const alreadySelected = nextLessonKey === selectedLessonKey;
+
+    if (alreadySelected) {
+      setExpandedTopicLessonKey((current) =>
+        current === nextLessonKey ? null : nextLessonKey,
+      );
+      return;
+    }
+
+    topicBlockOffsetsRef.current = {};
+    setReadingTop(0);
+    setBlockListTop(0);
+    setSelectedLessonKey(nextLessonKey);
+    setExpandedTopicLessonKey(nextLessonKey);
+    const reader = isTabletLayout ? tabletReadingScrollRef : phoneReadingScrollRef;
+    requestAnimationFrame(() => reader.current?.scrollTo({ y: 0, animated: false }));
   };
 
   useEffect(() => {
@@ -736,50 +788,98 @@ export function LearnerCoursePlayerScreen({
       {allLessons.map((item, index) => {
         const selected = lessonKey(item) === lessonKey(selectedLesson);
         return (
-          <Pressable
-            accessibilityLabel={`Open lesson ${index + 1}: ${item.lesson.title}`}
-            accessibilityRole="button"
-            key={lessonKey(item)}
-            onPress={() => setSelectedLessonKey(lessonKey(item))}
-            style={[
-              styles.lessonButton,
-              selected && styles.lessonButtonSelected,
-            ]}
-            testID={`button-open-lesson-${item.module.id}-${item.lesson.id}`}
-          >
-            <Text
+          <View key={lessonKey(item)} style={styles.lessonNavigationItem}>
+            <Pressable
+              accessibilityHint={
+                selected && expandedTopicLessonKey === lessonKey(item)
+                  ? 'Collapses the list of lesson topics.'
+                  : 'Shows the lesson topics. Tap a topic to move to that card.'
+              }
+              accessibilityLabel={`Open lesson ${index + 1}: ${item.lesson.title}`}
+              accessibilityRole="button"
+              onPress={() => openLessonTopics(item)}
               style={[
-                styles.lessonNumber,
-                selected && styles.lessonNumberSelected,
+                styles.lessonButton,
+                selected && styles.lessonButtonSelected,
               ]}
+              testID={`button-open-lesson-${item.module.id}-${item.lesson.id}`}
             >
-              {index + 1}
-            </Text>
-            <View style={styles.lessonButtonContent}>
               <Text
                 style={[
-                  styles.lessonModule,
-                  selected && styles.lessonModuleSelected,
+                  styles.lessonNumber,
+                  selected && styles.lessonNumberSelected,
                 ]}
               >
-                {item.module.title}
+                {index + 1}
               </Text>
+              <View style={styles.lessonButtonContent}>
+                <Text
+                  style={[
+                    styles.lessonModule,
+                    selected && styles.lessonModuleSelected,
+                  ]}
+                >
+                  {item.module.title}
+                </Text>
+                <Text
+                  style={[
+                    styles.lessonButtonTitle,
+                    selected && styles.lessonButtonTitleSelected,
+                  ]}
+                >
+                  {item.lesson.title}
+                </Text>
+              </View>
               <Text
+                accessibilityElementsHidden
+                importantForAccessibility="no"
                 style={[
-                  styles.lessonButtonTitle,
-                  selected && styles.lessonButtonTitleSelected,
+                  styles.lessonExpandIcon,
+                  selected && styles.lessonExpandIconSelected,
                 ]}
               >
-                {item.lesson.title}
+                {selected && expandedTopicLessonKey === lessonKey(item) ? '−' : '+'}
               </Text>
-            </View>
-          </Pressable>
+            </Pressable>
+
+            {selected &&
+            expandedTopicLessonKey === lessonKey(item) &&
+            lessonState.status === 'ready' ? (
+              <View
+                accessibilityLabel={`Topics in ${item.lesson.title}`}
+                style={styles.topicOutline}
+              >
+                <Text style={styles.topicOutlineLabel}>TOPICS IN THIS LESSON</Text>
+                {lessonState.blocks.map((block, topicIndex) => (
+                  <Pressable
+                    accessibilityHint="Scrolls to this topic card in the lesson."
+                    accessibilityLabel={`Go to topic ${topicIndex + 1}: ${titleForBlock(
+                      block,
+                    )}`}
+                    accessibilityRole="button"
+                    key={block.id}
+                    onPress={() => scrollToTopic(block.id)}
+                    style={styles.topicButton}
+                    testID={`button-scroll-to-topic-${block.id}`}
+                  >
+                    <Text style={styles.topicNumber}>{topicIndex + 1}</Text>
+                    <Text style={styles.topicTitle}>{titleForBlock(block)}</Text>
+                  </Pressable>
+                ))}
+                {lessonState.blocks.length === 0 ? (
+                  <Text style={styles.topicLoadingText}>
+                    Loading lesson topics…
+                  </Text>
+                ) : null}
+              </View>
+            ) : null}
+          </View>
         );
       })}
     </View>
   ) : null;
   const lessonReading = selectedLesson ? (
-    <View>
+    <View onLayout={(event) => setReadingTop(event.nativeEvent.layout.y)}>
       <View
         style={[
           styles.lessonHeader,
@@ -833,7 +933,10 @@ export function LearnerCoursePlayerScreen({
         </View>
       ) : null}
 
-      <View style={styles.blockList}>
+      <View
+        onLayout={(event) => setBlockListTop(event.nativeEvent.layout.y)}
+        style={styles.blockList}
+      >
         {lessonState.blocks.map((block) => (
           <LessonBlock
             block={block}
@@ -845,6 +948,9 @@ export function LearnerCoursePlayerScreen({
             }
             onOpenCard={setExpandedBlock}
             onOpenFigure={setExpandedFigure}
+            onLayout={(event) => {
+              topicBlockOffsetsRef.current[block.id] = event.nativeEvent.layout.y;
+            }}
             sourcesById={sourcesById}
           />
         ))}
@@ -908,6 +1014,7 @@ export function LearnerCoursePlayerScreen({
               </ScrollView>
               <ScrollView
                 contentContainerStyle={styles.tabletReadingScrollContent}
+                ref={tabletReadingScrollRef}
                 showsVerticalScrollIndicator
                 style={styles.tabletReadingScroll}
               >
@@ -928,7 +1035,11 @@ export function LearnerCoursePlayerScreen({
           )}
         </View>
       ) : (
-        <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+        <ScrollView
+          contentContainerStyle={styles.content}
+          ref={phoneReadingScrollRef}
+          showsVerticalScrollIndicator={false}
+        >
           {courseHeader}
           {!selectedLesson ? (
             unpreparedLessonState
@@ -1007,6 +1118,9 @@ const styles = StyleSheet.create({
   lessonNavigation: {
     gap: 8,
     marginTop: 25,
+  },
+  lessonNavigationItem: {
+    gap: 8,
   },
   tabletLessonNavigation: {
     marginTop: 0,
@@ -1106,6 +1220,18 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 10,
   },
+  lessonExpandIcon: {
+    color: '#59564E',
+    fontSize: 24,
+    fontWeight: '500',
+    lineHeight: 28,
+    marginLeft: 8,
+    textAlign: 'center',
+    width: 24,
+  },
+  lessonExpandIconSelected: {
+    color: '#0C4E54',
+  },
   lessonModule: {
     color: '#77746D',
     fontSize: 11,
@@ -1122,6 +1248,57 @@ const styles = StyleSheet.create({
   },
   lessonButtonTitleSelected: {
     color: '#0C4E54',
+  },
+  topicOutline: {
+    backgroundColor: '#F0F6F4',
+    borderColor: '#B5D2CC',
+    borderLeftColor: '#63A7A1',
+    borderLeftWidth: 3,
+    borderRadius: 10,
+    borderWidth: 1,
+    gap: 6,
+    marginLeft: 10,
+    padding: 12,
+  },
+  topicOutlineLabel: {
+    color: '#0C4E54',
+    fontSize: 10,
+    fontWeight: '800',
+    letterSpacing: 0.8,
+    marginBottom: 2,
+  },
+  topicButton: {
+    alignItems: 'center',
+    borderRadius: 8,
+    flexDirection: 'row',
+    gap: 8,
+    minHeight: 38,
+    paddingHorizontal: 4,
+    paddingVertical: 5,
+  },
+  topicNumber: {
+    alignItems: 'center',
+    backgroundColor: '#DCEBE7',
+    borderRadius: 10,
+    color: '#0C4E54',
+    fontSize: 11,
+    fontWeight: '800',
+    height: 20,
+    lineHeight: 20,
+    textAlign: 'center',
+    width: 20,
+  },
+  topicTitle: {
+    color: '#365553',
+    flex: 1,
+    fontSize: 13,
+    fontWeight: '700',
+    lineHeight: 18,
+  },
+  topicLoadingText: {
+    color: '#5D6966',
+    fontSize: 13,
+    lineHeight: 18,
   },
   lessonHeader: {
     marginTop: 27,

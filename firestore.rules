@@ -37,6 +37,16 @@ service cloud.firestore {
 
     function validClinicalContentBlock() {
       return isPublicationState(request.resource.data.publicationState)
+        // Legacy published cards predate explicit titles. The authoring flow
+        // requires a title for all new work, while this optional rule preserves
+        // safe review and publication updates for those historical records.
+        && (
+          !request.resource.data.keys().hasAny(['title'])
+          || (
+            request.resource.data.title is string
+            && request.resource.data.title.size() > 0
+          )
+        )
         && request.resource.data.mediaIds is list
         && (
           !request.resource.data.keys().hasAny(['displayOrder'])
@@ -84,6 +94,13 @@ service cloud.firestore {
         && request.resource.data.createdAt is timestamp
         && request.resource.data.snapshot is map
         && request.resource.data.snapshot.contentBlockId == contentBlockId
+        && (
+          !request.resource.data.snapshot.keys().hasAny(['title'])
+          || (
+            request.resource.data.snapshot.title is string
+            && request.resource.data.snapshot.title.size() > 0
+          )
+        )
         && request.resource.data.snapshot.type is string
         && request.resource.data.snapshot.body is string
         && request.resource.data.snapshot.sourceIds is list

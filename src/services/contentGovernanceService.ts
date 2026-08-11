@@ -57,6 +57,11 @@ function validateContentBlockInput(input: UpsertContentBlockInput): void {
   if (!input.body.trim()) {
     throw new Error('Add learner-facing content before saving this block.');
   }
+  if (!input.title?.trim()) {
+    throw new Error(
+      'Add a concise learner-facing title before saving this content block.',
+    );
+  }
   if (
     !Number.isInteger(input.displayOrder) ||
     (input.displayOrder ?? 0) < 1
@@ -133,6 +138,9 @@ function snapshotForVersion(
   return {
     contentBlockId:
       typeof content.id === 'string' ? content.id : fallbackId,
+    ...(typeof content.title === 'string' && content.title.trim()
+      ? { title: content.title.trim() }
+      : {}),
     type: content.type ?? 'text',
     body: typeof content.body === 'string' ? content.body : '',
     sourceIds: Array.isArray(content.sourceIds) ? content.sourceIds : [],
@@ -297,6 +305,11 @@ export async function submitContentBlockForClinicalReview(
   const content = snapshot.data() as Partial<ClinicalContentBlock>;
   if (!content.body?.trim()) {
     throw new Error('Add learner-facing content before submitting this block.');
+  }
+  if (!content.title?.trim()) {
+    throw new Error(
+      'Add a concise learner-facing title before submitting this block.',
+    );
   }
   if (content.isClinicalClaim) {
     if (!content.sourceIds?.length) {

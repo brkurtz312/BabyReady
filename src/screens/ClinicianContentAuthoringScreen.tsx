@@ -39,6 +39,7 @@ type ContentForm = {
   moduleId: string;
   lessonId: string;
   id: string;
+  title: string;
   displayOrder: string;
   type: ContentBlockType;
   body: string;
@@ -72,6 +73,7 @@ function emptyContentForm(): ContentForm {
     moduleId: '',
     lessonId: '',
     id: '',
+    title: '',
     displayOrder: '1',
     type: 'text',
     body: '',
@@ -87,6 +89,7 @@ function formFromBlock(block: ClinicalContentBlock): ContentForm {
     moduleId: block.moduleId,
     lessonId: block.lessonId,
     id: block.id,
+    title: block.title ?? '',
     displayOrder: String(block.displayOrder ?? 1),
     type: block.type,
     body: block.body,
@@ -247,6 +250,7 @@ export function ClinicianContentAuthoringScreen({
       moduleId: form.moduleId.trim(),
       lessonId: form.lessonId.trim(),
       id: form.id.trim(),
+      title: form.title.trim(),
       body: form.body.trim(),
     };
     const stableId = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
@@ -273,6 +277,12 @@ export function ClinicianContentAuthoringScreen({
       return {
         input: null,
         error: 'Add learner-facing content before saving this block.',
+      };
+    }
+    if (!normalized.title) {
+      return {
+        input: null,
+        error: 'Add a concise learner-facing title before saving this block.',
       };
     }
     if (!Number.isInteger(displayOrder) || displayOrder < 1) {
@@ -521,6 +531,22 @@ export function ClinicianContentAuthoringScreen({
                 testID="input-content-block-id"
                 value={form.id}
               />
+
+              <Text style={styles.fieldLabel}>Learner card title</Text>
+              <TextInput
+                accessibilityHint="A short, plain-language topic title shown on the learner card and lesson topic list."
+                accessibilityLabel="Learner card title"
+                autoCapitalize="sentences"
+                onChangeText={(value) => updateForm('title', value)}
+                placeholder="Healthy Pregnancy Tips"
+                placeholderTextColor="#8B8881"
+                style={styles.input}
+                testID="input-content-title"
+                value={form.title}
+              />
+              <Text style={styles.fieldHint}>
+                Required for new cards. Keep it short enough to scan in a lesson topic list.
+              </Text>
 
               <Text style={styles.fieldLabel}>Learner display order</Text>
               <TextInput

@@ -52,6 +52,7 @@ const clinicalBlock = (overrides = {}) => ({
   courseId: 'birthready',
   moduleId: 'module-1',
   lessonId: 'lesson-1',
+  title: 'Welcome',
   displayOrder: 1,
   type: 'text',
   body: 'Clinically reviewed educational copy.',
@@ -260,6 +261,7 @@ test('clinical content version history is admin-readable and append-only', async
     createdAt: Timestamp.fromDate(new Date('2026-08-05T00:00:00.000Z')),
     snapshot: {
       contentBlockId: 'welcome',
+      title: 'Welcome',
       displayOrder: 1,
       type: 'text',
       body: 'Draft learner-facing educational copy.',
@@ -296,6 +298,12 @@ test('learner display order must be a positive whole number and is auditable', a
       clinicalBlock({ id: 'invalid-order', displayOrder: 0 }),
     ),
   );
+  await assertFails(
+    setDoc(
+      doc(admin, `${blockPath}-missing-title`),
+      clinicalBlock({ id: 'invalid-title', title: 42 }),
+    ),
+  );
 
   await assertSucceeds(
     setDoc(doc(admin, versionPath), {
@@ -306,6 +314,7 @@ test('learner display order must be a positive whole number and is auditable', a
       createdAt: Timestamp.fromDate(new Date('2026-08-08T00:00:00.000Z')),
       snapshot: {
         contentBlockId: 'welcome',
+        title: 'Welcome',
         displayOrder: 2,
         type: 'text',
         body: 'Clinically reviewed educational copy.',

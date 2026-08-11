@@ -96,6 +96,11 @@ export type ClinicalContentBlock = {
   moduleId: string;
   lessonId: string;
   /**
+   * Short learner-facing card label. Legacy published records may omit this
+   * field, but newly authored blocks must provide one before review.
+   */
+  title?: string;
+  /**
    * Clinician-controlled sequence within a learner lesson. Lower numbers
    * appear first; legacy blocks without this field use a stable ID fallback.
    */
@@ -139,6 +144,7 @@ export type ClinicalContentVersion = {
   note?: string;
   snapshot: {
     contentBlockId: string;
+    title?: string;
     type: ClinicalContentBlock['type'];
     body: string;
     sourceIds: string[];
