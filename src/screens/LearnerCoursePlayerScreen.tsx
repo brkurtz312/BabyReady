@@ -65,6 +65,7 @@ const learnerCardTitles: Record<string, string> = {
   'folic-acid-early-pregnancy-figure': 'Folic Acid in Early Pregnancy',
   'your-first-prenatal-visit-overview': 'Your First Prenatal Visit',
   'first-prenatal-visit-preparation-checklist': 'Bring What You Know',
+  'healthy-pregnancy-tips-cdc-video': 'Healthy Pregnancy Tips',
 };
 
 function titleForBlock(block: ClinicalContentBlock): string | null {
