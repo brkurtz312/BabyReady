@@ -29,6 +29,7 @@ import {
   subscribeToClinicalMediaLibrary,
   type ClinicalMediaLibraryState,
 } from '../services/clinicalMediaService';
+import { useClinicianWorkspace } from '../lib/clinicianWorkspace';
 
 type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
 type AuthoringAction = 'save' | 'submit' | null;
@@ -110,6 +111,7 @@ export function ClinicianContentAuthoringScreen({
   onExit,
   initialBlock = null,
 }: ClinicianContentAuthoringScreenProps) {
+  const isWorkspace = useClinicianWorkspace();
   const [access, setAccess] = useState<AccessState>('checking');
   const [sourceLibrary, setSourceLibrary] = useState<SourceLibraryState>({
     status: 'loading',
@@ -391,76 +393,48 @@ export function ClinicianContentAuthoringScreen({
     );
   };
 
-  return (
-    <SafeAreaView style={styles.safeArea}>
-      <ScrollView
-        contentContainerStyle={styles.content}
-        showsVerticalScrollIndicator={false}
-      >
-        <View style={styles.header}>
-          <Pressable
-            accessibilityLabel="Return to clinical content review"
-            accessibilityRole="button"
-            hitSlop={8}
-            onPress={onExit}
-            style={styles.backButton}
-            testID="button-return-to-clinical-review"
-          >
-            <Text style={styles.backButtonText}>Back to content review</Text>
-          </Pressable>
-          <Text style={styles.brand}>BABYREADY / AUTHOR</Text>
-        </View>
+  const screenHeader = (
+    <>
+      <View style={styles.header}>
+        <Pressable
+          accessibilityLabel="Return to clinical content review"
+          accessibilityRole="button"
+          hitSlop={8}
+          onPress={onExit}
+          style={styles.backButton}
+          testID="button-return-to-clinical-review"
+        >
+          <Text style={styles.backButtonText}>Back to content review</Text>
+        </Pressable>
+        <Text style={styles.brand}>BABYREADY / AUTHOR</Text>
+      </View>
 
-        <Text style={styles.title}>
-          {isEditingDraft ? 'Edit clinical draft' : 'Author clinical content'}
-        </Text>
-        <Text style={styles.subtitle}>
-          {isEditingDraft
-            ? 'Revise the learner-facing content and evidence, then save a new version or submit it for review.'
-            : 'Create structured learner content, attach published evidence, and send the block to clinical review.'}
-        </Text>
+      <Text style={styles.title}>
+        {isEditingDraft ? 'Edit clinical draft' : 'Author clinical content'}
+      </Text>
+      <Text style={styles.subtitle}>
+        {isEditingDraft
+          ? 'Revise the learner-facing content and evidence, then save a new version or submit it for review.'
+          : 'Create structured learner content, attach published evidence, and send the block to clinical review.'}
+      </Text>
+    </>
+  );
 
-        {access === 'checking' ? (
-          <View style={styles.centeredState}>
-            <ActivityIndicator color="#01696F" />
-            <Text style={styles.stateText}>Checking authoring access…</Text>
-          </View>
-        ) : null}
+  const governanceCard = (
+    <View style={styles.governanceCard}>
+      <Text style={styles.governanceLabel}>CLINICAL GOVERNANCE</Text>
+      <Text style={styles.governanceTitle}>
+        Clinical claims need published evidence
+      </Text>
+      <Text style={styles.governanceText}>
+        Source attachments are checked when you submit and again when a
+        reviewer approves the block.
+      </Text>
+    </View>
+  );
 
-        {access === 'denied' ? (
-          <View style={styles.accessCard}>
-            <Text style={styles.accessTitle}>Clinical author access is required</Text>
-            <Text style={styles.accessText}>
-              This account does not have the Firebase `admin` custom claim
-              required to create clinical content.
-            </Text>
-          </View>
-        ) : null}
-
-        {access === 'error' ? (
-          <View style={styles.accessCard}>
-            <Text style={styles.accessTitle}>We could not verify your author role</Text>
-            <Text style={styles.accessText}>
-              Refresh the session after confirming the account has an
-              administrator claim.
-            </Text>
-          </View>
-        ) : null}
-
-        {access === 'authorized' ? (
-          <>
-            <View style={styles.governanceCard}>
-              <Text style={styles.governanceLabel}>CLINICAL GOVERNANCE</Text>
-              <Text style={styles.governanceTitle}>
-                Clinical claims need published evidence
-              </Text>
-              <Text style={styles.governanceText}>
-                Source attachments are checked when you submit and again when a
-                reviewer approves the block.
-              </Text>
-            </View>
-
-            <View style={styles.formPanel}>
+  const editingFields = (
+    <>
               <Text style={styles.sectionLabel}>CONTENT SCOPE</Text>
               <Text style={styles.formTitle}>
                 {isEditingDraft ? 'Draft version details' : 'Placement in the course'}
@@ -644,7 +618,11 @@ export function ClinicianContentAuthoringScreen({
                   </Text>
                 </View>
               </Pressable>
+    </>
+  );
 
+  const attachmentFields = (
+    <>
               <View style={styles.sourceHeader}>
                 <View>
                   <Text style={styles.sectionLabel}>SOURCE ATTACHMENTS</Text>
@@ -850,10 +828,93 @@ export function ClinicianContentAuthoringScreen({
                   </Text>
                 </Pressable>
               </View>
-            </View>
-          </>
-        ) : null}
-      </ScrollView>
+    </>
+  );
+
+  const authoringForm = (
+    <>
+      {governanceCard}
+      <View style={styles.formPanel}>
+        {editingFields}
+        {attachmentFields}
+      </View>
+    </>
+  );
+
+  const accessState = (
+    <>
+      {access === 'checking' ? (
+        <View style={styles.centeredState}>
+          <ActivityIndicator color="#01696F" />
+          <Text style={styles.stateText}>Checking authoring access…</Text>
+        </View>
+      ) : null}
+
+      {access === 'denied' ? (
+        <View style={styles.accessCard}>
+          <Text style={styles.accessTitle}>Clinical author access is required</Text>
+          <Text style={styles.accessText}>
+            This account does not have the Firebase `admin` custom claim
+            required to create clinical content.
+          </Text>
+        </View>
+      ) : null}
+
+      {access === 'error' ? (
+        <View style={styles.accessCard}>
+          <Text style={styles.accessTitle}>We could not verify your author role</Text>
+          <Text style={styles.accessText}>
+            Refresh the session after confirming the account has an
+            administrator claim.
+          </Text>
+        </View>
+      ) : null}
+    </>
+  );
+
+  return (
+    <SafeAreaView style={styles.safeArea}>
+      {isWorkspace && access === 'authorized' ? (
+        <View style={styles.workspaceScreen}>
+          <View style={styles.workspaceIntro}>{screenHeader}</View>
+          <View style={styles.workspaceBody}>
+            <ScrollView
+              automaticallyAdjustKeyboardInsets
+              contentContainerStyle={styles.workspacePaneContent}
+              keyboardDismissMode="interactive"
+              keyboardShouldPersistTaps="handled"
+              showsVerticalScrollIndicator={false}
+              style={styles.workspaceEditingScroller}
+            >
+              <View style={styles.formPanel}>{editingFields}</View>
+            </ScrollView>
+
+            <ScrollView
+              automaticallyAdjustKeyboardInsets
+              contentContainerStyle={styles.workspacePaneContent}
+              keyboardDismissMode="interactive"
+              keyboardShouldPersistTaps="handled"
+              showsVerticalScrollIndicator={false}
+              style={styles.workspaceAttachmentScroller}
+            >
+              {governanceCard}
+              <View style={styles.formPanel}>{attachmentFields}</View>
+            </ScrollView>
+          </View>
+        </View>
+      ) : (
+        <ScrollView
+          automaticallyAdjustKeyboardInsets
+          contentContainerStyle={styles.content}
+          keyboardDismissMode="interactive"
+          keyboardShouldPersistTaps="handled"
+          showsVerticalScrollIndicator={false}
+        >
+          {screenHeader}
+          {accessState}
+          {access === 'authorized' ? authoringForm : null}
+        </ScrollView>
+      )}
     </SafeAreaView>
   );
 }
@@ -867,6 +928,32 @@ const styles = StyleSheet.create({
     paddingBottom: 40,
     paddingHorizontal: 20,
     paddingTop: 12,
+  },
+  workspaceScreen: {
+    flex: 1,
+  },
+  workspaceIntro: {
+    paddingBottom: 20,
+    paddingHorizontal: 28,
+    paddingTop: 12,
+  },
+  workspaceBody: {
+    flex: 1,
+    flexDirection: 'row',
+    gap: 16,
+    minHeight: 0,
+    paddingHorizontal: 28,
+  },
+  workspaceEditingScroller: {
+    flex: 1.15,
+    minWidth: 0,
+  },
+  workspaceAttachmentScroller: {
+    flex: 0.85,
+    minWidth: 0,
+  },
+  workspacePaneContent: {
+    paddingBottom: 40,
   },
   header: {
     alignItems: 'center',

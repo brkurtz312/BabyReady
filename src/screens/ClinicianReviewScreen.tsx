@@ -58,6 +58,7 @@ import {
 } from '../services/comparisonAuditLogService';
 import type { ComparisonAuditExportRoute } from '../models/course';
 import { getBundledClinicalMediaAsset } from '../lib/clinicalMediaAssets';
+import { useClinicianWorkspace } from '../lib/clinicianWorkspace';
 import { loadClinicalMedia } from '../services/clinicalMediaService';
 
 type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
@@ -260,6 +261,7 @@ export function ClinicianReviewScreen({
   onOpenMediaLibrary,
   onEditDraft,
 }: ClinicianReviewScreenProps) {
+  const isWorkspace = useClinicianWorkspace();
   const [access, setAccess] = useState<AccessState>('checking');
   const [queueState, setQueueState] = useState<ReviewQueueState>({
     status: 'loading',
@@ -960,7 +962,10 @@ export function ClinicianReviewScreen({
       >
       <ScrollView
         automaticallyAdjustKeyboardInsets
-        contentContainerStyle={styles.content}
+        contentContainerStyle={[
+          styles.content,
+          isWorkspace && styles.workspaceContent,
+        ]}
         keyboardDismissMode="interactive"
         keyboardShouldPersistTaps="handled"
         showsVerticalScrollIndicator={false}
@@ -1087,8 +1092,18 @@ export function ClinicianReviewScreen({
               </View>
             ) : null}
 
-            <View style={styles.mediaQueueSection}>
-              <View style={styles.mediaQueueHeader}>
+            <View
+              style={[
+                styles.mediaQueueSection,
+                isWorkspace && styles.workspaceQueueSection,
+              ]}
+            >
+              <View
+                style={[
+                  styles.mediaQueueHeader,
+                  isWorkspace && styles.workspaceQueueHeader,
+                ]}
+              >
                 <View>
                   <Text style={styles.sectionLabel}>FIGURE AND MEDIA QUEUE</Text>
                   <Text style={styles.mediaQueueTitle}>
@@ -1126,8 +1141,12 @@ export function ClinicianReviewScreen({
               {orderedReviewMedia.length > 0 ? (
                 <>
                   <ScrollView
-                    contentContainerStyle={styles.queueList}
-                    horizontal
+                    contentContainerStyle={[
+                      styles.queueList,
+                      isWorkspace && styles.workspaceQueueList,
+                    ]}
+                    style={isWorkspace ? styles.workspaceQueueScroller : undefined}
+                    horizontal={!isWorkspace}
                     showsHorizontalScrollIndicator={false}
                   >
                     {orderedReviewMedia.map((item) => {
@@ -1140,6 +1159,7 @@ export function ClinicianReviewScreen({
                           onPress={() => setSelectedMediaId(item.id)}
                           style={[
                             styles.queueCard,
+                            isWorkspace && styles.workspaceQueueCard,
                             isSelected && styles.queueCardSelected,
                           ]}
                           testID={`button-review-media-${item.id}`}
@@ -1167,7 +1187,12 @@ export function ClinicianReviewScreen({
                   </ScrollView>
 
                   {selectedReviewMedia ? (
-                    <View style={styles.mediaReviewPanel}>
+                    <View
+                      style={[
+                        styles.mediaReviewPanel,
+                        isWorkspace && styles.workspaceReviewPanel,
+                      ]}
+                    >
                       <View style={styles.reviewPanelHeader}>
                         <View style={styles.reviewPanelHeaderCopy}>
                           <Text style={styles.sectionLabel}>SELECTED MEDIA</Text>
@@ -1436,12 +1461,21 @@ export function ClinicianReviewScreen({
             </View>
 
             {orderedBlocks.length > 0 ? (
-              <>
+              <View
+                style={[
+                  styles.contentQueueSection,
+                  isWorkspace && styles.workspaceQueueSection,
+                ]}
+              >
                 <Text style={styles.sectionLabel}>CONTENT QUEUE</Text>
                 <ScrollView
-                  contentContainerStyle={styles.queueList}
-                  horizontal
+                  contentContainerStyle={[
+                    styles.queueList,
+                    isWorkspace && styles.workspaceQueueList,
+                  ]}
+                  horizontal={!isWorkspace}
                   showsHorizontalScrollIndicator={false}
+                  style={isWorkspace ? styles.workspaceQueueScroller : undefined}
                 >
                   {orderedBlocks.map((block) => {
                     const isSelected = selectedBlock
@@ -1453,7 +1487,11 @@ export function ClinicianReviewScreen({
                         accessibilityRole="button"
                         accessibilityLabel={`Review ${block.id}, ${formatState(block.publicationState)}`}
                         onPress={() => setSelectedId(queueBlockKey(block))}
-                        style={[styles.queueCard, isSelected && styles.queueCardSelected]}
+                        style={[
+                          styles.queueCard,
+                          isWorkspace && styles.workspaceQueueCard,
+                          isSelected && styles.queueCardSelected,
+                        ]}
                       >
                         <View style={[styles.statusPill, statusStyle(block.publicationState)]}>
                           <Text style={styles.statusText}>{formatState(block.publicationState)}</Text>
@@ -1470,7 +1508,12 @@ export function ClinicianReviewScreen({
                 </ScrollView>
 
                 {selectedBlock ? (
-                  <View style={styles.reviewPanel}>
+                  <View
+                    style={[
+                      styles.reviewPanel,
+                      isWorkspace && styles.workspaceReviewPanel,
+                    ]}
+                  >
                     <View style={styles.reviewPanelHeader}>
                       <View style={styles.reviewPanelHeaderCopy}>
                         <Text style={styles.sectionLabel}>SELECTED CONTENT</Text>
@@ -2100,7 +2143,7 @@ export function ClinicianReviewScreen({
                     </View>
                   </View>
                 ) : null}
-              </>
+              </View>
             ) : null}
           </>
         ) : null}
@@ -2277,6 +2320,34 @@ const styles = StyleSheet.create({
     marginTop: 20,
     padding: 16,
   },
+  contentQueueSection: {
+    marginTop: 24,
+  },
+  workspaceContent: {
+    alignSelf: 'center',
+    maxWidth: 1320,
+    width: '100%',
+  },
+  workspaceQueueSection: {
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 16,
+  },
+  workspaceQueueHeader: {
+    flexBasis: '100%',
+  },
+  workspaceQueueScroller: {
+    flexBasis: 260,
+    flexGrow: 0,
+    flexShrink: 0,
+    maxHeight: 680,
+  },
+  workspaceQueueList: {
+    flexDirection: 'column',
+    paddingRight: 4,
+    paddingTop: 0,
+  },
   mediaQueueHeader: {
     alignItems: 'flex-start',
     flexDirection: 'row',
@@ -2332,6 +2403,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginTop: 12,
     padding: 16,
+  },
+  workspaceReviewPanel: {
+    flex: 1,
+    marginTop: 0,
+    minWidth: 0,
   },
   selectedMediaPreview: {
     alignItems: 'center',
@@ -2473,6 +2549,10 @@ const styles = StyleSheet.create({
     minHeight: 130,
     padding: 13,
     width: 170,
+  },
+  workspaceQueueCard: {
+    minHeight: 112,
+    width: 252,
   },
   queueCardSelected: {
     backgroundColor: '#FFFFFF',

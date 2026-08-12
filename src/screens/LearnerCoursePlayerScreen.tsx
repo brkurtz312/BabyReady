@@ -1149,14 +1149,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#EFEEE9',
     flexShrink: 0,
     paddingHorizontal: 16,
-    width: 268,
+    width: 236,
   },
   tabletNavigationScrollContent: {
     paddingBottom: 28,
     paddingTop: 24,
   },
   tabletReadingScroll: {
-    flex: 1,
+    flex: 1.25,
     minWidth: 0,
   },
   tabletReadingScrollContent: {

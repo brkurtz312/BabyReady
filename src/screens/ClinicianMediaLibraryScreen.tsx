@@ -39,6 +39,7 @@ import {
   subscribeToContentSourceLibrary,
   type SourceLibraryState,
 } from '../services/sourceService';
+import { useClinicianWorkspace } from '../lib/clinicianWorkspace';
 
 type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
 type MediaAction = 'save' | 'submit' | 'freeze' | null;
@@ -205,6 +206,7 @@ export function ClinicianMediaLibraryScreen({
   const [showFreezeForm, setShowFreezeForm] = useState(false);
   const [actionInFlight, setActionInFlight] = useState<MediaAction>(null);
   const [feedback, setFeedback] = useState<string | null>(null);
+  const isWorkspace = useClinicianWorkspace();
 
   useEffect(() => {
     let active = true;
@@ -603,6 +605,8 @@ export function ClinicianMediaLibraryScreen({
                 </Text>
               </View>
 
+              <View style={isWorkspace ? styles.workspace : undefined}>
+                <View style={isWorkspace ? styles.libraryPane : undefined}>
               <View style={styles.libraryHeader}>
                 <Text style={styles.sectionLabel}>SAVED MEDIA</Text>
                 <Pressable
@@ -645,8 +649,12 @@ export function ClinicianMediaLibraryScreen({
 
               {mediaState.media.length > 0 ? (
                 <ScrollView
-                  contentContainerStyle={styles.mediaList}
-                  horizontal
+                  contentContainerStyle={[
+                    styles.mediaList,
+                    isWorkspace && styles.mediaListWorkspace,
+                  ]}
+                  horizontal={!isWorkspace}
+                  scrollEnabled={!isWorkspace}
                   showsHorizontalScrollIndicator={false}
                 >
                   {mediaState.media.map((media) => {
@@ -659,6 +667,7 @@ export function ClinicianMediaLibraryScreen({
                         onPress={() => selectMedia(media)}
                         style={[
                           styles.mediaCard,
+                          isWorkspace && styles.mediaCardWorkspace,
                           isSelected && styles.mediaCardSelected,
                         ]}
                         testID={`button-edit-media-${media.id}`}
@@ -685,7 +694,9 @@ export function ClinicianMediaLibraryScreen({
                 </ScrollView>
               ) : null}
 
-              <View style={styles.formPanel}>
+                </View>
+
+              <View style={[styles.formPanel, isWorkspace && styles.detailPane]}>
                 <View style={styles.formHeader}>
                   <View>
                     <Text style={styles.sectionLabel}>
@@ -1181,6 +1192,7 @@ export function ClinicianMediaLibraryScreen({
                   ) : null}
                 </View>
               </View>
+              </View>
             </>
           ) : null}
         </ScrollView>
@@ -1328,6 +1340,19 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginTop: 24,
   },
+  workspace: {
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+    gap: 16,
+  },
+  libraryPane: {
+    flexShrink: 0,
+    width: 250,
+  },
+  detailPane: {
+    flex: 1,
+    marginTop: 24,
+  },
   sectionLabel: {
     color: '#0C4E54',
     fontSize: 10,
@@ -1371,6 +1396,9 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     paddingTop: 12,
   },
+  mediaListWorkspace: {
+    paddingBottom: 0,
+  },
   mediaCard: {
     backgroundColor: '#EFEEE9',
     borderColor: 'transparent',
@@ -1379,6 +1407,10 @@ const styles = StyleSheet.create({
     minHeight: 132,
     padding: 13,
     width: 174,
+  },
+  mediaCardWorkspace: {
+    minHeight: 108,
+    width: '100%',
   },
   mediaCardSelected: {
     backgroundColor: '#FFFFFF',

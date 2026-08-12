@@ -23,6 +23,7 @@ import {
   subscribeToContentSourceLibrary,
   type SourceLibraryState,
 } from '../services/sourceService';
+import { useClinicianWorkspace } from '../lib/clinicianWorkspace';
 
 type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
 type SourceAction = 'save' | 'publish' | 'freeze' | null;
@@ -135,6 +136,7 @@ export function ClinicianSourceLibraryScreen({
   const [showFreezeForm, setShowFreezeForm] = useState(false);
   const [actionInFlight, setActionInFlight] = useState<SourceAction>(null);
   const [feedback, setFeedback] = useState<string | null>(null);
+  const isWorkspace = useClinicianWorkspace();
 
   useEffect(() => {
     let active = true;
@@ -408,6 +410,8 @@ export function ClinicianSourceLibraryScreen({
               </Text>
             </View>
 
+            <View style={isWorkspace ? styles.workspace : undefined}>
+              <View style={isWorkspace ? styles.libraryPane : undefined}>
             <View style={styles.libraryHeader}>
               <Text style={styles.sectionLabel}>SAVED SOURCES</Text>
               <Pressable
@@ -443,10 +447,14 @@ export function ClinicianSourceLibraryScreen({
               </View>
             ) : null}
 
-            {libraryState.sources.length > 0 ? (
-              <ScrollView
-                contentContainerStyle={styles.sourceList}
-                horizontal
+              {libraryState.sources.length > 0 ? (
+                <ScrollView
+                contentContainerStyle={[
+                  styles.sourceList,
+                  isWorkspace && styles.sourceListWorkspace,
+                ]}
+                horizontal={!isWorkspace}
+                scrollEnabled={!isWorkspace}
                 showsHorizontalScrollIndicator={false}
               >
                 {libraryState.sources.map((source) => {
@@ -457,7 +465,11 @@ export function ClinicianSourceLibraryScreen({
                       accessibilityRole="button"
                       accessibilityLabel={`Edit ${source.title}, ${formatState(source.publicationState)}`}
                       onPress={() => selectSource(source)}
-                      style={[styles.sourceCard, isSelected && styles.sourceCardSelected]}
+                      style={[
+                        styles.sourceCard,
+                        isWorkspace && styles.sourceCardWorkspace,
+                        isSelected && styles.sourceCardSelected,
+                      ]}
                     >
                       <View style={[styles.statusPill, statusStyle(source.publicationState)]}>
                         <Text style={styles.statusText}>{formatState(source.publicationState)}</Text>
@@ -474,7 +486,9 @@ export function ClinicianSourceLibraryScreen({
               </ScrollView>
             ) : null}
 
-            <View style={styles.formPanel}>
+              </View>
+
+            <View style={[styles.formPanel, isWorkspace && styles.detailPane]}>
               <View style={styles.formHeader}>
                 <View>
                   <Text style={styles.sectionLabel}>
@@ -651,6 +665,7 @@ export function ClinicianSourceLibraryScreen({
                 ) : null}
               </View>
             </View>
+            </View>
           </>
         ) : null}
       </ScrollView>
@@ -765,6 +780,19 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     marginTop: 24,
   },
+  workspace: {
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+    gap: 16,
+  },
+  libraryPane: {
+    flexShrink: 0,
+    width: 250,
+  },
+  detailPane: {
+    flex: 1,
+    marginTop: 24,
+  },
   sectionLabel: {
     color: '#6E6B64',
     fontSize: 11,
@@ -807,6 +835,9 @@ const styles = StyleSheet.create({
     paddingBottom: 8,
     paddingTop: 12,
   },
+  sourceListWorkspace: {
+    paddingBottom: 0,
+  },
   sourceCard: {
     backgroundColor: '#EFEEE9',
     borderColor: 'transparent',
@@ -815,6 +846,10 @@ const styles = StyleSheet.create({
     minHeight: 132,
     padding: 13,
     width: 180,
+  },
+  sourceCardWorkspace: {
+    minHeight: 108,
+    width: '100%',
   },
   sourceCardSelected: {
     backgroundColor: '#FFFFFF',
