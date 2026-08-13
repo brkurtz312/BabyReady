@@ -19,7 +19,6 @@
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.brkservices.babyready",
-      "buildNumber": "24",
       "config": {
         "usesNonExemptEncryption": false
       }
