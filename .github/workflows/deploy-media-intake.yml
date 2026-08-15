@@ -1,0 +1,153 @@
+name: Deploy Media Intake
+
+on:
+  workflow_dispatch:
+    inputs:
+      git_ref:
+        description: Commit SHA or branch to validate and deploy
+        required: true
+        default: main
+        type: string
+      confirmation:
+        description: Type DEPLOY_MEDIA_INTAKE to make production changes
+        required: true
+        default: ''
+        type: string
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: babyready-media-intake-production
+  cancel-in-progress: false
+
+env:
+  PROJECT_ID: babyready-8bfd6
+  REGION: us-central1
+  SERVICE_NAME: babyready-media-intake-worker
+
+jobs:
+  verify:
+    name: Validate selected revision
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out selected revision
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.git_ref }}
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Set up Java for Firebase Emulator Suite
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Install app dependencies
+        run: npm ci
+
+      - name: Verify Media Intake files are present
+        run: |
+          test -f services/media-intake-worker/package.json
+          test -f services/media-intake-worker/index.mjs
+          test -f scripts/deploy-media-intake-worker.mjs
+          test -f firestore.rules
+
+      - name: Typecheck app
+        run: npm run typecheck
+
+      - name: Test Firestore security rules
+        run: npm run test:emulators
+
+      - name: Check worker syntax
+        run: npm run check:media-intake-worker
+
+      - name: Export web bundle
+        run: npm run export:web
+
+  deploy:
+    name: Deploy worker and Firestore rules
+    needs: verify
+    if: inputs.confirmation == 'DEPLOY_MEDIA_INTAKE'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: production
+
+    steps:
+      - name: Check out the verified revision
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.git_ref }}
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install app dependencies
+        run: npm ci
+
+      - name: Authenticate to Google Cloud with GitHub OIDC
+        id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.GCP_DEPLOY_SERVICE_ACCOUNT }}
+          create_credentials_file: true
+
+      - name: Set up Google Cloud CLI
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Verify target and runtime service account
+        run: |
+          set -euo pipefail
+          gcloud config set project "$PROJECT_ID"
+          test "$(gcloud config get-value project)" = "$PROJECT_ID"
+          gcloud iam service-accounts describe \
+            "babyready-media-intake-worker@${PROJECT_ID}.iam.gserviceaccount.com" \
+            --project "$PROJECT_ID" \
+            --format='value(email)'
+
+      - name: Deploy Media Intake worker
+        run: npm run deploy:media-intake-worker
+
+      - name: Confirm worker health
+        run: |
+          set -euo pipefail
+          WORKER_URL="$(gcloud run services describe "$SERVICE_NAME" \
+            --project "$PROJECT_ID" \
+            --region "$REGION" \
+            --format='value(status.url)')"
+          test -n "$WORKER_URL"
+          curl --fail --silent --show-error --retry 5 --retry-all-errors \
+            "${WORKER_URL}/healthz"
+          echo "worker_url=$WORKER_URL" >> "$GITHUB_OUTPUT"
+        id: worker
+
+      - name: Deploy Firestore rules
+        run: |
+          npx --yes firebase-tools@latest deploy \
+            --only firestore:rules \
+            --project "$PROJECT_ID"
+
+      - name: Publish deployment summary
+        run: |
+          {
+            echo '## Media Intake deployment complete'
+            echo ''
+            echo "- Revision: \`${GITHUB_SHA}\`"
+            echo "- Project: \`${PROJECT_ID}\`"
+            echo "- Worker: ${{ steps.worker.outputs.worker_url }}"
+            echo ''
+            echo 'Next: set `EXPO_PUBLIC_MEDIA_INTAKE_WORKER_URL` in the EAS production environment to the Worker URL above, then create a new production build.'
+          } >> "$GITHUB_STEP_SUMMARY"

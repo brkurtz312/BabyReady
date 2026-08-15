@@ -39,7 +39,8 @@
     "seed:early-pregnancy-media": "node scripts/import-early-pregnancy-media.mjs",
     "seed:early-pregnancy-learner-outline": "node scripts/seed-early-pregnancy-learner-outline.mjs",
     "migrate:first-trimester-content-order": "node scripts/assign-first-trimester-content-order.mjs",
-    "check:media-intake-worker": "npm --prefix services/media-intake-worker run check"
+    "check:media-intake-worker": "npm --prefix services/media-intake-worker run check",
+    "deploy:media-intake-worker": "node scripts/deploy-media-intake-worker.mjs"
   },
   "private": true
 }

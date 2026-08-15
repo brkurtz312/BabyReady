@@ -30,6 +30,32 @@ function commandExists(command) {
   return spawnSync(command, ['--version'], { encoding: 'utf8' }).status === 0;
 }
 
+async function verifyHealth(serviceUrl) {
+  const healthUrl = new URL('/healthz', serviceUrl);
+  let lastError = 'The health endpoint did not respond successfully.';
+
+  for (let attempt = 1; attempt <= 5; attempt += 1) {
+    try {
+      const response = await fetch(healthUrl, {
+        headers: { Accept: 'application/json' },
+        signal: AbortSignal.timeout(15_000),
+      });
+      if (response.ok) {
+        return;
+      }
+      lastError = `The health endpoint returned HTTP ${response.status}.`;
+    } catch (error) {
+      lastError = error instanceof Error ? error.message : String(error);
+    }
+
+    if (attempt < 5) {
+      await new Promise((resolve) => setTimeout(resolve, attempt * 2_000));
+    }
+  }
+
+  fail(`Worker deployment completed but the health check failed: ${lastError}`);
+}
+
 if (!commandExists('gcloud')) {
   fail('gcloud is required. Install or open a Google Cloud terminal before retrying.');
 }
@@ -108,6 +134,12 @@ const serviceUrl = run('gcloud', [
   '--format=value(status.url)',
 ]);
 
+if (!serviceUrl.startsWith('https://')) {
+  fail('Cloud Run did not return a valid HTTPS service URL.');
+}
+
+await verifyHealth(serviceUrl);
+
 console.log('');
-console.log(`SUCCESS: Worker deployed at ${serviceUrl}`);
+console.log(`SUCCESS: Worker deployed and passed its health check at ${serviceUrl}`);
 console.log('Next safe step: set EXPO_PUBLIC_MEDIA_INTAKE_WORKER_URL to this exact HTTPS URL in the EAS production environment, then create a new app build. Do not put Firebase Admin or AI credentials in EAS.');
