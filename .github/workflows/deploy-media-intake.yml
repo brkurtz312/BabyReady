@@ -165,7 +165,7 @@ jobs:
           SERVICE_STATUS="$(gcloud run services describe "$SERVICE_NAME" \
             --project "$PROJECT_ID" \
             --region "$REGION" \
-            --format=json(status.latestReadyRevisionName,status.traffic))"
+            --format='json(status.latestReadyRevisionName,status.traffic)')"
           LATEST_READY_REVISION="$(printf '%s' "$SERVICE_STATUS" \
             | jq -r '.status.latestReadyRevisionName // empty')"
           test -n "$LATEST_READY_REVISION"
