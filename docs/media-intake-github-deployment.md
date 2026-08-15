@@ -137,7 +137,7 @@ Replace `PROJECT_NUMBER` with the numeric value returned in step 4.
 
 1. Confirm `main` includes the desired commit and that the **Verify BabyReady** workflow is green.
 2. Open **Actions** in GitHub, select **Deploy Media Intake**, and choose **Run workflow**.
-3. Enter `main` or the exact commit SHA in **git_ref**.
+3. Enter `main` or a 7- to 40-character commit SHA already present on `main` in **git_ref**. The workflow resolves short SHAs against the full `main` history, verifies main ancestry, and deploys the resulting full commit ID.
 4. Type `DEPLOY_MEDIA_INTAKE` exactly.
 5. Review the `production` environment approval prompt. Approval starts the deployment.
 6. Copy the Worker URL from the workflow summary into EAS as `EXPO_PUBLIC_MEDIA_INTAKE_WORKER_URL` for the production environment.

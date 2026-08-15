@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       git_ref:
-        description: Commit SHA or branch to validate and deploy
+        description: main or a 7- to 40-character commit SHA already present on main
         required: true
         default: main
         type: string
@@ -32,19 +32,35 @@ jobs:
     name: Validate selected revision
     runs-on: ubuntu-latest
     timeout-minutes: 20
+    outputs:
+      deployed_sha: ${{ steps.revision.outputs.deployed_sha }}
 
     steps:
-      - name: Check out selected revision
+      - name: Check out main history
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.git_ref }}
+          ref: main
+          fetch-depth: 0
 
-      - name: Require a revision already present on main
+      - name: Resolve a revision already present on main
+        env:
+          REQUESTED_REF: ${{ inputs.git_ref }}
         run: |
           set -euo pipefail
           git fetch --no-tags origin main
-          git merge-base --is-ancestor HEAD origin/main
-          echo "deployed_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+          if [ "$REQUESTED_REF" = 'main' ]; then
+            DEPLOYED_SHA="$(git rev-parse origin/main)"
+          elif [[ "$REQUESTED_REF" =~ ^[0-9a-fA-F]{7,40}$ ]]; then
+            DEPLOYED_SHA="$(git rev-parse --verify "${REQUESTED_REF}^{commit}")"
+          else
+            echo 'git_ref must be main or a 7- to 40-character commit SHA.' >&2
+            exit 1
+          fi
+
+          git merge-base --is-ancestor "$DEPLOYED_SHA" origin/main
+          git checkout --detach "$DEPLOYED_SHA"
+          echo "deployed_sha=$DEPLOYED_SHA" >> "$GITHUB_OUTPUT"
         id: revision
 
       - name: Set up Node
@@ -94,7 +110,8 @@ jobs:
       - name: Check out the verified revision
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.git_ref }}
+          ref: ${{ needs.verify.outputs.deployed_sha }}
+          fetch-depth: 0
 
       - name: Require a revision already present on main
         run: |
