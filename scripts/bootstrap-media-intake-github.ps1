@@ -176,6 +176,7 @@ $WorkloadIdentityProvider = (
   "workloadIdentityPools/$PoolId/providers/$ProviderId"
 )
 $PoolResource = "projects/$ProjectNumber/locations/global/workloadIdentityPools/$PoolId"
+$GitHubRepositoryPrincipal = "principalSet://iam.googleapis.com/$PoolResource/attribute.repository/$Repo"
 
 Write-Host ''
 Write-Host "Google Cloud project: $ProjectId" -ForegroundColor Cyan
@@ -313,7 +314,7 @@ Invoke-Checked gcloud @(
   'iam', 'service-accounts', 'add-iam-policy-binding', $DeployerEmail,
   '--project', $ProjectId,
   '--role', 'roles/iam.workloadIdentityUser',
-  '--member', "principalSet://iam.googleapis.com/$PoolResource/attribute.repository/$Repo",
+  '--member', $GitHubRepositoryPrincipal,
   '--quiet'
 )
 
@@ -348,7 +349,7 @@ Invoke-Checked gcloud @(
 Invoke-Checked gcloud @(
   'iam', 'service-accounts', 'add-iam-policy-binding', $DeployerEmail,
   '--project', $ProjectId,
-  '--member', "serviceAccount:$DeployerEmail",
+  '--member', $GitHubRepositoryPrincipal,
   '--role', 'roles/iam.serviceAccountOpenIdTokenCreator',
   '--quiet'
 )

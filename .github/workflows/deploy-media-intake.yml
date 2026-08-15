@@ -165,20 +165,23 @@ jobs:
           SERVICE_STATUS="$(gcloud run services describe "$SERVICE_NAME" \
             --project "$PROJECT_ID" \
             --region "$REGION" \
-            --format='json(status.latestReadyRevisionName,status.traffic)')"
+            --format='json(status.url,status.latestReadyRevisionName,status.traffic)')"
           LATEST_READY_REVISION="$(printf '%s' "$SERVICE_STATUS" \
             | jq -r '.status.latestReadyRevisionName // empty')"
           test -n "$LATEST_READY_REVISION"
-          WORKER_URL="$(printf '%s' "$SERVICE_STATUS" \
+
+          READY_REVISION_TRAFFIC_PERCENT="$(printf '%s' "$SERVICE_STATUS" \
             | jq -r --arg revision "$LATEST_READY_REVISION" \
-              '.status.traffic[]
-              | select(.tag == "production" and .revisionName == $revision)
-              | .url' \
-            | head -n 1)"
+              '[.status.traffic[]
+                | select(.revisionName == $revision)
+                | .percent] | add // 0')"
+          test "$READY_REVISION_TRAFFIC_PERCENT" = '100'
+
+          WORKER_URL="$(printf '%s' "$SERVICE_STATUS" | jq -r '.status.url // empty')"
           case "$WORKER_URL" in
             https://*) ;;
             *)
-              echo 'STOP: Cloud Run did not return an HTTPS production-tag URL for the latest ready revision.' >&2
+              echo 'STOP: Cloud Run did not return an HTTPS canonical service URL.' >&2
               exit 1
               ;;
           esac
