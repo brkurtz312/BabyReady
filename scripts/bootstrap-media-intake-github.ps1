@@ -11,6 +11,8 @@ $PoolId = 'babyready-github'
 $ProviderId = 'babyready-repository'
 $DeployerAccountId = 'babyready-github-deployer'
 $WorkerAccountId = 'babyready-media-intake-worker'
+$CloudRunSourceRepositoryId = 'cloud-run-source-deploy'
+$CloudRunSourceRepositoryLocation = 'us-central1'
 
 function Invoke-Checked {
   param(
@@ -182,10 +184,11 @@ Write-Host "GitHub repository: $Repo" -ForegroundColor Cyan
 Write-Host ''
 Write-Host 'This will now:' -ForegroundColor Yellow
 Write-Host '  1. Enable the required Google Cloud APIs.'
-Write-Host '  2. Create the GitHub deployer and Media Intake runtime service accounts if needed.'
-Write-Host '  3. Create a workload identity pool restricted to brkurtz312/BabyReady main.'
-Write-Host '  4. Grant the deployer only the roles needed for Cloud Run and Firestore-rules deployment.'
-Write-Host '  5. Grant the runtime service account only Firestore and Vertex AI access.'
+Write-Host '  2. Create the Cloud Run source-build Artifact Registry repository if needed.'
+Write-Host '  3. Create the GitHub deployer and Media Intake runtime service accounts if needed.'
+Write-Host '  4. Create a workload identity pool restricted to brkurtz312/BabyReady main.'
+Write-Host '  5. Grant the deployer only the roles needed for Cloud Run and Firestore-rules deployment.'
+Write-Host '  6. Grant the runtime service account only Firestore and Vertex AI access.'
 Write-Host ''
 
 $Confirmation = Read-Host 'Type BOOTSTRAP_MEDIA_INTAKE_GITHUB to continue'
@@ -210,6 +213,23 @@ Invoke-Checked gcloud @(
   'firebaserules.googleapis.com',
   '--project', $ProjectId
 )
+
+Write-Host ''
+Write-Host 'Ensuring Cloud Run source-build Artifact Registry repository exists...' -ForegroundColor Cyan
+
+if (-not (Test-GcloudResource @(
+  'artifacts', 'repositories', 'describe', $CloudRunSourceRepositoryId,
+  '--project', $ProjectId,
+  '--location', $CloudRunSourceRepositoryLocation
+))) {
+  Invoke-Checked gcloud @(
+    'artifacts', 'repositories', 'create', $CloudRunSourceRepositoryId,
+    '--project', $ProjectId,
+    '--location', $CloudRunSourceRepositoryLocation,
+    '--repository-format', 'docker',
+    '--description', 'Container images built from source for BabyReady Cloud Run deployments.'
+  )
+}
 
 Write-Host ''
 Write-Host 'Ensuring service accounts exist...' -ForegroundColor Cyan
