@@ -154,6 +154,9 @@ run(
   '--service-account',
   RUNTIME_SERVICE_ACCOUNT,
   '--allow-unauthenticated',
+  '--ingress',
+  'all',
+  '--default-url',
   '--set-env-vars',
   `^@^${runtimeEnvironmentVariables}`,
   ],
@@ -185,7 +188,7 @@ const serviceDiagnostics = run('gcloud', [
   EXPECTED_PROJECT_ID,
   '--region',
   REGION,
-  '--format=json(status.url,status.latestCreatedRevisionName,status.latestReadyRevisionName,status.traffic,spec.template.spec.containers[0].image)',
+  '--format=json(status.url,status.latestCreatedRevisionName,status.latestReadyRevisionName,status.traffic,metadata.annotations,spec.template.spec.containers[0].image)',
 ]);
 console.log(`Cloud Run post-deploy diagnostics: ${serviceDiagnostics}`);
 
