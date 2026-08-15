@@ -12,6 +12,15 @@ Authentication uses Google Cloud Workload Identity Federation (WIF). GitHub rece
 
 An owner of Google Cloud project `babyready-8bfd6` performs these actions once, from a terminal with the Google Cloud CLI installed and authenticated:
 
+The preferred way is to run the checked-in script from the root of the repository:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+.\scripts\bootstrap-media-intake-github.ps1
+```
+
+The script verifies the current repository, displays the intended Google Cloud project, and requires the exact confirmation text `BOOTSTRAP_MEDIA_INTAKE_GITHUB` before changing Google Cloud resources. The equivalent commands are retained below for audit/reference purposes.
+
 1. Enable the IAM Credentials API:
 
    ```powershell
