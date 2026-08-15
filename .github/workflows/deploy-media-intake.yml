@@ -162,15 +162,26 @@ jobs:
         if: steps.worker_deploy.outcome == 'success'
         run: |
           set -euo pipefail
-          PROJECT_NUMBER="$(gcloud projects describe "$PROJECT_ID" \
-            --format='value(projectNumber)')"
-          test "$PROJECT_NUMBER" != ''
-          LATEST_READY_REVISION="$(gcloud run services describe "$SERVICE_NAME" \
+          SERVICE_STATUS="$(gcloud run services describe "$SERVICE_NAME" \
             --project "$PROJECT_ID" \
             --region "$REGION" \
-            --format='value(status.latestReadyRevisionName)')"
+            --format=json(status.latestReadyRevisionName,status.traffic))"
+          LATEST_READY_REVISION="$(printf '%s' "$SERVICE_STATUS" \
+            | jq -r '.status.latestReadyRevisionName // empty')"
           test -n "$LATEST_READY_REVISION"
-          WORKER_URL="https://production---${SERVICE_NAME}-${PROJECT_NUMBER}.${REGION}.run.app"
+          WORKER_URL="$(printf '%s' "$SERVICE_STATUS" \
+            | jq -r --arg revision "$LATEST_READY_REVISION" \
+              '.status.traffic[]
+              | select(.tag == "production" and .revisionName == $revision)
+              | .url' \
+            | head -n 1)"
+          case "$WORKER_URL" in
+            https://*) ;;
+            *)
+              echo 'STOP: Cloud Run did not return an HTTPS production-tag URL for the latest ready revision.' >&2
+              exit 1
+              ;;
+          esac
           echo "worker_url=$WORKER_URL" >> "$GITHUB_OUTPUT"
         id: worker_target
 
@@ -294,8 +305,18 @@ jobs:
           PROXY_PID=$!
           trap 'kill "$PROXY_PID" 2>/dev/null || true' EXIT
           PROXY_HEALTH_PASSED=false
+          PROXY_HEADERS=/tmp/cloud-run-proxy.headers
+          PROXY_BODY=/tmp/cloud-run-proxy.body
+          PROXY_STATUS=''
           for attempt in $(seq 1 30); do
-            if curl --fail --silent --show-error http://127.0.0.1:8081/healthz; then
+            PROXY_STATUS="$(curl \
+              --silent \
+              --show-error \
+              --dump-header "$PROXY_HEADERS" \
+              --output "$PROXY_BODY" \
+              --write-out '%{http_code}' \
+              http://127.0.0.1:8081/healthz || true)"
+            if [ "$PROXY_STATUS" = '200' ]; then
               echo 'Local proxy health check passed.' | tee -a "$GITHUB_STEP_SUMMARY"
               PROXY_HEALTH_PASSED=true
               break
@@ -306,6 +327,20 @@ jobs:
             echo 'Local proxy health check did not become available within 30 seconds.' \
               | tee -a "$GITHUB_STEP_SUMMARY"
           fi
+          {
+            echo "- Final local proxy HTTP status: \`${PROXY_STATUS:-curl transport error}\`"
+            echo '- Final local proxy response headers:'
+            echo '```text'
+            sed 's/\r$//' "$PROXY_HEADERS" \
+              | grep -Eiv '^(set-cookie|www-authenticate):' \
+              | tail -40 || true
+            echo '```'
+            echo '- Final local proxy response body preview:'
+            echo '```text'
+            tr '\r\n' ' ' < "$PROXY_BODY" | cut -c1-1000 || true
+            echo ''
+            echo '```'
+          } | tee -a "$GITHUB_STEP_SUMMARY"
           cat /tmp/cloud-run-proxy.log | tee -a "$GITHUB_STEP_SUMMARY" || true
 
           echo '' >> "$GITHUB_STEP_SUMMARY"

@@ -122,16 +122,6 @@ if (configuredProject !== EXPECTED_PROJECT_ID) {
   );
 }
 
-const projectNumber = run('gcloud', [
-  'projects',
-  'describe',
-  EXPECTED_PROJECT_ID,
-  '--format=value(projectNumber)',
-]);
-if (!/^\d+$/.test(projectNumber)) {
-  fail('Google Cloud did not return a valid project number. No deployment was attempted.');
-}
-
 const activeAccount = run('gcloud', ['auth', 'list', '--filter=status:ACTIVE', '--format=value(account)']);
 if (!activeAccount) {
   fail('No active Google Cloud account is available. No deployment was attempted.');
@@ -148,7 +138,6 @@ run('gcloud', [
 ]);
 
 console.log(`Project: ${EXPECTED_PROJECT_ID}`);
-console.log(`Project number: ${projectNumber}`);
 console.log(`Region: ${REGION}`);
 console.log(`Runtime service account: ${RUNTIME_SERVICE_ACCOUNT}`);
 console.log('Required before deployment:');
@@ -216,17 +205,17 @@ if (!service.status?.url?.startsWith('https://')) {
 }
 
 const latestReadyRevision = service.status?.latestReadyRevisionName;
-const productionTagIsReady = service.status?.traffic?.some(
+const productionTraffic = service.status?.traffic?.find(
   (traffic) => traffic.tag === PRODUCTION_TAG && traffic.revisionName === latestReadyRevision,
 );
-if (!productionTagIsReady) {
+if (!productionTraffic?.url?.startsWith('https://')) {
   fail(
-    `Cloud Run did not attach the ${PRODUCTION_TAG} tag to the latest ready revision. ` +
+    `Cloud Run did not attach the ${PRODUCTION_TAG} tag and an HTTPS URL to the latest ready revision. ` +
       'No application URL was reported.',
   );
 }
 
-const serviceUrl = `https://${PRODUCTION_TAG}---${SERVICE_NAME}-${projectNumber}.${REGION}.run.app`;
+const serviceUrl = productionTraffic.url;
 console.log(`Cloud Run post-deploy diagnostics: ${serviceDiagnostics}`);
 
 if (process.env.MEDIA_INTAKE_SKIP_HEALTH_CHECK === 'true') {
