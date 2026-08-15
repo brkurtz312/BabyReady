@@ -136,8 +136,58 @@ jobs:
 
       - name: Deploy Media Intake worker
         run: npm run deploy:media-intake-worker
+        id: worker_deploy
+        continue-on-error: true
+
+      - name: Diagnose a failed worker health check
+        if: steps.worker_deploy.outcome == 'failure'
+        run: |
+          set -u
+          echo '## Cloud Run health-check diagnostics' >> "$GITHUB_STEP_SUMMARY"
+          echo '' >> "$GITHUB_STEP_SUMMARY"
+          echo '### Service configuration' >> "$GITHUB_STEP_SUMMARY"
+          gcloud run services describe "$SERVICE_NAME" \
+            --project "$PROJECT_ID" \
+            --region "$REGION" \
+            --format='yaml(metadata.annotations,status.url,status.latestReadyRevisionName,status.traffic)' \
+            | tee -a "$GITHUB_STEP_SUMMARY"
+
+          echo '' >> "$GITHUB_STEP_SUMMARY"
+          echo '### Authenticated local proxy probe' >> "$GITHUB_STEP_SUMMARY"
+          gcloud run services proxy "$SERVICE_NAME" \
+            --project "$PROJECT_ID" \
+            --region "$REGION" \
+            --port 8081 \
+            > /tmp/cloud-run-proxy.log 2>&1 &
+          PROXY_PID=$!
+          trap 'kill "$PROXY_PID" 2>/dev/null || true' EXIT
+          for attempt in 1 2 3 4 5; do
+            if curl --fail --silent --show-error http://127.0.0.1:8081/healthz; then
+              echo 'Local proxy health check passed.' | tee -a "$GITHUB_STEP_SUMMARY"
+              break
+            fi
+            sleep "$attempt"
+          done
+          cat /tmp/cloud-run-proxy.log | tee -a "$GITHUB_STEP_SUMMARY" || true
+
+          echo '' >> "$GITHUB_STEP_SUMMARY"
+          echo '### Recent Cloud Run request logs' >> "$GITHUB_STEP_SUMMARY"
+          gcloud logging read \
+            'resource.type="cloud_run_revision" AND resource.labels.service_name="'"$SERVICE_NAME"'"' \
+            --project "$PROJECT_ID" \
+            --freshness 15m \
+            --limit 20 \
+            --format='table(timestamp,httpRequest.status,httpRequest.requestUrl,severity,textPayload)' \
+            | tee -a "$GITHUB_STEP_SUMMARY" || true
+
+      - name: Stop before Firestore rules when worker health fails
+        if: steps.worker_deploy.outcome == 'failure'
+        run: |
+          echo 'STOP: The Media Intake worker did not pass its health check. Firestore rules were not deployed.'
+          exit 1
 
       - name: Confirm worker health
+        if: steps.worker_deploy.outcome == 'success'
         run: |
           set -euo pipefail
           WORKER_URL="$(gcloud run services describe "$SERVICE_NAME" \

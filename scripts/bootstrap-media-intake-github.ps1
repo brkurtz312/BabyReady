@@ -326,7 +326,8 @@ foreach ($Role in @(
   'roles/serviceusage.serviceUsageConsumer',
   'roles/cloudbuild.builds.editor',
   'roles/artifactregistry.writer',
-  'roles/firebaserules.admin'
+  'roles/firebaserules.admin',
+  'roles/logging.viewer'
 )) {
   Invoke-Checked gcloud @(
     'projects', 'add-iam-policy-binding', $ProjectId,

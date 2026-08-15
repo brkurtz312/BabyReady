@@ -85,12 +85,16 @@ The script verifies the current repository, displays the intended Google Cloud p
    $Deployer = "babyready-github-deployer@$ProjectId.iam.gserviceaccount.com"
    $Worker = "babyready-media-intake-worker@$ProjectId.iam.gserviceaccount.com"
 
-   # Deployment identity: deploy a Cloud Run revision, build its image, deploy rules, and use the worker identity.
+   # Deployment identity: deploy a Cloud Run revision, build its image, deploy rules,
+   # read deployment diagnostics, and use the worker identity.
    foreach ($Role in @(
      'roles/run.admin',
+     'roles/run.sourceDeveloper',
+     'roles/serviceusage.serviceUsageConsumer',
      'roles/cloudbuild.builds.editor',
      'roles/artifactregistry.writer',
-     'roles/firebase.rulesAdmin'
+     'roles/firebaserules.admin',
+     'roles/logging.viewer'
    )) {
      gcloud projects add-iam-policy-binding $ProjectId `
        --member "serviceAccount:$Deployer" `
