@@ -153,11 +153,56 @@ jobs:
 
       - name: Deploy Media Intake worker
         run: npm run deploy:media-intake-worker
+        env:
+          MEDIA_INTAKE_SKIP_HEALTH_CHECK: 'true'
         id: worker_deploy
         continue-on-error: true
 
+      - name: Read worker URL for the health-check audience
+        if: steps.worker_deploy.outcome == 'success'
+        run: |
+          set -euo pipefail
+          WORKER_URL="$(gcloud run services describe "$SERVICE_NAME" \
+            --project "$PROJECT_ID" \
+            --region "$REGION" \
+            --format='value(status.url)')"
+          test -n "$WORKER_URL"
+          echo "worker_url=$WORKER_URL" >> "$GITHUB_OUTPUT"
+        id: worker_target
+
+      - name: Create an ID token for the worker health check
+        if: steps.worker_target.outcome == 'success'
+        id: worker_health_auth
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.GCP_DEPLOY_SERVICE_ACCOUNT }}
+          create_credentials_file: false
+          token_format: id_token
+          id_token_audience: ${{ steps.worker_target.outputs.worker_url }}
+
+      - name: Confirm worker health with an ID token
+        if: steps.worker_health_auth.outcome == 'success'
+        run: |
+          set -euo pipefail
+          WORKER_URL="${{ steps.worker_target.outputs.worker_url }}"
+          ID_TOKEN="${{ steps.worker_health_auth.outputs.id_token }}"
+          test -n "$WORKER_URL"
+          test -n "$ID_TOKEN"
+          curl --fail --silent --show-error --retry 5 --retry-all-errors \
+            -H "Authorization: Bearer $ID_TOKEN" \
+            "${WORKER_URL}/healthz"
+          echo "worker_url=$WORKER_URL" >> "$GITHUB_OUTPUT"
+        id: worker_health
+
       - name: Diagnose a failed worker health check
-        if: steps.worker_deploy.outcome == 'failure'
+        if: |
+          always() && (
+            steps.worker_deploy.outcome != 'success' ||
+            steps.worker_target.outcome != 'success' ||
+            steps.worker_health_auth.outcome != 'success' ||
+            steps.worker_health.outcome != 'success'
+          )
         run: |
           set -u
           echo '## Cloud Run health-check diagnostics' >> "$GITHUB_STEP_SUMMARY"
@@ -223,24 +268,16 @@ jobs:
             | tee -a "$GITHUB_STEP_SUMMARY" || true
 
       - name: Stop before Firestore rules when worker health fails
-        if: steps.worker_deploy.outcome == 'failure'
+        if: |
+          always() && (
+            steps.worker_deploy.outcome != 'success' ||
+            steps.worker_target.outcome != 'success' ||
+            steps.worker_health_auth.outcome != 'success' ||
+            steps.worker_health.outcome != 'success'
+          )
         run: |
-          echo 'STOP: The Media Intake worker did not pass its health check. Firestore rules were not deployed.'
+          echo 'STOP: The Media Intake worker did not pass its authenticated health check. Firestore rules were not deployed.'
           exit 1
-
-      - name: Confirm worker health
-        if: steps.worker_deploy.outcome == 'success'
-        run: |
-          set -euo pipefail
-          WORKER_URL="$(gcloud run services describe "$SERVICE_NAME" \
-            --project "$PROJECT_ID" \
-            --region "$REGION" \
-            --format='value(status.url)')"
-          test -n "$WORKER_URL"
-          curl --fail --silent --show-error --retry 5 --retry-all-errors \
-            "${WORKER_URL}/healthz"
-          echo "worker_url=$WORKER_URL" >> "$GITHUB_OUTPUT"
-        id: worker
 
       - name: Deploy Firestore rules
         run: |
@@ -255,7 +292,7 @@ jobs:
             echo ''
             echo "- Revision: \`${{ steps.revision.outputs.deployed_sha }}\`"
             echo "- Project: \`${PROJECT_ID}\`"
-            echo "- Worker: ${{ steps.worker.outputs.worker_url }}"
+            echo "- Worker: ${{ steps.worker_health.outputs.worker_url }}"
             echo ''
             echo 'Next: set `EXPO_PUBLIC_MEDIA_INTAKE_WORKER_URL` in the EAS production environment to the Worker URL above, then create a new production build.'
           } >> "$GITHUB_STEP_SUMMARY"

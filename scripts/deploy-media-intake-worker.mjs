@@ -35,14 +35,35 @@ function commandExists(command) {
   return spawnSync(command, ['--version'], { encoding: 'utf8' }).status === 0;
 }
 
+function getHealthCheckIdentityToken(serviceUrl) {
+  const suppliedToken = process.env.MEDIA_INTAKE_HEALTH_CHECK_ID_TOKEN?.trim();
+  if (suppliedToken) {
+    return suppliedToken;
+  }
+
+  const token = run('gcloud', [
+    'auth',
+    'print-identity-token',
+    `--audiences=${serviceUrl}`,
+  ]);
+  if (!token) {
+    fail('gcloud did not return an identity token for the worker health check.');
+  }
+  return token;
+}
+
 async function verifyHealth(serviceUrl) {
   const healthUrl = new URL('/healthz', serviceUrl);
+  const identityToken = getHealthCheckIdentityToken(serviceUrl);
   let lastError = 'The health endpoint did not respond successfully.';
 
   for (let attempt = 1; attempt <= 5; attempt += 1) {
     try {
       const response = await fetch(healthUrl, {
-        headers: { Accept: 'application/json' },
+        headers: {
+          Accept: 'application/json',
+          Authorization: `Bearer ${identityToken}`,
+        },
         signal: AbortSignal.timeout(15_000),
       });
       if (response.ok) {
@@ -192,8 +213,12 @@ const serviceDiagnostics = run('gcloud', [
 ]);
 console.log(`Cloud Run post-deploy diagnostics: ${serviceDiagnostics}`);
 
-await verifyHealth(serviceUrl);
+if (process.env.MEDIA_INTAKE_SKIP_HEALTH_CHECK === 'true') {
+  console.log('Worker deployment completed. Health verification is delegated to the authenticated CI probe.');
+} else {
+  await verifyHealth(serviceUrl);
+}
 
 console.log('');
-console.log(`SUCCESS: Worker deployed and passed its health check at ${serviceUrl}`);
+console.log(`SUCCESS: Worker deployed at ${serviceUrl}`);
 console.log('Next safe step: set EXPO_PUBLIC_MEDIA_INTAKE_WORKER_URL to this exact HTTPS URL in the EAS production environment, then create a new app build. Do not put Firebase Admin or AI credentials in EAS.');
