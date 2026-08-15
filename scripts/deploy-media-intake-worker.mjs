@@ -5,6 +5,7 @@ import { resolve } from 'node:path';
 const EXPECTED_PROJECT_ID = 'babyready-8bfd6';
 const SERVICE_NAME = 'babyready-media-intake-worker';
 const REGION = 'us-central1';
+const PRODUCTION_TAG = 'production';
 const RUNTIME_SERVICE_ACCOUNT =
   `babyready-media-intake-worker@${EXPECTED_PROJECT_ID}.iam.gserviceaccount.com`;
 const WORKER_DIRECTORY = resolve('services/media-intake-worker');
@@ -121,6 +122,16 @@ if (configuredProject !== EXPECTED_PROJECT_ID) {
   );
 }
 
+const projectNumber = run('gcloud', [
+  'projects',
+  'describe',
+  EXPECTED_PROJECT_ID,
+  '--format=value(projectNumber)',
+]);
+if (!/^\d+$/.test(projectNumber)) {
+  fail('Google Cloud did not return a valid project number. No deployment was attempted.');
+}
+
 const activeAccount = run('gcloud', ['auth', 'list', '--filter=status:ACTIVE', '--format=value(account)']);
 if (!activeAccount) {
   fail('No active Google Cloud account is available. No deployment was attempted.');
@@ -137,6 +148,7 @@ run('gcloud', [
 ]);
 
 console.log(`Project: ${EXPECTED_PROJECT_ID}`);
+console.log(`Project number: ${projectNumber}`);
 console.log(`Region: ${REGION}`);
 console.log(`Runtime service account: ${RUNTIME_SERVICE_ACCOUNT}`);
 console.log('Required before deployment:');
@@ -178,27 +190,13 @@ run(
   '--ingress',
   'all',
   '--default-url',
+  '--tag',
+  PRODUCTION_TAG,
   '--set-env-vars',
   `^@^${runtimeEnvironmentVariables}`,
   ],
   { showStdout: true },
 );
-
-const serviceUrl = run('gcloud', [
-  'run',
-  'services',
-  'describe',
-  SERVICE_NAME,
-  '--project',
-  EXPECTED_PROJECT_ID,
-  '--region',
-  REGION,
-  '--format=value(status.url)',
-]);
-
-if (!serviceUrl.startsWith('https://')) {
-  fail('Cloud Run did not return a valid HTTPS service URL.');
-}
 
 const serviceDiagnostics = run('gcloud', [
   'run',
@@ -211,6 +209,24 @@ const serviceDiagnostics = run('gcloud', [
   REGION,
   '--format=json(status.url,status.latestCreatedRevisionName,status.latestReadyRevisionName,status.traffic,metadata.annotations,spec.template.spec.containers[0].image)',
 ]);
+
+const service = JSON.parse(serviceDiagnostics);
+if (!service.status?.url?.startsWith('https://')) {
+  fail('Cloud Run did not return a valid HTTPS service URL.');
+}
+
+const latestReadyRevision = service.status?.latestReadyRevisionName;
+const productionTagIsReady = service.status?.traffic?.some(
+  (traffic) => traffic.tag === PRODUCTION_TAG && traffic.revisionName === latestReadyRevision,
+);
+if (!productionTagIsReady) {
+  fail(
+    `Cloud Run did not attach the ${PRODUCTION_TAG} tag to the latest ready revision. ` +
+      'No application URL was reported.',
+  );
+}
+
+const serviceUrl = `https://${PRODUCTION_TAG}---${SERVICE_NAME}-${projectNumber}.${REGION}.run.app`;
 console.log(`Cloud Run post-deploy diagnostics: ${serviceDiagnostics}`);
 
 if (process.env.MEDIA_INTAKE_SKIP_HEALTH_CHECK === 'true') {
@@ -221,4 +237,4 @@ if (process.env.MEDIA_INTAKE_SKIP_HEALTH_CHECK === 'true') {
 
 console.log('');
 console.log(`SUCCESS: Worker deployed at ${serviceUrl}`);
-console.log('Next safe step: set EXPO_PUBLIC_MEDIA_INTAKE_WORKER_URL to this exact HTTPS URL in the EAS production environment, then create a new app build. Do not put Firebase Admin or AI credentials in EAS.');
+console.log('Next safe step: set EXPO_PUBLIC_MEDIA_INTAKE_WORKER_URL to this exact production-tag HTTPS URL in the EAS production environment, then create a new app build. Do not put Firebase Admin or AI credentials in EAS.');
