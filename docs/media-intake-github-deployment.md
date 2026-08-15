@@ -148,5 +148,6 @@ Replace `PROJECT_NUMBER` with the numeric value returned in step 4.
 - A failed validation job makes no production changes.
 - A missing WIF variable or invalid identity stops before worker/rules deployment.
 - The worker health check must succeed before Firestore rules are deployed.
+- If the worker health check fails, the workflow summary records the Cloud Run configuration and invoker policy, an authenticated local proxy result, recent request logs, and recent VPC Service Controls policy audit events.
 - The workflow is serialized with other Media Intake production deployments.
 - Re-running the workflow with the same revision is safe for Cloud Run and Firestore rules, but every run should still be intentionally approved.
