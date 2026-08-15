@@ -101,6 +101,20 @@ console.log('  3. Confirm the allowed web origins and client-facing worker URL.'
 console.log('');
 console.log('Deploying a public HTTPS endpoint with application-level Firebase-token authorization.');
 
+const allowedOrigins = [
+  'https://babyready.app',
+  `https://${EXPECTED_PROJECT_ID}.web.app`,
+  `https://${EXPECTED_PROJECT_ID}.firebaseapp.com`,
+].join(',');
+
+// gcloud normally uses commas to separate KEY=VALUE pairs. The allowlist is
+// itself a comma-delimited value, so choose @ as the explicit pair delimiter.
+const runtimeEnvironmentVariables = [
+  `FIREBASE_PROJECT_ID=${EXPECTED_PROJECT_ID}`,
+  'VERTEX_AI_LOCATION=us-central1',
+  `MEDIA_INTAKE_ALLOWED_ORIGINS=${allowedOrigins}`,
+].join('@');
+
 run('gcloud', [
   'run',
   'deploy',
@@ -115,11 +129,7 @@ run('gcloud', [
   RUNTIME_SERVICE_ACCOUNT,
   '--allow-unauthenticated',
   '--set-env-vars',
-  [
-    `FIREBASE_PROJECT_ID=${EXPECTED_PROJECT_ID}`,
-    `VERTEX_AI_LOCATION=us-central1`,
-    `MEDIA_INTAKE_ALLOWED_ORIGINS=https://babyready.app,https://${EXPECTED_PROJECT_ID}.web.app,https://${EXPECTED_PROJECT_ID}.firebaseapp.com`,
-  ].join(','),
+  `^@^${runtimeEnvironmentVariables}`,
 ]);
 
 const serviceUrl = run('gcloud', [
