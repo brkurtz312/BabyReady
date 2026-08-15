@@ -45,7 +45,11 @@ function Test-GcloudResource {
     [Parameter(Mandatory = $true)][string[]]$Arguments
   )
 
-  & gcloud @Arguments 1>$null 2>$null
+  # On Windows, `gcloud` can resolve to gcloud.ps1. Its error-stream output
+  # turns an expected "not found" response into a terminating PowerShell error
+  # under $ErrorActionPreference = 'Stop'. Prefer the .cmd shim for resource
+  # existence probes, where a nonzero exit code means "create it".
+  & $GcloudProbeCommand @Arguments 1>$null 2>$null
   return ($LASTEXITCODE -eq 0)
 }
 
@@ -78,6 +82,12 @@ STOP: Google Cloud CLI was installed. Close this PowerShell window,
 open a new PowerShell window, return to BabyReady, and run this script again.
 No Google Cloud resources were changed.
 '@
+}
+
+$GcloudProbeCommand = (Get-Command gcloud.cmd -ErrorAction SilentlyContinue).Source
+
+if (-not $GcloudProbeCommand) {
+  $GcloudProbeCommand = 'gcloud'
 }
 
 if (-not (Test-Path '.git')) {
