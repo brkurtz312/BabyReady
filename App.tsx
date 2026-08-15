@@ -25,10 +25,15 @@ import type { ClinicalContentBlock, CourseRecord } from './src/models/course';
 import { ClinicianAuditLogScreen } from './src/screens/ClinicianAuditLogScreen';
 import { ClinicianReviewScreen } from './src/screens/ClinicianReviewScreen';
 import { ClinicianContentAuthoringScreen } from './src/screens/ClinicianContentAuthoringScreen';
+import { ClinicianMediaIntakeScreen } from './src/screens/ClinicianMediaIntakeScreen';
 import { ClinicianMediaLibraryScreen } from './src/screens/ClinicianMediaLibraryScreen';
 import { ClinicianSourceLibraryScreen } from './src/screens/ClinicianSourceLibraryScreen';
 import { LearnerCourseCatalog } from './src/screens/LearnerCourseCatalog';
 import { LearnerCoursePlayerScreen } from './src/screens/LearnerCoursePlayerScreen';
+import {
+  LearnerLearningPlanScreen,
+  type LearningPlanLessonTarget,
+} from './src/screens/LearnerLearningPlanScreen';
 import {
   signInWithEmail,
   signOutFromBabyReady,
@@ -46,10 +51,12 @@ function BabyReadyApp() {
   const authState = useBabyReadyAuth();
   const [activeView, setActiveView] = useState<
     | 'learner'
+    | 'learning-plan'
     | 'course-player'
     | 'review'
     | 'sources'
     | 'media'
+    | 'media-intake'
     | 'author'
     | 'audit-log'
   >('learner');
@@ -62,6 +69,11 @@ function BabyReadyApp() {
   const [selectedCourse, setSelectedCourse] = useState<CourseRecord | null>(
     null,
   );
+  const [selectedLessonTarget, setSelectedLessonTarget] =
+    useState<LearningPlanLessonTarget | null>(null);
+  const [coursePlayerReturnView, setCoursePlayerReturnView] = useState<
+    'learner' | 'learning-plan'
+  >('learner');
   const [clinicianSignInOpen, setClinicianSignInOpen] = useState(false);
   const [clinicianEmail, setClinicianEmail] = useState('');
   const [clinicianPassword, setClinicianPassword] = useState('');
@@ -192,6 +204,15 @@ function BabyReadyApp() {
     );
   }
 
+  if (activeView === 'media-intake' && authState.status === 'ready') {
+    return (
+      <ClinicianMediaIntakeScreen
+        onExit={() => setActiveView('review')}
+        user={authState.user}
+      />
+    );
+  }
+
   if (activeView === 'author' && authState.status === 'ready') {
     return (
       <ClinicianContentAuthoringScreen
@@ -231,6 +252,7 @@ function BabyReadyApp() {
           setActiveView('author');
         }}
         onOpenAuditLog={() => setActiveView('audit-log')}
+        onOpenMediaIntake={() => setActiveView('media-intake')}
         onOpenMediaLibrary={() => setActiveView('media')}
         onOpenSourceLibrary={() => setActiveView('sources')}
         user={authState.user}
@@ -242,10 +264,28 @@ function BabyReadyApp() {
     return (
       <LearnerCoursePlayerScreen
         course={selectedCourse}
+        initialLesson={selectedLessonTarget}
         onExit={() => {
           setSelectedCourse(null);
-          setActiveView('learner');
+          setSelectedLessonTarget(null);
+          setActiveView(coursePlayerReturnView);
         }}
+      />
+    );
+  }
+
+  if (activeView === 'learning-plan') {
+    return (
+      <LearnerLearningPlanScreen
+        authStatus={authState.status}
+        onExit={() => setActiveView('learner')}
+        onOpenCourse={(course, target) => {
+          setSelectedCourse(course);
+          setSelectedLessonTarget(target ?? null);
+          setCoursePlayerReturnView('learning-plan');
+          setActiveView('course-player');
+        }}
+        userId={authState.status === 'ready' ? authState.user.uid : null}
       />
     );
   }
@@ -279,9 +319,32 @@ function BabyReadyApp() {
           </Text>
         </View>
 
+        <View style={styles.learningPlanCard}>
+          <View style={styles.learningPlanCopy}>
+            <Text style={styles.learningPlanEyebrow}>YOUR PATH</Text>
+            <Text style={styles.learningPlanTitle}>Pregnancy learning plan</Text>
+            <Text style={styles.learningPlanText}>
+              See the full childbirth education path, continue published lessons,
+              and save your completion progress.
+            </Text>
+          </View>
+          <Pressable
+            accessibilityHint="Opens your learning checklist and education timeline."
+            accessibilityLabel="Open your pregnancy learning plan"
+            accessibilityRole="button"
+            onPress={() => setActiveView('learning-plan')}
+            style={styles.learningPlanButton}
+            testID="button-open-pregnancy-learning-plan"
+          >
+            <Text style={styles.learningPlanButtonText}>Open plan</Text>
+          </Pressable>
+        </View>
+
         <LearnerCourseCatalog
           onOpenCourse={(course) => {
             setSelectedCourse(course);
+            setSelectedLessonTarget(null);
+            setCoursePlayerReturnView('learner');
             setActiveView('course-player');
           }}
         />
@@ -489,6 +552,50 @@ const styles = StyleSheet.create({
     color: '#55534D',
     fontSize: 14,
     lineHeight: 20,
+  },
+  learningPlanCard: {
+    backgroundColor: '#EAF4F2',
+    borderColor: '#92BFB8',
+    borderRadius: 16,
+    borderWidth: 1,
+    marginBottom: 6,
+    padding: 17,
+  },
+  learningPlanCopy: {
+    maxWidth: 620,
+  },
+  learningPlanEyebrow: {
+    color: '#0C4E54',
+    fontSize: 10,
+    fontWeight: '800',
+    letterSpacing: 0.9,
+  },
+  learningPlanTitle: {
+    color: '#28251D',
+    fontSize: 19,
+    fontWeight: '800',
+    marginTop: 4,
+  },
+  learningPlanText: {
+    color: '#365553',
+    fontSize: 14,
+    lineHeight: 20,
+    marginTop: 4,
+  },
+  learningPlanButton: {
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+    backgroundColor: '#01696F',
+    borderRadius: 10,
+    justifyContent: 'center',
+    marginTop: 14,
+    minHeight: 44,
+    paddingHorizontal: 15,
+  },
+  learningPlanButtonText: {
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: '800',
   },
   nextCard: {
     backgroundColor: '#01696F',

@@ -36,6 +36,10 @@ type SelectedLesson = {
 
 type LearnerCoursePlayerScreenProps = {
   course: CourseRecord;
+  initialLesson?: {
+    moduleId: string;
+    lessonId: string;
+  } | null;
   onExit: () => void;
 };
 
@@ -632,13 +636,26 @@ function FigureViewer({
 
 export function LearnerCoursePlayerScreen({
   course,
+  initialLesson,
   onExit,
 }: LearnerCoursePlayerScreenProps) {
   const { isTabletLayout } = useLearnerLayout();
   const allLessons = useMemo(() => lessonsForCourse(course), [course]);
-  const [selectedLessonKey, setSelectedLessonKey] = useState(
-    allLessons[0] ? lessonKey(allLessons[0]) : '',
-  );
+  const [selectedLessonKey, setSelectedLessonKey] = useState(() => {
+    const plannedLesson = initialLesson
+      ? allLessons.find(
+          (item) =>
+            item.module.id === initialLesson.moduleId &&
+            item.lesson.id === initialLesson.lessonId,
+        )
+      : null;
+
+    return plannedLesson
+      ? lessonKey(plannedLesson)
+      : allLessons[0]
+        ? lessonKey(allLessons[0])
+        : '';
+  });
   const selectedLesson =
     allLessons.find((lesson) => lessonKey(lesson) === selectedLessonKey) ??
     allLessons[0] ??

@@ -30,6 +30,12 @@ export const isFirebaseConfigured = Object.values(firebaseConfig).every(Boolean)
 
 export const firebaseOptions: FirebaseOptions = firebaseConfig;
 
+// This is a public HTTPS endpoint, not a provider secret. The service itself
+// verifies the caller's Firebase token and holds any AI-provider credentials.
+export const mediaIntakeWorkerUrl = value(
+  process.env.EXPO_PUBLIC_MEDIA_INTAKE_WORKER_URL,
+);
+
 export const firebaseEmulatorConfig = {
   enabled: booleanValue(process.env.EXPO_PUBLIC_USE_FIREBASE_EMULATORS),
   host: value(process.env.EXPO_PUBLIC_FIREBASE_EMULATOR_HOST) || '127.0.0.1',

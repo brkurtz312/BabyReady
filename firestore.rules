@@ -78,6 +78,55 @@ service cloud.firestore {
         && isPublicationState(request.resource.data.publicationState);
     }
 
+    function validMediaIntakeUrl(url) {
+      return url is string && url.matches('^https://.+$');
+    }
+
+    function validMediaIntakeCreate() {
+      return request.resource.data.keys().hasOnly([
+          'inputType',
+          'originalUrl',
+          'transcriptUrl',
+          'submitterNote',
+          'suggestedTopic',
+          'attestedNoPatientInformation',
+          'status',
+          'submittedBy',
+          'submittedAt',
+          'updatedAt'
+        ])
+        && request.resource.data.inputType in ['web_url', 'video_url']
+        && validMediaIntakeUrl(request.resource.data.originalUrl)
+        && (
+          !request.resource.data.keys().hasAny(['transcriptUrl'])
+          || validMediaIntakeUrl(request.resource.data.transcriptUrl)
+        )
+        && request.resource.data.attestedNoPatientInformation == true
+        && request.resource.data.status == 'queued'
+        && request.resource.data.submittedBy == request.auth.uid
+        && request.resource.data.submittedAt is timestamp
+        && request.resource.data.updatedAt is timestamp;
+    }
+
+    function validMediaIntakeDisposition() {
+      return request.resource.data.diff(resource.data).affectedKeys().hasOnly([
+          'status',
+          'finalDisposition',
+          'decisionNote',
+          'decidedBy',
+          'decidedAt',
+          'updatedAt'
+        ])
+        && request.resource.data.attestedNoPatientInformation == true
+        && request.resource.data.status in ['held', 'rejected', 'archived']
+        && request.resource.data.finalDisposition == request.resource.data.status
+        && request.resource.data.decisionNote is string
+        && request.resource.data.decisionNote.size() > 0
+        && request.resource.data.decidedBy == request.auth.uid
+        && request.resource.data.decidedAt is timestamp
+        && request.resource.data.updatedAt is timestamp;
+    }
+
     function validClinicalContentVersion(contentBlockId) {
       return request.resource.data.id is string
         && request.resource.data.versionNumber is int
@@ -421,6 +470,22 @@ service cloud.firestore {
     match /sources/{sourceId} {
       allow read: if resource.data.publicationState == 'published' || isAdmin();
       allow write: if isAdmin() && validSourceRecord();
+    }
+
+    // Candidate URLs and their AI assessments are never learner-visible. A
+    // clinician can submit a candidate and document an editorial disposition;
+    // the trusted worker alone creates assessment snapshots or changes an
+    // evaluation state. The Admin SDK bypasses rules for that narrow job.
+    match /mediaIntakes/{intakeId} {
+      allow read: if isAdmin();
+      allow create: if isAdmin() && validMediaIntakeCreate();
+      allow update: if isAdmin() && validMediaIntakeDisposition();
+      allow delete: if false;
+
+      match /analyses/{analysisId} {
+        allow read: if isAdmin();
+        allow write: if false;
+      }
     }
 
     // Clinical figures, images, audio, and video assets have the same

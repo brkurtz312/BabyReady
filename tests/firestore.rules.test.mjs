@@ -91,6 +91,18 @@ const auditReportManifest = (overrides = {}) => ({
   ...overrides,
 });
 
+const mediaIntakeCandidate = (overrides = {}) => ({
+  inputType: 'video_url',
+  originalUrl: 'https://www.youtube.com/watch?v=example',
+  transcriptUrl: 'https://www.youtube.com/watch?v=example',
+  attestedNoPatientInformation: true,
+  status: 'queued',
+  submittedBy: 'admin',
+  submittedAt: serverTimestamp(),
+  updatedAt: serverTimestamp(),
+  ...overrides,
+});
+
 async function seed(path, data) {
   await testEnvironment.withSecurityRulesDisabled(async (context) => {
     await setDoc(doc(context.firestore(), path), data);
@@ -748,6 +760,46 @@ test('only complete, published source records are publicly readable', async () =
   );
 
   await assertSucceeds(getDoc(doc(anonymous, 'sources/acog-labor-delivery')));
+});
+
+test('media intake is clinician-only, source-immutable, and assessment snapshots are worker-only', async () => {
+  const author = userDb('author');
+  const admin = userDb('admin', { admin: true });
+  const anonymous = testEnvironment.unauthenticatedContext().firestore();
+  const intakePath = 'mediaIntakes/cdc-video';
+
+  await assertFails(setDoc(doc(author, intakePath), mediaIntakeCandidate({ submittedBy: 'author' })));
+  await assertSucceeds(setDoc(doc(admin, intakePath), mediaIntakeCandidate()));
+  await assertSucceeds(getDoc(doc(admin, intakePath)));
+  await assertFails(getDoc(doc(anonymous, intakePath)));
+  await assertFails(
+    updateDoc(doc(admin, intakePath), {
+      originalUrl: 'https://example.com/replaced',
+      status: 'held',
+      finalDisposition: 'held',
+      decisionNote: 'Changed source.',
+      decidedBy: 'admin',
+      decidedAt: serverTimestamp(),
+      updatedAt: serverTimestamp(),
+    }),
+  );
+  await assertSucceeds(
+    updateDoc(doc(admin, intakePath), {
+      status: 'held',
+      finalDisposition: 'held',
+      decisionNote: 'Hold for clinical review of accessibility details.',
+      decidedBy: 'admin',
+      decidedAt: serverTimestamp(),
+      updatedAt: serverTimestamp(),
+    }),
+  );
+  await assertFails(
+    setDoc(doc(admin, `${intakePath}/analyses/analysis-1`), {
+      id: 'analysis-1',
+      intakeId: 'cdc-video',
+      status: 'complete',
+    }),
+  );
 });
 
 test('a user can access only their own profile, progress, plans, and contacts', async () => {
