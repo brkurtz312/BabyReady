@@ -14,16 +14,21 @@ function fail(message) {
   process.exit(1);
 }
 
-function run(command, args) {
+function run(command, args, { showStdout = false } = {}) {
   const result = spawnSync(command, args, {
     encoding: 'utf8',
     stdio: ['inherit', 'pipe', 'pipe'],
   });
   if (result.status !== 0) {
+    process.stdout.write(result.stdout || '');
     process.stderr.write(result.stderr || '');
     fail(`${command} ${args.join(' ')} failed. No further deployment steps were run.`);
   }
-  return result.stdout.trim();
+  const stdout = result.stdout.trim();
+  if (showStdout && stdout) {
+    console.log(stdout);
+  }
+  return stdout;
 }
 
 function commandExists(command) {
@@ -41,11 +46,30 @@ async function verifyHealth(serviceUrl) {
         signal: AbortSignal.timeout(15_000),
       });
       if (response.ok) {
+        console.log(`Worker health check passed: ${healthUrl} (HTTP ${response.status}).`);
         return;
       }
-      lastError = `The health endpoint returned HTTP ${response.status}.`;
+      const bodyPreview = (await response.text()).replace(/\s+/g, ' ').slice(0, 1_000);
+      const diagnosticHeaders = Object.fromEntries(
+        ['content-type', 'location', 'server', 'via', 'x-cloud-trace-context']
+          .map((name) => [name, response.headers.get(name)])
+          .filter(([, value]) => value),
+      );
+      console.error(
+        `Worker health diagnostic, attempt ${attempt}/5: ${JSON.stringify({
+          url: healthUrl.toString(),
+          status: response.status,
+          statusText: response.statusText,
+          headers: diagnosticHeaders,
+          bodyPreview,
+        })}`,
+      );
+      lastError = `The health endpoint returned HTTP ${response.status}${
+        bodyPreview ? `: ${bodyPreview}` : '.'
+      }`;
     } catch (error) {
       lastError = error instanceof Error ? error.message : String(error);
+      console.error(`Worker health diagnostic, attempt ${attempt}/5: ${lastError}`);
     }
 
     if (attempt < 5) {
@@ -115,7 +139,9 @@ const runtimeEnvironmentVariables = [
   `MEDIA_INTAKE_ALLOWED_ORIGINS=${allowedOrigins}`,
 ].join('@');
 
-run('gcloud', [
+run(
+  'gcloud',
+  [
   'run',
   'deploy',
   SERVICE_NAME,
@@ -130,7 +156,9 @@ run('gcloud', [
   '--allow-unauthenticated',
   '--set-env-vars',
   `^@^${runtimeEnvironmentVariables}`,
-]);
+  ],
+  { showStdout: true },
+);
 
 const serviceUrl = run('gcloud', [
   'run',
@@ -147,6 +175,19 @@ const serviceUrl = run('gcloud', [
 if (!serviceUrl.startsWith('https://')) {
   fail('Cloud Run did not return a valid HTTPS service URL.');
 }
+
+const serviceDiagnostics = run('gcloud', [
+  'run',
+  'services',
+  'describe',
+  SERVICE_NAME,
+  '--project',
+  EXPECTED_PROJECT_ID,
+  '--region',
+  REGION,
+  '--format=json(status.url,status.latestCreatedRevisionName,status.latestReadyRevisionName,status.traffic,spec.template.spec.containers[0].image)',
+]);
+console.log(`Cloud Run post-deploy diagnostics: ${serviceDiagnostics}`);
 
 await verifyHealth(serviceUrl);
 
