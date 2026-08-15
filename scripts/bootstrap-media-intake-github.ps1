@@ -171,6 +171,7 @@ if (-not $ProjectNumber -or $ProjectNumber -notmatch '^\d+$') {
 
 $DeployerEmail = "$DeployerAccountId@$ProjectId.iam.gserviceaccount.com"
 $WorkerEmail = "$WorkerAccountId@$ProjectId.iam.gserviceaccount.com"
+$CloudBuildServiceAccountEmail = "$ProjectNumber-compute@developer.gserviceaccount.com"
 $WorkloadIdentityProvider = (
   "projects/$ProjectNumber/locations/global/" +
   "workloadIdentityPools/$PoolId/providers/$ProviderId"
@@ -312,6 +313,8 @@ Write-Host 'Granting deployer permissions...' -ForegroundColor Cyan
 
 foreach ($Role in @(
   'roles/run.admin',
+  'roles/run.sourceDeveloper',
+  'roles/serviceusage.serviceUsageConsumer',
   'roles/cloudbuild.builds.editor',
   'roles/artifactregistry.writer',
   'roles/firebaserules.admin'
@@ -329,6 +332,13 @@ Invoke-Checked gcloud @(
   '--project', $ProjectId,
   '--member', "serviceAccount:$DeployerEmail",
   '--role', 'roles/iam.serviceAccountUser',
+  '--quiet'
+)
+
+Invoke-Checked gcloud @(
+  'projects', 'add-iam-policy-binding', $ProjectId,
+  '--member', "serviceAccount:$CloudBuildServiceAccountEmail",
+  '--role', 'roles/run.builder',
   '--quiet'
 )
 
