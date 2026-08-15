@@ -39,6 +39,14 @@ jobs:
         with:
           ref: ${{ inputs.git_ref }}
 
+      - name: Require a revision already present on main
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main
+          git merge-base --is-ancestor HEAD origin/main
+          echo "deployed_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+        id: revision
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
@@ -87,6 +95,14 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: ${{ inputs.git_ref }}
+
+      - name: Require a revision already present on main
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main
+          git merge-base --is-ancestor HEAD origin/main
+          echo "deployed_sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+        id: revision
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -145,7 +161,7 @@ jobs:
           {
             echo '## Media Intake deployment complete'
             echo ''
-            echo "- Revision: \`${GITHUB_SHA}\`"
+            echo "- Revision: \`${{ steps.revision.outputs.deployed_sha }}\`"
             echo "- Project: \`${PROJECT_ID}\`"
             echo "- Worker: ${{ steps.worker.outputs.worker_url }}"
             echo ''
