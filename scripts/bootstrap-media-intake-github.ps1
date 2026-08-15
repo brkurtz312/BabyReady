@@ -171,7 +171,6 @@ if (-not $ProjectNumber -or $ProjectNumber -notmatch '^\d+$') {
 
 $DeployerEmail = "$DeployerAccountId@$ProjectId.iam.gserviceaccount.com"
 $WorkerEmail = "$WorkerAccountId@$ProjectId.iam.gserviceaccount.com"
-$CloudBuildServiceAccountEmail = "$ProjectNumber-compute@developer.gserviceaccount.com"
 $WorkloadIdentityProvider = (
   "projects/$ProjectNumber/locations/global/" +
   "workloadIdentityPools/$PoolId/providers/$ProviderId"
@@ -214,6 +213,16 @@ Invoke-Checked gcloud @(
   'firebaserules.googleapis.com',
   '--project', $ProjectId
 )
+
+$CloudBuildServiceAccountEmail = Invoke-CheckedText gcloud @(
+  'builds', 'get-default-service-account',
+  '--project', $ProjectId,
+  '--region', $CloudRunSourceRepositoryLocation
+)
+
+if (-not $CloudBuildServiceAccountEmail -or $CloudBuildServiceAccountEmail -notmatch '@') {
+  throw 'STOP: Could not determine the active Cloud Build default service account. No IAM bindings were changed.'
+}
 
 Write-Host ''
 Write-Host 'Ensuring Cloud Run source-build Artifact Registry repository exists...' -ForegroundColor Cyan
@@ -339,6 +348,14 @@ Invoke-Checked gcloud @(
   'projects', 'add-iam-policy-binding', $ProjectId,
   '--member', "serviceAccount:$CloudBuildServiceAccountEmail",
   '--role', 'roles/run.builder',
+  '--quiet'
+)
+
+Invoke-Checked gcloud @(
+  'iam', 'service-accounts', 'add-iam-policy-binding', $CloudBuildServiceAccountEmail,
+  '--project', $ProjectId,
+  '--member', "serviceAccount:$DeployerEmail",
+  '--role', 'roles/iam.serviceAccountUser',
   '--quiet'
 )
 
