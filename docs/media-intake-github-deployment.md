@@ -81,8 +81,7 @@ An owner of Google Cloud project `babyready-8bfd6` performs these actions once, 
      'roles/run.admin',
      'roles/cloudbuild.builds.editor',
      'roles/artifactregistry.writer',
-     'roles/firebase.rulesAdmin',
-     'roles/iam.serviceAccountUser'
+     'roles/firebase.rulesAdmin'
    )) {
      gcloud projects add-iam-policy-binding $ProjectId `
        --member "serviceAccount:$Deployer" `
@@ -90,6 +89,12 @@ An owner of Google Cloud project `babyready-8bfd6` performs these actions once, 
        --condition None `
        --quiet
    }
+
+   # The deployer may use only the Media Intake runtime identity.
+   gcloud iam service-accounts add-iam-policy-binding $Worker `
+     --project $ProjectId `
+     --member "serviceAccount:$Deployer" `
+     --role roles/iam.serviceAccountUser
 
    # Runtime identity: evaluate intake candidates only.
    foreach ($Role in @(
