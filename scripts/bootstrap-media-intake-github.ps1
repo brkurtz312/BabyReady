@@ -346,6 +346,14 @@ Invoke-Checked gcloud @(
 )
 
 Invoke-Checked gcloud @(
+  'iam', 'service-accounts', 'add-iam-policy-binding', $DeployerEmail,
+  '--project', $ProjectId,
+  '--member', "serviceAccount:$DeployerEmail",
+  '--role', 'roles/iam.serviceAccountOpenIdTokenCreator',
+  '--quiet'
+)
+
+Invoke-Checked gcloud @(
   'projects', 'add-iam-policy-binding', $ProjectId,
   '--member', "serviceAccount:$CloudBuildServiceAccountEmail",
   '--role', 'roles/run.builder',

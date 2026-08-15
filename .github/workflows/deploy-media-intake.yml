@@ -208,9 +208,10 @@ jobs:
           probe_health() {
             local label="$1"
             local authorization="$2"
-            local header_file body_file http_status
+            local header_file body_file report_file http_status
             header_file="$(mktemp)"
             body_file="$(mktemp)"
+            report_file="$(mktemp)"
 
             local -a curl_args=(
               --silent
@@ -245,7 +246,10 @@ jobs:
               echo ''
               echo '```'
               echo ""
-            } >> "$GITHUB_STEP_SUMMARY"
+            } > "$report_file"
+
+            cat "$report_file" >> "$GITHUB_STEP_SUMMARY"
+            cat "$report_file"
 
             test "$http_status" = '200'
           }
