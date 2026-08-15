@@ -189,9 +189,66 @@ jobs:
           ID_TOKEN="${{ steps.worker_health_auth.outputs.id_token }}"
           test -n "$WORKER_URL"
           test -n "$ID_TOKEN"
-          curl --fail --silent --show-error --retry 5 --retry-all-errors \
-            -H "Authorization: Bearer $ID_TOKEN" \
-            "${WORKER_URL}/healthz"
+
+          probe_health() {
+            local label="$1"
+            local authorization="$2"
+            local header_file body_file http_status
+            header_file="$(mktemp)"
+            body_file="$(mktemp)"
+
+            local -a curl_args=(
+              --silent
+              --show-error
+              --retry 5
+              --retry-all-errors
+              --connect-timeout 10
+              --max-time 30
+              --dump-header "$header_file"
+              --output "$body_file"
+              --write-out '%{http_code}'
+            )
+            if [ -n "$authorization" ]; then
+              curl_args+=(-H "Authorization: Bearer $authorization")
+            fi
+
+            http_status="$(curl "${curl_args[@]}" "${WORKER_URL}/healthz" || true)"
+            {
+              echo "### ${label}"
+              echo ""
+              echo "- URL: \`${WORKER_URL}/healthz\`"
+              echo "- HTTP status: \`${http_status:-curl transport error}\`"
+              echo "- Response headers:"
+              echo '```text'
+              sed 's/\r$//' "$header_file" \
+                | grep -Eiv '^(set-cookie|www-authenticate):' \
+                | tail -40 || true
+              echo '```'
+              echo "- Response body preview:"
+              echo '```text'
+              tr '\r\n' ' ' < "$body_file" | cut -c1-1000
+              echo ''
+              echo '```'
+              echo ""
+            } >> "$GITHUB_STEP_SUMMARY"
+
+            test "$http_status" = '200'
+          }
+
+          echo '## Direct worker health probes' >> "$GITHUB_STEP_SUMMARY"
+          echo '' >> "$GITHUB_STEP_SUMMARY"
+
+          if probe_health 'Public transport probe' ''; then
+            echo 'Public transport probe passed.'
+          else
+            echo 'Public transport probe failed.' >&2
+          fi
+
+          if ! probe_health 'ID-token probe' "$ID_TOKEN"; then
+            echo 'STOP: The worker did not return HTTP 200 to the audience-bound ID-token probe.' >&2
+            exit 1
+          fi
+
           echo "worker_url=$WORKER_URL" >> "$GITHUB_OUTPUT"
         id: worker_health
 
