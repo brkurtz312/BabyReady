@@ -48,9 +48,25 @@ function Test-GcloudResource {
   # On Windows, `gcloud` can resolve to gcloud.ps1. Its error-stream output
   # turns an expected "not found" response into a terminating PowerShell error
   # under $ErrorActionPreference = 'Stop'. Prefer the .cmd shim for resource
-  # existence probes, where a nonzero exit code means "create it".
-  & $GcloudProbeCommand @Arguments 1>$null 2>$null
-  return ($LASTEXITCODE -eq 0)
+  # existence probes, where a nonzero exit code means "create it". Scope the
+  # non-terminating behavior to this probe only; all state-changing commands
+  # remain protected by Invoke-Checked.
+  $OriginalErrorActionPreference = $ErrorActionPreference
+  $ExitCode = 1
+
+  try {
+    $ErrorActionPreference = 'Continue'
+    & $GcloudProbeCommand @Arguments *> $null
+    $ExitCode = $LASTEXITCODE
+  }
+  catch {
+    $ExitCode = 1
+  }
+  finally {
+    $ErrorActionPreference = $OriginalErrorActionPreference
+  }
+
+  return ($ExitCode -eq 0)
 }
 
 Write-Host ''
