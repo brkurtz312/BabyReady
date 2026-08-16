@@ -69,7 +69,6 @@ type ClinicianReviewScreenProps = {
   onOpenSourceLibrary: () => void;
   onOpenContentAuthoring: () => void;
   onOpenAuditLog: () => void;
-  onOpenMediaIntake: () => void;
   onOpenMediaLibrary: () => void;
   onEditDraft: (block: ClinicalContentBlock) => void;
 };
@@ -259,7 +258,6 @@ export function ClinicianReviewScreen({
   onOpenSourceLibrary,
   onOpenContentAuthoring,
   onOpenAuditLog,
-  onOpenMediaIntake,
   onOpenMediaLibrary,
   onEditDraft,
 }: ClinicianReviewScreenProps) {
@@ -1007,15 +1005,6 @@ export function ClinicianReviewScreen({
             testID="button-open-content-authoring"
           >
             <Text style={styles.authorContentButtonText}>Author content</Text>
-          </Pressable>
-          <Pressable
-            accessibilityLabel="Open media intake evaluation workspace"
-            accessibilityRole="button"
-            onPress={onOpenMediaIntake}
-            style={styles.sourceLibraryButton}
-            testID="button-open-media-intake"
-          >
-            <Text style={styles.sourceLibraryButtonText}>Evaluate media intake</Text>
           </Pressable>
           <Pressable
             accessibilityLabel="Open clinician source library"

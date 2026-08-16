@@ -1,5 +1,7 @@
 # BabyReady Media Intake Worker
 
+> **Archived on 2026-08-15.** This worker source is retained for future reuse, but its deployment path is disabled. See [the archive record](../../docs/media-intake-archive.md) before attempting any reactivation.
+
 This Cloud Run service is the trusted server-side boundary for BabyReady Media Intake. It accepts a clinician administrator’s Firebase ID token and an existing `mediaIntakes/{intakeId}` document ID. It never accepts an AI key from the mobile app, never creates learner-visible content, and never republishes third-party media.
 
 ## Required runtime configuration

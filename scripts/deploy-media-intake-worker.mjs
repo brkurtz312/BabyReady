@@ -15,6 +15,10 @@ function fail(message) {
   process.exit(1);
 }
 
+fail(
+  'Media Intake deployment is archived. The worker source is preserved, but no deployment will run. See docs/media-intake-archive.md to resume it deliberately.',
+);
+
 function run(command, args, { showStdout = false } = {}) {
   const result = spawnSync(command, args, {
     encoding: 'utf8',

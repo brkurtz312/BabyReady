@@ -25,7 +25,6 @@ import type { ClinicalContentBlock, CourseRecord } from './src/models/course';
 import { ClinicianAuditLogScreen } from './src/screens/ClinicianAuditLogScreen';
 import { ClinicianReviewScreen } from './src/screens/ClinicianReviewScreen';
 import { ClinicianContentAuthoringScreen } from './src/screens/ClinicianContentAuthoringScreen';
-import { ClinicianMediaIntakeScreen } from './src/screens/ClinicianMediaIntakeScreen';
 import { ClinicianMediaLibraryScreen } from './src/screens/ClinicianMediaLibraryScreen';
 import { ClinicianSourceLibraryScreen } from './src/screens/ClinicianSourceLibraryScreen';
 import { LearnerCourseCatalog } from './src/screens/LearnerCourseCatalog';
@@ -56,7 +55,6 @@ function BabyReadyApp() {
     | 'review'
     | 'sources'
     | 'media'
-    | 'media-intake'
     | 'author'
     | 'audit-log'
   >('learner');
@@ -204,15 +202,6 @@ function BabyReadyApp() {
     );
   }
 
-  if (activeView === 'media-intake' && authState.status === 'ready') {
-    return (
-      <ClinicianMediaIntakeScreen
-        onExit={() => setActiveView('review')}
-        user={authState.user}
-      />
-    );
-  }
-
   if (activeView === 'author' && authState.status === 'ready') {
     return (
       <ClinicianContentAuthoringScreen
@@ -252,7 +241,6 @@ function BabyReadyApp() {
           setActiveView('author');
         }}
         onOpenAuditLog={() => setActiveView('audit-log')}
-        onOpenMediaIntake={() => setActiveView('media-intake')}
         onOpenMediaLibrary={() => setActiveView('media')}
         onOpenSourceLibrary={() => setActiveView('sources')}
         user={authState.user}

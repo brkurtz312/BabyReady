@@ -1,3 +1,6 @@
+# ARCHIVED 2026-08-15
+# This workflow is intentionally stored outside .github/workflows so GitHub
+# cannot discover or run it. See docs/media-intake-archive.md to restore it.
 name: Deploy Media Intake
 
 on:

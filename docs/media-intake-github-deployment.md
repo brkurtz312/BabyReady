@@ -1,4 +1,6 @@
-# Media Intake production deployment
+# Media Intake production deployment (archived)
+
+> **Archived on 2026-08-15.** This is historical deployment documentation, not an active operating procedure. Media Intake source code remains in the repository, but its GitHub Actions workflow is intentionally stored outside `.github/workflows` and direct worker deployment stops before calling Google Cloud. See [Media Intake archive](./media-intake-archive.md) for the retained components and deliberate reactivation checklist.
 
 The Media Intake worker and Firestore rules are deployed from the **Deploy Media Intake** GitHub Actions workflow. It is intentionally manual. Every run verifies the selected revision before it can deploy, and production changes require the exact confirmation text `DEPLOY_MEDIA_INTAKE`.
 
