@@ -1,6 +1,6 @@
 import authoringManifest from '../../docs/content/preparing-for-labor-authoring-manifest.v1.json';
 
-type PreparingForLaborContentType =
+export type PreparingForLaborContentType =
   | 'text'
   | 'callout'
   | 'checklist'
@@ -12,7 +12,7 @@ type PreparingForLaborContentType =
   | 'emergency_card'
   | 'artifact_prompt';
 
-type PreparingForLaborManifestBlock = {
+export type PreparingForLaborManifestBlock = {
   id: string;
   displayOrder: number;
   type: PreparingForLaborContentType;
@@ -20,7 +20,7 @@ type PreparingForLaborManifestBlock = {
   sourceSlotIds: string[];
 };
 
-type PreparingForLaborManifestLesson = {
+export type PreparingForLaborManifestLesson = {
   lessonId: string;
   blocks: PreparingForLaborManifestBlock[];
 };
@@ -62,6 +62,42 @@ export function findPreparingForLaborManifestBlock(
   return PREPARING_FOR_LABOR_MANIFEST.lessons
     .find((lesson) => lesson.lessonId === lessonId)
     ?.blocks.find((block) => block.id === contentBlockId);
+}
+
+export function findPreparingForLaborManifestLesson(
+  lessonId: string,
+): PreparingForLaborManifestLesson | undefined {
+  return PREPARING_FOR_LABOR_MANIFEST.lessons.find(
+    (lesson) => lesson.lessonId === lessonId,
+  );
+}
+
+/**
+ * Returns the complete immutable placement for a reviewed authoring-plan
+ * block. Authoring UIs should use this rather than asking an author to
+ * manually enter its course/module path, learner order, type, or claim flag.
+ */
+export function getPreparingForLaborManifestPlacement(
+  lessonId: string,
+  contentBlockId: string,
+): PreparingForLaborPlacementInput | undefined {
+  const block = findPreparingForLaborManifestBlock(
+    PREPARING_FOR_LABOR_MANIFEST.course.moduleId,
+    lessonId,
+    contentBlockId,
+  );
+
+  return block
+    ? {
+        courseId: PREPARING_FOR_LABOR_MANIFEST.course.id,
+        moduleId: PREPARING_FOR_LABOR_MANIFEST.course.moduleId,
+        lessonId,
+        id: block.id,
+        displayOrder: block.displayOrder,
+        type: block.type,
+        isClinicalClaim: block.isClinicalClaim,
+      }
+    : undefined;
 }
 
 /**

@@ -29,6 +29,14 @@ import {
   subscribeToClinicalMediaLibrary,
   type ClinicalMediaLibraryState,
 } from '../services/clinicalMediaService';
+import {
+  findPreparingForLaborManifestBlock,
+  findPreparingForLaborManifestLesson,
+  getPreparingForLaborManifestPlacement,
+  isPreparingForLaborCourse,
+  PREPARING_FOR_LABOR_MANIFEST,
+  type PreparingForLaborManifestBlock,
+} from '../content/preparingForLaborManifest';
 import { useClinicianWorkspace } from '../lib/clinicianWorkspace';
 
 type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
@@ -70,14 +78,53 @@ const contentTypes: Array<{ value: ContentBlockType; label: string }> = [
 
 function emptyContentForm(): ContentForm {
   return {
+    courseId: PREPARING_FOR_LABOR_MANIFEST.course.id,
+    moduleId: PREPARING_FOR_LABOR_MANIFEST.course.moduleId,
+    lessonId: '',
+    id: '',
+    title: '',
+    displayOrder: '',
+    type: 'text',
+    body: '',
+    isClinicalClaim: true,
+    sourceIds: [],
+    mediaIds: [],
+  };
+}
+
+function preparingForLaborContentForm(
+  current: ContentForm,
+  lessonId = '',
+  block?: PreparingForLaborManifestBlock,
+): ContentForm {
+  const placement = block
+    ? getPreparingForLaborManifestPlacement(lessonId, block.id)
+    : undefined;
+
+  return {
+    ...current,
+    courseId:
+      placement?.courseId ?? PREPARING_FOR_LABOR_MANIFEST.course.id,
+    moduleId:
+      placement?.moduleId ?? PREPARING_FOR_LABOR_MANIFEST.course.moduleId,
+    lessonId: placement?.lessonId ?? lessonId,
+    id: placement?.id ?? '',
+    displayOrder: placement ? String(placement.displayOrder) : '',
+    type: placement?.type ?? 'text',
+    isClinicalClaim: placement?.isClinicalClaim ?? true,
+    ...(block ? {} : { sourceIds: [], mediaIds: [] }),
+  };
+}
+
+function manualContentForm(current: ContentForm): ContentForm {
+  return {
+    ...current,
     courseId: '',
     moduleId: '',
     lessonId: '',
     id: '',
-    title: '',
     displayOrder: '1',
     type: 'text',
-    body: '',
     isClinicalClaim: true,
     sourceIds: [],
     mediaIds: [],
@@ -128,6 +175,32 @@ export function ClinicianContentAuthoringScreen({
   );
   const [actionInFlight, setActionInFlight] = useState<AuthoringAction>(null);
   const [feedback, setFeedback] = useState<string | null>(null);
+  const isPreparingForLaborAuthoring = isPreparingForLaborCourse(
+    form.courseId,
+  );
+  const selectedManifestLesson = useMemo(
+    () =>
+      isPreparingForLaborAuthoring
+        ? findPreparingForLaborManifestLesson(form.lessonId)
+        : undefined,
+    [form.lessonId, isPreparingForLaborAuthoring],
+  );
+  const selectedManifestBlock = useMemo(
+    () =>
+      isPreparingForLaborAuthoring
+        ? findPreparingForLaborManifestBlock(
+            form.moduleId,
+            form.lessonId,
+            form.id,
+          )
+        : undefined,
+    [
+      form.id,
+      form.lessonId,
+      form.moduleId,
+      isPreparingForLaborAuthoring,
+    ],
+  );
 
   useEffect(() => {
     let active = true;
@@ -221,6 +294,33 @@ export function ClinicianContentAuthoringScreen({
     setForm((current) => ({ ...current, [key]: value }));
   };
 
+  const startPreparingForLaborAuthoring = () => {
+    setForm((current) => preparingForLaborContentForm(current));
+    setFeedback(null);
+  };
+
+  const startManualAuthoring = () => {
+    setForm((current) => manualContentForm(current));
+    setFeedback(null);
+  };
+
+  const selectPreparingForLaborLesson = (lessonId: string) => {
+    setForm((current) => preparingForLaborContentForm(current, lessonId));
+    setFeedback(null);
+  };
+
+  const selectPreparingForLaborBlock = (
+    lessonId: string,
+    block: PreparingForLaborManifestBlock,
+  ) => {
+    setForm((current) => ({
+      ...preparingForLaborContentForm(current, lessonId, block),
+      sourceIds: [],
+      mediaIds: [],
+    }));
+    setFeedback(null);
+  };
+
   const toggleSource = (source: ContentSource) => {
     setForm((current) => ({
       ...current,
@@ -257,6 +357,13 @@ export function ClinicianContentAuthoringScreen({
     };
     const stableId = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
+    if (isPreparingForLaborCourse(normalized.courseId) && !selectedManifestBlock) {
+      return {
+        input: null,
+        error:
+          'Select an approved lesson and content block from the Preparing for Labor authoring plan before saving.',
+      };
+    }
     if (
       !stableId.test(normalized.courseId) ||
       !stableId.test(normalized.moduleId) ||
@@ -437,74 +544,265 @@ export function ClinicianContentAuthoringScreen({
     <>
               <Text style={styles.sectionLabel}>CONTENT SCOPE</Text>
               <Text style={styles.formTitle}>
-                {isEditingDraft ? 'Draft version details' : 'Placement in the course'}
+                {isEditingDraft
+                  ? 'Draft version details'
+                  : isPreparingForLaborAuthoring
+                    ? 'Preparing for Labor placement'
+                    : 'Placement in the course'}
               </Text>
               <Text style={styles.formHint}>
                 {isEditingDraft
                   ? 'Scope IDs are locked while revising a draft so its version history remains connected.'
-                  : 'Use stable IDs so a draft can be revised without breaking its review history.'}
+                  : isPreparingForLaborAuthoring
+                    ? 'Choose the reviewed lesson and learner card. The course, module, order, format, and clinical-claim setting are filled in from the authoring plan.'
+                    : 'Use stable IDs so a draft can be revised without breaking its review history.'}
               </Text>
 
-              <Text style={styles.fieldLabel}>Course ID</Text>
-              <TextInput
-                accessibilityLabel="Course ID"
-                autoCapitalize="none"
-                autoCorrect={false}
-                editable={!isEditingDraft}
-                onChangeText={(value) => updateForm('courseId', value)}
-                placeholder="virtual-childbirth"
-                placeholderTextColor="#8B8881"
-                style={[styles.input, isEditingDraft && styles.disabledInput]}
-                testID="input-course-id"
-                value={form.courseId}
-              />
+              {!isEditingDraft ? (
+                <View style={styles.authoringModeRow}>
+                  <Pressable
+                    accessibilityLabel="Use Preparing for Labor authoring plan"
+                    accessibilityRole="button"
+                    onPress={startPreparingForLaborAuthoring}
+                    style={[
+                      styles.authoringModeButton,
+                      isPreparingForLaborAuthoring &&
+                        styles.authoringModeButtonSelected,
+                    ]}
+                    testID="button-use-preparing-for-labor-plan"
+                  >
+                    <Text
+                      style={[
+                        styles.authoringModeButtonText,
+                        isPreparingForLaborAuthoring &&
+                          styles.authoringModeButtonTextSelected,
+                      ]}
+                    >
+                      Preparing for Labor plan
+                    </Text>
+                  </Pressable>
+                  <Pressable
+                    accessibilityLabel="Use manual course placement"
+                    accessibilityRole="button"
+                    onPress={startManualAuthoring}
+                    style={[
+                      styles.authoringModeButton,
+                      !isPreparingForLaborAuthoring &&
+                        styles.authoringModeButtonSelected,
+                    ]}
+                    testID="button-use-manual-course-placement"
+                  >
+                    <Text
+                      style={[
+                        styles.authoringModeButtonText,
+                        !isPreparingForLaborAuthoring &&
+                          styles.authoringModeButtonTextSelected,
+                      ]}
+                    >
+                      Another course
+                    </Text>
+                  </Pressable>
+                </View>
+              ) : null}
 
-              <View style={styles.idRow}>
-                <View style={styles.idField}>
-                  <Text style={styles.fieldLabel}>Module ID</Text>
+              {isPreparingForLaborAuthoring ? (
+                <>
+                  <View style={styles.governedPlacementCard}>
+                    <Text style={styles.governedPlacementLabel}>
+                      GOVERNED COURSE AND MODULE
+                    </Text>
+                    <Text style={styles.governedPlacementValue}>
+                      Preparing for Labor · Labor readiness
+                    </Text>
+                    <Text style={styles.governedPlacementMeta}>
+                      {form.courseId} / {form.moduleId}
+                    </Text>
+                  </View>
+
+                  <Text style={styles.fieldLabel}>Lesson</Text>
+                  <View style={styles.typeOptions}>
+                    {PREPARING_FOR_LABOR_MANIFEST.lessons.map((lesson) => {
+                      const isSelected = lesson.lessonId === form.lessonId;
+                      return (
+                        <Pressable
+                          key={lesson.lessonId}
+                          accessibilityLabel={`Select ${lesson.lessonId} lesson`}
+                          accessibilityRole="button"
+                          disabled={isEditingDraft}
+                          onPress={() =>
+                            selectPreparingForLaborLesson(lesson.lessonId)
+                          }
+                          style={[
+                            styles.typeOption,
+                            isSelected && styles.typeOptionSelected,
+                            isEditingDraft && styles.lockedOption,
+                          ]}
+                          testID={`button-manifest-lesson-${lesson.lessonId}`}
+                        >
+                          <Text
+                            style={[
+                              styles.typeOptionText,
+                              isSelected && styles.typeOptionTextSelected,
+                            ]}
+                          >
+                            {lesson.lessonId}
+                          </Text>
+                        </Pressable>
+                      );
+                    })}
+                  </View>
+
+                  <Text style={styles.fieldLabel}>Learner card</Text>
+                  {selectedManifestLesson ? (
+                    <View style={styles.manifestBlockList}>
+                      {selectedManifestLesson.blocks.map((block) => {
+                        const isSelected = block.id === form.id;
+                        return (
+                          <Pressable
+                            key={block.id}
+                            accessibilityLabel={`Select learner card ${block.id}, order ${block.displayOrder}`}
+                            accessibilityRole="button"
+                            disabled={isEditingDraft}
+                            onPress={() =>
+                              selectPreparingForLaborBlock(
+                                selectedManifestLesson.lessonId,
+                                block,
+                              )
+                            }
+                            style={[
+                              styles.manifestBlockOption,
+                              isSelected && styles.manifestBlockOptionSelected,
+                              isEditingDraft && styles.lockedOption,
+                            ]}
+                            testID={`button-manifest-block-${block.id}`}
+                          >
+                            <View style={styles.manifestBlockOrder}>
+                              <Text style={styles.manifestBlockOrderText}>
+                                {block.displayOrder}
+                              </Text>
+                            </View>
+                            <View style={styles.manifestBlockCopy}>
+                              <Text style={styles.manifestBlockId}>
+                                {block.id}
+                              </Text>
+                              <Text style={styles.manifestBlockMeta}>
+                                {contentTypes.find(
+                                  (contentType) =>
+                                    contentType.value === block.type,
+                                )?.label ?? block.type}
+                                {' · '}
+                                {block.isClinicalClaim
+                                  ? 'Clinical claim'
+                                  : 'Non-clinical'}
+                              </Text>
+                            </View>
+                            {isSelected ? (
+                              <Text style={styles.manifestBlockSelected}>
+                                Selected
+                              </Text>
+                            ) : null}
+                          </Pressable>
+                        );
+                      })}
+                    </View>
+                  ) : (
+                    <Text style={styles.fieldHint}>
+                      Select a lesson to see its approved learner cards.
+                    </Text>
+                  )}
+
+                  {selectedManifestBlock ? (
+                    <View style={styles.manifestSummary}>
+                      <Text style={styles.manifestSummaryTitle}>
+                        Filled from the authoring plan
+                      </Text>
+                      <Text style={styles.manifestSummaryText}>
+                        Learner order {selectedManifestBlock.displayOrder} ·{' '}
+                        {contentTypes.find(
+                          (contentType) =>
+                            contentType.value === selectedManifestBlock.type,
+                        )?.label ?? selectedManifestBlock.type}
+                        {' · '}
+                        {selectedManifestBlock.isClinicalClaim
+                          ? 'Clinical claim'
+                          : 'Non-clinical content'}
+                      </Text>
+                      {selectedManifestBlock.sourceSlotIds.length > 0 ? (
+                        <Text style={styles.manifestSummaryText}>
+                          Source category: {selectedManifestBlock.sourceSlotIds.join(', ')}
+                        </Text>
+                      ) : (
+                        <Text style={styles.manifestSummaryText}>
+                          No source category is reserved for this learner card.
+                        </Text>
+                      )}
+                    </View>
+                  ) : null}
+                </>
+              ) : (
+                <>
+                  <Text style={styles.fieldLabel}>Course ID</Text>
                   <TextInput
-                    accessibilityLabel="Module ID"
+                    accessibilityLabel="Course ID"
                     autoCapitalize="none"
                     autoCorrect={false}
                     editable={!isEditingDraft}
-                    onChangeText={(value) => updateForm('moduleId', value)}
-                    placeholder="labor-and-birth"
+                    onChangeText={(value) => updateForm('courseId', value)}
+                    placeholder="virtual-childbirth"
                     placeholderTextColor="#8B8881"
                     style={[styles.input, isEditingDraft && styles.disabledInput]}
-                    testID="input-module-id"
-                    value={form.moduleId}
+                    testID="input-course-id"
+                    value={form.courseId}
                   />
-                </View>
-                <View style={styles.idField}>
-                  <Text style={styles.fieldLabel}>Lesson ID</Text>
+
+                  <View style={styles.idRow}>
+                    <View style={styles.idField}>
+                      <Text style={styles.fieldLabel}>Module ID</Text>
+                      <TextInput
+                        accessibilityLabel="Module ID"
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        editable={!isEditingDraft}
+                        onChangeText={(value) => updateForm('moduleId', value)}
+                        placeholder="labor-and-birth"
+                        placeholderTextColor="#8B8881"
+                        style={[styles.input, isEditingDraft && styles.disabledInput]}
+                        testID="input-module-id"
+                        value={form.moduleId}
+                      />
+                    </View>
+                    <View style={styles.idField}>
+                      <Text style={styles.fieldLabel}>Lesson ID</Text>
+                      <TextInput
+                        accessibilityLabel="Lesson ID"
+                        autoCapitalize="none"
+                        autoCorrect={false}
+                        editable={!isEditingDraft}
+                        onChangeText={(value) => updateForm('lessonId', value)}
+                        placeholder="early-labor"
+                        placeholderTextColor="#8B8881"
+                        style={[styles.input, isEditingDraft && styles.disabledInput]}
+                        testID="input-lesson-id"
+                        value={form.lessonId}
+                      />
+                    </View>
+                  </View>
+
+                  <Text style={styles.fieldLabel}>Content block ID</Text>
                   <TextInput
-                    accessibilityLabel="Lesson ID"
+                    accessibilityLabel="Content block ID"
                     autoCapitalize="none"
                     autoCorrect={false}
                     editable={!isEditingDraft}
-                    onChangeText={(value) => updateForm('lessonId', value)}
-                    placeholder="early-labor"
+                    onChangeText={(value) => updateForm('id', value)}
+                    placeholder="when-to-call-your-team"
                     placeholderTextColor="#8B8881"
                     style={[styles.input, isEditingDraft && styles.disabledInput]}
-                    testID="input-lesson-id"
-                    value={form.lessonId}
+                    testID="input-content-block-id"
+                    value={form.id}
                   />
-                </View>
-              </View>
-
-              <Text style={styles.fieldLabel}>Content block ID</Text>
-              <TextInput
-                accessibilityLabel="Content block ID"
-                autoCapitalize="none"
-                autoCorrect={false}
-                editable={!isEditingDraft}
-                onChangeText={(value) => updateForm('id', value)}
-                placeholder="when-to-call-your-team"
-                placeholderTextColor="#8B8881"
-                style={[styles.input, isEditingDraft && styles.disabledInput]}
-                testID="input-content-block-id"
-                value={form.id}
-              />
+                </>
+              )}
 
               <Text style={styles.fieldLabel}>Learner card title</Text>
               <TextInput
@@ -522,56 +820,89 @@ export function ClinicianContentAuthoringScreen({
                 Required for new cards. Keep it short enough to scan in a lesson topic list.
               </Text>
 
-              <Text style={styles.fieldLabel}>Learner display order</Text>
-              <TextInput
-                accessibilityHint="Use a positive whole number. Lower numbers appear first in the learner lesson."
-                accessibilityLabel="Learner display order"
-                inputMode="numeric"
-                keyboardType="number-pad"
-                onChangeText={(value) =>
-                  updateForm('displayOrder', value.replace(/[^\d]/g, ''))
-                }
-                placeholder="1"
-                placeholderTextColor="#8B8881"
-                style={styles.input}
-                testID="input-learner-display-order"
-                value={form.displayOrder}
-              />
-              <Text style={styles.fieldHint}>
-                Lower numbers appear first. This order is saved in the immutable
-                clinical-content history.
-              </Text>
+              {isPreparingForLaborAuthoring ? (
+                <View style={styles.lockedFieldCard}>
+                  <Text style={styles.fieldLabel}>Learner display order</Text>
+                  <Text style={styles.lockedFieldValue}>
+                    {selectedManifestBlock
+                      ? String(selectedManifestBlock.displayOrder)
+                      : 'Choose a learner card'}
+                  </Text>
+                  <Text style={styles.fieldHint}>
+                    This is fixed by the reviewed authoring plan and saved in
+                    the immutable clinical-content history.
+                  </Text>
+                </View>
+              ) : (
+                <>
+                  <Text style={styles.fieldLabel}>Learner display order</Text>
+                  <TextInput
+                    accessibilityHint="Use a positive whole number. Lower numbers appear first in the learner lesson."
+                    accessibilityLabel="Learner display order"
+                    inputMode="numeric"
+                    keyboardType="number-pad"
+                    onChangeText={(value) =>
+                      updateForm('displayOrder', value.replace(/[^\d]/g, ''))
+                    }
+                    placeholder="1"
+                    placeholderTextColor="#8B8881"
+                    style={styles.input}
+                    testID="input-learner-display-order"
+                    value={form.displayOrder}
+                  />
+                  <Text style={styles.fieldHint}>
+                    Lower numbers appear first. This order is saved in the immutable
+                    clinical-content history.
+                  </Text>
+                </>
+              )}
 
               <Text style={[styles.sectionLabel, styles.formatLabel]}>
                 LEARNER FORMAT
               </Text>
-              <View style={styles.typeOptions}>
-                {contentTypes.map((contentType) => {
-                  const isSelected = contentType.value === form.type;
-                  return (
-                    <Pressable
-                      key={contentType.value}
-                      accessibilityLabel={`Set content format to ${contentType.label}`}
-                      accessibilityRole="button"
-                      onPress={() => updateForm('type', contentType.value)}
-                      style={[
-                        styles.typeOption,
-                        isSelected && styles.typeOptionSelected,
-                      ]}
-                      testID={`button-content-type-${contentType.value}`}
-                    >
-                      <Text
+              {isPreparingForLaborAuthoring ? (
+                <View style={styles.lockedFieldCard}>
+                  <Text style={styles.lockedFieldValue}>
+                    {selectedManifestBlock
+                      ? contentTypes.find(
+                          (contentType) =>
+                            contentType.value === selectedManifestBlock.type,
+                        )?.label
+                      : 'Choose a learner card'}
+                  </Text>
+                  <Text style={styles.fieldHint}>
+                    The learner format is controlled by the selected manifest block.
+                  </Text>
+                </View>
+              ) : (
+                <View style={styles.typeOptions}>
+                  {contentTypes.map((contentType) => {
+                    const isSelected = contentType.value === form.type;
+                    return (
+                      <Pressable
+                        key={contentType.value}
+                        accessibilityLabel={`Set content format to ${contentType.label}`}
+                        accessibilityRole="button"
+                        onPress={() => updateForm('type', contentType.value)}
                         style={[
-                          styles.typeOptionText,
-                          isSelected && styles.typeOptionTextSelected,
+                          styles.typeOption,
+                          isSelected && styles.typeOptionSelected,
                         ]}
+                        testID={`button-content-type-${contentType.value}`}
                       >
-                        {contentType.label}
-                      </Text>
-                    </Pressable>
-                  );
-                })}
-              </View>
+                        <Text
+                          style={[
+                            styles.typeOptionText,
+                            isSelected && styles.typeOptionTextSelected,
+                          ]}
+                        >
+                          {contentType.label}
+                        </Text>
+                      </Pressable>
+                    );
+                  })}
+                </View>
+              )}
 
               <Text style={styles.fieldLabel}>Learner-facing content</Text>
               <TextInput
@@ -587,15 +918,24 @@ export function ClinicianContentAuthoringScreen({
               />
 
               <Pressable
-                accessibilityLabel="Toggle clinical claim"
+                accessibilityLabel={
+                  isPreparingForLaborAuthoring
+                    ? 'Clinical claim status is set by the Preparing for Labor authoring plan'
+                    : 'Toggle clinical claim'
+                }
                 accessibilityRole="switch"
-                accessibilityState={{ checked: form.isClinicalClaim }}
+                accessibilityState={{
+                  checked: form.isClinicalClaim,
+                  disabled: isPreparingForLaborAuthoring,
+                }}
+                disabled={isPreparingForLaborAuthoring}
                 onPress={() =>
                   updateForm('isClinicalClaim', !form.isClinicalClaim)
                 }
                 style={[
                   styles.claimToggle,
                   form.isClinicalClaim && styles.claimToggleSelected,
+                  isPreparingForLaborAuthoring && styles.lockedOption,
                 ]}
                 testID="switch-clinical-claim"
               >
@@ -612,7 +952,9 @@ export function ClinicianContentAuthoringScreen({
                 <View style={styles.claimCopy}>
                   <Text style={styles.claimTitle}>This is a clinical claim</Text>
                   <Text style={styles.claimText}>
-                    {form.isClinicalClaim
+                    {isPreparingForLaborAuthoring
+                      ? 'This setting is fixed by the reviewed authoring plan.'
+                      : form.isClinicalClaim
                       ? 'Published sources are required before review submission.'
                       : 'Sources are optional for non-clinical learning content.'}
                   </Text>
@@ -1104,6 +1446,144 @@ const styles = StyleSheet.create({
   },
   idField: {
     flex: 1,
+  },
+  authoringModeRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 8,
+    marginTop: 16,
+  },
+  authoringModeButton: {
+    backgroundColor: '#F7F6F2',
+    borderColor: '#D4D1CA',
+    borderRadius: 10,
+    borderWidth: 1,
+    minHeight: 42,
+    justifyContent: 'center',
+    paddingHorizontal: 12,
+  },
+  authoringModeButtonSelected: {
+    backgroundColor: '#E3F0ED',
+    borderColor: '#0C4E54',
+  },
+  authoringModeButtonText: {
+    color: '#5C5A54',
+    fontSize: 13,
+    fontWeight: '800',
+  },
+  authoringModeButtonTextSelected: {
+    color: '#0C4E54',
+  },
+  governedPlacementCard: {
+    backgroundColor: '#EAF4F1',
+    borderColor: '#92BFB8',
+    borderRadius: 12,
+    borderWidth: 1,
+    marginTop: 18,
+    padding: 13,
+  },
+  governedPlacementLabel: {
+    color: '#0C4E54',
+    fontSize: 10,
+    fontWeight: '800',
+    letterSpacing: 0.9,
+  },
+  governedPlacementValue: {
+    color: '#28251D',
+    fontSize: 15,
+    fontWeight: '800',
+    marginTop: 4,
+  },
+  governedPlacementMeta: {
+    color: '#696761',
+    fontSize: 12,
+    marginTop: 3,
+  },
+  manifestBlockList: {
+    gap: 8,
+    marginTop: 8,
+  },
+  manifestBlockOption: {
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderColor: '#D4D1CA',
+    borderRadius: 12,
+    borderWidth: 1,
+    flexDirection: 'row',
+    minHeight: 60,
+    padding: 10,
+  },
+  manifestBlockOptionSelected: {
+    backgroundColor: '#EAF4F1',
+    borderColor: '#0C4E54',
+  },
+  manifestBlockOrder: {
+    alignItems: 'center',
+    backgroundColor: '#F7F6F2',
+    borderRadius: 99,
+    height: 30,
+    justifyContent: 'center',
+    width: 30,
+  },
+  manifestBlockOrderText: {
+    color: '#0C4E54',
+    fontSize: 13,
+    fontWeight: '900',
+  },
+  manifestBlockCopy: {
+    flex: 1,
+    marginHorizontal: 10,
+  },
+  manifestBlockId: {
+    color: '#28251D',
+    fontSize: 13,
+    fontWeight: '800',
+  },
+  manifestBlockMeta: {
+    color: '#696761',
+    fontSize: 12,
+    marginTop: 2,
+  },
+  manifestBlockSelected: {
+    color: '#0C4E54',
+    fontSize: 12,
+    fontWeight: '800',
+  },
+  manifestSummary: {
+    backgroundColor: '#F7F6F2',
+    borderColor: '#D4D1CA',
+    borderRadius: 12,
+    borderWidth: 1,
+    marginTop: 12,
+    padding: 12,
+  },
+  manifestSummaryTitle: {
+    color: '#28251D',
+    fontSize: 13,
+    fontWeight: '800',
+  },
+  manifestSummaryText: {
+    color: '#5C5A54',
+    fontSize: 12,
+    lineHeight: 18,
+    marginTop: 3,
+  },
+  lockedFieldCard: {
+    backgroundColor: '#F7F6F2',
+    borderColor: '#D4D1CA',
+    borderRadius: 10,
+    borderWidth: 1,
+    marginTop: 7,
+    padding: 12,
+  },
+  lockedFieldValue: {
+    color: '#28251D',
+    fontSize: 15,
+    fontWeight: '800',
+    marginTop: 4,
+  },
+  lockedOption: {
+    opacity: 0.68,
   },
   formatLabel: {
     marginTop: 22,

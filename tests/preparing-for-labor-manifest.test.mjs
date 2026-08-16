@@ -1,6 +1,8 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
+import vm from 'node:vm';
+import ts from 'typescript';
 import { parsePreparingForLaborContentBlockPath } from '../scripts/preparing-for-labor-audit-utils.mjs';
 
 const manifest = JSON.parse(
@@ -25,6 +27,36 @@ const validTypes = new Set([
   'emergency_card',
   'artifact_prompt',
 ]);
+
+async function loadManifestModule() {
+  const source = await readFile(
+    new URL('../src/content/preparingForLaborManifest.ts', import.meta.url),
+    'utf8',
+  );
+  const compiled = ts.transpileModule(source, {
+    compilerOptions: {
+      esModuleInterop: true,
+      module: ts.ModuleKind.CommonJS,
+      resolveJsonModule: true,
+      target: ts.ScriptTarget.ES2022,
+    },
+  }).outputText;
+  const module = { exports: {} };
+
+  vm.runInNewContext(compiled, {
+    module,
+    exports: module.exports,
+    require: (specifier) => {
+      if (specifier.endsWith('preparing-for-labor-authoring-manifest.v1.json')) {
+        return manifest;
+      }
+
+      throw new Error(`Unexpected manifest helper dependency: ${specifier}`);
+    },
+  });
+
+  return module.exports;
+}
 
 test('Preparing for Labor manifest has the governed course shape', () => {
   assert.equal(manifest.schemaVersion, 1);
@@ -108,6 +140,71 @@ test('Preparing for Labor safety cards retain their governed placement', () => {
         sourceSlotIds: ['preparing-labor-safety-escalation-source'],
       },
     ],
+  );
+});
+
+test('Preparing for Labor manifest resolver prepopulates the complete immutable placement', async () => {
+  const {
+    getPreparingForLaborManifestPlacement,
+    assertPreparingForLaborManifestPlacement,
+  } = await loadManifestModule();
+  const placement = getPreparingForLaborManifestPlacement(
+    'arriving-prepared',
+    'arriving-prepared-readiness-topics',
+  );
+
+  assert.deepEqual(JSON.parse(JSON.stringify(placement)), {
+    courseId: 'preparing-for-labor',
+    moduleId: 'labor-readiness',
+    lessonId: 'arriving-prepared',
+    id: 'arriving-prepared-readiness-topics',
+    displayOrder: 2,
+    type: 'checklist',
+    isClinicalClaim: true,
+  });
+  assert.doesNotThrow(() =>
+    assertPreparingForLaborManifestPlacement(placement),
+  );
+});
+
+test('Preparing for Labor resolver rejects malformed lesson and block IDs before authoring', async () => {
+  const {
+    getPreparingForLaborManifestPlacement,
+    assertPreparingForLaborManifestPlacement,
+  } = await loadManifestModule();
+
+  assert.equal(
+    getPreparingForLaborManifestPlacement(
+      'arriving-prepared',
+      'arrriving-prepared-readiness-topics',
+    ),
+    undefined,
+  );
+  assert.throws(
+    () =>
+      assertPreparingForLaborManifestPlacement({
+        courseId: 'preparing-for-labor',
+        moduleId: 'labor-readiness',
+        lessonId: 'arriving-prepared',
+        id: 'arrriving-prepared-readiness-topics',
+        displayOrder: 2,
+        type: 'checklist',
+        isClinicalClaim: true,
+      }),
+    /not approved/,
+  );
+  assert.throws(
+    () =>
+      assertPreparingForLaborManifestPlacement({
+        courseId: 'preparing-for-labor',
+        moduleId: 'labor-readiness',
+        lessonId: 'when-to-conact-your-care-team',
+        id: 'contact-care-team-save-details',
+        displayOrder: 3,
+        type: 'artifact_prompt',
+        isClinicalClaim: false,
+      }),
+    /not in the Preparing for Labor authoring manifest/,
   );
 });
 
