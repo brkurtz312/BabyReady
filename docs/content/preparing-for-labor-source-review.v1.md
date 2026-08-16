@@ -8,7 +8,7 @@
 ## Workflow status
 
 - Candidate ACOG and NICHD pages were checked for live availability and learner-education fit.
-- The Firebase Admin connector could not list the `sources` collection because of a connector runtime error. Duplicate source IDs and URLs therefore remain **unverified**.
+- The Firebase Admin connector could not list the `sources` collection because of a connector runtime error. A repository-owned fallback is available: run `npm run inspect:source-library` from an authenticated BabyReady operator environment. Duplicate source IDs and URLs remain **unverified** until that read completes.
 - Do not create a second record until an authorized source-librarian checks the live Source Library for each candidate ID and canonical URL.
 - Recommended action after duplicate checks: create each approved record as a **draft only**. Publishing is a separate, clinician-governed action.
 
@@ -71,4 +71,4 @@ These outcomes are an editorial source assessment, not an approval of individual
 
 ## Blocking issue
 
-On 2026-08-15, the Firebase Admin connector failed on a read-only request to list `sources` with `TypeError: admin.app is not a function`. Until duplicate checks can run through the connector or the authenticated BabyReady Source Library, this dossier must remain a proposed manual-entry plan.
+On 2026-08-15, the Firebase Admin connector failed on a read-only request to list `sources` with `TypeError: admin.app is not a function`. Use the production-only, read-only fallback `npm run inspect:source-library` from an authenticated BabyReady operator environment to check candidate IDs and canonical URLs. Until that check completes, this dossier must remain a proposed manual-entry plan.
