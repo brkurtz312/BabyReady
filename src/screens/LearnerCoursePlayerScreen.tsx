@@ -40,6 +40,10 @@ type LearnerCoursePlayerScreenProps = {
     moduleId: string;
     lessonId: string;
   } | null;
+  onOpenBirthReadinessBrief: (lesson: {
+    moduleId: string;
+    lessonId: string;
+  }) => void;
   onExit: () => void;
 };
 
@@ -316,8 +320,10 @@ function LessonBlock({
   mediaById,
   onToggleChecklistItem,
   onOpenCard,
+  onOpenBirthReadinessBrief,
   onOpenFigure,
   onLayout,
+  showBirthReadinessBrief,
   sourcesById,
 }: {
   block: ClinicalContentBlock;
@@ -325,8 +331,10 @@ function LessonBlock({
   mediaById: Map<string, ClinicalMedia>;
   onToggleChecklistItem: (itemKey: string) => void;
   onOpenCard: (block: ClinicalContentBlock) => void;
+  onOpenBirthReadinessBrief: () => void;
   onOpenFigure: (media: ClinicalMedia) => void;
   onLayout?: (event: { nativeEvent: { layout: { y: number } } }) => void;
+  showBirthReadinessBrief: boolean;
   sourcesById: Map<string, ContentSource>;
 }) {
   const items = block.type === 'checklist' ? checklistItems(block.body) : [];
@@ -400,6 +408,37 @@ function LessonBlock({
           {block.body}
         </Text>
       )}
+
+      {showBirthReadinessBrief ? (
+        <View
+          accessibilityLabel="Private Birth Readiness Brief educational preparation option"
+          style={styles.birthReadinessBriefPrompt}
+          testID="birth-readiness-brief-artifact-prompt"
+        >
+          <Text style={styles.birthReadinessBriefPromptTitle}>
+            Keep your preparation in one private place
+          </Text>
+          <Text
+            style={styles.birthReadinessBriefPromptText}
+            testID="text-birth-readiness-brief-artifact-privacy"
+          >
+            This educational brief is private to you and is not automatically
+            shared with your care team.
+          </Text>
+          <Pressable
+            accessibilityHint="Opens your private educational Birth Readiness Brief."
+            accessibilityLabel="Open your Birth Readiness Brief"
+            accessibilityRole="button"
+            onPress={onOpenBirthReadinessBrief}
+            style={styles.birthReadinessBriefPromptButton}
+            testID="button-open-birth-readiness-brief"
+          >
+            <Text style={styles.birthReadinessBriefPromptButtonText}>
+              Open your Birth Readiness Brief
+            </Text>
+          </Pressable>
+        </View>
+      ) : null}
 
       {media.map((item) =>
         item.type === 'external_video' ? (
@@ -637,6 +676,7 @@ function FigureViewer({
 export function LearnerCoursePlayerScreen({
   course,
   initialLesson,
+  onOpenBirthReadinessBrief,
   onExit,
 }: LearnerCoursePlayerScreenProps) {
   const { isTabletLayout } = useLearnerLayout();
@@ -964,10 +1004,23 @@ export function LearnerCoursePlayerScreen({
               toggleChecklistItem(block.id, itemKey)
             }
             onOpenCard={setExpandedBlock}
+            onOpenBirthReadinessBrief={() => {
+              if (selectedLesson) {
+                onOpenBirthReadinessBrief({
+                  moduleId: selectedLesson.module.id,
+                  lessonId: selectedLesson.lesson.id,
+                });
+              }
+            }}
             onOpenFigure={setExpandedFigure}
             onLayout={(event) => {
               topicBlockOffsetsRef.current[block.id] = event.nativeEvent.layout.y;
             }}
+            showBirthReadinessBrief={
+              course.id === 'preparing-for-labor' &&
+              selectedLesson.lesson.id === 'arriving-prepared' &&
+              block.type === 'artifact_prompt'
+            }
             sourcesById={sourcesById}
           />
         ))}
@@ -1316,6 +1369,42 @@ const styles = StyleSheet.create({
     color: '#5D6966',
     fontSize: 13,
     lineHeight: 18,
+  },
+  birthReadinessBriefPrompt: {
+    backgroundColor: '#EAF4F2',
+    borderColor: '#92BFB8',
+    borderLeftColor: '#01696F',
+    borderLeftWidth: 4,
+    borderRadius: 12,
+    borderWidth: 1,
+    marginTop: 14,
+    padding: 14,
+  },
+  birthReadinessBriefPromptTitle: {
+    color: '#0C4E54',
+    fontSize: 16,
+    fontWeight: '800',
+  },
+  birthReadinessBriefPromptText: {
+    color: '#365553',
+    fontSize: 14,
+    lineHeight: 20,
+    marginTop: 4,
+  },
+  birthReadinessBriefPromptButton: {
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+    backgroundColor: '#01696F',
+    borderRadius: 9,
+    justifyContent: 'center',
+    marginTop: 12,
+    minHeight: 42,
+    paddingHorizontal: 13,
+  },
+  birthReadinessBriefPromptButtonText: {
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: '800',
   },
   lessonHeader: {
     marginTop: 27,

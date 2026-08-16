@@ -27,6 +27,7 @@ import { ClinicianReviewScreen } from './src/screens/ClinicianReviewScreen';
 import { ClinicianContentAuthoringScreen } from './src/screens/ClinicianContentAuthoringScreen';
 import { ClinicianMediaLibraryScreen } from './src/screens/ClinicianMediaLibraryScreen';
 import { ClinicianSourceLibraryScreen } from './src/screens/ClinicianSourceLibraryScreen';
+import { BirthReadinessBriefScreen } from './src/screens/BirthReadinessBriefScreen';
 import { LearnerCourseCatalog } from './src/screens/LearnerCourseCatalog';
 import { LearnerCoursePlayerScreen } from './src/screens/LearnerCoursePlayerScreen';
 import {
@@ -52,6 +53,7 @@ function BabyReadyApp() {
     | 'learner'
     | 'learning-plan'
     | 'course-player'
+    | 'birth-readiness-brief'
     | 'review'
     | 'sources'
     | 'media'
@@ -253,11 +255,27 @@ function BabyReadyApp() {
       <LearnerCoursePlayerScreen
         course={selectedCourse}
         initialLesson={selectedLessonTarget}
+        onOpenBirthReadinessBrief={(lesson) => {
+          setSelectedLessonTarget(lesson);
+          setActiveView('birth-readiness-brief');
+        }}
         onExit={() => {
           setSelectedCourse(null);
           setSelectedLessonTarget(null);
           setActiveView(coursePlayerReturnView);
         }}
+      />
+    );
+  }
+
+  if (activeView === 'birth-readiness-brief') {
+    return (
+      <BirthReadinessBriefScreen
+        authStatus={authState.status}
+        onExit={() =>
+          setActiveView(selectedCourse ? 'course-player' : 'learner')
+        }
+        userId={authState.status === 'ready' ? authState.user.uid : null}
       />
     );
   }
