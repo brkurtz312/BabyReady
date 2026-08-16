@@ -3,6 +3,7 @@ import { resolve } from 'node:path';
 import { applicationDefault, initializeApp } from 'firebase-admin/app';
 import { getFirestore } from 'firebase-admin/firestore';
 import { loadProductionEnvironment } from './production-env.mjs';
+import { parsePreparingForLaborContentBlockPath } from './preparing-for-labor-audit-utils.mjs';
 
 const APPROVED_PROJECT_IDS = new Set(['babyready-8bfd6']);
 const manifestPath = resolve(
@@ -127,13 +128,13 @@ function addIssue(issues, severity, code, message, block) {
   });
 }
 
-function compactBlock(snapshot, moduleId, lessonId) {
+function compactBlock(snapshot, placement) {
   const data = snapshot.data() ?? {};
   return {
-    id: snapshot.id,
+    id: placement.id,
     path: snapshot.ref.path,
-    moduleId,
-    lessonId,
+    moduleId: placement.moduleId,
+    lessonId: placement.lessonId,
     displayOrder: data.displayOrder,
     type: data.type,
     isClinicalClaim: data.isClinicalClaim === true,
@@ -149,27 +150,21 @@ function compactBlock(snapshot, moduleId, lessonId) {
 async function readCourseBlocks(db) {
   const courseReference = db.collection('courses').doc(manifest.course.id);
   const courseSnapshot = await courseReference.get();
-  if (!courseSnapshot.exists) {
-    return { courseExists: false, blocks: [] };
-  }
+  // Firestore permits subcollections to exist without their parent module or
+  // lesson documents. A collection-group read therefore finds both ordinary
+  // records and draft/frozen typo artifacts without needing a composite index
+  // or silently reporting a false zero-block result.
+  const contentBlocks = await db.collectionGroup('contentBlocks').get();
+  const blocks = contentBlocks.docs.flatMap((snapshot) => {
+    const placement = parsePreparingForLaborContentBlockPath(
+      snapshot.ref.path,
+      manifest.course.id,
+    );
 
-  const modules = await courseReference.collection('modules').get();
-  const blocks = [];
-  for (const moduleSnapshot of modules.docs) {
-    const lessons = await moduleSnapshot.ref.collection('lessons').get();
-    for (const lessonSnapshot of lessons.docs) {
-      const contentBlocks = await lessonSnapshot.ref
-        .collection('contentBlocks')
-        .get();
-      blocks.push(
-        ...contentBlocks.docs.map((snapshot) =>
-          compactBlock(snapshot, moduleSnapshot.id, lessonSnapshot.id),
-        ),
-      );
-    }
-  }
+    return placement ? [compactBlock(snapshot, placement)] : [];
+  });
 
-  return { courseExists: true, blocks };
+  return { courseExists: courseSnapshot.exists, blocks };
 }
 
 async function readSourceStates(db, sourceIds) {

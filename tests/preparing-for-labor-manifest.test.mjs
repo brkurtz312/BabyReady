@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
+import { parsePreparingForLaborContentBlockPath } from '../scripts/preparing-for-labor-audit-utils.mjs';
 
 const manifest = JSON.parse(
   await readFile(
@@ -107,5 +108,37 @@ test('Preparing for Labor safety cards retain their governed placement', () => {
         sourceSlotIds: ['preparing-labor-safety-escalation-source'],
       },
     ],
+  );
+});
+
+test('Preparing for Labor audit recognizes blocks without parent documents', () => {
+  assert.deepEqual(
+    parsePreparingForLaborContentBlockPath(
+      'courses/preparing-for-labor/modules/labor-readiness/lessons/understanding-labor/contentBlocks/understanding-labor-purpose',
+      'preparing-for-labor',
+    ),
+    {
+      moduleId: 'labor-readiness',
+      lessonId: 'understanding-labor',
+      id: 'understanding-labor-purpose',
+    },
+  );
+  assert.deepEqual(
+    parsePreparingForLaborContentBlockPath(
+      'courses/preparing-for-labor/modules/labor-readiness/lessons/when-to-conact-your-care-team/contentBlocks/contact-care-team-save-details',
+      'preparing-for-labor',
+    ),
+    {
+      moduleId: 'labor-readiness',
+      lessonId: 'when-to-conact-your-care-team',
+      id: 'contact-care-team-save-details',
+    },
+  );
+  assert.equal(
+    parsePreparingForLaborContentBlockPath(
+      'courses/another-course/modules/labor-readiness/lessons/understanding-labor/contentBlocks/understanding-labor-purpose',
+      'preparing-for-labor',
+    ),
+    null,
   );
 });
