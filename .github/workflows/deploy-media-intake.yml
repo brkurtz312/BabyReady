@@ -303,6 +303,64 @@ jobs:
             | tee -a "$GITHUB_STEP_SUMMARY"
 
           echo '' >> "$GITHUB_STEP_SUMMARY"
+          echo '### Advertised Cloud Run endpoint probes' >> "$GITHUB_STEP_SUMMARY"
+          ROUTING_STATUS="$(gcloud run services describe "$SERVICE_NAME" \
+            --project "$PROJECT_ID" \
+            --region "$REGION" \
+            --format='json(metadata.annotations,status.url,status.latestReadyRevisionName,status.traffic)')"
+          printf '%s' "$ROUTING_STATUS" | jq . | tee -a "$GITHUB_STEP_SUMMARY"
+
+          mapfile -t ROUTING_ENDPOINTS < <(
+            printf '%s' "$ROUTING_STATUS" | jq -r '
+              [
+                .status.url,
+                (.status.traffic[]?.url),
+                (try (.metadata.annotations["run.googleapis.com/urls"] | fromjson[]) catch empty)
+              ]
+              | map(select(type == "string" and startswith("https://")))
+              | unique[]
+            '
+          )
+          if [ "${#ROUTING_ENDPOINTS[@]}" -eq 0 ]; then
+            echo 'No HTTPS Cloud Run endpoints were advertised by the service status.' \
+              | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            {
+              echo ''
+              echo '| Endpoint | `/healthz` | `/` |'
+              echo '| --- | --- | --- |'
+            } >> "$GITHUB_STEP_SUMMARY"
+            for endpoint in "${ROUTING_ENDPOINTS[@]}"; do
+              endpoint="${endpoint%/}"
+              health_status="$(curl \
+                --silent \
+                --show-error \
+                --retry 2 \
+                --retry-all-errors \
+                --connect-timeout 10 \
+                --max-time 30 \
+                --output /dev/null \
+                --write-out '%{http_code}' \
+                "${endpoint}/healthz" || true)"
+              root_status="$(curl \
+                --silent \
+                --show-error \
+                --retry 2 \
+                --retry-all-errors \
+                --connect-timeout 10 \
+                --max-time 30 \
+                --output /dev/null \
+                --write-out '%{http_code}' \
+                "${endpoint}/" || true)"
+              printf '| `%s` | `%s` | `%s` |\n' \
+                "$endpoint" \
+                "${health_status:-curl transport error}" \
+                "${root_status:-curl transport error}" \
+                | tee -a "$GITHUB_STEP_SUMMARY"
+            done
+          fi
+
+          echo '' >> "$GITHUB_STEP_SUMMARY"
           echo '### Cloud Run invoker policy' >> "$GITHUB_STEP_SUMMARY"
           gcloud run services get-iam-policy "$SERVICE_NAME" \
             --project "$PROJECT_ID" \
