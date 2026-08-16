@@ -16,8 +16,8 @@
 | Gate | Current status | Required before advancing |
 | --- | --- | --- |
 | Learner-copy package | Ready for draft entry | Preserve the approved block IDs, types, order, and safety boundaries. |
-| Candidate sources | Reviewed; not yet source-library verified | Check for duplicate canonical records and confirm source currency in the authenticated Source Library. |
-| Source records | Awaiting operator read | Run `npm run inspect:source-library` from an authenticated BabyReady operator environment to check candidate IDs and canonical URLs without writing Firestore. |
+| Candidate sources | Reviewed; duplicate check complete | The authenticated production read found no existing candidate ID or canonical URL. Recheck immediately before staging if the library has changed. |
+| Source records | Ready for safeguarded draft staging | Use `npm run stage:preparing-for-labor-sources` first in dry-run mode, then only its explicit draft-write mode with reviewer-selected dates. |
 | Draft block entry | Not started | Enter every block through the existing clinician authoring workspace as `draft`. |
 | Submission for clinical review | Blocked by source records | Attach published source records to each clinical claim before submission. |
 | Approval | Not started | A designated clinical reviewer must record notes and a future next-review date. |
@@ -84,4 +84,4 @@ Enter blocks in display order. `Clinical claim` blocks require at least one publ
 
 ## Current blocker
 
-The Firebase Admin connector fails on a read-only `sources` collection request with `TypeError: admin.app is not a function`. The repository now provides `npm run inspect:source-library` as a production-only, read-only fallback for duplicate verification. The issue can proceed through document-level draft preparation, but it must not move to submission, approval, or publication until an authenticated operator completes that source-library check.
+The Firebase Admin connector fails on a read-only `sources` collection request with `TypeError: admin.app is not a function`. An authenticated operator completed the repository's read-only duplicate check on 2026-08-15 and found no candidate ID or canonical URL in the six existing source records. The repository now provides `npm run stage:preparing-for-labor-sources` for transaction-guarded draft staging. The issue must not move to source publication, clinical-block submission, approval, or learner publication until its separate clinical-review gates are completed.

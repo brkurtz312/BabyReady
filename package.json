@@ -40,6 +40,7 @@
     "seed:early-pregnancy-learner-outline": "node scripts/seed-early-pregnancy-learner-outline.mjs",
     "seed:preparing-for-labor-outline": "node scripts/seed-preparing-for-labor-outline.mjs",
     "inspect:source-library": "node scripts/inspect-source-library.mjs",
+    "stage:preparing-for-labor-sources": "node scripts/stage-preparing-for-labor-sources.mjs",
     "migrate:first-trimester-content-order": "node scripts/assign-first-trimester-content-order.mjs",
     "check:media-intake-worker": "npm --prefix services/media-intake-worker run check",
     "deploy:media-intake-worker": "node scripts/deploy-media-intake-worker.mjs"

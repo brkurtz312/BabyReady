@@ -8,9 +8,9 @@
 ## Workflow status
 
 - Candidate ACOG and NICHD pages were checked for live availability and learner-education fit.
-- The Firebase Admin connector could not list the `sources` collection because of a connector runtime error. A repository-owned fallback is available: run `npm run inspect:source-library` from an authenticated BabyReady operator environment. Duplicate source IDs and URLs remain **unverified** until that read completes.
-- Do not create a second record until an authorized source-librarian checks the live Source Library for each candidate ID and canonical URL.
-- Recommended action after duplicate checks: create each approved record as a **draft only**. Publishing is a separate, clinician-governed action.
+- The Firebase Admin connector could not list the `sources` collection because of a connector runtime error. On 2026-08-15, an authenticated operator ran the repository-owned read-only fallback and found six existing source records but no match for any Preparing for Labor candidate ID or canonical URL.
+- The duplicate-check gate is complete for the six candidates in this dossier. Re-run the read-only check immediately before staging if the source library may have changed.
+- Recommended action: use `npm run stage:preparing-for-labor-sources` in dry-run mode, then create the six approved records as **drafts only** with an explicit confirmation and reviewer-selected dates. Publishing is a separate, clinician-governed action.
 
 ## Source-record conventions
 
@@ -63,12 +63,12 @@ These outcomes are an editorial source assessment, not an approval of individual
 
 ## Required live workflow before any source publication
 
-1. Check the Source Library for each candidate ID and URL; merge or update an existing canonical record rather than duplicating it.
+1. Rerun `npm run inspect:source-library` immediately before staging if the source library may have changed. Stop and reconcile any matching ID or canonical URL.
 2. Reopen the live URL and confirm the title, organization, availability, and suitability on the day of entry.
-3. Create approved candidates as `draft` source records with the actual BabyReady review date and a future next-review date.
+3. Run `npm run stage:preparing-for-labor-sources` first in dry-run mode. If it reports no conflicts, use its explicit `--write`, confirmation, and review-date arguments to create only draft source records.
 4. Obtain source-librarian and clinical-lead confirmation that the source is current and appropriately scoped.
 5. Publish only the records that pass that check. Do not use a published record as evidence for a learner-visible clinical block until that block separately completes its own review and publication workflow.
 
 ## Blocking issue
 
-On 2026-08-15, the Firebase Admin connector failed on a read-only request to list `sources` with `TypeError: admin.app is not a function`. Use the production-only, read-only fallback `npm run inspect:source-library` from an authenticated BabyReady operator environment to check candidate IDs and canonical URLs. Until that check completes, this dossier must remain a proposed manual-entry plan.
+On 2026-08-15, the Firebase Admin connector failed on a read-only request to list `sources` with `TypeError: admin.app is not a function`. The production-only fallback `npm run inspect:source-library` completed the candidate duplicate check from an authenticated operator environment. The connector remains unavailable, but it no longer blocks safe draft staging; source publication and content publication remain blocked on their separate clinical-review gates.
