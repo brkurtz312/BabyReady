@@ -253,6 +253,7 @@ function BabyReadyApp() {
   if (activeView === 'course-player' && selectedCourse) {
     return (
       <LearnerCoursePlayerScreen
+        authStatus={authState.status}
         course={selectedCourse}
         initialLesson={selectedLessonTarget}
         onOpenBirthReadinessBrief={(lesson) => {
@@ -264,6 +265,7 @@ function BabyReadyApp() {
           setSelectedLessonTarget(null);
           setActiveView(coursePlayerReturnView);
         }}
+        userId={authState.status === 'ready' ? authState.user.uid : null}
       />
     );
   }

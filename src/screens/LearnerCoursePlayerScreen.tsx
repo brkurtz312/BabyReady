@@ -19,6 +19,7 @@ import type {
   ClinicalContentBlock,
   ClinicalMedia,
   ContentSource,
+  CourseProgress,
   CourseRecord,
   LearnerCourseLesson,
   LearnerCourseModule,
@@ -28,6 +29,12 @@ import {
   subscribeToPublishedLessonContent,
   type PublishedLessonState,
 } from '../services/learnerCourseService';
+import {
+  courseProgressDocumentId,
+  subscribeToLearnerProgress,
+  upsertCourseLessonProgress,
+  type LearnerProgressState,
+} from '../services/learnerProgressService';
 
 type SelectedLesson = {
   module: LearnerCourseModule;
@@ -35,6 +42,7 @@ type SelectedLesson = {
 };
 
 type LearnerCoursePlayerScreenProps = {
+  authStatus: 'ready' | 'loading' | 'unconfigured' | 'error';
   course: CourseRecord;
   initialLesson?: {
     moduleId: string;
@@ -45,6 +53,20 @@ type LearnerCoursePlayerScreenProps = {
     lessonId: string;
   }) => void;
   onExit: () => void;
+  userId?: string | null;
+};
+
+type SelectedLessonProgress = {
+  lessonKey: string;
+  status: LearnerProgressState['status'];
+  progress: CourseProgress | null;
+  error: string | null;
+};
+
+type CompletionSaveState = {
+  lessonKey: string;
+  status: 'idle' | 'saving' | 'saved' | 'error' | 'unavailable';
+  message: string | null;
 };
 
 function lessonsForCourse(course: CourseRecord): SelectedLesson[] {
@@ -61,6 +83,26 @@ function lessonsForCourse(course: CourseRecord): SelectedLesson[] {
 
 function lessonKey(selectedLesson: SelectedLesson): string {
   return `${selectedLesson.module.id}/${selectedLesson.lesson.id}`;
+}
+
+function inactiveLessonProgress(
+  authStatus: LearnerCoursePlayerScreenProps['authStatus'],
+  userId: string | null | undefined,
+  lessonKey: string,
+): SelectedLessonProgress {
+  return {
+    lessonKey,
+    status:
+      authStatus === 'loading'
+        ? 'loading'
+        : authStatus === 'unconfigured'
+          ? 'unconfigured'
+          : userId
+            ? 'loading'
+            : 'unauthenticated',
+    progress: null,
+    error: null,
+  };
 }
 
 const learnerCardTitles: Record<string, string> = {
@@ -674,10 +716,12 @@ function FigureViewer({
 }
 
 export function LearnerCoursePlayerScreen({
+  authStatus,
   course,
   initialLesson,
   onOpenBirthReadinessBrief,
   onExit,
+  userId,
 }: LearnerCoursePlayerScreenProps) {
   const { isTabletLayout } = useLearnerLayout();
   const allLessons = useMemo(() => lessonsForCourse(course), [course]);
@@ -710,6 +754,18 @@ export function LearnerCoursePlayerScreen({
     sources: ContentSource[];
   }>({ media: [], sources: [] });
   const [attachmentsError, setAttachmentsError] = useState<string | null>(null);
+  const [selectedLessonProgress, setSelectedLessonProgress] =
+    useState<SelectedLessonProgress>({
+      lessonKey: '',
+      status: 'loading',
+      progress: null,
+      error: null,
+    });
+  const [completionSave, setCompletionSave] = useState<CompletionSaveState>({
+    lessonKey: '',
+    status: 'idle',
+    message: null,
+  });
   const [expandedBlock, setExpandedBlock] = useState<ClinicalContentBlock | null>(null);
   const [expandedFigure, setExpandedFigure] = useState<ClinicalMedia | null>(null);
   const [expandedTopicLessonKey, setExpandedTopicLessonKey] = useState<string | null>(
@@ -725,6 +781,32 @@ export function LearnerCoursePlayerScreen({
   const topicBlockOffsetsRef = useRef<Record<string, number>>({});
   const [readingTop, setReadingTop] = useState(0);
   const [blockListTop, setBlockListTop] = useState(0);
+  const selectedLessonProgressKey = selectedLesson
+    ? courseProgressDocumentId(
+        course.id,
+        selectedLesson.module.id,
+        selectedLesson.lesson.id,
+      )
+    : '';
+  const currentLessonProgress =
+    selectedLessonProgress.lessonKey === selectedLessonProgressKey
+      ? selectedLessonProgress
+      : inactiveLessonProgress(authStatus, userId, selectedLessonProgressKey);
+  const isLessonComplete =
+    currentLessonProgress.progress?.state === 'completed';
+  const isSavingCompletion =
+    completionSave.lessonKey === selectedLessonProgressKey &&
+    completionSave.status === 'saving';
+  const currentCompletionSave =
+    completionSave.lessonKey === selectedLessonProgressKey
+      ? completionSave
+      : null;
+  const canUpdateLessonCompletion =
+    Boolean(selectedLesson) &&
+    authStatus === 'ready' &&
+    Boolean(userId) &&
+    currentLessonProgress.status === 'ready' &&
+    !isSavingCompletion;
 
   const toggleChecklistItem = (blockId: string, itemKey: string) => {
     setCheckedItemsByBlock((current) => {
@@ -802,6 +884,58 @@ export function LearnerCoursePlayerScreen({
   }, [course.id, selectedLesson]);
 
   useEffect(() => {
+    if (!selectedLesson) {
+      setSelectedLessonProgress({
+        lessonKey: '',
+        status: 'ready',
+        progress: null,
+        error: null,
+      });
+      setCompletionSave({ lessonKey: '', status: 'idle', message: null });
+      return undefined;
+    }
+
+    const activeLessonKey = selectedLessonProgressKey;
+    let active = true;
+    setSelectedLessonProgress(
+      inactiveLessonProgress(authStatus, userId, activeLessonKey),
+    );
+    setCompletionSave({ lessonKey: activeLessonKey, status: 'idle', message: null });
+
+    const unsubscribe = subscribeToLearnerProgress(userId, (nextState) => {
+      if (!active) {
+        return;
+      }
+
+      const progress =
+        nextState.progress.find(
+          (item) =>
+            item.courseId === course.id &&
+            item.moduleId === selectedLesson.module.id &&
+            item.lessonId === selectedLesson.lesson.id,
+        ) ?? null;
+
+      setSelectedLessonProgress({
+        lessonKey: activeLessonKey,
+        status: nextState.status,
+        progress,
+        error: nextState.error,
+      });
+    });
+
+    return () => {
+      active = false;
+      unsubscribe?.();
+    };
+  }, [
+    authStatus,
+    course.id,
+    selectedLesson,
+    selectedLessonProgressKey,
+    userId,
+  ]);
+
+  useEffect(() => {
     if (lessonState.status !== 'ready') {
       return undefined;
     }
@@ -825,6 +959,56 @@ export function LearnerCoursePlayerScreen({
       active = false;
     };
   }, [lessonState.blocks, lessonState.status]);
+
+  const updateLessonCompletion = (nextComplete: boolean) => {
+    if (!selectedLesson || !userId || !canUpdateLessonCompletion) {
+      return;
+    }
+
+    const activeLessonKey = selectedLessonProgressKey;
+    setCompletionSave({
+      lessonKey: activeLessonKey,
+      status: 'saving',
+      message: nextComplete
+        ? 'Saving lesson completion…'
+        : 'Saving lesson update…',
+    });
+
+    void upsertCourseLessonProgress({
+      userId,
+      courseId: course.id,
+      moduleId: selectedLesson.module.id,
+      lessonId: selectedLesson.lesson.id,
+      state: nextComplete ? 'completed' : 'not_started',
+    })
+      .then((result) => {
+        if (result === 'unavailable') {
+          setCompletionSave({
+            lessonKey: activeLessonKey,
+            status: 'unavailable',
+            message:
+              'Lesson completion is unavailable because your private learning plan is not connected.',
+          });
+          return;
+        }
+
+        setCompletionSave({
+          lessonKey: activeLessonKey,
+          status: 'saved',
+          message: nextComplete
+            ? 'Lesson marked complete. Your learning plan has been updated.'
+            : 'Lesson marked incomplete. Your learning plan has been updated.',
+        });
+      })
+      .catch(() => {
+        setCompletionSave({
+          lessonKey: activeLessonKey,
+          status: 'error',
+          message:
+            'Lesson completion could not be saved. Check your connection and try again.',
+        });
+      });
+  };
 
   const mediaById = useMemo(
     () => new Map(attachments.media.map((media) => [media.id, media])),
@@ -953,6 +1137,160 @@ export function LearnerCoursePlayerScreen({
             About {selectedLesson.lesson.estimatedMinutes} minutes
           </Text>
         ) : null}
+      </View>
+
+      <View
+        accessibilityLabel={`Lesson completion for ${selectedLesson.lesson.title}`}
+        style={styles.lessonCompletionCard}
+        testID="lesson-completion-controls"
+      >
+        <Text style={styles.lessonCompletionEyebrow}>YOUR LEARNING PLAN</Text>
+        <Text style={styles.lessonCompletionTitle}>Lesson completion</Text>
+        {currentLessonProgress.status === 'loading' ? (
+          <View
+            accessibilityLiveRegion="polite"
+            accessibilityRole="text"
+            style={styles.lessonCompletionStatusRow}
+            testID="lesson-completion-loading"
+          >
+            <ActivityIndicator color="#01696F" size="small" />
+            <Text style={styles.lessonCompletionStatusText}>
+              Checking your saved lesson completion…
+            </Text>
+          </View>
+        ) : null}
+        {authStatus === 'unconfigured' ||
+        currentLessonProgress.status === 'unconfigured' ||
+        (authStatus !== 'ready' &&
+          authStatus !== 'loading' &&
+          currentLessonProgress.status !== 'error') ||
+        currentLessonProgress.status === 'unauthenticated' ? (
+          <Text
+            accessibilityLiveRegion="polite"
+            accessibilityRole="alert"
+            style={styles.lessonCompletionUnavailableText}
+            testID="lesson-completion-unavailable"
+          >
+            {authStatus === 'unconfigured' ||
+            currentLessonProgress.status === 'unconfigured'
+              ? 'Lesson completion is unavailable because BabyReady is not connected.'
+              : 'Lesson completion is unavailable until your private session is ready.'}
+          </Text>
+        ) : null}
+        {currentLessonProgress.status === 'error' ? (
+          <Text
+            accessibilityLiveRegion="polite"
+            accessibilityRole="alert"
+            style={styles.lessonCompletionErrorText}
+            testID="lesson-completion-error"
+          >
+            {currentLessonProgress.error ??
+              'Saved lesson completion could not be loaded. Please try again.'}
+          </Text>
+        ) : null}
+        {isSavingCompletion ? (
+          <View
+            accessibilityLiveRegion="polite"
+            accessibilityRole="text"
+            style={styles.lessonCompletionStatusRow}
+            testID="lesson-completion-saving"
+          >
+            <ActivityIndicator color="#01696F" size="small" />
+            <Text style={styles.lessonCompletionStatusText}>
+              {currentCompletionSave?.message}
+            </Text>
+          </View>
+        ) : null}
+        {currentCompletionSave?.status === 'saved' ? (
+          <Text
+            accessibilityLiveRegion="polite"
+            accessibilityRole="text"
+            style={styles.lessonCompletionSuccessText}
+            testID="lesson-completion-success"
+          >
+            {currentCompletionSave.message}
+          </Text>
+        ) : null}
+        {currentCompletionSave?.status === 'error' ? (
+          <Text
+            accessibilityLiveRegion="polite"
+            accessibilityRole="alert"
+            style={styles.lessonCompletionErrorText}
+            testID="lesson-completion-save-error"
+          >
+            {currentCompletionSave.message}
+          </Text>
+        ) : null}
+        {currentCompletionSave?.status === 'unavailable' ? (
+          <Text
+            accessibilityLiveRegion="polite"
+            accessibilityRole="alert"
+            style={styles.lessonCompletionUnavailableText}
+            testID="lesson-completion-save-unavailable"
+          >
+            {currentCompletionSave.message}
+          </Text>
+        ) : null}
+        {currentLessonProgress.status === 'ready' &&
+        !isSavingCompletion &&
+        currentCompletionSave?.status !== 'saved' ? (
+          <Text
+            accessibilityLiveRegion="polite"
+            accessibilityRole="text"
+            style={styles.lessonCompletionCurrentText}
+            testID="lesson-completion-current-state"
+          >
+            {isLessonComplete
+              ? 'This lesson is marked complete in your learning plan.'
+              : 'This lesson is not marked complete yet.'}
+          </Text>
+        ) : null}
+        <Pressable
+          accessibilityHint={
+            canUpdateLessonCompletion
+              ? isLessonComplete
+                ? 'Updates your private learning plan to show this lesson as incomplete.'
+                : 'Updates your private learning plan to show this lesson as complete.'
+              : 'Lesson completion is not ready to update.'
+          }
+          accessibilityLabel={
+            isLessonComplete
+              ? `Mark ${selectedLesson.lesson.title} incomplete`
+              : `Mark ${selectedLesson.lesson.title} complete`
+          }
+          accessibilityRole="button"
+          accessibilityState={{
+            busy: isSavingCompletion,
+            disabled: !canUpdateLessonCompletion,
+          }}
+          disabled={!canUpdateLessonCompletion}
+          onPress={() => updateLessonCompletion(!isLessonComplete)}
+          style={[
+            styles.lessonCompletionButton,
+            isLessonComplete && styles.lessonCompletionIncompleteButton,
+            !canUpdateLessonCompletion && styles.lessonCompletionButtonDisabled,
+          ]}
+          testID={
+            isLessonComplete
+              ? 'button-mark-lesson-incomplete'
+              : 'button-mark-lesson-complete'
+          }
+        >
+          <Text
+            style={[
+              styles.lessonCompletionButtonText,
+              isLessonComplete && styles.lessonCompletionIncompleteButtonText,
+              !canUpdateLessonCompletion &&
+                styles.lessonCompletionButtonTextDisabled,
+            ]}
+          >
+            {isSavingCompletion
+              ? 'Saving…'
+              : isLessonComplete
+                ? 'Mark lesson incomplete'
+                : 'Mark lesson complete'}
+          </Text>
+        </Pressable>
       </View>
 
       {lessonState.status === 'loading' ? (
@@ -1436,6 +1774,94 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '800',
     marginTop: 11,
+  },
+  lessonCompletionCard: {
+    backgroundColor: '#EAF4F2',
+    borderColor: '#92BFB8',
+    borderLeftColor: '#01696F',
+    borderLeftWidth: 4,
+    borderRadius: 14,
+    borderWidth: 1,
+    marginTop: 20,
+    padding: 16,
+  },
+  lessonCompletionEyebrow: {
+    color: '#0C4E54',
+    fontSize: 10,
+    fontWeight: '800',
+    letterSpacing: 0.9,
+  },
+  lessonCompletionTitle: {
+    color: '#28251D',
+    fontSize: 17,
+    fontWeight: '800',
+    marginTop: 4,
+  },
+  lessonCompletionStatusRow: {
+    alignItems: 'center',
+    flexDirection: 'row',
+    gap: 8,
+    marginTop: 9,
+  },
+  lessonCompletionStatusText: {
+    color: '#365553',
+    flex: 1,
+    fontSize: 14,
+    lineHeight: 20,
+  },
+  lessonCompletionCurrentText: {
+    color: '#365553',
+    fontSize: 14,
+    lineHeight: 20,
+    marginTop: 9,
+  },
+  lessonCompletionSuccessText: {
+    color: '#276117',
+    fontSize: 14,
+    lineHeight: 20,
+    marginTop: 9,
+  },
+  lessonCompletionUnavailableText: {
+    color: '#605D56',
+    fontSize: 14,
+    lineHeight: 20,
+    marginTop: 9,
+  },
+  lessonCompletionErrorText: {
+    color: '#7B1F5C',
+    fontSize: 14,
+    lineHeight: 20,
+    marginTop: 9,
+  },
+  lessonCompletionButton: {
+    alignItems: 'center',
+    alignSelf: 'flex-start',
+    backgroundColor: '#01696F',
+    borderRadius: 9,
+    justifyContent: 'center',
+    marginTop: 13,
+    minHeight: 44,
+    paddingHorizontal: 14,
+  },
+  lessonCompletionIncompleteButton: {
+    backgroundColor: '#FBFBF9',
+    borderColor: '#01696F',
+    borderWidth: 1,
+  },
+  lessonCompletionButtonDisabled: {
+    backgroundColor: '#D4D1CA',
+    borderColor: '#D4D1CA',
+  },
+  lessonCompletionButtonText: {
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: '800',
+  },
+  lessonCompletionIncompleteButtonText: {
+    color: '#01696F',
+  },
+  lessonCompletionButtonTextDisabled: {
+    color: '#696761',
   },
   statusCard: {
     alignItems: 'center',
