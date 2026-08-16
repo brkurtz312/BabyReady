@@ -103,6 +103,24 @@ const mediaIntakeCandidate = (overrides = {}) => ({
   ...overrides,
 });
 
+const birthReadinessBrief = (overrides = {}) => ({
+  id: 'preparing-for-labor',
+  courseId: 'preparing-for-labor',
+  schemaVersion: 1,
+  readinessItems: {
+    careTeamContactConfirmed: false,
+    afterHoursPlanConfirmed: false,
+    arrivalLocationConfirmed: false,
+    transportationPlanDiscussed: false,
+    supportPersonPlanDiscussed: false,
+    questionsPrepared: false,
+  },
+  discussionQuestions: ['What should I review with my care team?'],
+  createdAt: serverTimestamp(),
+  updatedAt: serverTimestamp(),
+  ...overrides,
+});
+
 async function seed(path, data) {
   await testEnvironment.withSecurityRulesDisabled(async (context) => {
     await setDoc(doc(context.firestore(), path), data);
@@ -833,6 +851,133 @@ test('a user can access only their own profile, progress, plans, and contacts', 
     }),
   );
   await assertFails(getDoc(doc(bob, 'users/alice/careTeamContacts/default')));
+});
+
+test('a learner alone can create, read, update, and delete their Birth Readiness Brief', async () => {
+  const alice = userDb('alice');
+  const bob = userDb('bob');
+  const path = 'users/alice/birthReadinessBriefs/preparing-for-labor';
+  const aliceBrief = doc(alice, path);
+
+  await assertSucceeds(setDoc(aliceBrief, birthReadinessBrief()));
+  await assertSucceeds(getDoc(aliceBrief));
+  await assertFails(getDoc(doc(bob, path)));
+  await assertFails(setDoc(doc(bob, path), birthReadinessBrief()));
+
+  await assertSucceeds(
+    updateDoc(aliceBrief, {
+      readinessItems: {
+        careTeamContactConfirmed: true,
+        afterHoursPlanConfirmed: false,
+        arrivalLocationConfirmed: false,
+        transportationPlanDiscussed: false,
+        supportPersonPlanDiscussed: false,
+        questionsPrepared: true,
+      },
+      discussionQuestions: ['Who should my support person contact after hours?'],
+      updatedAt: serverTimestamp(),
+    }),
+  );
+  await assertSucceeds(deleteDoc(aliceBrief));
+});
+
+test('Birth Readiness Brief rules reject invalid IDs, fields, and readiness values', async () => {
+  const alice = userDb('alice');
+
+  await assertFails(
+    setDoc(
+      doc(alice, 'users/alice/birthReadinessBriefs/a-different-brief'),
+      birthReadinessBrief(),
+    ),
+  );
+  await assertFails(
+    setDoc(
+      doc(alice, 'users/alice/birthReadinessBriefs/preparing-for-labor'),
+      birthReadinessBrief({ unexpectedField: true }),
+    ),
+  );
+  await assertFails(
+    setDoc(
+      doc(alice, 'users/alice/birthReadinessBriefs/preparing-for-labor'),
+      birthReadinessBrief({
+        readinessItems: {
+          careTeamContactConfirmed: 'yes',
+          afterHoursPlanConfirmed: false,
+          arrivalLocationConfirmed: false,
+          transportationPlanDiscussed: false,
+          supportPersonPlanDiscussed: false,
+          questionsPrepared: false,
+        },
+      }),
+    ),
+  );
+});
+
+test('Birth Readiness Brief rules enforce bounded, trimmed discussion questions', async () => {
+  const alice = userDb('alice');
+  const path = 'users/alice/birthReadinessBriefs/preparing-for-labor';
+
+  await assertSucceeds(
+    setDoc(
+      doc(alice, path),
+      birthReadinessBrief({
+        discussionQuestions: Array.from(
+          { length: 10 },
+          (_, index) => `Question ${index + 1}`,
+        ),
+      }),
+    ),
+  );
+  await assertFails(
+    updateDoc(doc(alice, path), {
+      discussionQuestions: Array.from(
+        { length: 11 },
+        (_, index) => `Question ${index + 1}`,
+      ),
+      updatedAt: serverTimestamp(),
+    }),
+  );
+  await assertFails(
+    updateDoc(doc(alice, path), {
+      discussionQuestions: ['x'.repeat(281)],
+      updatedAt: serverTimestamp(),
+    }),
+  );
+  await assertFails(
+    updateDoc(doc(alice, path), {
+      discussionQuestions: [' A question that was not trimmed '],
+      updatedAt: serverTimestamp(),
+    }),
+  );
+});
+
+test('Birth Readiness Brief timestamps must be server-generated and preserve createdAt', async () => {
+  const alice = userDb('alice');
+  const path = 'users/alice/birthReadinessBriefs/preparing-for-labor';
+  const brief = doc(alice, path);
+  const clientTimestamp = Timestamp.fromDate(new Date('2026-08-01T00:00:00.000Z'));
+
+  await assertFails(
+    setDoc(
+      brief,
+      birthReadinessBrief({
+        createdAt: clientTimestamp,
+        updatedAt: clientTimestamp,
+      }),
+    ),
+  );
+  await assertSucceeds(setDoc(brief, birthReadinessBrief()));
+  await assertFails(
+    updateDoc(brief, {
+      updatedAt: clientTimestamp,
+    }),
+  );
+  await assertFails(
+    updateDoc(brief, {
+      createdAt: serverTimestamp(),
+      updatedAt: serverTimestamp(),
+    }),
+  );
 });
 
 test('safety events are server/admin write only', async () => {

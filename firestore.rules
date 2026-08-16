@@ -31,6 +31,132 @@ service cloud.firestore {
       return signedIn() && resource.data.guestId == request.auth.uid;
     }
 
+    function validBirthReadinessItems(items) {
+      return items is map
+        && items.keys().hasAll([
+          'careTeamContactConfirmed',
+          'afterHoursPlanConfirmed',
+          'arrivalLocationConfirmed',
+          'transportationPlanDiscussed',
+          'supportPersonPlanDiscussed',
+          'questionsPrepared'
+        ])
+        && items.keys().hasOnly([
+          'careTeamContactConfirmed',
+          'afterHoursPlanConfirmed',
+          'arrivalLocationConfirmed',
+          'transportationPlanDiscussed',
+          'supportPersonPlanDiscussed',
+          'questionsPrepared'
+        ])
+        && items.careTeamContactConfirmed is bool
+        && items.afterHoursPlanConfirmed is bool
+        && items.arrivalLocationConfirmed is bool
+        && items.transportationPlanDiscussed is bool
+        && items.supportPersonPlanDiscussed is bool
+        && items.questionsPrepared is bool;
+    }
+
+    function validBirthReadinessQuestion(question) {
+      return question is string
+        && question.size() > 0
+        && question.size() <= 280
+        // Require already-trimmed text. The service trims before saving; rules
+        // duplicate the boundary to reject direct malformed writes.
+        && question.matches('^\\S(?:[\\s\\S]*\\S)?$');
+    }
+
+    function validBirthReadinessQuestions(questions) {
+      return questions is list
+        && questions.size() <= 10
+        && (
+          questions.size() == 0
+          || (
+            validBirthReadinessQuestion(questions[0])
+            && (
+              questions.size() == 1
+              || (
+                validBirthReadinessQuestion(questions[1])
+                && (
+                  questions.size() == 2
+                  || (
+                    validBirthReadinessQuestion(questions[2])
+                    && (
+                      questions.size() == 3
+                      || (
+                        validBirthReadinessQuestion(questions[3])
+                        && (
+                          questions.size() == 4
+                          || (
+                            validBirthReadinessQuestion(questions[4])
+                            && (
+                              questions.size() == 5
+                              || (
+                                validBirthReadinessQuestion(questions[5])
+                                && (
+                                  questions.size() == 6
+                                  || (
+                                    validBirthReadinessQuestion(questions[6])
+                                    && (
+                                      questions.size() == 7
+                                      || (
+                                        validBirthReadinessQuestion(questions[7])
+                                        && (
+                                          questions.size() == 8
+                                          || (
+                                            validBirthReadinessQuestion(questions[8])
+                                            && (
+                                              questions.size() == 9
+                                              || validBirthReadinessQuestion(questions[9])
+                                            )
+                                          )
+                                        )
+                                      )
+                                    )
+                                  )
+                                )
+                              )
+                            )
+                          )
+                        )
+                      )
+                    )
+                  )
+                )
+              )
+            )
+          )
+        );
+    }
+
+    function validBirthReadinessBriefData() {
+      return request.resource.data.keys().hasOnly([
+          'id',
+          'courseId',
+          'schemaVersion',
+          'readinessItems',
+          'discussionQuestions',
+          'createdAt',
+          'updatedAt'
+        ])
+        && request.resource.data.keys().hasAll([
+          'id',
+          'courseId',
+          'schemaVersion',
+          'readinessItems',
+          'discussionQuestions',
+          'createdAt',
+          'updatedAt'
+        ])
+        && request.resource.data.id == 'preparing-for-labor'
+        && request.resource.data.courseId == 'preparing-for-labor'
+        && request.resource.data.schemaVersion == 1
+        && validBirthReadinessItems(request.resource.data.readinessItems)
+        && validBirthReadinessQuestions(request.resource.data.discussionQuestions)
+        && request.resource.data.createdAt is timestamp
+        && request.resource.data.updatedAt is timestamp;
+    }
+
     function isPublicationState(state) {
       return state in ['draft', 'submitted', 'approved', 'published', 'frozen'];
     }
@@ -526,6 +652,26 @@ service cloud.firestore {
 
       match /careTeamContacts/{contactId} {
         allow read, write: if owns(userId);
+      }
+
+      // A learner owns one tightly bounded private planning record. On create,
+      // both timestamps must be server timestamps (request.time); on update,
+      // createdAt is immutable and updatedAt must again be server-generated.
+      match /birthReadinessBriefs/{briefId} {
+        allow read: if owns(userId) && briefId == 'preparing-for-labor';
+        allow create: if owns(userId)
+          && briefId == 'preparing-for-labor'
+          && validBirthReadinessBriefData()
+          && request.resource.data.createdAt == request.time
+          && request.resource.data.updatedAt == request.time;
+        allow update: if owns(userId)
+          && briefId == 'preparing-for-labor'
+          && validBirthReadinessBriefData()
+          && request.resource.data.diff(resource.data).affectedKeys()
+            .hasOnly(['readinessItems', 'discussionQuestions', 'updatedAt'])
+          && request.resource.data.createdAt == resource.data.createdAt
+          && request.resource.data.updatedAt == request.time;
+        allow delete: if owns(userId) && briefId == 'preparing-for-labor';
       }
 
       // Safety events should be written only by a trusted server process.
