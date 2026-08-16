@@ -10,6 +10,10 @@ import {
 } from 'firebase/firestore';
 
 import { requireAuth, requireFirestore } from '../lib/firebase';
+import {
+  assertPreparingForLaborManifestPlacement,
+  type PreparingForLaborPlacementInput,
+} from '../content/preparingForLaborManifest';
 import type {
   ClinicalContentBlock,
   ClinicalMedia,
@@ -36,6 +40,12 @@ type UpsertContentBlockInput = Omit<
   publicationState?: ContentPublicationState;
   mediaIds?: string[];
 };
+
+function assertGovernedContentPlacement(
+  input: PreparingForLaborPlacementInput,
+): void {
+  assertPreparingForLaborManifestPlacement(input);
+}
 
 function validateContentBlockInput(input: UpsertContentBlockInput): void {
   const identifierFields = [
@@ -76,6 +86,11 @@ function validateContentBlockInput(input: UpsertContentBlockInput): void {
   if ((input.mediaIds ?? []).some((mediaId) => !mediaId.trim())) {
     throw new Error('Remove any empty media attachments before saving.');
   }
+
+  assertGovernedContentPlacement({
+    ...input,
+    displayOrder: input.displayOrder ?? 0,
+  });
 }
 
 async function requireAdminClaim(): Promise<string> {
@@ -303,6 +318,15 @@ export async function submitContentBlockForClinicalReview(
   }
 
   const content = snapshot.data() as Partial<ClinicalContentBlock>;
+  assertGovernedContentPlacement({
+    courseId,
+    moduleId,
+    lessonId,
+    id: contentBlockId,
+    displayOrder: content.displayOrder ?? 0,
+    type: content.type ?? 'text',
+    isClinicalClaim: content.isClinicalClaim === true,
+  });
   if (!content.body?.trim()) {
     throw new Error('Add learner-facing content before submitting this block.');
   }
@@ -356,6 +380,15 @@ export async function approveContentBlock(
   }
 
   const content = contentSnapshot.data() as Partial<ClinicalContentBlock>;
+  assertGovernedContentPlacement({
+    courseId,
+    moduleId,
+    lessonId,
+    id: contentBlockId,
+    displayOrder: content.displayOrder ?? 0,
+    type: content.type ?? 'text',
+    isClinicalClaim: content.isClinicalClaim === true,
+  });
   if (content.isClinicalClaim) {
     if (!content.sourceIds?.length) {
       throw new Error('Clinical claims need at least one linked source before approval.');
@@ -422,6 +455,15 @@ export async function publishContentBlock(
   }
 
   const contentBlock = snapshot.data() as Partial<ClinicalContentBlock>;
+  assertGovernedContentPlacement({
+    courseId,
+    moduleId,
+    lessonId,
+    id: contentBlockId,
+    displayOrder: contentBlock.displayOrder ?? 0,
+    type: contentBlock.type ?? 'text',
+    isClinicalClaim: contentBlock.isClinicalClaim === true,
+  });
   if (
     contentBlock.isClinicalClaim &&
     (!contentBlock.sourceIds?.length ||
