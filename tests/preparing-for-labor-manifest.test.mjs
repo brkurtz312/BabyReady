@@ -5,6 +5,7 @@ import vm from 'node:vm';
 import ts from 'typescript';
 import { parsePreparingForLaborContentBlockPath } from '../scripts/preparing-for-labor-audit-utils.mjs';
 import { preparingForLaborTypoArtifacts } from '../scripts/preparing-for-labor-typo-artifacts.mjs';
+import { preparingForLaborReadinessReconciliationTargets } from '../scripts/preparing-for-labor-readiness-reconciliation.mjs';
 
 const manifest = JSON.parse(
   await readFile(
@@ -265,4 +266,20 @@ test('Preparing for Labor typo-artifact cleanup targets only malformed frozen pa
       /^courses\/preparing-for-labor\/modules\/labor-readiness\/lessons\/[a-z0-9-]+\/contentBlocks\/[a-z0-9-]+$/,
     );
   }
+});
+
+test('Preparing for Labor readiness comparison names the exact correct and malformed paths', () => {
+  const { correct, typo } = preparingForLaborReadinessReconciliationTargets;
+
+  assert.equal(correct.blockId, 'arriving-prepared-readiness-topics');
+  assert.equal(typo.blockId, 'arrriving-prepared-readiness-topics');
+  assert.notEqual(correct.path, typo.path);
+  assert.match(
+    correct.path,
+    /lessons\/arriving-prepared\/contentBlocks\/arriving-prepared-readiness-topics$/,
+  );
+  assert.match(
+    typo.path,
+    /lessons\/arriving-prepared\/contentBlocks\/arrriving-prepared-readiness-topics$/,
+  );
 });
