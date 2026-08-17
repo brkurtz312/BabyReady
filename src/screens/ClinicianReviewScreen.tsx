@@ -66,8 +66,10 @@ type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
 type ClinicianReviewScreenProps = {
   user: User;
   onExit: () => void;
+  initialSelectedBlock?: ClinicalContentBlock | null;
   onOpenSourceLibrary: () => void;
   onOpenContentAuthoring: () => void;
+  onOpenCourseReadiness: () => void;
   onOpenAuditLog: () => void;
   onOpenMediaLibrary: () => void;
   onEditDraft: (block: ClinicalContentBlock) => void;
@@ -255,8 +257,10 @@ function formatAuditExportRoute(route: ComparisonAuditExportRoute): string {
 export function ClinicianReviewScreen({
   user,
   onExit,
+  initialSelectedBlock = null,
   onOpenSourceLibrary,
   onOpenContentAuthoring,
+  onOpenCourseReadiness,
   onOpenAuditLog,
   onOpenMediaLibrary,
   onEditDraft,
@@ -347,6 +351,23 @@ export function ClinicianReviewScreen({
 
     return subscribeToClinicalReviewQueue(setQueueState) ?? undefined;
   }, [access]);
+
+  useEffect(() => {
+    if (!initialSelectedBlock || queueState.status !== 'ready') {
+      return;
+    }
+
+    const matchingBlock = queueState.blocks.find(
+      (block) =>
+        block.courseId === initialSelectedBlock.courseId &&
+        block.moduleId === initialSelectedBlock.moduleId &&
+        block.lessonId === initialSelectedBlock.lessonId &&
+        block.id === initialSelectedBlock.id,
+    );
+    if (matchingBlock) {
+      setSelectedId(queueBlockKey(matchingBlock));
+    }
+  }, [initialSelectedBlock, queueState]);
 
   useEffect(() => {
     if (access !== 'authorized') {
@@ -988,6 +1009,17 @@ export function ClinicianReviewScreen({
           Review source-grounded learning content before it reaches families.
         </Text>
         <View style={styles.workspaceActions}>
+          <Pressable
+            accessibilityLabel="Open Preparing for Labor course readiness"
+            accessibilityRole="button"
+            onPress={onOpenCourseReadiness}
+            style={styles.courseReadinessButton}
+            testID="button-open-course-readiness"
+          >
+            <Text style={styles.courseReadinessButtonText}>
+              Course readiness
+            </Text>
+          </Pressable>
           <Pressable
             accessibilityLabel="Open cross-content audit export log"
             accessibilityRole="button"
@@ -2205,6 +2237,20 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     gap: 10,
     marginTop: 16,
+  },
+  courseReadinessButton: {
+    backgroundColor: '#FFFFFF',
+    borderColor: '#0C4E54',
+    borderRadius: 9,
+    borderWidth: 1,
+    justifyContent: 'center',
+    minHeight: 44,
+    paddingHorizontal: 12,
+  },
+  courseReadinessButtonText: {
+    color: '#0C4E54',
+    fontSize: 14,
+    fontWeight: '800',
   },
   auditLogButton: {
     backgroundColor: '#E3F0ED',

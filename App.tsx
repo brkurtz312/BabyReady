@@ -25,6 +25,7 @@ import type { ClinicalContentBlock, CourseRecord } from './src/models/course';
 import { ClinicianAuditLogScreen } from './src/screens/ClinicianAuditLogScreen';
 import { ClinicianReviewScreen } from './src/screens/ClinicianReviewScreen';
 import { ClinicianContentAuthoringScreen } from './src/screens/ClinicianContentAuthoringScreen';
+import { ClinicianCourseReadinessScreen } from './src/screens/ClinicianCourseReadinessScreen';
 import { ClinicianMediaLibraryScreen } from './src/screens/ClinicianMediaLibraryScreen';
 import { ClinicianSourceLibraryScreen } from './src/screens/ClinicianSourceLibraryScreen';
 import { BirthReadinessBriefScreen } from './src/screens/BirthReadinessBriefScreen';
@@ -55,6 +56,7 @@ function BabyReadyApp() {
     | 'course-player'
     | 'birth-readiness-brief'
     | 'review'
+    | 'course-readiness'
     | 'sources'
     | 'media'
     | 'author'
@@ -66,6 +68,14 @@ function BabyReadyApp() {
   const [draftToEdit, setDraftToEdit] = useState<ClinicalContentBlock | null>(
     null,
   );
+  const [authorReturnView, setAuthorReturnView] = useState<
+    'review' | 'course-readiness'
+  >('review');
+  const [reviewTargetBlock, setReviewTargetBlock] =
+    useState<ClinicalContentBlock | null>(null);
+  const [reviewReturnView, setReviewReturnView] = useState<
+    'learner' | 'course-readiness'
+  >('learner');
   const [selectedCourse, setSelectedCourse] = useState<CourseRecord | null>(
     null,
   );
@@ -177,6 +187,8 @@ function BabyReadyApp() {
         return;
       }
 
+      setReviewTargetBlock(null);
+      setReviewReturnView('learner');
       setActiveView('review');
     } catch {
       Alert.alert(
@@ -210,8 +222,34 @@ function BabyReadyApp() {
         initialBlock={draftToEdit}
         onExit={() => {
           setDraftToEdit(null);
+          setActiveView(authorReturnView);
+        }}
+        user={authState.user}
+      />
+    );
+  }
+
+  if (activeView === 'course-readiness' && authState.status === 'ready') {
+    return (
+      <ClinicianCourseReadinessScreen
+        onEditDraft={(block) => {
+          setDraftToEdit(block);
+          setAuthorReturnView('course-readiness');
+          setActiveView('author');
+        }}
+        onExit={() => setActiveView('review')}
+        onOpenContentAuthoring={() => {
+          setDraftToEdit(null);
+          setAuthorReturnView('course-readiness');
+          setActiveView('author');
+        }}
+        onOpenMediaLibrary={() => setActiveView('media')}
+        onOpenReview={(block) => {
+          setReviewTargetBlock(block);
+          setReviewReturnView('course-readiness');
           setActiveView('review');
         }}
+        onOpenSourceLibrary={() => setActiveView('sources')}
         user={authState.user}
       />
     );
@@ -233,18 +271,25 @@ function BabyReadyApp() {
   if (activeView === 'review' && authState.status === 'ready') {
     return (
       <ClinicianReviewScreen
-        onExit={() => setActiveView('learner')}
+        onExit={() => {
+          setReviewTargetBlock(null);
+          setActiveView(reviewReturnView);
+        }}
         onEditDraft={(block) => {
           setDraftToEdit(block);
+          setAuthorReturnView('review');
           setActiveView('author');
         }}
         onOpenContentAuthoring={() => {
           setDraftToEdit(null);
+          setAuthorReturnView('review');
           setActiveView('author');
         }}
         onOpenAuditLog={() => setActiveView('audit-log')}
+        onOpenCourseReadiness={() => setActiveView('course-readiness')}
         onOpenMediaLibrary={() => setActiveView('media')}
         onOpenSourceLibrary={() => setActiveView('sources')}
+        initialSelectedBlock={reviewTargetBlock}
         user={authState.user}
       />
     );
