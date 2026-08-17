@@ -18,8 +18,11 @@ import type {
   ContentSource,
 } from '../models/course';
 import {
+  createPreparingForLaborDraftPackage,
+  inspectPreparingForLaborDraftPackage,
   submitContentBlockForClinicalReview,
   upsertClinicalContentBlock,
+  type PreparingForLaborDraftPackagePreflight,
 } from '../services/contentGovernanceService';
 import {
   subscribeToContentSourceLibrary,
@@ -40,7 +43,7 @@ import {
 import { useClinicianWorkspace } from '../lib/clinicianWorkspace';
 
 type AccessState = 'checking' | 'authorized' | 'denied' | 'error';
-type AuthoringAction = 'save' | 'submit' | null;
+type AuthoringAction = 'save' | 'submit' | 'package' | null;
 type ContentBlockType = ClinicalContentBlock['type'];
 
 type ContentForm = {
@@ -175,6 +178,11 @@ export function ClinicianContentAuthoringScreen({
   );
   const [actionInFlight, setActionInFlight] = useState<AuthoringAction>(null);
   const [feedback, setFeedback] = useState<string | null>(null);
+  const [draftPackagePreflight, setDraftPackagePreflight] =
+    useState<PreparingForLaborDraftPackagePreflight | null>(null);
+  const [draftPackageError, setDraftPackageError] = useState<string | null>(
+    null,
+  );
   const isPreparingForLaborAuthoring = isPreparingForLaborCourse(
     form.courseId,
   );
@@ -243,6 +251,26 @@ export function ClinicianContentAuthoringScreen({
     setForm(initialBlock ? formFromBlock(initialBlock) : emptyContentForm());
     setFeedback(null);
   }, [initialBlock]);
+
+  const refreshDraftPackagePreflight = () => {
+    setDraftPackageError(null);
+    void inspectPreparingForLaborDraftPackage()
+      .then((preflight) => {
+        setDraftPackagePreflight(preflight);
+      })
+      .catch((error) => {
+        setDraftPackagePreflight(null);
+        setDraftPackageError(readableError(error));
+      });
+  };
+
+  useEffect(() => {
+    if (access !== 'authorized' || initialBlock) {
+      return;
+    }
+
+    refreshDraftPackagePreflight();
+  }, [access, initialBlock]);
 
   const publishedSources = useMemo(
     () =>
@@ -500,6 +528,57 @@ export function ClinicianContentAuthoringScreen({
     );
   };
 
+  const handleGenerateDraftPackage = () => {
+    if (!draftPackagePreflight) {
+      refreshDraftPackagePreflight();
+      setFeedback(
+        'The governed package is being checked. Review the result before generating any drafts.',
+      );
+      return;
+    }
+    if (draftPackagePreflight.missingBlockIds.length === 0) {
+      setFeedback(
+        'Every Preparing for Labor manifest block already exists. No drafts were changed.',
+      );
+      return;
+    }
+    if (draftPackagePreflight.blockedBlocks.length > 0) {
+      setFeedback(
+        'Publish the listed source records before generating this draft package. No drafts were changed.',
+      );
+      return;
+    }
+
+    Alert.alert(
+      'Generate governed drafts?',
+      `Create ${draftPackagePreflight.missingBlockIds.length} missing Preparing for Labor draft${draftPackagePreflight.missingBlockIds.length === 1 ? '' : 's'}? Existing drafts will not be changed. This does not submit, approve, publish, or attach media.`,
+      [
+        { text: 'Cancel', style: 'cancel' },
+        {
+          text: 'Generate drafts',
+          onPress: () => {
+            void runAction(
+              'package',
+              async () => {
+                const result = await createPreparingForLaborDraftPackage();
+                await inspectPreparingForLaborDraftPackage().then(
+                  setDraftPackagePreflight,
+                );
+                setDraftPackageError(null);
+                if (result.createdBlockIds.length === 0) {
+                  throw new Error(
+                    'No draft was created because another author created every missing manifest block first. Existing drafts were left unchanged.',
+                  );
+                }
+              },
+              'Governed drafts were created. They remain draft-only and still require media review, source verification, clinical approval, and a separate learner-publication decision.',
+            );
+          },
+        },
+      ],
+    );
+  };
+
   const screenHeader = (
     <>
       <View style={styles.header}>
@@ -539,6 +618,96 @@ export function ClinicianContentAuthoringScreen({
       </Text>
     </View>
   );
+
+  const draftPackageCard =
+    !isEditingDraft && isPreparingForLaborAuthoring ? (
+      <View style={styles.draftPackageCard}>
+        <Text style={styles.governanceLabel}>GOVERNED DRAFT PACKAGE</Text>
+        <Text style={styles.draftPackageTitle}>
+          Generate the remaining Preparing for Labor drafts
+        </Text>
+        <Text style={styles.draftPackageText}>
+          The package uses the reviewed manifest, learner copy, and source-slot
+          mappings. It creates only missing cards as drafts and leaves existing
+          cards untouched.
+        </Text>
+
+        {draftPackageError ? (
+          <Text style={styles.draftPackageError}>{draftPackageError}</Text>
+        ) : null}
+
+        {draftPackagePreflight ? (
+          <>
+            <View style={styles.draftPackageMetrics}>
+              <View style={styles.draftPackageMetric}>
+                <Text style={styles.draftPackageMetricValue}>
+                  {draftPackagePreflight.existingBlockIds.length}
+                </Text>
+                <Text style={styles.draftPackageMetricLabel}>already exist</Text>
+              </View>
+              <View style={styles.draftPackageMetric}>
+                <Text style={styles.draftPackageMetricValue}>
+                  {draftPackagePreflight.missingBlockIds.length}
+                </Text>
+                <Text style={styles.draftPackageMetricLabel}>ready to create</Text>
+              </View>
+            </View>
+
+            {draftPackagePreflight.blockedBlocks.length > 0 ? (
+              <View style={styles.draftPackageBlocker}>
+                <Text style={styles.draftPackageBlockerTitle}>
+                  Published source records are still required
+                </Text>
+                {draftPackagePreflight.blockedBlocks.map((block) => (
+                  <Text
+                    key={`${block.lessonId}-${block.contentBlockId}`}
+                    style={styles.draftPackageBlockerText}
+                  >
+                    {block.lessonId}/{block.contentBlockId}: {block.missingPublishedSourceIds.join(', ')}
+                  </Text>
+                ))}
+              </View>
+            ) : null}
+          </>
+        ) : (
+          <Text style={styles.fieldHint}>
+            Checking current drafts and published source records…
+          </Text>
+        )}
+
+        <Pressable
+          accessibilityLabel="Generate missing Preparing for Labor draft package"
+          accessibilityRole="button"
+          disabled={
+            actionInFlight !== null ||
+            !draftPackagePreflight ||
+            draftPackagePreflight.missingBlockIds.length === 0 ||
+            draftPackagePreflight.blockedBlocks.length > 0
+          }
+          onPress={handleGenerateDraftPackage}
+          style={[
+            styles.draftPackageAction,
+            (actionInFlight !== null ||
+              !draftPackagePreflight ||
+              draftPackagePreflight.missingBlockIds.length === 0 ||
+              draftPackagePreflight.blockedBlocks.length > 0) &&
+              styles.disabledAction,
+          ]}
+          testID="button-generate-preparing-for-labor-draft-package"
+        >
+          <Text style={styles.draftPackageActionText}>
+            {actionInFlight === 'package'
+              ? 'Generating drafts…'
+              : 'Generate missing governed drafts'}
+          </Text>
+        </Pressable>
+        <Text style={styles.draftPackageFinePrint}>
+          This action cannot publish to learners. Each clinical claim still
+          needs published evidence, clinical approval, a future review date,
+          and a separate publication decision.
+        </Text>
+      </View>
+    ) : null;
 
   const editingFields = (
     <>
@@ -1176,6 +1345,7 @@ export function ClinicianContentAuthoringScreen({
   const authoringForm = (
     <>
       {governanceCard}
+      {draftPackageCard}
       <View style={styles.formPanel}>
         {editingFields}
         {attachmentFields}
@@ -1228,6 +1398,7 @@ export function ClinicianContentAuthoringScreen({
               showsVerticalScrollIndicator={false}
               style={styles.workspaceEditingScroller}
             >
+              {draftPackageCard}
               <View style={styles.formPanel}>{editingFields}</View>
             </ScrollView>
 
@@ -1386,6 +1557,95 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 20,
     marginTop: 5,
+  },
+  draftPackageCard: {
+    backgroundColor: '#FBFBF9',
+    borderColor: '#0C4E54',
+    borderRadius: 16,
+    borderWidth: 1,
+    marginTop: 18,
+    padding: 18,
+  },
+  draftPackageTitle: {
+    color: '#28251D',
+    fontSize: 17,
+    fontWeight: '800',
+    marginTop: 5,
+  },
+  draftPackageText: {
+    color: '#4D4B45',
+    fontSize: 14,
+    lineHeight: 20,
+    marginTop: 5,
+  },
+  draftPackageMetrics: {
+    flexDirection: 'row',
+    gap: 10,
+    marginTop: 14,
+  },
+  draftPackageMetric: {
+    backgroundColor: '#EAF4F1',
+    borderColor: '#92BFB8',
+    borderRadius: 10,
+    borderWidth: 1,
+    flex: 1,
+    padding: 10,
+  },
+  draftPackageMetricValue: {
+    color: '#0C4E54',
+    fontSize: 20,
+    fontWeight: '900',
+  },
+  draftPackageMetricLabel: {
+    color: '#365553',
+    fontSize: 11,
+    fontWeight: '700',
+    marginTop: 2,
+  },
+  draftPackageBlocker: {
+    backgroundColor: '#FDF1E9',
+    borderColor: '#C47A4D',
+    borderRadius: 10,
+    borderWidth: 1,
+    marginTop: 12,
+    padding: 11,
+  },
+  draftPackageBlockerTitle: {
+    color: '#7A3414',
+    fontSize: 13,
+    fontWeight: '800',
+  },
+  draftPackageBlockerText: {
+    color: '#7A3414',
+    fontSize: 12,
+    lineHeight: 17,
+    marginTop: 4,
+  },
+  draftPackageError: {
+    color: '#8A235A',
+    fontSize: 13,
+    lineHeight: 19,
+    marginTop: 10,
+  },
+  draftPackageAction: {
+    alignItems: 'center',
+    backgroundColor: '#01696F',
+    borderRadius: 10,
+    justifyContent: 'center',
+    marginTop: 16,
+    minHeight: 46,
+    paddingHorizontal: 14,
+  },
+  draftPackageActionText: {
+    color: '#FFFFFF',
+    fontSize: 14,
+    fontWeight: '800',
+  },
+  draftPackageFinePrint: {
+    color: '#696761',
+    fontSize: 12,
+    lineHeight: 18,
+    marginTop: 9,
   },
   formPanel: {
     backgroundColor: '#FBFBF9',

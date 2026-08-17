@@ -12,7 +12,9 @@ import {
 import { requireAuth, requireFirestore } from '../lib/firebase';
 import {
   assertPreparingForLaborManifestPlacement,
+  getPreparingForLaborDraftPackageEntries,
   type PreparingForLaborPlacementInput,
+  type PreparingForLaborDraftPackageEntry,
 } from '../content/preparingForLaborManifest';
 import type {
   ClinicalContentBlock,
@@ -39,6 +41,25 @@ type UpsertContentBlockInput = Omit<
   nextReviewAt?: Date;
   publicationState?: ContentPublicationState;
   mediaIds?: string[];
+};
+
+export type PreparingForLaborDraftPackageBlockedBlock = {
+  lessonId: string;
+  contentBlockId: string;
+  missingPublishedSourceIds: string[];
+};
+
+export type PreparingForLaborDraftPackagePreflight = {
+  totalManifestBlocks: number;
+  existingBlockIds: string[];
+  missingBlockIds: string[];
+  blockedBlocks: PreparingForLaborDraftPackageBlockedBlock[];
+  canCreate: boolean;
+};
+
+export type PreparingForLaborDraftPackageResult = {
+  createdBlockIds: string[];
+  skippedExistingBlockIds: string[];
 };
 
 function assertGovernedContentPlacement(
@@ -129,6 +150,65 @@ function contentBlockReference(
     'contentBlocks',
     contentBlockId,
   );
+}
+
+function preparingForLaborDraftPackageBlockKey(
+  entry: Pick<PreparingForLaborDraftPackageEntry, 'lessonId' | 'id'>,
+): string {
+  return `${entry.lessonId}/${entry.id}`;
+}
+
+function publishedSourceProblems(
+  entries: PreparingForLaborDraftPackageEntry[],
+  sourceSnapshots: Map<string, { exists: () => boolean; data: () => Record<string, unknown> | undefined }>,
+): PreparingForLaborDraftPackageBlockedBlock[] {
+  return entries.flatMap((entry) => {
+    const missingPublishedSourceIds = entry.sourceIds.filter((sourceId) => {
+      const snapshot = sourceSnapshots.get(sourceId);
+      return (
+        !snapshot?.exists() ||
+        snapshot.data()?.publicationState !== 'published'
+      );
+    });
+
+    return missingPublishedSourceIds.length
+      ? [
+          {
+            lessonId: entry.lessonId,
+            contentBlockId: entry.id,
+            missingPublishedSourceIds,
+          },
+        ]
+      : [];
+  });
+}
+
+function sourceIdsForDraftPackage(
+  entries: PreparingForLaborDraftPackageEntry[],
+): string[] {
+  return [...new Set(entries.flatMap((entry) => entry.sourceIds))];
+}
+
+function draftPackagePreflight(
+  entries: PreparingForLaborDraftPackageEntry[],
+  existingEntries: PreparingForLaborDraftPackageEntry[],
+  sourceSnapshots: Map<string, { exists: () => boolean; data: () => Record<string, unknown> | undefined }>,
+): PreparingForLaborDraftPackagePreflight {
+  const existingBlockIds = existingEntries.map(
+    preparingForLaborDraftPackageBlockKey,
+  );
+  const missingEntries = entries.filter(
+    (entry) => !existingBlockIds.includes(preparingForLaborDraftPackageBlockKey(entry)),
+  );
+  const blockedBlocks = publishedSourceProblems(missingEntries, sourceSnapshots);
+
+  return {
+    totalManifestBlocks: entries.length,
+    existingBlockIds,
+    missingBlockIds: missingEntries.map(preparingForLaborDraftPackageBlockKey),
+    blockedBlocks,
+    canCreate: missingEntries.length > 0 && blockedBlocks.length === 0,
+  };
 }
 
 type VersionedContentUpdate = {
@@ -300,6 +380,146 @@ export async function upsertClinicalContentBlock(
       },
     },
   );
+}
+
+/**
+ * Reads the live course and Source Library for a package-generation preview.
+ * This is intentionally read-only and never treats the screen's source cache
+ * as authority for a clinical attachment.
+ */
+export async function inspectPreparingForLaborDraftPackage(): Promise<PreparingForLaborDraftPackagePreflight> {
+  await requireAdminClaim();
+  const firestore = requireFirestore();
+  const entries = getPreparingForLaborDraftPackageEntries();
+  const references = entries.map((entry) =>
+    contentBlockReference(
+      entry.courseId,
+      entry.moduleId,
+      entry.lessonId,
+      entry.id,
+    ),
+  );
+  const sourceIds = sourceIdsForDraftPackage(entries);
+  const [blockSnapshots, sourceSnapshotList] = await Promise.all([
+    Promise.all(references.map((reference) => getDoc(reference))),
+    Promise.all(sourceIds.map((sourceId) => getDoc(doc(firestore, 'sources', sourceId)))),
+  ]);
+  const sourceSnapshots = new Map(
+    sourceSnapshotList.map((snapshot) => [snapshot.id, snapshot]),
+  );
+  const existingEntries = entries.filter(
+    (_entry, index) => blockSnapshots[index].exists(),
+  );
+
+  return draftPackagePreflight(entries, existingEntries, sourceSnapshots);
+}
+
+/**
+ * Generates only missing Preparing for Labor cards as draft version 1 records.
+ * It never overwrites existing content, changes source/media records, submits,
+ * approves, publishes, freezes, or deletes a block. The transaction rechecks
+ * every target and every required source immediately before it writes.
+ */
+export async function createPreparingForLaborDraftPackage(): Promise<PreparingForLaborDraftPackageResult> {
+  const adminId = await requireAdminClaim();
+  const firestore = requireFirestore();
+  const entries = getPreparingForLaborDraftPackageEntries();
+
+  for (const entry of entries) {
+    validateContentBlockInput({
+      ...entry,
+      publicationState: 'draft',
+    });
+  }
+
+  return runTransaction(firestore, async (transaction) => {
+    const entrySnapshots: Array<{
+      entry: PreparingForLaborDraftPackageEntry;
+      exists: boolean;
+    }> = [];
+
+    for (const entry of entries) {
+      const reference = contentBlockReference(
+        entry.courseId,
+        entry.moduleId,
+        entry.lessonId,
+        entry.id,
+      );
+      const snapshot = await transaction.get(reference);
+      entrySnapshots.push({ entry, exists: snapshot.exists() });
+    }
+
+    const missingEntries = entrySnapshots
+      .filter((item) => !item.exists)
+      .map((item) => item.entry);
+    const sourceSnapshots = new Map<
+      string,
+      { exists: () => boolean; data: () => Record<string, unknown> | undefined }
+    >();
+
+    for (const sourceId of sourceIdsForDraftPackage(missingEntries)) {
+      const snapshot = await transaction.get(doc(firestore, 'sources', sourceId));
+      sourceSnapshots.set(sourceId, snapshot);
+    }
+
+    const blockedBlocks = publishedSourceProblems(missingEntries, sourceSnapshots);
+    if (blockedBlocks.length) {
+      const detail = blockedBlocks
+        .map(
+          (block) =>
+            `${block.lessonId}/${block.contentBlockId}: ${block.missingPublishedSourceIds.join(', ')}`,
+        )
+        .join('; ');
+      throw new Error(
+        `The governed draft package was not created because required published source records are unavailable: ${detail}.`,
+      );
+    }
+
+    const createdBlockIds: string[] = [];
+    const skippedExistingBlockIds = entrySnapshots
+      .filter((item) => item.exists)
+      .map((item) => preparingForLaborDraftPackageBlockKey(item.entry));
+
+    for (const entry of missingEntries) {
+      const reference = contentBlockReference(
+        entry.courseId,
+        entry.moduleId,
+        entry.lessonId,
+        entry.id,
+      );
+      const versionReference = doc(collection(reference, 'versions'));
+      const draft = {
+        ...entry,
+        publicationState: 'draft' as const,
+        clinicalReviewerId: null,
+        lastReviewedAt: null,
+        nextReviewAt: null,
+      };
+
+      transaction.set(reference, {
+        ...draft,
+        createdBy: adminId,
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp(),
+        versionCount: 1,
+      });
+      transaction.set(versionReference, {
+        id: versionReference.id,
+        versionNumber: 1,
+        action: 'draft_saved',
+        actorId: adminId,
+        createdAt: serverTimestamp(),
+        note: 'Generated from the Preparing for Labor governed draft package.',
+        snapshot: snapshotForVersion(draft, entry.id),
+      } satisfies ClinicalContentVersion);
+      createdBlockIds.push(preparingForLaborDraftPackageBlockKey(entry));
+    }
+
+    return {
+      createdBlockIds,
+      skippedExistingBlockIds,
+    };
+  });
 }
 
 export async function submitContentBlockForClinicalReview(

@@ -173,6 +173,84 @@ test('Preparing for Labor manifest resolver prepopulates the complete immutable 
   );
 });
 
+test('Preparing for Labor governed draft package covers every manifest card with reviewed source mappings', async () => {
+  const {
+    getPreparingForLaborDraftPackageEntries,
+    PREPARING_FOR_LABOR_SOURCE_IDS_BY_SLOT,
+  } = await loadManifestModule();
+  const packageEntries = JSON.parse(
+    JSON.stringify(getPreparingForLaborDraftPackageEntries()),
+  );
+  const manifestBlocks = manifest.lessons.flatMap((lesson) =>
+    lesson.blocks.map((block) => ({
+      lessonId: lesson.lessonId,
+      id: block.id,
+      displayOrder: block.displayOrder,
+      type: block.type,
+      isClinicalClaim: block.isClinicalClaim,
+      sourceSlotIds: block.sourceSlotIds,
+    })),
+  );
+
+  assert.equal(packageEntries.length, manifestBlocks.length);
+  assert.deepEqual(
+    packageEntries.map((entry) => ({
+      lessonId: entry.lessonId,
+      id: entry.id,
+      displayOrder: entry.displayOrder,
+      type: entry.type,
+      isClinicalClaim: entry.isClinicalClaim,
+    })),
+    manifestBlocks.map(({ sourceSlotIds: _sourceSlotIds, ...block }) => block),
+  );
+
+  for (const entry of packageEntries) {
+    assert.ok(entry.title.trim(), `${entry.id} needs a learner title`);
+    assert.ok(entry.body.trim(), `${entry.id} needs learner copy`);
+    assert.deepEqual(entry.mediaIds, [], `${entry.id} must not auto-attach media`);
+    assert.equal(
+      Object.hasOwn(entry, 'publicationState'),
+      false,
+      `${entry.id} must leave publication state to the draft-writing service`,
+    );
+  }
+
+  const sourceIdsByEntry = new Map(
+    packageEntries.map((entry) => [
+      `${entry.lessonId}/${entry.id}`,
+      entry.sourceIds,
+    ]),
+  );
+  for (const block of manifestBlocks) {
+    const expectedSourceIds = [
+      ...new Set(
+        block.sourceSlotIds.flatMap(
+          (slotId) => PREPARING_FOR_LABOR_SOURCE_IDS_BY_SLOT[slotId],
+        ),
+      ),
+    ];
+    assert.deepEqual(
+      sourceIdsByEntry.get(`${block.lessonId}/${block.id}`),
+      expectedSourceIds,
+      `${block.lessonId}/${block.id} must use the reviewed source-slot mapping`,
+    );
+  }
+
+  assert.deepEqual(
+    sourceIdsByEntry.get(
+      'arriving-prepared/arriving-prepared-readiness-topics',
+    ),
+    ['acog-how-to-tell-when-labor-begins', 'acog-car-safety'],
+  );
+  const safetyCard = packageEntries.find(
+    (entry) =>
+      entry.id === 'arriving-prepared-emergency-help' &&
+      entry.lessonId === 'arriving-prepared',
+  );
+  assert.deepEqual(safetyCard.sourceIds, ['acog-urgent-maternal-warning-signs']);
+  assert.match(safetyCard.body, /call 911 or your local emergency number/i);
+});
+
 test('Preparing for Labor resolver rejects malformed lesson and block IDs before authoring', async () => {
   const {
     getPreparingForLaborManifestPlacement,
