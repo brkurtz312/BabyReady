@@ -10,6 +10,10 @@ import {
   readinessReconciliationConfirmation,
   readinessReconciliationPreflight,
 } from '../scripts/preparing-for-labor-readiness-reconciliation.mjs';
+import {
+  GOVERNED_DRAFT_PACKAGE_CONFIRMATION,
+  loadPreparingForLaborDraftPackageEntries,
+} from '../scripts/preparing-for-labor-governed-draft-package-runtime.mjs';
 
 const manifest = JSON.parse(
   await readFile(
@@ -249,6 +253,20 @@ test('Preparing for Labor governed draft package covers every manifest card with
   );
   assert.deepEqual(safetyCard.sourceIds, ['acog-urgent-maternal-warning-signs']);
   assert.match(safetyCard.body, /call 911 or your local emergency number/i);
+});
+
+test('local governed draft generator consumes the exact in-app package resolver', async () => {
+  const { getPreparingForLaborDraftPackageEntries } = await loadManifestModule();
+  const inAppEntries = JSON.parse(
+    JSON.stringify(getPreparingForLaborDraftPackageEntries()),
+  );
+  const localEntries = await loadPreparingForLaborDraftPackageEntries();
+
+  assert.deepEqual(localEntries, inAppEntries);
+  assert.equal(
+    GOVERNED_DRAFT_PACKAGE_CONFIRMATION,
+    'CREATE_PREPARING_FOR_LABOR_GOVERNED_DRAFT_PACKAGE',
+  );
 });
 
 test('Preparing for Labor resolver rejects malformed lesson and block IDs before authoring', async () => {

@@ -40,6 +40,7 @@
     "seed:early-pregnancy-learner-outline": "node scripts/seed-early-pregnancy-learner-outline.mjs",
     "seed:preparing-for-labor-outline": "node scripts/seed-preparing-for-labor-outline.mjs",
     "audit:preparing-for-labor-content": "node scripts/audit-preparing-for-labor-content.mjs",
+    "generate:preparing-for-labor-governed-drafts": "node scripts/generate-preparing-for-labor-governed-drafts.mjs",
     "compare:preparing-for-labor-readiness-blocks": "node scripts/compare-preparing-for-labor-readiness-blocks.mjs",
     "reconcile:preparing-for-labor-readiness-blocks": "node scripts/reconcile-preparing-for-labor-readiness-blocks.mjs",
     "purge:preparing-for-labor-typo-artifacts": "node scripts/purge-preparing-for-labor-typo-artifacts.mjs",
