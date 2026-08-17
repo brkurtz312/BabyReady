@@ -4,6 +4,7 @@ import test from 'node:test';
 import vm from 'node:vm';
 import ts from 'typescript';
 import { parsePreparingForLaborContentBlockPath } from '../scripts/preparing-for-labor-audit-utils.mjs';
+import { preparingForLaborTypoArtifacts } from '../scripts/preparing-for-labor-typo-artifacts.mjs';
 
 const manifest = JSON.parse(
   await readFile(
@@ -238,4 +239,30 @@ test('Preparing for Labor audit recognizes blocks without parent documents', () 
     ),
     null,
   );
+});
+
+test('Preparing for Labor typo-artifact cleanup targets only malformed frozen paths', () => {
+  const manifestPlacements = new Set(
+    manifest.lessons.flatMap((lesson) =>
+      lesson.blocks.map((block) => `${lesson.lessonId}/${block.id}`),
+    ),
+  );
+
+  assert.equal(preparingForLaborTypoArtifacts.length, 4);
+  assert.equal(
+    new Set(preparingForLaborTypoArtifacts.map((artifact) => artifact.path)).size,
+    preparingForLaborTypoArtifacts.length,
+  );
+
+  for (const artifact of preparingForLaborTypoArtifacts) {
+    assert.equal(
+      manifestPlacements.has(`${artifact.lessonId}/${artifact.blockId}`),
+      false,
+      `${artifact.path} unexpectedly matches an approved manifest placement`,
+    );
+    assert.match(
+      artifact.path,
+      /^courses\/preparing-for-labor\/modules\/labor-readiness\/lessons\/[a-z0-9-]+\/contentBlocks\/[a-z0-9-]+$/,
+    );
+  }
 });
