@@ -41,6 +41,7 @@
     "seed:preparing-for-labor-outline": "node scripts/seed-preparing-for-labor-outline.mjs",
     "audit:preparing-for-labor-content": "node scripts/audit-preparing-for-labor-content.mjs",
     "compare:preparing-for-labor-readiness-blocks": "node scripts/compare-preparing-for-labor-readiness-blocks.mjs",
+    "reconcile:preparing-for-labor-readiness-blocks": "node scripts/reconcile-preparing-for-labor-readiness-blocks.mjs",
     "purge:preparing-for-labor-typo-artifacts": "node scripts/purge-preparing-for-labor-typo-artifacts.mjs",
     "test:preparing-for-labor-manifest": "node --test tests/preparing-for-labor-manifest.test.mjs",
     "inspect:source-library": "node scripts/inspect-source-library.mjs",

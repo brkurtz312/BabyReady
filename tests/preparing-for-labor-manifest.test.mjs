@@ -5,7 +5,11 @@ import vm from 'node:vm';
 import ts from 'typescript';
 import { parsePreparingForLaborContentBlockPath } from '../scripts/preparing-for-labor-audit-utils.mjs';
 import { preparingForLaborTypoArtifacts } from '../scripts/preparing-for-labor-typo-artifacts.mjs';
-import { preparingForLaborReadinessReconciliationTargets } from '../scripts/preparing-for-labor-readiness-reconciliation.mjs';
+import {
+  preparingForLaborReadinessReconciliationTargets,
+  readinessReconciliationConfirmation,
+  readinessReconciliationPreflight,
+} from '../scripts/preparing-for-labor-readiness-reconciliation.mjs';
 
 const manifest = JSON.parse(
   await readFile(
@@ -281,5 +285,72 @@ test('Preparing for Labor readiness comparison names the exact correct and malfo
   assert.match(
     typo.path,
     /lessons\/arriving-prepared\/contentBlocks\/arrriving-prepared-readiness-topics$/,
+  );
+});
+
+test('Preparing for Labor readiness reconciliation requires matching governed content and exact lifecycle states', () => {
+  const matchingDraft = {
+    title: 'Readiness topics',
+    body: 'Learner-facing checklist copy',
+    displayOrder: 2,
+    type: 'checklist',
+    isClinicalClaim: true,
+    sourceIds: ['acog-car-safety', 'acog-how-to-tell-when-labor-begins'],
+    mediaIds: [],
+    publicationState: 'draft',
+  };
+  const matchingFrozen = {
+    ...matchingDraft,
+    publicationState: 'frozen',
+  };
+
+  assert.equal(
+    readinessReconciliationConfirmation,
+    'RECONCILE_PREPARING_FOR_LABOR_READINESS_BLOCKS',
+  );
+  assert.deepEqual(
+    readinessReconciliationPreflight(matchingFrozen, matchingDraft),
+    {
+      eligible: true,
+      errors: [],
+      correctProjection: {
+        title: 'Readiness topics',
+        body: 'Learner-facing checklist copy',
+        displayOrder: 2,
+        type: 'checklist',
+        isClinicalClaim: true,
+        sourceIds: [
+          'acog-car-safety',
+          'acog-how-to-tell-when-labor-begins',
+        ],
+        mediaIds: [],
+      },
+      typoProjection: {
+        title: 'Readiness topics',
+        body: 'Learner-facing checklist copy',
+        displayOrder: 2,
+        type: 'checklist',
+        isClinicalClaim: true,
+        sourceIds: [
+          'acog-car-safety',
+          'acog-how-to-tell-when-labor-begins',
+        ],
+        mediaIds: [],
+      },
+    },
+  );
+  assert.equal(
+    readinessReconciliationPreflight(
+      matchingFrozen,
+      { ...matchingDraft, body: 'Changed learner-facing copy' },
+    ).eligible,
+    false,
+  );
+  assert.equal(
+    readinessReconciliationPreflight(
+      { ...matchingFrozen, publicationState: 'draft' },
+      matchingDraft,
+    ).eligible,
+    false,
   );
 });
