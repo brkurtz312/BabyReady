@@ -14,15 +14,56 @@ const anthropicApiKey = defineSecret('ANTHROPIC_API_KEY');
 /** Questions each learner can ask per day, to keep costs predictable. */
 const DAILY_QUESTION_LIMIT = 30;
 
-const SYSTEM_RULES = `You are the question helper inside BabyReady, a childbirth education class. Answer the learner's question using ONLY the lesson content provided.
+const SYSTEM_RULES = `You are the instructor of BabyReady, a childbirth education class, talking with a learner after a lesson. Your answers are read aloud in the same voice that narrates the class, so the learner hears them as a continuation of the class. Answer using ONLY the lesson content provided.
 Rules:
-- Warm, plain language at about a 6th-grade reading level. 2 to 4 short sentences. No markdown, no lists.
+- Speak as the instructor, in the first person: warm, calm, plain language at about a 6th-grade reading level. 2 to 4 short sentences. No markdown, lists, symbols, or abbreviations that sound odd aloud; write numbers the way you would say them.
+- Earlier turns of the conversation are included so you can understand follow-up questions. Still answer only from the lesson.
+- Don't end with a question; the class asks the learner if there's anything else.
 - If the lesson does not cover the question, say so in one sentence and suggest asking their care team. Do not answer from outside knowledge.
 - Never diagnose, never tell someone whether they are in labor, and never give medication or dosing advice.
 - If the question describes a symptom happening right now, tell them to contact their care team, or call 911 if it feels like an emergency.
 - On the final line write "From: " followed by the slide heading(s) you used, or "From: not covered in this lesson".`;
 
-type AskRequest = { lessonId?: unknown; question?: unknown };
+type AskRequest = { lessonId?: unknown; question?: unknown; history?: unknown };
+
+type Turn = { role: 'learner' | 'instructor'; text: string };
+
+/** Earlier turns sent for context on follow-up questions, kept short. */
+const MAX_HISTORY_TURNS = 8;
+const MAX_TURN_LENGTH = 1500;
+
+function readHistory(value: unknown): Turn[] {
+  if (value === undefined) return [];
+  if (!Array.isArray(value) || value.length > MAX_HISTORY_TURNS) {
+    throw new HttpsError('invalid-argument', 'The conversation history is not valid.');
+  }
+  return value.map((turn) => {
+    const t = turn as Partial<Turn>;
+    if ((t.role !== 'learner' && t.role !== 'instructor') || typeof t.text !== 'string' || t.text.length > MAX_TURN_LENGTH) {
+      throw new HttpsError('invalid-argument', 'The conversation history is not valid.');
+    }
+    return { role: t.role, text: t.text };
+  });
+}
+
+/** Earlier turns as alternating user/assistant messages, starting with the learner. */
+function historyMessages(history: Turn[]): Anthropic.Beta.BetaMessageParam[] {
+  const messages: Anthropic.Beta.BetaMessageParam[] = [];
+  for (const turn of history) {
+    const role = turn.role === 'learner' ? 'user' : 'assistant';
+    if (messages.length === 0 && role === 'assistant') continue;
+    const last = messages[messages.length - 1];
+    if (last && last.role === role) {
+      last.content = `${last.content as string}
+${turn.text}`;
+    } else {
+      messages.push({ role, content: turn.text });
+    }
+  }
+  // The new question is added as the next user turn.
+  if (messages.length && messages[messages.length - 1].role === 'user') messages.pop();
+  return messages;
+}
 
 export type AskResponse =
   | { kind: 'safety'; route: 'crisis' | 'urgent' | 'water-broke' }
@@ -46,7 +87,7 @@ export const askLessonQuestion = onCall(
     if (!request.auth) {
       throw new HttpsError('unauthenticated', 'Sign in to ask a question.');
     }
-    const { lessonId, question } = (request.data ?? {}) as AskRequest;
+    const { lessonId, question, history: rawHistory } = (request.data ?? {}) as AskRequest;
     if (typeof lessonId !== 'string' || typeof question !== 'string') {
       throw new HttpsError('invalid-argument', 'A lesson and a question are required.');
     }
@@ -58,6 +99,8 @@ export const askLessonQuestion = onCall(
     // Safety routing runs before anything else and never reaches the AI.
     const route = routeQuestion(trimmed);
     if (route !== 'ok') return { kind: 'safety', route };
+
+    const history = readHistory(rawHistory);
 
     const lesson = findLesson(lessonId);
     if (!lesson) {
@@ -85,7 +128,7 @@ export const askLessonQuestion = onCall(
             cache_control: { type: 'ephemeral' },
           },
         ],
-        messages: [{ role: 'user', content: `LEARNER'S QUESTION: ${trimmed}` }],
+        messages: [...historyMessages(history), { role: 'user', content: `LEARNER'S QUESTION: ${trimmed}` }],
       });
     } catch (error) {
       if (error instanceof Anthropic.RateLimitError) {

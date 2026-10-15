@@ -9,6 +9,11 @@ export type AskResult =
   | { kind: 'answer'; answer: string; from: string | null }
   | { kind: 'error'; message: string };
 
+/** An earlier turn in the conversation, sent so follow-up questions make sense. */
+export type ConversationTurn = { role: 'learner' | 'instructor'; text: string };
+
+const MAX_HISTORY_TURNS = 8;
+
 type AskResponse =
   | { kind: 'safety'; route: Exclude<AskSafetyRoute, 'ok'> }
   | { kind: 'answer'; answer: string; from: string | null };
@@ -20,18 +25,29 @@ const UNAVAILABLE = 'Questions aren’t available right now. For anything about 
  * so urgent questions are answered without any network call. The server runs
  * the same check again before it calls the AI.
  */
-export async function askLessonQuestion(lessonId: string, question: string): Promise<AskResult> {
+export async function askLessonQuestion(
+  lessonId: string,
+  question: string,
+  history: ConversationTurn[] = [],
+): Promise<AskResult> {
   const route = routeQuestion(question);
   if (route !== 'ok') return { kind: 'safety', route };
 
   if (!functions) return { kind: 'error', message: UNAVAILABLE };
 
   try {
-    const call = httpsCallable<{ lessonId: string; question: string }, AskResponse>(
+    const call = httpsCallable<
+      { lessonId: string; question: string; history: ConversationTurn[] },
+      AskResponse
+    >(
       functions,
       'askLessonQuestion',
     );
-    const { data } = await call({ lessonId, question: question.trim() });
+    const { data } = await call({
+      lessonId,
+      question: question.trim(),
+      history: history.slice(-MAX_HISTORY_TURNS),
+    });
     return data;
   } catch (error) {
     if (error instanceof FirebaseError) {

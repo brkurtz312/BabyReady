@@ -13,7 +13,8 @@
         {
           "configureAndroidBackup": true
         }
-      ]
+      ],
+      "expo-speech-recognition"
     ],
     "ios": {
       "supportsTablet": true,

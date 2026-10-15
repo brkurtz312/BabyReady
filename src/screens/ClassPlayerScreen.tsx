@@ -488,7 +488,13 @@ export function ClassPlayerScreen({
           <Text style={styles.nextButtonText}>{nextLabel}</Text>
         </Pressable>
       </View>
-      <AskQuestionSheet lessonId={lesson.lessonId} onClose={closeAsk} visible={askOpen} />
+      <AskQuestionSheet
+        lessonId={lesson.lessonId}
+        lessonTitle={lesson.title}
+        onClose={closeAsk}
+        visible={askOpen}
+        voiceOn={voiceOn}
+      />
     </SafeAreaView>
   );
 }
