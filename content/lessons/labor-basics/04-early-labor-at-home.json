@@ -23,7 +23,7 @@
       "id": "acog-co766",
       "organization": "ACOG",
       "title": "Approaches to Limit Intervention During Labor and Birth (Committee Opinion No. 766)",
-      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2019/02/approaches-to-limit-intervention-during-labor-and-birth",
+      "url": "https://www.acog.org/clinical/guidance/committee-opinion/2019/02/approaches-to-limit-intervention-during-labor-and-birth",
       "verifiedOn": null
     },
     {
@@ -45,6 +45,20 @@
       "organization": "CDC",
       "title": "Hear Her: Urgent Maternal Warning Signs",
       "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-labor-begins",
+      "organization": "ACOG",
+      "title": "How to Tell When Labor Begins (FAQ004)",
+      "url": "https://www.acog.org/womens-health/faqs/how-to-tell-when-labor-begins",
+      "verifiedOn": null
+    },
+    {
+      "id": "who-intrapartum-2018",
+      "organization": "WHO",
+      "title": "WHO Recommendations: Intrapartum Care for a Positive Childbirth Experience (2018)",
+      "url": "https://www.who.int/publications/i/item/9789241550215",
       "verifiedOn": null
     }
   ],
@@ -106,7 +120,7 @@
         "Nausea is common later; listen to your body"
       ],
       "narration": "Labor is hard work, and your body needs fuel. Drink fluids regularly, like water, clear juice, or a sports drink. Many care teams, especially midwives, encourage light, easy-to-digest snacks in early labor, like toast, yogurt, soup, or fruit. Guidance differs once you're admitted. Some hospitals allow food, and others limit you to clear liquids. That's why it's worth asking your care team about their policy before labor starts. Later in labor, many people lose their appetite or feel nauseous, and that's normal too.",
-      "sourceIds": ["lamaze-eating-drinking", "acog-co766"],
+      "sourceIds": ["lamaze-eating-drinking", "acog-co766", "who-intrapartum-2018"],
       "visual": {
         "kind": "illustration",
         "description": "Kitchen counter with simple snacks: toast, banana, yogurt, a water bottle with a straw, and a sports drink."
@@ -207,7 +221,7 @@
         "Leave time for travel and traffic"
       ],
       "narration": "So when do you leave home? Call your care team when contractions reach the pattern they gave you, and they'll tell you when to come in. It's also okay to go in because you feel you need to. Your instincts count. And plan for the trip. If you live far away or traffic is heavy, your care team may want you to leave sooner. Remember the car seat, so you're ready to bring your baby home.",
-      "sourceIds": ["acnm-am-i-in-labor", "acog-co766"],
+      "sourceIds": ["acnm-am-i-in-labor", "acog-co766", "acog-labor-begins"],
       "visual": {
         "kind": "illustration",
         "description": "Couple walking to the car at dawn with a hospital bag and an installed infant car seat visible in the back seat."
@@ -226,7 +240,7 @@
         "If it feels like an emergency, call 911"
       ],
       "narration": "Staying home in early labor is only for when things are going well. Call your care team right away if your water breaks, if you have bleeding beyond light pink or brown mucus, if your baby is moving less or not at all, if you have constant severe pain or pain that doesn't ease between contractions, or if you have a fever, a severe headache, or vision changes. If it feels like an emergency, call 911.",
-      "sourceIds": ["acnm-am-i-in-labor", "cdc-hear-her-warning-signs"]
+      "sourceIds": ["acnm-am-i-in-labor", "cdc-hear-her-warning-signs", "acog-labor-begins"]
     },
     {
       "id": "early-labor-plan",

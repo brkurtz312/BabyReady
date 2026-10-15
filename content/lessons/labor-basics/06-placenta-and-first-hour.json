@@ -23,7 +23,7 @@
       "id": "acog-co814",
       "organization": "ACOG",
       "title": "Delayed Umbilical Cord Clamping After Birth (Committee Opinion No. 814)",
-      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2020/12/delayed-umbilical-cord-clamping-after-birth",
+      "url": "https://www.acog.org/clinical/guidance/committee-opinion/2020/12/delayed-umbilical-cord-clamping-after-birth",
       "verifiedOn": null
     },
     {
@@ -44,14 +44,14 @@
       "id": "acog-apgar",
       "organization": "ACOG",
       "title": "The Apgar Score (Committee Opinion No. 644, with AAP)",
-      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2015/10/the-apgar-score",
+      "url": "https://www.acog.org/clinical/guidance/committee-opinion/2015/10/the-apgar-score",
       "verifiedOn": null
     },
     {
       "id": "acog-pb198",
       "organization": "ACOG",
       "title": "Prevention and Management of Obstetric Lacerations at Vaginal Delivery (Practice Bulletin No. 198)",
-      "url": "https://www.acog.org/clinical/clinical-guidance/practice-bulletin/articles/2018/09/prevention-and-management-of-obstetric-lacerations-at-vaginal-delivery",
+      "url": "https://www.acog.org/clinical/guidance/practice-bulletin/2018/09/prevention-and-management-of-obstetric-lacerations-at-vaginal-delivery",
       "verifiedOn": null
     },
     {
@@ -59,6 +59,13 @@
       "organization": "CDC",
       "title": "Hear Her: Urgent Maternal Warning Signs",
       "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "aafp-lacerations",
+      "organization": "AAFP",
+      "title": "Obstetric Lacerations: Prevention and Repair (American Family Physician, 2021)",
+      "url": "https://www.aafp.org/afp/2021/0615/p745",
       "verifiedOn": null
     }
   ],
@@ -208,7 +215,8 @@
       "narration": "Your care team will quickly check your baby at one minute and five minutes after birth. This is called the Apgar score. It looks at breathing, heart rate, color, muscle tone, and reflexes, and it tells the team whether your baby needs any extra help adjusting. These checks can often be done while your baby is on your chest. Weighing, measuring, and routine newborn medications can usually wait until after that first hour together. We'll cover those medications in Module 5.",
       "sourceIds": [
         "acog-apgar",
-        "aap-breastfeeding-2022"
+        "aap-breastfeeding-2022",
+        "who-intrapartum-2018"
       ],
       "visual": {
         "kind": "icon-list",
@@ -228,7 +236,8 @@
       "narration": "While you're holding your baby, your provider will check for any tears and repair them if needed, using numbing medicine. Many people shake or feel chilled after birth. It's a common reaction and passes on its own, so ask for a warm blanket. You'll feel cramping as your uterus starts shrinking back down, and you'll have bleeding, similar to a heavy period. Your nurse will check you often. And if you're hungry and thirsty, ask for food and drink. You've earned it.",
       "sourceIds": [
         "acog-pb198",
-        "who-intrapartum-2018"
+        "who-intrapartum-2018",
+        "aafp-lacerations"
       ],
       "visual": {
         "kind": "illustration",
