@@ -13,6 +13,12 @@
         {
           "configureAndroidBackup": true
         }
+      ],
+      [
+        "./plugins/withAndroidAppLabel",
+        {
+          "label": "BabyReady VE"
+        }
       ]
     ],
     "ios": {
@@ -20,6 +26,9 @@
       "bundleIdentifier": "com.brkservices.babyready",
       "config": {
         "usesNonExemptEncryption": false
+      },
+      "infoPlist": {
+        "CFBundleDisplayName": "BabyReady VE"
       }
     },
     "android": {
