@@ -33,8 +33,13 @@ jobs:
       - name: Typecheck
         run: npm run typecheck
 
-      - name: Check lessons against the quality rules
+      - name: Check lessons and question safety routing
         run: npm run test:lessons
+
+      - name: Typecheck the Ask a question function
+        run: |
+          npm ci --prefix functions
+          npm run typecheck --prefix functions
 
       - name: Run Firestore Emulator security-rule tests
         run: npm run test:emulators

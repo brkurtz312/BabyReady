@@ -15,6 +15,13 @@
         }
       ],
       [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "Allow BabyReady to use the microphone so you can ask your instructor questions out loud.",
+          "speechRecognitionPermission": "Allow BabyReady to turn your spoken questions into text so your instructor can answer them."
+        }
+      ],
+      [
         "./plugins/withAndroidAppLabel",
         {
           "label": "BabyReady VE"

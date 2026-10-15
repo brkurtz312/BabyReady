@@ -12,6 +12,7 @@ import {
   View,
 } from 'react-native';
 
+import { AskQuestionSheet } from '../components/AskQuestionSheet';
 import type { Course } from '../content/lessons';
 import { NARRATION_RATE, pickNarrationVoice, splitSentences } from '../lib/narration';
 import { BIRTH_READINESS_REFLECTION_MAX_LENGTH } from '../models/birthReadinessReflection';
@@ -143,6 +144,8 @@ export function ClassPlayerScreen({
   const [playing, setPlaying] = useState(false);
   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [narrationDone, setNarrationDone] = useState(false);
+  const [askOpen, setAskOpen] = useState(false);
+  const resumeAfterAskRef = useRef(false);
 
   const voiceIdRef = useRef<string | undefined>(undefined);
   /** Bumped whenever speech is stopped, so callbacks from old speech are ignored. */
@@ -281,6 +284,24 @@ export function ClassPlayerScreen({
     }
   }
 
+  function openAsk() {
+    clearAdvance();
+    resumeAfterAskRef.current = playing;
+    if (playing) {
+      stopSpeech();
+      setPlaying(false);
+    }
+    setAskOpen(true);
+  }
+
+  function closeAsk() {
+    setAskOpen(false);
+    if (resumeAfterAskRef.current && voiceOn && (state.mode === 'slides' || state.mode === 'quiz')) {
+      speakFrom(sentenceIndex);
+    }
+    resumeAfterAskRef.current = false;
+  }
+
   function toggleVoice() {
     clearAdvance();
     if (voiceOn) {
@@ -354,6 +375,15 @@ export function ClassPlayerScreen({
           <Text numberOfLines={1} style={styles.agendaTitle}>
             {lesson.title}
           </Text>
+          <Pressable
+            accessibilityHint="Ask a question about this lesson."
+            accessibilityLabel="Ask a question"
+            accessibilityRole="button"
+            onPress={openAsk}
+            style={styles.askButton}
+          >
+            <Text style={styles.askButtonText}>Ask</Text>
+          </Pressable>
         </View>
         <View accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={styles.segments}>
           {Array.from({ length: segmentCount }, (_, k) => (
@@ -458,6 +488,13 @@ export function ClassPlayerScreen({
           <Text style={styles.nextButtonText}>{nextLabel}</Text>
         </Pressable>
       </View>
+      <AskQuestionSheet
+        lessonId={lesson.lessonId}
+        lessonTitle={lesson.title}
+        onClose={closeAsk}
+        visible={askOpen}
+        voiceOn={voiceOn}
+      />
     </SafeAreaView>
   );
 }
@@ -832,6 +869,14 @@ const styles = StyleSheet.create({
   homeButton: { paddingVertical: 4 },
   homeButtonText: { color: colors.lagoon, fontSize: 16, fontWeight: '700' },
   agendaTitle: { flex: 1, color: colors.ink, fontSize: 16, fontWeight: '700' },
+  askButton: {
+    borderWidth: 1.5,
+    borderColor: colors.lagoon,
+    borderRadius: 999,
+    paddingHorizontal: 14,
+    paddingVertical: 5,
+  },
+  askButtonText: { color: colors.lagoon, fontSize: 15, fontWeight: '800' },
   segments: { flexDirection: 'row', gap: 3 },
   segment: { flex: 1, height: 5, borderRadius: 3, backgroundColor: colors.line },
   segmentDone: { backgroundColor: colors.lagoon },
