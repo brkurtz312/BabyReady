@@ -5,6 +5,11 @@ import {
   type Firestore,
 } from 'firebase/firestore';
 import * as FirebaseAuth from 'firebase/auth';
+import {
+  connectFunctionsEmulator,
+  getFunctions,
+  type Functions,
+} from 'firebase/functions';
 import type { Auth, Persistence } from 'firebase/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Platform } from 'react-native';
@@ -54,6 +59,7 @@ function createAuth(app: FirebaseApp): Auth {
 
 export const auth: Auth | null = firebaseApp ? createAuth(firebaseApp) : null;
 export const db: Firestore | null = firebaseApp ? getFirestore(firebaseApp) : null;
+export const functions: Functions | null = firebaseApp ? getFunctions(firebaseApp) : null;
 
 if (firebaseEmulatorConfig.enabled && auth && db) {
   const authEmulatorUrl = `http://${firebaseEmulatorConfig.host}:${firebaseEmulatorConfig.authPort}`;
@@ -72,6 +78,14 @@ if (firebaseEmulatorConfig.enabled && auth && db) {
     );
   } catch {
     // The emulator may already be connected after a hot reload.
+  }
+
+  if (functions) {
+    try {
+      connectFunctionsEmulator(functions, firebaseEmulatorConfig.host, firebaseEmulatorConfig.functionsPort);
+    } catch {
+      // The emulator may already be connected after a hot reload.
+    }
   }
 }
 

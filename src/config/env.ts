@@ -35,4 +35,5 @@ export const firebaseEmulatorConfig = {
   host: value(process.env.EXPO_PUBLIC_FIREBASE_EMULATOR_HOST) || '127.0.0.1',
   authPort: integerValue(process.env.EXPO_PUBLIC_FIREBASE_AUTH_EMULATOR_PORT, 9099),
   firestorePort: integerValue(process.env.EXPO_PUBLIC_FIREBASE_FIRESTORE_EMULATOR_PORT, 8080),
+  functionsPort: integerValue(process.env.EXPO_PUBLIC_FIREBASE_FUNCTIONS_EMULATOR_PORT, 5001),
 };
