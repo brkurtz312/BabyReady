@@ -2,6 +2,7 @@ import { useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import * as Speech from 'expo-speech';
 import { StatusBar } from 'expo-status-bar';
 import {
+  Image,
   Linking,
   Pressable,
   SafeAreaView,
@@ -13,6 +14,8 @@ import {
 } from 'react-native';
 
 import { AskQuestionSheet } from '../components/AskQuestionSheet';
+import { drawnVisualFor } from '../components/LessonVisuals';
+import { artworkFor } from '../content/artwork';
 import type { Course } from '../content/lessons';
 import { NARRATION_RATE, pickNarrationVoice, splitSentences } from '../lib/narration';
 import { BIRTH_READINESS_REFLECTION_MAX_LENGTH } from '../models/birthReadinessReflection';
@@ -594,7 +597,7 @@ function SlideView({
         <View style={[styles.slide, styles.centered]}>
           <Text style={[styles.kicker, styles.centerText]}>{slide.onScreen.join(' · ')}</Text>
           <Text style={[styles.titleHeading, styles.centerText]}>{slide.heading}</Text>
-          <VisualPlaceholder slide={slide} />
+          <SlideVisual lessonId={lesson.lessonId} slide={slide} />
         </View>
       );
     case 'checkin':
@@ -676,7 +679,7 @@ function SlideView({
       return (
         <View style={styles.slide}>
           <Text style={styles.heading}>{slide.heading}</Text>
-          <VisualPlaceholder slide={slide} />
+          <SlideVisual lessonId={lesson.lessonId} slide={slide} />
           <Bullets items={slide.onScreen} />
           {sources}
         </View>
@@ -818,8 +821,22 @@ function ReflectionBox({
   );
 }
 
-function VisualPlaceholder({ slide }: { slide: Slide }) {
+/** The slide's picture: drawn in code, commissioned artwork, or a placeholder until artwork exists. */
+function SlideVisual({ lessonId, slide }: { lessonId: string; slide: Slide }) {
   if (!slide.visual) return null;
+  const drawn = drawnVisualFor(lessonId, slide.id);
+  if (drawn) return drawn;
+  const artwork = artworkFor(lessonId, slide.id);
+  if (artwork) {
+    return (
+      <Image
+        accessibilityLabel={slide.visual.description}
+        resizeMode="contain"
+        source={artwork}
+        style={styles.artwork}
+      />
+    );
+  }
   return (
     <View accessibilityLabel={slide.visual.description} style={styles.visualPlaceholder}>
       <Text style={styles.bold}>Artwork to come</Text>
@@ -928,6 +945,7 @@ const styles = StyleSheet.create({
     gap: 4,
     backgroundColor: colors.bg,
   },
+  artwork: { alignSelf: 'stretch', width: '100%', aspectRatio: 16 / 10, borderRadius: 14 },
   visualText: { color: colors.muted, fontSize: 14, lineHeight: 20 },
   question: { color: colors.ink, fontSize: 21, fontWeight: '700', lineHeight: 28, marginBottom: 12 },
   options: { gap: 10 },

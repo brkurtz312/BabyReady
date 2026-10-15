@@ -1,0 +1,28 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "babyready-web",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "expo",
+        "start",
+        "--web",
+        "--port",
+        "8081",
+        "--clear"
+      ],
+      "port": 8081
+    },
+    {
+      "name": "babyready-landing",
+      "runtimeExecutable": "node",
+      "runtimeArgs": [
+        "C:/Users/brkur/AppData/Local/Temp/claude/C--Users-brkur-Documents-BabyReady/cac48483-fe06-47f1-948e-dc67a071b610/scratchpad/serve.mjs",
+        "C:/Users/brkur/GitHub/babyready-ve/public",
+        "8090"
+      ],
+      "port": 8090
+    }
+  ]
+}
