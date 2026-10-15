@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 
 import { AskQuestionSheet } from '../components/AskQuestionSheet';
+import { animationFor } from '../components/LessonAnimations';
 import { LessonVideo } from '../components/LessonVideo';
 import { drawnVisualFor } from '../components/LessonVisuals';
 import { artworkFor } from '../content/artwork';
@@ -638,6 +639,7 @@ function SlideView({
       );
     case 'video': {
       const video = videoFor(lesson.lessonId, slide.id);
+      const animation = video ? null : animationFor(lesson.lessonId, slide.id, onVideoPlay);
       return (
         <View style={styles.slide}>
           <Text style={styles.heading}>{slide.heading}</Text>
@@ -648,6 +650,8 @@ function SlideView({
               onPlay={onVideoPlay}
               source={video}
             />
+          ) : animation ? (
+            animation
           ) : (
             <View style={styles.videoFrame}>
               <Text style={styles.videoPlay}>▶</Text>
