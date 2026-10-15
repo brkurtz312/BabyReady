@@ -23,7 +23,7 @@
       "id": "acog-cpg8-labor",
       "organization": "ACOG",
       "title": "First and Second Stage Labor Management (Clinical Practice Guideline No. 8)",
-      "url": "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2024/01/first-and-second-stage-labor-management",
+      "url": "https://www.acog.org/clinical/guidance/clinical-practice-guideline/2024/01/first-and-second-stage-labor-management",
       "verifiedOn": null
     },
     {
@@ -45,6 +45,13 @@
       "organization": "CDC",
       "title": "Hear Her: Urgent Maternal Warning Signs",
       "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-labor-begins",
+      "organization": "ACOG",
+      "title": "How to Tell When Labor Begins (FAQ004)",
+      "url": "https://www.acog.org/womens-health/faqs/how-to-tell-when-labor-begins",
       "verifiedOn": null
     }
   ],
@@ -238,7 +245,7 @@
         "If it feels like an emergency, call 911"
       ],
       "narration": "Before we wrap up, a safety reminder. Whether you're in early labor at home or anywhere along the way, call your care team right away for heavy bleeding, if your baby is moving less or not at all, for severe pain that doesn't ease between contractions, or for a fever, a severe headache, or changes in your vision. If it feels like an emergency, call 911.",
-      "sourceIds": ["acnm-am-i-in-labor", "cdc-hear-her-warning-signs"]
+      "sourceIds": ["acnm-am-i-in-labor", "cdc-hear-her-warning-signs", "acog-labor-begins"]
     },
     {
       "id": "checkin-stage-two",

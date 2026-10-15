@@ -46,6 +46,13 @@
       "title": "Hear Her: Urgent Maternal Warning Signs",
       "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
       "verifiedOn": null
+    },
+    {
+      "id": "nichd-preterm-symptoms",
+      "organization": "NICHD",
+      "title": "What are the symptoms of preterm labor?",
+      "url": "https://www.nichd.nih.gov/health/topics/preterm/conditioninfo/symptoms",
+      "verifiedOn": null
     }
   ],
   "slides": [
@@ -284,7 +291,8 @@
       ],
       "narration": "If you notice signs of labor before 37 weeks, don't wait to see if they go away. Call your care team right away. Signs include contractions every 10 minutes or more often, a change in your vaginal discharge, spotting or bleeding, pressure in your pelvis or rectum, a low, dull backache, or cramps, with or without diarrhea. Your care team can check what's happening and, if needed, give specialized care.",
       "sourceIds": [
-        "nichd-start-of-labor"
+        "nichd-start-of-labor",
+        "nichd-preterm-symptoms"
       ]
     },
     {

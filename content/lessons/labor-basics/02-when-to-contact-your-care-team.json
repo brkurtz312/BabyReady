@@ -46,6 +46,13 @@
       "title": "About Group B Strep",
       "url": "https://www.cdc.gov/group-b-strep/about/index.html",
       "verifiedOn": null
+    },
+    {
+      "id": "cdc-gbs-screening",
+      "organization": "CDC",
+      "title": "Screening for Group B Strep Bacteria",
+      "url": "https://www.cdc.gov/group-b-strep/testing/index.html",
+      "verifiedOn": null
     }
   ],
   "slides": [
@@ -142,7 +149,7 @@
         "Tell them if you tested positive for group B strep"
       ],
       "narration": "If your water breaks, or you think it might have, call your care team, even if you aren't having any contractions. Note the time it happened and the color of the fluid. It's usually clear or slightly pink, but sometimes it's green or brown, and your team will want to know that. Also tell them if you tested positive for group B strep, a common bacteria checked near the end of pregnancy. If you did, you'll usually get antibiotics during labor to protect your baby.",
-      "sourceIds": ["acnm-am-i-in-labor", "cdc-group-b-strep"],
+      "sourceIds": ["acnm-am-i-in-labor", "cdc-group-b-strep", "cdc-gbs-screening"],
       "visual": {
         "kind": "icon-list",
         "description": "Four icons: phone, clock, color swatches (clear, pink, green, brown), and a small lab test tube labeled GBS."

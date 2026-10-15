@@ -23,21 +23,21 @@
       "id": "acog-cpg8-labor",
       "organization": "ACOG",
       "title": "First and Second Stage Labor Management (Clinical Practice Guideline No. 8)",
-      "url": "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2024/01/first-and-second-stage-labor-management",
+      "url": "https://www.acog.org/clinical/guidance/clinical-practice-guideline/2024/01/first-and-second-stage-labor-management",
       "verifiedOn": null
     },
     {
       "id": "acog-co766",
       "organization": "ACOG",
       "title": "Approaches to Limit Intervention During Labor and Birth (Committee Opinion No. 766)",
-      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2019/02/approaches-to-limit-intervention-during-labor-and-birth",
+      "url": "https://www.acog.org/clinical/guidance/committee-opinion/2019/02/approaches-to-limit-intervention-during-labor-and-birth",
       "verifiedOn": null
     },
     {
       "id": "acog-pb198",
       "organization": "ACOG",
       "title": "Prevention and Management of Obstetric Lacerations at Vaginal Delivery (Practice Bulletin No. 198)",
-      "url": "https://www.acog.org/clinical/clinical-guidance/practice-bulletin/articles/2018/09/prevention-and-management-of-obstetric-lacerations-at-vaginal-delivery",
+      "url": "https://www.acog.org/clinical/guidance/practice-bulletin/2018/09/prevention-and-management-of-obstetric-lacerations-at-vaginal-delivery",
       "verifiedOn": null
     },
     {
@@ -52,6 +52,13 @@
       "organization": "AAP",
       "title": "Breastfeeding and the Use of Human Milk (Policy Statement, 2022)",
       "url": "https://publications.aap.org/pediatrics/article/150/1/e2022057988/188347/",
+      "verifiedOn": null
+    },
+    {
+      "id": "who-intrapartum-2018",
+      "organization": "WHO",
+      "title": "WHO Recommendations: Intrapartum Care for a Positive Childbirth Experience (2018)",
+      "url": "https://www.who.int/publications/i/item/9789241550215",
       "verifiedOn": null
     }
   ],
@@ -211,7 +218,7 @@
         "Babies may look bluish or be covered in a white coating at first"
       ],
       "narration": "Once your baby's head is born, the shoulders turn and slip out, and the rest of the body follows quickly. If your baby is doing well, they can be placed right onto your bare chest, dried off, and covered with a warm blanket. Don't be surprised by how your baby looks at first. Newborns are often a little bluish until they start breathing, and may be covered in a white, creamy coating that protects their skin. In the next lesson, we'll talk about that first precious hour together.",
-      "sourceIds": ["aap-breastfeeding-2022"],
+      "sourceIds": ["aap-breastfeeding-2022", "who-intrapartum-2018"],
       "visual": {
         "kind": "illustration",
         "description": "Newborn on parent's chest, skin to skin, under a warm blanket, parent's hand on baby's back, partner leaning in."
