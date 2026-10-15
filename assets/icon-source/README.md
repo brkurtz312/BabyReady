@@ -1,6 +1,6 @@
 # App icon sources
 
-Editable SVG originals for the BabyReady Virtual Educator icon (sleeping baby, app teal `#01696F`).
+Editable SVG originals for the BabyReady Virtual Educator icon (sleeping baby in a graduation cap, on app teal `#01696F`).
 The PNGs in `assets/` are rendered from these files; to change the icon, edit the SVG and re-render.
 
 | Source SVG | Rendered PNG | Notes |
