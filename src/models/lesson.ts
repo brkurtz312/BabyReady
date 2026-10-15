@@ -64,6 +64,12 @@ interface SlideBase {
   /** Spoken script. Written for the ear: short sentences, warm, plain. */
   narration: string;
   sourceIds: string[];
+  /**
+   * True only for slides that explain the class itself (how to use captions,
+   * check-ins, the Brief) and make no health claim. Such slides may have no
+   * source. Never allowed on safety slides.
+   */
+  editorial?: boolean;
   visual?: Visual;
 }
 

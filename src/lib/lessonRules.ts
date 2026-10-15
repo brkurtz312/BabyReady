@@ -139,7 +139,16 @@ export function checkLesson(lesson: Lesson): LessonCheckResult {
       error(where, 'sourceIds must be a list.');
       continue;
     }
-    if (TEACHING_SLIDE_TYPES.includes(slide.type) && slide.sourceIds.length === 0) {
+    if (slide.editorial !== undefined && slide.editorial !== true) {
+      error(where, 'editorial must be true or left out.');
+    }
+    if (slide.editorial && slide.type === 'safety') {
+      error(where, 'Safety slides cannot be editorial; they always need a source.');
+    }
+    if (slide.editorial && slide.sourceIds.length > 0) {
+      warn(where, 'Editorial slide also cites sources; drop editorial if it makes a health claim.');
+    }
+    if (TEACHING_SLIDE_TYPES.includes(slide.type) && slide.sourceIds.length === 0 && !slide.editorial) {
       error(where, 'Teaching slides must cite at least one source. No source, no slide.');
     }
     for (const id of slide.sourceIds) {

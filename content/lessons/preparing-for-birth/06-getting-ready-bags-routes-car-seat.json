@@ -1,0 +1,373 @@
+{
+  "courseId": "preparing-for-birth",
+  "lessonId": "getting-ready-bags-routes-car-seat",
+  "order": 6,
+  "title": "Getting Ready: Bags, Routes, and Car Seat",
+  "learningGoals": [
+    "Pack a labor bag for yourself, a bag for your support person, and going-home items for your baby",
+    "Know which papers to bring and what to ask your hospital or birth center ahead of time",
+    "Plan your route to the hospital, a backup route, and who will drive you",
+    "Install a rear-facing car seat before your baby arrives and check the harness fit",
+    "Set a goal to have your bags, route, and car seat ready by 36 weeks"
+  ],
+  "estimatedMinutes": 10,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Drafted 2026-10-15. Sources fetched and checked against slides by an automated first pass; needs clinician review. No approved-organization page was found for hospital pre-registration, insurance paperwork, or 'don't drive yourself in labor', so those points are framed as questions to ask the hospital and as planning a driver, without a safety claim. The 36-week target is the course's suggested goal date, not a sourced guideline."
+  },
+  "sources": [
+    {
+      "id": "acog-labor-begins",
+      "organization": "ACOG",
+      "title": "How to Tell When Labor Begins (FAQ004)",
+      "url": "https://www.acog.org/womens-health/faqs/how-to-tell-when-labor-begins",
+      "verifiedOn": null
+    },
+    {
+      "id": "lamaze-labor-bag",
+      "organization": "Lamaze",
+      "title": "What to Pack in Your Labor Bag",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/what-to-pack-in-your-labor-bag",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-car-seats-families",
+      "organization": "AAP",
+      "title": "Car Seats: Information for Families (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-winter-car-seat",
+      "organization": "AAP",
+      "title": "Winter Car Seat Safety Tips: Keeping Kids Safe & Warm (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Winter-Car-Seat-Safety-Tips.aspx",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Getting Ready: Bags, Routes, and Car Seat",
+      "onScreen": [
+        "Preparing for Birth · Lesson 6",
+        "About 10 minutes",
+        "Goal: ready by 36 weeks"
+      ],
+      "narration": "Welcome to the last lesson in this module. Today is all about getting ready. We'll pack your bags, plan how you'll get to your birth place, and get your baby's car seat in the car. A good goal is to have all of this done by thirty-six weeks. That way, if labor starts early, you're ready to go. This is a great lesson to do with your support person. Let's get started.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant East Asian woman and her partner stand by an open car trunk at home, a packed duffel bag and an infant car seat beside them, both smiling. Soft sage, cream, and sunny yellow."
+      }
+    },
+    {
+      "id": "why-early",
+      "type": "content",
+      "heading": "Why get ready early?",
+      "onScreen": [
+        "Labor doesn't always wait for your due date",
+        "Pack, plan your route, and install the car seat before labor begins",
+        "Plan care for other children, pets, and home"
+      ],
+      "narration": "Labor doesn't always wait for your due date. So it helps to get the practical things done before labor begins. That means packing your bag, planning your trip, and making sure your baby's car seat is installed. While you're at it, plan who will care for your other children, your pets, and your home while you're away. And if you work, talk with your supervisor about who will cover for you. Getting these things done early means less to think about when contractions start.",
+      "sourceIds": [
+        "acog-labor-begins"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four soft round icons in a row: a packed bag, a map pin with a route line, an infant car seat, and a house with a paw print and a small child figure."
+      }
+    },
+    {
+      "id": "your-labor-bag",
+      "type": "content",
+      "heading": "Your labor bag",
+      "onScreen": [
+        "Comfort: your own pillow, robe, socks, lip balm, hair ties",
+        "Labor tools: massage oil, heating pad, music, a focus object",
+        "Snacks, a water bottle, and phone chargers",
+        "A copy of your birth preferences"
+      ],
+      "narration": "Many people pack for their stay after the birth, but forget about labor itself. So think about two sets of things. First, comfort items for labor. Your own pillow, ideally with a colored case that can get dirty. A robe, socks or slippers, and shower shoes. Lip balm, a toothbrush, and hair ties. Then, labor tools. Massage oil or massage tools, a heating pad or a rice sock, music, and something special to hold or look at. Bring a water bottle, some easy snacks if your team says you can eat, and chargers for your phone. And don't forget a copy of the birth preferences you wrote in the last lesson. Then add your clothes and toiletries for after the birth.",
+      "sourceIds": [
+        "lamaze-labor-bag"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "An open duffel bag seen from above, neatly packed with a pillow, a robe, cozy socks, a water bottle, a phone charger, a small speaker, and a single printed page labeled 'My preferences.' Soft coral and cream."
+      }
+    },
+    {
+      "id": "support-person-bag",
+      "type": "content",
+      "heading": "Your support person's bag",
+      "onScreen": [
+        "A change of clothes and a pillow",
+        "Their own food and drinks",
+        "Phone, charger, and a camera if wanted",
+        "Something to help them stay awake"
+      ],
+      "narration": "Your support person needs a bag too. Labor can be long, and they'll be doing a lot of caring for you. Their bag can include a change of clothes, a pillow, and their own food and drinks. They'll want a phone and charger, and a camera if you'd like photos. And something to help them stay awake, like coffee. A rested, fed support person is a better support person.",
+      "sourceIds": [
+        "lamaze-labor-bag"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A Black father-to-be zips a backpack holding snacks, a travel mug, a phone charger, and a folded hoodie, with a small pillow tucked under his arm. Soft blue and warm gray."
+      }
+    },
+    {
+      "id": "baby-going-home",
+      "type": "content",
+      "heading": "Your baby's going-home things",
+      "onScreen": [
+        "A rear-facing car seat, already installed",
+        "Thin layers, plus a hat and socks",
+        "A blanket to tuck over the buckled straps",
+        "No bulky snowsuit under the harness"
+      ],
+      "narration": "Your baby needs just a few things to go home. The most important one is a rear-facing car seat, already installed in your car. Babies ride rear-facing starting with their very first ride home. For clothes, pack thin layers, plus a hat and socks. In cold weather, bring a blanket. You'll tuck it over your baby after the straps are buckled, not underneath them. Skip the puffy snowsuit for the car ride. We'll talk about why in just a minute.",
+      "sourceIds": [
+        "aap-car-seats-families",
+        "aap-winter-car-seat",
+        "acog-labor-begins"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A small flat-lay of newborn items: a thin long-sleeved bodysuit, a knit hat, tiny socks, and a soft blanket, beside an infant car seat. Pastel mint and peach."
+      }
+    },
+    {
+      "id": "papers-and-questions",
+      "type": "content",
+      "heading": "Papers and questions for your birth place",
+      "onScreen": [
+        "Ask: Can I register ahead of time?",
+        "Ask: What ID and insurance papers should I bring?",
+        "Ask: Should I call first, or come straight in?",
+        "Save your team's after-hours number"
+      ],
+      "narration": "Next, let's get the paperwork and questions out of the way. Call your hospital or birth center, or ask at your next prenatal visit. Ask if you can register ahead of time, so there's less to do when you arrive in labor. Ask what ID and insurance papers you should bring. Also ask your care team the right time to call them, how to reach them after hours, and whether to call first or go straight to the hospital. Put those answers, and those phone numbers, somewhere easy to find. Then tuck your papers into your labor bag.",
+      "sourceIds": [
+        "acog-labor-begins"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant Indigenous woman on the phone at home, a folder with papers and a card on the table, checking items off a short list. Soft lavender and warm wood tones."
+      }
+    },
+    {
+      "id": "plan-your-route",
+      "type": "content",
+      "heading": "Plan your route and your ride",
+      "onScreen": [
+        "How far is it, and how long does it take?",
+        "Do a practice drive",
+        "Think about traffic, rush hour, and a backup route",
+        "Pick a driver, and a backup driver"
+      ],
+      "narration": "Now, the trip itself. Before labor begins, find out how far you live from your birth place and how long it takes to get there. Then do a practice drive. Think about traffic and rush hour, and what you'd do if your usual road is blocked. Pick a backup route too. Also decide who will drive you, and choose a backup driver in case your first choice can't be reached. Save their phone numbers where you can find them fast. Last, keep your bag somewhere handy, like a hall closet or the trunk of your car.",
+      "sourceIds": [
+        "acog-labor-begins"
+      ],
+      "visual": {
+        "kind": "diagram",
+        "description": "A simple illustrated map with a house and a hospital, a solid main route and a dotted backup route, a small clock showing travel time, and two driver icons labeled Driver and Backup. Soft blue and green."
+      }
+    },
+    {
+      "id": "checkin-route",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's pause for a quick check-in.",
+      "sourceIds": [
+        "acog-labor-begins"
+      ],
+      "question": {
+        "prompt": "What's a smart way to find out how long it really takes to get to your birth place?",
+        "options": [
+          "Guess on the day you go into labor",
+          "Do a practice drive, and think about traffic and rush hour",
+          "Assume it takes the same time at every hour of the day"
+        ],
+        "correctIndex": 1,
+        "explanation": "A practice drive gives you a real sense of the travel time. Thinking about rush hour and possible delays, and picking a backup route, means fewer surprises when labor starts."
+      }
+    },
+    {
+      "id": "car-seat-dos-donts",
+      "type": "comparison",
+      "heading": "Car seat: safer vs. not safe",
+      "onScreen": [
+        "Small details make a big difference"
+      ],
+      "narration": "Let's compare some car seat habits. Your baby should face the back of the car, not the front. The seat goes in the back seat, never in front of an active front airbag. The harness should be snug, so you can't pinch any slack at the shoulders. A loose harness isn't safe. The chest clip sits at armpit level, not down on the belly. And for warmth, use thin layers with a blanket over the buckled straps, not a bulky coat underneath them.",
+      "sourceIds": [
+        "aap-car-seats-families",
+        "aap-winter-car-seat"
+      ],
+      "columns": [
+        "Not safe",
+        "Safer"
+      ],
+      "rows": [
+        [
+          "Baby facing forward",
+          "Baby rear-facing, from the very first ride"
+        ],
+        [
+          "Seat in front of an active airbag",
+          "Seat in the back seat"
+        ],
+        [
+          "Loose harness you can pinch",
+          "Snug harness, no slack to pinch"
+        ],
+        [
+          "Chest clip down on the belly",
+          "Chest clip even with the armpits"
+        ],
+        [
+          "Bulky coat under the straps",
+          "Thin layers, blanket over the straps"
+        ]
+      ],
+      "visual": {
+        "kind": "comparison-table",
+        "description": "Two-column table. Left column in muted gray with a small X icon on each row; right column in soft green with a check icon on each row."
+      }
+    },
+    {
+      "id": "harness-check-video",
+      "type": "video",
+      "heading": "How to check the harness",
+      "onScreen": [
+        "Straps at or below the shoulders",
+        "Pinch test: no slack at the shoulder",
+        "Chest clip at armpit level"
+      ],
+      "narration": "Here's a short demonstration of how to buckle a baby in and check the fit. Watch for three things: where the straps sit, the pinch test, and where the chest clip goes.",
+      "sourceIds": [
+        "aap-car-seats-families",
+        "aap-winter-car-seat"
+      ],
+      "video": {
+        "brief": "A parent buckles a newborn-sized doll in thin clothing into a rear-facing infant seat installed in a back seat. Close-ups show: harness straps coming from slots at or below the shoulders; the parent tightening the harness and doing the pinch test at the shoulder with no slack caught; sliding the chest clip up to armpit level; then tucking a blanket over the buckled straps. A quick side shot shows the parent tugging the seat at the belt path to check it doesn't move much. Ends with the on-screen line 'Get your install checked by a certified technician.' Diverse cast, calm pace.",
+        "maxSeconds": 60
+      }
+    },
+    {
+      "id": "car-seat-safety",
+      "type": "safety",
+      "heading": "Car seat essentials",
+      "onScreen": [
+        "Rear-facing, starting with the first ride home",
+        "Never in front of an active front airbag",
+        "Installed tightly: moves less than 1 inch at the belt path",
+        "Harness snug; chest clip at armpit level",
+        "No bulky coats or snowsuits under the straps",
+        "Have a certified technician check it before baby is born"
+      ],
+      "narration": "These car seat basics matter on every ride. Your baby rides rear-facing, starting with the very first ride home. Never put a rear-facing seat in the front seat of a car with an active front passenger airbag. If the airbag opens, it can hit the back of the car seat, right where your baby's head is, and cause serious injury or death. Install the seat tightly. If it moves more than an inch side to side or front to back at the belt path, it's not tight enough. Keep the harness snug, with the chest clip even with your baby's armpits. No bulky coats or snowsuits under the straps. They can squish down in a crash and leave the straps too loose. And before your baby is born, have a certified child passenger safety technician check your installation. Always follow your car seat manual and your vehicle manual.",
+      "sourceIds": [
+        "aap-car-seats-families",
+        "aap-winter-car-seat"
+      ]
+    },
+    {
+      "id": "checkin-car-seat",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's make sure that one stuck.",
+      "sourceIds": [
+        "aap-car-seats-families",
+        "aap-winter-car-seat"
+      ],
+      "question": {
+        "prompt": "It's cold on the day you bring your baby home. What's the safest way to keep your baby warm in the car seat?",
+        "options": [
+          "Put your baby in a puffy snowsuit, then buckle the straps over it",
+          "Dress your baby in thin layers, buckle snugly, then tuck a blanket over the straps",
+          "Loosen the straps so your baby has room to move"
+        ],
+        "correctIndex": 1,
+        "explanation": "Bulky clothing can squish down in a crash and leave the straps too loose. Thin layers, a snug harness, and a blanket over the buckled straps keep your baby warm and safe."
+      }
+    },
+    {
+      "id": "your-go-plan",
+      "type": "reflection",
+      "heading": "Your go-bag and route plan",
+      "onScreen": [
+        "Where is your bag, and what's still missing?",
+        "Your route, backup route, and travel time",
+        "Your driver and backup driver",
+        "Car seat check: date booked or done"
+      ],
+      "narration": "Now let's make your plan. Where will you keep your bag, and what do you still need to pack? What's your route, your backup route, and about how long the drive takes? Who's your driver, and who's your backup? And when is your car seat check booked, or is it done? Write it all down. We'll save it in your Birth Readiness Brief, so you and your support person can find it fast.",
+      "sourceIds": [
+        "acog-labor-begins",
+        "aap-car-seats-families"
+      ],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write your go-bag and route plan: where your bag is and what's left to pack, your main and backup routes with travel time, your driver and backup driver, and when your car seat check is booked or done."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Pack bags for you, your support person, and baby",
+        "Ask your birth place about registering and papers",
+        "Practice your route; pick a backup route and driver",
+        "Rear-facing car seat, installed and checked before baby comes",
+        "Aim to be ready by 36 weeks"
+      ],
+      "narration": "Great work. Let's recap. Pack a labor bag for you, a bag for your support person, and a few going-home things for your baby. Ask your birth place about registering ahead and what papers to bring. Practice your route, and pick a backup route and a backup driver. Install a rear-facing car seat, and get it checked before your baby comes. Aim to have it all done by thirty-six weeks. That's the end of Module One. You've done a lot of preparing, and you should feel proud. Next, a few review questions. And remember, you can tap Ask a Question anytime.",
+      "sourceIds": [
+        "acog-labor-begins",
+        "lamaze-labor-bag",
+        "aap-car-seats-families"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "Where should the chest clip sit on a baby's car seat harness?",
+      "options": [
+        "Low on the belly",
+        "Even with the baby's armpits",
+        "Up at the baby's chin"
+      ],
+      "correctIndex": 1,
+      "explanation": "The chest clip goes at the center of the chest, even with your baby's armpits. Check that the harness is snug too, with no slack you can pinch at the shoulders."
+    },
+    {
+      "prompt": "Which is a good item for your labor bag?",
+      "options": [
+        "A copy of your birth preferences",
+        "A bulky snowsuit for the baby's car ride",
+        "Nothing; it's best to pack once labor starts"
+      ],
+      "correctIndex": 0,
+      "explanation": "A copy of your birth preferences helps your team know your wishes. Pack early, and keep the bag somewhere handy, like a hall closet or your car's trunk."
+    },
+    {
+      "prompt": "Who can check that your car seat is installed correctly?",
+      "options": [
+        "Anyone who has bought a car seat before",
+        "A certified child passenger safety technician",
+        "No one; you just have to guess"
+      ],
+      "correctIndex": 1,
+      "explanation": "A certified child passenger safety technician can check your installation. Expectant parents are encouraged to do this before the baby is born."
+    }
+  ]
+}

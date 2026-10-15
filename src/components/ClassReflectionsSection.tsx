@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 
-import { laborBasicsLessons } from '../content/lessons';
-import type { Lesson } from '../models/lesson';
+import { courses as allCourses, type Course } from '../content/lessons';
 import {
   subscribeToReflections,
   type ReflectionsState,
@@ -10,7 +9,7 @@ import {
 
 type ClassReflectionsSectionProps = {
   userId: string | null;
-  lessons?: Lesson[];
+  courses?: Course[];
 };
 
 type ReflectionRow = {
@@ -27,7 +26,7 @@ type ReflectionRow = {
  */
 export function ClassReflectionsSection({
   userId,
-  lessons = laborBasicsLessons,
+  courses = allCourses,
 }: ClassReflectionsSectionProps) {
   const [state, setState] = useState<ReflectionsState>({
     status: 'loading',
@@ -40,21 +39,23 @@ export function ClassReflectionsSection({
   const rows = useMemo(() => {
     const result: ReflectionRow[] = [];
     for (const reflection of state.reflections) {
-      const lesson = lessons.find((l) => l.lessonId === reflection.lessonId);
+      const course = courses.find((c) => c.lessons.some((l) => l.lessonId === reflection.lessonId));
+      const courseIndex = course ? courses.indexOf(course) : -1;
+      const lesson = course?.lessons.find((l) => l.lessonId === reflection.lessonId);
       const slideIndex = lesson?.slides.findIndex((s) => s.id === reflection.slideId) ?? -1;
       const slide = lesson && slideIndex >= 0 ? lesson.slides[slideIndex] : null;
       // Skip answers whose lesson or slide no longer exists in the course content.
       if (!lesson || !slide || slide.type !== 'reflection' || !reflection.text.trim()) continue;
       result.push({
         key: `${reflection.lessonId}:${reflection.slideId}`,
-        lessonTitle: `Lesson ${lesson.order}: ${lesson.title}`,
+        lessonTitle: `${course!.title} · Lesson ${lesson.order}: ${lesson.title}`,
         prompt: slide.prompt,
         text: reflection.text,
-        order: lesson.order * 1000 + slideIndex,
+        order: courseIndex * 1_000_000 + lesson.order * 1000 + slideIndex,
       });
     }
     return result.sort((a, b) => a.order - b.order);
-  }, [lessons, state.reflections]);
+  }, [courses, state.reflections]);
 
   return (
     <View testID="birth-readiness-brief-class-reflections">
@@ -64,7 +65,7 @@ export function ClassReflectionsSection({
         </Text>
         <Text style={styles.sectionText}>
           These save automatically as you answer the reflection questions in
-          Labor Basics. To change one, replay that lesson.
+          class. To change one, replay that lesson.
           {state.status === 'ready' && state.source === 'device'
             ? ' Right now they are saved on this device only.'
             : ''}

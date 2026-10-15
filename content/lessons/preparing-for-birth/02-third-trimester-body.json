@@ -1,0 +1,440 @@
+{
+  "courseId": "preparing-for-birth",
+  "lessonId": "third-trimester-body",
+  "order": 2,
+  "title": "Your Body in the Third Trimester",
+  "learningGoals": [
+    "Recognize common changes in late pregnancy, like backache, heartburn, swelling, and trouble sleeping",
+    "Know simple, safe ways to feel more comfortable",
+    "Get to know your baby's usual movement pattern and what to do if it changes",
+    "Tell the difference between changes to mention at your next visit and signs that need a call now",
+    "Know why prenatal visits usually become more frequent near the end of pregnancy"
+  ],
+  "estimatedMinutes": 12,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Drafted 2026-10-15. Sources fetched and checked against slides by an automated first pass; needs clinician review. No source was found for shortness-of-breath or frequent-urination relief tips, so those tips were left out. No kick-count number is given; the lesson defers to the care team, matching CDC and Lamaze wording."
+  },
+  "sources": [
+    {
+      "id": "acog-changes-during-pregnancy",
+      "organization": "ACOG",
+      "title": "Changes During Pregnancy (Infographic)",
+      "url": "https://www.acog.org/womens-health/infographics/changes-during-pregnancy",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-back-pain",
+      "organization": "ACOG",
+      "title": "Back Pain During Pregnancy (FAQ115)",
+      "url": "https://www.acog.org/womens-health/faqs/back-pain-during-pregnancy",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-digestive",
+      "organization": "ACOG",
+      "title": "Problems of the Digestive System (FAQ120)",
+      "url": "https://www.acog.org/womens-health/faqs/problems-of-the-digestive-system",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-sleep-on-back",
+      "organization": "ACOG",
+      "title": "Ask ACOG: Can I sleep on my back when I'm pregnant?",
+      "url": "https://www.acog.org/womens-health/experts-and-stories/ask-acog/can-i-sleep-on-my-back-when-im-pregnant",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-headaches",
+      "organization": "ACOG",
+      "title": "Headaches and Pregnancy (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/headaches-and-pregnancy",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-prenatal-care",
+      "organization": "ACOG",
+      "title": "Prenatal Care (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/prenatal-care",
+      "verifiedOn": null
+    },
+    {
+      "id": "lamaze-third-trimester",
+      "organization": "Lamaze",
+      "title": "Your Third Trimester (Giving Birth with Confidence)",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/your-third-trimester",
+      "verifiedOn": null
+    },
+    {
+      "id": "lamaze-braxton-hicks",
+      "organization": "Lamaze",
+      "title": "Braxton-Hicks Contractions (Giving Birth with Confidence)",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/braxton-hicks-contractions",
+      "verifiedOn": null
+    },
+    {
+      "id": "lamaze-swelling",
+      "organization": "Lamaze",
+      "title": "Swelling in the Third Trimester: What's Normal, When to Worry, What to Do",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/swelling-in-the-third-trimester-whats-normal-when-to-worry-what-to-do",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-hear-her-warning-signs",
+      "organization": "CDC",
+      "title": "Hear Her: Urgent Maternal Warning Signs",
+      "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Your Body in the Third Trimester",
+      "onScreen": [
+        "Preparing for Birth · Lesson 2",
+        "About 12 minutes"
+      ],
+      "narration": "Welcome back. In this lesson, we'll talk about your body in the third trimester. That's the last stretch of pregnancy. We'll cover common changes you might notice, simple ways to feel more comfortable, how to get to know your baby's movements, and how to tell what can wait for your next visit from what needs a call right now. Get comfy, and let's begin.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person in the third trimester resting on a couch with pillows behind their back and feet up on an ottoman, one hand on their belly, smiling softly. Diverse, soft peach and sage colors."
+      }
+    },
+    {
+      "id": "home-stretch",
+      "type": "content",
+      "heading": "The home stretch",
+      "onScreen": [
+        "The third trimester starts at 28 weeks",
+        "Your body is working harder than ever",
+        "Aches, pains, and broken sleep are common",
+        "Everyone's experience is different"
+      ],
+      "narration": "The third trimester starts at 28 weeks. Your baby is at their biggest now, so your body is working harder than ever. Many people notice more aches and pains, and their sleep gets interrupted. Some people feel full of energy, and others are counting the days. Both are normal. There's a wide range of normal in pregnancy, so try not to compare yourself to anyone else.",
+      "sourceIds": [
+        "lamaze-third-trimester"
+      ],
+      "visual": {
+        "kind": "diagram",
+        "description": "Simple pregnancy timeline with three soft-colored segments for the first, second, and third trimesters. The third segment, starting at 28 weeks, is highlighted with a small 'You are here' marker."
+      }
+    },
+    {
+      "id": "braxton-hicks",
+      "type": "content",
+      "heading": "Practice contractions",
+      "onScreen": [
+        "Your belly gets hard and tight, then relaxes",
+        "Usually short, with no regular pattern",
+        "A full bladder or a busy day can set them off",
+        "Call your care team if they form a regular pattern"
+      ],
+      "narration": "You may notice your belly getting hard and tight for a little while, then relaxing. These are often practice contractions, also called Braxton Hicks contractions. They usually last only twenty to thirty seconds and come with no regular pattern. Things like a full bladder, or doing too much in one day, can set them off. Not everyone feels them. If your contractions start to form a regular pattern, or come with a constant or rhythmic low backache, contact your care team. You'll learn much more about this in Module 2, Labor Basics.",
+      "sourceIds": [
+        "lamaze-braxton-hicks",
+        "acog-changes-during-pregnancy"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person pausing mid-walk with a hand on their belly, a soft glow around the belly suggesting tightening, then a second panel of them relaxed. Calm lavender tones."
+      }
+    },
+    {
+      "id": "backache-heartburn",
+      "type": "content",
+      "heading": "Backache and heartburn",
+      "onScreen": [
+        "Backache: sleep on your side, use heat or cold, wear supportive shoes",
+        "Lift by bending your knees, not your waist",
+        "Heartburn: eat smaller meals more often",
+        "Raise the head of your bed; skip foods that set it off"
+      ],
+      "narration": "Backache is one of the most common problems in pregnancy, especially in the later months. Your growing belly changes your posture and puts strain on your back. To help, wear low-heeled shoes with good arch support, sit in chairs that support your back, and bend your knees to lift things, not your waist. A heating pad on low, wrapped in a towel, or a cold pack can soothe sore muscles. If your back pain is severe, or lasts more than two weeks, call your care team. Heartburn is that burning feeling in your chest or throat. It happens more often in pregnancy, and it can be worse when you lie down. Try eating smaller meals more often, raising the head of your bed, and skipping foods that set it off. For many people, that's things like citrus, tomatoes, fried foods, or caffeine.",
+      "sourceIds": [
+        "acog-back-pain",
+        "acog-digestive"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Two groups of simple icons. Back care: supportive walking shoe, chair with a small pillow behind the lower back, a person squatting with bent knees to lift a box, a towel-wrapped heating pad. Heartburn: a small plate, a bed with the head raised, a crossed-out fried food. Soft blues and corals."
+      }
+    },
+    {
+      "id": "swelling",
+      "type": "content",
+      "heading": "Swelling in your feet, ankles, and hands",
+      "onScreen": [
+        "Mild swelling is common, often worse by evening",
+        "Rest with your feet up",
+        "Change positions often, walk, and stretch",
+        "Drink plenty of water"
+      ],
+      "narration": "Swelling is very common in the third trimester. It often shows up in your feet, ankles, lower legs, and hands. It tends to get worse at the end of the day, after standing or sitting for a long time, or in hot weather. Your rings may feel tighter. To help, rest with your feet raised. Change positions often, and take short walks or stretch. Drink plenty of water, and wear comfy shoes and loose clothes. Swelling that comes on suddenly is different, and we'll talk about that in a moment.",
+      "sourceIds": [
+        "lamaze-swelling"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person resting on a couch with feet propped on pillows, a glass of water on the side table, comfy slippers on the floor. Diverse, soft teal and cream colors."
+      }
+    },
+    {
+      "id": "sleep-bathroom-breathing",
+      "type": "content",
+      "heading": "Sleep, bathroom trips, and catching your breath",
+      "onScreen": [
+        "Getting comfy at night can be hard",
+        "Side sleeping may be best, with pillows",
+        "You may need to pee more often",
+        "You may feel a bit short of breath"
+      ],
+      "narration": "Sleep can be tricky now. It may be hard to get comfortable, and you may wake up more often. Sleeping on your side may be best in the second and third trimesters. Lying flat on your back can press on a large blood vessel, which may make you feel dizzy. Try bending one or both knees, with a pillow between your knees and another under your belly. If you wake up on your back, just roll onto your side. You may also need to pee more often, as your baby drops lower and presses on your bladder. And you may feel a bit short of breath. By about 36 weeks, the top of your uterus reaches up under your ribs. These changes are common. If breathing ever feels hard, or comes with chest pain, that's different. We'll cover that soon.",
+      "sourceIds": [
+        "acog-sleep-on-back",
+        "acog-changes-during-pregnancy",
+        "lamaze-third-trimester"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person sleeping on their side in a dim, cozy bedroom, knees bent, one pillow between the knees and one under the belly. Soft moonlight, navy and lavender tones."
+      }
+    },
+    {
+      "id": "side-sleeping-video",
+      "type": "video",
+      "heading": "Getting comfortable with pillows",
+      "onScreen": [
+        "Lie on your side, knees bent",
+        "Pillow between your knees",
+        "Pillow under your belly"
+      ],
+      "narration": "Let's see what that looks like. Watch this short demonstration of a comfortable side-lying position.",
+      "sourceIds": [
+        "acog-sleep-on-back",
+        "acog-back-pain"
+      ],
+      "video": {
+        "brief": "An instructor helps a pregnant person in the third trimester settle onto their side on a bed. Knees bend; a pillow is placed between the knees, then a second pillow under the belly; a full-length body pillow is shown as another option. A support partner hands over pillows. Calm music. No clinical thresholds stated. Ends with: 'If you wake up on your back, just roll onto your side.'",
+        "maxSeconds": 60
+      }
+    },
+    {
+      "id": "baby-movements",
+      "type": "content",
+      "heading": "Getting to know your baby's movements",
+      "onScreen": [
+        "You'll likely feel strong movements now",
+        "Kicks may turn into rolls and stretches",
+        "Movements may feel different, but shouldn't become less frequent",
+        "Learn your baby's usual pattern"
+      ],
+      "narration": "In the third trimester, you'll likely feel your baby move strongly. You may even feel hiccups. As space gets tight, kicks may feel more like rolls, stretches, or wiggles. That's okay. Movements may feel different, but they should not become less frequent. Your baby will start to have sleep and wake times, so it helps to get to know your baby's usual pattern. There's no magic number of kicks that's normal for everyone. What matters most is a change from what's normal for your baby. Your care team may suggest a way to keep track. Ask them what they'd like you to do.",
+      "sourceIds": [
+        "lamaze-third-trimester",
+        "acog-changes-during-pregnancy",
+        "cdc-hear-her-warning-signs"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person sitting in a cozy chair after a meal, both hands resting on their belly, a small notebook beside them. Gentle curved lines on the belly suggest movement. Warm amber and sage tones."
+      }
+    },
+    {
+      "id": "prenatal-visits",
+      "type": "content",
+      "heading": "More prenatal visits",
+      "onScreen": [
+        "Visits often become more frequent near the end",
+        "Many people go every 2 weeks, then weekly after about 36 weeks",
+        "Your schedule depends on your health and needs",
+        "Bring your questions to every visit"
+      ],
+      "narration": "In the third trimester, your prenatal visits usually get closer together. Many people see their doctor or midwife every two weeks until about 36 weeks, and then every week until birth. Your own schedule may be different, depending on your health and your pregnancy. At these visits, your care team checks things like your blood pressure and weight, listens to your baby's heartbeat, and measures your belly to check growth. These visits are also a great time to bring up any of the changes we've talked about today, and to ask questions.",
+      "sourceIds": [
+        "lamaze-third-trimester",
+        "acog-prenatal-care"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A midwife gently measures a pregnant person's belly with a soft tape measure in a bright, calm exam room, while a support person holds a list of questions. Diverse people, soft mint and cream colors."
+      }
+    },
+    {
+      "id": "next-visit-vs-call-now",
+      "type": "comparison",
+      "heading": "Mention it at your next visit, or call now?",
+      "onScreen": [
+        "Common changes can wait for your next visit",
+        "Sudden, severe, or new warning signs need a call now"
+      ],
+      "narration": "Here's a side-by-side guide. On the left are common changes. Mention them at your next visit. On the right are signs that need a call to your care team now. Backache that eases with rest is common. But severe back pain, or back pain with fever, burning when you pee, or vaginal bleeding, needs a call. Mild swelling in your feet and ankles at the end of the day is common. But sudden swelling of your face or hands, puffy eyes, or one leg that's more swollen, painful, red, or warm, needs a call right away. Heartburn after meals is common. But pain in your upper belly or shoulder, along with a bad headache, needs a call right away. Feeling a little short of breath is common. Trouble breathing, chest pain, or a racing heart is not. Tightening that comes and goes with no pattern is common. Contractions that form a regular pattern need a call. And finally, kicks that feel more like rolls are normal. But if your baby is moving less than usual, call right away. When in doubt, call. It's always okay to ask.",
+      "sourceIds": [
+        "acog-back-pain",
+        "lamaze-swelling",
+        "acog-headaches",
+        "cdc-hear-her-warning-signs",
+        "lamaze-braxton-hicks",
+        "lamaze-third-trimester"
+      ],
+      "columns": [
+        "Common: mention at your next visit",
+        "Call your care team now"
+      ],
+      "rows": [
+        [
+          "Backache that eases with rest, heat, or cold",
+          "Severe back pain, or back pain with fever, burning when you pee, or vaginal bleeding"
+        ],
+        [
+          "Mild swelling of feet and ankles, worse by evening",
+          "Sudden swelling of face or hands, puffy eyes, or one leg more swollen, painful, red, or warm"
+        ],
+        [
+          "Heartburn after meals or when lying down",
+          "Pain in the upper belly or shoulder with a bad headache"
+        ],
+        [
+          "Feeling a little short of breath",
+          "Trouble breathing, chest pain, or a racing heart"
+        ],
+        [
+          "Tightening that comes and goes with no pattern",
+          "Contractions that form a regular pattern"
+        ],
+        [
+          "Kicks that feel more like rolls and stretches",
+          "Baby moving less than usual, or not moving"
+        ]
+      ],
+      "visual": {
+        "kind": "comparison-table",
+        "description": "Two-column table. Left column in calm soft green with a small calendar icon; right column in soft coral with a phone icon. Rounded rows, easy to scan."
+      }
+    },
+    {
+      "id": "checkin-movement",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's pause for a quick check-in.",
+      "sourceIds": [
+        "lamaze-third-trimester",
+        "cdc-hear-her-warning-signs"
+      ],
+      "question": {
+        "prompt": "You're 33 weeks pregnant. Today your baby seems to be moving a lot less than usual. Your next visit is in 5 days. What's the best thing to do?",
+        "options": [
+          "Wait and bring it up at your next visit",
+          "Contact your care team right away",
+          "Count to 100 kicks before doing anything"
+        ],
+        "correctIndex": 1,
+        "explanation": "A change in your baby's usual movement, especially moving less or stopping, needs care right away. Don't wait for your next visit. Contact your care team now, or call 911 if it feels like an emergency. There's no set number of kicks that's normal for everyone; a change from your baby's usual pattern is what matters."
+      }
+    },
+    {
+      "id": "safety-baby-movement",
+      "type": "safety",
+      "heading": "Baby moving less? Get care right away",
+      "onScreen": [
+        "Baby's movement slowing or stopping",
+        "Don't wait for your next appointment",
+        "Seek medical care immediately",
+        "If it feels like an emergency, call 911"
+      ],
+      "narration": "If your baby's movements slow down or stop, seek medical care immediately. Don't wait until your next appointment. Contact your care team right away, or call 911 if it feels like an emergency. You know your baby's pattern better than anyone. Trust that feeling, and call.",
+      "sourceIds": [
+        "cdc-hear-her-warning-signs",
+        "lamaze-third-trimester"
+      ]
+    },
+    {
+      "id": "safety-urgent-signs",
+      "type": "safety",
+      "heading": "Urgent warning signs: get help right away",
+      "onScreen": [
+        "Headache that won't go away or gets worse",
+        "Changes in your vision, like spots or blurriness",
+        "Extreme swelling of your hands or face",
+        "Trouble breathing, chest pain, or a fast-beating heart",
+        "Severe belly pain, vaginal bleeding, or fluid leaking"
+      ],
+      "narration": "Some symptoms can be signs of a serious problem, like preeclampsia, a dangerous high blood pressure condition that often shows up in the third trimester. Seek medical care immediately if you have a headache that won't go away or gets worse over time, changes in your vision, like spots, flashes, or blurriness, extreme swelling of your hands or face, trouble breathing, chest pain, or a fast-beating heart, severe belly pain that doesn't go away, or vaginal bleeding or fluid leaking. Also get help right away for dizziness or fainting, a fever of 100.4 degrees or higher, or severe swelling, redness, or pain in one leg or arm. A headache that comes on suddenly with very bad pain is an emergency. Go to an emergency room right away. For any of these, contact your care team, or call 911 if it feels like an emergency.",
+      "sourceIds": [
+        "cdc-hear-her-warning-signs",
+        "acog-headaches"
+      ]
+    },
+    {
+      "id": "reflection-questions-for-visit",
+      "type": "reflection",
+      "heading": "Your list for your next visit",
+      "onScreen": [
+        "Which changes have you noticed?",
+        "What do you want to ask about them?",
+        "Ask how your team wants you to track baby's movements"
+      ],
+      "narration": "Let's make this practical. Think about the changes you've noticed lately, like backache, heartburn, swelling, or trouble sleeping. Write down which ones you'd like to ask about. And add one more question: ask your care team how they want you to keep track of your baby's movements, and when they want you to call. Your list saves to your Birth Readiness Brief, so you can bring it to your next visit.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Which changes have you noticed in your body lately, and what do you want to ask your care team about them at your next visit? Also note how your team wants you to track your baby's movements."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Backache, heartburn, swelling, and poor sleep are common",
+        "Side sleeping with pillows can help",
+        "Know your baby's usual movement pattern",
+        "Visits usually get more frequent near the end",
+        "Moving less, bad headache, vision changes: get care right away"
+      ],
+      "narration": "You did great. Let's recap. In the third trimester, backache, heartburn, swelling, needing to pee more, feeling short of breath, and trouble sleeping are all common. Simple things like side sleeping with pillows, putting your feet up, and smaller meals can help. Get to know your baby's usual movement pattern. Your prenatal visits will likely get closer together, so bring your questions. And remember the warning signs. If your baby is moving less, or you have a bad headache, vision changes, sudden swelling, or trouble breathing, seek care right away. Next, a few review questions. And you can tap Ask your instructor anytime.",
+      "sourceIds": [
+        "acog-changes-during-pregnancy",
+        "lamaze-third-trimester",
+        "cdc-hear-her-warning-signs"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "Which sleeping position may be best in the third trimester?",
+      "options": [
+        "Flat on your back",
+        "On your side, with knees bent and pillows for support",
+        "On your stomach"
+      ],
+      "correctIndex": 1,
+      "explanation": "Sleeping on your side may be best in the second and third trimesters. Lying on your back can press on a large blood vessel. A pillow between your knees and one under your belly can help."
+    },
+    {
+      "prompt": "Which of these is a common change you can bring up at your next visit?",
+      "options": [
+        "Sudden swelling of your face and puffy eyes",
+        "Mild swelling of your feet and ankles at the end of the day",
+        "A headache that keeps getting worse, with blurry vision"
+      ],
+      "correctIndex": 1,
+      "explanation": "Mild swelling of the feet and ankles, especially by evening, is common. Sudden swelling of the face or hands, or a headache with vision changes, needs care right away."
+    },
+    {
+      "prompt": "What matters most when noticing your baby's movements?",
+      "options": [
+        "Reaching the same number of kicks as other babies",
+        "A change from your baby's usual pattern, like moving less",
+        "Whether the movements feel like kicks instead of rolls"
+      ],
+      "correctIndex": 1,
+      "explanation": "There's no set number of movements that's normal for everyone. A change, especially slowing or stopping, is what matters. If that happens, seek care right away."
+    }
+  ],
+  "nextLessonId": "care-team-and-birth-setting"
+}

@@ -67,3 +67,16 @@ test('a reviewed lesson needs a reviewer, dates within 12 months, and verified s
   reviewed.review = { status: 'reviewed', reviewedBy: 'Jane Doe, RN', reviewedOn: '2026-10-01', nextReviewBy: '2027-10-01' };
   assert.deepEqual(checkLesson(reviewed).errors, []);
 });
+
+test('editorial slides may skip sources, but safety slides never can', () => {
+  const [lesson] = loadCourse('labor-basics');
+  const withEditorial = structuredClone(lesson);
+  const content = withEditorial.slides.find((s) => s.type === 'content');
+  content.sourceIds = [];
+  content.editorial = true;
+  assert.deepEqual(checkLesson(withEditorial).errors, []);
+
+  const safety = withEditorial.slides.find((s) => s.type === 'safety');
+  safety.editorial = true;
+  assert.ok(checkLesson(withEditorial).errors.some((e) => e.message.includes('Safety slides cannot be editorial')));
+});
