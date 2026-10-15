@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "BabyReady",
+    "name": "BabyReady Virtual Educator",
     "slug": "babyready",
     "scheme": "babyready",
     "version": "1.0.0",
@@ -33,7 +33,8 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "shortName": "BabyReady"
     },
     "extra": {
       "eas": {
