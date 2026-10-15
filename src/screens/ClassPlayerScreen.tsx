@@ -14,9 +14,11 @@ import {
 } from 'react-native';
 
 import { AskQuestionSheet } from '../components/AskQuestionSheet';
+import { LessonVideo } from '../components/LessonVideo';
 import { drawnVisualFor } from '../components/LessonVisuals';
 import { artworkFor } from '../content/artwork';
 import type { Course } from '../content/lessons';
+import { videoFor } from '../content/videos';
 import { NARRATION_RATE, pickNarrationVoice, splitSentences } from '../lib/narration';
 import { BIRTH_READINESS_REFLECTION_MAX_LENGTH } from '../models/birthReadinessReflection';
 import type { CheckInQuestion, Lesson, Slide, Source } from '../models/lesson';
@@ -287,6 +289,14 @@ export function ClassPlayerScreen({
     }
   }
 
+  /** A lesson video started: stop the narration so the two don't talk over each other. */
+  function onVideoPlay() {
+    clearAdvance();
+    stopSpeech();
+    setPlaying(false);
+    setNarrationDone(true);
+  }
+
   function openAsk() {
     clearAdvance();
     resumeAfterAskRef.current = playing;
@@ -407,6 +417,7 @@ export function ClassPlayerScreen({
             answer={state.answer}
             lesson={lesson}
             onAnswer={answerQuestion}
+            onVideoPlay={onVideoPlay}
             userId={userId}
             slide={slide}
             sourcesById={sourcesById}
@@ -581,6 +592,7 @@ function SlideView({
   sourcesById,
   answer,
   onAnswer,
+  onVideoPlay,
 }: {
   slide: Slide;
   lesson: Lesson;
@@ -588,6 +600,7 @@ function SlideView({
   sourcesById: Record<string, Source>;
   answer: number | null;
   onAnswer: (question: CheckInQuestion, index: number) => void;
+  onVideoPlay: () => void;
 }) {
   const sources = <SourceList sources={slide.sourceIds.map((id) => sourcesById[id]).filter(Boolean)} />;
 
@@ -623,19 +636,30 @@ function SlideView({
           {sources}
         </View>
       );
-    case 'video':
+    case 'video': {
+      const video = videoFor(lesson.lessonId, slide.id);
       return (
         <View style={styles.slide}>
           <Text style={styles.heading}>{slide.heading}</Text>
-          <View style={styles.videoFrame}>
-            <Text style={styles.videoPlay}>▶</Text>
-            <Text style={styles.videoTitle}>Video to come (up to {Math.round(slide.video.maxSeconds)} seconds)</Text>
-            <Text style={styles.videoBrief}>{slide.video.brief}</Text>
-          </View>
+          {video ? (
+            <LessonVideo
+              key={`${lesson.lessonId}:${slide.id}`}
+              label={`Video: ${slide.heading}`}
+              onPlay={onVideoPlay}
+              source={video}
+            />
+          ) : (
+            <View style={styles.videoFrame}>
+              <Text style={styles.videoPlay}>▶</Text>
+              <Text style={styles.videoTitle}>Video to come (up to {Math.round(slide.video.maxSeconds)} seconds)</Text>
+              <Text style={styles.videoBrief}>{slide.video.brief}</Text>
+            </View>
+          )}
           <Bullets items={slide.onScreen} />
           {sources}
         </View>
       );
+    }
     case 'reflection':
       return (
         <View style={styles.slide}>

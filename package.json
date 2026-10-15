@@ -9,6 +9,7 @@
     "expo-speech": "~57.0.3",
     "expo-speech-recognition": "^57.1.1",
     "expo-status-bar": "~57.0.1",
+    "expo-video": "~57.0.5",
     "firebase": "^12.17.1",
     "lucide-react-native": "^1.57.0",
     "react": "19.2.3",
