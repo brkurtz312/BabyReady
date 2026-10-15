@@ -1,5 +1,4 @@
 import { useEffect, useMemo, useReducer, useRef, useState } from 'react';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Speech from 'expo-speech';
 import { StatusBar } from 'expo-status-bar';
 import {
@@ -15,7 +14,14 @@ import {
 
 import { LABOR_BASICS_TITLE, laborBasicsLessons } from '../content/lessons';
 import { NARRATION_RATE, pickNarrationVoice, splitSentences } from '../lib/narration';
+import { BIRTH_READINESS_REFLECTION_MAX_LENGTH } from '../models/birthReadinessReflection';
 import type { CheckInQuestion, Lesson, Slide, Source } from '../models/lesson';
+import {
+  loadReflection,
+  saveReflection,
+  type ReflectionKey,
+  type ReflectionSaveResult,
+} from '../services/birthReadinessReflectionService';
 
 /**
  * Class-style lesson player. Behavior follows docs/handoff/class-player-preview.html:
@@ -47,9 +53,6 @@ const AUTO_ADVANCE_DELAY_MS = 1400;
 
 /** Comparison slides about urgent calls get the alert colors. */
 const ALERT_COMPARISON_SLIDE_IDS = ['two-kinds-of-calls'];
-
-export const reflectionStorageKey = (lessonId: string, slideId: string) =>
-  `birthReadinessBrief:reflection:${lessonId}:${slideId}`;
 
 type Mode = 'intro' | 'slides' | 'quiz' | 'done';
 
@@ -118,12 +121,17 @@ function makeReducer(lessons: Lesson[]) {
 
 type ClassPlayerScreenProps = {
   onExit: () => void;
+  onOpenBrief: () => void;
+  /** Signed-in learner. Without one, reflections are kept on this device only. */
+  userId: string | null;
   lessons?: Lesson[];
   courseTitle?: string;
 };
 
 export function ClassPlayerScreen({
   onExit,
+  onOpenBrief,
+  userId,
   lessons = laborBasicsLessons,
   courseTitle = LABOR_BASICS_TITLE,
 }: ClassPlayerScreenProps) {
@@ -364,8 +372,9 @@ export function ClassPlayerScreen({
         {slide ? (
           <SlideView
             answer={state.answer}
-            lessonId={lesson.lessonId}
+            lesson={lesson}
             onAnswer={answerQuestion}
+            userId={userId}
             slide={slide}
             sourcesById={sourcesById}
           />
@@ -389,6 +398,16 @@ export function ClassPlayerScreen({
               {nextLesson ? `Next up: ${nextLesson.title}. ` : 'You’ve finished every lesson in this module. '}
               You can replay this lesson anytime.
             </Text>
+            {lesson.slides.some((s) => s.type === 'reflection') ? (
+              <Pressable
+                accessibilityHint="Shows your saved reflection answers and care-team questions."
+                accessibilityRole="button"
+                onPress={onOpenBrief}
+                style={styles.briefButton}
+              >
+                <Text style={styles.briefButtonText}>See your Birth Readiness Brief</Text>
+              </Pressable>
+            ) : null}
           </View>
         ) : null}
       </ScrollView>
@@ -517,13 +536,15 @@ function IntroSlide({
 
 function SlideView({
   slide,
-  lessonId,
+  lesson,
+  userId,
   sourcesById,
   answer,
   onAnswer,
 }: {
   slide: Slide;
-  lessonId: string;
+  lesson: Lesson;
+  userId: string | null;
   sourcesById: Record<string, Source>;
   answer: number | null;
   onAnswer: (question: CheckInQuestion, index: number) => void;
@@ -580,7 +601,12 @@ function SlideView({
         <View style={styles.slide}>
           <Text style={styles.heading}>{slide.heading}</Text>
           <Bullets items={slide.onScreen} />
-          <ReflectionBox key={slide.id} prompt={slide.prompt} storageKey={reflectionStorageKey(lessonId, slide.id)} />
+          <ReflectionBox
+            key={`${lesson.lessonId}:${slide.id}`}
+            prompt={slide.prompt}
+            reflectionKey={{ courseId: lesson.courseId, lessonId: lesson.lessonId, slideId: slide.id }}
+            userId={userId}
+          />
           {sources}
         </View>
       );
@@ -669,35 +695,60 @@ function QuestionBlock({
   );
 }
 
-function ReflectionBox({ prompt, storageKey }: { prompt: string; storageKey: string }) {
+function ReflectionBox({
+  prompt,
+  reflectionKey,
+  userId,
+}: {
+  prompt: string;
+  reflectionKey: ReflectionKey;
+  userId: string | null;
+}) {
   const [text, setText] = useState('');
-  const [status, setStatus] = useState<'idle' | 'saved' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'saving' | ReflectionSaveResult | 'error'>('idle');
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  /** Latest unsaved text, so leaving the slide mid-typing still saves it. */
+  const pendingRef = useRef<string | null>(null);
+  const keyRef = useRef(reflectionKey);
+  keyRef.current = reflectionKey;
+
+  function flush() {
+    if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+    saveTimerRef.current = null;
+    const value = pendingRef.current;
+    if (value === null) return Promise.resolve();
+    pendingRef.current = null;
+    return saveReflection(userId, keyRef.current, value).then(
+      (result) => setStatus(result),
+      () => setStatus('error'),
+    );
+  }
 
   useEffect(() => {
     let active = true;
-    AsyncStorage.getItem(storageKey)
+    loadReflection(userId, reflectionKey)
       .then((saved) => {
-        if (active && saved) {
-          setText(saved);
-          setStatus('saved');
+        // Don't overwrite anything the learner started typing while this loaded.
+        if (active && saved.text && pendingRef.current === null) {
+          setText(saved.text);
+          setStatus(saved.source);
         }
       })
       .catch(() => undefined);
     return () => {
       active = false;
-      if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
+      void flush();
     };
-  }, [storageKey]);
+    // Load once per reflection slide.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function onChange(value: string) {
     setText(value);
+    setStatus('saving');
+    pendingRef.current = value;
     if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
-    saveTimerRef.current = setTimeout(() => {
-      AsyncStorage.setItem(storageKey, value)
-        .then(() => setStatus('saved'))
-        .catch(() => setStatus('error'));
-    }, 500);
+    saveTimerRef.current = setTimeout(() => void flush(), 600);
   }
 
   return (
@@ -705,7 +756,9 @@ function ReflectionBox({ prompt, storageKey }: { prompt: string; storageKey: str
       <Text style={styles.reflectionPrompt}>{prompt}</Text>
       <TextInput
         accessibilityLabel={prompt}
+        maxLength={BIRTH_READINESS_REFLECTION_MAX_LENGTH}
         multiline
+        onBlur={() => void flush()}
         onChangeText={onChange}
         placeholder="Type your answer"
         placeholderTextColor={colors.muted}
@@ -713,12 +766,16 @@ function ReflectionBox({ prompt, storageKey }: { prompt: string; storageKey: str
         textAlignVertical="top"
         value={text}
       />
-      <Text style={styles.savedNote}>
-        {status === 'saved'
-          ? 'Saved on this device for your Birth Readiness Brief'
-          : status === 'error'
-            ? 'Couldn’t save on this device. Copy your notes somewhere safe.'
-            : ' '}
+      <Text accessibilityLiveRegion="polite" style={[styles.savedNote, status === 'error' && styles.savedNoteError]}>
+        {status === 'saving'
+          ? 'Saving…'
+          : status === 'saved'
+            ? 'Saved to your private Birth Readiness Brief'
+            : status === 'saved-on-device'
+              ? 'Saved on this device. It will show in your Birth Readiness Brief here.'
+              : status === 'error'
+                ? 'Couldn’t save your answer. Copy your notes somewhere safe.'
+                : ' '}
       </Text>
     </View>
   );
@@ -883,6 +940,16 @@ const styles = StyleSheet.create({
     backgroundColor: colors.bg,
   },
   savedNote: { color: colors.lagoon, fontSize: 14, marginTop: 6 },
+  savedNoteError: { color: colors.alert },
+  briefButton: {
+    marginTop: 6,
+    borderWidth: 1.5,
+    borderColor: colors.lagoon,
+    borderRadius: 999,
+    paddingHorizontal: 18,
+    paddingVertical: 10,
+  },
+  briefButtonText: { color: colors.lagoon, fontSize: 15, fontWeight: '700' },
   sources: { borderTopWidth: 1, borderTopColor: colors.line, paddingTop: 10, gap: 4 },
   sourcesLabel: { color: colors.muted, fontSize: 12, fontWeight: '700', textTransform: 'uppercase' },
   sourceLink: { color: colors.lagoon, fontSize: 13, textDecorationLine: 'underline' },

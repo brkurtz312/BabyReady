@@ -298,7 +298,13 @@ function BabyReadyApp() {
   }
 
   if (activeView === 'class-player') {
-    return <ClassPlayerScreen onExit={() => setActiveView('learner')} />;
+    return (
+      <ClassPlayerScreen
+        onExit={() => setActiveView('learner')}
+        onOpenBrief={() => setActiveView('birth-readiness-brief')}
+        userId={authState.status === 'ready' ? authState.user.uid : null}
+      />
+    );
   }
 
   if (activeView === 'course-player' && selectedCourse) {

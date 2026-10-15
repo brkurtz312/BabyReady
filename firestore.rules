@@ -129,6 +129,20 @@ service cloud.firestore {
         );
     }
 
+    function validBirthReadinessReflection(reflectionId) {
+      let data = request.resource.data;
+      return data.keys().hasOnly(['courseId', 'lessonId', 'slideId', 'text', 'updatedAt'])
+        && data.keys().hasAll(['courseId', 'lessonId', 'slideId', 'text', 'updatedAt'])
+        && data.courseId is string && data.courseId.matches('^[a-z0-9-]{1,80}$')
+        && data.lessonId is string && data.lessonId.matches('^[a-z0-9-]{1,80}$')
+        && data.slideId is string && data.slideId.matches('^[a-z0-9-]{1,80}$')
+        && reflectionId == data.lessonId + '__' + data.slideId
+        && data.text is string
+        && data.text.size() > 0
+        && data.text.size() <= 2000
+        && data.updatedAt == request.time;
+    }
+
     function validBirthReadinessBriefData() {
       return request.resource.data.keys().hasOnly([
           'id',
@@ -672,6 +686,14 @@ service cloud.firestore {
           && request.resource.data.createdAt == resource.data.createdAt
           && request.resource.data.updatedAt == request.time;
         allow delete: if owns(userId) && briefId == 'preparing-for-labor';
+      }
+
+      // Reflection answers from the class player, one private document per
+      // reflection slide, named {lessonId}__{slideId}. Text is bounded and
+      // updatedAt must be server-generated.
+      match /birthReadinessReflections/{reflectionId} {
+        allow read, delete: if owns(userId);
+        allow create, update: if owns(userId) && validBirthReadinessReflection(reflectionId);
       }
 
       // Safety events should be written only by a trusted server process.
