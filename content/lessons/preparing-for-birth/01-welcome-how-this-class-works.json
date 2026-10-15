@@ -1,0 +1,254 @@
+{
+  "courseId": "preparing-for-birth",
+  "lessonId": "welcome-how-this-class-works",
+  "order": 1,
+  "title": "Welcome: How This Class Works",
+  "learningGoals": [
+    "Name the six modules in this class and what each one covers",
+    "Use the slide controls: play and pause, back, captions, and mute",
+    "Know what check-ins, reflections, safety slides, and review quizzes are for",
+    "Know when to use Ask your instructor, and when to call your care team or 911 instead"
+  ],
+  "estimatedMinutes": 5,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Drafted 2026-10-15. Sources fetched and checked against slides by an automated first pass; needs clinician review. Most slides are editorial (they explain the app and make no health claim); only the 'why-prepare' slide and the summary cite sources."
+  },
+  "sources": [
+    {
+      "id": "lamaze-braxton-hicks",
+      "organization": "Lamaze",
+      "title": "Braxton-Hicks Contractions (Giving Birth with Confidence)",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/braxton-hicks-contractions",
+      "verifiedOn": null
+    },
+    {
+      "id": "lamaze-third-trimester",
+      "organization": "Lamaze",
+      "title": "Your Third Trimester (Giving Birth with Confidence)",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/your-third-trimester",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-prenatal-care",
+      "organization": "ACOG",
+      "title": "Prenatal Care (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/prenatal-care",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Welcome: How This Class Works",
+      "onScreen": [
+        "Preparing for Birth · Lesson 1",
+        "About 5 minutes"
+      ],
+      "narration": "Hi, and welcome. I'm so glad you're here. This class will walk you through birth, feeding, and the first weeks after your baby arrives, one short lesson at a time. In this first lesson, I'll show you how the class works, so you can get the most out of it. If you have a support person, invite them to watch with you. Let's begin.",
+      "sourceIds": [],
+      "editorial": true,
+      "visual": {
+        "kind": "illustration",
+        "description": "A smiling instructor with a warm expression waves from a tablet screen. In front of it, a pregnant person and their support person sit together on a couch with a blanket and mugs. Diverse people, soft peach and sage colors."
+      }
+    },
+    {
+      "id": "six-modules",
+      "type": "content",
+      "heading": "Six modules, one step at a time",
+      "onScreen": [
+        "1. Preparing for Birth  ·  2. Labor Basics and When to Call",
+        "3. Comfort, Movement, and Support Skills",
+        "4. Interventions and Flexible Decisions",
+        "5. Feeding and Newborn Care  ·  6. Postpartum Recovery, Mood, and Red Flags"
+      ],
+      "narration": "This class has six modules. Module one, where you are now, is Preparing for Birth. Module two is Labor Basics and When to Call. Module three is Comfort, Movement, and Support Skills. Module four is Interventions and Flexible Decisions. Module five is Feeding and Newborn Care. And module six is Postpartum Recovery, Mood, and Red Flags. Each module is made of short lessons. You can take them in order, or come back to any lesson whenever you like.",
+      "sourceIds": [],
+      "editorial": true,
+      "visual": {
+        "kind": "icon-list",
+        "description": "Six rounded cards in a gentle path, each with a simple icon: a calendar (Preparing for Birth), a phone (Labor Basics and When to Call), a person on a birth ball (Comfort and Support), a fork in a path (Flexible Decisions), a baby bottle and a breastfeeding parent (Feeding and Newborn Care), and a heart (Postpartum Recovery). Soft pastel colors."
+      }
+    },
+    {
+      "id": "player-tour-video",
+      "type": "video",
+      "heading": "A quick tour of the controls",
+      "onScreen": [
+        "Play and pause anytime",
+        "Back to hear a slide again",
+        "CC turns captions on or off",
+        "Mute when you'd rather read"
+      ],
+      "narration": "Each lesson plays like a small class. A slide appears, and I talk you through it. You're always in control. You can pause and play at any time. You can go back to hear a slide again. Tap C C to turn captions on or off. And tap mute if you'd rather read quietly. Watch this short tour.",
+      "sourceIds": [],
+      "editorial": true,
+      "video": {
+        "brief": "Screen-recording tour of the lesson player with a friendly voice-over. A finger taps pause, then play; taps back to replay the previous slide; taps CC and captions appear under the slide; taps mute and the sound icon changes. Each control is gently highlighted as it's used. No health information. Ends with: 'You're in control. Go at your own pace.'",
+        "maxSeconds": 45
+      }
+    },
+    {
+      "id": "learning-tools",
+      "type": "content",
+      "heading": "Check-ins, reflections, and review quizzes",
+      "onScreen": [
+        "Check-ins teach, they don't grade",
+        "Reflections save to your private Birth Readiness Brief",
+        "A short review quiz ends each lesson"
+      ],
+      "narration": "Along the way, the class will pause for a few things. Check-ins are quick questions. They're here to help you learn, not to grade you. Whatever you pick, you'll see a short explanation. Reflections ask you to think about your own plans. Your answers save to your Birth Readiness Brief, which is private to you. You can look at it before your prenatal visits, to help you talk with your care team. And at the end of each lesson, there's a short review quiz, just a few questions to help the main ideas stick.",
+      "sourceIds": [],
+      "editorial": true,
+      "visual": {
+        "kind": "illustration",
+        "description": "Three friendly panels side by side: a question card with a lightbulb, a notebook labeled 'Birth Readiness Brief' with a small lock, and a short checklist with three items. Soft blues and warm yellows."
+      }
+    },
+    {
+      "id": "safety-and-care-team",
+      "type": "content",
+      "heading": "Red safety slides, and your care team comes first",
+      "onScreen": [
+        "Red slides can't be skipped",
+        "They have a Call 911 button",
+        "This class is education, not medical care",
+        "Your own care team's advice comes first"
+      ],
+      "narration": "Some slides are red. Red slides are safety slides. They list warning signs that need help right away. You can't skip them, and each one has a Call 911 button you can tap if you ever need it. One more important thing. This class is education. It is not medical care, and it can't know your health history. Your own care team knows you best. If anything here doesn't match what your doctor or midwife tells you, follow their advice.",
+      "sourceIds": [],
+      "editorial": true,
+      "visual": {
+        "kind": "illustration",
+        "description": "A slide with a soft red border and a large rounded 'Call 911' button at the bottom. Beside it, a pregnant person talks with a midwife in a calm clinic room. Diverse people, muted coral and cream colors."
+      }
+    },
+    {
+      "id": "ask-your-instructor",
+      "type": "content",
+      "heading": "Ask your instructor",
+      "onScreen": [
+        "Speak or type a question about this lesson",
+        "Answers come only from the current lesson",
+        "Not for emergencies or personal medical advice"
+      ],
+      "narration": "Have a question as you go? Tap the Ask button at the top of the lesson to talk with me. You can speak or type. The answers come only from the lesson you're in, so it's a great way to go over something again in different words. But please remember two things. It is never for emergencies. And it can't give you personal medical advice. For questions about your own body or your own pregnancy, contact your care team. And if something feels like an emergency, call 911.",
+      "sourceIds": [],
+      "editorial": true,
+      "visual": {
+        "kind": "illustration",
+        "description": "A support partner holds a phone showing a chat bubble and a microphone icon labeled 'Ask your instructor'. A small banner below reads 'Not for emergencies'. Diverse people, soft lavender and mint colors."
+      }
+    },
+    {
+      "id": "why-prepare",
+      "type": "content",
+      "heading": "Why it helps to prepare",
+      "onScreen": [
+        "Learn how to recognize labor",
+        "Learn ways to cope with labor pain",
+        "Learn about your choices for birth and after",
+        "Keep going to your prenatal visits and ask questions"
+      ],
+      "narration": "So why take a class like this? Childbirth education can teach you how to recognize labor, ways to cope with labor pain, and the many choices you'll have around birth, recovery, and early parenting. Knowing these things ahead of time can help you ask good questions and make informed decisions with your care team. This class works best alongside your regular prenatal visits. Those visits let your care team check on you and your baby, and find problems sooner. So keep going, and bring your questions.",
+      "sourceIds": [
+        "lamaze-braxton-hicks",
+        "lamaze-third-trimester",
+        "acog-prenatal-care"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person in a prenatal visit, holding a small notebook of questions, talking with a smiling clinician who is listening. Diverse people, warm soft lighting, gentle greens and creams."
+      }
+    },
+    {
+      "id": "checkin-ask-instructor",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's try a quick check-in. Remember, this is just for learning.",
+      "sourceIds": [],
+      "editorial": true,
+      "question": {
+        "prompt": "Which question is a good fit for Ask your instructor?",
+        "options": [
+          "\"Can you explain that last slide in a different way?\"",
+          "\"I have a terrible headache right now. What should I do?\"",
+          "\"Should I change the medicine my doctor gave me?\""
+        ],
+        "correctIndex": 0,
+        "explanation": "Ask your instructor is great for going over what's in the lesson you're watching. It's not for emergencies or personal medical advice. Something happening to you right now, or a question about your own medicine, is for your care team. If it feels like an emergency, call 911."
+      }
+    },
+    {
+      "id": "reflection-what-to-learn",
+      "type": "reflection",
+      "heading": "What do you want from this class?",
+      "onScreen": [
+        "What are you most curious about?",
+        "What feels most worrying right now?",
+        "Your answer saves to your Birth Readiness Brief"
+      ],
+      "narration": "Here's your first reflection. Take a moment to think about what you most want to learn in this class. Maybe it's knowing when to go to the hospital, or how to feed your baby, or how to feel calmer about labor. There's no wrong answer. Your answer saves to your Birth Readiness Brief, and you can look back at it as you go.",
+      "sourceIds": [],
+      "editorial": true,
+      "savesTo": "birthReadinessBrief",
+      "prompt": "What do you most want to learn in this class? Is there anything you're worried about that you'd like to feel more ready for?"
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Six modules, from preparing for birth to postpartum",
+        "You control play, pause, back, captions, and mute",
+        "Check-ins teach; reflections save to your Brief",
+        "Red slides = warning signs, with a Call 911 button",
+        "This is education; your care team's advice comes first"
+      ],
+      "narration": "Nice work. Let's recap. This class has six modules, from preparing for birth all the way to recovery after birth. You can pause, go back, turn on captions, or mute anytime. Check-ins help you learn, and reflections save to your private Birth Readiness Brief. Red safety slides list warning signs and have a Call 911 button. Ask your instructor answers questions about the current lesson, but it's not for emergencies or personal advice. And this class is education. Your care team's advice always comes first. Next up, a short review quiz. Then we'll look at your body in the third trimester.",
+      "sourceIds": [
+        "lamaze-braxton-hicks",
+        "acog-prenatal-care"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "What happens when you answer a check-in question?",
+      "options": [
+        "You get a grade that affects whether you can continue",
+        "You see a short explanation that helps you learn, whatever you pick",
+        "Your answer is sent to your doctor"
+      ],
+      "correctIndex": 1,
+      "explanation": "Check-ins are for learning, not grading. After you answer, you'll always see a short explanation."
+    },
+    {
+      "prompt": "Where do your reflection answers go?",
+      "options": [
+        "Your private Birth Readiness Brief",
+        "A public discussion board",
+        "Nowhere; they aren't saved"
+      ],
+      "correctIndex": 0,
+      "explanation": "Reflections save to your Birth Readiness Brief, which is private to you. You can look at it before your prenatal visits to help guide your conversations."
+    },
+    {
+      "prompt": "Something in this class doesn't match what your midwife told you. What should you do?",
+      "options": [
+        "Follow the class instead",
+        "Follow your midwife's advice, and ask them about it if you're unsure",
+        "Ask your instructor to decide"
+      ],
+      "correctIndex": 1,
+      "explanation": "This class is education, not medical care. Your own care team knows your health and your pregnancy, so their advice comes first."
+    }
+  ],
+  "nextLessonId": "third-trimester-body"
+}

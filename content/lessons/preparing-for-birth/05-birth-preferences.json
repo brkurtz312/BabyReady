@@ -1,0 +1,403 @@
+{
+  "courseId": "preparing-for-birth",
+  "lessonId": "birth-preferences",
+  "order": 5,
+  "title": "Birth Preferences, Not a Script",
+  "learningGoals": [
+    "Explain what birth preferences are and why they work best as flexible wishes, not a script",
+    "Name the main topics a birth preferences list can cover, from the room setup to the first hour after birth",
+    "Plan to talk your preferences through with your care team at a prenatal visit, well before your due date",
+    "Use simple questions about benefits, risks, alternatives, and waiting to share decisions with your care team",
+    "Write down your top three preferences and one question for your next visit"
+  ],
+  "estimatedMinutes": 12,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Drafted 2026-10-15. Sources fetched and checked against slides by an automated first pass; needs clinician review. Committee Opinion 766 was checked against its public abstract only (full text is on the Obstetrics & Gynecology site). Eating in labor is framed as a question for the care team because no approved page fetched gave guidance on it."
+  },
+  "sources": [
+    {
+      "id": "acog-sample-birth-plan",
+      "organization": "ACOG",
+      "title": "Sample Birth Plan Template (HT001)",
+      "url": "https://www.acog.org/womens-health/health-tools/sample-birth-plan",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-co766-limit-intervention",
+      "organization": "ACOG",
+      "title": "Approaches to Limit Intervention During Labor and Birth (Committee Opinion No. 766)",
+      "url": "https://www.acog.org/clinical/guidance/committee-opinion/2019/02/approaches-to-limit-intervention-during-labor-and-birth",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-pain-relief-faq",
+      "organization": "ACOG",
+      "title": "Medications for Pain Relief During Labor and Delivery (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/medications-for-pain-relief-during-labor-and-delivery",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-co814-cord-clamping",
+      "organization": "ACOG",
+      "title": "Delayed Umbilical Cord Clamping After Birth (Committee Opinion No. 814)",
+      "url": "https://www.acog.org/clinical/guidance/committee-opinion/2020/12/delayed-umbilical-cord-clamping-after-birth",
+      "verifiedOn": null
+    },
+    {
+      "id": "lamaze-healthy-birth-practices",
+      "organization": "Lamaze",
+      "title": "Lamaze Healthy Birth Practices",
+      "url": "https://lamaze.org/childbirth-practices",
+      "verifiedOn": null
+    },
+    {
+      "id": "lamaze-brain",
+      "organization": "Lamaze",
+      "title": "Use Your BRAIN When Communicating with Your Care Provider About Birth",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/use-your-brain-when-communicating-with-your-care-provider-about-birth-1",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Birth Preferences, Not a Script",
+      "onScreen": [
+        "Preparing for Birth · Lesson 5",
+        "About 12 minutes"
+      ],
+      "narration": "Welcome back. In this lesson, we'll talk about birth preferences. You'll learn what they are, what topics they can cover, and how to talk them through with your care team. We'll also talk about what to do when plans change, and a few simple questions that help you make choices together with your team. By the end, you'll write down your top three wishes and one question for your next visit. Grab a pen, or your support person, and let's begin.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant Latina woman and her partner sit at a kitchen table with mugs of tea, writing a short list on a notepad together. Soft peach and sage colors, morning light through a window."
+      }
+    },
+    {
+      "id": "what-are-preferences",
+      "type": "content",
+      "heading": "What are birth preferences?",
+      "onScreen": [
+        "A short written list of what you'd like during labor and birth",
+        "It tells your care team your wishes",
+        "Often called a birth plan"
+      ],
+      "narration": "Birth preferences are a short, written list of what you would like to happen during labor and birth. Many people call this a birth plan. It lets your doctor or midwife know your wishes ahead of time. It can cover things like who you want with you, how you'd like to move around, and what you'd like to happen right after your baby is born. Think of it as a way to start a conversation, not a contract.",
+      "sourceIds": [
+        "acog-sample-birth-plan"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A single page titled 'My Birth Preferences' with a few short checkboxes, held by the hand of a Black pregnant person. Soft lavender background."
+      }
+    },
+    {
+      "id": "why-preferences",
+      "type": "content",
+      "heading": "Why \"preferences\" and not a plan?",
+      "onScreen": [
+        "A plan can't promise how birth will go",
+        "Unexpected things can happen",
+        "You and your team share one goal: a safe birth"
+      ],
+      "narration": "So why do we say preferences instead of plan? Because having a list doesn't guarantee that labor will go a certain way. Unexpected things can happen. Your list is a great starting point. But it helps to go in ready for changes. Here's something to hold on to: you and your care team have the same goal. That goal is the safest possible birth for you and your baby. Your preferences help your team know what matters to you along the way.",
+      "sourceIds": [
+        "acog-sample-birth-plan"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A winding path with a few gentle forks, all leading to a glowing destination labeled 'Safe birth.' A diverse couple walks the path hand in hand. Soft blue and gold tones."
+      }
+    },
+    {
+      "id": "room-and-people",
+      "type": "content",
+      "heading": "The room and the people in it",
+      "onScreen": [
+        "Lights dimmed, a quiet room, music",
+        "Who you want with you in labor and at birth",
+        "A partner, friend, or doula for steady support",
+        "Check your hospital's rules on visitors"
+      ],
+      "narration": "Let's walk through the topics, starting with the room. Some people want the lights dimmed or the room as quiet as possible. Some bring music. Next, think about who you want with you during labor and during the birth. Many people do better with steady support from someone they trust. That might be a partner, a friend, a family member, or a doula. A doula is a trained person whose job is to support you through labor. Research links this kind of one-on-one support with better outcomes. Just check your hospital or birth center's rules on how many people can be in the room.",
+      "sourceIds": [
+        "acog-sample-birth-plan",
+        "acog-co766-limit-intervention",
+        "lamaze-healthy-birth-practices"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A softly lit birth room with dimmed lights. A South Asian laboring person leans on a birth ball while a doula rubs her back and her partner holds her hand. Warm amber and rose colors."
+      }
+    },
+    {
+      "id": "moving-eating-monitoring",
+      "type": "content",
+      "heading": "Moving, drinking, and monitoring",
+      "onScreen": [
+        "Move and change positions as you wish",
+        "Try a ball, stool, shower, or bath if available",
+        "Ask about drinking fluids and eating in labor",
+        "Ask how your baby's heartbeat will be checked"
+      ],
+      "narration": "Next, movement. Walking, swaying, and changing positions can help you cope with contractions. Movement can also help your baby settle down into your pelvis. For most people, no single position has to be required in labor. You might ask to use a birth ball, a birth stool, a squat bar, or a warm shower or bath if your birth place has them. Then, drinking and eating. You can note that you'd like to drink fluids during labor. Ask your team what you'll be able to eat. You can also ask whether you'll need an IV line hooked up to fluids, or just a small port in your vein in case it's needed. Finally, monitoring. That means checking your baby's heartbeat during labor. Ask your team how they'll do this, and how you can keep moving while it happens.",
+      "sourceIds": [
+        "acog-sample-birth-plan",
+        "acog-co766-limit-intervention",
+        "lamaze-healthy-birth-practices"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four soft round icons in pastel colors: a person swaying beside a birth ball, a shower head, a water cup, and a small heart with a sound wave for baby's heartbeat."
+      }
+    },
+    {
+      "id": "pain-relief-preview",
+      "type": "content",
+      "heading": "Pain relief: a first look",
+      "onScreen": [
+        "Comfort tools: breathing, massage, warmth, water, changing positions",
+        "Medicine options include an epidural, IV medicine, or nitrous oxide",
+        "You don't have to decide until labor",
+        "It's OK to change your mind"
+      ],
+      "narration": "Your preferences can also cover pain relief. We'll go much deeper in Module Four, so here's just a first look. There are comfort tools that don't use medicine. These include breathing and relaxation, massage, warm or cool packs, a shower or bath, and changing positions. There are also medicine options. These include an epidural, which is medicine given through a thin tube in your lower back. There's also pain medicine through an IV, and nitrous oxide, sometimes called laughing gas, where it's available. You can ask about pain relief during labor. You don't have to decide ahead of time. It's also okay to change your mind. A good step now is to ask what options your hospital or birth center offers.",
+      "sourceIds": [
+        "acog-pain-relief-faq"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Split soft-focus scene: on the left, a white pregnant woman breathes calmly while her partner presses on her lower back; on the right, a nurse of East Asian descent talks kindly with her beside a hospital bed. Muted teal and cream."
+      }
+    },
+    {
+      "id": "checkin-pain-relief",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's pause for a quick check-in.",
+      "sourceIds": [
+        "acog-pain-relief-faq"
+      ],
+      "question": {
+        "prompt": "When do you need to make a final choice about pain medicine in labor?",
+        "options": [
+          "At your 20-week visit, and you can't change it later",
+          "You don't have to decide until you're in labor, and you can change your mind",
+          "Only your care team gets to decide"
+        ],
+        "correctIndex": 1,
+        "explanation": "You don't need to decide until labor, and it's okay to change your mind. It still helps to ask at a prenatal visit which options your hospital or birth center offers, so you can think about them ahead of time."
+      }
+    },
+    {
+      "id": "pushing-and-after-birth",
+      "type": "content",
+      "heading": "Pushing and the first moments",
+      "onScreen": [
+        "Pushing: choose comfortable positions, follow your body's urges",
+        "Cord clamping: waiting at least 30 to 60 seconds for healthy babies",
+        "Skin-to-skin: baby placed on your chest",
+        "Feeding: how you plan to feed your baby"
+      ],
+      "narration": "Now let's think about pushing and the first moments after birth. For pushing, many people do well in a position they find comfortable, pushing when their body tells them to. You can write down that you'd like support from your partner while you push. Next, cord clamping. For healthy, vigorous newborns, ACOG recommends waiting at least thirty to sixty seconds before clamping the umbilical cord. This can help your baby's iron stores. Then skin-to-skin. That means your baby is placed on your bare chest right after birth, dried and covered with warm blankets. Many first checks can be done while your baby stays there. Last, feeding. Note how you plan to feed your baby, and whether you'd like to start breastfeeding soon after birth.",
+      "sourceIds": [
+        "lamaze-healthy-birth-practices",
+        "acog-co814-cord-clamping",
+        "acog-sample-birth-plan"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A Black parent reclines in a hospital bed, smiling, with a newborn resting skin-to-skin on her chest under a warm blanket. Her partner leans in close. Soft pink and warm beige tones."
+      }
+    },
+    {
+      "id": "script-vs-preferences",
+      "type": "comparison",
+      "heading": "A rigid script vs. flexible preferences",
+      "onScreen": [
+        "Preferences guide the conversation; safety guides the decisions"
+      ],
+      "narration": "Here's a side-by-side look. A rigid script says, this is exactly how it will go. Flexible preferences say, this is what matters most to me. A script can feel like a failure if things change. Preferences expect that things might change, and leave room to adjust. A script is often long and full of demands. Preferences are short and easy for a busy nurse to read. And a script can set you against your team. Preferences invite your team in, and help you make choices together.",
+      "sourceIds": [
+        "acog-sample-birth-plan",
+        "lamaze-brain"
+      ],
+      "columns": [
+        "Rigid script",
+        "Flexible preferences"
+      ],
+      "rows": [
+        [
+          "\"This is exactly how it will go\"",
+          "\"This is what matters most to me\""
+        ],
+        [
+          "Changes feel like failure",
+          "Expects that changes can happen"
+        ],
+        [
+          "Long and full of demands",
+          "Short and easy to read"
+        ],
+        [
+          "Can set you against your team",
+          "Invites your team to decide with you"
+        ]
+      ],
+      "visual": {
+        "kind": "comparison-table",
+        "description": "Two-column table. Left column in muted gray with a rigid ruler icon; right column highlighted in soft green with a flexible leaf icon."
+      }
+    },
+    {
+      "id": "prenatal-visit-video",
+      "type": "video",
+      "heading": "Talking it through at a prenatal visit",
+      "onScreen": [
+        "Bring your list to a prenatal visit",
+        "Go over it well before your due date",
+        "Ask what your birth place offers"
+      ],
+      "narration": "The best time to share your preferences is at a prenatal visit, well before your due date. That gives you time to ask questions and learn what your hospital or birth center offers. Watch this short example.",
+      "sourceIds": [
+        "acog-sample-birth-plan",
+        "acog-pain-relief-faq"
+      ],
+      "video": {
+        "brief": "A pregnant person and her support partner sit with a midwife in an exam room at about 30 weeks. She hands over a one-page list and says, 'These are my top three wishes.' The midwife reads it, nods, and explains which items the hospital offers, like a birth ball and a shower, and asks about pain relief options she'd like to learn about. The partner writes down one follow-up question. No clinical numbers stated. Ends with the on-screen line 'Your list starts the conversation.' Diverse cast, warm lighting.",
+        "maxSeconds": 60
+      }
+    },
+    {
+      "id": "when-things-change",
+      "type": "content",
+      "heading": "When things change, safety comes first",
+      "onScreen": [
+        "Labor doesn't always follow the plan",
+        "Your team may suggest a change for your health or your baby's",
+        "You can still ask questions and share what matters to you"
+      ],
+      "narration": "Sometimes labor takes a turn you didn't expect. Your care team may suggest a change to keep you or your baby safe. That's okay. It doesn't mean you did anything wrong. Remember, you and your team share the same goal: a safe birth. Even when plans change, some of your wishes may still be possible. For example, your preferences can name who you'd like with you if you need a cesarean birth, and who should hold your baby if you can't right away. And you can still ask questions. Let's look at some questions that help.",
+      "sourceIds": [
+        "acog-sample-birth-plan",
+        "acog-co766-limit-intervention"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A calm obstetrician of Middle Eastern descent kneels at eye level beside a laboring person, explaining something gently while the partner listens. Soft blue and lilac tones, reassuring mood."
+      }
+    },
+    {
+      "id": "shared-decisions",
+      "type": "content",
+      "heading": "Questions for shared decisions",
+      "onScreen": [
+        "Benefits: How could this help me or my baby?",
+        "Risks: How could it cause harm?",
+        "Alternatives: What other choices are there?",
+        "Intuition: What does my gut say?",
+        "Nothing: What if we wait, or do nothing right now?"
+      ],
+      "narration": "Shared decision-making means you and your care team make choices together. Lamaze teaches an easy way to remember the questions. It spells the word BRAIN. B is for benefits. How could this help me or my baby? R is for risks. How could it cause harm? A is for alternatives. What other choices do we have, and what are their benefits and risks? I is for intuition. What is my gut telling me? And N is for nothing. What would happen if we wait, or do nothing right now? These questions give you time to understand your options. Asking ahead of time, at a prenatal visit, gives you the most time to think.",
+      "sourceIds": [
+        "lamaze-brain",
+        "acog-co766-limit-intervention"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "The letters B-R-A-I-N stacked vertically, each beside a small soft icon: a heart (benefits), a caution sign (risks), forked arrows (alternatives), a lightbulb (intuition), and an hourglass (nothing, or wait). Pastel palette."
+      }
+    },
+    {
+      "id": "checkin-brain",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's try one together.",
+      "sourceIds": [
+        "lamaze-brain"
+      ],
+      "question": {
+        "prompt": "Your care team suggests a procedure during labor, and there's no emergency. Which question asks about the \"N\" in BRAIN?",
+        "options": [
+          "\"How could this help my baby?\"",
+          "\"What would happen if we wait, or do nothing right now?\"",
+          "\"What other choices do we have?\""
+        ],
+        "correctIndex": 1,
+        "explanation": "N stands for nothing: what happens if we wait or do nothing for now? The other questions match B for benefits and A for alternatives. Asking all five helps you and your team decide together."
+      }
+    },
+    {
+      "id": "your-preferences",
+      "type": "reflection",
+      "heading": "Your top three",
+      "onScreen": [
+        "Pick your three most important wishes",
+        "Add one question for your next prenatal visit"
+      ],
+      "narration": "Now it's your turn. Think about everything we covered: the room, the people, moving, pain relief, pushing, and those first moments with your baby. Which three things matter most to you? Write them down. Then add one question to ask your care team at your next prenatal visit. It could be about what your birth place offers, or how they handle something on your list. We'll save it in your Birth Readiness Brief, so you can bring it with you.",
+      "sourceIds": [
+        "acog-sample-birth-plan"
+      ],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "List your top three birth preferences. Then write one question to ask your care team at your next prenatal visit."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Preferences are wishes, not a script",
+        "Cover the room, people, movement, pain relief, pushing, and after birth",
+        "Go over them at a prenatal visit, well before your due date",
+        "Plans can change; safety comes first",
+        "Use BRAIN to decide together"
+      ],
+      "narration": "Great work. Let's recap. Birth preferences are your wishes, not a script. They can cover the room, the people with you, moving and drinking, pain relief, pushing, and those first moments with your baby. Go over them with your care team at a prenatal visit, well before your due date. Remember that plans can change, and safety comes first. And when a choice comes up, use BRAIN to decide together. Next, a few review questions. And remember, you can tap Ask a Question anytime.",
+      "sourceIds": [
+        "acog-sample-birth-plan",
+        "lamaze-brain"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "Why does this course call them birth preferences instead of a birth plan?",
+      "options": [
+        "Because hospitals don't allow written plans",
+        "Because a list can't guarantee how labor will go, so it helps to stay flexible",
+        "Because preferences are only for people having a cesarean birth"
+      ],
+      "correctIndex": 1,
+      "explanation": "A written list is a great starting point, but unexpected things can happen. Calling them preferences reminds you to stay flexible while sharing what matters most to you."
+    },
+    {
+      "prompt": "When is the best time to go over your birth preferences with your care team?",
+      "options": [
+        "At a prenatal visit, well before your due date",
+        "When you're pushing",
+        "After your baby is born"
+      ],
+      "correctIndex": 0,
+      "explanation": "Going over your list at a prenatal visit, well before your due date, gives you time to ask questions and learn what your birth place offers."
+    },
+    {
+      "prompt": "In BRAIN, what does the letter A stand for?",
+      "options": [
+        "Anesthesia",
+        "Alternatives: what other choices do we have?",
+        "Admission to the hospital"
+      ],
+      "correctIndex": 1,
+      "explanation": "A stands for alternatives. Asking about other choices, and their benefits and risks, helps you and your care team make decisions together."
+    }
+  ],
+  "nextLessonId": "getting-ready-bags-routes-car-seat"
+}
