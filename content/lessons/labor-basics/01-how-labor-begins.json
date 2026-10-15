@@ -1,0 +1,360 @@
+{
+  "courseId": "labor-basics",
+  "lessonId": "how-labor-begins",
+  "order": 1,
+  "title": "How Labor Begins",
+  "learningGoals": [
+    "Know when labor usually starts and what preterm and early term mean",
+    "Recognize signs that labor may be getting close",
+    "Tell the difference between practice contractions and labor contractions",
+    "Know what to do if your water breaks",
+    "Know your own care team's instructions for when to call"
+  ],
+  "estimatedMinutes": 12,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Pilot lesson. Reviewer: confirm each source page is live and supports its slides, then set verifiedOn dates."
+  },
+  "sources": [
+    {
+      "id": "acog-labor-begins",
+      "organization": "ACOG",
+      "title": "How to Tell When Labor Begins (FAQ004)",
+      "url": "https://www.acog.org/womens-health/faqs/how-to-tell-when-labor-begins",
+      "verifiedOn": null
+    },
+    {
+      "id": "nichd-start-of-labor",
+      "organization": "NICHD",
+      "title": "When does labor usually start?",
+      "url": "https://www.nichd.nih.gov/health/topics/labor-delivery/topicinfo/Pages/start-of-labor.aspx",
+      "verifiedOn": "2026-10-12"
+    },
+    {
+      "id": "aafp-know-in-labor",
+      "organization": "AAFP",
+      "title": "How Do I Know I'm in Labor? (familydoctor.org)",
+      "url": "https://familydoctor.org/how-do-i-know-im-in-labor/",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-hear-her-warning-signs",
+      "organization": "CDC",
+      "title": "Hear Her: Urgent Maternal Warning Signs",
+      "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "How Labor Begins",
+      "onScreen": [
+        "Labor Basics · Lesson 1",
+        "About 12 minutes"
+      ],
+      "narration": "Welcome to Labor Basics. I'm so glad you're here. In this first lesson, we'll talk about how labor begins. We'll cover when labor usually starts, the early signs your body may give you, how to tell practice contractions from the real thing, and what to do if your water breaks. If you have a support person, this is a great lesson to watch together. Let's get started.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "Warm, calm scene of a pregnant person and support partner sitting together on a couch, looking at a tablet. Diverse, soft colors."
+      }
+    },
+    {
+      "id": "when-labor-starts",
+      "type": "content",
+      "heading": "When does labor usually start?",
+      "onScreen": [
+        "Most people go into labor between 37 and 42 weeks",
+        "Before 37 weeks = preterm",
+        "37–38 weeks = early term",
+        "Your due date is an estimate, not a deadline"
+      ],
+      "narration": "Your due date is set at 40 weeks, but it's really a best guess. Most people go into labor somewhere between 37 and 42 weeks. Labor that starts before 37 weeks is called preterm, and it's important to call your care team right away if that happens. Babies born at 37 or 38 weeks are called early term, because they're still doing some important growing. Unless there's a medical reason to deliver sooner, waiting until at least 39 weeks gives babies the best chance for a healthy start.",
+      "sourceIds": [
+        "nichd-start-of-labor"
+      ],
+      "visual": {
+        "kind": "diagram",
+        "description": "Horizontal timeline from 34 to 42 weeks. Shaded zones labeled Preterm (before 37), Early term (37–38), Full term (39–40), Late term (41–42). Marker at 40 weeks labeled Due date."
+      }
+    },
+    {
+      "id": "every-labor-different",
+      "type": "content",
+      "heading": "Every labor is different",
+      "onScreen": [
+        "Signs, timing, and length vary from person to person",
+        "They can even differ between your own pregnancies"
+      ],
+      "narration": "Here's something worth remembering throughout this course: every labor is different. How it starts, what the first signs feel like, and how long it lasts all vary from person to person, and even from one pregnancy to the next. So if a friend's story doesn't match yours, that's normal. What we're building here is your awareness, so you can notice changes and know who to call.",
+      "sourceIds": [
+        "nichd-start-of-labor",
+        "acog-labor-begins"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Three different winding paths leading to the same destination, suggesting different journeys."
+      }
+    },
+    {
+      "id": "signs-labor-close",
+      "type": "content",
+      "heading": "Signs labor may be getting close",
+      "onScreen": [
+        "Baby \"drops\" lower in your belly",
+        "More vaginal discharge, sometimes pink or slightly bloody (\"bloody show\")",
+        "These can happen days or weeks before labor"
+      ],
+      "narration": "In the last weeks of pregnancy, your body may start giving you hints. One is called lightening. That's when your baby drops lower into your pelvis. You might find it easier to breathe, but you may also need to pee more often. Not every baby drops before labor, so don't worry if you don't notice it. Another sign is more vaginal discharge. It may be clear, pink, or slightly bloody, and it's sometimes called the bloody show. It happens as your cervix starts to open. Both of these signs can show up days, or even weeks, before labor actually starts.",
+      "sourceIds": [
+        "nichd-start-of-labor",
+        "acog-labor-begins"
+      ],
+      "visual": {
+        "kind": "diagram",
+        "description": "Side-by-side simple anatomical silhouettes showing baby's position before and after dropping into the pelvis."
+      }
+    },
+    {
+      "id": "checkin-bloody-show",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's pause for a quick check-in.",
+      "sourceIds": [
+        "nichd-start-of-labor"
+      ],
+      "question": {
+        "prompt": "You notice some pink-tinged mucus discharge at 38 weeks. What's most likely true?",
+        "options": [
+          "Your baby will be born within the hour",
+          "It's a sign labor may be getting closer, possibly days away",
+          "Something is definitely wrong"
+        ],
+        "correctIndex": 1,
+        "explanation": "Bloody show is a common sign that your cervix is starting to change. Labor could still be days away. Heavier bleeding, like a period or more, is different. Call your care team right away if that happens."
+      }
+    },
+    {
+      "id": "what-is-a-contraction",
+      "type": "content",
+      "heading": "What is a contraction?",
+      "onScreen": [
+        "Your uterus tightens, then relaxes",
+        "Your belly may feel hard during one",
+        "Practice contractions (Braxton Hicks) are common before labor"
+      ],
+      "narration": "A contraction is your uterus, which is a strong muscle, tightening and then relaxing. During one, your belly may feel hard to the touch. Afterward, it softens again. Many people feel practice contractions, called Braxton Hicks contractions, in the weeks before labor. These can be uncomfortable, and sometimes even painful, but they don't open the cervix. They're sometimes called false labor. The tricky part is that early labor contractions can feel similar at first. So let's look at how to tell them apart.",
+      "sourceIds": [
+        "acog-labor-begins",
+        "aafp-know-in-labor"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Simple wave graphic showing a contraction building, peaking, and easing, with a resting gap before the next wave."
+      }
+    },
+    {
+      "id": "true-vs-false",
+      "type": "comparison",
+      "heading": "Practice contractions vs. labor contractions",
+      "onScreen": [
+        "Labor contractions keep coming, get closer, and get stronger"
+      ],
+      "narration": "Here's a side-by-side comparison. Labor contractions come at regular intervals and get closer together over time. Practice contractions tend to be irregular and don't settle into a pattern. Labor contractions keep going even when you rest, walk, or change positions. Practice contractions often fade when you move around or rest. Labor contractions get steadily stronger. Practice contractions usually stay weak or fade. And labor contractions often start in the back and wrap around to the front, while practice contractions are usually felt just in the front. These are helpful guides, not hard rules. Sometimes the only way to know for sure is for your care team to check your cervix. If you're unsure, call.",
+      "sourceIds": [
+        "acog-labor-begins",
+        "aafp-know-in-labor"
+      ],
+      "columns": [
+        "Practice (Braxton Hicks)",
+        "Labor"
+      ],
+      "rows": [
+        [
+          "Irregular, no clear pattern",
+          "Regular, and closer together over time"
+        ],
+        [
+          "Often stop when you rest or move",
+          "Keep going when you rest or move"
+        ],
+        [
+          "Usually stay weak",
+          "Steadily get stronger"
+        ],
+        [
+          "Usually felt in the front",
+          "Often start in the back and move to the front"
+        ]
+      ],
+      "visual": {
+        "kind": "comparison-table",
+        "description": "Two-column table with soft color coding; left column muted, right column highlighted."
+      }
+    },
+    {
+      "id": "timing-contractions-video",
+      "type": "video",
+      "heading": "How to time contractions",
+      "onScreen": [
+        "How often: start of one → start of the next",
+        "How long: start → end of one contraction"
+      ],
+      "narration": "Timing your contractions helps you and your care team understand what's happening. There are two things to track. How long each contraction lasts, measured from when it starts to when it ends. And how often they come, measured from the start of one contraction to the start of the next. Watch this short demonstration.",
+      "sourceIds": [
+        "acog-labor-begins"
+      ],
+      "video": {
+        "brief": "Instructor demonstrates timing three contractions with a phone stopwatch and writing them down. On-screen graphic shows the two measurements. A support partner models recording the times. No clinical thresholds stated; ends with 'Share these times with your care team when you call.'",
+        "maxSeconds": 90
+      }
+    },
+    {
+      "id": "checkin-timing",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's make sure that one stuck.",
+      "sourceIds": [
+        "acog-labor-begins"
+      ],
+      "question": {
+        "prompt": "A contraction starts at 2:00, ends at 2:01, and the next one starts at 2:06. How far apart are they?",
+        "options": [
+          "5 minutes",
+          "6 minutes",
+          "1 minute"
+        ],
+        "correctIndex": 1,
+        "explanation": "Measure from the start of one contraction to the start of the next: 2:00 to 2:06 is 6 minutes apart. Each one lasts about 1 minute."
+      }
+    },
+    {
+      "id": "water-breaking",
+      "type": "content",
+      "heading": "If your water breaks",
+      "onScreen": [
+        "It may be a big gush or a slow trickle",
+        "It can happen before or during labor",
+        "Call your care team, even without contractions",
+        "Note the time and what the fluid looks like"
+      ],
+      "narration": "Your baby is surrounded by a sac of fluid called the amniotic sac. When that sac breaks, we call it your water breaking. In movies it's always a dramatic gush, but in real life it can also be a slow, steady trickle that's easy to confuse with urine or discharge. It can happen before labor starts or during labor. Either way, call your care team when it happens, even if you aren't having contractions. It helps to note what time it happened and what the fluid looks like, for example, clear, greenish, brownish, or bloody, because your team will likely ask.",
+      "sourceIds": [
+        "acog-labor-begins"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Three simple icons: a clock (note the time), a droplet (note the color), a phone (call your care team)."
+      }
+    },
+    {
+      "id": "your-call-plan",
+      "type": "reflection",
+      "heading": "Your care team's instructions",
+      "onScreen": [
+        "Ask: When do you want me to call?",
+        "Ask: When should I come in, and where?",
+        "Save the daytime and after-hours numbers"
+      ],
+      "narration": "Here's one of the most important things you can do before labor: ask your own care team exactly when they want you to call and when they want you to come in. Many practices give a guideline based on how far apart and how long your contractions are. But the right instructions for you can depend on things like whether this is your first baby, how far you live from your birth place, and your health history. Write down what they tell you, along with their daytime and after-hours numbers. You can save it right here in your Birth Readiness Brief.",
+      "sourceIds": [
+        "acog-labor-begins",
+        "aafp-know-in-labor"
+      ],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "What did your care team tell you about when to call and when to come in? Add their phone numbers too."
+    },
+    {
+      "id": "preterm-signs",
+      "type": "safety",
+      "heading": "Before 37 weeks: call right away",
+      "onScreen": [
+        "Contractions every 10 minutes or more often",
+        "Change in vaginal discharge, spotting, or bleeding",
+        "Pressure in the pelvis or rectum",
+        "Low, dull backache",
+        "Cramps, with or without diarrhea"
+      ],
+      "narration": "If you notice signs of labor before 37 weeks, don't wait to see if they go away. Call your care team right away. Signs include contractions every 10 minutes or more often, a change in your vaginal discharge, spotting or bleeding, pressure in your pelvis or rectum, a low, dull backache, or cramps, with or without diarrhea. Your care team can check what's happening and, if needed, give specialized care.",
+      "sourceIds": [
+        "nichd-start-of-labor"
+      ]
+    },
+    {
+      "id": "urgent-warning-signs",
+      "type": "safety",
+      "heading": "Don't wait: get help right away",
+      "onScreen": [
+        "Vaginal bleeding or fluid leaking",
+        "Baby moving less or stopped moving",
+        "Severe headache that won't go away, or vision changes",
+        "Severe belly pain that doesn't go away",
+        "Trouble breathing, chest pain, or a racing heart",
+        "Fever of 100.4°F or higher",
+        "Extreme swelling of hands or face",
+        "If it feels like an emergency, call 911"
+      ],
+      "narration": "Finally, some symptoms need attention right away, at any point in pregnancy. These include vaginal bleeding or fluid leaking, your baby moving less or stopping moving, a severe headache that won't go away or changes in your vision, severe belly pain that doesn't go away, trouble breathing, chest pain, or a racing heart, a fever of 100.4 degrees or higher, or extreme swelling of your hands or face. If you have any of these, contact your care team immediately. If it feels like an emergency, call 911. Trust yourself. You know your body, and it's always okay to call.",
+      "sourceIds": [
+        "cdc-hear-her-warning-signs"
+      ]
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Labor usually starts between 37 and 42 weeks",
+        "Early signs can come days or weeks ahead",
+        "Labor contractions: regular, closer, stronger",
+        "Water breaks → call your care team",
+        "Know your team's instructions before you need them"
+      ],
+      "narration": "Great work. Let's recap. Labor usually starts between 37 and 42 weeks, and signs like your baby dropping or bloody show can come days or weeks ahead. Labor contractions come regularly, get closer together, and get stronger, even when you rest. If your water breaks, call your care team. And the most important step: know your own team's instructions before you need them. Next, a few review questions. And remember, you can tap Ask a Question anytime.",
+      "sourceIds": [
+        "nichd-start-of-labor",
+        "acog-labor-begins"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "Labor that starts before which week of pregnancy is considered preterm?",
+      "options": [
+        "35 weeks",
+        "37 weeks",
+        "40 weeks"
+      ],
+      "correctIndex": 1,
+      "explanation": "Labor before 37 weeks is preterm. If you notice signs of labor before 37 weeks, call your care team right away."
+    },
+    {
+      "prompt": "Which is more likely to be labor rather than practice contractions?",
+      "options": [
+        "Contractions that stop when you lie down and rest",
+        "Contractions that keep coming, get closer together, and get stronger",
+        "Occasional tightening that comes and goes with no pattern"
+      ],
+      "correctIndex": 1,
+      "explanation": "Labor contractions follow a pattern, keep going whether you rest or move, and steadily get stronger."
+    },
+    {
+      "prompt": "Your water breaks at 39 weeks, but you aren't having contractions. What should you do?",
+      "options": [
+        "Wait until contractions start before calling",
+        "Call your care team and note the time and what the fluid looks like",
+        "Nothing; it doesn't matter without contractions"
+      ],
+      "correctIndex": 1,
+      "explanation": "Call your care team when your water breaks, even without contractions. Noting the time and the fluid's color helps them advise you."
+    }
+  ],
+  "nextLessonId": "when-to-contact-your-care-team"
+}

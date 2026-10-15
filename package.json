@@ -9,6 +9,7 @@
     "expo-print": "~57.0.1",
     "expo-secure-store": "^57.0.1",
     "expo-sharing": "~57.0.8",
+    "expo-speech": "~57.0.3",
     "expo-status-bar": "~57.0.1",
     "firebase": "^12.17.1",
     "qrcode-generator": "^2.0.4",
@@ -49,7 +50,8 @@
     "stage:preparing-for-labor-sources": "node scripts/stage-preparing-for-labor-sources.mjs",
     "migrate:first-trimester-content-order": "node scripts/assign-first-trimester-content-order.mjs",
     "check:media-intake-worker": "npm --prefix services/media-intake-worker run check",
-    "deploy:media-intake-worker": "node scripts/deploy-media-intake-worker.mjs"
+    "deploy:media-intake-worker": "node scripts/deploy-media-intake-worker.mjs",
+    "test:lessons": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/lessons.test.mjs"
   },
   "private": true
 }

@@ -1,0 +1,312 @@
+{
+  "courseId": "labor-basics",
+  "lessonId": "early-labor-at-home",
+  "order": 4,
+  "title": "Early Labor at Home",
+  "learningGoals": [
+    "Understand why many people spend early labor at home",
+    "Balance rest and gentle activity",
+    "Know your care team's guidance on eating and drinking",
+    "Track labor without exhausting yourself",
+    "Make a personal early labor plan with your support person"
+  ],
+  "estimatedMinutes": 10,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Reviewer: eating and drinking guidance differs between ACOG/ASA (clear liquids once admitted) and ACNM/Lamaze (light food in low-risk labor). The lesson presents both and points learners to their own team. Bath guidance after water breaks also varies; lesson defers to the care team."
+  },
+  "sources": [
+    {
+      "id": "acog-co766",
+      "organization": "ACOG",
+      "title": "Approaches to Limit Intervention During Labor and Birth (Committee Opinion No. 766)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2019/02/approaches-to-limit-intervention-during-labor-and-birth",
+      "verifiedOn": null
+    },
+    {
+      "id": "acnm-am-i-in-labor",
+      "organization": "ACNM",
+      "title": "Am I in Labor? (Discover Midwives)",
+      "url": "https://discovermidwives.midwife.org/am-i-in-labor/",
+      "verifiedOn": "2026-10-14"
+    },
+    {
+      "id": "lamaze-eating-drinking",
+      "organization": "Lamaze",
+      "title": "Eating and Drinking in Labor Should Not Be Restricted (Connecting the Dots)",
+      "url": "https://lamaze.org/Connecting-the-Dots/time-for-acog-and-asa-to-change-their-guidelines-eating-and-drinking-in-labor-should-not-be-restricted",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-hear-her-warning-signs",
+      "organization": "CDC",
+      "title": "Hear Her: Urgent Maternal Warning Signs",
+      "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Early Labor at Home",
+      "onScreen": ["Labor Basics · Lesson 4", "About 10 minutes"],
+      "narration": "Welcome back. In the last lesson, you learned that early labor is often the longest part of labor. So what do you actually do during all those hours? That's what this lesson is about: how to rest, eat, stay comfortable, and keep track of things at home, so you arrive at active labor with energy to spare.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "Warm living room in the evening: pregnant person in comfortable clothes on a couch with a mug, partner bringing a blanket."
+      }
+    },
+    {
+      "id": "why-home",
+      "type": "content",
+      "heading": "Why many people stay home in early labor",
+      "onScreen": [
+        "Early labor can last many hours",
+        "Familiar surroundings help you relax",
+        "If you and baby are well, going in can usually wait",
+        "You can still go in early if you need to"
+      ],
+      "narration": "If you and your baby are doing well, many care teams suggest spending early labor at home. Early labor can last many hours, and home is where you can rest, eat, move freely, and relax in familiar surroundings. ACOG notes that hospital admission can usually wait during early labor when everything looks reassuring. But that's never a rule you have to tough out. If you're exhausted, the pain is hard to manage, or you just feel you need to be checked, you can always call and go in.",
+      "sourceIds": ["acog-co766"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Split image: left side cozy bedroom with soft lamp, right side car keys and hospital bag by the door, ready when needed."
+      }
+    },
+    {
+      "id": "rest-and-move",
+      "type": "content",
+      "heading": "Rest, then move, then rest again",
+      "onScreen": [
+        "At night: try to sleep or rest between contractions",
+        "In the day: gentle activity like walking or a shower",
+        "Alternate, and follow what feels right",
+        "Save your energy for active labor"
+      ],
+      "narration": "One of the best things you can do in early labor is protect your energy. If labor starts at night, try to sleep or at least rest between contractions, even if you feel excited. During the day, gentle activity can help you feel better and pass the time. Take a walk, take a warm shower, or sway on a birth ball. Then rest again. There's no need to keep busy every minute, and no need to stay in bed if moving feels better. Follow what your body tells you.",
+      "sourceIds": ["acog-co766"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Three icons in a loop: a moon and pillow (rest), walking shoes (move), a shower head (comfort), with arrows connecting them in a circle."
+      }
+    },
+    {
+      "id": "eat-drink",
+      "type": "content",
+      "heading": "Eating and drinking",
+      "onScreen": [
+        "Drink fluids regularly; sip water or clear drinks",
+        "Many care teams suggest light snacks in early labor",
+        "Hospital food policies vary, so ask ahead",
+        "Nausea is common later; listen to your body"
+      ],
+      "narration": "Labor is hard work, and your body needs fuel. Drink fluids regularly, like water, clear juice, or a sports drink. Many care teams, especially midwives, encourage light, easy-to-digest snacks in early labor, like toast, yogurt, soup, or fruit. Guidance differs once you're admitted. Some hospitals allow food, and others limit you to clear liquids. That's why it's worth asking your care team about their policy before labor starts. Later in labor, many people lose their appetite or feel nauseous, and that's normal too.",
+      "sourceIds": ["lamaze-eating-drinking", "acog-co766"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Kitchen counter with simple snacks: toast, banana, yogurt, a water bottle with a straw, and a sports drink."
+      }
+    },
+    {
+      "id": "checkin-night",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": ["acog-co766"],
+      "question": {
+        "prompt": "It's 11 PM. Early labor contractions started an hour ago, about 10 minutes apart and manageable. What's the best move?",
+        "options": [
+          "Stay up all night timing every contraction",
+          "Try to rest or sleep between contractions",
+          "Go for a long run to speed things up"
+        ],
+        "correctIndex": 1,
+        "explanation": "Early labor at night is a great time to rest. You'll want that energy later. If anything changes or you're unsure, call your care team."
+      }
+    },
+    {
+      "id": "comfort-tools",
+      "type": "content",
+      "heading": "Comfort at home",
+      "onScreen": [
+        "Warm shower or bath",
+        "Slow breathing through each contraction",
+        "Massage and counterpressure",
+        "Distraction: a movie, music, a short walk"
+      ],
+      "narration": "Home is full of comfort tools. A warm shower can ease aches and help you relax. A bath can help too, but if your water has broken, ask your care team first, since guidance varies. Slow, steady breathing through each contraction helps you stay calm. Your support person can massage your shoulders or press on your lower back. And distraction is a real tool in early labor. Watch a movie, play music, bake something simple, or take a short walk. You'll practice these skills in Module 3.",
+      "sourceIds": ["acog-co766"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Support person pressing palms into the laboring person's lower back as they lean against a kitchen counter, music playing from a phone."
+      }
+    },
+    {
+      "id": "tracking",
+      "type": "content",
+      "heading": "Keeping track, without wearing yourself out",
+      "onScreen": [
+        "Time a few contractions in a row, now and then",
+        "No need to time every single one",
+        "Note if your water breaks: time and color",
+        "Notice your baby's movements"
+      ],
+      "narration": "You'll want to know how labor is progressing, but timing every single contraction for hours can be exhausting. Instead, time a few in a row every so often, or when they seem to change. Your support person can take this job. A simple app or a note on paper works fine. Also keep an eye on two other things: whether your water breaks, along with the time and color, and whether your baby is still moving normally.",
+      "sourceIds": ["acnm-am-i-in-labor"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Phone screen showing a simple contraction log with start times and durations, held by a support person."
+      }
+    },
+    {
+      "id": "early-labor-video",
+      "type": "video",
+      "heading": "A calm early labor at home",
+      "onScreen": ["Notice the rhythm: rest, comfort, check in"],
+      "narration": "Here's a short look at what early labor at home can look like.",
+      "sourceIds": ["acog-co766"],
+      "video": {
+        "brief": "Real-family style montage over a few hours: couple watching a movie through contractions, a warm shower, eating toast, partner timing three contractions on an app, a nap, then a calm call to the care team. Narration-free with soft music and short captions. No clinical thresholds shown.",
+        "maxSeconds": 90
+      }
+    },
+    {
+      "id": "support-at-home",
+      "type": "comparison",
+      "heading": "Support person: your early labor jobs",
+      "onScreen": ["Protect rest, handle logistics, stay calm"],
+      "narration": "Support people, early labor is where you shine. Your jobs: protect rest by keeping the house quiet and visitors away. Offer drinks and snacks often. Time contractions now and then, so the laboring person doesn't have to. Get the car, bags, and car seat ready. And stay calm and encouraging. Your calm is contagious.",
+      "sourceIds": ["acog-co766"],
+      "columns": ["Job", "What it looks like"],
+      "rows": [
+        ["Protect rest", "Dim lights, quiet house, hold off visitors"],
+        ["Fuel", "Offer water and snacks every so often"],
+        ["Track", "Time a few contractions now and then"],
+        ["Logistics", "Bags, car, car seat, care team's number"],
+        ["Calm", "Steady voice, reassurance, patience"]
+      ],
+      "visual": {
+        "kind": "comparison-table",
+        "description": "Two-column checklist-style table."
+      }
+    },
+    {
+      "id": "when-to-leave",
+      "type": "content",
+      "heading": "When it's time to go",
+      "onScreen": [
+        "Contractions reach your care team's pattern",
+        "Your care team tells you to come in",
+        "You feel you need to be checked",
+        "Leave time for travel and traffic"
+      ],
+      "narration": "So when do you leave home? Call your care team when contractions reach the pattern they gave you, and they'll tell you when to come in. It's also okay to go in because you feel you need to. Your instincts count. And plan for the trip. If you live far away or traffic is heavy, your care team may want you to leave sooner. Remember the car seat, so you're ready to bring your baby home.",
+      "sourceIds": ["acnm-am-i-in-labor", "acog-co766"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Couple walking to the car at dawn with a hospital bag and an installed infant car seat visible in the back seat."
+      }
+    },
+    {
+      "id": "call-now",
+      "type": "safety",
+      "heading": "Don't wait at home: call right away",
+      "onScreen": [
+        "Your water breaks",
+        "Bleeding beyond light pink or brown mucus",
+        "Your baby is moving less, or not at all",
+        "Constant, severe pain or pain that doesn't ease between contractions",
+        "Fever, severe headache, or vision changes",
+        "If it feels like an emergency, call 911"
+      ],
+      "narration": "Staying home in early labor is only for when things are going well. Call your care team right away if your water breaks, if you have bleeding beyond light pink or brown mucus, if your baby is moving less or not at all, if you have constant severe pain or pain that doesn't ease between contractions, or if you have a fever, a severe headache, or vision changes. If it feels like an emergency, call 911.",
+      "sourceIds": ["acnm-am-i-in-labor", "cdc-hear-her-warning-signs"]
+    },
+    {
+      "id": "early-labor-plan",
+      "type": "reflection",
+      "heading": "Your early labor plan",
+      "onScreen": [
+        "Ways you'll rest, and ways you'll stay comfortable",
+        "Snacks and drinks to have on hand",
+        "Who times contractions and who drives",
+        "How long the trip takes, day and night"
+      ],
+      "narration": "Let's put this together into your early labor plan. Write down how you'll rest and stay comfortable, what snacks and drinks you'll keep on hand, who will time contractions and who will drive, and how long it takes to get to your birth place, both at rush hour and in the middle of the night. It'll be saved in your Birth Readiness Brief.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write your rest and comfort ideas, snacks and drinks, who times and who drives, and your travel time day and night."
+    },
+    {
+      "id": "checkin-trip",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "One more check-in.",
+      "sourceIds": ["acnm-am-i-in-labor"],
+      "question": {
+        "prompt": "You live an hour from your hospital. What's the smartest thing to do before labor starts?",
+        "options": [
+          "Nothing; you'll figure it out on the day",
+          "Ask your care team whether they'd like you to call or leave earlier",
+          "Plan to go in at the very first contraction no matter what"
+        ],
+        "correctIndex": 1,
+        "explanation": "Distance matters. Your care team may want you to call or leave earlier than usual, so ask them during a prenatal visit and add it to your plan."
+      }
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Early labor at home works well when you and baby are doing well",
+        "Rest, move gently, and rest again",
+        "Drink regularly; ask about eating policies ahead of time",
+        "Time a few contractions now and then",
+        "Call right away for warning signs"
+      ],
+      "narration": "Let's recap. When you and your baby are doing well, early labor at home lets you rest and relax in familiar surroundings. Alternate rest with gentle activity, drink regularly, and ask your care team about eating before labor begins. Time a few contractions now and then rather than every one. And call right away for any warning signs. Next, a few review questions.",
+      "sourceIds": ["acog-co766", "acnm-am-i-in-labor"]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "Why do many care teams suggest spending early labor at home when everything looks well?",
+      "options": [
+        "Hospitals don't allow early labor patients",
+        "Early labor is often long, and home makes it easier to rest and relax",
+        "Early labor doesn't count as real labor"
+      ],
+      "correctIndex": 1,
+      "explanation": "Early labor can last many hours. At home, you can rest, eat, and move freely. You can still go in anytime you need to."
+    },
+    {
+      "prompt": "What's a good approach to timing contractions in early labor?",
+      "options": [
+        "Time every contraction for as long as labor lasts",
+        "Never time them",
+        "Time a few in a row every so often, or when they change"
+      ],
+      "correctIndex": 2,
+      "explanation": "Timing a few in a row now and then gives you the information you need without wearing you out."
+    },
+    {
+      "prompt": "You're in early labor at home and notice your baby is moving much less than usual. What should you do?",
+      "options": [
+        "Call your care team right away",
+        "Wait to see if it changes by morning",
+        "Eat something and check again in a few hours"
+      ],
+      "correctIndex": 0,
+      "explanation": "A change in your baby's movement is always a reason to call right away, at any stage of labor."
+    }
+  ],
+  "nextLessonId": "pushing-and-birth"
+}

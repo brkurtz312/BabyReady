@@ -1,0 +1,319 @@
+{
+  "courseId": "labor-basics",
+  "lessonId": "stages-of-labor",
+  "order": 3,
+  "title": "The Stages of Labor",
+  "learningGoals": [
+    "Name the three stages of labor and what each one accomplishes",
+    "Understand how the cervix thins and opens",
+    "Tell early labor from active labor and transition",
+    "Know what support helps most in each stage",
+    "Know which symptoms need a call at any stage"
+  ],
+  "estimatedMinutes": 15,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Reviewer: active labor is defined at about 6 cm per ACOG Clinical Practice Guideline No. 8 (WHO uses 5 cm); the lesson says 'around 6' to stay accurate for both. Durations are intentionally broad. Transition signs and support tips are standard childbirth-education content; confirm against Lamaze materials."
+  },
+  "sources": [
+    {
+      "id": "acog-cpg8-labor",
+      "organization": "ACOG",
+      "title": "First and Second Stage Labor Management (Clinical Practice Guideline No. 8)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2024/01/first-and-second-stage-labor-management",
+      "verifiedOn": null
+    },
+    {
+      "id": "nichd-start-of-labor",
+      "organization": "NICHD",
+      "title": "When does labor usually start?",
+      "url": "https://www.nichd.nih.gov/health/topics/labor-delivery/topicinfo/Pages/start-of-labor.aspx",
+      "verifiedOn": "2026-10-12"
+    },
+    {
+      "id": "acnm-am-i-in-labor",
+      "organization": "ACNM",
+      "title": "Am I in Labor? (Discover Midwives)",
+      "url": "https://discovermidwives.midwife.org/am-i-in-labor/",
+      "verifiedOn": "2026-10-14"
+    },
+    {
+      "id": "cdc-hear-her-warning-signs",
+      "organization": "CDC",
+      "title": "Hear Her: Urgent Maternal Warning Signs",
+      "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "The Stages of Labor",
+      "onScreen": ["Labor Basics · Lesson 3", "About 15 minutes"],
+      "narration": "Welcome back. So far, we've talked about how labor begins and when to call your care team. Now let's look at the whole journey, from the first contractions to the moment you hold your baby. Knowing the map ahead of time makes labor feel less like a mystery and more like a path you can follow, one step at a time.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A gentle winding path with three soft landmarks along it, ending at a parent holding a newborn."
+      }
+    },
+    {
+      "id": "three-stages",
+      "type": "content",
+      "heading": "Three stages, one journey",
+      "onScreen": [
+        "Stage 1: your cervix opens",
+        "Stage 2: you push, and your baby is born",
+        "Stage 3: the placenta is delivered"
+      ],
+      "narration": "Labor happens in three stages. In the first stage, contractions gradually thin and open your cervix. This is usually the longest stage by far. In the second stage, your cervix is fully open, and you push your baby out. In the third stage, after your baby is born, your body delivers the placenta. Some people also talk about a fourth stage, the first few hours after birth, when you recover and get to know your baby.",
+      "sourceIds": ["acog-cpg8-labor"],
+      "visual": {
+        "kind": "diagram",
+        "description": "Horizontal bar divided into three labeled sections of very different widths: a long Stage 1, a shorter Stage 2, a very short Stage 3. A small dotted extension labeled 'First hours: recovery and bonding'."
+      }
+    },
+    {
+      "id": "cervix",
+      "type": "content",
+      "heading": "What your cervix is doing",
+      "onScreen": [
+        "Thinning: called effacement",
+        "Opening: called dilation, from 0 to 10 centimeters",
+        "10 centimeters means fully open"
+      ],
+      "narration": "Your cervix is the lower opening of your uterus. During pregnancy, it stays long, firm, and closed to keep your baby safe. In labor, contractions do two things to it. They thin it out, which is called effacement. And they open it, which is called dilation. Dilation is measured in centimeters, from zero to ten. When you hear that someone is ten centimeters, it means their cervix is fully open and they're ready to push.",
+      "sourceIds": ["acog-cpg8-labor"],
+      "visual": {
+        "kind": "diagram",
+        "description": "Row of simple circles growing from a dot to a large circle, labeled 1, 4, 6, 8, and 10 cm, with a note: about the size of a bagel at 10 cm. Above, a side view showing a cervix going from thick to thin."
+      }
+    },
+    {
+      "id": "early-labor",
+      "type": "content",
+      "heading": "Stage 1, part one: early labor",
+      "onScreen": [
+        "Cervix thins and opens to around 6 cm",
+        "Contractions become more regular and stronger",
+        "Can last many hours, even a day or more",
+        "Most people spend this part at home"
+      ],
+      "narration": "The first stage starts with early labor. Your cervix thins and slowly opens to around six centimeters. Contractions may start mild and spaced apart, then gradually get more regular and stronger. Early labor is often the longest part, especially with a first baby. It can last many hours, and sometimes a day or more. That's normal, and it doesn't mean anything is wrong. Most people spend early labor at home, resting, eating lightly, and staying comfortable. We'll cover that in the next lesson.",
+      "sourceIds": ["acog-cpg8-labor", "nichd-start-of-labor"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Cozy home scene: pregnant person resting on a couch with a snack and water, partner timing contractions on a phone."
+      }
+    },
+    {
+      "id": "checkin-early-labor",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": ["acog-cpg8-labor"],
+      "question": {
+        "prompt": "This is your first baby. You've had early labor contractions on and off for 14 hours, and your care team says you and baby are doing well. What's most likely true?",
+        "options": [
+          "Something must be wrong",
+          "Long early labor is common, especially with a first baby",
+          "Labor has stopped for good"
+        ],
+        "correctIndex": 1,
+        "explanation": "Early labor can take many hours, especially the first time. As long as you and your baby are doing well, a long early labor is normal. Keep in touch with your care team as they instructed."
+      }
+    },
+    {
+      "id": "active-labor",
+      "type": "content",
+      "heading": "Stage 1, part two: active labor",
+      "onScreen": [
+        "From around 6 cm to 10 cm",
+        "Contractions are stronger, longer, and closer together",
+        "Your cervix usually opens faster now",
+        "You'll likely turn inward and need focus"
+      ],
+      "narration": "Next comes active labor, from around six centimeters until you're fully open at ten. Contractions are now stronger, longer, and closer together, and your cervix usually opens more quickly than in early labor. Many people become quieter and more focused, turning inward to get through each contraction. Talking during contractions gets hard. This is usually when you'll be at your hospital or birth center, or your midwife will be with you at home.",
+      "sourceIds": ["acog-cpg8-labor", "acnm-am-i-in-labor"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Laboring person leaning forward over a birth ball in a softly lit room, eyes closed in focus, partner's hand on their back."
+      }
+    },
+    {
+      "id": "transition",
+      "type": "content",
+      "heading": "Transition: the hardest, shortest part",
+      "onScreen": [
+        "The end of active labor, as you near 10 cm",
+        "Very strong contractions with short breaks",
+        "Shaking, nausea, or feeling \"I can't do this\" are common",
+        "Growing pressure, and soon, an urge to push"
+      ],
+      "narration": "The last part of active labor is often called transition. It's usually the most intense part of labor, but also the shortest. Contractions are very strong, with short breaks in between. Many people feel shaky, hot or cold, or nauseous. It's also very common to feel overwhelmed and think, I can't do this. Here's the secret: that feeling is often a sign you're almost there. Soon, you may feel strong pressure and an urge to push.",
+      "sourceIds": ["acog-cpg8-labor"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Close-up of a support person holding the laboring person's hands, faces close, calm encouragement."
+      }
+    },
+    {
+      "id": "dilation-video",
+      "type": "video",
+      "heading": "See the first stage in motion",
+      "onScreen": ["Watch how the cervix thins and opens as labor progresses"],
+      "narration": "This short animation shows what's happening inside during the first stage.",
+      "sourceIds": ["acog-cpg8-labor"],
+      "video": {
+        "brief": "Simple, non-graphic medical animation: side view of uterus, baby head-down, cervix thinning then opening from 0 to 10 cm as contractions pulse. On-screen labels for effacement, dilation, early labor, active labor (around 6 cm), and transition. Calm music, no clinical time limits.",
+        "maxSeconds": 75
+      }
+    },
+    {
+      "id": "pushing",
+      "type": "content",
+      "heading": "Stage 2: pushing and birth",
+      "onScreen": [
+        "Starts when your cervix is fully open",
+        "You'll push with your contractions",
+        "Many positions can work",
+        "Can take minutes or a few hours"
+      ],
+      "narration": "The second stage begins when your cervix is fully open. Now you work with your contractions to push your baby down and out. Many people feel a strong, natural urge to push. If you have an epidural, your care team will help guide you. You can push in many positions, like on your side, hands and knees, squatting, or semi-sitting. This stage can take a few minutes or a few hours, and it's often longer with a first baby. We'll go deeper in lesson five.",
+      "sourceIds": ["acog-cpg8-labor"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Four small, modest line drawings of pushing positions: side-lying, hands and knees, supported squat, semi-sitting."
+      }
+    },
+    {
+      "id": "placenta",
+      "type": "content",
+      "heading": "Stage 3: the placenta",
+      "onScreen": [
+        "After your baby is born, the placenta comes next",
+        "Mild contractions help it separate and deliver",
+        "Often you'll be holding your baby skin to skin"
+      ],
+      "narration": "After your baby is born, there's one more stage. Your uterus keeps contracting, more gently now, so the placenta separates and is delivered. Your care team will check that it's complete and that your bleeding is under control. Many people barely notice this stage, because they're holding their baby skin to skin. We'll talk about the placenta and that first precious hour in lesson six.",
+      "sourceIds": ["acog-cpg8-labor"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Parent in a hospital bed holding a newborn on their chest, skin to skin, under a warm blanket."
+      }
+    },
+    {
+      "id": "support-by-stage",
+      "type": "comparison",
+      "heading": "What helps in each part",
+      "onScreen": ["Support people: this one's for you, too"],
+      "narration": "Different parts of labor call for different kinds of support. In early labor, focus on rest, light food and drink, distraction, and timing contractions. In active labor, it's time for focused comfort: breathing together, massage, counterpressure on the lower back, and changing positions. In transition, keep it simple. Stay close, speak calmly, and offer short, steady encouragement. And when it's time to push, cheer each effort, offer sips of water, and help with positions.",
+      "sourceIds": ["acnm-am-i-in-labor"],
+      "columns": ["Part of labor", "What helps most"],
+      "rows": [
+        ["Early labor", "Rest, light food and fluids, distraction, timing contractions"],
+        ["Active labor", "Breathing together, massage, counterpressure, changing positions"],
+        ["Transition", "Calm presence, short encouragement, few questions"],
+        ["Pushing", "Encouragement, sips of water, help with positions"]
+      ],
+      "visual": {
+        "kind": "comparison-table",
+        "description": "Two-column table, one row per part of labor."
+      }
+    },
+    {
+      "id": "call-any-stage",
+      "type": "safety",
+      "heading": "At any stage: call right away",
+      "onScreen": [
+        "Heavy bleeding, like a period or more",
+        "Your baby is moving less, or not at all",
+        "Severe pain that doesn't ease between contractions",
+        "Fever, severe headache, or vision changes",
+        "If it feels like an emergency, call 911"
+      ],
+      "narration": "Before we wrap up, a safety reminder. Whether you're in early labor at home or anywhere along the way, call your care team right away for heavy bleeding, if your baby is moving less or not at all, for severe pain that doesn't ease between contractions, or for a fever, a severe headache, or changes in your vision. If it feels like an emergency, call 911.",
+      "sourceIds": ["acnm-am-i-in-labor", "cdc-hear-her-warning-signs"]
+    },
+    {
+      "id": "checkin-stage-two",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "One more check-in.",
+      "sourceIds": ["acog-cpg8-labor"],
+      "question": {
+        "prompt": "What marks the start of the second stage of labor?",
+        "options": [
+          "Your water breaking",
+          "Your cervix being fully open, at 10 centimeters",
+          "Arriving at the hospital"
+        ],
+        "correctIndex": 1,
+        "explanation": "The second stage begins when your cervix is fully dilated, at 10 centimeters. That's when pushing begins."
+      }
+    },
+    {
+      "id": "support-plan",
+      "type": "reflection",
+      "heading": "Plan your support",
+      "onScreen": [
+        "What will help you most in early labor?",
+        "What do you want from your support person in active labor?",
+        "What words would encourage you in transition?"
+      ],
+      "narration": "Take a moment to plan your support. Think about what will help you most in early labor, what you'd like your support person to do in active labor, and what words would encourage you when things get intense. If you have a support person, fill this out together. Your answers will be saved in your Birth Readiness Brief.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write what helps you in early labor, what you want from your support person in active labor, and words that would encourage you in transition."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Stage 1: your cervix thins and opens to 10 cm",
+        "Early labor is long; active labor starts around 6 cm",
+        "Transition is intense, but you're almost there",
+        "Stage 2: pushing and birth",
+        "Stage 3: the placenta"
+      ],
+      "narration": "Let's recap. In the first stage, your cervix thins and opens to ten centimeters. Early labor is often long, and active labor begins around six centimeters. Transition is the most intense part, but it means you're almost there. In the second stage, you push and your baby is born. And in the third stage, the placenta is delivered, often while you're already holding your baby. Next, a few review questions.",
+      "sourceIds": ["acog-cpg8-labor"]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "What is dilation?",
+      "options": [
+        "The thinning of the cervix",
+        "The opening of the cervix, measured from 0 to 10 centimeters",
+        "The baby moving into the pelvis"
+      ],
+      "correctIndex": 1,
+      "explanation": "Dilation is the opening of the cervix, measured in centimeters. Thinning is called effacement."
+    },
+    {
+      "prompt": "Which part of labor is usually the most intense, but also the shortest?",
+      "options": ["Early labor", "Transition", "The third stage"],
+      "correctIndex": 1,
+      "explanation": "Transition, at the end of active labor, is usually the most intense part, and also the shortest. Feeling overwhelmed is common and often means you're close."
+    },
+    {
+      "prompt": "In early labor, what kind of support usually helps most?",
+      "options": [
+        "Rest, light food and fluids, and distraction",
+        "Pushing as hard as possible",
+        "Heading to the hospital at the first contraction"
+      ],
+      "correctIndex": 0,
+      "explanation": "Early labor is a time to conserve energy. Rest, eat and drink lightly, stay distracted, and follow your care team's instructions about when to call."
+    }
+  ],
+  "nextLessonId": "early-labor-at-home"
+}

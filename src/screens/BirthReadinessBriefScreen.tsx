@@ -10,6 +10,7 @@ import {
   View,
 } from 'react-native';
 
+import { ClassReflectionsSection } from '../components/ClassReflectionsSection';
 import { useLearnerLayout } from '../lib/learnerLayout';
 import {
   BIRTH_READINESS_BRIEF_MAX_DISCUSSION_QUESTIONS,
@@ -252,13 +253,13 @@ export function BirthReadinessBriefScreen({
         showsVerticalScrollIndicator={false}
       >
         <Pressable
-          accessibilityLabel="Return to Arriving Prepared"
+          accessibilityLabel="Go back"
           accessibilityRole="button"
           onPress={onExit}
           style={styles.backButton}
           testID="button-exit-birth-readiness-brief"
         >
-          <Text style={styles.backButtonText}>‹ Arriving Prepared</Text>
+          <Text style={styles.backButtonText}>‹ Back</Text>
         </Pressable>
 
         <Text style={styles.brand}>BABYREADY</Text>
@@ -322,6 +323,8 @@ export function BirthReadinessBriefScreen({
             </Text>
           </View>
         ) : null}
+
+        <ClassReflectionsSection userId={userId} />
 
         <View style={styles.sectionHeader}>
           <Text accessibilityRole="header" style={styles.sectionTitle}>

@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BabyReady · Labor Basics</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF3F6; --surface:#FFFFFF; --ink:#1D2940; --muted:#5A6680; --line:#D5DEE6;
+  --lagoon:#23716C; --lagoon-soft:#DCEDEA; --marigold:#E3A82B; --marigold-soft:#FBF0D6;
+  --alert:#B3262F; --alert-soft:#FBE6E7; --caption:#1D2940; --caption-ink:#F4F7FA;
+  --display:"Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
+  --body:"Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#121A26; --surface:#1A2433; --ink:#E8EEF5; --muted:#9AA7BC; --line:#2C3A4F;
+    --lagoon:#5EC2B9; --lagoon-soft:#173B3A; --marigold:#F0BF55; --marigold-soft:#3A3018;
+    --alert:#FF7A80; --alert-soft:#3D1D22; --caption:#0B111A; --caption-ink:#E8EEF5;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#121A26; --surface:#1A2433; --ink:#E8EEF5; --muted:#9AA7BC; --line:#2C3A4F;
+  --lagoon:#5EC2B9; --lagoon-soft:#173B3A; --marigold:#F0BF55; --marigold-soft:#3A3018;
+  --alert:#FF7A80; --alert-soft:#3D1D22; --caption:#0B111A; --caption-ink:#E8EEF5;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{height:100%;margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,textarea:focus-visible,a:focus-visible{outline:3px solid var(--marigold);outline-offset:2px}
+.app{height:100%;max-width:760px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto minmax(0,1fr) auto auto;overflow:hidden}
+
+/* Agenda bar: one segment per slide */
+.agenda{display:flex;align-items:center;gap:12px;padding:12px 16px 8px}
+.agenda .title{font-family:var(--display);font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:0 1 auto}
+.segments{display:flex;gap:3px;flex:1 1 auto;min-width:80px}
+.segments span{flex:1;height:5px;border-radius:3px;background:var(--line);transition:background .3s}
+.segments span.done{background:var(--lagoon)}
+.segments span.now{background:var(--marigold)}
+.ask-btn{flex:0 0 auto;border:1.5px solid var(--lagoon);background:transparent;color:var(--lagoon);border-radius:999px;padding:5px 12px;font-weight:700;font-size:14px}
+
+/* Stage */
+.stage{overflow-y:auto;padding:8px 18px 18px;-webkit-overflow-scrolling:touch}
+.slide{animation:enter .35s ease-out}
+@keyframes enter{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.slide{animation:none}.segments span{transition:none}}
+.slide h1{font-family:var(--display);font-weight:700;font-size:clamp(26px,6.4vw,38px);line-height:1.1;letter-spacing:-.01em;margin:10px 0 14px}
+.points{list-style:none;padding:0;margin:0 0 18px}
+.points li{position:relative;padding:7px 0 7px 22px;border-bottom:1px solid var(--line)}
+.points li:last-child{border-bottom:0}
+.points li::before{content:"";position:absolute;left:2px;top:15px;width:9px;height:9px;border-radius:50%;background:var(--lagoon)}
+.visual{background:var(--surface);border-radius:18px;padding:16px;margin:4px 0 14px}
+.visual svg{display:block;width:100%;height:auto}
+.placeholder{border:2px dashed var(--line);background:transparent;color:var(--muted);font-size:14px}
+.placeholder strong{display:block;color:var(--ink);font-size:13px;margin-bottom:4px}
+.sources{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.sources a{font-size:13px;color:var(--muted);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+.sources a:hover{color:var(--ink)}
+
+.cmp{width:100%;border-collapse:separate;border-spacing:0;font-size:15px}
+.cmp th{font-family:var(--display);text-align:left;padding:8px 10px;font-size:15px}
+.cmp th:first-child{color:var(--muted)}
+.cmp th:last-child{color:var(--lagoon)}
+.cmp td{padding:9px 10px;vertical-align:top;border-top:1px solid var(--line)}
+.cmp td:first-child{color:var(--muted)}
+.cmp td:last-child{background:var(--lagoon-soft);font-weight:700}
+.cmp.alert th:last-child{color:var(--alert)}
+.cmp.alert td:last-child{background:var(--alert-soft)}
+
+.title-slide{text-align:left;padding-top:4vh}
+.title-slide .kicker{color:var(--muted);margin:0}
+.title-slide h1{font-size:clamp(40px,11vw,64px);margin:6px 0 10px}
+
+/* Check-ins */
+.question{font-family:var(--display);font-size:22px;line-height:1.25;margin:0 0 14px;font-weight:500}
+.opts{display:grid;gap:10px}
+.opt{text-align:left;background:var(--surface);border:2px solid var(--line);border-radius:14px;padding:13px 14px;line-height:1.35}
+.opt[aria-pressed="true"].right{border-color:var(--lagoon);background:var(--lagoon-soft)}
+.opt[aria-pressed="true"].wrong{border-color:var(--marigold);background:var(--marigold-soft)}
+.opt.reveal{border-color:var(--lagoon)}
+.explain{margin-top:14px;padding:12px 14px;border-left:4px solid var(--lagoon);background:var(--surface);border-radius:4px 12px 12px 4px}
+.badge{display:inline-block;font-size:13px;font-weight:700;padding:2px 10px;border-radius:999px;background:var(--marigold-soft);color:var(--ink);margin-bottom:6px}
+
+/* Safety */
+.slide.safety{border:2px solid var(--alert);background:var(--alert-soft);border-radius:18px;padding:14px 16px}
+.slide.safety h1{color:var(--alert);margin-top:2px}
+.slide.safety .points li::before{background:var(--alert);border-radius:2px}
+.slide.safety .points li{border-color:color-mix(in srgb,var(--alert) 25%,transparent)}
+.call911{display:block;text-align:center;margin-top:8px;background:var(--alert);color:#fff;border-radius:12px;padding:12px;font-weight:700;text-decoration:none}
+
+textarea{width:100%;min-height:110px;border:2px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);padding:12px;font:inherit;resize:vertical}
+.saved{font-size:14px;color:var(--lagoon);min-height:20px;margin-top:6px}
+
+.video-frame{aspect-ratio:16/9;border-radius:16px;background:var(--caption);color:var(--caption-ink);display:grid;place-items:center;text-align:center;padding:18px;font-size:14px}
+.video-frame .play{width:54px;height:54px;border-radius:50%;border:2px solid currentColor;display:grid;place-items:center;margin:0 auto 10px;opacity:.8}
+
+/* Caption: the presenter's voice */
+.caption{background:var(--caption);color:var(--caption-ink);padding:12px 18px;font-size:16px;line-height:1.45;max-height:22vh;overflow-y:auto;border-radius:18px 18px 0 0}
+.caption[hidden]{display:none}
+.caption .s{display:none}
+.caption .s.on{display:inline}
+.caption.static .s{display:inline}
+
+/* Controls */
+.controls{display:flex;align-items:center;justify-content:space-between;gap:4px;padding:10px 10px 12px;background:var(--surface);border-top:1px solid var(--line)}
+.ctl{background:transparent;border:0;border-radius:12px;padding:8px 6px;font-size:14px;white-space:nowrap;color:var(--muted);min-width:44px;min-height:44px}
+.ctl[aria-pressed="true"]{color:var(--lagoon);font-weight:700}
+.ctl:disabled{opacity:.35;cursor:default}
+.primary{background:var(--lagoon);color:#fff;border:0;border-radius:999px;padding:11px 18px;font-weight:700;min-height:46px;white-space:nowrap}
+.primary:disabled{opacity:.4;cursor:default}
+.safety-mode .primary{background:var(--alert)}
+.round{flex:0 0 auto;width:50px;height:50px;border-radius:50%;background:var(--ink);color:var(--surface);border:0;display:grid;place-items:center}
+.round svg{width:22px;height:22px}
+
+/* Ask sheet */
+.sheet-back{position:fixed;inset:0;background:rgba(10,15,25,.45);display:none;z-index:10}
+.sheet-back.open{display:block}
+.sheet{position:fixed;left:0;right:0;bottom:0;max-width:760px;margin:0 auto;background:var(--bg);border-radius:22px 22px 0 0;padding:18px 18px calc(18px + env(safe-area-inset-bottom,0px));max-height:85%;overflow-y:auto;z-index:11;transform:translateY(105%);transition:transform .25s ease-out}
+.sheet.open{transform:none}
+@media (prefers-reduced-motion:reduce){.sheet{transition:none}}
+.sheet h2{font-family:var(--display);margin:0 0 4px;font-size:22px}
+.sheet p.note{margin:0 0 12px;color:var(--muted);font-size:14px}
+.sheet .row{display:flex;gap:8px;margin-top:10px;justify-content:flex-end}
+.answer{margin-top:14px;white-space:pre-wrap}
+.answer .from{display:block;margin-top:8px;font-size:13px;color:var(--muted)}
+.urgent{border:2px solid var(--alert);background:var(--alert-soft);border-radius:14px;padding:12px 14px;margin-top:14px}
+.urgent strong{color:var(--alert)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.chips button{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 11px;font-size:13px}
+
+.result{font-family:var(--display);font-size:clamp(48px,14vw,80px);font-weight:700;line-height:1;margin:8px 0;color:var(--lagoon)}
+.lessonpick{display:flex;flex-wrap:nowrap;overflow-x:auto;gap:8px;margin:2px -18px 14px;padding:2px 18px;scrollbar-width:none}
+.lessonpick::-webkit-scrollbar{display:none}
+.lessonpick button{flex:0 0 auto;white-space:nowrap;border:1.5px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 14px;font-size:14px}
+.lessonpick button[aria-pressed="true"]{border-color:var(--lagoon);background:var(--lagoon-soft);font-weight:700}
+.voicebox{background:var(--surface);border-radius:14px;padding:12px 14px;margin-top:8px}
+.voicebox label{font-weight:700;display:block;margin-bottom:6px}
+.vrow{display:flex;gap:8px;align-items:center}
+.vrow select{flex:1;min-width:0;font:inherit;font-size:15px;padding:8px;border-radius:10px;border:1.5px solid var(--line);background:var(--bg);color:var(--ink)}
+.voicebox .tip{font-size:13px;color:var(--muted);margin:8px 0 0}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <header class="agenda">
+    <div class="title" id="lessonTitle"></div>
+    <div class="segments" id="segments" aria-hidden="true"></div>
+    <button class="ask-btn" id="askOpen" type="button">Ask</button>
+  </header>
+  <main class="stage" id="stage" aria-live="polite"></main>
+  <div class="caption" id="caption" aria-live="off"></div>
+  <nav class="controls" id="controls">
+    <button class="ctl" id="prev" type="button" aria-label="Previous slide">Back</button>
+    <button class="ctl" id="voice" type="button" aria-pressed="true">Voice</button>
+    <button class="round" id="play" type="button" aria-label="Pause narration"></button>
+    <button class="ctl" id="cc" type="button" aria-pressed="true">CC</button>
+    <button class="primary" id="next" type="button">Next</button>
+  </nav>
+</div>
+
+<div class="sheet-back" id="sheetBack"></div>
+<section class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="askTitle">
+  <h2 id="askTitle">Ask a question</h2>
+  <p class="note">Answers come only from this lesson. For anything about your own symptoms or care, contact your care team.</p>
+  <div class="chips" id="chips"></div>
+  <textarea id="q" placeholder="Type your question about this lesson"></textarea>
+  <div class="row">
+    <button class="ctl" id="askClose" type="button">Close</button>
+    <button class="primary" id="askSend" type="button">Ask</button>
+  </div>
+  <div id="answer"></div>
+</section>
+
+<script>
+const LESSONS = [{"courseId": "labor-basics", "lessonId": "how-labor-begins", "order": 1, "title": "How Labor Begins", "learningGoals": ["Know when labor usually starts and what preterm and early term mean", "Recognize signs that labor may be getting close", "Tell the difference between practice contractions and labor contractions", "Know what to do if your water breaks", "Know your own care team's instructions for when to call"], "estimatedMinutes": 12, "review": {"status": "draft", "reviewedBy": null, "reviewedOn": null, "nextReviewBy": null, "notes": "Pilot lesson. Reviewer: confirm each source page is live and supports its slides, then set verifiedOn dates."}, "sources": [{"id": "acog-labor-begins", "organization": "ACOG", "title": "How to Tell When Labor Begins (FAQ004)", "url": "https://www.acog.org/womens-health/faqs/how-to-tell-when-labor-begins", "verifiedOn": null}, {"id": "nichd-start-of-labor", "organization": "NICHD", "title": "When does labor usually start?", "url": "https://www.nichd.nih.gov/health/topics/labor-delivery/topicinfo/Pages/start-of-labor.aspx", "verifiedOn": "2026-10-12"}, {"id": "aafp-know-in-labor", "organization": "AAFP", "title": "How Do I Know I'm in Labor? (familydoctor.org)", "url": "https://familydoctor.org/how-do-i-know-im-in-labor/", "verifiedOn": null}, {"id": "cdc-hear-her-warning-signs", "organization": "CDC", "title": "Hear Her: Urgent Maternal Warning Signs", "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html", "verifiedOn": null}], "slides": [{"id": "welcome", "type": "title", "heading": "How Labor Begins", "onScreen": ["Labor Basics · Lesson 1", "About 12 minutes"], "narration": "Welcome to Labor Basics. I'm so glad you're here. In this first lesson, we'll talk about how labor begins. We'll cover when labor usually starts, the early signs your body may give you, how to tell practice contractions from the real thing, and what to do if your water breaks. If you have a support person, this is a great lesson to watch together. Let's get started.", "sourceIds": [], "visual": {"kind": "illustration", "description": "Warm, calm scene of a pregnant person and support partner sitting together on a couch, looking at a tablet. Diverse, soft colors."}}, {"id": "when-labor-starts", "type": "content", "heading": "When does labor usually start?", "onScreen": ["Most people go into labor between 37 and 42 weeks", "Before 37 weeks = preterm", "37–38 weeks = early term", "Your due date is an estimate, not a deadline"], "narration": "Your due date is set at 40 weeks, but it's really a best guess. Most people go into labor somewhere between 37 and 42 weeks. Labor that starts before 37 weeks is called preterm, and it's important to call your care team right away if that happens. Babies born at 37 or 38 weeks are called early term, because they're still doing some important growing. Unless there's a medical reason to deliver sooner, waiting until at least 39 weeks gives babies the best chance for a healthy start.", "sourceIds": ["nichd-start-of-labor"], "visual": {"kind": "diagram", "description": "Horizontal timeline from 34 to 42 weeks. Shaded zones labeled Preterm (before 37), Early term (37–38), Full term (39–40), Late term (41–42). Marker at 40 weeks labeled Due date."}}, {"id": "every-labor-different", "type": "content", "heading": "Every labor is different", "onScreen": ["Signs, timing, and length vary from person to person", "They can even differ between your own pregnancies"], "narration": "Here's something worth remembering throughout this course: every labor is different. How it starts, what the first signs feel like, and how long it lasts all vary from person to person, and even from one pregnancy to the next. So if a friend's story doesn't match yours, that's normal. What we're building here is your awareness, so you can notice changes and know who to call.", "sourceIds": ["nichd-start-of-labor", "acog-labor-begins"], "visual": {"kind": "illustration", "description": "Three different winding paths leading to the same destination, suggesting different journeys."}}, {"id": "signs-labor-close", "type": "content", "heading": "Signs labor may be getting close", "onScreen": ["Baby \"drops\" lower in your belly", "More vaginal discharge, sometimes pink or slightly bloody (\"bloody show\")", "These can happen days or weeks before labor"], "narration": "In the last weeks of pregnancy, your body may start giving you hints. One is called lightening. That's when your baby drops lower into your pelvis. You might find it easier to breathe, but you may also need to pee more often. Not every baby drops before labor, so don't worry if you don't notice it. Another sign is more vaginal discharge. It may be clear, pink, or slightly bloody, and it's sometimes called the bloody show. It happens as your cervix starts to open. Both of these signs can show up days, or even weeks, before labor actually starts.", "sourceIds": ["nichd-start-of-labor", "acog-labor-begins"], "visual": {"kind": "diagram", "description": "Side-by-side simple anatomical silhouettes showing baby's position before and after dropping into the pelvis."}}, {"id": "checkin-bloody-show", "type": "checkin", "heading": "Quick check-in", "onScreen": [], "narration": "Let's pause for a quick check-in.", "sourceIds": ["nichd-start-of-labor"], "question": {"prompt": "You notice some pink-tinged mucus discharge at 38 weeks. What's most likely true?", "options": ["Your baby will be born within the hour", "It's a sign labor may be getting closer, possibly days away", "Something is definitely wrong"], "correctIndex": 1, "explanation": "Bloody show is a common sign that your cervix is starting to change. Labor could still be days away. Heavier bleeding, like a period or more, is different. Call your care team right away if that happens."}}, {"id": "what-is-a-contraction", "type": "content", "heading": "What is a contraction?", "onScreen": ["Your uterus tightens, then relaxes", "Your belly may feel hard during one", "Practice contractions (Braxton Hicks) are common before labor"], "narration": "A contraction is your uterus, which is a strong muscle, tightening and then relaxing. During one, your belly may feel hard to the touch. Afterward, it softens again. Many people feel practice contractions, called Braxton Hicks contractions, in the weeks before labor. These can be uncomfortable, and sometimes even painful, but they don't open the cervix. They're sometimes called false labor. The tricky part is that early labor contractions can feel similar at first. So let's look at how to tell them apart.", "sourceIds": ["acog-labor-begins", "aafp-know-in-labor"], "visual": {"kind": "illustration", "description": "Simple wave graphic showing a contraction building, peaking, and easing, with a resting gap before the next wave."}}, {"id": "true-vs-false", "type": "comparison", "heading": "Practice contractions vs. labor contractions", "onScreen": ["Labor contractions keep coming, get closer, and get stronger"], "narration": "Here's a side-by-side comparison. Labor contractions come at regular intervals and get closer together over time. Practice contractions tend to be irregular and don't settle into a pattern. Labor contractions keep going even when you rest, walk, or change positions. Practice contractions often fade when you move around or rest. Labor contractions get steadily stronger. Practice contractions usually stay weak or fade. And labor contractions often start in the back and wrap around to the front, while practice contractions are usually felt just in the front. These are helpful guides, not hard rules. Sometimes the only way to know for sure is for your care team to check your cervix. If you're unsure, call.", "sourceIds": ["acog-labor-begins", "aafp-know-in-labor"], "columns": ["Practice (Braxton Hicks)", "Labor"], "rows": [["Irregular, no clear pattern", "Regular, and closer together over time"], ["Often stop when you rest or move", "Keep going when you rest or move"], ["Usually stay weak", "Steadily get stronger"], ["Usually felt in the front", "Often start in the back and move to the front"]], "visual": {"kind": "comparison-table", "description": "Two-column table with soft color coding; left column muted, right column highlighted."}}, {"id": "timing-contractions-video", "type": "video", "heading": "How to time contractions", "onScreen": ["How often: start of one → start of the next", "How long: start → end of one contraction"], "narration": "Timing your contractions helps you and your care team understand what's happening. There are two things to track. How long each contraction lasts, measured from when it starts to when it ends. And how often they come, measured from the start of one contraction to the start of the next. Watch this short demonstration.", "sourceIds": ["acog-labor-begins"], "video": {"brief": "Instructor demonstrates timing three contractions with a phone stopwatch and writing them down. On-screen graphic shows the two measurements. A support partner models recording the times. No clinical thresholds stated; ends with 'Share these times with your care team when you call.'", "maxSeconds": 90}}, {"id": "checkin-timing", "type": "checkin", "heading": "Quick check-in", "onScreen": [], "narration": "Let's make sure that one stuck.", "sourceIds": ["acog-labor-begins"], "question": {"prompt": "A contraction starts at 2:00, ends at 2:01, and the next one starts at 2:06. How far apart are they?", "options": ["5 minutes", "6 minutes", "1 minute"], "correctIndex": 1, "explanation": "Measure from the start of one contraction to the start of the next: 2:00 to 2:06 is 6 minutes apart. Each one lasts about 1 minute."}}, {"id": "water-breaking", "type": "content", "heading": "If your water breaks", "onScreen": ["It may be a big gush or a slow trickle", "It can happen before or during labor", "Call your care team, even without contractions", "Note the time and what the fluid looks like"], "narration": "Your baby is surrounded by a sac of fluid called the amniotic sac. When that sac breaks, we call it your water breaking. In movies it's always a dramatic gush, but in real life it can also be a slow, steady trickle that's easy to confuse with urine or discharge. It can happen before labor starts or during labor. Either way, call your care team when it happens, even if you aren't having contractions. It helps to note what time it happened and what the fluid looks like, for example, clear, greenish, brownish, or bloody, because your team will likely ask.", "sourceIds": ["acog-labor-begins"], "visual": {"kind": "icon-list", "description": "Three simple icons: a clock (note the time), a droplet (note the color), a phone (call your care team)."}}, {"id": "your-call-plan", "type": "reflection", "heading": "Your care team's instructions", "onScreen": ["Ask: When do you want me to call?", "Ask: When should I come in, and where?", "Save the daytime and after-hours numbers"], "narration": "Here's one of the most important things you can do before labor: ask your own care team exactly when they want you to call and when they want you to come in. Many practices give a guideline based on how far apart and how long your contractions are. But the right instructions for you can depend on things like whether this is your first baby, how far you live from your birth place, and your health history. Write down what they tell you, along with their daytime and after-hours numbers. You can save it right here in your Birth Readiness Brief.", "sourceIds": ["acog-labor-begins", "aafp-know-in-labor"], "savesTo": "birthReadinessBrief", "prompt": "What did your care team tell you about when to call and when to come in? Add their phone numbers too."}, {"id": "preterm-signs", "type": "safety", "heading": "Before 37 weeks: call right away", "onScreen": ["Contractions every 10 minutes or more often", "Change in vaginal discharge, spotting, or bleeding", "Pressure in the pelvis or rectum", "Low, dull backache", "Cramps, with or without diarrhea"], "narration": "If you notice signs of labor before 37 weeks, don't wait to see if they go away. Call your care team right away. Signs include contractions every 10 minutes or more often, a change in your vaginal discharge, spotting or bleeding, pressure in your pelvis or rectum, a low, dull backache, or cramps, with or without diarrhea. Your care team can check what's happening and, if needed, give specialized care.", "sourceIds": ["nichd-start-of-labor"]}, {"id": "urgent-warning-signs", "type": "safety", "heading": "Don't wait: get help right away", "onScreen": ["Vaginal bleeding or fluid leaking", "Baby moving less or stopped moving", "Severe headache that won't go away, or vision changes", "Severe belly pain that doesn't go away", "Trouble breathing, chest pain, or a racing heart", "Fever of 100.4°F or higher", "Extreme swelling of hands or face", "If it feels like an emergency, call 911"], "narration": "Finally, some symptoms need attention right away, at any point in pregnancy. These include vaginal bleeding or fluid leaking, your baby moving less or stopping moving, a severe headache that won't go away or changes in your vision, severe belly pain that doesn't go away, trouble breathing, chest pain, or a racing heart, a fever of 100.4 degrees or higher, or extreme swelling of your hands or face. If you have any of these, contact your care team immediately. If it feels like an emergency, call 911. Trust yourself. You know your body, and it's always okay to call.", "sourceIds": ["cdc-hear-her-warning-signs"]}, {"id": "summary", "type": "summary", "heading": "What we covered", "onScreen": ["Labor usually starts between 37 and 42 weeks", "Early signs can come days or weeks ahead", "Labor contractions: regular, closer, stronger", "Water breaks → call your care team", "Know your team's instructions before you need them"], "narration": "Great work. Let's recap. Labor usually starts between 37 and 42 weeks, and signs like your baby dropping or bloody show can come days or weeks ahead. Labor contractions come regularly, get closer together, and get stronger, even when you rest. If your water breaks, call your care team. And the most important step: know your own team's instructions before you need them. Next, a few review questions. And remember, you can tap Ask a Question anytime.", "sourceIds": ["nichd-start-of-labor", "acog-labor-begins"]}], "reviewQuiz": [{"prompt": "Labor that starts before which week of pregnancy is considered preterm?", "options": ["35 weeks", "37 weeks", "40 weeks"], "correctIndex": 1, "explanation": "Labor before 37 weeks is preterm. If you notice signs of labor before 37 weeks, call your care team right away."}, {"prompt": "Which is more likely to be labor rather than practice contractions?", "options": ["Contractions that stop when you lie down and rest", "Contractions that keep coming, get closer together, and get stronger", "Occasional tightening that comes and goes with no pattern"], "correctIndex": 1, "explanation": "Labor contractions follow a pattern, keep going whether you rest or move, and steadily get stronger."}, {"prompt": "Your water breaks at 39 weeks, but you aren't having contractions. What should you do?", "options": ["Wait until contractions start before calling", "Call your care team and note the time and what the fluid looks like", "Nothing; it doesn't matter without contractions"], "correctIndex": 1, "explanation": "Call your care team when your water breaks, even without contractions. Noting the time and the fluid's color helps them advise you."}], "nextLessonId": "when-to-contact-your-care-team"},{"courseId": "labor-basics", "lessonId": "when-to-contact-your-care-team", "order": 2, "title": "When to Contact Your Care Team", "learningGoals": ["Know that calling your care team is always okay, day or night", "Recognize the labor pattern many care teams use as a signal to call", "Know which symptoms mean call right away, without waiting for a pattern", "Be ready with the information your care team will ask for", "Save your own call card to your Birth Readiness Brief"], "estimatedMinutes": 10, "review": {"status": "draft", "reviewedBy": null, "reviewedOn": null, "nextReviewBy": null, "notes": "Reviewer: confirm the 5-1-1 framing matches the practices our learners use, and confirm each source page. Kick-count instructions are intentionally left out; the lesson teaches 'know your baby's normal and call if it changes' instead."}, "sources": [{"id": "acnm-am-i-in-labor", "organization": "ACNM", "title": "Am I in Labor? (Discover Midwives)", "url": "https://discovermidwives.midwife.org/am-i-in-labor/", "verifiedOn": "2026-10-14"}, {"id": "acog-labor-begins", "organization": "ACOG", "title": "How to Tell When Labor Begins (FAQ004)", "url": "https://www.acog.org/womens-health/faqs/how-to-tell-when-labor-begins", "verifiedOn": null}, {"id": "cdc-hear-her-warning-signs", "organization": "CDC", "title": "Hear Her: Urgent Maternal Warning Signs", "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html", "verifiedOn": null}, {"id": "cdc-group-b-strep", "organization": "CDC", "title": "About Group B Strep", "url": "https://www.cdc.gov/group-b-strep/about/index.html", "verifiedOn": null}], "slides": [{"id": "welcome", "type": "title", "heading": "When to Contact Your Care Team", "onScreen": ["Labor Basics · Lesson 2", "About 10 minutes"], "narration": "Welcome back. In the last lesson, we talked about how labor begins. Now let's answer one of the most common questions in any childbirth class: when do I call? By the end of this lesson, you'll know the signals to watch for, the symptoms that mean call right away, and exactly what to say when you pick up the phone.", "sourceIds": [], "visual": {"kind": "illustration", "description": "Pregnant person on a couch at night, calmly holding a phone, support partner beside them with a notepad."}}, {"id": "always-ok-to-call", "type": "content", "heading": "It's always okay to call", "onScreen": ["Your care team expects these calls", "Day or night, weekends included", "Not sure? Call and ask"], "narration": "First, the most important message in this lesson: it is always okay to call. Many people wait until morning or try not to bother their doctor or midwife. But answering these calls is part of their job, at any hour. If you're not sure whether something is labor, or whether something is wrong, call. It's much better to get reassurance than to stay up worrying.", "sourceIds": ["acnm-am-i-in-labor"], "visual": {"kind": "illustration", "description": "Friendly nurse at a labor and delivery desk answering a phone at night, clock showing 3 AM."}}, {"id": "two-kinds-of-calls", "type": "comparison", "heading": "Two kinds of calls", "onScreen": ["Some calls can wait for a pattern. Some can't."], "narration": "It helps to think about two kinds of calls. The first is a labor call. You make it when your contractions settle into the pattern your care team gave you. The second is a call right away. You make it for certain symptoms, like your water breaking, bleeding, or your baby moving less, no matter what your contractions are doing. Let's look at each one.", "sourceIds": ["acnm-am-i-in-labor"], "columns": ["Labor call", "Call right away"], "rows": [["Contractions reach your team's pattern", "Your water breaks"], ["You can't walk or talk through contractions", "Bleeding more than light spotting"], ["You've waited for the pattern to hold", "Baby moving less, or not at all"], ["", "Any urgent warning sign"]], "visual": {"kind": "comparison-table", "description": "Two columns: left in calm teal labeled Labor call, right in alert red labeled Call right away."}}, {"id": "five-one-one", "type": "content", "heading": "The labor call: a common guideline", "onScreen": ["Contractions 5 minutes apart or less", "Each lasting about 1 minute", "For at least 1 hour", "Or: too strong to walk or talk through"], "narration": "Many midwives and doctors use a guideline called five, one, one. That means contractions coming five minutes apart or less, each lasting about one minute, for at least one hour. Another sign is when contractions get so strong that you can't walk or talk during them. But here's the key: your care team may give you a different rule. They might want a call sooner if this isn't your first baby, if past labors were fast, if you live far from your birth place, or because of your health history. Their instructions always come first.", "sourceIds": ["acnm-am-i-in-labor", "acog-labor-begins"], "visual": {"kind": "diagram", "description": "Large '5-1-1' graphic with three labeled parts: 5 minutes apart, 1 minute long, for 1 hour. Small note below: Your team's rule comes first."}}, {"id": "checkin-511", "type": "checkin", "heading": "Quick check-in", "onScreen": [], "narration": "Let's check in.", "sourceIds": ["acnm-am-i-in-labor"], "question": {"prompt": "Your contractions have been 5 minutes apart, each lasting about a minute, for the past hour. Your care team uses the 5-1-1 guideline. What should you do?", "options": ["Wait another few hours to be sure", "Call your care team", "Only call if your water breaks"], "correctIndex": 1, "explanation": "That's the 5-1-1 pattern, so it's time to call. Your care team will tell you whether to come in now or keep laboring at home a little longer."}}, {"id": "water-breaks", "type": "content", "heading": "Call right away: your water breaks", "onScreen": ["Call even without contractions", "Note the time", "Note the color: clear, pink-tinged, green, or brown", "Tell them if you tested positive for group B strep"], "narration": "If your water breaks, or you think it might have, call your care team, even if you aren't having any contractions. Note the time it happened and the color of the fluid. It's usually clear or slightly pink, but sometimes it's green or brown, and your team will want to know that. Also tell them if you tested positive for group B strep, a common bacteria checked near the end of pregnancy. If you did, you'll usually get antibiotics during labor to protect your baby.", "sourceIds": ["acnm-am-i-in-labor", "cdc-group-b-strep"], "visual": {"kind": "icon-list", "description": "Four icons: phone, clock, color swatches (clear, pink, green, brown), and a small lab test tube labeled GBS."}}, {"id": "baby-movement", "type": "content", "heading": "Call right away: baby moving less", "onScreen": ["Get to know your baby's normal pattern", "If movement slows, changes, or stops, call", "Babies should still move during labor", "Don't wait to see if it improves"], "narration": "By the third trimester, you'll start to learn your baby's usual pattern of movement. Babies don't run out of room to move near the end of pregnancy, and they should keep moving even during labor. If your baby is moving less than usual, the pattern changes, or you can't feel movement, call your care team right away. Don't wait to see if it gets better, and don't try to reassure yourself at home first. Your team can check on your baby quickly.", "sourceIds": ["acnm-am-i-in-labor", "cdc-hear-her-warning-signs"], "visual": {"kind": "illustration", "description": "Pregnant person resting on their side with a hand on their belly, paying attention, calm expression."}}, {"id": "bleeding", "type": "content", "heading": "Call right away: bleeding", "onScreen": ["Pink or brownish mucus near term can be normal", "Any other bleeding: call your care team", "Heavy bleeding, like a period or more: call right away, or 911"], "narration": "In the last lesson, we talked about bloody show, the pink or brownish mucus that can come as your cervix starts to change. That can be normal. Any other bleeding, even spotting, is worth a call to your care team. And heavy bleeding, like a period or more, can be a sign of a serious problem. Call right away, and if it's heavy or you feel faint, call 911.", "sourceIds": ["acnm-am-i-in-labor", "cdc-hear-her-warning-signs"], "visual": {"kind": "diagram", "description": "Simple three-step scale from light to heavy: pink mucus (can be normal), spotting (call), heavy like a period (call now or 911). No graphic imagery."}}, {"id": "urgent-warning-signs", "type": "safety", "heading": "Urgent warning signs: get help now", "onScreen": ["Severe headache that won't go away, or vision changes", "Trouble breathing, chest pain, or a racing heart", "Severe belly pain that doesn't go away", "Fever of 100.4°F or higher", "Extreme swelling of hands or face", "Thoughts of harming yourself or your baby", "If it feels like an emergency, call 911"], "narration": "Some symptoms need help right away, whether or not you're in labor. These include a severe headache that won't go away or changes in your vision, trouble breathing, chest pain, or a racing heart, severe belly pain that doesn't go away, a fever of 100.4 degrees or higher, extreme swelling of your hands or face, and thoughts of harming yourself or your baby. If you have any of these, contact your care team immediately. If it feels like an emergency, call 911.", "sourceIds": ["cdc-hear-her-warning-signs"]}, {"id": "what-to-say", "type": "content", "heading": "What to have ready when you call", "onScreen": ["How many weeks pregnant you are", "Your contraction times: how far apart, how long", "If your water broke: when, and the color", "Your group B strep result", "Anything else you've noticed"], "narration": "When you call, the nurse or provider will ask a few questions. It helps to have the answers ready. They'll want to know how many weeks pregnant you are, how far apart your contractions are and how long they last, whether your water has broken and what it looked like, your group B strep result, and anything else you've noticed, like bleeding or changes in your baby's movement. This is a great job for a support person, so you can focus on breathing through contractions.", "sourceIds": ["acnm-am-i-in-labor"], "visual": {"kind": "illustration", "description": "Support partner on the phone reading from a notes app showing contraction times, pregnant person leaning on a counter nearby."}}, {"id": "practice-call-video", "type": "video", "heading": "Hear a practice call", "onScreen": ["Notice what the nurse asks, and how short the call can be"], "narration": "Let's listen in on a practice call so you know what to expect.", "sourceIds": ["acnm-am-i-in-labor"], "video": {"brief": "Role-play: a support partner calls labor and delivery triage at night. The nurse asks weeks pregnant, contraction timing, water status and color, GBS result, baby's movement, and other symptoms. Nurse gives a calm decision (come in, or stay home and call back if X). Ends with the partner saying 'That was easier than I expected.' No specific clinical thresholds beyond what the lesson teaches.", "maxSeconds": 90}}, {"id": "call-card", "type": "reflection", "heading": "Make your call card", "onScreen": ["Daytime number for your care team", "After-hours or labor and delivery number", "Your group B strep result, once you know it", "Who will call, and who will drive"], "narration": "Now let's make your call card. Write down your care team's daytime number, their after-hours or labor and delivery number, and your group B strep result once you have it. Decide who will make the call and who will drive. Save it here in your Birth Readiness Brief, and consider putting the numbers in both your phone and your support person's phone.", "sourceIds": ["acnm-am-i-in-labor"], "savesTo": "birthReadinessBrief", "prompt": "Add your care team's daytime and after-hours numbers, your group B strep result, and who will call and drive."}, {"id": "checkin-water-color", "type": "checkin", "heading": "Quick check-in", "onScreen": [], "narration": "One more check-in before we wrap up.", "sourceIds": ["acnm-am-i-in-labor"], "question": {"prompt": "At 39 weeks, your water breaks. You aren't having contractions, and the fluid looks greenish. What should you do?", "options": ["Wait for contractions to start, then call", "Call your care team now and tell them the fluid is greenish", "Take a shower and rest first"], "correctIndex": 1, "explanation": "Call now, even without contractions. Green or brown fluid is important for your care team to know, so be sure to mention the color and the time it happened."}}, {"id": "summary", "type": "summary", "heading": "What we covered", "onScreen": ["It's always okay to call", "Labor call: when contractions match your team's pattern", "Call right away: water breaks, bleeding, baby moving less", "Urgent warning signs: get help now, or call 911", "Have your answers and your call card ready"], "narration": "Let's recap. It's always okay to call your care team. Make a labor call when your contractions match the pattern your team gave you. Call right away if your water breaks, if you have bleeding beyond light spotting, or if your baby is moving less. For urgent warning signs, get help immediately, or call 911. And have your call card ready before you need it. Next up, a few review questions.", "sourceIds": ["acnm-am-i-in-labor", "cdc-hear-her-warning-signs"]}], "reviewQuiz": [{"prompt": "Which of these is a reason to call your care team right away, without waiting for a contraction pattern?", "options": ["Your baby is moving less than usual", "You have a mild backache", "You feel an occasional practice contraction"], "correctIndex": 0, "explanation": "A change in your baby's movement is always worth an immediate call. Don't wait to see if it improves."}, {"prompt": "Your care team told you to call when contractions are 4 minutes apart, but a friend says 5-1-1 is the rule. Whose advice should you follow?", "options": ["Your friend's", "Your care team's", "Whichever comes later"], "correctIndex": 1, "explanation": "5-1-1 is a common guideline, but your care team's instructions are based on your situation, so they always come first."}, {"prompt": "It's 2 AM and you're not sure if what you're feeling is labor. What's the best choice?", "options": ["Wait until the office opens", "Call your care team's after-hours number", "Search online until you're sure"], "correctIndex": 1, "explanation": "Care teams answer calls at all hours. If you're unsure, call. That's what they're there for."}], "nextLessonId": "stages-of-labor"},{"courseId": "labor-basics", "lessonId": "stages-of-labor", "order": 3, "title": "The Stages of Labor", "learningGoals": ["Name the three stages of labor and what each one accomplishes", "Understand how the cervix thins and opens", "Tell early labor from active labor and transition", "Know what support helps most in each stage", "Know which symptoms need a call at any stage"], "estimatedMinutes": 15, "review": {"status": "draft", "reviewedBy": null, "reviewedOn": null, "nextReviewBy": null, "notes": "Reviewer: active labor is defined at about 6 cm per ACOG Clinical Practice Guideline No. 8 (WHO uses 5 cm); the lesson says 'around 6' to stay accurate for both. Durations are intentionally broad. Transition signs and support tips are standard childbirth-education content; confirm against Lamaze materials."}, "sources": [{"id": "acog-cpg8-labor", "organization": "ACOG", "title": "First and Second Stage Labor Management (Clinical Practice Guideline No. 8)", "url": "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2024/01/first-and-second-stage-labor-management", "verifiedOn": null}, {"id": "nichd-start-of-labor", "organization": "NICHD", "title": "When does labor usually start?", "url": "https://www.nichd.nih.gov/health/topics/labor-delivery/topicinfo/Pages/start-of-labor.aspx", "verifiedOn": "2026-10-12"}, {"id": "acnm-am-i-in-labor", "organization": "ACNM", "title": "Am I in Labor? (Discover Midwives)", "url": "https://discovermidwives.midwife.org/am-i-in-labor/", "verifiedOn": "2026-10-14"}, {"id": "cdc-hear-her-warning-signs", "organization": "CDC", "title": "Hear Her: Urgent Maternal Warning Signs", "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html", "verifiedOn": null}], "slides": [{"id": "welcome", "type": "title", "heading": "The Stages of Labor", "onScreen": ["Labor Basics · Lesson 3", "About 15 minutes"], "narration": "Welcome back. So far, we've talked about how labor begins and when to call your care team. Now let's look at the whole journey, from the first contractions to the moment you hold your baby. Knowing the map ahead of time makes labor feel less like a mystery and more like a path you can follow, one step at a time.", "sourceIds": [], "visual": {"kind": "illustration", "description": "A gentle winding path with three soft landmarks along it, ending at a parent holding a newborn."}}, {"id": "three-stages", "type": "content", "heading": "Three stages, one journey", "onScreen": ["Stage 1: your cervix opens", "Stage 2: you push, and your baby is born", "Stage 3: the placenta is delivered"], "narration": "Labor happens in three stages. In the first stage, contractions gradually thin and open your cervix. This is usually the longest stage by far. In the second stage, your cervix is fully open, and you push your baby out. In the third stage, after your baby is born, your body delivers the placenta. Some people also talk about a fourth stage, the first few hours after birth, when you recover and get to know your baby.", "sourceIds": ["acog-cpg8-labor"], "visual": {"kind": "diagram", "description": "Horizontal bar divided into three labeled sections of very different widths: a long Stage 1, a shorter Stage 2, a very short Stage 3. A small dotted extension labeled 'First hours: recovery and bonding'."}}, {"id": "cervix", "type": "content", "heading": "What your cervix is doing", "onScreen": ["Thinning: called effacement", "Opening: called dilation, from 0 to 10 centimeters", "10 centimeters means fully open"], "narration": "Your cervix is the lower opening of your uterus. During pregnancy, it stays long, firm, and closed to keep your baby safe. In labor, contractions do two things to it. They thin it out, which is called effacement. And they open it, which is called dilation. Dilation is measured in centimeters, from zero to ten. When you hear that someone is ten centimeters, it means their cervix is fully open and they're ready to push.", "sourceIds": ["acog-cpg8-labor"], "visual": {"kind": "diagram", "description": "Row of simple circles growing from a dot to a large circle, labeled 1, 4, 6, 8, and 10 cm, with a note: about the size of a bagel at 10 cm. Above, a side view showing a cervix going from thick to thin."}}, {"id": "early-labor", "type": "content", "heading": "Stage 1, part one: early labor", "onScreen": ["Cervix thins and opens to around 6 cm", "Contractions become more regular and stronger", "Can last many hours, even a day or more", "Most people spend this part at home"], "narration": "The first stage starts with early labor. Your cervix thins and slowly opens to around six centimeters. Contractions may start mild and spaced apart, then gradually get more regular and stronger. Early labor is often the longest part, especially with a first baby. It can last many hours, and sometimes a day or more. That's normal, and it doesn't mean anything is wrong. Most people spend early labor at home, resting, eating lightly, and staying comfortable. We'll cover that in the next lesson.", "sourceIds": ["acog-cpg8-labor", "nichd-start-of-labor"], "visual": {"kind": "illustration", "description": "Cozy home scene: pregnant person resting on a couch with a snack and water, partner timing contractions on a phone."}}, {"id": "checkin-early-labor", "type": "checkin", "heading": "Quick check-in", "onScreen": [], "narration": "Let's check in.", "sourceIds": ["acog-cpg8-labor"], "question": {"prompt": "This is your first baby. You've had early labor contractions on and off for 14 hours, and your care team says you and baby are doing well. What's most likely true?", "options": ["Something must be wrong", "Long early labor is common, especially with a first baby", "Labor has stopped for good"], "correctIndex": 1, "explanation": "Early labor can take many hours, especially the first time. As long as you and your baby are doing well, a long early labor is normal. Keep in touch with your care team as they instructed."}}, {"id": "active-labor", "type": "content", "heading": "Stage 1, part two: active labor", "onScreen": ["From around 6 cm to 10 cm", "Contractions are stronger, longer, and closer together", "Your cervix usually opens faster now", "You'll likely turn inward and need focus"], "narration": "Next comes active labor, from around six centimeters until you're fully open at ten. Contractions are now stronger, longer, and closer together, and your cervix usually opens more quickly than in early labor. Many people become quieter and more focused, turning inward to get through each contraction. Talking during contractions gets hard. This is usually when you'll be at your hospital or birth center, or your midwife will be with you at home.", "sourceIds": ["acog-cpg8-labor", "acnm-am-i-in-labor"], "visual": {"kind": "illustration", "description": "Laboring person leaning forward over a birth ball in a softly lit room, eyes closed in focus, partner's hand on their back."}}, {"id": "transition", "type": "content", "heading": "Transition: the hardest, shortest part", "onScreen": ["The end of active labor, as you near 10 cm", "Very strong contractions with short breaks", "Shaking, nausea, or feeling \"I can't do this\" are common", "Growing pressure, and soon, an urge to push"], "narration": "The last part of active labor is often called transition. It's usually the most intense part of labor, but also the shortest. Contractions are very strong, with short breaks in between. Many people feel shaky, hot or cold, or nauseous. It's also very common to feel overwhelmed and think, I can't do this. Here's the secret: that feeling is often a sign you're almost there. Soon, you may feel strong pressure and an urge to push.", "sourceIds": ["acog-cpg8-labor"], "visual": {"kind": "illustration", "description": "Close-up of a support person holding the laboring person's hands, faces close, calm encouragement."}}, {"id": "dilation-video", "type": "video", "heading": "See the first stage in motion", "onScreen": ["Watch how the cervix thins and opens as labor progresses"], "narration": "This short animation shows what's happening inside during the first stage.", "sourceIds": ["acog-cpg8-labor"], "video": {"brief": "Simple, non-graphic medical animation: side view of uterus, baby head-down, cervix thinning then opening from 0 to 10 cm as contractions pulse. On-screen labels for effacement, dilation, early labor, active labor (around 6 cm), and transition. Calm music, no clinical time limits.", "maxSeconds": 75}}, {"id": "pushing", "type": "content", "heading": "Stage 2: pushing and birth", "onScreen": ["Starts when your cervix is fully open", "You'll push with your contractions", "Many positions can work", "Can take minutes or a few hours"], "narration": "The second stage begins when your cervix is fully open. Now you work with your contractions to push your baby down and out. Many people feel a strong, natural urge to push. If you have an epidural, your care team will help guide you. You can push in many positions, like on your side, hands and knees, squatting, or semi-sitting. This stage can take a few minutes or a few hours, and it's often longer with a first baby. We'll go deeper in lesson five.", "sourceIds": ["acog-cpg8-labor"], "visual": {"kind": "illustration", "description": "Four small, modest line drawings of pushing positions: side-lying, hands and knees, supported squat, semi-sitting."}}, {"id": "placenta", "type": "content", "heading": "Stage 3: the placenta", "onScreen": ["After your baby is born, the placenta comes next", "Mild contractions help it separate and deliver", "Often you'll be holding your baby skin to skin"], "narration": "After your baby is born, there's one more stage. Your uterus keeps contracting, more gently now, so the placenta separates and is delivered. Your care team will check that it's complete and that your bleeding is under control. Many people barely notice this stage, because they're holding their baby skin to skin. We'll talk about the placenta and that first precious hour in lesson six.", "sourceIds": ["acog-cpg8-labor"], "visual": {"kind": "illustration", "description": "Parent in a hospital bed holding a newborn on their chest, skin to skin, under a warm blanket."}}, {"id": "support-by-stage", "type": "comparison", "heading": "What helps in each part", "onScreen": ["Support people: this one's for you, too"], "narration": "Different parts of labor call for different kinds of support. In early labor, focus on rest, light food and drink, distraction, and timing contractions. In active labor, it's time for focused comfort: breathing together, massage, counterpressure on the lower back, and changing positions. In transition, keep it simple. Stay close, speak calmly, and offer short, steady encouragement. And when it's time to push, cheer each effort, offer sips of water, and help with positions.", "sourceIds": ["acnm-am-i-in-labor"], "columns": ["Part of labor", "What helps most"], "rows": [["Early labor", "Rest, light food and fluids, distraction, timing contractions"], ["Active labor", "Breathing together, massage, counterpressure, changing positions"], ["Transition", "Calm presence, short encouragement, few questions"], ["Pushing", "Encouragement, sips of water, help with positions"]], "visual": {"kind": "comparison-table", "description": "Two-column table, one row per part of labor."}}, {"id": "call-any-stage", "type": "safety", "heading": "At any stage: call right away", "onScreen": ["Heavy bleeding, like a period or more", "Your baby is moving less, or not at all", "Severe pain that doesn't ease between contractions", "Fever, severe headache, or vision changes", "If it feels like an emergency, call 911"], "narration": "Before we wrap up, a safety reminder. Whether you're in early labor at home or anywhere along the way, call your care team right away for heavy bleeding, if your baby is moving less or not at all, for severe pain that doesn't ease between contractions, or for a fever, a severe headache, or changes in your vision. If it feels like an emergency, call 911.", "sourceIds": ["acnm-am-i-in-labor", "cdc-hear-her-warning-signs"]}, {"id": "checkin-stage-two", "type": "checkin", "heading": "Quick check-in", "onScreen": [], "narration": "One more check-in.", "sourceIds": ["acog-cpg8-labor"], "question": {"prompt": "What marks the start of the second stage of labor?", "options": ["Your water breaking", "Your cervix being fully open, at 10 centimeters", "Arriving at the hospital"], "correctIndex": 1, "explanation": "The second stage begins when your cervix is fully dilated, at 10 centimeters. That's when pushing begins."}}, {"id": "support-plan", "type": "reflection", "heading": "Plan your support", "onScreen": ["What will help you most in early labor?", "What do you want from your support person in active labor?", "What words would encourage you in transition?"], "narration": "Take a moment to plan your support. Think about what will help you most in early labor, what you'd like your support person to do in active labor, and what words would encourage you when things get intense. If you have a support person, fill this out together. Your answers will be saved in your Birth Readiness Brief.", "sourceIds": [], "savesTo": "birthReadinessBrief", "prompt": "Write what helps you in early labor, what you want from your support person in active labor, and words that would encourage you in transition."}, {"id": "summary", "type": "summary", "heading": "What we covered", "onScreen": ["Stage 1: your cervix thins and opens to 10 cm", "Early labor is long; active labor starts around 6 cm", "Transition is intense, but you're almost there", "Stage 2: pushing and birth", "Stage 3: the placenta"], "narration": "Let's recap. In the first stage, your cervix thins and opens to ten centimeters. Early labor is often long, and active labor begins around six centimeters. Transition is the most intense part, but it means you're almost there. In the second stage, you push and your baby is born. And in the third stage, the placenta is delivered, often while you're already holding your baby. Next, a few review questions.", "sourceIds": ["acog-cpg8-labor"]}], "reviewQuiz": [{"prompt": "What is dilation?", "options": ["The thinning of the cervix", "The opening of the cervix, measured from 0 to 10 centimeters", "The baby moving into the pelvis"], "correctIndex": 1, "explanation": "Dilation is the opening of the cervix, measured in centimeters. Thinning is called effacement."}, {"prompt": "Which part of labor is usually the most intense, but also the shortest?", "options": ["Early labor", "Transition", "The third stage"], "correctIndex": 1, "explanation": "Transition, at the end of active labor, is usually the most intense part, and also the shortest. Feeling overwhelmed is common and often means you're close."}, {"prompt": "In early labor, what kind of support usually helps most?", "options": ["Rest, light food and fluids, and distraction", "Pushing as hard as possible", "Heading to the hospital at the first contraction"], "correctIndex": 0, "explanation": "Early labor is a time to conserve energy. Rest, eat and drink lightly, stay distracted, and follow your care team's instructions about when to call."}], "nextLessonId": "early-labor-at-home"},{"courseId": "labor-basics", "lessonId": "early-labor-at-home", "order": 4, "title": "Early Labor at Home", "learningGoals": ["Understand why many people spend early labor at home", "Balance rest and gentle activity", "Know your care team's guidance on eating and drinking", "Track labor without exhausting yourself", "Make a personal early labor plan with your support person"], "estimatedMinutes": 10, "review": {"status": "draft", "reviewedBy": null, "reviewedOn": null, "nextReviewBy": null, "notes": "Reviewer: eating and drinking guidance differs between ACOG/ASA (clear liquids once admitted) and ACNM/Lamaze (light food in low-risk labor). The lesson presents both and points learners to their own team. Bath guidance after water breaks also varies; lesson defers to the care team."}, "sources": [{"id": "acog-co766", "organization": "ACOG", "title": "Approaches to Limit Intervention During Labor and Birth (Committee Opinion No. 766)", "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2019/02/approaches-to-limit-intervention-during-labor-and-birth", "verifiedOn": null}, {"id": "acnm-am-i-in-labor", "organization": "ACNM", "title": "Am I in Labor? (Discover Midwives)", "url": "https://discovermidwives.midwife.org/am-i-in-labor/", "verifiedOn": "2026-10-14"}, {"id": "lamaze-eating-drinking", "organization": "Lamaze", "title": "Eating and Drinking in Labor Should Not Be Restricted (Connecting the Dots)", "url": "https://lamaze.org/Connecting-the-Dots/time-for-acog-and-asa-to-change-their-guidelines-eating-and-drinking-in-labor-should-not-be-restricted", "verifiedOn": null}, {"id": "cdc-hear-her-warning-signs", "organization": "CDC", "title": "Hear Her: Urgent Maternal Warning Signs", "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html", "verifiedOn": null}], "slides": [{"id": "welcome", "type": "title", "heading": "Early Labor at Home", "onScreen": ["Labor Basics · Lesson 4", "About 10 minutes"], "narration": "Welcome back. In the last lesson, you learned that early labor is often the longest part of labor. So what do you actually do during all those hours? That's what this lesson is about: how to rest, eat, stay comfortable, and keep track of things at home, so you arrive at active labor with energy to spare.", "sourceIds": [], "visual": {"kind": "illustration", "description": "Warm living room in the evening: pregnant person in comfortable clothes on a couch with a mug, partner bringing a blanket."}}, {"id": "why-home", "type": "content", "heading": "Why many people stay home in early labor", "onScreen": ["Early labor can last many hours", "Familiar surroundings help you relax", "If you and baby are well, going in can usually wait", "You can still go in early if you need to"], "narration": "If you and your baby are doing well, many care teams suggest spending early labor at home. Early labor can last many hours, and home is where you can rest, eat, move freely, and relax in familiar surroundings. ACOG notes that hospital admission can usually wait during early labor when everything looks reassuring. But that's never a rule you have to tough out. If you're exhausted, the pain is hard to manage, or you just feel you need to be checked, you can always call and go in.", "sourceIds": ["acog-co766"], "visual": {"kind": "illustration", "description": "Split image: left side cozy bedroom with soft lamp, right side car keys and hospital bag by the door, ready when needed."}}, {"id": "rest-and-move", "type": "content", "heading": "Rest, then move, then rest again", "onScreen": ["At night: try to sleep or rest between contractions", "In the day: gentle activity like walking or a shower", "Alternate, and follow what feels right", "Save your energy for active labor"], "narration": "One of the best things you can do in early labor is protect your energy. If labor starts at night, try to sleep or at least rest between contractions, even if you feel excited. During the day, gentle activity can help you feel better and pass the time. Take a walk, take a warm shower, or sway on a birth ball. Then rest again. There's no need to keep busy every minute, and no need to stay in bed if moving feels better. Follow what your body tells you.", "sourceIds": ["acog-co766"], "visual": {"kind": "icon-list", "description": "Three icons in a loop: a moon and pillow (rest), walking shoes (move), a shower head (comfort), with arrows connecting them in a circle."}}, {"id": "eat-drink", "type": "content", "heading": "Eating and drinking", "onScreen": ["Drink fluids regularly; sip water or clear drinks", "Many care teams suggest light snacks in early labor", "Hospital food policies vary, so ask ahead", "Nausea is common later; listen to your body"], "narration": "Labor is hard work, and your body needs fuel. Drink fluids regularly, like water, clear juice, or a sports drink. Many care teams, especially midwives, encourage light, easy-to-digest snacks in early labor, like toast, yogurt, soup, or fruit. Guidance differs once you're admitted. Some hospitals allow food, and others limit you to clear liquids. That's why it's worth asking your care team about their policy before labor starts. Later in labor, many people lose their appetite or feel nauseous, and that's normal too.", "sourceIds": ["lamaze-eating-drinking", "acog-co766"], "visual": {"kind": "illustration", "description": "Kitchen counter with simple snacks: toast, banana, yogurt, a water bottle with a straw, and a sports drink."}}, {"id": "checkin-night", "type": "checkin", "heading": "Quick check-in", "onScreen": [], "narration": "Let's check in.", "sourceIds": ["acog-co766"], "question": {"prompt": "It's 11 PM. Early labor contractions started an hour ago, about 10 minutes apart and manageable. What's the best move?", "options": ["Stay up all night timing every contraction", "Try to rest or sleep between contractions", "Go for a long run to speed things up"], "correctIndex": 1, "explanation": "Early labor at night is a great time to rest. You'll want that energy later. If anything changes or you're unsure, call your care team."}}, {"id": "comfort-tools", "type": "content", "heading": "Comfort at home", "onScreen": ["Warm shower or bath", "Slow breathing through each contraction", "Massage and counterpressure", "Distraction: a movie, music, a short walk"], "narration": "Home is full of comfort tools. A warm shower can ease aches and help you relax. A bath can help too, but if your water has broken, ask your care team first, since guidance varies. Slow, steady breathing through each contraction helps you stay calm. Your support person can massage your shoulders or press on your lower back. And distraction is a real tool in early labor. Watch a movie, play music, bake something simple, or take a short walk. You'll practice these skills in Module 3.", "sourceIds": ["acog-co766"], "visual": {"kind": "illustration", "description": "Support person pressing palms into the laboring person's lower back as they lean against a kitchen counter, music playing from a phone."}}, {"id": "tracking", "type": "content", "heading": "Keeping track, without wearing yourself out", "onScreen": ["Time a few contractions in a row, now and then", "No need to time every single one", "Note if your water breaks: time and color", "Notice your baby's movements"], "narration": "You'll want to know how labor is progressing, but timing every single contraction for hours can be exhausting. Instead, time a few in a row every so often, or when they seem to change. Your support person can take this job. A simple app or a note on paper works fine. Also keep an eye on two other things: whether your water breaks, along with the time and color, and whether your baby is still moving normally.", "sourceIds": ["acnm-am-i-in-labor"], "visual": {"kind": "illustration", "description": "Phone screen showing a simple contraction log with start times and durations, held by a support person."}}, {"id": "early-labor-video", "type": "video", "heading": "A calm early labor at home", "onScreen": ["Notice the rhythm: rest, comfort, check in"], "narration": "Here's a short look at what early labor at home can look like.", "sourceIds": ["acog-co766"], "video": {"brief": "Real-family style montage over a few hours: couple watching a movie through contractions, a warm shower, eating toast, partner timing three contractions on an app, a nap, then a calm call to the care team. Narration-free with soft music and short captions. No clinical thresholds shown.", "maxSeconds": 90}}, {"id": "support-at-home", "type": "comparison", "heading": "Support person: your early labor jobs", "onScreen": ["Protect rest, handle logistics, stay calm"], "narration": "Support people, early labor is where you shine. Your jobs: protect rest by keeping the house quiet and visitors away. Offer drinks and snacks often. Time contractions now and then, so the laboring person doesn't have to. Get the car, bags, and car seat ready. And stay calm and encouraging. Your calm is contagious.", "sourceIds": ["acog-co766"], "columns": ["Job", "What it looks like"], "rows": [["Protect rest", "Dim lights, quiet house, hold off visitors"], ["Fuel", "Offer water and snacks every so often"], ["Track", "Time a few contractions now and then"], ["Logistics", "Bags, car, car seat, care team's number"], ["Calm", "Steady voice, reassurance, patience"]], "visual": {"kind": "comparison-table", "description": "Two-column checklist-style table."}}, {"id": "when-to-leave", "type": "content", "heading": "When it's time to go", "onScreen": ["Contractions reach your care team's pattern", "Your care team tells you to come in", "You feel you need to be checked", "Leave time for travel and traffic"], "narration": "So when do you leave home? Call your care team when contractions reach the pattern they gave you, and they'll tell you when to come in. It's also okay to go in because you feel you need to. Your instincts count. And plan for the trip. If you live far away or traffic is heavy, your care team may want you to leave sooner. Remember the car seat, so you're ready to bring your baby home.", "sourceIds": ["acnm-am-i-in-labor", "acog-co766"], "visual": {"kind": "illustration", "description": "Couple walking to the car at dawn with a hospital bag and an installed infant car seat visible in the back seat."}}, {"id": "call-now", "type": "safety", "heading": "Don't wait at home: call right away", "onScreen": ["Your water breaks", "Bleeding beyond light pink or brown mucus", "Your baby is moving less, or not at all", "Constant, severe pain or pain that doesn't ease between contractions", "Fever, severe headache, or vision changes", "If it feels like an emergency, call 911"], "narration": "Staying home in early labor is only for when things are going well. Call your care team right away if your water breaks, if you have bleeding beyond light pink or brown mucus, if your baby is moving less or not at all, if you have constant severe pain or pain that doesn't ease between contractions, or if you have a fever, a severe headache, or vision changes. If it feels like an emergency, call 911.", "sourceIds": ["acnm-am-i-in-labor", "cdc-hear-her-warning-signs"]}, {"id": "early-labor-plan", "type": "reflection", "heading": "Your early labor plan", "onScreen": ["Ways you'll rest, and ways you'll stay comfortable", "Snacks and drinks to have on hand", "Who times contractions and who drives", "How long the trip takes, day and night"], "narration": "Let's put this together into your early labor plan. Write down how you'll rest and stay comfortable, what snacks and drinks you'll keep on hand, who will time contractions and who will drive, and how long it takes to get to your birth place, both at rush hour and in the middle of the night. It'll be saved in your Birth Readiness Brief.", "sourceIds": [], "savesTo": "birthReadinessBrief", "prompt": "Write your rest and comfort ideas, snacks and drinks, who times and who drives, and your travel time day and night."}, {"id": "checkin-trip", "type": "checkin", "heading": "Quick check-in", "onScreen": [], "narration": "One more check-in.", "sourceIds": ["acnm-am-i-in-labor"], "question": {"prompt": "You live an hour from your hospital. What's the smartest thing to do before labor starts?", "options": ["Nothing; you'll figure it out on the day", "Ask your care team whether they'd like you to call or leave earlier", "Plan to go in at the very first contraction no matter what"], "correctIndex": 1, "explanation": "Distance matters. Your care team may want you to call or leave earlier than usual, so ask them during a prenatal visit and add it to your plan."}}, {"id": "summary", "type": "summary", "heading": "What we covered", "onScreen": ["Early labor at home works well when you and baby are doing well", "Rest, move gently, and rest again", "Drink regularly; ask about eating policies ahead of time", "Time a few contractions now and then", "Call right away for warning signs"], "narration": "Let's recap. When you and your baby are doing well, early labor at home lets you rest and relax in familiar surroundings. Alternate rest with gentle activity, drink regularly, and ask your care team about eating before labor begins. Time a few contractions now and then rather than every one. And call right away for any warning signs. Next, a few review questions.", "sourceIds": ["acog-co766", "acnm-am-i-in-labor"]}], "reviewQuiz": [{"prompt": "Why do many care teams suggest spending early labor at home when everything looks well?", "options": ["Hospitals don't allow early labor patients", "Early labor is often long, and home makes it easier to rest and relax", "Early labor doesn't count as real labor"], "correctIndex": 1, "explanation": "Early labor can last many hours. At home, you can rest, eat, and move freely. You can still go in anytime you need to."}, {"prompt": "What's a good approach to timing contractions in early labor?", "options": ["Time every contraction for as long as labor lasts", "Never time them", "Time a few in a row every so often, or when they change"], "correctIndex": 2, "explanation": "Timing a few in a row now and then gives you the information you need without wearing you out."}, {"prompt": "You're in early labor at home and notice your baby is moving much less than usual. What should you do?", "options": ["Call your care team right away", "Wait to see if it changes by morning", "Eat something and check again in a few hours"], "correctIndex": 0, "explanation": "A change in your baby's movement is always a reason to call right away, at any stage of labor."}], "nextLessonId": "pushing-and-birth"},{"courseId": "labor-basics", "lessonId": "pushing-and-birth", "order": 5, "title": "Pushing and Birth", "learningGoals": ["Know what the second stage feels like and how long it can take", "Understand different ways and positions to push", "Know what crowning is and how care teams help protect the perineum", "Understand tearing and episiotomy", "Know what to do if birth happens before you reach care"], "estimatedMinutes": 12, "review": {"status": "draft", "reviewedBy": null, "reviewedOn": null, "nextReviewBy": null, "notes": "Reviewer: confirm the 'birth before you reach care' safety slide matches local EMS guidance. Pushing technique is presented neutrally (urge-guided or coached) without breath-hold counts."}, "sources": [{"id": "acog-cpg8-labor", "organization": "ACOG", "title": "First and Second Stage Labor Management (Clinical Practice Guideline No. 8)", "url": "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2024/01/first-and-second-stage-labor-management", "verifiedOn": null}, {"id": "acog-co766", "organization": "ACOG", "title": "Approaches to Limit Intervention During Labor and Birth (Committee Opinion No. 766)", "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2019/02/approaches-to-limit-intervention-during-labor-and-birth", "verifiedOn": null}, {"id": "acog-pb198", "organization": "ACOG", "title": "Prevention and Management of Obstetric Lacerations at Vaginal Delivery (Practice Bulletin No. 198)", "url": "https://www.acog.org/clinical/clinical-guidance/practice-bulletin/articles/2018/09/prevention-and-management-of-obstetric-lacerations-at-vaginal-delivery", "verifiedOn": null}, {"id": "aafp-lacerations", "organization": "AAFP", "title": "Obstetric Lacerations: Prevention and Repair (American Family Physician, 2021)", "url": "https://www.aafp.org/afp/2021/0615/p745", "verifiedOn": null}, {"id": "aap-breastfeeding-2022", "organization": "AAP", "title": "Breastfeeding and the Use of Human Milk (Policy Statement, 2022)", "url": "https://publications.aap.org/pediatrics/article/150/1/e2022057988/188347/", "verifiedOn": null}], "slides": [{"id": "welcome", "type": "title", "heading": "Pushing and Birth", "onScreen": ["Labor Basics · Lesson 5", "About 12 minutes"], "narration": "Welcome back. You've made it through the first stage, and your cervix is fully open. Now comes the part many people wonder about most: pushing, and the moment your baby is born. Let's walk through what it feels like, the choices you'll have, and how your care team helps along the way.", "sourceIds": [], "visual": {"kind": "illustration", "description": "Soft, modest scene of a laboring person on their side, a support person holding their hand, a nurse nearby with a warm cloth."}}, {"id": "what-it-feels-like", "type": "content", "heading": "What the second stage feels like", "onScreen": ["Strong pressure low in your pelvis", "Often feels like needing to have a bowel movement", "Many people feel a powerful urge to push", "Sometimes there's a short lull first"], "narration": "Once your cervix is fully open, your baby begins moving down through your pelvis. Most people feel strong pressure low down, often a lot like needing to have a bowel movement. That's normal, and it's a sign your baby is moving in the right direction. Many people feel a powerful, natural urge to push. Some get a short break first, a lull where contractions ease for a bit. If you have an epidural, you may feel less of the urge, and your care team may suggest resting for a while to let your baby move down on its own before you start pushing.", "sourceIds": ["acog-cpg8-labor", "acog-co766"], "visual": {"kind": "diagram", "description": "Simple side-view diagram of baby's head moving down through the pelvis, with a gentle arrow showing direction."}}, {"id": "checkin-pressure", "type": "checkin", "heading": "Quick check-in", "onScreen": [], "narration": "Let's check in.", "sourceIds": ["acog-cpg8-labor"], "question": {"prompt": "During pushing, you feel intense pressure, like you need to have a bowel movement. What does that usually mean?", "options": ["Something has gone wrong", "Your baby is moving down, which is exactly what should happen", "You should stop pushing"], "correctIndex": 1, "explanation": "That pressure is your baby moving down through your pelvis. It's a normal, expected part of pushing. And if you do pass a little stool, your team handles it quickly and quietly. It happens all the time."}}, {"id": "how-to-push", "type": "content", "heading": "How you'll push", "onScreen": ["Push with your contractions, rest between them", "Follow your body's urge, or", "Follow your care team's guidance", "Both approaches work"], "narration": "Pushing happens with your contractions. When one builds, you push. When it fades, you rest. There are two common approaches. One is to follow your body's urge, pushing when and how hard it tells you to. The other is guided pushing, where your nurse or provider coaches you through each push. That's especially helpful with an epidural, when the urge is harder to feel. Both approaches work. Your care team will help you find what's effective for you.", "sourceIds": ["acog-cpg8-labor", "acog-co766"], "visual": {"kind": "illustration", "description": "Nurse at bedside speaking encouragingly, laboring person in a semi-sitting position, partner supporting one leg."}}, {"id": "positions", "type": "content", "heading": "Positions for pushing", "onScreen": ["On your side", "Hands and knees", "Supported squat, or with a squat bar", "Semi-sitting, leaning back"], "narration": "You don't have to push lying flat on your back. Many positions can work, and changing positions can help. You might push on your side, on your hands and knees, in a supported squat or using a squat bar, or semi-sitting and leaning back. If you have an epidural, some upright positions are harder, but side-lying and semi-sitting are still great options. Ask your care team which positions they support, and don't be shy about trying a new one if things feel stuck.", "sourceIds": ["acog-co766"], "visual": {"kind": "illustration", "description": "Four modest line drawings in a row: side-lying with top leg supported, hands and knees, squat with bar, semi-sitting."}}, {"id": "how-long", "type": "content", "heading": "How long pushing takes", "onScreen": ["Anywhere from a few minutes to a few hours", "Often longer with a first baby", "Often longer with an epidural", "Your team watches you and your baby throughout"], "narration": "Pushing can take anywhere from a few minutes to a few hours. It's often longer with a first baby, and often longer with an epidural. A long second stage is not a sign that you're doing it wrong. Each push moves your baby a little, even when it doesn't feel like it. Throughout, your care team keeps checking on you and your baby's heart rate, and they'll talk with you about options if progress slows.", "sourceIds": ["acog-cpg8-labor"], "visual": {"kind": "diagram", "description": "Simple bar showing a range from 'minutes' to 'a few hours', with small notes 'first baby' and 'epidural' toward the longer end."}}, {"id": "crowning", "type": "content", "heading": "Crowning", "onScreen": ["Your baby's head stays visible at the opening", "Intense stretching or burning is common", "You may be asked to push gently or breathe", "Warm compresses can help protect the perineum"], "narration": "As your baby's head reaches the vaginal opening and stays visible between contractions, that's called crowning. Many people feel intense stretching or burning. It's brief, and it means your baby is almost here. Your provider may ask you to push gently, or to stop pushing and breathe, so your baby's head comes out slowly and the tissue has time to stretch. Warm compresses and gentle perineal massage during this stage can lower the risk of more serious tears.", "sourceIds": ["acog-pb198", "aafp-lacerations"], "visual": {"kind": "illustration", "description": "Non-graphic illustration: provider holding a warm cloth, laboring person breathing slowly, support person close by saying 'almost there'."}}, {"id": "tears", "type": "content", "heading": "Tearing and episiotomy", "onScreen": ["Some tearing is common, especially with a first baby", "Most tears are small and heal well", "An episiotomy (a small cut) is only done when needed", "Ask about perineal massage in late pregnancy"], "narration": "Many people worry about tearing, so let's talk about it honestly. Some tearing is common, especially with a first vaginal birth. Most tears are small. They involve only skin or shallow muscle, and they heal well, sometimes with a few stitches. More serious tears are much less common. An episiotomy is a small cut your provider can make to widen the opening. It used to be routine, but today it's only done when there's a specific reason. And here's something you can do now: ask your care team about perineal massage in the last weeks of pregnancy, which can reduce tearing for some first-time parents.", "sourceIds": ["acog-pb198", "aafp-lacerations"], "visual": {"kind": "icon-list", "description": "Three reassuring icons: a check mark (most tears are small), a bandage (heal well), a calendar (ask about late-pregnancy perineal massage)."}}, {"id": "pushing-video", "type": "video", "heading": "Pushing positions, demonstrated", "onScreen": ["Try these with your support person at home"], "narration": "Let's watch a short demonstration of pushing positions you can practice ahead of time.", "sourceIds": ["acog-co766"], "video": {"brief": "Clothed demonstration with a childbirth educator, a pregnant person, and a partner: side-lying with leg support, hands and knees, supported squat, semi-sitting with partner holding a leg. Shows how a partner can help in each. Notes which work with an epidural. No birth footage.", "maxSeconds": 90}}, {"id": "baby-is-born", "type": "content", "heading": "Your baby is born", "onScreen": ["First the head, then the shoulders turn and slip out", "The rest of the body follows quickly", "If baby is doing well, they go right onto your chest", "Babies may look bluish or be covered in a white coating at first"], "narration": "Once your baby's head is born, the shoulders turn and slip out, and the rest of the body follows quickly. If your baby is doing well, they can be placed right onto your bare chest, dried off, and covered with a warm blanket. Don't be surprised by how your baby looks at first. Newborns are often a little bluish until they start breathing, and may be covered in a white, creamy coating that protects their skin. In the next lesson, we'll talk about that first precious hour together.", "sourceIds": ["aap-breastfeeding-2022"], "visual": {"kind": "illustration", "description": "Newborn on parent's chest, skin to skin, under a warm blanket, parent's hand on baby's back, partner leaning in."}}, {"id": "support-while-pushing", "type": "comparison", "heading": "Support person: how to help with pushing", "onScreen": ["Short, steady encouragement goes a long way"], "narration": "Support people, pushing is hard, focused work, and you can make a real difference. Offer short, steady encouragement. Give sips of water and a cool cloth between contractions. Help hold a leg or support a position if asked. Tell them about progress, if they want to know. And stay close. Your presence matters more than finding perfect words.", "sourceIds": ["acog-co766"], "columns": ["Try", "Instead of"], "rows": [["\"You're doing it. Each push is working.\"", "Long speeches or lots of questions"], ["Sips of water, a cool cloth", "Leaving the room for long stretches"], ["Holding a leg or hand when asked", "Guessing what they need"], ["Sharing progress, if they want it", "Comparing to other births"]], "visual": {"kind": "comparison-table", "description": "Two-column table of helpful and less helpful support."}}, {"id": "fast-birth", "type": "safety", "heading": "If birth happens before you reach care", "onScreen": ["Call 911; the dispatcher will guide you", "If driving, pull over safely", "Don't try to slow or hold the baby back", "Put baby skin to skin and keep both of you warm", "Don't pull on the cord; wait for help"], "narration": "Very fast births are uncommon, but it's good to know what to do. If birth seems to be happening before you can reach your care team, call 911. The dispatcher will talk you through it. If you're driving, pull over somewhere safe. Don't try to hold your baby back. Once your baby is born, put them skin to skin on the parent's chest, dry them, and cover you both with a blanket or towel to keep warm. Don't pull on the umbilical cord. Wait for emergency help to arrive.", "sourceIds": ["aap-breastfeeding-2022"]}, {"id": "pushing-preferences", "type": "reflection", "heading": "Your pushing preferences", "onScreen": ["Positions you'd like to try", "How you'd like to be encouraged", "Would you like a mirror, or to touch baby's head?", "Questions about tearing or perineal massage"], "narration": "Let's add your pushing preferences to your Birth Readiness Brief. Note the positions you'd like to try, how you'd like to be encouraged, whether you'd like a mirror or to reach down and touch your baby's head as they crown, and any questions you want to ask your care team about tearing or perineal massage.", "sourceIds": [], "savesTo": "birthReadinessBrief", "prompt": "Write positions to try, how you'd like to be encouraged, whether you'd like a mirror or to touch baby's head, and questions for your care team."}, {"id": "summary", "type": "summary", "heading": "What we covered", "onScreen": ["Pressure and an urge to push are normal", "Push with contractions; urge-guided or coached both work", "Many positions can work; try changing", "Crowning is brief; slow is good", "Most tears are small and heal well"], "narration": "Let's recap. Strong pressure and an urge to push are normal signs your baby is moving down. You'll push with your contractions, either following your body or with coaching, and both work. Many positions can help, so don't hesitate to change. Crowning is intense but brief, and going slowly helps protect your body. And while some tearing is common, most tears are small and heal well. Next, a few review questions.", "sourceIds": ["acog-cpg8-labor", "acog-pb198"]}], "reviewQuiz": [{"prompt": "Which statement about pushing positions is true?", "options": ["You must push lying flat on your back", "Many positions can work, and changing positions can help", "Positions don't matter at all"], "correctIndex": 1, "explanation": "Side-lying, hands and knees, squatting, and semi-sitting can all work. Ask your care team which ones they support."}, {"prompt": "Why might your provider ask you to push gently or breathe as your baby crowns?", "options": ["To slow things down so the tissue can stretch", "Because labor has stopped", "So you can rest for an hour"], "correctIndex": 0, "explanation": "Letting the head come out slowly gives tissue time to stretch, which can help reduce tearing."}, {"prompt": "What's true about episiotomy today?", "options": ["It's done for every vaginal birth", "It's only done when there's a specific reason", "It always prevents tearing"], "correctIndex": 1, "explanation": "Routine episiotomy is no longer recommended. Providers use it only when there's a specific reason."}], "nextLessonId": "placenta-and-first-hour"},{"courseId": "labor-basics", "lessonId": "placenta-and-first-hour", "order": 6, "title": "The Placenta and the First Hour", "learningGoals": ["Know what happens as the placenta is delivered", "Understand why medicine is given to prevent heavy bleeding", "Know the benefits of delayed cord clamping", "Understand skin-to-skin contact and the first feeding", "Recognize heavy bleeding after birth and act quickly"], "estimatedMinutes": 12, "review": {"status": "draft", "reviewedBy": null, "reviewedOn": null, "nextReviewBy": null, "notes": "Reviewer: delayed cord clamping is stated as 'at least 30 to 60 seconds' per ACOG CO 814; ACNM favors longer. Newborn medications (vitamin K, eye ointment, hepatitis B) are deferred to lesson 5.2. Heavy-bleeding thresholds are kept general; confirm wording against unit teaching."}, "sources": [{"id": "acog-co814", "organization": "ACOG", "title": "Delayed Umbilical Cord Clamping After Birth (Committee Opinion No. 814)", "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2020/12/delayed-umbilical-cord-clamping-after-birth", "verifiedOn": null}, {"id": "who-intrapartum-2018", "organization": "WHO", "title": "WHO Recommendations: Intrapartum Care for a Positive Childbirth Experience (2018)", "url": "https://www.who.int/publications/i/item/9789241550215", "verifiedOn": null}, {"id": "aap-breastfeeding-2022", "organization": "AAP", "title": "Breastfeeding and the Use of Human Milk (Policy Statement, 2022)", "url": "https://publications.aap.org/pediatrics/article/150/1/e2022057988/188347/", "verifiedOn": null}, {"id": "acog-apgar", "organization": "ACOG", "title": "The Apgar Score (Committee Opinion No. 644, with AAP)", "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2015/10/the-apgar-score", "verifiedOn": null}, {"id": "acog-pb198", "organization": "ACOG", "title": "Prevention and Management of Obstetric Lacerations at Vaginal Delivery (Practice Bulletin No. 198)", "url": "https://www.acog.org/clinical/clinical-guidance/practice-bulletin/articles/2018/09/prevention-and-management-of-obstetric-lacerations-at-vaginal-delivery", "verifiedOn": null}, {"id": "cdc-hear-her-warning-signs", "organization": "CDC", "title": "Hear Her: Urgent Maternal Warning Signs", "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html", "verifiedOn": null}], "slides": [{"id": "welcome", "type": "title", "heading": "The Placenta and the First Hour", "onScreen": ["Labor Basics · Lesson 6", "About 12 minutes"], "narration": "Welcome to the final lesson of Labor Basics. Your baby is here. But a few important things still happen in the minutes and hours after birth: the placenta is delivered, your care team watches your bleeding, and you and your baby begin getting to know each other. Many people call this the golden hour. Let's walk through it.", "sourceIds": [], "visual": {"kind": "illustration", "description": "Dim, peaceful birth room: parent with newborn skin to skin under a blanket, partner sitting close, nurse quietly charting in the background."}}, {"id": "third-stage", "type": "content", "heading": "Delivering the placenta", "onScreen": ["Your uterus keeps contracting after birth", "The placenta separates and comes out, often with a small push", "Usually within about half an hour", "Your team checks that it's complete"], "narration": "After your baby is born, your uterus keeps contracting, usually more gently. These contractions help the placenta separate from the wall of your uterus. You may feel some cramping and pressure, and your provider may ask for a small push. The placenta usually comes out within about half an hour, and often much sooner. Your team will check that it came out complete, because any pieces left behind can cause bleeding. Many people barely notice this stage, because they're focused on their baby.", "sourceIds": ["who-intrapartum-2018"], "visual": {"kind": "diagram", "description": "Simple side view of a uterus after birth, contracting, with the placenta gently separating. Non-graphic, soft colors."}}, {"id": "preventing-bleeding", "type": "content", "heading": "Preventing heavy bleeding", "onScreen": ["Medicine (usually oxytocin) is given right after birth", "It helps your uterus contract and limits bleeding", "Your nurse will press on your belly to check your uterus", "It can be uncomfortable, but it's important"], "narration": "Right after birth, most care teams give a medicine, usually oxytocin, through your IV or as a shot. It helps your uterus contract firmly, which is how your body controls bleeding where the placenta was attached. This is recommended for every birth, because it lowers the risk of heavy bleeding. Over the next hours, your nurse will also press firmly on your belly to check that your uterus is staying firm. That can be uncomfortable, so breathe through it, and know it's an important safety check.", "sourceIds": ["who-intrapartum-2018"], "visual": {"kind": "illustration", "description": "Nurse gently placing a hand on a postpartum person's lower belly, both calm, baby on the parent's chest."}}, {"id": "cord-clamping", "type": "content", "heading": "Delayed cord clamping", "onScreen": ["Waiting at least 30 to 60 seconds before clamping the cord", "Gives your baby extra blood from the placenta", "Boosts iron stores for the first months of life", "Recommended for healthy term and preterm babies"], "narration": "After birth, the umbilical cord still carries blood from the placenta to your baby. Waiting to clamp it, at least 30 to 60 seconds, lets more of that blood reach your baby. For full-term babies, this boosts iron stores for the first several months of life. For premature babies, the benefits are even bigger. ACOG recommends delayed cord clamping for healthy babies, and it doesn't increase the birthing parent's risk of bleeding. Some midwives wait even longer. If your baby needs immediate help breathing, the team may clamp sooner.", "sourceIds": ["acog-co814"], "visual": {"kind": "illustration", "description": "Newborn on parent's chest with the cord still attached, a small timer graphic showing 30 to 60 seconds."}}, {"id": "checkin-cord", "type": "checkin", "heading": "Quick check-in", "onScreen": [], "narration": "Let's check in.", "sourceIds": ["acog-co814"], "question": {"prompt": "What's one main benefit of delayed cord clamping for a full-term baby?", "options": ["It shortens labor", "It boosts the baby's iron stores for the first months of life", "It prevents the need for stitches"], "correctIndex": 1, "explanation": "Waiting at least 30 to 60 seconds lets extra blood from the placenta reach your baby, which improves iron stores in early infancy."}}, {"id": "skin-to-skin", "type": "content", "heading": "Skin to skin", "onScreen": ["Baby goes on your bare chest right after birth", "Keeps baby warm and calm", "Helps steady breathing, heart rate, and blood sugar", "Often possible after a cesarean, too"], "narration": "If you and your baby are doing well, your baby can be placed directly on your bare chest right after birth, dried off, and covered with a warm blanket. This is called skin-to-skin contact. Your body is the perfect warmer. Skin to skin helps keep your baby warm and calm, and it helps steady their breathing, heart rate, and blood sugar. It also supports breastfeeding. Ask for at least the first hour without interruption if possible. Many hospitals offer it after a cesarean, too, and partners can do skin to skin as well.", "sourceIds": ["aap-breastfeeding-2022", "who-intrapartum-2018"], "visual": {"kind": "illustration", "description": "Close-up of newborn lying skin to skin on a parent's chest, cheek turned to the side, blanket over both."}}, {"id": "first-feeding", "type": "content", "heading": "The first feeding", "onScreen": ["Many babies are ready to feed within the first hour", "Watch for rooting, licking, and hands to mouth", "Your nurse can help with positioning", "If you plan to formula feed, skin to skin still matters"], "narration": "Many babies are alert and ready to feed in the first hour after birth. Watch for early signs, like rooting, which is turning toward your chest with an open mouth, licking, or bringing hands to the mouth. If you're breastfeeding, skin to skin makes it easier for your baby to find the breast, and your nurse can help with positioning. There's no need for a perfect first latch. It's a first try for both of you. If you plan to formula feed, skin to skin is still wonderful for bonding and for keeping your baby warm.", "sourceIds": ["aap-breastfeeding-2022", "who-intrapartum-2018"], "visual": {"kind": "illustration", "description": "Newborn on parent's chest turning head toward the breast, mouth open, a nurse's hand offering gentle support."}}, {"id": "baby-checks", "type": "content", "heading": "Your baby's first checks", "onScreen": ["Apgar score at 1 and 5 minutes after birth", "Checks breathing, heart rate, color, tone, and reflexes", "Often done while baby is on your chest", "Weighing and newborn medications can usually wait"], "narration": "Your care team will quickly check your baby at one minute and five minutes after birth. This is called the Apgar score. It looks at breathing, heart rate, color, muscle tone, and reflexes, and it tells the team whether your baby needs any extra help adjusting. These checks can often be done while your baby is on your chest. Weighing, measuring, and routine newborn medications can usually wait until after that first hour together. We'll cover those medications in Module 5.", "sourceIds": ["acog-apgar", "aap-breastfeeding-2022"], "visual": {"kind": "icon-list", "description": "Five small icons for the Apgar categories: lungs (breathing), heart (heart rate), color swatch (color), flexed arm (tone), and a sneeze (reflexes)."}}, {"id": "your-recovery", "type": "content", "heading": "Your body in the first hour", "onScreen": ["Stitches for a tear, if needed, with numbing medicine", "Shaking or chills are common and pass", "Cramping as your uterus shrinks", "Bleeding, like a heavy period, is expected"], "narration": "While you're holding your baby, your provider will check for any tears and repair them if needed, using numbing medicine. Many people shake or feel chilled after birth. It's a common reaction and passes on its own, so ask for a warm blanket. You'll feel cramping as your uterus starts shrinking back down, and you'll have bleeding, similar to a heavy period. Your nurse will check you often. And if you're hungry and thirsty, ask for food and drink. You've earned it.", "sourceIds": ["acog-pb198", "who-intrapartum-2018"], "visual": {"kind": "illustration", "description": "Postpartum parent wrapped in a warm blanket, sipping juice, baby asleep on their chest, partner offering a snack."}}, {"id": "golden-hour-video", "type": "video", "heading": "The golden hour", "onScreen": ["Notice how much can happen with baby on your chest"], "narration": "Here's a short look at the first hour after birth.", "sourceIds": ["aap-breastfeeding-2022"], "video": {"brief": "Gentle, non-graphic footage or animation of the first hour: baby placed skin to skin, dried and covered, Apgar check done on the chest, delayed cord clamping with partner cutting the cord, baby rooting and a first feeding attempt, nurse checking the parent's uterus. Soft music and captions only.", "maxSeconds": 90}}, {"id": "heavy-bleeding", "type": "safety", "heading": "Heavy bleeding after birth: tell someone right away", "onScreen": ["Soaking through a pad in an hour or less", "Passing large clots", "Feeling dizzy, faint, or a racing heart", "In the hospital: press your call button now", "At home: call 911"], "narration": "Some bleeding after birth is normal. But heavy bleeding is an emergency, and it can happen in the hospital or after you go home. Get help right away if you're soaking through a pad in an hour or less, passing large clots, or feeling dizzy, faint, or like your heart is racing. In the hospital, press your call button and tell your nurse immediately. At home, call 911. Support people, if your partner seems pale, confused, or faint, don't wait. Get help.", "sourceIds": ["cdc-hear-her-warning-signs", "who-intrapartum-2018"]}, {"id": "checkin-bleeding", "type": "checkin", "heading": "Quick check-in", "onScreen": [], "narration": "One more check-in.", "sourceIds": ["cdc-hear-her-warning-signs"], "question": {"prompt": "Two hours after birth, you've soaked through a large pad in less than an hour and feel lightheaded. What should you do?", "options": ["Wait for the nurse's next routine check", "Press your call button and tell your nurse right away", "Change the pad and take a nap"], "correctIndex": 1, "explanation": "Soaking a pad in an hour or less, especially with dizziness, can be a sign of serious bleeding. Get help immediately."}}, {"id": "first-hour-wishes", "type": "reflection", "heading": "Your first-hour wishes", "onScreen": ["Skin to skin right away, and for how long", "Delayed cord clamping, and who cuts the cord", "First feeding plans", "Photos, quiet time, and when visitors are welcome"], "narration": "Let's capture your wishes for the first hour. Do you want skin to skin right away, and for how long? Delayed cord clamping, and who would like to cut the cord? Your first feeding plans? And what about photos, quiet time, and when visitors are welcome? Save it to your Birth Readiness Brief, and share it with your care team.", "sourceIds": [], "savesTo": "birthReadinessBrief", "prompt": "Write your wishes for skin to skin, cord clamping and cutting, first feeding, photos, quiet time, and visitors."}, {"id": "summary", "type": "summary", "heading": "What we covered", "onScreen": ["The placenta usually comes within about half an hour", "Medicine after birth helps prevent heavy bleeding", "Delayed cord clamping boosts baby's iron", "Skin to skin supports warmth, calm, and feeding", "Heavy bleeding: get help right away"], "narration": "Let's recap. The placenta usually comes within about half an hour, and medicine given after birth helps prevent heavy bleeding. Delayed cord clamping gives your baby extra blood and iron. Skin to skin keeps your baby warm and calm and supports that first feeding. And if you notice heavy bleeding, get help right away. That completes Labor Basics. Congratulations, you now know the whole journey from first contraction to first cuddle.", "sourceIds": ["acog-co814", "aap-breastfeeding-2022", "who-intrapartum-2018"]}], "reviewQuiz": [{"prompt": "Why is medicine like oxytocin usually given right after birth?", "options": ["To help the baby breathe", "To help the uterus contract and limit bleeding", "To start breast milk"], "correctIndex": 1, "explanation": "Oxytocin helps the uterus contract firmly, which is how the body controls bleeding after the placenta separates."}, {"prompt": "Which is a benefit of skin-to-skin contact right after birth?", "options": ["It helps keep baby warm and steadies breathing and heart rate", "It replaces the need for any newborn checks", "It's only for breastfeeding parents"], "correctIndex": 0, "explanation": "Skin to skin keeps babies warm and calm and helps steady breathing, heart rate, and blood sugar, whatever your feeding plan."}, {"prompt": "Which of these is a warning sign of heavy bleeding after birth?", "options": ["Bleeding like a heavy period", "Mild cramping", "Soaking through a pad in an hour or less"], "correctIndex": 2, "explanation": "Bleeding like a heavy period is expected, but soaking a pad in an hour or less, large clots, or dizziness mean get help right away."}]}];
+let LESSON = LESSONS[0];
+
+const $ = (id) => document.getElementById(id);
+const stage = $('stage'), caption = $('caption'), nextBtn = $('next'), prevBtn = $('prev'), playBtn = $('play');
+let SLIDES = LESSON.slides;
+let SRC = Object.fromEntries(LESSON.sources.map(s => [s.id, s]));
+const synth = 'speechSynthesis' in window ? window.speechSynthesis : null;
+
+const st = {
+  mode: 'intro',        // intro | slides | quiz | done
+  i: 0,                 // slide index
+  q: 0,                 // quiz index
+  score: 0,
+  voice: !!synth,
+  captions: true,
+  playing: false,
+  sent: 0,              // sentence index in narration
+  run: 0,               // cancels stale speech callbacks
+  narrationDone: false,
+  answered: false,
+  advanceTimer: null,
+};
+
+const PLAY_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg>';
+const PAUSE_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="4.5" width="4" height="15" rx="1"/><rect x="14" y="4.5" width="4" height="15" rx="1"/></svg>';
+
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function sentences(t){ return (t.match(/[^.!?]+[.!?]+["']?\s*/g) || [t]).map(s => s.trim()).filter(Boolean); }
+
+/* ---------- Voice ---------- */
+let chosenVoice = null;
+function pickVoice(){
+  if (!synth) return;
+  const vs = synth.getVoices().filter(v => /^en(-|_)?/i.test(v.lang));
+  let saved = null; try { saved = localStorage.getItem('voiceName'); } catch (e) {}
+  const keep = saved && vs.find(v => v.name === saved);
+  if (keep){ chosenVoice = keep; renderVoicePicker(); return; }
+  const prefs = [/premium/i, /enhanced/i, /natural/i, /neural/i, /\bava\b/i, /\bzoe\b/i, /samantha/i, /aria/i, /jenny/i, /google us english/i, /allison/i];
+  chosenVoice = null;
+  for (const p of prefs){ const v = vs.find(v => p.test(v.name) && /en-US/i.test(v.lang)) || vs.find(v => p.test(v.name)); if (v){ chosenVoice = v; break; } }
+  if (!chosenVoice) chosenVoice = vs.find(v => /en-US/i.test(v.lang)) || vs[0] || null;
+  renderVoicePicker();
+}
+function renderVoicePicker(){
+  const sel = document.getElementById('voiceList'); if (!sel || !synth) return;
+  const vs = synth.getVoices().filter(v => /^en/i.test(v.lang));
+  const rank = v => (/premium|enhanced|natural|neural/i.test(v.name) ? 0 : 1);
+  vs.sort((a, b) => rank(a) - rank(b) || a.name.localeCompare(b.name));
+  sel.innerHTML = vs.map(v => `<option value="${esc(v.name)}"${chosenVoice && v.name === chosenVoice.name ? ' selected' : ''}>${esc(v.name)} (${esc(v.lang)})</option>`).join('');
+  sel.onchange = () => { chosenVoice = vs.find(v => v.name === sel.value) || chosenVoice; try { localStorage.setItem('voiceName', sel.value); } catch (e) {} previewVoice(); };
+  const t = document.getElementById('voiceTry'); if (t) t.onclick = previewVoice;
+}
+function previewVoice(){
+  if (!synth) return; synth.cancel();
+  const u = new SpeechSynthesisUtterance("Welcome to Labor Basics. I'm so glad you're here.");
+  if (chosenVoice) u.voice = chosenVoice; u.rate = 0.97; synth.speak(u);
+}
+if (synth){ pickVoice(); synth.onvoiceschanged = pickVoice; }
+
+function stopSpeech(){
+  st.run++;
+  if (synth) synth.cancel();
+}
+
+function currentNarration(){
+  if (st.mode === 'slides') return SLIDES[st.i].narration;
+  if (st.mode === 'quiz') return 'Review question ' + (st.q + 1) + ' of ' + LESSON.reviewQuiz.length + '.';
+  return '';
+}
+
+function renderCaption(){
+  const parts = sentences(currentNarration());
+  caption.innerHTML = parts.map((s, k) => `<span class="s${k === st.sent && st.playing ? ' on' : ''}" data-k="${k}">${esc(s)} </span>`).join('');
+  caption.classList.toggle('static', !st.voice || !st.playing);
+  caption.hidden = !st.captions || !parts.join('').length;
+  const on = caption.querySelector('.s.on');
+  if (on) on.scrollIntoView({block:'nearest'});
+}
+
+function speakFrom(k){
+  const parts = sentences(currentNarration());
+  if (!st.voice || !synth || !parts.length){ st.playing = false; finishNarration(); return; }
+  const run = ++st.run;
+  synth.cancel();
+  st.playing = true; st.sent = k; updateControls(); renderCaption();
+  const say = (n) => {
+    if (run !== st.run) return;
+    if (n >= parts.length){ st.playing = false; renderCaption(); finishNarration(); return; }
+    st.sent = n; renderCaption();
+    const u = new SpeechSynthesisUtterance(parts[n]);
+    if (chosenVoice) u.voice = chosenVoice;
+    u.rate = 0.97; u.pitch = 1;
+    u.onend = () => say(n + 1);
+    u.onerror = () => { if (run === st.run){ st.playing = false; renderCaption(); updateControls(); } };
+    synth.speak(u);
+  };
+  say(k);
+}
+
+function finishNarration(){
+  st.narrationDone = true;
+  updateControls();
+  if (st.mode !== 'slides') return;
+  const s = SLIDES[st.i];
+  const autoTypes = ['title','content','comparison','summary'];
+  if (st.voice && autoTypes.includes(s.type) && st.i < SLIDES.length - 1){
+    clearTimeout(st.advanceTimer);
+    st.advanceTimer = setTimeout(() => go(1), 1400);
+  }
+}
+
+/* ---------- Visuals ---------- */
+function visualHTML(s){
+  if (s.id === 'when-labor-starts') return `<div class="visual">${timelineSVG()}</div>`;
+  if (s.id === 'what-is-a-contraction') return `<div class="visual">${waveSVG()}</div>`;
+  if (s.id === 'water-breaking') return `<div class="visual">${iconsSVG()}</div>`;
+  if (s.type === 'comparison'){
+    return `<div class="visual" style="padding:6px;overflow-x:auto"><table class="cmp${s.id === 'two-kinds-of-calls' ? ' alert' : ''}"><thead><tr><th>${esc(s.columns[0])}</th><th>${esc(s.columns[1])}</th></tr></thead><tbody>${s.rows.map(r => `<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join('')}</tbody></table></div>`;
+  }
+  if (s.visual) return `<div class="visual placeholder"><strong>Artwork to come</strong>${esc(s.visual.description)}</div>`;
+  return '';
+}
+function timelineSVG(){
+  const x = w => 20 + (w - 34) * 40; // 34..42 weeks → 20..340
+  const zone = (a, b, fill, label) => `<rect x="${x(a)}" y="40" width="${x(b) - x(a)}" height="34" rx="6" fill="${fill}"/><text x="${(x(a) + x(b)) / 2}" y="62" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">${label}</text>`;
+  let ticks = '';
+  for (let w = 34; w <= 42; w++) ticks += `<text x="${x(w)}" y="94" text-anchor="middle" font-size="11" fill="var(--muted)">${w}</text>`;
+  return `<svg viewBox="0 0 360 110" role="img" aria-label="Timeline: before 37 weeks preterm, 37 to 38 early term, 39 to 40 full term, 41 to 42 late term; due date at 40 weeks">
+    ${zone(34,37,'var(--alert-soft)','Preterm')}${zone(37,39,'var(--marigold-soft)','Early term')}${zone(39,41,'var(--lagoon-soft)','Full term')}${zone(41,42,'var(--line)','Late')}
+    <line x1="${x(40)}" y1="28" x2="${x(40)}" y2="40" stroke="var(--ink)" stroke-width="2"/><line x1="${x(40)}" y1="74" x2="${x(40)}" y2="82" stroke="var(--ink)" stroke-width="2"/>
+    <text x="${x(40)}" y="22" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">Due date</text>${ticks}
+    <text x="180" y="108" text-anchor="middle" font-size="10" fill="var(--muted)">weeks of pregnancy</text></svg>`;
+}
+function waveSVG(){
+  return `<svg viewBox="0 0 360 120" role="img" aria-label="Two contraction waves: each builds, peaks, and eases, with rest between">
+    <path d="M10 95 C 50 95, 60 25, 90 25 S 130 95, 170 95 L 190 95 C 230 95, 240 25, 270 25 S 310 95, 350 95" fill="none" stroke="var(--lagoon)" stroke-width="4" stroke-linecap="round"/>
+    <text x="90" y="16" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">Peak</text>
+    <text x="40" y="114" text-anchor="middle" font-size="11" fill="var(--muted)">Builds</text>
+    <text x="140" y="114" text-anchor="middle" font-size="11" fill="var(--muted)">Eases</text>
+    <text x="180" y="86" text-anchor="middle" font-size="11" fill="var(--muted)">Rest</text></svg>`;
+}
+function iconsSVG(){
+  const item = (cx, body, label) => `<g><circle cx="${cx}" cy="45" r="32" fill="var(--lagoon-soft)"/>${body}<text x="${cx}" y="102" text-anchor="middle" font-size="12" font-weight="700" fill="var(--ink)">${label}</text></g>`;
+  return `<svg viewBox="0 0 360 112" role="img" aria-label="Note the time, note the color, call your care team">
+    ${item(60, `<circle cx="60" cy="45" r="16" fill="none" stroke="var(--lagoon)" stroke-width="3"/><path d="M60 36v10l7 5" stroke="var(--lagoon)" stroke-width="3" fill="none" stroke-linecap="round"/>`, 'Note the time')}
+    ${item(180, `<path d="M180 27 C 170 42, 166 49, 166 55 a14 14 0 0 0 28 0 c0-6-4-13-14-28z" fill="var(--lagoon)"/>`, 'Note the color')}
+    ${item(300, `<rect x="290" y="27" width="20" height="36" rx="4" fill="none" stroke="var(--lagoon)" stroke-width="3"/><circle cx="300" cy="57" r="2.5" fill="var(--lagoon)"/>`, 'Call your team')}
+  </svg>`;
+}
+function sourcesHTML(ids){
+  if (!ids || !ids.length) return '';
+  return `<div class="sources">${ids.map(id => SRC[id]).filter(Boolean).map(s => `<a href="${esc(s.url)}" target="_blank" rel="noopener">${esc(s.organization)}: ${esc(s.title)}</a>`).join('')}</div>`;
+}
+
+/* ---------- Slides ---------- */
+function renderIntro(){
+  stage.innerHTML = `<section class="slide title-slide">
+    <div class="lessonpick" role="group" aria-label="Choose a lesson">${LESSONS.map((l, k) => `<button type="button" data-l="${k}" aria-pressed="${l === LESSON}">${l.order}. ${esc(l.title)}</button>`).join('')}</div>
+    <p class="kicker">BabyReady · Labor Basics · Lesson ${LESSON.order}</p>
+    <h1>${esc(LESSON.title)}</h1>
+    <p>A short class, about ${LESSON.estimatedMinutes} minutes. Your instructor will talk you through each slide, with a couple of quick check-ins along the way.</p>
+    <ul class="points">${LESSON.learningGoals.map(g => `<li>${esc(g)}</li>`).join('')}</ul>
+    <p style="color:var(--muted);font-size:14px">Turn your sound on. ${synth ? '' : 'This browser can’t speak aloud, so captions will carry the narration.'}</p>
+    ${synth ? `<div class="voicebox"><label for="voiceList">Instructor voice</label><div class="vrow"><select id="voiceList"></select><button type="button" class="ctl" id="voiceTry">Preview</button></div><p class="tip">Voices marked Premium or Enhanced sound the most natural. On iPhone, download them in Settings → Accessibility → Spoken Content → Voices → English, then reopen this page.</p></div>` : ''}
+  </section>`;
+  caption.hidden = true;
+  nextBtn.textContent = 'Start';
+  renderVoicePicker();
+  stage.querySelectorAll('.lessonpick button').forEach(b => b.addEventListener('click', () => loadLesson(+b.dataset.l)));
+  stage.querySelector('.lessonpick button[aria-pressed="true"]')?.scrollIntoView({block: 'nearest', inline: 'center'});
+  updateControls();
+}
+
+function renderSlide(){
+  const s = SLIDES[st.i];
+  st.narrationDone = false; st.answered = false; st.sent = 0;
+  const pts = s.onScreen.length ? `<ul class="points">${s.onScreen.map(p => `<li>${esc(p)}</li>`).join('')}</ul>` : '';
+  let body = '';
+  if (s.type === 'title'){
+    body = `<section class="slide title-slide"><p class="kicker">${esc(s.onScreen.join(' · '))}</p><h1>${esc(s.heading)}</h1>${visualHTML(s)}</section>`;
+  } else if (s.type === 'checkin'){
+    const q = s.question;
+    body = `<section class="slide"><span class="badge">Check-in</span><p class="question">${esc(q.prompt)}</p>
+      <div class="opts">${q.options.map((o, k) => `<button class="opt" type="button" data-k="${k}" aria-pressed="false">${esc(o)}</button>`).join('')}</div>
+      <div id="explain"></div></section>`;
+  } else if (s.type === 'safety'){
+    body = `<section class="slide safety" role="alert"><h1>${esc(s.heading)}</h1>${pts}
+      <a class="call911" href="tel:911">Call 911</a>${sourcesHTML(s.sourceIds)}</section>`;
+  } else if (s.type === 'video'){
+    body = `<section class="slide"><h1>${esc(s.heading)}</h1>
+      <div class="video-frame"><div><div class="play">${PLAY_ICON}</div><strong>Video to come (up to ${Math.round(s.video.maxSeconds)} seconds)</strong><br>${esc(s.video.brief)}</div></div>
+      <div style="height:12px"></div>${pts}${sourcesHTML(s.sourceIds)}</section>`;
+  } else if (s.type === 'reflection'){
+    let saved = '';
+    try { saved = localStorage.getItem('brief:' + s.id) || ''; } catch (e) {}
+    body = `<section class="slide"><h1>${esc(s.heading)}</h1>${pts}
+      <label for="refl" style="display:block;font-weight:700;margin-bottom:6px">${esc(s.prompt)}</label>
+      <textarea id="refl">${esc(saved)}</textarea>
+      <div class="saved" id="savedNote">${saved ? 'Saved to your Birth Readiness Brief' : ''}</div>${sourcesHTML(s.sourceIds)}</section>`;
+  } else {
+    body = `<section class="slide"><h1>${esc(s.heading)}</h1>${visualHTML(s)}${pts}${sourcesHTML(s.sourceIds)}</section>`;
+  }
+  stage.innerHTML = body;
+  stage.scrollTop = 0;
+
+  if (s.type === 'checkin') wireCheckin(s.question, () => { st.answered = true; updateControls(); });
+  if (s.type === 'reflection'){
+    const ta = $('refl'); let t;
+    ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => {
+      try { localStorage.setItem('brief:' + s.id, ta.value); $('savedNote').textContent = 'Saved to your Birth Readiness Brief'; }
+      catch (e) { $('savedNote').textContent = 'Couldn’t save on this device. Copy your notes somewhere safe.'; }
+    }, 500); });
+  }
+  updateControls();
+  speakFrom(0);
+}
+
+function wireCheckin(q, onDone){
+  const btns = [...stage.querySelectorAll('.opt')];
+  btns.forEach(b => b.addEventListener('click', () => {
+    if (btns.some(x => x.getAttribute('aria-pressed') === 'true')) return;
+    const k = +b.dataset.k, right = k === q.correctIndex;
+    b.setAttribute('aria-pressed', 'true');
+    b.classList.add(right ? 'right' : 'wrong');
+    if (!right) btns[q.correctIndex].classList.add('reveal');
+    $('explain').innerHTML = `<div class="explain"><strong>${right ? 'That’s right.' : 'Not quite.'}</strong> ${esc(q.explanation)}</div>`;
+    if (st.mode === 'quiz' && right) st.score++;
+    stopSpeech(); st.playing = false;
+    if (st.voice && synth){
+      const u = new SpeechSynthesisUtterance((right ? 'That’s right. ' : 'Not quite. ') + q.explanation);
+      if (chosenVoice) u.voice = chosenVoice; u.rate = 0.97; synth.speak(u);
+    }
+    onDone();
+  }));
+}
+
+/* ---------- Quiz ---------- */
+function renderQuiz(){
+  const q = LESSON.reviewQuiz[st.q];
+  st.answered = false; st.sent = 0;
+  stage.innerHTML = `<section class="slide"><span class="badge">Review ${st.q + 1} of ${LESSON.reviewQuiz.length}</span>
+    <p class="question">${esc(q.prompt)}</p>
+    <div class="opts">${q.options.map((o, k) => `<button class="opt" type="button" data-k="${k}" aria-pressed="false">${esc(o)}</button>`).join('')}</div>
+    <div id="explain"></div></section>`;
+  wireCheckin(q, () => { st.answered = true; updateControls(); });
+  updateControls();
+  speakFrom(0);
+}
+function renderDone(){
+  stopSpeech(); st.playing = false;
+  const n = LESSON.reviewQuiz.length;
+  const nextL = LESSONS[LESSONS.indexOf(LESSON) + 1];
+  stage.innerHTML = `<section class="slide title-slide"><p class="kicker">Lesson complete</p>
+    <div class="result">${st.score}/${n}</div>
+    <h1 style="font-size:28px">Nice work finishing ${esc(LESSON.title)}</h1>
+    <p>${nextL ? `Next up: <strong>${esc(nextL.title)}</strong>. ` : `That's the end of this preview. `}You can replay this lesson anytime, or tap Ask with any questions.</p></section>`;
+  caption.hidden = true;
+  updateControls();
+  if (st.voice && synth){
+    const u = new SpeechSynthesisUtterance('Nice work. You finished the lesson.' + (nextL ? ' Next up, ' + nextL.title + '.' : ''));
+    if (chosenVoice) u.voice = chosenVoice; synth.speak(u);
+  }
+}
+
+/* ---------- Navigation ---------- */
+function go(d){
+  clearTimeout(st.advanceTimer);
+  stopSpeech(); st.playing = false;
+  if (st.mode === 'intro'){ st.mode = 'slides'; st.i = 0; return show(); }
+  if (st.mode === 'slides'){
+    const n = st.i + d;
+    if (n < 0) return;
+    if (n >= SLIDES.length){ st.mode = 'quiz'; st.q = 0; st.score = 0; return show(); }
+    st.i = n; return show();
+  }
+  if (st.mode === 'quiz'){
+    if (d < 0){ st.mode = 'slides'; st.i = SLIDES.length - 1; return show(); }
+    if (st.q + 1 >= LESSON.reviewQuiz.length){ st.mode = 'done'; return show(); }
+    st.q++; return show();
+  }
+  if (st.mode === 'done' && d < 0){ st.mode = 'quiz'; st.q = LESSON.reviewQuiz.length - 1; return show(); }
+  if (st.mode === 'done' && d > 0){ const nx = LESSONS.indexOf(LESSON) + 1; if (nx < LESSONS.length) return loadLesson(nx); st.mode = 'slides'; st.i = 0; st.score = 0; return show(); }
+}
+function show(){
+  if (st.mode === 'intro') renderIntro();
+  else if (st.mode === 'slides') renderSlide();
+  else if (st.mode === 'quiz') renderQuiz();
+  else renderDone();
+  renderSegments();
+}
+
+function renderSegments(){
+  const total = SLIDES.length + 1;
+  const pos = st.mode === 'intro' ? -1 : st.mode === 'slides' ? st.i : st.mode === 'quiz' ? SLIDES.length : total;
+  $('segments').innerHTML = Array.from({length: total}, (_, k) => `<span class="${k < pos ? 'done' : k === pos ? 'now' : ''}"></span>`).join('');
+}
+
+function updateControls(){
+  const app = $('app');
+  app.classList.remove('safety-mode');
+  prevBtn.disabled = st.mode === 'intro' || (st.mode === 'slides' && st.i === 0);
+  playBtn.innerHTML = st.playing ? PAUSE_ICON : PLAY_ICON;
+  playBtn.setAttribute('aria-label', st.playing ? 'Pause narration' : 'Play narration');
+  playBtn.disabled = !st.voice || st.mode === 'intro' || st.mode === 'done';
+  $('voice').textContent = st.voice ? 'Voice' : 'Muted';
+  $('voice').setAttribute('aria-pressed', String(st.voice));
+  $('voice').disabled = !synth;
+  $('cc').setAttribute('aria-pressed', String(st.captions));
+  nextBtn.disabled = false;
+  if (st.mode === 'intro'){ nextBtn.textContent = 'Start'; return; }
+  if (st.mode === 'done'){ nextBtn.textContent = LESSONS.indexOf(LESSON) + 1 < LESSONS.length ? 'Next lesson' : 'Replay'; return; }
+  if (st.mode === 'quiz'){
+    nextBtn.textContent = st.q + 1 >= LESSON.reviewQuiz.length ? 'Results' : 'Next';
+    nextBtn.disabled = !st.answered; return;
+  }
+  const s = SLIDES[st.i];
+  nextBtn.textContent = st.i === SLIDES.length - 1 ? 'Quiz' : 'Next';
+  if (s.type === 'checkin'){ nextBtn.textContent = 'Continue'; nextBtn.disabled = !st.answered; }
+  if (s.type === 'safety'){
+    app.classList.add('safety-mode');
+    nextBtn.textContent = 'Got it';
+    nextBtn.disabled = st.voice && synth ? !st.narrationDone : false;
+  }
+}
+
+nextBtn.addEventListener('click', () => go(1));
+prevBtn.addEventListener('click', () => go(-1));
+playBtn.addEventListener('click', () => {
+  clearTimeout(st.advanceTimer);
+  if (st.playing){ const k = st.sent; stopSpeech(); st.playing = false; st.sent = k; renderCaption(); updateControls(); }
+  else speakFrom(st.narrationDone ? 0 : st.sent);
+});
+$('voice').addEventListener('click', () => {
+  st.voice = !st.voice;
+  clearTimeout(st.advanceTimer);
+  if (!st.voice){ stopSpeech(); st.playing = false; st.narrationDone = true; }
+  renderCaption(); updateControls();
+});
+$('cc').addEventListener('click', () => { st.captions = !st.captions; renderCaption(); updateControls(); });
+
+/* ---------- Ask a question ---------- */
+const URGENT = [
+  /\bbleed(ing)?\b/i, /\bheavy (blood|flow)\b/i,
+  /(can'?t|cannot|trouble|hard to|difficulty) breath/i, /\bchest pain\b/i, /heart (is )?(racing|pounding)/i,
+  /\bsevere\b/i, /\bseizure|convuls/i, /\bfaint(ed|ing)?\b|passed out/i,
+  /(not|stopped|less|isn'?t|hasn'?t been|reduced|decreased|fewer) (feel(ing)? )?(the )?(baby )?(mov|kick)/i,
+  /\bfever\b/i, /\b(blurr|vision|seeing spots)/i, /headache (that )?(won'?t|will not|isn'?t) go/i,
+  /hurt (myself|my baby)|kill myself|suicid/i
+];
+const NOW_WATER = /\b(my )?water (just )?(broke|broken|is breaking)\b|\bleaking fluid\b/i;
+
+const CHIPS = {
+  'how-labor-begins': ['What is bloody show?', 'How do I time contractions?', 'What are Braxton Hicks?', 'What does early term mean?'],
+  'when-to-contact-your-care-team': ['What does 5-1-1 mean?', 'What is group B strep?', 'What will the nurse ask me?', 'Is it okay to call at night?'],
+  'stages-of-labor': ['What is effacement?', 'When does active labor start?', 'What is transition?', 'How long does pushing take?'],
+  'early-labor-at-home': ['Can I eat during early labor?', 'Should I rest or walk?', 'Can I take a bath?', 'How often should I time contractions?'],
+  'pushing-and-birth': ['What does crowning feel like?', 'Will I tear?', 'What is an episiotomy?', 'Can I push with an epidural?'],
+  'placenta-and-first-hour': ['Why wait to clamp the cord?', 'What is skin to skin?', 'What is an Apgar score?', 'How much bleeding is normal?']
+};
+function renderChips(){ $('chips').innerHTML = (CHIPS[LESSON.lessonId] || []).map(c => `<button type="button">${esc(c)}</button>`).join(''); }
+renderChips();
+$('chips').addEventListener('click', e => { if (e.target.tagName === 'BUTTON'){ $('q').value = e.target.textContent; ask(); } });
+
+let samplePromise = null, askCtl = null, wasPlaying = false;
+function getSample(){
+  if (!samplePromise) samplePromise = (window.claude && claude.use) ? claude.use('sample').catch(() => null) : Promise.resolve(null);
+  return samplePromise;
+}
+getSample();
+
+function openSheet(){
+  wasPlaying = st.playing;
+  clearTimeout(st.advanceTimer);
+  if (st.playing){ const k = st.sent; stopSpeech(); st.playing = false; st.sent = k; renderCaption(); updateControls(); }
+  $('sheetBack').classList.add('open'); $('sheet').classList.add('open');
+  setTimeout(() => $('q').focus(), 50);
+}
+function closeSheet(){
+  askCtl?.abort();
+  $('sheetBack').classList.remove('open'); $('sheet').classList.remove('open');
+  $('askOpen').focus();
+  if (wasPlaying && st.mode !== 'intro') speakFrom(st.sent);
+}
+$('askOpen').addEventListener('click', openSheet);
+$('askClose').addEventListener('click', closeSheet);
+$('sheetBack').addEventListener('click', closeSheet);
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && $('sheet').classList.contains('open')) closeSheet(); });
+$('askSend').addEventListener('click', ask);
+
+function lessonText(){
+  return SLIDES.map(s => {
+    let t = `## ${s.heading}\n${s.onScreen.join('\n')}\n${s.narration}`;
+    if (s.rows) t += '\n' + s.rows.map(r => `${s.columns[0]}: ${r[0]} | ${s.columns[1]}: ${r[1]}`).join('\n');
+    if (s.question) t += `\nQ: ${s.question.prompt}\nA: ${s.question.options[s.question.correctIndex]}. ${s.question.explanation}`;
+    return t;
+  }).join('\n\n');
+}
+
+async function ask(){
+  const q = $('q').value.trim();
+  const out = $('answer');
+  if (!q){ out.innerHTML = '<p class="answer">Type a question first, or tap one of the examples.</p>'; return; }
+
+  // Safety routing runs first and never goes to the AI.
+  if (URGENT.some(r => r.test(q))){
+    out.innerHTML = `<div class="urgent"><strong>This sounds like it could need attention now.</strong><br>
+      Contact your care team right away. If it feels like an emergency, call 911. This class can’t assess symptoms.
+      <a class="call911" href="tel:911">Call 911</a></div>`;
+    return;
+  }
+  if (NOW_WATER.test(q)){
+    out.innerHTML = `<div class="urgent"><strong>Call your care team now.</strong><br>
+      When your water breaks, your care team wants to hear from you, even without contractions. Note the time and what the fluid looks like. If anything feels like an emergency, call 911.</div>`;
+    return;
+  }
+
+  const sample = await getSample();
+  if (!sample){
+    out.innerHTML = '<p class="answer">Questions aren’t available in this view. Open this page in the Claude app to try them.</p>';
+    return;
+  }
+  askCtl?.abort(); askCtl = new AbortController();
+  $('askSend').disabled = true;
+  out.innerHTML = '<p class="answer" id="ans">Thinking...</p>';
+  const prompt = `You are the question helper inside BabyReady, a childbirth education class. Answer the learner's question using ONLY the lesson content below.
+Rules:
+- Warm, plain language at about a 6th-grade reading level. 2 to 4 short sentences. No markdown, no lists.
+- If the lesson does not cover the question, say so in one sentence and suggest asking their care team. Do not answer from outside knowledge.
+- Never diagnose, never tell someone whether they are in labor, and never give medication or dosing advice.
+- If the question describes a symptom happening right now, tell them to contact their care team, or call 911 if it feels like an emergency.
+- On the final line write "From: " followed by the slide heading(s) you used, or "From: not covered in this lesson".
+
+LESSON: ${LESSON.title}
+${lessonText()}
+
+LEARNER'S QUESTION: ${q}`;
+  try {
+    const { text } = await sample(prompt, {
+      modelTier: 'quick', signal: askCtl.signal,
+      onText: ({ text }) => { const el = $('ans'); if (el) el.textContent = text; }
+    });
+    const m = text.match(/\n?From:\s*(.+)\s*$/i);
+    const main = m ? text.slice(0, m.index).trim() : text.trim();
+    out.innerHTML = `<p class="answer">${esc(main)}${m ? `<span class="from">From: ${esc(m[1])}</span>` : ''}</p>`;
+  } catch (e) {
+    const msg = {
+      not_granted: 'Questions are turned off for this page. You can allow them from the page’s permissions.',
+      rate_limited: 'Lots of questions at once. Wait a moment, then ask again.',
+      cancelled: ''
+    }[e.code] ?? 'Something went wrong getting an answer. Try asking again.';
+    out.innerHTML = msg ? `<p class="answer">${esc(msg)}</p>` : '';
+  } finally {
+    $('askSend').disabled = false;
+  }
+}
+
+/* ---------- Start ---------- */
+function loadLesson(n){
+  clearTimeout(st.advanceTimer); stopSpeech();
+  LESSON = LESSONS[n]; SLIDES = LESSON.slides;
+  SRC = Object.fromEntries(LESSON.sources.map(s => [s.id, s]));
+  Object.assign(st, { mode: 'intro', i: 0, q: 0, score: 0, playing: false, sent: 0, narrationDone: false, answered: false });
+  $('lessonTitle').textContent = LESSON.title;
+  $('answer').innerHTML = ''; $('q').value = '';
+  renderChips(); show();
+}
+$('lessonTitle').textContent = LESSON.title;
+show();
+</script>
+</body>
+</html>

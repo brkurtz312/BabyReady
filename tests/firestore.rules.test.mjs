@@ -980,6 +980,58 @@ test('Birth Readiness Brief timestamps must be server-generated and preserve cre
   );
 });
 
+const birthReadinessReflection = (overrides = {}) => ({
+  courseId: 'labor-basics',
+  lessonId: 'how-labor-begins',
+  slideId: 'your-call-plan',
+  text: 'Call when contractions are 5-1-1.',
+  updatedAt: serverTimestamp(),
+  ...overrides,
+});
+
+test('a learner alone can save, read, and delete their class reflections', async () => {
+  const alice = userDb('alice');
+  const bob = userDb('bob');
+  const path = 'users/alice/birthReadinessReflections/how-labor-begins__your-call-plan';
+  const reflection = doc(alice, path);
+
+  await assertSucceeds(setDoc(reflection, birthReadinessReflection()));
+  await assertSucceeds(getDoc(reflection));
+  await assertSucceeds(getDocs(collection(alice, 'users/alice/birthReadinessReflections')));
+  await assertFails(getDoc(doc(bob, path)));
+  await assertFails(setDoc(doc(bob, path), birthReadinessReflection()));
+  await assertSucceeds(
+    setDoc(reflection, birthReadinessReflection({ text: 'Updated answer.' })),
+  );
+  await assertFails(deleteDoc(doc(bob, path)));
+  await assertSucceeds(deleteDoc(reflection));
+});
+
+test('class reflection rules reject mismatched ids, extra fields, and unbounded text', async () => {
+  const alice = userDb('alice');
+  const path = 'users/alice/birthReadinessReflections/how-labor-begins__your-call-plan';
+
+  await assertFails(
+    setDoc(
+      doc(alice, 'users/alice/birthReadinessReflections/some-other-id'),
+      birthReadinessReflection(),
+    ),
+  );
+  await assertFails(setDoc(doc(alice, path), birthReadinessReflection({ prompt: 'Injected' })));
+  await assertFails(setDoc(doc(alice, path), birthReadinessReflection({ text: '' })));
+  await assertFails(setDoc(doc(alice, path), birthReadinessReflection({ text: 'x'.repeat(2001) })));
+  await assertSucceeds(setDoc(doc(alice, path), birthReadinessReflection({ text: 'x'.repeat(2000) })));
+  await assertFails(setDoc(doc(alice, path), birthReadinessReflection({ courseId: 'Labor Basics!' })));
+  await assertFails(
+    setDoc(
+      doc(alice, path),
+      birthReadinessReflection({
+        updatedAt: Timestamp.fromDate(new Date('2026-08-01T00:00:00.000Z')),
+      }),
+    ),
+  );
+});
+
 test('safety events are server/admin write only', async () => {
   const alice = userDb('alice');
   const admin = userDb('admin', { admin: true });
