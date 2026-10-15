@@ -288,7 +288,7 @@ export function LearnerLearningPlanScreen({
           <Text style={styles.backButtonText}>‹ Home</Text>
         </Pressable>
 
-        <Text style={styles.brand}>BABYREADY</Text>
+        <Text style={styles.brand}>BABYREADY VIRTUAL EDUCATOR</Text>
         <Text accessibilityRole="header" style={styles.title}>
           Pregnancy learning plan
         </Text>

@@ -13,7 +13,7 @@ import {
 } from 'react-native';
 
 import { AskQuestionSheet } from '../components/AskQuestionSheet';
-import { LABOR_BASICS_TITLE, laborBasicsLessons } from '../content/lessons';
+import type { Course } from '../content/lessons';
 import { NARRATION_RATE, pickNarrationVoice, splitSentences } from '../lib/narration';
 import { BIRTH_READINESS_REFLECTION_MAX_LENGTH } from '../models/birthReadinessReflection';
 import type { CheckInQuestion, Lesson, Slide, Source } from '../models/lesson';
@@ -125,17 +125,17 @@ type ClassPlayerScreenProps = {
   onOpenBrief: () => void;
   /** Signed-in learner. Without one, reflections are kept on this device only. */
   userId: string | null;
-  lessons?: Lesson[];
-  courseTitle?: string;
+  course: Course;
 };
 
 export function ClassPlayerScreen({
   onExit,
   onOpenBrief,
   userId,
-  lessons = laborBasicsLessons,
-  courseTitle = LABOR_BASICS_TITLE,
+  course,
 }: ClassPlayerScreenProps) {
+  const lessons = course.lessons;
+  const courseTitle = course.title;
   const reducer = useMemo(() => makeReducer(lessons), [lessons]);
   const [state, dispatch] = useReducer(reducer, 0, startOfLesson);
 

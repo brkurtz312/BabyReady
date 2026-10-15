@@ -1,0 +1,391 @@
+{
+  "courseId": "early-pregnancy-basics",
+  "lessonId": "first-trimester-common-changes",
+  "order": 2,
+  "title": "Common Changes, Simple Support, and When to Reach Out",
+  "learningGoals": [
+    "Recognize common first-trimester changes",
+    "Use simple, everyday steps that may ease nausea, and know when to ask for more help",
+    "Know that bleeding in early pregnancy is common but always worth a call, and which signs need a call right away",
+    "Recognize urgent maternal warning signs and get care right away",
+    "Know a few healthy habits for early pregnancy"
+  ],
+  "estimatedMinutes": 10,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course. Sources fetched and checked against slides by an automated first pass; needs clinician review. The old course cited CDC 'Videos: Vaccines and Pregnancy' for general healthy-pregnancy tips, but that page only covers flu and whooping cough vaccines, so the tips now cite CDC folic acid, alcohol, and medicine pages instead. Specific vaccine advice was left out because CDC's vaccines-in-pregnancy page was under revision when fetched. The CDC Hear Her page does not mention calling 911, so the safety slides say to get medical care right away instead; reviewer may wish to add 911 guidance with a supporting source."
+  },
+  "sources": [
+    {
+      "id": "nichd-pregnancy-signs",
+      "organization": "NICHD",
+      "title": "What are some common signs of pregnancy?",
+      "url": "https://www.nichd.nih.gov/health/topics/pregnancy/conditioninfo/signs",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-morning-sickness",
+      "organization": "ACOG",
+      "title": "Morning Sickness: Nausea and Vomiting of Pregnancy (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/morning-sickness-nausea-and-vomiting-of-pregnancy",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-bleeding",
+      "organization": "ACOG",
+      "title": "Bleeding During Pregnancy (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/bleeding-during-pregnancy",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-hear-her-warning-signs",
+      "organization": "CDC",
+      "title": "Hear Her: Urgent Maternal Warning Signs",
+      "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-folic-acid",
+      "organization": "CDC",
+      "title": "About Folic Acid",
+      "url": "https://www.cdc.gov/folic-acid/about/index.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-alcohol-pregnancy",
+      "organization": "CDC",
+      "title": "About Alcohol Use During Pregnancy",
+      "url": "https://www.cdc.gov/alcohol-pregnancy/about/index.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-medicine-pregnancy",
+      "organization": "CDC",
+      "title": "About Medicine and Pregnancy",
+      "url": "https://www.cdc.gov/medicine-and-pregnancy/about/index.html",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Common Changes, Simple Support, and When to Reach Out",
+      "onScreen": [
+        "Early Pregnancy Basics · Lesson 2",
+        "About 10 minutes"
+      ],
+      "narration": "Welcome back. In this lesson, we'll talk about the changes many people notice in the first trimester, and simple things that may help. Then we'll talk about something just as important: knowing when to reach out to your care team, and when to get help right away. You don't have to memorize everything. You'll be able to save the key parts to your Birth Readiness Brief. Let's begin.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "Two expecting parents of different backgrounds sitting on a sunny porch step, one holding a water bottle, talking and smiling. Soft coral and sage colors."
+      }
+    },
+    {
+      "id": "common-changes",
+      "type": "content",
+      "heading": "Changes many people notice",
+      "onScreen": [
+        "Sore or tender breasts",
+        "Feeling more tired than usual",
+        "Nausea, food cravings, or food dislikes",
+        "Peeing more often, mood swings, headaches"
+      ],
+      "narration": "Your body is doing a lot of work right now, and hormones are changing fast. Many people notice sore or tender breasts. You may feel more tired than usual. Nausea is common. So are sudden food cravings, or suddenly disliking a food you used to love. You may need to pee more often. Your moods may swing up and down. And some people get headaches early on. Not everyone has all of these, and that's okay too. Every pregnancy is different.",
+      "sourceIds": [
+        "nichd-pregnancy-signs"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "A soft illustrated checklist of everyday changes with gentle icons: a pillow, a plate, a water drop, a cloud with sun peeking through. Pastel lavender and peach."
+      }
+    },
+    {
+      "id": "nausea-support",
+      "type": "content",
+      "heading": "Simple support for nausea",
+      "onScreen": [
+        "Eat small \"mini meals\" through the day",
+        "Try bland foods, and add some protein",
+        "Drink throughout the day, not just when thirsty",
+        "Avoid smells that set you off"
+      ],
+      "narration": "Nausea usually starts before nine weeks, and for most people it eases by about fourteen weeks. Until then, small changes can help. Try eating five or six mini meals a day, so your stomach is never empty. Keep crackers by your bed and eat a few before you get up. Bland foods, like bananas, rice, applesauce, and toast, are often easier to keep down. Try to add a little protein, like yogurt, nuts, or nut butter, to each meal. Sip fluids throughout the day, not just when you feel thirsty. If a bad taste makes water hard to drink, chewing gum or sucking on hard candy may help. And if certain smells bother you, use a fan when cooking, or ask someone else to take out the trash.",
+      "sourceIds": [
+        "acog-morning-sickness"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A small plate with crackers, banana slices, and yogurt beside a water glass, with a kitchen fan in the background. Soft yellow and mint tones."
+      }
+    },
+    {
+      "id": "nausea-more-help",
+      "type": "content",
+      "heading": "When nausea needs more help",
+      "onScreen": [
+        "Nausea is affecting your daily life or worrying you",
+        "Safe treatment options exist",
+        "Ask your team before trying any medicine or supplement"
+      ],
+      "narration": "For some people, nausea is mild and passes. For others, it's much harder, and it can get in the way of work, sleep, and daily life. If nausea is affecting your life or worrying you, talk with your care team. There are safe treatments that can help you feel better and keep it from getting worse. Your team will first make sure nothing else is causing it. Then they'll help you choose what's right for you. Please don't start a medicine, vitamin, or herbal remedy for nausea on your own. Check with your care team first.",
+      "sourceIds": [
+        "acog-morning-sickness",
+        "cdc-medicine-pregnancy"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A person on a video call with a friendly clinician, notebook open on their lap. Diverse, warm and soft blue tones."
+      }
+    },
+    {
+      "id": "checkin-nausea",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's pause for a quick check-in.",
+      "sourceIds": [
+        "acog-morning-sickness"
+      ],
+      "question": {
+        "prompt": "A friend says ginger candy and a sleep aid fixed her nausea. What's the best next step for you?",
+        "options": [
+          "Try the same thing tonight",
+          "Ask your care team which options are right for you",
+          "Stop eating until the nausea passes"
+        ],
+        "correctIndex": 1,
+        "explanation": "What helped a friend may not be right for you. Your care team can check for other causes and help you pick safe options. In the meantime, small frequent meals and sipping fluids may help."
+      }
+    },
+    {
+      "id": "early-bleeding",
+      "type": "content",
+      "heading": "Bleeding in early pregnancy",
+      "onScreen": [
+        "Bleeding in the first trimester is common",
+        "Often it isn't a sign of a major problem",
+        "Spotting can happen after sex or a pelvic exam",
+        "Still, call your care team about any bleeding"
+      ],
+      "narration": "Seeing blood when you're pregnant can be scary. So let's talk about it calmly. Bleeding in the first trimester is common. It happens in about fifteen to twenty-five out of every one hundred pregnancies. In many cases, it isn't a sign of a major problem. Light spotting can happen when the pregnancy first settles into the uterus. Your cervix, the opening of your uterus, can also bleed more easily now, so spotting after sex or after a pelvic exam isn't unusual. But bleeding can also be a sign of a problem that needs care. So the rule is simple. Call your care team about any bleeding during pregnancy.",
+      "sourceIds": [
+        "acog-bleeding"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A calm person sitting on the edge of a bed holding a phone, about to make a call, with soft morning light. Muted rose and gray palette."
+      }
+    },
+    {
+      "id": "bleeding-call-now",
+      "type": "safety",
+      "heading": "Bleeding: when to call right away",
+      "onScreen": [
+        "Bleeding with belly, pelvic, or shoulder pain: call right away",
+        "Bleeding more than spotting, like a period: get care now",
+        "Weakness or fainting: get care now",
+        "Tell them you're pregnant"
+      ],
+      "narration": "Some bleeding needs attention right away. If you have bleeding along with pain in your belly, your pelvis, or your shoulder, call your care team right away. These can be signs of a pregnancy growing outside the uterus, which needs care quickly. If you're bleeding more than spotting, like a period, get medical care right away. And if you feel weak or you faint, get care right away. When you call or arrive, tell them you're pregnant.",
+      "sourceIds": [
+        "acog-bleeding",
+        "cdc-hear-her-warning-signs"
+      ]
+    },
+    {
+      "id": "common-vs-call",
+      "type": "comparison",
+      "heading": "Common changes vs. call your care team",
+      "onScreen": [
+        "Left: often common. Right: call your care team.",
+        "When in doubt, call. That's what your team is there for."
+      ],
+      "narration": "Here's a side-by-side guide. On the left are changes that are common. On the right are signs that mean you should call your care team. Nausea that comes and goes is common. But if you can't keep food or fluids down, or you're losing weight, call. Feeling tired is common. Feeling dizzy or faint when you stand, or having a racing heartbeat, means call. Peeing more often is common. Peeing only a little, and it's dark, means call. A headache early on can be common. A headache that won't go away or keeps getting worse is a warning sign. Spotting can happen. And any bleeding is worth a call. These are guides, not hard rules. If something doesn't feel right, reach out.",
+      "sourceIds": [
+        "nichd-pregnancy-signs",
+        "acog-morning-sickness",
+        "acog-bleeding",
+        "cdc-hear-her-warning-signs"
+      ],
+      "columns": [
+        "Often common",
+        "Call your care team"
+      ],
+      "rows": [
+        [
+          "Nausea that comes and goes",
+          "Can't keep food or fluids down, or losing weight"
+        ],
+        [
+          "Feeling more tired",
+          "Dizzy or faint when standing, or a racing heartbeat"
+        ],
+        [
+          "Peeing more often",
+          "Only a small amount of dark urine"
+        ],
+        [
+          "A headache early on",
+          "A headache that won't go away or gets worse"
+        ],
+        [
+          "Light spotting",
+          "Any bleeding (call right away if there's pain too)"
+        ]
+      ],
+      "visual": {
+        "kind": "comparison-table",
+        "description": "Two-column table with soft color coding: left column in calm sage, right column in warm amber with a small phone icon."
+      }
+    },
+    {
+      "id": "urgent-warning-signs",
+      "type": "safety",
+      "heading": "Urgent warning signs: get care right away",
+      "onScreen": [
+        "Headache that won't go away, vision changes, or fainting",
+        "Trouble breathing, chest pain, or a fast-beating heart",
+        "Severe belly pain or severe vomiting",
+        "Fever of 100.4°F or higher, or extreme swelling",
+        "Thoughts of harming yourself or your baby"
+      ],
+      "narration": "Some signs need medical care right away, at any point in pregnancy. Get care right away if you have a headache that won't go away or gets worse, changes in your vision, or dizziness or fainting. Get care for trouble breathing, chest pain, or a fast-beating heart. Get care for severe belly pain that doesn't go away. And for severe vomiting, where you can't drink for more than eight hours, or eat for more than twenty-four hours. Other urgent signs are a fever of one hundred point four degrees or higher, extreme swelling of your hands or face, severe swelling, redness, or pain in a leg or arm, overwhelming tiredness, and bleeding more than spotting. And if you have thoughts of harming yourself or your baby, reach out for help right away. Always tell them you're pregnant. If something just doesn't feel right, trust yourself and reach out.",
+      "sourceIds": [
+        "cdc-hear-her-warning-signs"
+      ]
+    },
+    {
+      "id": "checkin-bleeding-pain",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in on that.",
+      "sourceIds": [
+        "acog-bleeding"
+      ],
+      "question": {
+        "prompt": "At seven weeks, you notice light bleeding along with pain in your shoulder. What should you do?",
+        "options": [
+          "Wait a few days to see if it stops",
+          "Call your care team right away",
+          "Mention it at your next routine visit"
+        ],
+        "correctIndex": 1,
+        "explanation": "Bleeding with belly, pelvic, or shoulder pain needs a call right away. It can be a sign of a pregnancy outside the uterus, which needs fast care. If you feel weak or faint, get medical care right away."
+      }
+    },
+    {
+      "id": "calling-video",
+      "type": "video",
+      "heading": "How to call about a symptom",
+      "onScreen": [
+        "Say you're pregnant and how far along",
+        "Say what you feel and when it started",
+        "If something isn't right, say so"
+      ],
+      "narration": "Knowing what to say can make calling easier. Watch this short example.",
+      "sourceIds": [
+        "cdc-hear-her-warning-signs"
+      ],
+      "video": {
+        "brief": "A pregnant person calls their clinic's nurse line while a support person sits beside them. They say: 'I'm about eight weeks pregnant.' They describe the symptom, when it started, and how it has changed, then say: 'Something doesn't feel right to me.' On-screen caption repeats: Tell them you're pregnant. Describe what you feel. Trust yourself. No clinical thresholds or diagnoses stated.",
+        "maxSeconds": 60
+      }
+    },
+    {
+      "id": "healthy-habits",
+      "type": "content",
+      "heading": "Healthy habits for now",
+      "onScreen": [
+        "Keep up 400 mcg of folic acid a day",
+        "No alcohol: there's no known safe amount",
+        "Check with your team before any medicine",
+        "Keep your prenatal visits"
+      ],
+      "narration": "A few healthy habits go a long way right now. Keep getting four hundred micrograms of folic acid every day. Skip alcohol. There's no known safe amount of alcohol during pregnancy, and no safe time to drink. That includes wine and beer. If you drank before you knew you were pregnant, stop now and talk with your care team. It's never too late to stop. Check with your team before starting or stopping any medicine, vitamin, or supplement. And keep up with your prenatal checkups.",
+      "sourceIds": [
+        "cdc-folic-acid",
+        "cdc-alcohol-pregnancy",
+        "cdc-medicine-pregnancy"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four soft icons in a row: a vitamin bottle, a sparkling water glass, a phone with a speech bubble, and a calendar. Gentle teal and cream palette."
+      }
+    },
+    {
+      "id": "your-contact-plan",
+      "type": "reflection",
+      "heading": "Your contact plan",
+      "onScreen": [
+        "Your care team's daytime number",
+        "Who to call after hours",
+        "What they want you to call about"
+      ],
+      "narration": "Let's make it easy to reach out when you need to. Write down your care team's daytime number, and who to call after hours. If you haven't asked yet, ask your team which symptoms they want to hear about, and where to go if you need care right away. Save it here in your Birth Readiness Brief, so it's ready when you need it.",
+      "sourceIds": [
+        "acog-bleeding",
+        "cdc-hear-her-warning-signs"
+      ],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write your care team's daytime and after-hours numbers, and anything they told you about when to call or where to go for urgent care."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Tiredness, tender breasts, and nausea are common",
+        "Small meals and steady sips may ease nausea",
+        "Call about any bleeding; with pain, call right away",
+        "Urgent warning signs mean get care now",
+        "Folic acid yes, alcohol no"
+      ],
+      "narration": "Nice work. Let's recap. Changes like tiredness, tender breasts, and nausea are common in the first trimester. Small meals, bland foods, and steady sips of fluid may help with nausea. Ask your care team before trying any medicine or supplement. Call your care team about any bleeding, and call right away if there's pain too. Urgent warning signs mean get care right away, and tell them you're pregnant. And keep up your folic acid, and skip alcohol. Next, a few review questions.",
+      "sourceIds": [
+        "nichd-pregnancy-signs",
+        "acog-morning-sickness",
+        "acog-bleeding",
+        "cdc-hear-her-warning-signs"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "Which of these is a common first-trimester change?",
+      "options": [
+        "Feeling more tired than usual",
+        "A fever of 100.4°F",
+        "Chest pain"
+      ],
+      "correctIndex": 0,
+      "explanation": "Tiredness is very common early in pregnancy. A fever of 100.4°F or higher and chest pain are urgent warning signs that need care right away."
+    },
+    {
+      "prompt": "You notice light spotting at nine weeks, with no pain. What should you do?",
+      "options": [
+        "Nothing; spotting never matters",
+        "Call your care team and let them know",
+        "Go for a long run to see if it stops"
+      ],
+      "correctIndex": 1,
+      "explanation": "Spotting is common in early pregnancy and often isn't a sign of a major problem. Still, call your care team about any bleeding. If there's pain, weakness, or heavy bleeding, get care right away."
+    },
+    {
+      "prompt": "Which is true about alcohol during pregnancy?",
+      "options": [
+        "A glass of wine a day is safe",
+        "Only liquor is harmful",
+        "There's no known safe amount or safe time to drink"
+      ],
+      "correctIndex": 2,
+      "explanation": "The CDC says there's no known safe amount of alcohol and no safe time to drink during pregnancy. All types, including wine and beer, can be harmful. It's never too late to stop."
+    }
+  ],
+  "nextLessonId": "first-prenatal-visit"
+}

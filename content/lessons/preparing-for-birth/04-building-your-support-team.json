@@ -1,0 +1,408 @@
+{
+  "courseId": "preparing-for-birth",
+  "lessonId": "building-your-support-team",
+  "order": 4,
+  "title": "Building Your Support Team",
+  "learningGoals": [
+    "Choose support people for labor and give each one a clear role",
+    "Explain what a doula does and doesn't do, and what research says about continuous labor support",
+    "Find out your birth place's rules about support people",
+    "Plan help for after birth, including care for older children and pets"
+  ],
+  "estimatedMinutes": 10,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Drafted 2026-10-15. Sources fetched and checked against slides by an automated first pass; needs clinician review. ACOG Committee Opinion 766 was checked against its public abstract only. No approved source was found giving typical hospital limits on the number of support people, so the lesson tells learners to ask their birth place. Pet care appears only in the reflection prompt, since no approved source covers it."
+  },
+  "sources": [
+    {
+      "id": "acog-co766-limit-intervention",
+      "organization": "ACOG",
+      "title": "Approaches to Limit Intervention During Labor and Birth (Committee Opinion No. 766)",
+      "url": "https://www.acog.org/clinical/guidance/committee-opinion/2019/02/approaches-to-limit-intervention-during-labor-and-birth",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-labor-pain-relief",
+      "organization": "ACOG",
+      "title": "Medications for Pain Relief During Labor and Delivery (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/medications-for-pain-relief-during-labor-and-delivery",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-postpartum-checkup",
+      "organization": "ACOG",
+      "title": "What to Expect at a Postpartum Checkup, and Why the Visit Matters",
+      "url": "https://www.acog.org/womens-health/experts-and-stories/the-latest/what-to-expect-at-a-postpartum-checkup-and-why-the-visit-matters",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-postpartum-depression",
+      "organization": "ACOG",
+      "title": "Postpartum Depression (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/postpartum-depression",
+      "verifiedOn": null
+    },
+    {
+      "id": "lamaze-birth-team",
+      "organization": "Lamaze",
+      "title": "Choosing Your Birth Team",
+      "url": "https://lamaze.org/birth-support",
+      "verifiedOn": null
+    },
+    {
+      "id": "lamaze-healthy-birth-practices",
+      "organization": "Lamaze",
+      "title": "Lamaze Healthy Birth Practices",
+      "url": "https://lamaze.org/childbirth-practices",
+      "verifiedOn": null
+    },
+    {
+      "id": "lamaze-doulas-difference",
+      "organization": "Lamaze",
+      "title": "How Doulas Make a Difference in Childbirth",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/how-doulas-make-a-difference-in-childbirth",
+      "verifiedOn": null
+    },
+    {
+      "id": "lamaze-who-does-what",
+      "organization": "Lamaze",
+      "title": "Who Does What at Your Birth?",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/who-does-what-at-your-birth-1",
+      "verifiedOn": null
+    },
+    {
+      "id": "acnm-healthy-birth-101",
+      "organization": "ACNM",
+      "title": "Healthy Birth 101 (Discover Midwives)",
+      "url": "https://discovermidwives.midwife.org/healthy-birth-101/",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-hear-her-warning-signs",
+      "organization": "CDC",
+      "title": "Hear Her: Urgent Maternal Warning Signs",
+      "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Building Your Support Team",
+      "onScreen": [
+        "Preparing for Birth · Lesson 4",
+        "About 10 minutes"
+      ],
+      "narration": "Welcome back. In the last lesson, we met your care team. Now let's talk about your support team: the people who help you feel safe and cared for during labor, and who help out once your baby comes home. We'll cover choosing your support people, what a doula does, and how to plan who helps when. If someone will be supporting you, invite them to watch this one with you.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person on a couch surrounded by a small circle of supporters: a partner, a grandparent, a friend, and a doula, all smiling. Diverse people, soft warm colors."
+      }
+    },
+    {
+      "id": "choosing-support-people",
+      "type": "content",
+      "heading": "Choosing your support people",
+      "onScreen": [
+        "Pick people who help you feel safe and confident",
+        "Medical training isn't required to be great support",
+        "Give each person a clear role"
+      ],
+      "narration": "People do better in labor when they're surrounded by people they trust. Lamaze suggests inviting only people who will encourage you and help build your confidence. Your birth should never feel like a performance. Choose people who share your view of birth and will respect your wishes. A friend with medical training isn't always the best choice, and someone without any medical background can be wonderful support. If you'll have more than one support person, make sure each person knows their role, and that they talk with each other. That way, everyone, including you, can stay focused on your labor.",
+      "sourceIds": [
+        "lamaze-birth-team",
+        "lamaze-healthy-birth-practices"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person writing names on a notepad labeled My Team, with small portraits beside each name and role tags like Comfort, Snacks and Calls, and Photos. Soft pastel palette."
+      }
+    },
+    {
+      "id": "what-support-people-do",
+      "type": "content",
+      "heading": "How a support person helps in labor",
+      "onScreen": [
+        "Remind you to eat, drink, and change positions",
+        "Massage, counterpressure, warm or cool cloths",
+        "Words of encouragement",
+        "Keep the space calm and protected"
+      ],
+      "narration": "So what does good labor support look like? It can be simple things. Reminding you to eat and drink if your care team says that's okay. Wiping your face or brushing your hair. Helping you change positions. ACOG suggests a partner can massage your lower back or feet, press firmly on your lower back, use tennis balls for massage, or place a warm compress or ice pack on your back. If you feel warm, they can cool you with a damp cloth. And sometimes the best support is holding your hand, keeping the room calm, and reminding you how strong you are.",
+      "sourceIds": [
+        "lamaze-birth-team",
+        "acog-labor-pain-relief"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A laboring person leaning forward on a birth ball while a partner presses on her lower back with a tennis ball. A cool cloth and water bottle sit nearby. Diverse couple, soft blues and creams."
+      }
+    },
+    {
+      "id": "what-a-doula-does",
+      "type": "content",
+      "heading": "What a doula does",
+      "onScreen": [
+        "A trained labor support professional",
+        "Stays with you and gives continuous physical and emotional support",
+        "Shares information to help you make decisions",
+        "Doesn't do medical checks, give medicines, or make decisions for you"
+      ],
+      "narration": "A doula is a trained labor support professional. Doulas are trained to offer physical comfort and emotional support. A doula may suggest a walk, a warm shower, or a new position, or offer a massage. A doula can also share information about labor and birth to help you make your own decisions. Here's what a doula doesn't do. A doula doesn't do medical checks, like vaginal exams or monitoring your baby. A doula doesn't give or recommend medicines, and doesn't make decisions about your care. And a doula works for you, not for your doctor or midwife.",
+      "sourceIds": [
+        "lamaze-who-does-what",
+        "lamaze-birth-team",
+        "lamaze-doulas-difference"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A doula sitting close beside a laboring person, holding her hands and breathing with her, while a partner rests a hand on her shoulder. Dim, cozy room, soft amber and rose tones."
+      }
+    },
+    {
+      "id": "who-does-what",
+      "type": "comparison",
+      "heading": "Doula vs. labor nurse",
+      "onScreen": [
+        "Different jobs that work well together"
+      ],
+      "narration": "It can help to see how a doula and a labor nurse work side by side. A nurse does clinical checks, like vaginal exams and monitoring your baby. A doula doesn't. A nurse gives medicines that your provider orders. A doula doesn't. A nurse may be caring for other patients during your labor. A doula stays with you and gives physical and emotional support the whole time, while a nurse can offer that support sometimes. Both may suggest new positions to help you get comfortable. They're a great team.",
+      "sourceIds": [
+        "lamaze-who-does-what"
+      ],
+      "columns": [
+        "Doula",
+        "Labor nurse"
+      ],
+      "rows": [
+        [
+          "No medical checks",
+          "Clinical checks, like vaginal exams and monitoring"
+        ],
+        [
+          "Doesn't give or recommend medicine",
+          "Gives medicines your provider orders"
+        ],
+        [
+          "Stays with you only",
+          "May care for other patients too"
+        ],
+        [
+          "Continuous physical and emotional support",
+          "Support when they can"
+        ]
+      ],
+      "visual": {
+        "kind": "comparison-table",
+        "description": "Two-column table in soft colors with a small heart-and-hands icon over the Doula column and a stethoscope icon over the Labor nurse column."
+      }
+    },
+    {
+      "id": "continuous-support-evidence",
+      "type": "content",
+      "heading": "Why continuous support matters",
+      "onScreen": [
+        "ACOG: continuous one-to-one support, such as from a doula, is linked to better outcomes",
+        "More births without a vacuum, forceps, or cesarean",
+        "Slightly shorter labors and more satisfaction",
+        "Most helpful from a trained support person like a doula"
+      ],
+      "narration": "Having someone with you the whole time really can make a difference. ACOG says that, in addition to regular nursing care, continuous one-to-one emotional support, such as from a doula, is linked to better outcomes in labor. A large review of research, described by Lamaze, found that people with continuous support were more likely to give birth vaginally without a vacuum, forceps, or cesarean. Their labors were slightly shorter, and they were happier with their birth experience. Support helped most when it came from a trained support person, like a doula, who wasn't a hospital employee and didn't already know the family. That said, loved ones and friends give valuable support too.",
+      "sourceIds": [
+        "acog-co766-limit-intervention",
+        "lamaze-doulas-difference"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Three soft icons with short labels: a heart (more satisfied), a clock (slightly shorter labor), and a baby (more births without assistance). Calm teal and peach colors."
+      }
+    },
+    {
+      "id": "checkin-doula-role",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's pause for a quick check-in.",
+      "sourceIds": [
+        "lamaze-who-does-what"
+      ],
+      "question": {
+        "prompt": "Which of these is part of a doula's job?",
+        "options": [
+          "Checking how far your cervix has opened",
+          "Deciding whether you should get an epidural",
+          "Helping you change positions and offering massage"
+        ],
+        "correctIndex": 2,
+        "explanation": "Doulas give hands-on comfort, like position changes and massage, plus emotional support and information. They don't do medical checks, and they don't make decisions about your care. Those decisions are yours, made with your care team."
+      }
+    },
+    {
+      "id": "finding-a-doula",
+      "type": "content",
+      "heading": "Finding a doula that fits",
+      "onScreen": [
+        "Ask friends, your provider, or your childbirth educator",
+        "Interview a few doulas",
+        "Ask how they see their role alongside your partner",
+        "Lower-cost options may exist"
+      ],
+      "narration": "If you'd like a doula, there are a few ways to find one. Ask friends who've used one. Ask your midwife or doctor, since some hospitals and birth centers offer doula services or referrals. Your childbirth educator may know local doulas too, and doula training organizations often let you search by location. Try to interview a few. Ask how they see their role, and talk about how your partner wants to help, so everyone fits together. If your insurance doesn't cover a doula and the cost is too high, look for a doula in training, a volunteer doula program in your community, or ask about a payment plan.",
+      "sourceIds": [
+        "lamaze-birth-team"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person and partner on a video call with a smiling doula, a short list of questions on a notepad beside the laptop. Diverse people, soft greens and creams."
+      }
+    },
+    {
+      "id": "birth-place-policies",
+      "type": "content",
+      "heading": "Check your birth place's rules",
+      "onScreen": [
+        "Ask: How many support people can be with me?",
+        "Ask: Can a doula come in addition to my partner?",
+        "Bring your team to a class or tour",
+        "Share your birth preferences with them"
+      ],
+      "narration": "Every hospital and birth center has its own rules about support people. Midwives say your birth place should let you have support from the people you choose. But how many people can be with you, and whether a doula counts toward that number, is different from place to place. So ask ahead of time. Then bring your support people into your planning. Invite them to a prenatal visit, a childbirth class, or a tour. Practice comfort measures together. And if you write down your birth preferences, share them with your team, so they can ask questions before labor starts.",
+      "sourceIds": [
+        "acnm-healthy-birth-101",
+        "lamaze-birth-team"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person, her partner, and a doula on a birth unit tour, chatting with a friendly nurse at the front desk. Soft lavender and teal palette, diverse people."
+      }
+    },
+    {
+      "id": "labor-rehearsal-video",
+      "type": "video",
+      "heading": "Practice with your team",
+      "onScreen": [
+        "Try comfort measures together before labor",
+        "Counterpressure, massage, warm and cool cloths"
+      ],
+      "narration": "A labor rehearsal is a chance for you and your support person to practice comfort measures before the big day. It may feel a little silly at first, and that's okay. Watch this short demonstration, and then try it at home together.",
+      "sourceIds": [
+        "lamaze-birth-team",
+        "acog-labor-pain-relief"
+      ],
+      "video": {
+        "brief": "A pregnant person and partner practice at home. The partner tries firm pressure on the lower back, a tennis-ball massage, a foot massage, and a warm compress, asking 'More pressure or less?' each time. The pregnant person tries a few positions on a birth ball and against the couch. Calm voiceover names each comfort measure. No clinical claims. Ends with: 'Practice now, so it feels natural later.'",
+        "maxSeconds": 60
+      }
+    },
+    {
+      "id": "support-after-birth",
+      "type": "content",
+      "heading": "Support after birth",
+      "onScreen": [
+        "Line up help with child care, chores, rides, and meals",
+        "Plan care for older children during labor and after",
+        "Lack of support raises the risk of postpartum depression",
+        "First postpartum checkup: within 3 weeks"
+      ],
+      "narration": "Support doesn't end when your baby is born. In the weeks after birth, many new parents struggle with tiredness, pain, and worry. ACOG says your ob-gyn should ask whether you have emotional support and help with child care, chores, transportation, and meals. It's smart to line that up now. If you have older children, decide who will care for them while you're in labor and in the days after. Support matters for your mental health too. ACOG notes that a lack of support can greatly raise the risk of postpartum depression. And plan for your own care. ACOG recommends a first checkup within three weeks after birth.",
+      "sourceIds": [
+        "acog-postpartum-checkup",
+        "acog-postpartum-depression"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A new parent resting on a couch holding a newborn while a friend drops off a meal and a grandparent reads to an older child nearby. Soft warm colors, diverse family."
+      }
+    },
+    {
+      "id": "warning-signs-for-supporters",
+      "type": "safety",
+      "heading": "Your support team should know the warning signs",
+      "onScreen": [
+        "Warning signs can happen during pregnancy and up to a year after",
+        "Heavy bleeding, trouble breathing, chest pain, severe headache",
+        "Thoughts of harming yourself or your baby",
+        "Get medical care immediately. In an emergency, call 911."
+      ],
+      "narration": "Your support people can help keep you safe, so share this with them. Some symptoms during pregnancy and in the year after birth need care right away. These include heavy vaginal bleeding, trouble breathing, chest pain or a racing heart, a severe headache that won't go away, changes in vision, a fever of 100.4 degrees or higher, swelling, redness, or pain in a leg, and thoughts about harming yourself or your baby. If you or your loved ones notice any of these, get medical care immediately, and say that you're pregnant or recently gave birth. If you have thoughts of hurting yourself or others, call your care team or emergency services right away. In an emergency, call 911.",
+      "sourceIds": [
+        "cdc-hear-her-warning-signs",
+        "acog-postpartum-depression"
+      ]
+    },
+    {
+      "id": "your-support-plan",
+      "type": "reflection",
+      "heading": "Your support plan",
+      "onScreen": [
+        "Who will be with you in labor, and what will each person do?",
+        "Who cares for older kids and pets?",
+        "Who helps with meals, chores, and rides after birth?"
+      ],
+      "narration": "Now let's put your plan into words. Who will be with you during labor, and what will each person do? Will you have a doula? Who will care for your older children, and who will feed and walk your pets while you're away? And who will help with meals, chores, and rides in the weeks after birth? Write it down, with phone numbers, and save it here in your Birth Readiness Brief. Then share it with your team.",
+      "sourceIds": [
+        "lamaze-birth-team",
+        "acog-postpartum-checkup"
+      ],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Who's on your support team, and what will each person do? Include who will be with you in labor, who will care for older children and pets, and who will help with meals, chores, and rides after birth."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Choose supporters who help you feel safe, and give each a role",
+        "Doulas give continuous comfort and support, not medical care",
+        "Continuous support is linked to better labor outcomes",
+        "Ask your birth place about its support-person rules",
+        "Plan help for after birth, too"
+      ],
+      "narration": "Nice work. Let's recap. Choose support people who help you feel safe and confident, and give each person a clear role. A doula gives continuous physical and emotional support, but doesn't give medical care. Research shows continuous support in labor is linked to better outcomes. Ask your birth place how many support people can be with you. And plan for help after birth, too, with older kids, meals, chores, and your own checkups. Next, we'll talk about your birth preferences. First, a few review questions.",
+      "sourceIds": [
+        "lamaze-birth-team",
+        "lamaze-who-does-what",
+        "acog-co766-limit-intervention"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "What does ACOG say about continuous one-to-one support in labor, such as from a doula?",
+      "options": [
+        "It replaces the need for nursing care",
+        "It is linked to better outcomes, in addition to regular nursing care",
+        "It only helps if the support person has medical training"
+      ],
+      "correctIndex": 1,
+      "explanation": "ACOG says continuous one-to-one emotional support, such as from a doula, is linked to better outcomes for people in labor. It works alongside regular nursing care, not instead of it, and medical training isn't needed."
+    },
+    {
+      "prompt": "Which of these does a doula NOT do?",
+      "options": [
+        "Give massage and comfort",
+        "Share information to help you decide",
+        "Give you medicine"
+      ],
+      "correctIndex": 2,
+      "explanation": "Doulas don't give or recommend medicine, and they don't do medical checks. They give comfort, emotional support, and information so you can make your own decisions with your care team."
+    },
+    {
+      "prompt": "What's the best way to find out how many support people can be with you in labor?",
+      "options": [
+        "Ask your hospital or birth center ahead of time",
+        "Assume every place allows the same number",
+        "Wait until you arrive in labor"
+      ],
+      "correctIndex": 0,
+      "explanation": "Rules about support people differ from place to place. Ask ahead of time, ideally on a tour, so your team knows what to expect."
+    }
+  ],
+  "nextLessonId": "birth-preferences"
+}

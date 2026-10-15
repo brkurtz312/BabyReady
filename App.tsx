@@ -14,16 +14,10 @@ import {
   BabyReadyAuthProvider,
   useBabyReadyAuth,
 } from './src/auth/AuthProvider';
+import { courses, type Course } from './src/content/lessons';
 import { firebaseIsConfigured } from './src/lib/firebase';
-import type { CourseRecord } from './src/models/course';
 import { BirthReadinessBriefScreen } from './src/screens/BirthReadinessBriefScreen';
 import { ClassPlayerScreen } from './src/screens/ClassPlayerScreen';
-import { LearnerCourseCatalog } from './src/screens/LearnerCourseCatalog';
-import { LearnerCoursePlayerScreen } from './src/screens/LearnerCoursePlayerScreen';
-import {
-  LearnerLearningPlanScreen,
-  type LearningPlanLessonTarget,
-} from './src/screens/LearnerLearningPlanScreen';
 
 export default function App() {
   return (
@@ -36,20 +30,9 @@ export default function App() {
 function BabyReadyApp() {
   const authState = useBabyReadyAuth();
   const [activeView, setActiveView] = useState<
-    | 'learner'
-    | 'class-player'
-    | 'learning-plan'
-    | 'course-player'
-    | 'birth-readiness-brief'
+    'learner' | 'class-player' | 'birth-readiness-brief'
   >('learner');
-  const [selectedCourse, setSelectedCourse] = useState<CourseRecord | null>(
-    null,
-  );
-  const [selectedLessonTarget, setSelectedLessonTarget] =
-    useState<LearningPlanLessonTarget | null>(null);
-  const [coursePlayerReturnView, setCoursePlayerReturnView] = useState<
-    'learner' | 'learning-plan'
-  >('learner');
+  const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
 
   const userId = authState.status === 'ready' ? authState.user.uid : null;
 
@@ -61,31 +44,14 @@ function BabyReadyApp() {
     );
   };
 
-  if (activeView === 'class-player') {
+  if (activeView === 'class-player' && selectedCourse) {
     return (
       <ClassPlayerScreen
+        // A new course starts the player fresh.
+        key={selectedCourse.courseId}
+        course={selectedCourse}
         onExit={() => setActiveView('learner')}
         onOpenBrief={() => setActiveView('birth-readiness-brief')}
-        userId={userId}
-      />
-    );
-  }
-
-  if (activeView === 'course-player' && selectedCourse) {
-    return (
-      <LearnerCoursePlayerScreen
-        authStatus={authState.status}
-        course={selectedCourse}
-        initialLesson={selectedLessonTarget}
-        onOpenBirthReadinessBrief={(lesson) => {
-          setSelectedLessonTarget(lesson);
-          setActiveView('birth-readiness-brief');
-        }}
-        onExit={() => {
-          setSelectedCourse(null);
-          setSelectedLessonTarget(null);
-          setActiveView(coursePlayerReturnView);
-        }}
         userId={userId}
       />
     );
@@ -95,25 +61,7 @@ function BabyReadyApp() {
     return (
       <BirthReadinessBriefScreen
         authStatus={authState.status}
-        onExit={() =>
-          setActiveView(selectedCourse ? 'course-player' : 'learner')
-        }
-        userId={userId}
-      />
-    );
-  }
-
-  if (activeView === 'learning-plan') {
-    return (
-      <LearnerLearningPlanScreen
-        authStatus={authState.status}
         onExit={() => setActiveView('learner')}
-        onOpenCourse={(course, target) => {
-          setSelectedCourse(course);
-          setSelectedLessonTarget(target ?? null);
-          setCoursePlayerReturnView('learning-plan');
-          setActiveView('course-player');
-        }}
         userId={userId}
       />
     );
@@ -128,7 +76,7 @@ function BabyReadyApp() {
       >
         <View style={styles.header}>
           <View>
-            <Text style={styles.brand}>BABYREADY</Text>
+            <Text style={styles.brand}>BABYREADY VIRTUAL EDUCATOR</Text>
             <Text style={styles.title}>Prepare for birth, your way.</Text>
           </View>
         </View>
@@ -141,26 +89,28 @@ function BabyReadyApp() {
           </Text>
         </View>
 
-        <View style={styles.learningPlanCard}>
-          <View style={styles.learningPlanCopy}>
-            <Text style={styles.learningPlanEyebrow}>CLASS · MODULE 2</Text>
-            <Text style={styles.learningPlanTitle}>Labor Basics and When to Call</Text>
-            <Text style={styles.learningPlanText}>
-              Six short narrated lessons, about 71 minutes in all, with check-ins
-              and a review quiz after each lesson.
-            </Text>
+        {courses.map((course) => (
+          <View key={course.courseId} style={styles.learningPlanCard}>
+            <View style={styles.learningPlanCopy}>
+              <Text style={styles.learningPlanEyebrow}>{course.label}</Text>
+              <Text style={styles.learningPlanTitle}>{course.title}</Text>
+              <Text style={styles.learningPlanText}>{course.description}</Text>
+            </View>
+            <Pressable
+              accessibilityHint={`Opens the narrated ${course.title} class.`}
+              accessibilityLabel={`Start ${course.title}`}
+              accessibilityRole="button"
+              onPress={() => {
+                setSelectedCourse(course);
+                setActiveView('class-player');
+              }}
+              style={styles.learningPlanButton}
+              testID={`button-open-class-${course.courseId}`}
+            >
+              <Text style={styles.learningPlanButtonText}>Start class</Text>
+            </Pressable>
           </View>
-          <Pressable
-            accessibilityHint="Opens the narrated Labor Basics class."
-            accessibilityLabel="Start the Labor Basics class"
-            accessibilityRole="button"
-            onPress={() => setActiveView('class-player')}
-            style={styles.learningPlanButton}
-            testID="button-open-labor-basics-class"
-          >
-            <Text style={styles.learningPlanButtonText}>Start class</Text>
-          </Pressable>
-        </View>
+        ))}
 
         <View style={styles.learningPlanCard}>
           <View style={styles.learningPlanCopy}>
@@ -182,36 +132,6 @@ function BabyReadyApp() {
             <Text style={styles.learningPlanButtonText}>Open brief</Text>
           </Pressable>
         </View>
-
-        <View style={styles.learningPlanCard}>
-          <View style={styles.learningPlanCopy}>
-            <Text style={styles.learningPlanEyebrow}>YOUR PATH</Text>
-            <Text style={styles.learningPlanTitle}>Pregnancy learning plan</Text>
-            <Text style={styles.learningPlanText}>
-              See the full childbirth education path, continue published lessons,
-              and save your completion progress.
-            </Text>
-          </View>
-          <Pressable
-            accessibilityHint="Opens your learning checklist and education timeline."
-            accessibilityLabel="Open your pregnancy learning plan"
-            accessibilityRole="button"
-            onPress={() => setActiveView('learning-plan')}
-            style={styles.learningPlanButton}
-            testID="button-open-pregnancy-learning-plan"
-          >
-            <Text style={styles.learningPlanButtonText}>Open plan</Text>
-          </Pressable>
-        </View>
-
-        <LearnerCourseCatalog
-          onOpenCourse={(course) => {
-            setSelectedCourse(course);
-            setSelectedLessonTarget(null);
-            setCoursePlayerReturnView('learner');
-            setActiveView('course-player');
-          }}
-        />
 
         <View style={styles.safetyCard}>
           <Text style={styles.safetyTitle}>Need urgent help?</Text>

@@ -1,0 +1,272 @@
+{
+  "courseId": "early-pregnancy-basics",
+  "lessonId": "first-prenatal-visit",
+  "order": 3,
+  "title": "Prepare, Ask Questions, and Make a Plan",
+  "learningGoals": [
+    "Know what may happen at your first prenatal visit",
+    "Gather the health information to bring, including your medicine list",
+    "Feel ready to share openly and ask for help with things like food or rides",
+    "Write down your own questions for your first visit",
+    "Make a visit plan with your care team that fits your needs"
+  ],
+  "estimatedMinutes": 8,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course. Sources fetched and checked against slides by an automated first pass; needs clinician review."
+  },
+  "sources": [
+    {
+      "id": "acog-prenatal-care",
+      "organization": "ACOG",
+      "title": "Prenatal Care (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/prenatal-care",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-medicine-pregnancy",
+      "organization": "CDC",
+      "title": "About Medicine and Pregnancy",
+      "url": "https://www.cdc.gov/medicine-and-pregnancy/about/index.html",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Prepare, Ask Questions, and Make a Plan",
+      "onScreen": [
+        "Early Pregnancy Basics · Lesson 3",
+        "About 8 minutes"
+      ],
+      "narration": "Welcome to the last lesson in Early Pregnancy Basics. Today we're getting ready for your first prenatal visit. We'll talk about what may happen there, what to bring, and how to make a plan with your care team. By the end, you'll have your own list of questions saved and ready to go. Let's dive in.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person and a support person walking into a bright, welcoming clinic, one holding a small folder. Diverse people, soft blue and warm beige colors."
+      }
+    },
+    {
+      "id": "what-is-prenatal-care",
+      "type": "content",
+      "heading": "What prenatal care gives you",
+      "onScreen": [
+        "Medical care and checkups",
+        "Screening tests",
+        "Answers to your questions",
+        "Help finding support in your community"
+      ],
+      "narration": "Prenatal care is health care for you during pregnancy. It's more than checkups. It can include screening tests, which look for possible health problems before there are any symptoms. It includes time to get answers to your questions. And it can include help finding support and resources in your community. Getting early and regular care helps your team keep an eye on your health and your baby's health, and spot problems sooner.",
+      "sourceIds": [
+        "acog-prenatal-care"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four soft icons: a stethoscope, a test tube, a speech bubble with a question mark, and a group of people holding hands. Pastel teal and peach."
+      }
+    },
+    {
+      "id": "first-visit-talk",
+      "type": "content",
+      "heading": "What you'll talk about",
+      "onScreen": [
+        "Your health and your family's health history",
+        "Past pregnancies",
+        "Medicines, vitamins, and supplements",
+        "Your support, food, and getting to visits"
+      ],
+      "narration": "Much of your first visit is a conversation. You and your care team will talk about your health history, and your family's health history too. You'll talk about any past pregnancies. You'll go over your medicines, vitamins, and supplements. Your team may also ask about your support network, whether you're able to buy healthy food, and whether you can get to your appointments. These things all affect how healthy you can be during pregnancy. If you need help with any of them, tell your team. That's part of what they're there for.",
+      "sourceIds": [
+        "acog-prenatal-care"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A clinician and a pregnant person sitting across a small table, talking warmly, with a laptop and a cup of water. Diverse people, soft warm tones."
+      }
+    },
+    {
+      "id": "in-person-checks",
+      "type": "content",
+      "heading": "Checks that may happen",
+      "onScreen": [
+        "Blood pressure and weight",
+        "Blood tests, and maybe an ultrasound",
+        "A physical exam at one or more visits",
+        "What happens depends on you and how far along you are"
+      ],
+      "narration": "At in-person visits, your team usually checks things like your blood pressure and weight. You may have blood tests. You may have an ultrasound, which uses sound waves to look at your baby. At one or more visits, you'll also have a physical exam, which may include a pelvic exam and a breast exam. Exactly what happens, and when, depends on how far along you are and on your health. If you're not sure what a test is for, it's always okay to ask.",
+      "sourceIds": [
+        "acog-prenatal-care"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A nurse gently taking the blood pressure of a seated pregnant person who is smiling. Soft lavender and cream colors."
+      }
+    },
+    {
+      "id": "what-to-bring",
+      "type": "content",
+      "heading": "What to bring",
+      "onScreen": [
+        "First day of your last period, if you know it",
+        "A list of all medicines, vitamins, and supplements",
+        "Health conditions, past surgeries, and vaccine records",
+        "Details about past pregnancies"
+      ],
+      "narration": "Here's what to bring. First, the date your last period started, if you know it. This helps your team figure out your due date. Second, a list of every medicine, vitamin, and supplement you take, including things you buy without a prescription. Third, any health conditions you have, past surgeries, and your vaccine records. And fourth, information about any past pregnancies. That includes pregnancies that ended in miscarriage, stillbirth, or abortion. It also includes any past early birth, high blood pressure problems in pregnancy called preeclampsia, or diabetes that started in pregnancy, called gestational diabetes. You don't need every answer. Bring what you know.",
+      "sourceIds": [
+        "acog-prenatal-care",
+        "cdc-medicine-pregnancy"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "An open folder on a table with a handwritten list, a calendar page, and a few vitamin bottles beside it. Soft sage and cream palette."
+      }
+    },
+    {
+      "id": "checkin-last-period",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's pause for a quick check-in.",
+      "sourceIds": [
+        "acog-prenatal-care"
+      ],
+      "question": {
+        "prompt": "Why does your care team ask for the first day of your last period?",
+        "options": [
+          "To help figure out your due date",
+          "To decide which hospital you'll use",
+          "It's just paperwork"
+        ],
+        "correctIndex": 0,
+        "explanation": "The first day of your last period helps your team estimate your due date. If you don't know it, that's okay. Tell them, and they'll help figure it out."
+      }
+    },
+    {
+      "id": "honest-answers",
+      "type": "content",
+      "heading": "Honest answers help you get the right care",
+      "onScreen": [
+        "Share openly; it shapes your care",
+        "Worried about privacy? Talk about it first",
+        "Ask for help with food, rides, or support"
+      ],
+      "narration": "Some questions at your visit may feel personal. Giving honest answers is key to getting care that fits you. If you're worried about who will see your information, you can talk with your care team about privacy before you answer. And if you need help with things like food, transportation, or support at home, say so. Your team can't help with what they don't know about.",
+      "sourceIds": [
+        "acog-prenatal-care"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A clinician leaning in and listening kindly as a patient speaks, with a soft shield icon suggesting privacy. Warm rose and blue tones."
+      }
+    },
+    {
+      "id": "visit-prep-video",
+      "type": "video",
+      "heading": "Getting ready for your visit",
+      "onScreen": [
+        "Gather your lists in one place",
+        "Write your questions down",
+        "Bring a support person if you like"
+      ],
+      "narration": "Here's a quick look at how one family gets ready for a first visit.",
+      "sourceIds": [
+        "acog-prenatal-care"
+      ],
+      "video": {
+        "brief": "A pregnant person and partner at a kitchen table the night before a first prenatal visit. They note the first day of the last period, gather pill bottles to write a medicine and supplement list, jot down past surgeries and vaccine records, and type three questions into a phone notes app. Next morning, they hand the list to a nurse at check-in. Ends with: 'You don't need every answer. Bring what you know.' No clinical advice given.",
+        "maxSeconds": 60
+      }
+    },
+    {
+      "id": "make-a-plan",
+      "type": "content",
+      "heading": "Make a plan together",
+      "onScreen": [
+        "Your visit schedule can be tailored to you",
+        "Some visits may be by video, some in person",
+        "Group prenatal care may be an option",
+        "More visits if you have health needs"
+      ],
+      "narration": "Prenatal care isn't one size fits all. Your care team may suggest a plan that's tailored to you. Some visits might happen by video, for things like talking through questions. Others need to be in person, for exams and tests. Some practices offer group prenatal care, where you learn alongside other pregnant people. If you have a health condition, or one develops, you may need visits more often. Talk with your team about what you need, and agree on a plan together. You can adjust it as your pregnancy goes on.",
+      "sourceIds": [
+        "acog-prenatal-care"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A split scene: on one side a person on a video visit at home, on the other a small group of pregnant people in a circle with a midwife. Diverse, soft green and peach."
+      }
+    },
+    {
+      "id": "your-questions",
+      "type": "reflection",
+      "heading": "Your questions for the first visit",
+      "onScreen": [
+        "Which screening tests might I be offered?",
+        "Which visits can be by video?",
+        "Which of my medicines should I keep taking?",
+        "Who do I call after hours?"
+      ],
+      "narration": "Now it's your turn. What do you want to ask at your first visit? Here are a few ideas. Which screening tests, including genetic screening tests, might be offered? Which visits can be by video, and which need to be in person? Which of my medicines and supplements should I keep taking? And who do I call after hours if I'm worried? Add your own questions too. They'll save to your Birth Readiness Brief, so you'll have them in hand at your visit.",
+      "sourceIds": [
+        "acog-prenatal-care",
+        "cdc-medicine-pregnancy"
+      ],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "What questions do you want to ask at your first prenatal visit? Write as many as you like."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Your first visit is mostly a conversation",
+        "Bring your period date, medicine list, and health history",
+        "Honest answers help; ask for support you need",
+        "Make a visit plan that fits you",
+        "Bring your questions"
+      ],
+      "narration": "You did it. Let's recap. Your first prenatal visit is a chance to start building a plan with your care team. Much of it is a conversation about your health, your history, and your life. Bring the first day of your last period, your medicine list, and your health and pregnancy history. Share openly, and ask for help with food, rides, or support if you need it. Make a visit plan that fits you. And bring your questions. Next, a few review questions. Congratulations on finishing Early Pregnancy Basics.",
+      "sourceIds": [
+        "acog-prenatal-care"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "Which of these should you bring to your first prenatal visit?",
+      "options": [
+        "A list of all your medicines, vitamins, and supplements",
+        "Only your insurance card",
+        "Nothing; they'll have everything already"
+      ],
+      "correctIndex": 0,
+      "explanation": "Bring a full list of medicines, vitamins, and supplements, plus your health history and the first day of your last period. Even if your team has your records, make sure everything is up to date."
+    },
+    {
+      "prompt": "You're worried about who will see your answers about past pregnancies. What can you do?",
+      "options": [
+        "Leave those questions blank",
+        "Talk with your care team about privacy before you answer",
+        "Give a different answer"
+      ],
+      "correctIndex": 1,
+      "explanation": "Honest answers are key to your care. If privacy worries you, talk about it with your care team before you answer."
+    },
+    {
+      "prompt": "Which is true about your prenatal visit schedule?",
+      "options": [
+        "It's the same for everyone",
+        "Every visit must be in person",
+        "It can be tailored to your health and needs, and some visits may be by video"
+      ],
+      "correctIndex": 2,
+      "explanation": "Your care team can tailor your visits to you. Some may be by video, and exams and tests happen in person. You may need more visits if you have health needs."
+    }
+  ]
+}

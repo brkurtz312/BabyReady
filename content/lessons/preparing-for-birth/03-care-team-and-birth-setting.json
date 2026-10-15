@@ -1,0 +1,422 @@
+{
+  "courseId": "preparing-for-birth",
+  "lessonId": "care-team-and-birth-setting",
+  "order": 3,
+  "title": "Your Care Team and Birth Setting",
+  "learningGoals": [
+    "Name the main people who may care for you during labor and birth, and what each one does",
+    "Compare giving birth in a hospital, a birth center, or at home",
+    "Know who ACOG and ACNM say is a good candidate for a birth center or planned home birth",
+    "Understand why every birth plan outside a hospital needs a transfer plan",
+    "Have a list of questions to ask a provider or birth place, and plan a tour"
+  ],
+  "estimatedMinutes": 10,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Drafted 2026-10-15. Sources fetched and checked against slides by an automated first pass; needs clinician review. ACOG clinical documents were checked against their public abstracts only (full text is on the journal site). No approved source was found that says to go to the nearest emergency room instead of the planned birth place, so the safety slide says to get care immediately and to ask your care team in advance when to go to the emergency room or call 911."
+  },
+  "sources": [
+    {
+      "id": "acog-planned-home-birth",
+      "organization": "ACOG",
+      "title": "Planned Home Birth (Committee Opinion No. 697)",
+      "url": "https://www.acog.org/clinical/guidance/committee-opinion/2017/04/planned-home-birth",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-levels-maternal-care",
+      "organization": "ACOG",
+      "title": "Levels of Maternal Care (Obstetric Care Consensus No. 9, with SMFM)",
+      "url": "https://www.acog.org/clinical/guidance/obstetric-care-consensus/2019/08/levels-of-maternal-care",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-having-a-baby",
+      "organization": "ACOG",
+      "title": "Having a Baby (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/having-a-baby",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-labor-pain-relief",
+      "organization": "ACOG",
+      "title": "Medications for Pain Relief During Labor and Delivery (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/medications-for-pain-relief-during-labor-and-delivery",
+      "verifiedOn": null
+    },
+    {
+      "id": "acnm-choosing-birth-setting",
+      "organization": "ACNM",
+      "title": "Choosing a Birth Setting (Discover Midwives)",
+      "url": "https://discovermidwives.midwife.org/choosing-a-birth-setting/",
+      "verifiedOn": null
+    },
+    {
+      "id": "acnm-what-is-a-midwife",
+      "organization": "ACNM",
+      "title": "What is a Midwife? (Discover Midwives)",
+      "url": "https://discovermidwives.midwife.org/what-is-a-midwife/",
+      "verifiedOn": null
+    },
+    {
+      "id": "acnm-cm-credential",
+      "organization": "ACNM",
+      "title": "Certified Midwife Credential",
+      "url": "https://midwife.org/certified-midwife-credential/",
+      "verifiedOn": null
+    },
+    {
+      "id": "aafp-choose-family-doctor",
+      "organization": "AAFP",
+      "title": "How to Choose a Family Doctor (familydoctor.org)",
+      "url": "https://familydoctor.org/how-to-choose-a-family-doctor/",
+      "verifiedOn": null
+    },
+    {
+      "id": "lamaze-who-does-what",
+      "organization": "Lamaze",
+      "title": "Who Does What at Your Birth?",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/who-does-what-at-your-birth-1",
+      "verifiedOn": null
+    },
+    {
+      "id": "lamaze-birth-team",
+      "organization": "Lamaze",
+      "title": "Choosing Your Birth Team",
+      "url": "https://lamaze.org/birth-support",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-hear-her-warning-signs",
+      "organization": "CDC",
+      "title": "Hear Her: Urgent Maternal Warning Signs",
+      "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-hear-her-conversation-guide",
+      "organization": "CDC",
+      "title": "Hear Her: You Know Your Body Best (conversation guide, PDF)",
+      "url": "https://www.cdc.gov/hearher/docs/pdf/CDC-Hear-Her-Womens-urgent-warning-signs-h.pdf",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Your Care Team and Birth Setting",
+      "onScreen": [
+        "Preparing for Birth · Lesson 3",
+        "About 10 minutes"
+      ],
+      "narration": "Welcome back. In this lesson, we'll meet the people who may care for you during labor and birth, and we'll look at the places where babies are born: hospitals, birth centers, and homes. There's no single right answer here. The best choice depends on your health, your insurance, where you live, and what matters to you. Our goal is to help you ask good questions and feel confident in your plan. Let's begin.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person and a support partner sitting at a kitchen table with a notebook, looking at three small soft-colored pictures of a hospital, a cozy birth center, and a home. Diverse people, warm pastel palette."
+      }
+    },
+    {
+      "id": "place-and-model-of-care",
+      "type": "content",
+      "heading": "Where you give birth shapes your care",
+      "onScreen": [
+        "Three main options: hospital, birth center, or home",
+        "Choosing a place often means choosing a style of care",
+        "Your options depend on your health, insurance, and location"
+      ],
+      "narration": "When you think about where to give birth, there are three general options: a hospital, a freestanding birth center, or your home. Birth centers and home births are sometimes called community births. Midwives point out that when you choose where you give birth, you're also choosing a style of care. That includes your checkups during pregnancy, your care in labor, and your care after the baby comes. Your real choices will depend on a few things: your health and your pregnancy, what your insurance covers, and what's available near you. So let's look at the people first, and then the places.",
+      "sourceIds": [
+        "acnm-choosing-birth-setting"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Three soft-colored icons in a row: a hospital building, a small birth center with a tree outside, and a house. Below them, three small tags: Health, Insurance, Location."
+      }
+    },
+    {
+      "id": "doctors",
+      "type": "content",
+      "heading": "Doctors who care for you in pregnancy and birth",
+      "onScreen": [
+        "Obstetrician-gynecologists (ob-gyns)",
+        "Some family physicians also care for pregnancy and birth",
+        "Ask any doctor: Do you deliver babies? Where?"
+      ],
+      "narration": "Let's meet the doctors. An obstetrician-gynecologist, or ob-gyn for short, is a doctor who specializes in pregnancy, birth, and women's health. ACOG recommends that pregnant people get care from an ob-gyn or another qualified pregnancy care professional, and that the whole team work together when needed. Family physicians are doctors trained in all areas of medicine who care for people of every age, often the whole family. Some family physicians also care for people during pregnancy and birth, but not all of them do. So if you see a family doctor, a good first question is, do you deliver babies, and if so, where?",
+      "sourceIds": [
+        "acog-having-a-baby",
+        "aafp-choose-family-doctor"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Two friendly doctors in a bright clinic hallway: one ob-gyn holding a chart and one family physician chatting with a pregnant patient and her toddler. Diverse people, soft blues and greens."
+      }
+    },
+    {
+      "id": "midwives",
+      "type": "content",
+      "heading": "Certified nurse-midwives and certified midwives",
+      "onScreen": [
+        "Experts in normal pregnancy and birth",
+        "CNMs and CMs: graduate degree and the same national board exam",
+        "CNMs are also licensed nurses; CMs are not",
+        "They work with doctors when more care is needed"
+      ],
+      "narration": "Next, midwives. Midwives are experts in normal pregnancy and birth. They also care for you after birth, and for healthy newborns. In the United States, there are two national midwife credentials, CNM and CM. CNM stands for certified nurse-midwife, and CM stands for certified midwife. Both have a graduate degree in midwifery, pass the same national board exam, and have the same scope of practice. The only difference is that certified nurse-midwives are also licensed nurses. Certified midwives are recognized in some states but not all, so check where you live. Midwives work closely with other members of the health care team, including doctors, when you need more care.",
+      "sourceIds": [
+        "acnm-cm-credential",
+        "acnm-what-is-a-midwife"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A midwife kneeling beside a pregnant person sitting on a birth ball, listening with a handheld fetal heart monitor. Calm room, soft peach and sage colors, diverse people."
+      }
+    },
+    {
+      "id": "in-the-room",
+      "type": "content",
+      "heading": "Others you may meet in labor",
+      "onScreen": [
+        "Labor and delivery nurses: check on you and baby, give medicines",
+        "Anesthesiologists: doctors who are experts in pain relief",
+        "Doulas: trained labor support, not medical care (more next lesson)"
+      ],
+      "narration": "At a hospital birth, you'll likely meet a few more people. Labor and delivery nurses do a lot of the hands-on clinical care. They check on you and your baby, give medicines your provider orders, and help you change positions. They may also be caring for other patients during your labor. An anesthesiologist is a doctor who is an expert in pain relief. If you choose an epidural, an anesthesiologist or another specially trained professional usually places it. Some people also have a doula. A doula gives continuous physical and emotional support, but doesn't do medical checks or give medicines. We'll talk much more about doulas in the next lesson.",
+      "sourceIds": [
+        "lamaze-who-does-what",
+        "acog-labor-pain-relief"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A hospital labor room with a nurse checking a monitor, an anesthesiologist in a cap talking kindly with the laboring person, and a doula holding her hand. Diverse team, soft lavender and blue tones."
+      }
+    },
+    {
+      "id": "hospitals-and-levels",
+      "type": "content",
+      "heading": "Giving birth in a hospital",
+      "onScreen": [
+        "Hospitals have different levels of maternal care",
+        "Level I = basic care, up to Level IV = regional centers for the most complex needs",
+        "Many hospitals have midwives as well as doctors",
+        "Epidurals are available in hospitals"
+      ],
+      "narration": "Most babies in the United States are born in hospitals. Not all hospitals offer the same services, though. ACOG and the Society for Maternal-Fetal Medicine describe four levels of maternal care. Level one is basic care. Levels two and three add specialty and subspecialty care. Level four hospitals are regional centers for the most complex needs. The idea is that you can give birth safely close to home, with a path to more help if you need it. If your pregnancy has health concerns, your care team may suggest a hospital with a higher level of care. And if you'd like a low-intervention birth, that's possible in a hospital too. Many hospitals have midwives on staff, and pain relief like an epidural is available if you want it.",
+      "sourceIds": [
+        "acog-planned-home-birth",
+        "acog-levels-maternal-care",
+        "acnm-choosing-birth-setting"
+      ],
+      "visual": {
+        "kind": "diagram",
+        "description": "Four stacked steps labeled Level I Basic, Level II Specialty, Level III Subspecialty, Level IV Regional center, with small arrows showing care can move up a step when needed. Soft teal gradient."
+      }
+    },
+    {
+      "id": "settings-compared",
+      "type": "comparison",
+      "heading": "Hospital vs. birth center or home",
+      "onScreen": [
+        "Each setting fits different needs",
+        "A good plan matches the setting to your health"
+      ],
+      "narration": "Here's a side-by-side look. A hospital can care for any pregnancy, including higher-risk ones. Birth centers and planned home births are meant for healthy, low-risk pregnancies. In a hospital, you can choose an epidural, and labor can be induced, which means started with medicine, if needed. Midwives note that those two options aren't available at a birth center or at home. Hospitals have doctors and nurses, many have midwives, and anesthesiologists are there to give epidurals. At a birth center or home birth, care comes from a qualified midwife or, sometimes, a doctor. And if a problem comes up in a hospital, the extra help is already there. At a birth center or at home, you need a plan to move to a hospital quickly. We'll talk about that next.",
+      "sourceIds": [
+        "acnm-choosing-birth-setting",
+        "acog-planned-home-birth"
+      ],
+      "columns": [
+        "Hospital",
+        "Birth center or home"
+      ],
+      "rows": [
+        [
+          "Can care for any pregnancy, including higher-risk",
+          "For healthy, low-risk pregnancies"
+        ],
+        [
+          "Epidural and induction available",
+          "No epidural or induction"
+        ],
+        [
+          "Doctors, nurses, and often midwives; anesthesiologists for epidurals",
+          "Care from a qualified midwife or, sometimes, a doctor"
+        ],
+        [
+          "Extra help is already there",
+          "Needs a plan for quick transfer to a hospital"
+        ]
+      ],
+      "visual": {
+        "kind": "comparison-table",
+        "description": "Two-column table in soft colors with a small hospital icon over the left column and a house-and-tree icon over the right column."
+      }
+    },
+    {
+      "id": "who-is-a-good-candidate",
+      "type": "content",
+      "heading": "Is a birth center or home birth right for you?",
+      "onScreen": [
+        "Best for healthy, low-risk pregnancies",
+        "ACOG: hospitals and accredited birth centers are the safest settings",
+        "ACOG: not for breech babies, twins, or after a prior cesarean",
+        "Needs a qualified midwife or doctor and a nearby hospital"
+      ],
+      "narration": "Who is a good fit for a birth center or a planned home birth? ACNM's guide for families says that if your health or pregnancy puts you at higher risk, a hospital birth is in your best interest. ACOG believes hospitals and accredited birth centers are the safest places to give birth. ACOG also says each person has the right to make an informed choice. For a planned home birth, ACOG lists a few things that matter most. One, being a good candidate. Two, care from a certified nurse-midwife, a certified midwife, a similarly trained midwife, or a doctor, working within an organized health system. Three, easy access to consultation. And four, safe, fast transport to a nearby hospital. ACOG says a planned home birth is not an option if your baby isn't head-down, if you're carrying twins or more, or if you've had a cesarean birth before. Talk through your own health with your care team.",
+      "sourceIds": [
+        "acog-planned-home-birth",
+        "acnm-choosing-birth-setting"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four soft icons with short labels: a heart with a check mark (healthy, low-risk), a midwife badge (qualified provider), a phone (consultation), and an ambulance next to a hospital (transport)."
+      }
+    },
+    {
+      "id": "transfer-plans",
+      "type": "content",
+      "heading": "Every community birth needs a transfer plan",
+      "onScreen": [
+        "Some people move to a hospital during labor",
+        "This happens more often with a first baby",
+        "Know which hospital, how you'll get there, and who comes with you"
+      ],
+      "narration": "If you plan to give birth at a birth center or at home, a transfer plan is a must. Sometimes labor needs more help than a birth center or home can give. ACNM estimates that about eight to twelve out of every hundred people who plan a community birth move to a hospital during labor. It happens more often with a first baby, because first labors tend to be longer. Planning ahead helps everyone stay calm. Ask your midwife which hospital you'd go to, how you'd get there, how far away it is, and whether your midwife can keep caring for you or your baby afterward.",
+      "sourceIds": [
+        "acnm-choosing-birth-setting",
+        "acog-planned-home-birth"
+      ],
+      "visual": {
+        "kind": "diagram",
+        "description": "Simple map with a dotted path from a small house and a birth center to a nearby hospital, with a clock and car icon along the route. Soft greens and blues."
+      }
+    },
+    {
+      "id": "checkin-home-birth",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's pause for a quick check-in.",
+      "sourceIds": [
+        "acog-planned-home-birth"
+      ],
+      "question": {
+        "prompt": "According to ACOG, which of these means a planned home birth is NOT an option?",
+        "options": [
+          "This is your first baby",
+          "You are pregnant with twins",
+          "You'd like to give birth without an epidural"
+        ],
+        "correctIndex": 1,
+        "explanation": "ACOG says a planned home birth isn't an option if you're carrying twins or more, if your baby isn't head-down, or if you've had a cesarean before. A first baby doesn't rule it out, though first-time parents are more likely to transfer to a hospital. And you can plan a birth without an epidural in any setting."
+      }
+    },
+    {
+      "id": "tour-and-questions-video",
+      "type": "video",
+      "heading": "Touring your birth place",
+      "onScreen": [
+        "Tour with your support person",
+        "Bring your questions",
+        "Ask about transfer plans and support people"
+      ],
+      "narration": "A tour is one of the best ways to get to know a birth place before labor. Walking into a new place for the first time while you're in labor can feel stressful. So, if you can, take a tour ahead of time, and bring your support person. Watch this short tour to see what to look for and what to ask.",
+      "sourceIds": [
+        "acnm-choosing-birth-setting",
+        "lamaze-birth-team"
+      ],
+      "video": {
+        "brief": "A pregnant person and her partner tour a hospital birth unit and then a birth center, guided by a staff member. On-screen captions show sample questions: Where do I go when I arrive in labor? Can I move around, use a tub, eat and drink? Who will be with me? How many support people can come? What happens if I need more care? The pair writes answers in a notebook. No clinical numbers. Ends with: 'Every place is different, so ask.'",
+        "maxSeconds": 60
+      }
+    },
+    {
+      "id": "warning-signs-any-setting",
+      "type": "safety",
+      "heading": "Warning signs: get care right away",
+      "onScreen": [
+        "Heavy bleeding or fluid leaking, or baby moving less",
+        "Severe headache, vision changes, chest pain, or trouble breathing",
+        "Get medical care immediately, even if it isn't your planned birth place",
+        "Ask your team now: When should I go to the ER or call 911?"
+      ],
+      "narration": "Whatever setting you choose, some symptoms need care right away. These include vaginal bleeding or fluid leaking, your baby moving less or stopping moving, a headache that won't go away or gets worse, changes in your vision, chest pain or a racing heart, trouble breathing, a fever of 100.4 degrees or higher, or severe belly pain that doesn't go away. If you have any of these, get medical care immediately. Don't wait to reach your planned birth place if that would delay care. Tell whoever helps you that you're pregnant. Before labor, ask your care team when you should go to the emergency room or call 911, so you already know. If it feels like an emergency, call 911.",
+      "sourceIds": [
+        "cdc-hear-her-warning-signs",
+        "cdc-hear-her-conversation-guide"
+      ]
+    },
+    {
+      "id": "your-questions",
+      "type": "reflection",
+      "heading": "Your questions for your provider and birth place",
+      "onScreen": [
+        "Where do you deliver, and who will be at my birth?",
+        "What happens if I need more care or a transfer?",
+        "Is my insurance accepted? Can I tour?"
+      ],
+      "narration": "Now it's your turn. Think about where you're planning to give birth, and who you'd like to care for you. Write down the questions you want to ask. Some ideas: Where do you deliver babies? Who will be at my birth if you're not on call? What happens if I need more care? Does my insurance cover this place? And can I take a tour? You can save your list right here in your Birth Readiness Brief, and bring it to your next visit.",
+      "sourceIds": [
+        "acnm-choosing-birth-setting"
+      ],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Where are you planning to give birth, and who will care for you? List the questions you want to ask your provider or birth place, and when you'll take a tour."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Your team may include doctors, midwives, nurses, and anesthesiologists",
+        "Hospitals can care for any pregnancy; birth centers and home are for low-risk pregnancies",
+        "Community births need a transfer plan",
+        "Warning signs: get care right away, wherever you are",
+        "Tour your birth place and bring your questions"
+      ],
+      "narration": "Great work. Let's recap. Your care team may include ob-gyns, family physicians, certified nurse-midwives or certified midwives, nurses, and anesthesiologists. Hospitals can care for any pregnancy, and they offer different levels of care. Birth centers and planned home births are options for healthy, low-risk pregnancies, and they always need a plan for getting to a hospital. If you have warning signs, get care right away, wherever you are. And take a tour and bring your questions. In the next lesson, we'll talk about building your support team, including what a doula does. First, a few review questions.",
+      "sourceIds": [
+        "acnm-choosing-birth-setting",
+        "acog-planned-home-birth",
+        "acog-levels-maternal-care"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "What is the difference between a certified nurse-midwife (CNM) and a certified midwife (CM)?",
+      "options": [
+        "CMs can only work at home births",
+        "CNMs are also licensed nurses; otherwise their training and scope are the same",
+        "CNMs can't care for you after birth"
+      ],
+      "correctIndex": 1,
+      "explanation": "CNMs and CMs both have a graduate degree in midwifery, take the same national board exam, and have the same scope of practice. The only difference is that CNMs are also licensed nurses."
+    },
+    {
+      "prompt": "Which is available in a hospital but not at a birth center or home birth?",
+      "options": [
+        "Care from a midwife",
+        "Being able to move around in labor",
+        "An epidural"
+      ],
+      "correctIndex": 2,
+      "explanation": "Epidurals and labor induction are available in hospitals, but not at birth centers or home births. Midwife care and moving around in labor are possible in all settings."
+    },
+    {
+      "prompt": "You're planning a birth center birth. What should you set up ahead of time?",
+      "options": [
+        "A plan for how you'd get to a nearby hospital if you need more care",
+        "Nothing; transfers never happen",
+        "A plan to drive to your birth center even if you have warning signs"
+      ],
+      "correctIndex": 0,
+      "explanation": "Some people planning a community birth move to a hospital during labor, more often with a first baby. Know which hospital, how you'd get there, and who comes with you. And with warning signs, get care right away."
+    }
+  ],
+  "nextLessonId": "building-your-support-team"
+}

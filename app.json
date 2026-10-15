@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "BabyReady",
+    "name": "BabyReady Virtual Educator",
     "slug": "babyready",
     "scheme": "babyready",
     "version": "1.0.0",
@@ -20,6 +20,12 @@
           "microphonePermission": "Allow BabyReady to use the microphone so you can ask your instructor questions out loud.",
           "speechRecognitionPermission": "Allow BabyReady to turn your spoken questions into text so your instructor can answer them."
         }
+      ],
+      [
+        "./plugins/withAndroidAppLabel",
+        {
+          "label": "BabyReady VE"
+        }
       ]
     ],
     "ios": {
@@ -27,12 +33,15 @@
       "bundleIdentifier": "com.brkservices.babyready",
       "config": {
         "usesNonExemptEncryption": false
+      },
+      "infoPlist": {
+        "CFBundleDisplayName": "BabyReady VE"
       }
     },
     "android": {
       "package": "com.brkservices.babyready",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#01696F",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -40,7 +49,8 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "shortName": "BabyReady VE"
     },
     "extra": {
       "eas": {
