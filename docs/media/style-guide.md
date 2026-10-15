@@ -41,8 +41,9 @@ The app already shows each slide's heading and key points as text, and that text
 
 **Videos**
 
-- 16:9 landscape, 1920 × 1080, MP4 (H.264), no longer than the length in the brief.
+- 16:9 landscape, 1920 × 1080, MP4 (H.264 video, AAC audio), no longer than the length in the brief. Keep files small (about 10 MB or less) because they ship inside the app.
 - Calm music or no music. The narration is handled separately, so no voice-over unless asked.
+- Videos start only when the learner taps play, and the app's narration stops while a video plays.
 - Same palette and style as the pictures.
 
 ## File names
@@ -63,5 +64,5 @@ Every picture and video is checked by BabyReady's clinical reviewer before it go
 ## After delivery (for the developer)
 
 1. Save the file at its target file name.
-2. For a picture, add a line for it in `src/content/artwork.ts` (the file explains how). Video slides still show a "Video to come" box; playing delivered videos needs a small code change first.
+2. Add a line for it in `src/content/artwork.ts` for a picture, or `src/content/videos.ts` for a video (each file explains how).
 3. Run `node scripts/make-production-list.mjs` to refresh the list; that row's status changes to "Delivered".
