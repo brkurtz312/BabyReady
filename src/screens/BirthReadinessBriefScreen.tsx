@@ -262,7 +262,7 @@ export function BirthReadinessBriefScreen({
           <Text style={styles.backButtonText}>‹ Back</Text>
         </Pressable>
 
-        <Text style={styles.brand}>BABYREADY</Text>
+        <Text style={styles.brand}>BABYREADY VIRTUAL EDUCATOR</Text>
         <Text accessibilityRole="header" style={styles.title}>
           Birth Readiness Brief
         </Text>

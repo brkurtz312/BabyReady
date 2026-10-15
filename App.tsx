@@ -128,7 +128,7 @@ function BabyReadyApp() {
       >
         <View style={styles.header}>
           <View>
-            <Text style={styles.brand}>BABYREADY</Text>
+            <Text style={styles.brand}>BABYREADY VIRTUAL EDUCATOR</Text>
             <Text style={styles.title}>Prepare for birth, your way.</Text>
           </View>
         </View>
