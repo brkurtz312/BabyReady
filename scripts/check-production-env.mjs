@@ -10,7 +10,6 @@ const requiredEnvironmentNames = [
   'EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET',
   'EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID',
   'EXPO_PUBLIC_FIREBASE_APP_ID',
-  'EXPO_PUBLIC_AUDIT_REPORT_VERIFY_URL',
 ];
 
 const missingEnvironmentNames = requiredEnvironmentNames.filter(
@@ -43,32 +42,6 @@ if (
 ) {
   console.error(
     'Production deployment blocked: EXPO_PUBLIC_USE_FIREBASE_EMULATORS must be false.',
-  );
-  process.exit(1);
-}
-
-let verificationUrl;
-try {
-  verificationUrl = new URL(
-    process.env.EXPO_PUBLIC_AUDIT_REPORT_VERIFY_URL?.trim() ?? '',
-  );
-} catch {
-  console.error(
-    'Production deployment blocked: EXPO_PUBLIC_AUDIT_REPORT_VERIFY_URL must be a valid URL.',
-  );
-  process.exit(1);
-}
-
-if (verificationUrl.protocol !== 'https:') {
-  console.error(
-    'Production deployment blocked: EXPO_PUBLIC_AUDIT_REPORT_VERIFY_URL must use HTTPS.',
-  );
-  process.exit(1);
-}
-
-if (verificationUrl.pathname.replace(/\/+$/, '') !== '/verify') {
-  console.error(
-    'Production deployment blocked: EXPO_PUBLIC_AUDIT_REPORT_VERIFY_URL must point to /verify.',
   );
   process.exit(1);
 }

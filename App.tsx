@@ -1,17 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import {
-  ActivityIndicator,
   Alert,
-  KeyboardAvoidingView,
-  Linking,
-  Platform,
   Pressable,
   SafeAreaView,
   ScrollView,
   StyleSheet,
   Text,
-  TextInput,
   View,
 } from 'react-native';
 
@@ -20,14 +15,7 @@ import {
   useBabyReadyAuth,
 } from './src/auth/AuthProvider';
 import { firebaseIsConfigured } from './src/lib/firebase';
-import { getAuditReportIdFromVerificationUrl } from './src/lib/auditReportVerification';
-import type { ClinicalContentBlock, CourseRecord } from './src/models/course';
-import { ClinicianAuditLogScreen } from './src/screens/ClinicianAuditLogScreen';
-import { ClinicianReviewScreen } from './src/screens/ClinicianReviewScreen';
-import { ClinicianContentAuthoringScreen } from './src/screens/ClinicianContentAuthoringScreen';
-import { ClinicianCourseReadinessScreen } from './src/screens/ClinicianCourseReadinessScreen';
-import { ClinicianMediaLibraryScreen } from './src/screens/ClinicianMediaLibraryScreen';
-import { ClinicianSourceLibraryScreen } from './src/screens/ClinicianSourceLibraryScreen';
+import type { CourseRecord } from './src/models/course';
 import { BirthReadinessBriefScreen } from './src/screens/BirthReadinessBriefScreen';
 import { ClassPlayerScreen } from './src/screens/ClassPlayerScreen';
 import { LearnerCourseCatalog } from './src/screens/LearnerCourseCatalog';
@@ -36,10 +24,6 @@ import {
   LearnerLearningPlanScreen,
   type LearningPlanLessonTarget,
 } from './src/screens/LearnerLearningPlanScreen';
-import {
-  signInWithEmail,
-  signOutFromBabyReady,
-} from './src/services/authService';
 
 export default function App() {
   return (
@@ -57,26 +41,6 @@ function BabyReadyApp() {
     | 'learning-plan'
     | 'course-player'
     | 'birth-readiness-brief'
-    | 'review'
-    | 'course-readiness'
-    | 'sources'
-    | 'media'
-    | 'author'
-    | 'audit-log'
-  >('learner');
-  const [auditReportIdFromLink, setAuditReportIdFromLink] = useState<
-    string | null
-  >(null);
-  const [draftToEdit, setDraftToEdit] = useState<ClinicalContentBlock | null>(
-    null,
-  );
-  const [authorReturnView, setAuthorReturnView] = useState<
-    'review' | 'course-readiness'
-  >('review');
-  const [reviewTargetBlock, setReviewTargetBlock] =
-    useState<ClinicalContentBlock | null>(null);
-  const [reviewReturnView, setReviewReturnView] = useState<
-    'learner' | 'course-readiness'
   >('learner');
   const [selectedCourse, setSelectedCourse] = useState<CourseRecord | null>(
     null,
@@ -86,39 +50,8 @@ function BabyReadyApp() {
   const [coursePlayerReturnView, setCoursePlayerReturnView] = useState<
     'learner' | 'learning-plan'
   >('learner');
-  const [clinicianSignInOpen, setClinicianSignInOpen] = useState(false);
-  const [clinicianEmail, setClinicianEmail] = useState('');
-  const [clinicianPassword, setClinicianPassword] = useState('');
-  const [clinicianSignInError, setClinicianSignInError] = useState<string | null>(null);
-  const [clinicianSignInBusy, setClinicianSignInBusy] = useState(false);
-  const learnerScrollRef = useRef<ScrollView>(null);
 
-  const revealClinicianSignIn = () => {
-    setTimeout(() => {
-      learnerScrollRef.current?.scrollToEnd({ animated: true });
-    }, 120);
-  };
-
-  useEffect(() => {
-    const openAuditReportVerification = (url: string | null) => {
-      const reportId = getAuditReportIdFromVerificationUrl(url);
-      if (!reportId) {
-        return;
-      }
-
-      setAuditReportIdFromLink(reportId);
-      setActiveView('audit-log');
-    };
-
-    void Linking.getInitialURL().then(openAuditReportVerification).catch(() => {
-      // Opening the app without a deep-link remains the expected path.
-    });
-    const subscription = Linking.addEventListener('url', ({ url }) => {
-      openAuditReportVerification(url);
-    });
-
-    return () => subscription.remove();
-  }, []);
+  const userId = authState.status === 'ready' ? authState.user.uid : null;
 
   const showUrgentGuidance = () => {
     Alert.alert(
@@ -128,181 +61,12 @@ function BabyReadyApp() {
     );
   };
 
-  const handleClinicianSignIn = async () => {
-    if (!clinicianEmail.trim() || !clinicianPassword) {
-      setClinicianSignInError('Enter the clinician email address and password.');
-      return;
-    }
-
-    setClinicianSignInBusy(true);
-    setClinicianSignInError(null);
-
-    try {
-      const user = await signInWithEmail(clinicianEmail.trim(), clinicianPassword);
-      const tokenResult = await user.getIdTokenResult(true);
-      if (tokenResult.claims.admin !== true) {
-        await signOutFromBabyReady();
-        throw new Error('The account does not have clinician administrator access.');
-      }
-
-      setClinicianPassword('');
-      setClinicianSignInOpen(false);
-    } catch {
-      setClinicianSignInError(
-        'BabyReady could not complete clinician sign-in. Check the credentials and clinician administrator access, then try again.',
-      );
-    } finally {
-      setClinicianSignInBusy(false);
-    }
-  };
-
-  const handleClinicianSignOut = async () => {
-    try {
-      await signOutFromBabyReady();
-      setClinicianEmail('');
-      setClinicianPassword('');
-      setClinicianSignInError(null);
-    } catch {
-      Alert.alert(
-        'Sign-out needs attention',
-        'BabyReady could not sign out. Close and reopen the app before trying again.',
-      );
-    }
-  };
-
-  const handleOpenClinicianReview = async () => {
-    if (authState.status !== 'ready') {
-      Alert.alert(
-        'Sign-in required',
-        'Finish Firebase Authentication before opening the clinician review workspace.',
-      );
-      return;
-    }
-
-    try {
-      const tokenResult = await authState.user.getIdTokenResult(true);
-      if (tokenResult.claims.admin !== true) {
-        Alert.alert(
-          'Clinician access required',
-          'This workspace is available only to clinician administrator accounts.',
-        );
-        return;
-      }
-
-      setReviewTargetBlock(null);
-      setReviewReturnView('learner');
-      setActiveView('review');
-    } catch {
-      Alert.alert(
-        'Access check unavailable',
-        'BabyReady could not verify clinician administrator access. Please try again.',
-      );
-    }
-  };
-
-  if (activeView === 'sources' && authState.status === 'ready') {
-    return (
-      <ClinicianSourceLibraryScreen
-        onExit={() => setActiveView('review')}
-        user={authState.user}
-      />
-    );
-  }
-
-  if (activeView === 'media' && authState.status === 'ready') {
-    return (
-      <ClinicianMediaLibraryScreen
-        onExit={() => setActiveView('review')}
-        user={authState.user}
-      />
-    );
-  }
-
-  if (activeView === 'author' && authState.status === 'ready') {
-    return (
-      <ClinicianContentAuthoringScreen
-        initialBlock={draftToEdit}
-        onExit={() => {
-          setDraftToEdit(null);
-          setActiveView(authorReturnView);
-        }}
-        user={authState.user}
-      />
-    );
-  }
-
-  if (activeView === 'course-readiness' && authState.status === 'ready') {
-    return (
-      <ClinicianCourseReadinessScreen
-        onEditDraft={(block) => {
-          setDraftToEdit(block);
-          setAuthorReturnView('course-readiness');
-          setActiveView('author');
-        }}
-        onExit={() => setActiveView('review')}
-        onOpenContentAuthoring={() => {
-          setDraftToEdit(null);
-          setAuthorReturnView('course-readiness');
-          setActiveView('author');
-        }}
-        onOpenMediaLibrary={() => setActiveView('media')}
-        onOpenReview={(block) => {
-          setReviewTargetBlock(block);
-          setReviewReturnView('course-readiness');
-          setActiveView('review');
-        }}
-        onOpenSourceLibrary={() => setActiveView('sources')}
-        user={authState.user}
-      />
-    );
-  }
-
-  if (activeView === 'audit-log' && authState.status === 'ready') {
-    return (
-      <ClinicianAuditLogScreen
-        initialReportId={auditReportIdFromLink}
-        onExit={() => {
-          setAuditReportIdFromLink(null);
-          setActiveView('review');
-        }}
-        user={authState.user}
-      />
-    );
-  }
-
-  if (activeView === 'review' && authState.status === 'ready') {
-    return (
-      <ClinicianReviewScreen
-        onExit={() => {
-          setReviewTargetBlock(null);
-          setActiveView(reviewReturnView);
-        }}
-        onEditDraft={(block) => {
-          setDraftToEdit(block);
-          setAuthorReturnView('review');
-          setActiveView('author');
-        }}
-        onOpenContentAuthoring={() => {
-          setDraftToEdit(null);
-          setAuthorReturnView('review');
-          setActiveView('author');
-        }}
-        onOpenAuditLog={() => setActiveView('audit-log')}
-        onOpenCourseReadiness={() => setActiveView('course-readiness')}
-        onOpenMediaLibrary={() => setActiveView('media')}
-        onOpenSourceLibrary={() => setActiveView('sources')}
-        initialSelectedBlock={reviewTargetBlock}
-        user={authState.user}
-      />
-    );
-  }
-
   if (activeView === 'class-player') {
     return (
       <ClassPlayerScreen
         onExit={() => setActiveView('learner')}
         onOpenBrief={() => setActiveView('birth-readiness-brief')}
-        userId={authState.status === 'ready' ? authState.user.uid : null}
+        userId={userId}
       />
     );
   }
@@ -322,7 +86,7 @@ function BabyReadyApp() {
           setSelectedLessonTarget(null);
           setActiveView(coursePlayerReturnView);
         }}
-        userId={authState.status === 'ready' ? authState.user.uid : null}
+        userId={userId}
       />
     );
   }
@@ -334,7 +98,7 @@ function BabyReadyApp() {
         onExit={() =>
           setActiveView(selectedCourse ? 'course-player' : 'learner')
         }
-        userId={authState.status === 'ready' ? authState.user.uid : null}
+        userId={userId}
       />
     );
   }
@@ -350,7 +114,7 @@ function BabyReadyApp() {
           setCoursePlayerReturnView('learning-plan');
           setActiveView('course-player');
         }}
-        userId={authState.status === 'ready' ? authState.user.uid : null}
+        userId={userId}
       />
     );
   }
@@ -358,17 +122,10 @@ function BabyReadyApp() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar style="dark" />
-      <KeyboardAvoidingView
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-        style={styles.keyboardAvoidingView}
+      <ScrollView
+        contentContainerStyle={styles.content}
+        showsVerticalScrollIndicator={false}
       >
-        <ScrollView
-          ref={learnerScrollRef}
-          automaticallyAdjustKeyboardInsets
-          contentContainerStyle={styles.content}
-          keyboardShouldPersistTaps="handled"
-          showsVerticalScrollIndicator={false}
-        >
         <View style={styles.header}>
           <View>
             <Text style={styles.brand}>BABYREADY</Text>
@@ -402,6 +159,27 @@ function BabyReadyApp() {
             testID="button-open-labor-basics-class"
           >
             <Text style={styles.learningPlanButtonText}>Start class</Text>
+          </Pressable>
+        </View>
+
+        <View style={styles.learningPlanCard}>
+          <View style={styles.learningPlanCopy}>
+            <Text style={styles.learningPlanEyebrow}>YOUR BRIEF</Text>
+            <Text style={styles.learningPlanTitle}>Birth Readiness Brief</Text>
+            <Text style={styles.learningPlanText}>
+              Your answers from class, readiness checklist, and questions for
+              your care team, in one private place.
+            </Text>
+          </View>
+          <Pressable
+            accessibilityHint="Opens your private Birth Readiness Brief."
+            accessibilityLabel="Open your Birth Readiness Brief"
+            accessibilityRole="button"
+            onPress={() => setActiveView('birth-readiness-brief')}
+            style={styles.learningPlanButton}
+            testID="button-open-birth-readiness-brief"
+          >
+            <Text style={styles.learningPlanButtonText}>Open brief</Text>
           </Pressable>
         </View>
 
@@ -451,134 +229,20 @@ function BabyReadyApp() {
           </Pressable>
         </View>
 
-        <View style={styles.foundationCard}>
-          <Text style={styles.foundationTitle}>Your BabyReady access</Text>
-          <Text style={styles.foundationText}>
-            {firebaseIsConfigured
-              ? authState.status === 'ready'
-                ? `Firebase Authentication is ready. You are using a private ${authState.user.isAnonymous ? 'starter' : 'account'} session.`
-                : authState.status === 'error'
-                  ? 'Firebase is configured. The optional learner session needs attention, but clinician sign-in remains available.'
-                  : 'Firebase is configured. You can sign in as a clinician while the optional learner session starts.'
-              : 'Add your Firebase values in .env to connect secure course content, user plans, and care-team contacts.'}
-          </Text>
-          <Text style={styles.foundationMeta}>
-            {authState.status === 'error'
-              ? authState.error
-              : 'Secure local storage, Auth persistence, and published-content access controls are active.'}
-          </Text>
-          {firebaseIsConfigured &&
-          (authState.status !== 'ready' || authState.user.isAnonymous) ? (
-            clinicianSignInOpen ? (
-              <View style={styles.clinicianSignInCard}>
-                <Text style={styles.clinicianSignInTitle}>Clinician sign in</Text>
-                <Text style={styles.clinicianSignInText}>
-                  Use the clinician administrator account. This direct sign-in does not
-                  depend on a learner session.
-                </Text>
-                <Text style={styles.fieldLabel}>Email address</Text>
-                <TextInput
-                  accessibilityLabel="Clinician email address"
-                  autoCapitalize="none"
-                  autoComplete="email"
-                  autoCorrect={false}
-                  editable={!clinicianSignInBusy}
-                  keyboardType="email-address"
-                  onChangeText={setClinicianEmail}
-                  onFocus={revealClinicianSignIn}
-                  placeholder="clinician@example.com"
-                  placeholderTextColor="#77746D"
-                  style={styles.textInput}
-                  textContentType="username"
-                  value={clinicianEmail}
-                />
-                <Text style={styles.fieldLabel}>Password</Text>
-                <TextInput
-                  accessibilityLabel="Clinician password"
-                  autoComplete="current-password"
-                  editable={!clinicianSignInBusy}
-                  onChangeText={setClinicianPassword}
-                  onFocus={revealClinicianSignIn}
-                  placeholder="Enter password"
-                  placeholderTextColor="#77746D"
-                  secureTextEntry
-                  style={styles.textInput}
-                  textContentType="password"
-                  value={clinicianPassword}
-                />
-                {clinicianSignInError ? (
-                  <Text accessibilityRole="alert" style={styles.signInError}>
-                    {clinicianSignInError}
-                  </Text>
-                ) : null}
-                <View style={styles.clinicianSignInActions}>
-                  <Pressable
-                    accessibilityRole="button"
-                    accessibilityLabel="Cancel clinician sign in"
-                    disabled={clinicianSignInBusy}
-                    onPress={() => {
-                      setClinicianSignInOpen(false);
-                      setClinicianPassword('');
-                      setClinicianSignInError(null);
-                    }}
-                    style={styles.secondaryButton}
-                  >
-                    <Text style={styles.secondaryButtonText}>Cancel</Text>
-                  </Pressable>
-                  <Pressable
-                    accessibilityRole="button"
-                    accessibilityLabel="Sign in to the clinician workspace"
-                    disabled={clinicianSignInBusy}
-                    onPress={() => void handleClinicianSignIn()}
-                    style={[
-                      styles.signInButton,
-                      clinicianSignInBusy && styles.signInButtonDisabled,
-                    ]}
-                  >
-                    {clinicianSignInBusy ? (
-                      <ActivityIndicator color="#FFFFFF" />
-                    ) : (
-                      <Text style={styles.signInButtonText}>Sign in</Text>
-                    )}
-                  </Pressable>
-                </View>
-              </View>
-            ) : (
-              <Pressable
-                accessibilityRole="button"
-                accessibilityLabel="Sign in as a clinician"
-                onPress={() => setClinicianSignInOpen(true)}
-                style={styles.clinicianSignInLink}
-              >
-                <Text style={styles.clinicianSignInLinkText}>Clinician sign in</Text>
-              </Pressable>
-            )
-          ) : authState.status === 'ready' ? (
-            <View style={styles.clinicianAccountRow}>
-              <Text style={styles.clinicianAccountText}>
-                Signed in as {authState.user.email ?? 'a clinician account'}.
-              </Text>
-              <Pressable
-                accessibilityRole="button"
-                accessibilityLabel="Sign out of clinician account"
-                onPress={() => void handleClinicianSignOut()}
-                style={styles.signOutButton}
-              >
-                <Text style={styles.signOutButtonText}>Sign out</Text>
-              </Pressable>
-            </View>
-          ) : null}
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel="Open the clinician content review workspace"
-            onPress={() => void handleOpenClinicianReview()}
-            style={styles.clinicianLink}
-          >
-            <Text style={styles.clinicianLinkText}>Open clinician content review</Text>
-          </Pressable>
-        </View>
-        </ScrollView>
-      </KeyboardAvoidingView>
+        {!firebaseIsConfigured || authState.status === 'error' ? (
+          <View accessibilityRole="alert" style={styles.foundationCard}>
+            <Text style={styles.foundationTitle}>Saving is not connected</Text>
+            <Text style={styles.foundationText}>
+              {firebaseIsConfigured
+                ? 'BabyReady could not start your private session, so your progress is saved on this device only for now.'
+                : 'Add your Firebase values in .env to save progress and your Birth Readiness Brief privately.'}
+            </Text>
+            {authState.status === 'error' ? (
+              <Text style={styles.foundationMeta}>{authState.error}</Text>
+            ) : null}
+          </View>
+        ) : null}
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -587,9 +251,6 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: '#F7F6F2',
-  },
-  keyboardAvoidingView: {
-    flex: 1,
   },
   content: {
     alignSelf: 'center',
@@ -683,84 +344,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '800',
   },
-  nextCard: {
-    backgroundColor: '#01696F',
-    borderRadius: 20,
-    marginBottom: 28,
-    padding: 22,
-  },
-  eyebrow: {
-    color: '#BCE2E7',
-    fontSize: 11,
-    fontWeight: '800',
-    letterSpacing: 1,
-  },
-  nextTitle: {
-    color: '#FFFFFF',
-    fontSize: 24,
-    fontWeight: '800',
-    letterSpacing: -0.4,
-    marginTop: 8,
-  },
-  nextText: {
-    color: '#E8F5F3',
-    fontSize: 15,
-    lineHeight: 22,
-    marginTop: 8,
-  },
-  nextMeta: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    marginTop: 14,
-  },
-  nextMetaText: {
-    color: '#CBE6E2',
-    fontSize: 13,
-    fontWeight: '600',
-  },
-  dot: {
-    color: '#CBE6E2',
-    marginHorizontal: 8,
-  },
-  primaryButton: {
-    alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-    borderRadius: 11,
-    marginTop: 18,
-    paddingVertical: 13,
-  },
-  primaryButtonText: {
-    color: '#0C4E54',
-    fontSize: 15,
-    fontWeight: '800',
-  },
-  sectionHeader: {
-    alignItems: 'flex-end',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 14,
-  },
-  sectionTitle: {
-    color: '#28251D',
-    fontSize: 20,
-    fontWeight: '800',
-  },
-  sectionSubtitle: {
-    color: '#696761',
-    fontSize: 13,
-    lineHeight: 18,
-    marginTop: 3,
-    maxWidth: 290,
-  },
-  progress: {
-    color: '#01696F',
-    fontSize: 13,
-    fontWeight: '800',
-    paddingBottom: 2,
-  },
-  moduleList: {
-    gap: 11,
-  },
   safetyCard: {
     backgroundColor: '#FFF5F8',
     borderColor: '#A12C7B',
@@ -816,129 +399,5 @@ const styles = StyleSheet.create({
     fontSize: 12,
     lineHeight: 17,
     marginTop: 9,
-  },
-  clinicianSignInLink: {
-    alignSelf: 'flex-start',
-    marginTop: 14,
-    minHeight: 44,
-    justifyContent: 'center',
-  },
-  clinicianSignInLinkText: {
-    color: '#0C4E54',
-    fontSize: 14,
-    fontWeight: '800',
-  },
-  clinicianSignInCard: {
-    backgroundColor: '#FBFBF9',
-    borderColor: '#D4D1CA',
-    borderRadius: 12,
-    borderWidth: 1,
-    marginTop: 14,
-    padding: 14,
-  },
-  clinicianSignInTitle: {
-    color: '#28251D',
-    fontSize: 16,
-    fontWeight: '800',
-  },
-  clinicianSignInText: {
-    color: '#55534D',
-    fontSize: 13,
-    lineHeight: 18,
-    marginTop: 4,
-  },
-  fieldLabel: {
-    color: '#55534D',
-    fontSize: 13,
-    fontWeight: '800',
-    marginTop: 12,
-  },
-  textInput: {
-    backgroundColor: '#FFFFFF',
-    borderColor: '#B8B4AC',
-    borderRadius: 9,
-    borderWidth: 1,
-    color: '#28251D',
-    fontSize: 16,
-    marginTop: 5,
-    minHeight: 46,
-    paddingHorizontal: 12,
-  },
-  signInError: {
-    color: '#8A1F5D',
-    fontSize: 13,
-    lineHeight: 18,
-    marginTop: 10,
-  },
-  clinicianSignInActions: {
-    flexDirection: 'row',
-    gap: 10,
-    justifyContent: 'flex-end',
-    marginTop: 14,
-  },
-  secondaryButton: {
-    alignItems: 'center',
-    borderColor: '#8D8981',
-    borderRadius: 9,
-    borderWidth: 1,
-    justifyContent: 'center',
-    minHeight: 44,
-    minWidth: 88,
-    paddingHorizontal: 12,
-  },
-  secondaryButtonText: {
-    color: '#55534D',
-    fontSize: 14,
-    fontWeight: '800',
-  },
-  signInButton: {
-    alignItems: 'center',
-    backgroundColor: '#01696F',
-    borderRadius: 9,
-    justifyContent: 'center',
-    minHeight: 44,
-    minWidth: 100,
-    paddingHorizontal: 14,
-  },
-  signInButtonDisabled: {
-    backgroundColor: '#6F9B98',
-  },
-  signInButtonText: {
-    color: '#FFFFFF',
-    fontSize: 14,
-    fontWeight: '800',
-  },
-  clinicianAccountRow: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 14,
-  },
-  clinicianAccountText: {
-    color: '#55534D',
-    flex: 1,
-    fontSize: 13,
-    lineHeight: 18,
-    marginRight: 12,
-  },
-  signOutButton: {
-    minHeight: 44,
-    justifyContent: 'center',
-  },
-  signOutButtonText: {
-    color: '#7B1F5C',
-    fontSize: 14,
-    fontWeight: '800',
-  },
-  clinicianLink: {
-    alignSelf: 'flex-start',
-    marginTop: 14,
-    minHeight: 44,
-    justifyContent: 'center',
-  },
-  clinicianLinkText: {
-    color: '#0C4E54',
-    fontSize: 14,
-    fontWeight: '800',
   },
 });
