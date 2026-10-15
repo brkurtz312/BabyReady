@@ -1,4 +1,4 @@
-import type { ComponentType } from 'react';
+import { useState, type ComponentType } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import type { LucideProps } from 'lucide-react-native';
 
@@ -128,8 +128,14 @@ function WeekScale({
   axisLabel: string;
   label: string;
 }) {
+  const [trackWidth, setTrackWidth] = useState(0);
   const pct = (w: number) => `${((w - start) / (end - start)) * 100}%` as const;
   const zoneColor = { alert: c.alertSoft, marigold: c.marigoldSoft, lagoon: c.lagoonSoft, line: c.line, sky: c.sky };
+  // A zone too narrow for the longest word of its label (on small phones) shows the label in a key below instead.
+  const fits = (z: Zone) =>
+    trackWidth === 0 ||
+    ((z.to - z.from) / (end - start)) * trackWidth >= Math.max(...z.label.split(' ').map((w) => w.length)) * 6.6 + 4;
+  const keyed = zones.filter((z) => !fits(z));
   return (
     <Frame label={label}>
       <View style={s.scaleArea}>
@@ -139,17 +145,20 @@ function WeekScale({
             <View style={s.markerLine} />
           </View>
         ) : null}
-        <View style={s.zoneTrack}>
+        <View onLayout={(e) => setTrackWidth(e.nativeEvent.layout.width)} style={s.zoneTrack}>
           {zones.map((z) => (
             <View
               key={z.label}
               style={[s.zone, { left: pct(z.from), width: `${((z.to - z.from) / (end - start)) * 100}%`, backgroundColor: zoneColor[z.tone] }]}
             >
-              <Text numberOfLines={2} style={s.zoneText}>
-                {z.label}
-              </Text>
+              {fits(z) ? (
+                <Text numberOfLines={2} style={s.zoneText}>
+                  {z.label}
+                </Text>
+              ) : null}
             </View>
           ))}
+          {marker ? <View style={[s.markerNotch, { left: pct(marker.week) }]} /> : null}
         </View>
         <View style={s.tickRow}>
           {ticks.map((t) => (
@@ -159,6 +168,16 @@ function WeekScale({
           ))}
         </View>
       </View>
+      {keyed.length ? (
+        <View style={s.zoneKey}>
+          {keyed.map((z) => (
+            <View key={z.label} style={s.zoneKeyItem}>
+              <View style={[s.zoneSwatch, { backgroundColor: zoneColor[z.tone] }]} />
+              <Text style={s.zoneKeyText}>{z.label}</Text>
+            </View>
+          ))}
+        </View>
+      ) : null}
       <Text style={s.caption}>{axisLabel}</Text>
     </Frame>
   );
@@ -222,26 +241,34 @@ function FiveOneOne() {
 
 function ThreeStages() {
   const stages = [
-    { flex: 7, title: 'Stage 1', detail: 'Cervix opens', tone: c.lagoonSoft },
-    { flex: 2.2, title: 'Stage 2', detail: 'Push and birth', tone: c.marigoldSoft },
-    { flex: 1.2, title: '3', detail: 'Placenta', tone: c.sky },
+    { flex: 7, n: '1', title: 'Stage 1', detail: 'Cervix opens', tone: c.lagoonSoft },
+    { flex: 2.2, n: '2', title: 'Stage 2', detail: 'Push and birth', tone: c.marigoldSoft },
+    { flex: 1.2, n: '3', title: 'Stage 3', detail: 'Placenta', tone: c.sky },
   ];
+  // The bar shows relative length only; the labels sit in a key below so they never get cut off.
   return (
     <Frame label="Three stages of labor: stage 1, the cervix opens, usually the longest; stage 2, pushing and birth; stage 3, the placenta is delivered. Then the first hours of recovery and bonding.">
       <View style={s.stageRow}>
         {stages.map((st) => (
           <View key={st.title} style={[s.stage, { flex: st.flex, backgroundColor: st.tone }]}>
-            <Text numberOfLines={1} style={s.stageTitle}>
-              {st.title}
-            </Text>
-            <Text numberOfLines={2} style={s.stageDetail}>
-              {st.detail}
+            <Text style={s.stageTitle}>{st.n}</Text>
+          </View>
+        ))}
+        <View style={s.stageAfter} />
+      </View>
+      <View style={s.stageKey}>
+        {stages.map((st) => (
+          <View key={st.title} style={s.zoneKeyItem}>
+            <View style={[s.zoneSwatch, { backgroundColor: st.tone }]} />
+            <Text style={s.zoneKeyText}>
+              <Text style={s.stageKeyTitle}>{st.title}</Text> · {st.detail}
             </Text>
           </View>
         ))}
-        <View style={s.stageAfter}>
-          <Text numberOfLines={3} style={s.stageAfterText}>
-            First hours: recovery and bonding
+        <View style={s.zoneKeyItem}>
+          <View style={[s.zoneSwatch, s.stageAfterSwatch]} />
+          <Text style={s.zoneKeyText}>
+            <Text style={s.stageKeyTitle}>First hours</Text> · Recovery and bonding
           </Text>
         </View>
       </View>
@@ -257,7 +284,7 @@ function CervixCircles() {
     <Frame label="Cervical dilation from 1 to 10 centimeters, drawn to relative size. 10 centimeters means fully open.">
       <View style={s.circleRow}>
         {sizes.map((cm) => {
-          const d = Math.max(8, (cm / max) * 64);
+          const d = Math.max(8, (cm / max) * 52);
           const full = cm === 10;
           return (
             <View key={cm} style={s.circleCol}>
@@ -691,10 +718,15 @@ const s = StyleSheet.create({
     paddingHorizontal: 2,
   },
   zoneText: { color: c.ink, fontSize: 12, fontWeight: '700', textAlign: 'center' },
-  marker: { position: 'absolute', top: 0, bottom: 20, width: 2, marginLeft: -1, alignItems: 'center', zIndex: 2 },
+  marker: { position: 'absolute', top: 0, height: 30, width: 2, marginLeft: -1, alignItems: 'center', zIndex: 2 },
   markerText: { position: 'absolute', top: 0, width: 120, textAlign: 'center', color: c.ink, fontSize: 12, fontWeight: '800' },
   markerLine: { position: 'absolute', top: 18, bottom: 0, width: 2, backgroundColor: c.ink },
+  markerNotch: { position: 'absolute', top: 0, height: 8, width: 2, marginLeft: -1, backgroundColor: c.ink },
   tickRow: { height: 18, position: 'relative', marginTop: 4 },
+  zoneKey: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 12 },
+  zoneKeyItem: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  zoneSwatch: { width: 14, height: 14, borderRadius: 4 },
+  zoneKeyText: { color: c.ink, fontSize: 12, flexShrink: 1 },
   tick: { position: 'absolute', width: 28, marginLeft: -14, textAlign: 'center', color: c.muted, fontSize: 11 },
 
   steps: { gap: 8 },
@@ -710,25 +742,24 @@ const s = StyleSheet.create({
   fiveUnit: { color: c.ink, fontSize: 15, fontWeight: '700' },
   fiveNote: { color: c.muted, fontSize: 12, textAlign: 'center' },
 
-  stageRow: { flexDirection: 'row', alignItems: 'stretch', gap: 3, minHeight: 64 },
-  stage: { borderRadius: 8, padding: 8, justifyContent: 'center', minWidth: 0 },
-  stageTitle: { color: c.ink, fontSize: 13, fontWeight: '800' },
-  stageDetail: { color: c.ink, fontSize: 12 },
+  stageRow: { flexDirection: 'row', alignItems: 'stretch', gap: 3, height: 36 },
+  stage: { borderRadius: 8, alignItems: 'center', justifyContent: 'center', minWidth: 0 },
+  stageTitle: { color: c.ink, fontSize: 14, fontWeight: '800' },
   stageAfter: {
     flex: 1.6,
     borderRadius: 8,
     borderWidth: 1.5,
     borderStyle: 'dashed',
     borderColor: c.lagoon,
-    padding: 6,
-    justifyContent: 'center',
     minWidth: 0,
   },
-  stageAfterText: { color: c.lagoon, fontSize: 11, fontWeight: '700' },
+  stageAfterSwatch: { borderWidth: 1.5, borderStyle: 'dashed', borderColor: c.lagoon },
+  stageKey: { gap: 6, alignSelf: 'center' },
+  stageKeyTitle: { fontWeight: '800' },
 
   circleRow: { flexDirection: 'row', justifyContent: 'space-around', alignItems: 'flex-end' },
-  circleCol: { alignItems: 'center', gap: 6 },
-  circleBox: { height: 66, justifyContent: 'flex-end', alignItems: 'center' },
+  circleCol: { flex: 1, alignItems: 'center', gap: 6 },
+  circleBox: { height: 54, justifyContent: 'flex-end', alignItems: 'center' },
   dilation: { borderWidth: 2, borderColor: c.lagoon, backgroundColor: c.lagoonSoft },
   circleLabel: { color: c.ink, fontSize: 12, fontWeight: '600' },
 
