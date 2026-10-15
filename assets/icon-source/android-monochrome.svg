@@ -6,6 +6,12 @@
     <path d="M374 560 Q512 650 650 560" fill="none" stroke="#000" stroke-width="22" stroke-linecap="round"/>
     <path d="M458 405 Q474 422 490 405 M534 405 Q550 422 566 405" fill="none" stroke="#000" stroke-width="13" stroke-linecap="round"/>
     <path d="M50 88 C22 66 6 50 6 32 C6 18 17 8 30 8 C39 8 46 13 50 20 C54 13 61 8 70 8 C83 8 94 18 94 32 C94 50 78 66 50 88 Z" transform="translate(472 640) scale(0.8)" fill="#000"/>
+    <path d="M430 300 L430 334 Q512 360 594 334 L594 300 Z" fill="#000" stroke="#000" stroke-width="24"/>
+    <path d="M430 300 L430 334 Q512 360 594 334 L594 300 Z" fill="#fff"/>
+    <path d="M512 212 L676 262 L512 312 L348 262 Z" fill="#000" stroke="#000" stroke-width="24" stroke-linejoin="round"/>
+    <path d="M512 212 L676 262 L512 312 L348 262 Z" fill="#fff"/>
+    <path d="M512 262 L652 274 L652 336" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M638 330 L666 330 L672 372 L632 372 Z" fill="#fff"/>
   </mask></defs>
-  <g transform="translate(512 512) scale(0.82) translate(-512 -526)"><rect width="1024" height="1024" fill="#FFFFFF" mask="url(#m)"/></g>
+  <g transform="translate(512 512) scale(0.82) translate(-512 -507)"><rect width="1024" height="1024" fill="#fff" mask="url(#m)"/></g>
 </svg>
