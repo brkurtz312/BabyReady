@@ -29,6 +29,7 @@ import { ClinicianCourseReadinessScreen } from './src/screens/ClinicianCourseRea
 import { ClinicianMediaLibraryScreen } from './src/screens/ClinicianMediaLibraryScreen';
 import { ClinicianSourceLibraryScreen } from './src/screens/ClinicianSourceLibraryScreen';
 import { BirthReadinessBriefScreen } from './src/screens/BirthReadinessBriefScreen';
+import { ClassPlayerScreen } from './src/screens/ClassPlayerScreen';
 import { LearnerCourseCatalog } from './src/screens/LearnerCourseCatalog';
 import { LearnerCoursePlayerScreen } from './src/screens/LearnerCoursePlayerScreen';
 import {
@@ -52,6 +53,7 @@ function BabyReadyApp() {
   const authState = useBabyReadyAuth();
   const [activeView, setActiveView] = useState<
     | 'learner'
+    | 'class-player'
     | 'learning-plan'
     | 'course-player'
     | 'birth-readiness-brief'
@@ -295,6 +297,10 @@ function BabyReadyApp() {
     );
   }
 
+  if (activeView === 'class-player') {
+    return <ClassPlayerScreen onExit={() => setActiveView('learner')} />;
+  }
+
   if (activeView === 'course-player' && selectedCourse) {
     return (
       <LearnerCoursePlayerScreen
@@ -370,6 +376,27 @@ function BabyReadyApp() {
             Your obstetric, midwifery, pediatric, and lactation teams guide your
             personal care and urgent decisions.
           </Text>
+        </View>
+
+        <View style={styles.learningPlanCard}>
+          <View style={styles.learningPlanCopy}>
+            <Text style={styles.learningPlanEyebrow}>CLASS · MODULE 2</Text>
+            <Text style={styles.learningPlanTitle}>Labor Basics and When to Call</Text>
+            <Text style={styles.learningPlanText}>
+              Six short narrated lessons, about 71 minutes in all, with check-ins
+              and a review quiz after each lesson.
+            </Text>
+          </View>
+          <Pressable
+            accessibilityHint="Opens the narrated Labor Basics class."
+            accessibilityLabel="Start the Labor Basics class"
+            accessibilityRole="button"
+            onPress={() => setActiveView('class-player')}
+            style={styles.learningPlanButton}
+            testID="button-open-labor-basics-class"
+          >
+            <Text style={styles.learningPlanButtonText}>Start class</Text>
+          </Pressable>
         </View>
 
         <View style={styles.learningPlanCard}>

@@ -1,0 +1,316 @@
+{
+  "courseId": "labor-basics",
+  "lessonId": "pushing-and-birth",
+  "order": 5,
+  "title": "Pushing and Birth",
+  "learningGoals": [
+    "Know what the second stage feels like and how long it can take",
+    "Understand different ways and positions to push",
+    "Know what crowning is and how care teams help protect the perineum",
+    "Understand tearing and episiotomy",
+    "Know what to do if birth happens before you reach care"
+  ],
+  "estimatedMinutes": 12,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Reviewer: confirm the 'birth before you reach care' safety slide matches local EMS guidance. Pushing technique is presented neutrally (urge-guided or coached) without breath-hold counts."
+  },
+  "sources": [
+    {
+      "id": "acog-cpg8-labor",
+      "organization": "ACOG",
+      "title": "First and Second Stage Labor Management (Clinical Practice Guideline No. 8)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2024/01/first-and-second-stage-labor-management",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-co766",
+      "organization": "ACOG",
+      "title": "Approaches to Limit Intervention During Labor and Birth (Committee Opinion No. 766)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2019/02/approaches-to-limit-intervention-during-labor-and-birth",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-pb198",
+      "organization": "ACOG",
+      "title": "Prevention and Management of Obstetric Lacerations at Vaginal Delivery (Practice Bulletin No. 198)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/practice-bulletin/articles/2018/09/prevention-and-management-of-obstetric-lacerations-at-vaginal-delivery",
+      "verifiedOn": null
+    },
+    {
+      "id": "aafp-lacerations",
+      "organization": "AAFP",
+      "title": "Obstetric Lacerations: Prevention and Repair (American Family Physician, 2021)",
+      "url": "https://www.aafp.org/afp/2021/0615/p745",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-breastfeeding-2022",
+      "organization": "AAP",
+      "title": "Breastfeeding and the Use of Human Milk (Policy Statement, 2022)",
+      "url": "https://publications.aap.org/pediatrics/article/150/1/e2022057988/188347/",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Pushing and Birth",
+      "onScreen": ["Labor Basics · Lesson 5", "About 12 minutes"],
+      "narration": "Welcome back. You've made it through the first stage, and your cervix is fully open. Now comes the part many people wonder about most: pushing, and the moment your baby is born. Let's walk through what it feels like, the choices you'll have, and how your care team helps along the way.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "Soft, modest scene of a laboring person on their side, a support person holding their hand, a nurse nearby with a warm cloth."
+      }
+    },
+    {
+      "id": "what-it-feels-like",
+      "type": "content",
+      "heading": "What the second stage feels like",
+      "onScreen": [
+        "Strong pressure low in your pelvis",
+        "Often feels like needing to have a bowel movement",
+        "Many people feel a powerful urge to push",
+        "Sometimes there's a short lull first"
+      ],
+      "narration": "Once your cervix is fully open, your baby begins moving down through your pelvis. Most people feel strong pressure low down, often a lot like needing to have a bowel movement. That's normal, and it's a sign your baby is moving in the right direction. Many people feel a powerful, natural urge to push. Some get a short break first, a lull where contractions ease for a bit. If you have an epidural, you may feel less of the urge, and your care team may suggest resting for a while to let your baby move down on its own before you start pushing.",
+      "sourceIds": ["acog-cpg8-labor", "acog-co766"],
+      "visual": {
+        "kind": "diagram",
+        "description": "Simple side-view diagram of baby's head moving down through the pelvis, with a gentle arrow showing direction."
+      }
+    },
+    {
+      "id": "checkin-pressure",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": ["acog-cpg8-labor"],
+      "question": {
+        "prompt": "During pushing, you feel intense pressure, like you need to have a bowel movement. What does that usually mean?",
+        "options": [
+          "Something has gone wrong",
+          "Your baby is moving down, which is exactly what should happen",
+          "You should stop pushing"
+        ],
+        "correctIndex": 1,
+        "explanation": "That pressure is your baby moving down through your pelvis. It's a normal, expected part of pushing. And if you do pass a little stool, your team handles it quickly and quietly. It happens all the time."
+      }
+    },
+    {
+      "id": "how-to-push",
+      "type": "content",
+      "heading": "How you'll push",
+      "onScreen": [
+        "Push with your contractions, rest between them",
+        "Follow your body's urge, or",
+        "Follow your care team's guidance",
+        "Both approaches work"
+      ],
+      "narration": "Pushing happens with your contractions. When one builds, you push. When it fades, you rest. There are two common approaches. One is to follow your body's urge, pushing when and how hard it tells you to. The other is guided pushing, where your nurse or provider coaches you through each push. That's especially helpful with an epidural, when the urge is harder to feel. Both approaches work. Your care team will help you find what's effective for you.",
+      "sourceIds": ["acog-cpg8-labor", "acog-co766"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Nurse at bedside speaking encouragingly, laboring person in a semi-sitting position, partner supporting one leg."
+      }
+    },
+    {
+      "id": "positions",
+      "type": "content",
+      "heading": "Positions for pushing",
+      "onScreen": [
+        "On your side",
+        "Hands and knees",
+        "Supported squat, or with a squat bar",
+        "Semi-sitting, leaning back"
+      ],
+      "narration": "You don't have to push lying flat on your back. Many positions can work, and changing positions can help. You might push on your side, on your hands and knees, in a supported squat or using a squat bar, or semi-sitting and leaning back. If you have an epidural, some upright positions are harder, but side-lying and semi-sitting are still great options. Ask your care team which positions they support, and don't be shy about trying a new one if things feel stuck.",
+      "sourceIds": ["acog-co766"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Four modest line drawings in a row: side-lying with top leg supported, hands and knees, squat with bar, semi-sitting."
+      }
+    },
+    {
+      "id": "how-long",
+      "type": "content",
+      "heading": "How long pushing takes",
+      "onScreen": [
+        "Anywhere from a few minutes to a few hours",
+        "Often longer with a first baby",
+        "Often longer with an epidural",
+        "Your team watches you and your baby throughout"
+      ],
+      "narration": "Pushing can take anywhere from a few minutes to a few hours. It's often longer with a first baby, and often longer with an epidural. A long second stage is not a sign that you're doing it wrong. Each push moves your baby a little, even when it doesn't feel like it. Throughout, your care team keeps checking on you and your baby's heart rate, and they'll talk with you about options if progress slows.",
+      "sourceIds": ["acog-cpg8-labor"],
+      "visual": {
+        "kind": "diagram",
+        "description": "Simple bar showing a range from 'minutes' to 'a few hours', with small notes 'first baby' and 'epidural' toward the longer end."
+      }
+    },
+    {
+      "id": "crowning",
+      "type": "content",
+      "heading": "Crowning",
+      "onScreen": [
+        "Your baby's head stays visible at the opening",
+        "Intense stretching or burning is common",
+        "You may be asked to push gently or breathe",
+        "Warm compresses can help protect the perineum"
+      ],
+      "narration": "As your baby's head reaches the vaginal opening and stays visible between contractions, that's called crowning. Many people feel intense stretching or burning. It's brief, and it means your baby is almost here. Your provider may ask you to push gently, or to stop pushing and breathe, so your baby's head comes out slowly and the tissue has time to stretch. Warm compresses and gentle perineal massage during this stage can lower the risk of more serious tears.",
+      "sourceIds": ["acog-pb198", "aafp-lacerations"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Non-graphic illustration: provider holding a warm cloth, laboring person breathing slowly, support person close by saying 'almost there'."
+      }
+    },
+    {
+      "id": "tears",
+      "type": "content",
+      "heading": "Tearing and episiotomy",
+      "onScreen": [
+        "Some tearing is common, especially with a first baby",
+        "Most tears are small and heal well",
+        "An episiotomy (a small cut) is only done when needed",
+        "Ask about perineal massage in late pregnancy"
+      ],
+      "narration": "Many people worry about tearing, so let's talk about it honestly. Some tearing is common, especially with a first vaginal birth. Most tears are small. They involve only skin or shallow muscle, and they heal well, sometimes with a few stitches. More serious tears are much less common. An episiotomy is a small cut your provider can make to widen the opening. It used to be routine, but today it's only done when there's a specific reason. And here's something you can do now: ask your care team about perineal massage in the last weeks of pregnancy, which can reduce tearing for some first-time parents.",
+      "sourceIds": ["acog-pb198", "aafp-lacerations"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Three reassuring icons: a check mark (most tears are small), a bandage (heal well), a calendar (ask about late-pregnancy perineal massage)."
+      }
+    },
+    {
+      "id": "pushing-video",
+      "type": "video",
+      "heading": "Pushing positions, demonstrated",
+      "onScreen": ["Try these with your support person at home"],
+      "narration": "Let's watch a short demonstration of pushing positions you can practice ahead of time.",
+      "sourceIds": ["acog-co766"],
+      "video": {
+        "brief": "Clothed demonstration with a childbirth educator, a pregnant person, and a partner: side-lying with leg support, hands and knees, supported squat, semi-sitting with partner holding a leg. Shows how a partner can help in each. Notes which work with an epidural. No birth footage.",
+        "maxSeconds": 90
+      }
+    },
+    {
+      "id": "baby-is-born",
+      "type": "content",
+      "heading": "Your baby is born",
+      "onScreen": [
+        "First the head, then the shoulders turn and slip out",
+        "The rest of the body follows quickly",
+        "If baby is doing well, they go right onto your chest",
+        "Babies may look bluish or be covered in a white coating at first"
+      ],
+      "narration": "Once your baby's head is born, the shoulders turn and slip out, and the rest of the body follows quickly. If your baby is doing well, they can be placed right onto your bare chest, dried off, and covered with a warm blanket. Don't be surprised by how your baby looks at first. Newborns are often a little bluish until they start breathing, and may be covered in a white, creamy coating that protects their skin. In the next lesson, we'll talk about that first precious hour together.",
+      "sourceIds": ["aap-breastfeeding-2022"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Newborn on parent's chest, skin to skin, under a warm blanket, parent's hand on baby's back, partner leaning in."
+      }
+    },
+    {
+      "id": "support-while-pushing",
+      "type": "comparison",
+      "heading": "Support person: how to help with pushing",
+      "onScreen": ["Short, steady encouragement goes a long way"],
+      "narration": "Support people, pushing is hard, focused work, and you can make a real difference. Offer short, steady encouragement. Give sips of water and a cool cloth between contractions. Help hold a leg or support a position if asked. Tell them about progress, if they want to know. And stay close. Your presence matters more than finding perfect words.",
+      "sourceIds": ["acog-co766"],
+      "columns": ["Try", "Instead of"],
+      "rows": [
+        ["\"You're doing it. Each push is working.\"", "Long speeches or lots of questions"],
+        ["Sips of water, a cool cloth", "Leaving the room for long stretches"],
+        ["Holding a leg or hand when asked", "Guessing what they need"],
+        ["Sharing progress, if they want it", "Comparing to other births"]
+      ],
+      "visual": {
+        "kind": "comparison-table",
+        "description": "Two-column table of helpful and less helpful support."
+      }
+    },
+    {
+      "id": "fast-birth",
+      "type": "safety",
+      "heading": "If birth happens before you reach care",
+      "onScreen": [
+        "Call 911; the dispatcher will guide you",
+        "If driving, pull over safely",
+        "Don't try to slow or hold the baby back",
+        "Put baby skin to skin and keep both of you warm",
+        "Don't pull on the cord; wait for help"
+      ],
+      "narration": "Very fast births are uncommon, but it's good to know what to do. If birth seems to be happening before you can reach your care team, call 911. The dispatcher will talk you through it. If you're driving, pull over somewhere safe. Don't try to hold your baby back. Once your baby is born, put them skin to skin on the parent's chest, dry them, and cover you both with a blanket or towel to keep warm. Don't pull on the umbilical cord. Wait for emergency help to arrive.",
+      "sourceIds": ["aap-breastfeeding-2022"]
+    },
+    {
+      "id": "pushing-preferences",
+      "type": "reflection",
+      "heading": "Your pushing preferences",
+      "onScreen": [
+        "Positions you'd like to try",
+        "How you'd like to be encouraged",
+        "Would you like a mirror, or to touch baby's head?",
+        "Questions about tearing or perineal massage"
+      ],
+      "narration": "Let's add your pushing preferences to your Birth Readiness Brief. Note the positions you'd like to try, how you'd like to be encouraged, whether you'd like a mirror or to reach down and touch your baby's head as they crown, and any questions you want to ask your care team about tearing or perineal massage.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write positions to try, how you'd like to be encouraged, whether you'd like a mirror or to touch baby's head, and questions for your care team."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Pressure and an urge to push are normal",
+        "Push with contractions; urge-guided or coached both work",
+        "Many positions can work; try changing",
+        "Crowning is brief; slow is good",
+        "Most tears are small and heal well"
+      ],
+      "narration": "Let's recap. Strong pressure and an urge to push are normal signs your baby is moving down. You'll push with your contractions, either following your body or with coaching, and both work. Many positions can help, so don't hesitate to change. Crowning is intense but brief, and going slowly helps protect your body. And while some tearing is common, most tears are small and heal well. Next, a few review questions.",
+      "sourceIds": ["acog-cpg8-labor", "acog-pb198"]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "Which statement about pushing positions is true?",
+      "options": [
+        "You must push lying flat on your back",
+        "Many positions can work, and changing positions can help",
+        "Positions don't matter at all"
+      ],
+      "correctIndex": 1,
+      "explanation": "Side-lying, hands and knees, squatting, and semi-sitting can all work. Ask your care team which ones they support."
+    },
+    {
+      "prompt": "Why might your provider ask you to push gently or breathe as your baby crowns?",
+      "options": [
+        "To slow things down so the tissue can stretch",
+        "Because labor has stopped",
+        "So you can rest for an hour"
+      ],
+      "correctIndex": 0,
+      "explanation": "Letting the head come out slowly gives tissue time to stretch, which can help reduce tearing."
+    },
+    {
+      "prompt": "What's true about episiotomy today?",
+      "options": [
+        "It's done for every vaginal birth",
+        "It's only done when there's a specific reason",
+        "It always prevents tearing"
+      ],
+      "correctIndex": 1,
+      "explanation": "Routine episiotomy is no longer recommended. Providers use it only when there's a specific reason."
+    }
+  ],
+  "nextLessonId": "placenta-and-first-hour"
+}

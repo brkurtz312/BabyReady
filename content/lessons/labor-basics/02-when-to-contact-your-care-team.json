@@ -1,0 +1,307 @@
+{
+  "courseId": "labor-basics",
+  "lessonId": "when-to-contact-your-care-team",
+  "order": 2,
+  "title": "When to Contact Your Care Team",
+  "learningGoals": [
+    "Know that calling your care team is always okay, day or night",
+    "Recognize the labor pattern many care teams use as a signal to call",
+    "Know which symptoms mean call right away, without waiting for a pattern",
+    "Be ready with the information your care team will ask for",
+    "Save your own call card to your Birth Readiness Brief"
+  ],
+  "estimatedMinutes": 10,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Reviewer: confirm the 5-1-1 framing matches the practices our learners use, and confirm each source page. Kick-count instructions are intentionally left out; the lesson teaches 'know your baby's normal and call if it changes' instead."
+  },
+  "sources": [
+    {
+      "id": "acnm-am-i-in-labor",
+      "organization": "ACNM",
+      "title": "Am I in Labor? (Discover Midwives)",
+      "url": "https://discovermidwives.midwife.org/am-i-in-labor/",
+      "verifiedOn": "2026-10-14"
+    },
+    {
+      "id": "acog-labor-begins",
+      "organization": "ACOG",
+      "title": "How to Tell When Labor Begins (FAQ004)",
+      "url": "https://www.acog.org/womens-health/faqs/how-to-tell-when-labor-begins",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-hear-her-warning-signs",
+      "organization": "CDC",
+      "title": "Hear Her: Urgent Maternal Warning Signs",
+      "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-group-b-strep",
+      "organization": "CDC",
+      "title": "About Group B Strep",
+      "url": "https://www.cdc.gov/group-b-strep/about/index.html",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "When to Contact Your Care Team",
+      "onScreen": ["Labor Basics · Lesson 2", "About 10 minutes"],
+      "narration": "Welcome back. In the last lesson, we talked about how labor begins. Now let's answer one of the most common questions in any childbirth class: when do I call? By the end of this lesson, you'll know the signals to watch for, the symptoms that mean call right away, and exactly what to say when you pick up the phone.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "Pregnant person on a couch at night, calmly holding a phone, support partner beside them with a notepad."
+      }
+    },
+    {
+      "id": "always-ok-to-call",
+      "type": "content",
+      "heading": "It's always okay to call",
+      "onScreen": [
+        "Your care team expects these calls",
+        "Day or night, weekends included",
+        "Not sure? Call and ask"
+      ],
+      "narration": "First, the most important message in this lesson: it is always okay to call. Many people wait until morning or try not to bother their doctor or midwife. But answering these calls is part of their job, at any hour. If you're not sure whether something is labor, or whether something is wrong, call. It's much better to get reassurance than to stay up worrying.",
+      "sourceIds": ["acnm-am-i-in-labor"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Friendly nurse at a labor and delivery desk answering a phone at night, clock showing 3 AM."
+      }
+    },
+    {
+      "id": "two-kinds-of-calls",
+      "type": "comparison",
+      "heading": "Two kinds of calls",
+      "onScreen": ["Some calls can wait for a pattern. Some can't."],
+      "narration": "It helps to think about two kinds of calls. The first is a labor call. You make it when your contractions settle into the pattern your care team gave you. The second is a call right away. You make it for certain symptoms, like your water breaking, bleeding, or your baby moving less, no matter what your contractions are doing. Let's look at each one.",
+      "sourceIds": ["acnm-am-i-in-labor"],
+      "columns": ["Labor call", "Call right away"],
+      "rows": [
+        ["Contractions reach your team's pattern", "Your water breaks"],
+        ["You can't walk or talk through contractions", "Bleeding more than light spotting"],
+        ["You've waited for the pattern to hold", "Baby moving less, or not at all"],
+        ["", "Any urgent warning sign"]
+      ],
+      "visual": {
+        "kind": "comparison-table",
+        "description": "Two columns: left in calm teal labeled Labor call, right in alert red labeled Call right away."
+      }
+    },
+    {
+      "id": "five-one-one",
+      "type": "content",
+      "heading": "The labor call: a common guideline",
+      "onScreen": [
+        "Contractions 5 minutes apart or less",
+        "Each lasting about 1 minute",
+        "For at least 1 hour",
+        "Or: too strong to walk or talk through"
+      ],
+      "narration": "Many midwives and doctors use a guideline called five, one, one. That means contractions coming five minutes apart or less, each lasting about one minute, for at least one hour. Another sign is when contractions get so strong that you can't walk or talk during them. But here's the key: your care team may give you a different rule. They might want a call sooner if this isn't your first baby, if past labors were fast, if you live far from your birth place, or because of your health history. Their instructions always come first.",
+      "sourceIds": ["acnm-am-i-in-labor", "acog-labor-begins"],
+      "visual": {
+        "kind": "diagram",
+        "description": "Large '5-1-1' graphic with three labeled parts: 5 minutes apart, 1 minute long, for 1 hour. Small note below: Your team's rule comes first."
+      }
+    },
+    {
+      "id": "checkin-511",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": ["acnm-am-i-in-labor"],
+      "question": {
+        "prompt": "Your contractions have been 5 minutes apart, each lasting about a minute, for the past hour. Your care team uses the 5-1-1 guideline. What should you do?",
+        "options": [
+          "Wait another few hours to be sure",
+          "Call your care team",
+          "Only call if your water breaks"
+        ],
+        "correctIndex": 1,
+        "explanation": "That's the 5-1-1 pattern, so it's time to call. Your care team will tell you whether to come in now or keep laboring at home a little longer."
+      }
+    },
+    {
+      "id": "water-breaks",
+      "type": "content",
+      "heading": "Call right away: your water breaks",
+      "onScreen": [
+        "Call even without contractions",
+        "Note the time",
+        "Note the color: clear, pink-tinged, green, or brown",
+        "Tell them if you tested positive for group B strep"
+      ],
+      "narration": "If your water breaks, or you think it might have, call your care team, even if you aren't having any contractions. Note the time it happened and the color of the fluid. It's usually clear or slightly pink, but sometimes it's green or brown, and your team will want to know that. Also tell them if you tested positive for group B strep, a common bacteria checked near the end of pregnancy. If you did, you'll usually get antibiotics during labor to protect your baby.",
+      "sourceIds": ["acnm-am-i-in-labor", "cdc-group-b-strep"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four icons: phone, clock, color swatches (clear, pink, green, brown), and a small lab test tube labeled GBS."
+      }
+    },
+    {
+      "id": "baby-movement",
+      "type": "content",
+      "heading": "Call right away: baby moving less",
+      "onScreen": [
+        "Get to know your baby's normal pattern",
+        "If movement slows, changes, or stops, call",
+        "Babies should still move during labor",
+        "Don't wait to see if it improves"
+      ],
+      "narration": "By the third trimester, you'll start to learn your baby's usual pattern of movement. Babies don't run out of room to move near the end of pregnancy, and they should keep moving even during labor. If your baby is moving less than usual, the pattern changes, or you can't feel movement, call your care team right away. Don't wait to see if it gets better, and don't try to reassure yourself at home first. Your team can check on your baby quickly.",
+      "sourceIds": ["acnm-am-i-in-labor", "cdc-hear-her-warning-signs"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Pregnant person resting on their side with a hand on their belly, paying attention, calm expression."
+      }
+    },
+    {
+      "id": "bleeding",
+      "type": "content",
+      "heading": "Call right away: bleeding",
+      "onScreen": [
+        "Pink or brownish mucus near term can be normal",
+        "Any other bleeding: call your care team",
+        "Heavy bleeding, like a period or more: call right away, or 911"
+      ],
+      "narration": "In the last lesson, we talked about bloody show, the pink or brownish mucus that can come as your cervix starts to change. That can be normal. Any other bleeding, even spotting, is worth a call to your care team. And heavy bleeding, like a period or more, can be a sign of a serious problem. Call right away, and if it's heavy or you feel faint, call 911.",
+      "sourceIds": ["acnm-am-i-in-labor", "cdc-hear-her-warning-signs"],
+      "visual": {
+        "kind": "diagram",
+        "description": "Simple three-step scale from light to heavy: pink mucus (can be normal), spotting (call), heavy like a period (call now or 911). No graphic imagery."
+      }
+    },
+    {
+      "id": "urgent-warning-signs",
+      "type": "safety",
+      "heading": "Urgent warning signs: get help now",
+      "onScreen": [
+        "Severe headache that won't go away, or vision changes",
+        "Trouble breathing, chest pain, or a racing heart",
+        "Severe belly pain that doesn't go away",
+        "Fever of 100.4°F or higher",
+        "Extreme swelling of hands or face",
+        "Thoughts of harming yourself or your baby",
+        "If it feels like an emergency, call 911"
+      ],
+      "narration": "Some symptoms need help right away, whether or not you're in labor. These include a severe headache that won't go away or changes in your vision, trouble breathing, chest pain, or a racing heart, severe belly pain that doesn't go away, a fever of 100.4 degrees or higher, extreme swelling of your hands or face, and thoughts of harming yourself or your baby. If you have any of these, contact your care team immediately. If it feels like an emergency, call 911.",
+      "sourceIds": ["cdc-hear-her-warning-signs"]
+    },
+    {
+      "id": "what-to-say",
+      "type": "content",
+      "heading": "What to have ready when you call",
+      "onScreen": [
+        "How many weeks pregnant you are",
+        "Your contraction times: how far apart, how long",
+        "If your water broke: when, and the color",
+        "Your group B strep result",
+        "Anything else you've noticed"
+      ],
+      "narration": "When you call, the nurse or provider will ask a few questions. It helps to have the answers ready. They'll want to know how many weeks pregnant you are, how far apart your contractions are and how long they last, whether your water has broken and what it looked like, your group B strep result, and anything else you've noticed, like bleeding or changes in your baby's movement. This is a great job for a support person, so you can focus on breathing through contractions.",
+      "sourceIds": ["acnm-am-i-in-labor"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Support partner on the phone reading from a notes app showing contraction times, pregnant person leaning on a counter nearby."
+      }
+    },
+    {
+      "id": "practice-call-video",
+      "type": "video",
+      "heading": "Hear a practice call",
+      "onScreen": ["Notice what the nurse asks, and how short the call can be"],
+      "narration": "Let's listen in on a practice call so you know what to expect.",
+      "sourceIds": ["acnm-am-i-in-labor"],
+      "video": {
+        "brief": "Role-play: a support partner calls labor and delivery triage at night. The nurse asks weeks pregnant, contraction timing, water status and color, GBS result, baby's movement, and other symptoms. Nurse gives a calm decision (come in, or stay home and call back if X). Ends with the partner saying 'That was easier than I expected.' No specific clinical thresholds beyond what the lesson teaches.",
+        "maxSeconds": 90
+      }
+    },
+    {
+      "id": "call-card",
+      "type": "reflection",
+      "heading": "Make your call card",
+      "onScreen": [
+        "Daytime number for your care team",
+        "After-hours or labor and delivery number",
+        "Your group B strep result, once you know it",
+        "Who will call, and who will drive"
+      ],
+      "narration": "Now let's make your call card. Write down your care team's daytime number, their after-hours or labor and delivery number, and your group B strep result once you have it. Decide who will make the call and who will drive. Save it here in your Birth Readiness Brief, and consider putting the numbers in both your phone and your support person's phone.",
+      "sourceIds": ["acnm-am-i-in-labor"],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Add your care team's daytime and after-hours numbers, your group B strep result, and who will call and drive."
+    },
+    {
+      "id": "checkin-water-color",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "One more check-in before we wrap up.",
+      "sourceIds": ["acnm-am-i-in-labor"],
+      "question": {
+        "prompt": "At 39 weeks, your water breaks. You aren't having contractions, and the fluid looks greenish. What should you do?",
+        "options": [
+          "Wait for contractions to start, then call",
+          "Call your care team now and tell them the fluid is greenish",
+          "Take a shower and rest first"
+        ],
+        "correctIndex": 1,
+        "explanation": "Call now, even without contractions. Green or brown fluid is important for your care team to know, so be sure to mention the color and the time it happened."
+      }
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "It's always okay to call",
+        "Labor call: when contractions match your team's pattern",
+        "Call right away: water breaks, bleeding, baby moving less",
+        "Urgent warning signs: get help now, or call 911",
+        "Have your answers and your call card ready"
+      ],
+      "narration": "Let's recap. It's always okay to call your care team. Make a labor call when your contractions match the pattern your team gave you. Call right away if your water breaks, if you have bleeding beyond light spotting, or if your baby is moving less. For urgent warning signs, get help immediately, or call 911. And have your call card ready before you need it. Next up, a few review questions.",
+      "sourceIds": ["acnm-am-i-in-labor", "cdc-hear-her-warning-signs"]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "Which of these is a reason to call your care team right away, without waiting for a contraction pattern?",
+      "options": [
+        "Your baby is moving less than usual",
+        "You have a mild backache",
+        "You feel an occasional practice contraction"
+      ],
+      "correctIndex": 0,
+      "explanation": "A change in your baby's movement is always worth an immediate call. Don't wait to see if it improves."
+    },
+    {
+      "prompt": "Your care team told you to call when contractions are 4 minutes apart, but a friend says 5-1-1 is the rule. Whose advice should you follow?",
+      "options": ["Your friend's", "Your care team's", "Whichever comes later"],
+      "correctIndex": 1,
+      "explanation": "5-1-1 is a common guideline, but your care team's instructions are based on your situation, so they always come first."
+    },
+    {
+      "prompt": "It's 2 AM and you're not sure if what you're feeling is labor. What's the best choice?",
+      "options": [
+        "Wait until the office opens",
+        "Call your care team's after-hours number",
+        "Search online until you're sure"
+      ],
+      "correctIndex": 1,
+      "explanation": "Care teams answer calls at all hours. If you're unsure, call. That's what they're there for."
+    }
+  ],
+  "nextLessonId": "stages-of-labor"
+}

@@ -1,0 +1,357 @@
+{
+  "courseId": "labor-basics",
+  "lessonId": "placenta-and-first-hour",
+  "order": 6,
+  "title": "The Placenta and the First Hour",
+  "learningGoals": [
+    "Know what happens as the placenta is delivered",
+    "Understand why medicine is given to prevent heavy bleeding",
+    "Know the benefits of delayed cord clamping",
+    "Understand skin-to-skin contact and the first feeding",
+    "Recognize heavy bleeding after birth and act quickly"
+  ],
+  "estimatedMinutes": 12,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Reviewer: delayed cord clamping is stated as 'at least 30 to 60 seconds' per ACOG CO 814; ACNM favors longer. Newborn medications (vitamin K, eye ointment, hepatitis B) are deferred to lesson 5.2. Heavy-bleeding thresholds are kept general; confirm wording against unit teaching."
+  },
+  "sources": [
+    {
+      "id": "acog-co814",
+      "organization": "ACOG",
+      "title": "Delayed Umbilical Cord Clamping After Birth (Committee Opinion No. 814)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2020/12/delayed-umbilical-cord-clamping-after-birth",
+      "verifiedOn": null
+    },
+    {
+      "id": "who-intrapartum-2018",
+      "organization": "WHO",
+      "title": "WHO Recommendations: Intrapartum Care for a Positive Childbirth Experience (2018)",
+      "url": "https://www.who.int/publications/i/item/9789241550215",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-breastfeeding-2022",
+      "organization": "AAP",
+      "title": "Breastfeeding and the Use of Human Milk (Policy Statement, 2022)",
+      "url": "https://publications.aap.org/pediatrics/article/150/1/e2022057988/188347/",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-apgar",
+      "organization": "ACOG",
+      "title": "The Apgar Score (Committee Opinion No. 644, with AAP)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2015/10/the-apgar-score",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-pb198",
+      "organization": "ACOG",
+      "title": "Prevention and Management of Obstetric Lacerations at Vaginal Delivery (Practice Bulletin No. 198)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/practice-bulletin/articles/2018/09/prevention-and-management-of-obstetric-lacerations-at-vaginal-delivery",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-hear-her-warning-signs",
+      "organization": "CDC",
+      "title": "Hear Her: Urgent Maternal Warning Signs",
+      "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "The Placenta and the First Hour",
+      "onScreen": [
+        "Labor Basics · Lesson 6",
+        "About 12 minutes"
+      ],
+      "narration": "Welcome to the final lesson of Labor Basics. Your baby is here. But a few important things still happen in the minutes and hours after birth: the placenta is delivered, your care team watches your bleeding, and you and your baby begin getting to know each other. Many people call this the golden hour. Let's walk through it.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "Dim, peaceful birth room: parent with newborn skin to skin under a blanket, partner sitting close, nurse quietly charting in the background."
+      }
+    },
+    {
+      "id": "third-stage",
+      "type": "content",
+      "heading": "Delivering the placenta",
+      "onScreen": [
+        "Your uterus keeps contracting after birth",
+        "The placenta separates and comes out, often with a small push",
+        "Usually within about half an hour",
+        "Your team checks that it's complete"
+      ],
+      "narration": "After your baby is born, your uterus keeps contracting, usually more gently. These contractions help the placenta separate from the wall of your uterus. You may feel some cramping and pressure, and your provider may ask for a small push. The placenta usually comes out within about half an hour, and often much sooner. Your team will check that it came out complete, because any pieces left behind can cause bleeding. Many people barely notice this stage, because they're focused on their baby.",
+      "sourceIds": [
+        "who-intrapartum-2018"
+      ],
+      "visual": {
+        "kind": "diagram",
+        "description": "Simple side view of a uterus after birth, contracting, with the placenta gently separating. Non-graphic, soft colors."
+      }
+    },
+    {
+      "id": "preventing-bleeding",
+      "type": "content",
+      "heading": "Preventing heavy bleeding",
+      "onScreen": [
+        "Medicine (usually oxytocin) is given right after birth",
+        "It helps your uterus contract and limits bleeding",
+        "Your nurse will press on your belly to check your uterus",
+        "It can be uncomfortable, but it's important"
+      ],
+      "narration": "Right after birth, most care teams give a medicine, usually oxytocin, through your IV or as a shot. It helps your uterus contract firmly, which is how your body controls bleeding where the placenta was attached. This is recommended for every birth, because it lowers the risk of heavy bleeding. Over the next hours, your nurse will also press firmly on your belly to check that your uterus is staying firm. That can be uncomfortable, so breathe through it, and know it's an important safety check.",
+      "sourceIds": [
+        "who-intrapartum-2018"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Nurse gently placing a hand on a postpartum person's lower belly, both calm, baby on the parent's chest."
+      }
+    },
+    {
+      "id": "cord-clamping",
+      "type": "content",
+      "heading": "Delayed cord clamping",
+      "onScreen": [
+        "Waiting at least 30 to 60 seconds before clamping the cord",
+        "Gives your baby extra blood from the placenta",
+        "Boosts iron stores for the first months of life",
+        "Recommended for healthy term and preterm babies"
+      ],
+      "narration": "After birth, the umbilical cord still carries blood from the placenta to your baby. Waiting to clamp it, at least 30 to 60 seconds, lets more of that blood reach your baby. For full-term babies, this boosts iron stores for the first several months of life. For premature babies, the benefits are even bigger. ACOG recommends delayed cord clamping for healthy babies, and it doesn't increase the birthing parent's risk of bleeding. Some midwives wait even longer. If your baby needs immediate help breathing, the team may clamp sooner.",
+      "sourceIds": [
+        "acog-co814"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Newborn on parent's chest with the cord still attached, a small timer graphic showing 30 to 60 seconds."
+      }
+    },
+    {
+      "id": "checkin-cord",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": [
+        "acog-co814"
+      ],
+      "question": {
+        "prompt": "What's one main benefit of delayed cord clamping for a full-term baby?",
+        "options": [
+          "It shortens labor",
+          "It boosts the baby's iron stores for the first months of life",
+          "It prevents the need for stitches"
+        ],
+        "correctIndex": 1,
+        "explanation": "Waiting at least 30 to 60 seconds lets extra blood from the placenta reach your baby, which improves iron stores in early infancy."
+      }
+    },
+    {
+      "id": "skin-to-skin",
+      "type": "content",
+      "heading": "Skin to skin",
+      "onScreen": [
+        "Baby goes on your bare chest right after birth",
+        "Keeps baby warm and calm",
+        "Helps steady breathing, heart rate, and blood sugar",
+        "Often possible after a cesarean, too"
+      ],
+      "narration": "If you and your baby are doing well, your baby can be placed directly on your bare chest right after birth, dried off, and covered with a warm blanket. This is called skin-to-skin contact. Your body is the perfect warmer. Skin to skin helps keep your baby warm and calm, and it helps steady their breathing, heart rate, and blood sugar. It also supports breastfeeding. Ask for at least the first hour without interruption if possible. Many hospitals offer it after a cesarean, too, and partners can do skin to skin as well.",
+      "sourceIds": [
+        "aap-breastfeeding-2022",
+        "who-intrapartum-2018"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Close-up of newborn lying skin to skin on a parent's chest, cheek turned to the side, blanket over both."
+      }
+    },
+    {
+      "id": "first-feeding",
+      "type": "content",
+      "heading": "The first feeding",
+      "onScreen": [
+        "Many babies are ready to feed within the first hour",
+        "Watch for rooting, licking, and hands to mouth",
+        "Your nurse can help with positioning",
+        "If you plan to formula feed, skin to skin still matters"
+      ],
+      "narration": "Many babies are alert and ready to feed in the first hour after birth. Watch for early signs, like rooting, which is turning toward your chest with an open mouth, licking, or bringing hands to the mouth. If you're breastfeeding, skin to skin makes it easier for your baby to find the breast, and your nurse can help with positioning. There's no need for a perfect first latch. It's a first try for both of you. If you plan to formula feed, skin to skin is still wonderful for bonding and for keeping your baby warm.",
+      "sourceIds": [
+        "aap-breastfeeding-2022",
+        "who-intrapartum-2018"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Newborn on parent's chest turning head toward the breast, mouth open, a nurse's hand offering gentle support."
+      }
+    },
+    {
+      "id": "baby-checks",
+      "type": "content",
+      "heading": "Your baby's first checks",
+      "onScreen": [
+        "Apgar score at 1 and 5 minutes after birth",
+        "Checks breathing, heart rate, color, tone, and reflexes",
+        "Often done while baby is on your chest",
+        "Weighing and newborn medications can usually wait"
+      ],
+      "narration": "Your care team will quickly check your baby at one minute and five minutes after birth. This is called the Apgar score. It looks at breathing, heart rate, color, muscle tone, and reflexes, and it tells the team whether your baby needs any extra help adjusting. These checks can often be done while your baby is on your chest. Weighing, measuring, and routine newborn medications can usually wait until after that first hour together. We'll cover those medications in Module 5.",
+      "sourceIds": [
+        "acog-apgar",
+        "aap-breastfeeding-2022"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Five small icons for the Apgar categories: lungs (breathing), heart (heart rate), color swatch (color), flexed arm (tone), and a sneeze (reflexes)."
+      }
+    },
+    {
+      "id": "your-recovery",
+      "type": "content",
+      "heading": "Your body in the first hour",
+      "onScreen": [
+        "Stitches for a tear, if needed, with numbing medicine",
+        "Shaking or chills are common and pass",
+        "Cramping as your uterus shrinks",
+        "Bleeding, like a heavy period, is expected"
+      ],
+      "narration": "While you're holding your baby, your provider will check for any tears and repair them if needed, using numbing medicine. Many people shake or feel chilled after birth. It's a common reaction and passes on its own, so ask for a warm blanket. You'll feel cramping as your uterus starts shrinking back down, and you'll have bleeding, similar to a heavy period. Your nurse will check you often. And if you're hungry and thirsty, ask for food and drink. You've earned it.",
+      "sourceIds": [
+        "acog-pb198",
+        "who-intrapartum-2018"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Postpartum parent wrapped in a warm blanket, sipping juice, baby asleep on their chest, partner offering a snack."
+      }
+    },
+    {
+      "id": "golden-hour-video",
+      "type": "video",
+      "heading": "The golden hour",
+      "onScreen": [
+        "Notice how much can happen with baby on your chest"
+      ],
+      "narration": "Here's a short look at the first hour after birth.",
+      "sourceIds": [
+        "aap-breastfeeding-2022"
+      ],
+      "video": {
+        "brief": "Gentle, non-graphic footage or animation of the first hour: baby placed skin to skin, dried and covered, Apgar check done on the chest, delayed cord clamping with partner cutting the cord, baby rooting and a first feeding attempt, nurse checking the parent's uterus. Soft music and captions only.",
+        "maxSeconds": 90
+      }
+    },
+    {
+      "id": "heavy-bleeding",
+      "type": "safety",
+      "heading": "Heavy bleeding after birth: tell someone right away",
+      "onScreen": [
+        "Soaking through a pad in an hour or less",
+        "Passing large clots",
+        "Feeling dizzy, faint, or a racing heart",
+        "In the hospital: press your call button now",
+        "At home: call 911"
+      ],
+      "narration": "Some bleeding after birth is normal. But heavy bleeding is an emergency, and it can happen in the hospital or after you go home. Get help right away if you're soaking through a pad in an hour or less, passing large clots, or feeling dizzy, faint, or like your heart is racing. In the hospital, press your call button and tell your nurse immediately. At home, call 911. Support people, if your partner seems pale, confused, or faint, don't wait. Get help.",
+      "sourceIds": [
+        "cdc-hear-her-warning-signs",
+        "who-intrapartum-2018"
+      ]
+    },
+    {
+      "id": "checkin-bleeding",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "One more check-in.",
+      "sourceIds": [
+        "cdc-hear-her-warning-signs"
+      ],
+      "question": {
+        "prompt": "Two hours after birth, you've soaked through a large pad in less than an hour and feel lightheaded. What should you do?",
+        "options": [
+          "Wait for the nurse's next routine check",
+          "Press your call button and tell your nurse right away",
+          "Change the pad and take a nap"
+        ],
+        "correctIndex": 1,
+        "explanation": "Soaking a pad in an hour or less, especially with dizziness, can be a sign of serious bleeding. Get help immediately."
+      }
+    },
+    {
+      "id": "first-hour-wishes",
+      "type": "reflection",
+      "heading": "Your first-hour wishes",
+      "onScreen": [
+        "Skin to skin right away, and for how long",
+        "Delayed cord clamping, and who cuts the cord",
+        "First feeding plans",
+        "Photos, quiet time, and when visitors are welcome"
+      ],
+      "narration": "Let's capture your wishes for the first hour. Do you want skin to skin right away, and for how long? Delayed cord clamping, and who would like to cut the cord? Your first feeding plans? And what about photos, quiet time, and when visitors are welcome? Save it to your Birth Readiness Brief, and share it with your care team.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write your wishes for skin to skin, cord clamping and cutting, first feeding, photos, quiet time, and visitors."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "The placenta usually comes within about half an hour",
+        "Medicine after birth helps prevent heavy bleeding",
+        "Delayed cord clamping boosts baby's iron",
+        "Skin to skin supports warmth, calm, and feeding",
+        "Heavy bleeding: get help right away"
+      ],
+      "narration": "Let's recap. The placenta usually comes within about half an hour, and medicine given after birth helps prevent heavy bleeding. Delayed cord clamping gives your baby extra blood and iron. Skin to skin keeps your baby warm and calm and supports that first feeding. And if you notice heavy bleeding, get help right away. That completes Labor Basics. Congratulations, you now know the whole journey from first contraction to first cuddle.",
+      "sourceIds": [
+        "acog-co814",
+        "aap-breastfeeding-2022",
+        "who-intrapartum-2018"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "Why is medicine like oxytocin usually given right after birth?",
+      "options": [
+        "To help the baby breathe",
+        "To help the uterus contract and limit bleeding",
+        "To start breast milk"
+      ],
+      "correctIndex": 1,
+      "explanation": "Oxytocin helps the uterus contract firmly, which is how the body controls bleeding after the placenta separates."
+    },
+    {
+      "prompt": "Which is a benefit of skin-to-skin contact right after birth?",
+      "options": [
+        "It helps keep baby warm and steadies breathing and heart rate",
+        "It replaces the need for any newborn checks",
+        "It's only for breastfeeding parents"
+      ],
+      "correctIndex": 0,
+      "explanation": "Skin to skin keeps babies warm and calm and helps steady breathing, heart rate, and blood sugar, whatever your feeding plan."
+    },
+    {
+      "prompt": "Which of these is a warning sign of heavy bleeding after birth?",
+      "options": [
+        "Bleeding like a heavy period",
+        "Mild cramping",
+        "Soaking through a pad in an hour or less"
+      ],
+      "correctIndex": 2,
+      "explanation": "Bleeding like a heavy period is expected, but soaking a pad in an hour or less, large clots, or dizziness mean get help right away."
+    }
+  ]
+}

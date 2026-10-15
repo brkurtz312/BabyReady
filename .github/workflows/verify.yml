@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Set up Java for Firebase Emulator Suite
@@ -32,6 +32,9 @@ jobs:
 
       - name: Typecheck
         run: npm run typecheck
+
+      - name: Check lessons against the quality rules
+        run: npm run test:lessons
 
       - name: Run Firestore Emulator security-rule tests
         run: npm run test:emulators
