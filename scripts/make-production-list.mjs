@@ -57,7 +57,9 @@ for (const [courseId, courseTitle] of COURSES) {
         return;
       }
       const target = `assets/lessons/${lesson.lessonId}/${slide.id}.${extension}`;
-      const delivered = existsSync(path.join(root, target)) || (extension === 'png' && existsSync(path.join(root, target.replace(/\.png$/, '.webp'))));
+      const delivered =
+        existsSync(path.join(root, target)) ||
+        (extension === 'png' && ['.jpg', '.webp'].some((ext) => existsSync(path.join(root, target.replace(/\.png$/, ext)))));
       rows.push([
         courseTitle,
         `${lesson.order}. ${lesson.title}`,
