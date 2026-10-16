@@ -36,7 +36,7 @@ The app already shows each slide's heading and key points as text, and that text
 **Pictures (illustrations and diagrams)**
 
 - 1600 × 1000 pixels (a 16:10 landscape shape; the app shows them at this shape).
-- PNG, or WebP if the file is large. Keep each file under about 500 KB.
+- PNG, JPEG or WebP. Keep each file under about 500 KB. 1024 pixels wide is the least that looks sharp on phones.
 - Keep anything important away from the outer 5% of the edges, which may be rounded off.
 
 **Videos**

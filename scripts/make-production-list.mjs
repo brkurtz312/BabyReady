@@ -3,8 +3,9 @@
 //
 // Run with: node scripts/make-production-list.mjs
 //
-// Pictures drawn in code (src/components/LessonVisuals.tsx) and comparison
-// tables are left out, because they are already finished in the app.
+// Pictures and animations drawn in code (src/components/LessonVisuals.tsx and
+// LessonAnimations.tsx) and comparison tables are left out, because they are
+// already finished in the app.
 // A row's status turns to "Delivered" once its file exists in assets/lessons.
 
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
@@ -19,8 +20,12 @@ const COURSES = [
   ['labor-basics', 'Labor Basics and When to Call'],
 ];
 
-const drawnSource = readFileSync(path.join(root, 'src/components/LessonVisuals.tsx'), 'utf8');
-const drawn = new Set([...drawnSource.matchAll(/^ {2}'([a-z0-9-]+\/[a-z0-9-]+)': \(\)/gm)].map((m) => m[1]));
+const drawn = new Set(
+  ['LessonVisuals.tsx', 'LessonAnimations.tsx'].flatMap((file) => {
+    const source = readFileSync(path.join(root, 'src/components', file), 'utf8');
+    return [...source.matchAll(/^ {2}'([a-z0-9-]+\/[a-z0-9-]+)': \(/gm)].map((m) => m[1]);
+  }),
+);
 
 const csvCell = (value) => {
   const text = String(value ?? '');
@@ -40,7 +45,7 @@ for (const [courseId, courseTitle] of COURSES) {
       let kind;
       let brief;
       let extension;
-      if (slide.video) {
+      if (slide.video && !drawn.has(key)) {
         kind = 'video';
         brief = `${slide.video.brief} Up to ${slide.video.maxSeconds} seconds.`;
         extension = 'mp4';
@@ -52,7 +57,9 @@ for (const [courseId, courseTitle] of COURSES) {
         return;
       }
       const target = `assets/lessons/${lesson.lessonId}/${slide.id}.${extension}`;
-      const delivered = existsSync(path.join(root, target)) || (extension === 'png' && existsSync(path.join(root, target.replace(/\.png$/, '.webp'))));
+      const delivered =
+        existsSync(path.join(root, target)) ||
+        (extension === 'png' && ['.jpg', '.webp'].some((ext) => existsSync(path.join(root, target.replace(/\.png$/, ext)))));
       rows.push([
         courseTitle,
         `${lesson.order}. ${lesson.title}`,

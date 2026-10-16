@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; width: 1920px; height: 1080px; overflow: hidden; background: #DCEDEA; font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #1D2940; }
+  .copy { position: absolute; left: 150px; top: 0; bottom: 0; width: 960px; display: flex; flex-direction: column; justify-content: center; gap: 28px; }
+  .eyebrow { font-size: 30px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #23716C; }
+  .line { font-size: 66px; font-weight: 800; line-height: 1.15; min-height: 160px; transition: opacity .35s; }
+  .sub { font-size: 36px; color: #3C4A63; line-height: 1.35; min-height: 100px; transition: opacity .35s; }
+  .phone { position: absolute; left: 1300px; top: 60px; width: 430px; height: 932px; border-radius: 56px; background: #1D2940; padding: 14px; box-shadow: 0 30px 60px rgba(29,41,64,.25); }
+  .screen { width: 430px; height: 932px; border-radius: 44px; overflow: hidden; background: #fff; position: relative; }
+  iframe { border: 0; width: 430px; height: 932px; display: block; }
+  .ring { position: absolute; border: 6px solid #E3A82B; border-radius: 18px; box-shadow: 0 0 0 9999px rgba(29,41,64,0); opacity: 0; transition: opacity .3s, left .3s, top .3s, width .3s, height .3s; pointer-events: none; z-index: 5; }
+  .finger { position: absolute; width: 64px; height: 64px; margin: -32px 0 0 -32px; border-radius: 50%; background: rgba(29,41,64,.35); border: 4px solid rgba(255,255,255,.9); opacity: 0; transform: scale(1); transition: opacity .25s, transform .2s; pointer-events: none; z-index: 6; }
+  .finger.tap { transform: scale(.7); }
+  .card { position: absolute; inset: 0; background: #23716C; color: #fff; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px; opacity: 0; transition: opacity .6s; z-index: 10; pointer-events: none; }
+  .card.on { opacity: 1; }
+  .card .big { font-size: 92px; font-weight: 800; }
+  .card .small { font-size: 40px; color: #DCEDEA; }
+
+  /* Close-up: the bottom of the app (slide end, captions, controls) fills the frame, enlarged. */
+  body.close .phone { left: 0; top: 0; width: 1920px; height: 1080px; border-radius: 0; padding: 0; background: none; box-shadow: none; }
+  body.close .screen { width: 1920px; height: 1080px; border-radius: 0; }
+  body.close iframe { zoom: 4.465; margin-top: -690.1px; }
+  body.close .copy { left: 0; right: 0; top: 0; bottom: auto; width: auto; height: 300px; padding: 0 120px; background: #DCEDEA; z-index: 4; gap: 10px; justify-content: center; box-shadow: 0 6px 24px rgba(29,41,64,.15); }
+  body.close .eyebrow { font-size: 26px; }
+  body.close .line { min-height: 0; font-size: 64px; }
+  body.close .sub { min-height: 0; font-size: 34px; }
+</style>
+</head>
+<body>
+  <div class="copy">
+    <div class="eyebrow">A quick tour of the controls</div>
+    <div class="line" id="line"></div>
+    <div class="sub" id="sub"></div>
+  </div>
+  <div class="phone"><div class="screen"><iframe id="app" src="/"></iframe></div></div>
+  <div class="ring" id="ring"></div>
+  <div class="finger" id="finger"></div>
+  <div class="card" id="card"><div class="big" id="cardBig"></div><div class="small" id="cardSmall"></div></div>
+<script>
+  const zoomOf = () => (document.body.classList.contains('close') ? 4.465 : 1);
+  const $ = (id) => document.getElementById(id);
+  function fade(el, text) {
+    el.style.opacity = 0;
+    setTimeout(() => { el.textContent = text; el.style.opacity = 1; }, 300);
+  }
+  // Page coordinates of an element inside the app frame.
+  function rectOf(selector, text) {
+    const doc = $('app').contentDocument;
+    let el = [...doc.querySelectorAll(selector)].find((n) => !text || n.textContent.trim() === text);
+    if (!el) return null;
+    const r = el.getBoundingClientRect();
+    const f = $('app').getBoundingClientRect();
+    const z = zoomOf();
+    return { x: f.left + r.left * z, y: f.top + r.top * z, w: r.width * z, h: r.height * z };
+  }
+  window.stage = {
+    say(line, sub = '') { fade($('line'), line); fade($('sub'), sub); },
+    highlight(selector, text) {
+      const r = rectOf(selector, text);
+      const ring = $('ring');
+      if (!r) { ring.style.opacity = 0; return false; }
+      Object.assign(ring.style, { left: r.x - 10 + 'px', top: r.y - 10 + 'px', width: r.w + 8 + 'px', height: r.h + 8 + 'px', opacity: 1 });
+      return true;
+    },
+    rect(selector, text) { return rectOf(selector, text); },
+    shot(mode) { document.body.classList.toggle('close', mode === 'close'); },
+    clear() { $('ring').style.opacity = 0; $('finger').style.opacity = 0; },
+    finger(selector, text) {
+      const r = rectOf(selector, text);
+      if (!r) return;
+      const f = $('finger');
+      Object.assign(f.style, { left: r.x + r.w / 2 + 'px', top: r.y + r.h / 2 + 'px', opacity: 1 });
+      f.classList.add('tap');
+      setTimeout(() => f.classList.remove('tap'), 220);
+    },
+    card(big, small) { $('cardBig').textContent = big; $('cardSmall').textContent = small; $('card').classList.add('on'); },
+  };
+</script>
+</body>
+</html>

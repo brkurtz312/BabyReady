@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 
 import { AskQuestionSheet } from '../components/AskQuestionSheet';
+import { animationFor } from '../components/LessonAnimations';
 import { LessonVideo } from '../components/LessonVideo';
 import { drawnVisualFor } from '../components/LessonVisuals';
 import { artworkFor } from '../content/artwork';
@@ -638,6 +639,7 @@ function SlideView({
       );
     case 'video': {
       const video = videoFor(lesson.lessonId, slide.id);
+      const animation = video ? null : animationFor(lesson.lessonId, slide.id, onVideoPlay);
       return (
         <View style={styles.slide}>
           <Text style={styles.heading}>{slide.heading}</Text>
@@ -648,6 +650,8 @@ function SlideView({
               onPlay={onVideoPlay}
               source={video}
             />
+          ) : animation ? (
+            animation
           ) : (
             <View style={styles.videoFrame}>
               <Text style={styles.videoPlay}>▶</Text>
@@ -852,13 +856,16 @@ function SlideVisual({ lessonId, slide }: { lessonId: string; slide: Slide }) {
   if (drawn) return drawn;
   const artwork = artworkFor(lessonId, slide.id);
   if (artwork) {
+    // A fixed 16:10 frame: on the web an image sized by aspect ratio alone grows taller than the picture.
     return (
-      <Image
-        accessibilityLabel={slide.visual.description}
-        resizeMode="contain"
-        source={artwork}
-        style={styles.artwork}
-      />
+      <View style={styles.artworkFrame}>
+        <Image
+          accessibilityLabel={slide.visual.description}
+          resizeMode="contain"
+          source={artwork}
+          style={styles.artwork}
+        />
+      </View>
     );
   }
   return (
@@ -969,7 +976,8 @@ const styles = StyleSheet.create({
     gap: 4,
     backgroundColor: colors.bg,
   },
-  artwork: { alignSelf: 'stretch', width: '100%', aspectRatio: 16 / 10, borderRadius: 14 },
+  artworkFrame: { alignSelf: 'stretch', width: '100%', aspectRatio: 16 / 10, borderRadius: 14, overflow: 'hidden' },
+  artwork: { position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' },
   visualText: { color: colors.muted, fontSize: 14, lineHeight: 20 },
   question: { color: colors.ink, fontSize: 21, fontWeight: '700', lineHeight: 28, marginBottom: 12 },
   options: { gap: 10 },
