@@ -227,6 +227,8 @@ async function transcribe(file) {
       body: JSON.stringify(body),
     });
     if (res.ok) return (await res.json()).candidates?.[0]?.content?.parts?.[0]?.text ?? '';
+    const text = await res.text();
+    if (/per_day|PerDay/.test(text)) throw new Error('daily quota reached for transcription; run --check again once it resets');
     if ((res.status === 429 || res.status >= 500) && attempt < 6) {
       await sleep(2000 * 2 ** attempt);
       continue;
@@ -278,16 +280,30 @@ if (!apiKey) {
 mkdirSync(cacheDir, { recursive: true });
 
 if (check) {
+  // Results are saved, so a check cut short by a daily quota picks up where it stopped.
   const flagged = [];
-  let done = 0;
+  let checked = 0;
+  let stopped = false;
   await inPool(clips, async (clip) => {
+    if (stopped) return;
+    const entry = manifest[clip.file];
     const file = path.join(outDir, clip.file);
-    if (!existsSync(file)) return flagged.push(`${clip.file}: missing`);
-    const { score, extra } = overlap(clip.text, await transcribe(file));
-    if (score < 0.97 || extra > 2) flagged.push(`${clip.file}: ${Math.round(score * 100)}% of words heard, ${extra} extra`);
-    if (++done % 50 === 0) console.log(`  checked ${done}`);
+    if (!entry || entry.fingerprint !== textFingerprint(clip.text) || !existsSync(file)) return flagged.push(`${clip.file}: not recorded yet`);
+    if (entry.checked) return;
+    try {
+      const { score, extra } = overlap(clip.text, await transcribe(file));
+      if (score < 0.97 || extra > 2) flagged.push(`${clip.file}: ${Math.round(score * 100)}% of words heard, ${extra} extra`);
+      else entry.checked = true;
+      writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+      if (++checked % 50 === 0) console.log(`  checked ${checked}`);
+    } catch (error) {
+      if (/daily quota/.test(error.message)) stopped = true;
+      else flagged.push(`${clip.file}: ${error.message}`);
+    }
   });
-  console.log(flagged.length ? `\nFlagged ${flagged.length}:\n${flagged.join('\n')}` : '\nEvery clip matches its script.');
+  const passed = clips.filter((c) => manifest[c.file]?.checked).length;
+  console.log(`\n${passed} of ${clips.length} clips checked and matching.${stopped ? ' Stopped at the daily quota; run --check again later.' : ''}`);
+  if (flagged.length) console.log(`Flagged ${flagged.length}:\n${flagged.join('\n')}`);
   process.exit(0);
 }
 
