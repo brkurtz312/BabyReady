@@ -18,6 +18,7 @@ const COURSES = [
   ['early-pregnancy-basics', 'Early Pregnancy Basics'],
   ['preparing-for-birth', 'Preparing for Birth'],
   ['labor-basics', 'Labor Basics and When to Call'],
+  ['postpartum-recovery', 'Postpartum Recovery, Mood, and Red Flags'],
 ];
 
 const drawn = new Set(

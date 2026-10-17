@@ -1,0 +1,358 @@
+{
+  "courseId": "postpartum-recovery",
+  "lessonId": "postpartum-warning-signs",
+  "order": 2,
+  "title": "Postpartum Warning Signs",
+  "learningGoals": [
+    "Know that serious complications can happen up to a year after birth",
+    "Recognize the urgent maternal warning signs and get care immediately",
+    "Know the signs of high blood pressure and blood clots after birth",
+    "Tell the baby blues apart from postpartum depression, and know where to get help",
+    "Make a plan with your support people for the weeks after birth"
+  ],
+  "estimatedMinutes": 12,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Drafted 2026-10-17 as the first lesson of Module 6 (6.2 in the curriculum map; 6.1 is not written yet). Sources were found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. Warning-sign slides say 'seek medical care immediately', matching CDC and the 2026-10-17 review decision; 911 appears only where CDC's depression resources page says to call 911 or go to an emergency department. The National Maternal Mental Health Hotline number (1-833-TLC-MAMA) and the 988 line are quoted from CDC's depression resources page. The 140/90 home blood pressure threshold is from ACOG's '3 Conditions to Watch for After Childbirth'. For the reviewer: 'bleeding should slowly get lighter over the weeks', 'soaking through a pad in an hour or less or large clots' (same wording as Labor Basics lesson 6) and 'bad-smelling fluid can mean infection, especially with a fever' are not on a page found so far; confirm or point to a source. No video slide yet."
+  },
+  "sources": [
+    {
+      "id": "cdc-hear-her-warning-signs",
+      "organization": "CDC",
+      "title": "Hear Her: Urgent Maternal Warning Signs",
+      "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-hear-her-about",
+      "organization": "CDC",
+      "title": "Hear Her Campaign: An Overview",
+      "url": "https://www.cdc.gov/hearher/about/index.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-preeclampsia",
+      "organization": "ACOG",
+      "title": "Preeclampsia and High Blood Pressure During Pregnancy (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/preeclampsia-and-high-blood-pressure-during-pregnancy",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-after-childbirth-conditions",
+      "organization": "ACOG",
+      "title": "3 Conditions to Watch for After Childbirth",
+      "url": "https://www.acog.org/womens-health/experts-and-stories/the-latest/3-conditions-to-watch-for-after-childbirth",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-blood-clots-pregnancy",
+      "organization": "CDC",
+      "title": "Understanding Your Risk for Blood Clots with Pregnancy",
+      "url": "https://www.cdc.gov/blood-clots/risk-factors/pregnancy.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-depression",
+      "organization": "CDC",
+      "title": "Symptoms of Depression Among Women",
+      "url": "https://www.cdc.gov/reproductive-health/depression/index.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-depression-resources",
+      "organization": "CDC",
+      "title": "Depression Resources",
+      "url": "https://www.cdc.gov/reproductive-health/depression/resources.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-postpartum-depression",
+      "organization": "ACOG",
+      "title": "Postpartum Depression (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/postpartum-depression",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-co736",
+      "organization": "ACOG",
+      "title": "Optimizing Postpartum Care (Committee Opinion No. 736)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2018/05/optimizing-postpartum-care",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Postpartum Warning Signs",
+      "onScreen": [
+        "Module 6: Postpartum Recovery, Mood, and Red Flags"
+      ],
+      "narration": "Welcome to Postpartum Warning Signs. Once your baby arrives, most of the attention turns to them. That's natural. But your health matters too, in the days, weeks, and months after birth. In this lesson, we'll go over the warning signs that need care right away, what to do if you notice them, and how your support people can help.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A new parent resting on a couch at home with a sleeping newborn on their chest, a partner nearby bringing a glass of water. Calm, warm light."
+      }
+    },
+    {
+      "id": "the-year-after",
+      "type": "content",
+      "heading": "Your health matters for a full year",
+      "onScreen": [
+        "Serious complications can happen days, weeks, or months after birth",
+        "Warning signs matter for up to a year",
+        "Most people recover well; knowing the signs helps you act fast"
+      ],
+      "narration": "Most people recover well after birth. But serious complications can happen days, weeks, or even months later, after you've gone home. That's why the warning signs in this lesson matter for up to a year after your baby is born. Knowing them, and acting on them quickly, can save a life. Your care team would much rather hear from you about something that turns out to be fine than have you wait.",
+      "sourceIds": ["cdc-hear-her-warning-signs", "cdc-hear-her-about"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A simple calendar wall with a year of months, a soft teal line running from the birth month to twelve months later, and a small heart at the start."
+      }
+    },
+    {
+      "id": "urgent-warning-signs",
+      "type": "safety",
+      "heading": "Urgent warning signs after birth",
+      "onScreen": [
+        "Headache that won't go away or gets worse; vision changes; dizziness or fainting",
+        "Trouble breathing, chest pain, or a fast-beating heart",
+        "Fever of 100.4°F or higher; severe belly pain; severe nausea and vomiting",
+        "Heavy bleeding, or fluid that smells bad",
+        "Swelling, redness, or pain in a leg; extreme swelling of hands or face",
+        "Thoughts of harming yourself or your baby; overwhelming tiredness",
+        "Seek medical care immediately"
+      ],
+      "narration": "These are the urgent maternal warning signs. They can happen at any time in the year after birth. A headache that won't go away or gets worse over time. Changes in your vision. Dizziness or fainting. Trouble breathing, chest pain, or a fast-beating heart. A fever of 100.4 degrees or higher. Severe belly pain that doesn't go away. Severe nausea and throwing up. Heavy vaginal bleeding, or fluid that smells bad. Swelling, redness, or pain in a leg. Extreme swelling of your hands or face. Thoughts of harming yourself or your baby. Or overwhelming tiredness. If you have any of these, seek medical care immediately.",
+      "sourceIds": ["cdc-hear-her-warning-signs"]
+    },
+    {
+      "id": "say-you-had-a-baby",
+      "type": "content",
+      "heading": "Say that you recently had a baby",
+      "onScreen": [
+        "\"I had a baby on ____, and I'm having ____.\"",
+        "Say it at urgent care, the emergency room, or any office",
+        "It changes what the team checks for"
+      ],
+      "narration": "Wherever you get care, start by saying that you recently had a baby, and when. For example: I had a baby three weeks ago, and I have a bad headache that won't go away. That one sentence matters. It tells the team to think about conditions linked to pregnancy, which they might not consider otherwise. This is true at urgent care, an emergency room, or any office, for the whole year after birth. Your support person can say it for you, too.",
+      "sourceIds": ["cdc-hear-her-warning-signs", "cdc-hear-her-about"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A new parent at a clinic front desk speaking with a calm staff member, a support person beside them holding a baby carrier."
+      }
+    },
+    {
+      "id": "heavy-bleeding",
+      "type": "content",
+      "heading": "Bleeding after birth",
+      "onScreen": [
+        "Bleeding should slowly get lighter",
+        "Heavy bleeding or bad-smelling fluid is a warning sign",
+        "Soaking through a pad in an hour or less, or large clots: get care now"
+      ],
+      "narration": "Bleeding after birth is normal, and it should slowly get lighter over the following weeks. But heavy bleeding is a warning sign, even after you've gone home. Get care right away if you're soaking through a pad in an hour or less, passing large clots, or feeling dizzy or faint. Fluid that smells bad can be a sign of infection, especially with a fever, so call about that too.",
+      "sourceIds": ["cdc-hear-her-warning-signs"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Three simple icons in a row: a pad with a clock showing one hour, a droplet, and a thermometer. No blood shown."
+      }
+    },
+    {
+      "id": "blood-pressure",
+      "type": "content",
+      "heading": "High blood pressure after birth",
+      "onScreen": [
+        "Preeclampsia can start after birth, up to 6 weeks later",
+        "It can happen even if your blood pressure was normal in pregnancy",
+        "Headache, vision changes, shortness of breath, swelling of face or hands, upper belly or shoulder pain",
+        "Home reading of 140/90 or higher: call right away"
+      ],
+      "narration": "Preeclampsia is a dangerous high blood pressure condition. Many people think it ends when the baby is born, but it can start after birth. It usually shows up within a few days, but it can happen up to six weeks later, even if your blood pressure was normal during pregnancy. Watch for a headache that won't go away, changes in your vision, shortness of breath, swelling of your face or hands, or pain in your upper belly or shoulder. If you check your blood pressure at home and the top number is 140 or higher, or the bottom number is 90 or higher, call your care team right away.",
+      "sourceIds": ["acog-preeclampsia", "acog-after-childbirth-conditions"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A new parent sitting at a kitchen table checking their blood pressure with a home arm cuff, baby asleep in a bassinet nearby. The monitor screen is blank."
+      }
+    },
+    {
+      "id": "checkin-blood-pressure",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": ["acog-preeclampsia", "acog-after-childbirth-conditions"],
+      "question": {
+        "prompt": "Ten days after birth, you have a headache that won't go away and blurry vision. Your blood pressure was normal all through pregnancy. What should you do?",
+        "options": [
+          "Rest and wait, since preeclampsia only happens during pregnancy",
+          "Seek medical care right away, and say you had a baby ten days ago",
+          "Mention it at your next routine visit"
+        ],
+        "correctIndex": 1,
+        "explanation": "Preeclampsia can start after birth, usually within days but up to six weeks later, even if your blood pressure was normal in pregnancy. A headache that won't go away and vision changes are warning signs, so get care right away."
+      }
+    },
+    {
+      "id": "blood-clots",
+      "type": "content",
+      "heading": "Blood clots",
+      "onScreen": [
+        "The risk of blood clots is higher after birth",
+        "In a leg or arm: swelling, pain, warm or red skin. Call your care team",
+        "In the lungs: trouble breathing, chest pain, coughing up blood, fast heartbeat. Get care immediately"
+      ],
+      "narration": "Pregnancy and the weeks after birth raise the risk of blood clots. A clot in a leg or arm can cause swelling, pain or tenderness that isn't from an injury, and skin that feels warm or looks red. If you notice that, call your care team. A clot can also travel to the lungs, which is life-threatening. Signs include trouble breathing, chest pain that gets worse when you breathe deeply or cough, coughing up blood, or a fast or uneven heartbeat. For any of those, get medical care immediately.",
+      "sourceIds": ["cdc-blood-clots-pregnancy"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Two simple panels: a lower leg with a soft highlighted area of swelling, and a chest outline with gentle lines suggesting breathing. No medical imagery."
+      }
+    },
+    {
+      "id": "blues-or-depression",
+      "type": "comparison",
+      "heading": "Baby blues or postpartum depression?",
+      "onScreen": [
+        "Feelings that last more than two weeks, or feel too big, need a call"
+      ],
+      "narration": "Many new parents feel weepy, worried, or overwhelmed in the first days after birth. This is called the baby blues, and it usually passes on its own within a couple of weeks. Postpartum depression is different. The feelings are stronger and last longer. You may feel very sad, anxious, or hopeless, or have trouble caring for yourself or your baby. It can start any time in the first year. It's common, it's not your fault, and it can be treated. If your feelings last more than two weeks, or feel too big to manage, tell your care team.",
+      "sourceIds": ["cdc-depression", "acog-postpartum-depression"],
+      "columns": ["Baby blues", "Postpartum depression"],
+      "rows": [
+        ["Sadness, worry, tiredness", "Strong sadness, anxiety, or hopelessness"],
+        ["Starts in the first few days", "Can start any time in the first year"],
+        ["Usually passes within two weeks", "Lasts longer than two weeks"],
+        ["Rest and support help", "Treatment helps; tell your care team"]
+      ]
+    },
+    {
+      "id": "get-help-now",
+      "type": "safety",
+      "heading": "Thoughts of harming yourself or your baby",
+      "onScreen": [
+        "These thoughts need help right away",
+        "Call or text 988, the Suicide and Crisis Lifeline",
+        "National Maternal Mental Health Hotline: 1-833-TLC-MAMA (1-833-852-6262), free, 24/7",
+        "In an emergency, call 911 or go to the nearest emergency department"
+      ],
+      "narration": "If you have thoughts of harming yourself or your baby, you are not alone, and you deserve help right away. Call or text 988 to reach the Suicide and Crisis Lifeline. You can also call the National Maternal Mental Health Hotline, at 1-833-TLC-MAMA, which is free, confidential, and open 24 hours a day, in English and Spanish. If you feel you might act on these thoughts, call 911 or go to the nearest emergency department. Support people, if someone you love says something like this, stay with them and help them get care.",
+      "sourceIds": ["cdc-depression-resources", "cdc-hear-her-warning-signs"]
+    },
+    {
+      "id": "early-check-in",
+      "type": "content",
+      "heading": "Your first postpartum check-in",
+      "onScreen": [
+        "Contact with your care team within the first 3 weeks",
+        "A full postpartum visit by 12 weeks",
+        "Ask now: who do I call after birth, day or night?"
+      ],
+      "narration": "Don't wait for a single visit weeks later. ACOG recommends contact with your care team within the first three weeks after birth, in person or by phone, and a full postpartum visit by twelve weeks. Before your baby arrives, ask your team who to call after birth, during the day and at night, and write that number down. If you had high blood pressure in pregnancy, ask when you should have it checked again.",
+      "sourceIds": ["acog-co736", "acog-after-childbirth-conditions"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A new parent on the phone at home, holding the baby in one arm, with a sticky note of phone numbers on the fridge behind them. The note has no readable writing."
+      }
+    },
+    {
+      "id": "support-people",
+      "type": "content",
+      "heading": "Support people: listen and act",
+      "onScreen": [
+        "Learn the warning signs, too",
+        "If something seems wrong, believe them",
+        "Help them get care, and say they recently had a baby"
+      ],
+      "narration": "Support people, this part is for you. New parents are busy and tired, and they may brush off symptoms or worry about bothering anyone. Learn these warning signs yourself. If your loved one says something doesn't feel right, believe them. Help them get care quickly, go with them if you can, and make sure the team knows they recently had a baby. Speaking up can save a life.",
+      "sourceIds": ["cdc-hear-her-about", "cdc-hear-her-warning-signs"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A partner sitting close to a new parent on the edge of a bed, listening with a hand on their shoulder, baby asleep in a bassinet."
+      }
+    },
+    {
+      "id": "checkin-mood",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": ["cdc-depression", "acog-postpartum-depression"],
+      "question": {
+        "prompt": "Five weeks after birth, you still feel hopeless most days and can't enjoy anything. What's the best next step?",
+        "options": [
+          "Wait it out, since it's just the baby blues",
+          "Tell your care team, because this may be postpartum depression",
+          "Keep it to yourself so no one worries"
+        ],
+        "correctIndex": 1,
+        "explanation": "The baby blues usually pass within about two weeks. Feelings that are stronger or last longer may be postpartum depression, which is common and treatable. Your care team can help."
+      }
+    },
+    {
+      "id": "after-birth-plan",
+      "type": "reflection",
+      "heading": "Your after-birth safety plan",
+      "onScreen": [
+        "Who to call after birth, day and night",
+        "Who will check in on you in the first weeks",
+        "Where you'd go for urgent care",
+        "The hotline numbers, saved in your phone"
+      ],
+      "narration": "Let's make a plan for the weeks after birth. Who will you call, during the day and at night? Who will check in on you, and help you watch for warning signs? Where would you go for urgent care? And save the hotline numbers in your phone now, so they're there if you ever need them. Save your plan to your Birth Readiness Brief, and share it with your support people.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write who you'll call after birth (day and night), who will check in on you, where you'd go for urgent care, and the hotline numbers you saved."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Warning signs matter for a full year after birth",
+        "Any urgent warning sign: seek medical care immediately",
+        "Always say you recently had a baby",
+        "Preeclampsia and blood clots can happen after birth",
+        "Postpartum depression is common and treatable; help is available 24/7"
+      ],
+      "narration": "Let's recap. Your health matters for a full year after birth. If you have any urgent warning sign, seek medical care immediately, and always say that you recently had a baby. Preeclampsia and blood clots can happen after birth, even if pregnancy went smoothly. The baby blues usually pass within two weeks, but postpartum depression is common and treatable, and help is available any time. Next up, a few review questions.",
+      "sourceIds": ["cdc-hear-her-warning-signs", "acog-preeclampsia", "cdc-blood-clots-pregnancy", "cdc-depression"]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "For how long after birth do the urgent maternal warning signs matter?",
+      "options": [
+        "Only the first week",
+        "Until the six-week checkup",
+        "Up to a year"
+      ],
+      "correctIndex": 2,
+      "explanation": "Serious complications can happen days, weeks, or months after birth, so the warning signs matter for up to a year."
+    },
+    {
+      "prompt": "Which of these is a sign of a possible blood clot in the lungs?",
+      "options": [
+        "Chest pain that gets worse with a deep breath",
+        "Mild cramping while feeding",
+        "Feeling tired after a night of feeds"
+      ],
+      "correctIndex": 0,
+      "explanation": "Chest pain that gets worse when you breathe deeply or cough, trouble breathing, coughing up blood, or a fast heartbeat can mean a clot in the lungs. Get medical care immediately."
+    },
+    {
+      "prompt": "You go to urgent care with a bad headache six weeks after birth. What's the most important thing to tell them first?",
+      "options": [
+        "What you've eaten today",
+        "That you had a baby six weeks ago",
+        "How much sleep the baby gets"
+      ],
+      "correctIndex": 1,
+      "explanation": "Saying you recently had a baby helps the team think about conditions linked to pregnancy, like postpartum preeclampsia."
+    }
+  ]
+}
