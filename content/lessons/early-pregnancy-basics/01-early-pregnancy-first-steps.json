@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 8,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course. Sources fetched and checked against slides by an automated first pass; needs clinician review. The old course's dehydration list included 'unable to urinate', which the ACOG page does not list; it now follows ACOG's three signs plus not keeping food or fluids down."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-17",
+    "nextReviewBy": "2027-10-17",
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course. The old course's dehydration list included 'unable to urinate', which the ACOG page does not list; it now follows ACOG's three signs plus not keeping food or fluids down."
   },
   "sources": [
     {
@@ -24,35 +24,35 @@
       "organization": "NICHD",
       "title": "What are some common signs of pregnancy?",
       "url": "https://www.nichd.nih.gov/health/topics/pregnancy/conditioninfo/signs",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-prenatal-care",
       "organization": "ACOG",
       "title": "Prenatal Care (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/prenatal-care",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "cdc-folic-acid",
       "organization": "CDC",
       "title": "About Folic Acid",
       "url": "https://www.cdc.gov/folic-acid/about/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "cdc-medicine-pregnancy",
       "organization": "CDC",
       "title": "About Medicine and Pregnancy",
       "url": "https://www.cdc.gov/medicine-and-pregnancy/about/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-morning-sickness",
       "organization": "ACOG",
       "title": "Morning Sickness: Nausea and Vomiting of Pregnancy (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/morning-sickness-nausea-and-vomiting-of-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     }
   ],
   "slides": [

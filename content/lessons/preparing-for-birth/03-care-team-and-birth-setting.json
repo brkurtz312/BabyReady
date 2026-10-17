@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 10,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-15. Sources fetched and checked against slides by an automated first pass; needs clinician review. ACOG clinical documents were checked against their public abstracts only (full text is on the journal site). No approved source was found that says to go to the nearest emergency room instead of the planned birth place, so the safety slide says to get care immediately and to ask your care team in advance when to go to the emergency room or call 911."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-17",
+    "nextReviewBy": "2027-10-17",
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. ACOG clinical documents were checked against their public abstracts only (full text is on the journal site). No approved source was found that says to go to the nearest emergency room instead of the planned birth place, so the safety slide says to get care immediately and to ask your care team in advance when to go to the emergency room or call 911."
   },
   "sources": [
     {
@@ -24,84 +24,84 @@
       "organization": "ACOG",
       "title": "Planned Home Birth (Committee Opinion No. 697)",
       "url": "https://www.acog.org/clinical/guidance/committee-opinion/2017/04/planned-home-birth",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-levels-maternal-care",
       "organization": "ACOG",
       "title": "Levels of Maternal Care (Obstetric Care Consensus No. 9, with SMFM)",
       "url": "https://www.acog.org/clinical/guidance/obstetric-care-consensus/2019/08/levels-of-maternal-care",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-having-a-baby",
       "organization": "ACOG",
       "title": "Having a Baby (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/having-a-baby",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-labor-pain-relief",
       "organization": "ACOG",
       "title": "Medications for Pain Relief During Labor and Delivery (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/medications-for-pain-relief-during-labor-and-delivery",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acnm-choosing-birth-setting",
       "organization": "ACNM",
       "title": "Choosing a Birth Setting (Discover Midwives)",
       "url": "https://discovermidwives.midwife.org/choosing-a-birth-setting/",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acnm-what-is-a-midwife",
       "organization": "ACNM",
       "title": "What is a Midwife? (Discover Midwives)",
       "url": "https://discovermidwives.midwife.org/what-is-a-midwife/",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acnm-cm-credential",
       "organization": "ACNM",
       "title": "Certified Midwife Credential",
       "url": "https://midwife.org/certified-midwife-credential/",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "aafp-choose-family-doctor",
       "organization": "AAFP",
       "title": "How to Choose a Family Doctor (familydoctor.org)",
       "url": "https://familydoctor.org/how-to-choose-a-family-doctor/",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "lamaze-who-does-what",
       "organization": "Lamaze",
       "title": "Who Does What at Your Birth?",
       "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/who-does-what-at-your-birth-1",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "lamaze-birth-team",
       "organization": "Lamaze",
       "title": "Choosing Your Birth Team",
       "url": "https://lamaze.org/birth-support",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "cdc-hear-her-warning-signs",
       "organization": "CDC",
       "title": "Hear Her: Urgent Maternal Warning Signs",
       "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "cdc-hear-her-conversation-guide",
       "organization": "CDC",
       "title": "Hear Her: You Know Your Body Best (conversation guide, PDF)",
       "url": "https://www.cdc.gov/hearher/docs/pdf/CDC-Hear-Her-Womens-urgent-warning-signs-h.pdf",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     }
   ],
   "slides": [
@@ -345,7 +345,7 @@
         "Get medical care immediately, even if it isn't your planned birth place",
         "Ask your team now: When should I go to the ER or call 911?"
       ],
-      "narration": "Whatever setting you choose, some symptoms need care right away. These include vaginal bleeding or fluid leaking, your baby moving less or stopping moving, a headache that won't go away or gets worse, changes in your vision, chest pain or a racing heart, trouble breathing, a fever of 100.4 degrees or higher, or severe belly pain that doesn't go away. If you have any of these, get medical care immediately. Don't wait to reach your planned birth place if that would delay care. Tell whoever helps you that you're pregnant. Before labor, ask your care team when you should go to the emergency room or call 911, so you already know. If it feels like an emergency, call 911.",
+      "narration": "Whatever setting you choose, some symptoms need care right away. These include vaginal bleeding or fluid leaking, your baby moving less or stopping moving, a headache that won't go away or gets worse, changes in your vision, chest pain or a racing heart, trouble breathing, a fever of 100.4 degrees or higher, or severe belly pain that doesn't go away. If you have any of these, get medical care immediately. Don't wait to reach your planned birth place if that would delay care. Tell whoever helps you that you're pregnant. Before labor, ask your care team when you should go to the emergency room or call 911, so you already know.",
       "sourceIds": [
         "cdc-hear-her-warning-signs",
         "cdc-hear-her-conversation-guide"

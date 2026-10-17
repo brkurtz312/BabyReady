@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 12,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Reviewer: confirm the 'birth before you reach care' safety slide matches local EMS guidance. Pushing technique is presented neutrally (urge-guided or coached) without breath-hold counts."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-17",
+    "nextReviewBy": "2027-10-17",
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Pushing with an epidural now presents both resting first and pushing right away. Urge-guided and coached pushing, and longer pushing with a first baby or an epidural, confirmed against CPG 8 and CO 766. Practice Bulletin 198 is kept alongside AAFP for tears. The fast-birth safety slide cites Lamaze; \"call 911\" and \"pull over if driving\" are BabyReady's own safety guidance."
   },
   "sources": [
     {
@@ -24,42 +24,49 @@
       "organization": "ACOG",
       "title": "First and Second Stage Labor Management (Clinical Practice Guideline No. 8)",
       "url": "https://www.acog.org/clinical/guidance/clinical-practice-guideline/2024/01/first-and-second-stage-labor-management",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-co766",
       "organization": "ACOG",
       "title": "Approaches to Limit Intervention During Labor and Birth (Committee Opinion No. 766)",
       "url": "https://www.acog.org/clinical/guidance/committee-opinion/2019/02/approaches-to-limit-intervention-during-labor-and-birth",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-pb198",
       "organization": "ACOG",
       "title": "Prevention and Management of Obstetric Lacerations at Vaginal Delivery (Practice Bulletin No. 198)",
       "url": "https://www.acog.org/clinical/guidance/practice-bulletin/2018/09/prevention-and-management-of-obstetric-lacerations-at-vaginal-delivery",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "aafp-lacerations",
       "organization": "AAFP",
       "title": "Obstetric Lacerations: Prevention and Repair (American Family Physician, 2021)",
       "url": "https://www.aafp.org/afp/2021/0615/p745",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "aap-breastfeeding-2022",
       "organization": "AAP",
       "title": "Breastfeeding and the Use of Human Milk (Policy Statement, 2022)",
       "url": "https://publications.aap.org/pediatrics/article/150/1/e2022057988/188347/",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "who-intrapartum-2018",
       "organization": "WHO",
       "title": "WHO Recommendations: Intrapartum Care for a Positive Childbirth Experience (2018)",
       "url": "https://www.who.int/publications/i/item/9789241550215",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
+    },
+    {
+      "id": "lamaze-fast-birth-guide",
+      "organization": "Lamaze",
+      "title": "How to Safely Deliver a Baby When Medical Assistance is Still Minutes Away",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/how-to-safely-deliver-a-baby-when-medical-assistance-is-still-minutes-away",
+      "verifiedOn": "2026-10-17"
     }
   ],
   "slides": [
@@ -255,7 +262,7 @@
         "Don't pull on the cord; wait for help"
       ],
       "narration": "Very fast births are uncommon, but it's good to know what to do. If birth seems to be happening before you can reach your care team, call 911. The dispatcher will talk you through it. If you're driving, pull over somewhere safe. Don't try to hold your baby back. Once your baby is born, put them skin to skin on the parent's chest, dry them, and cover you both with a blanket or towel to keep warm. Don't pull on the umbilical cord. Wait for emergency help to arrive.",
-      "sourceIds": ["aap-breastfeeding-2022"]
+      "sourceIds": ["lamaze-fast-birth-guide"]
     },
     {
       "id": "pushing-preferences",

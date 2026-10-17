@@ -11,11 +11,11 @@
   ],
   "estimatedMinutes": 5,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-15. Sources fetched and checked against slides by an automated first pass; needs clinician review. Most slides are editorial (they explain the app and make no health claim); only the 'why-prepare' slide and the summary cite sources."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-17",
+    "nextReviewBy": "2027-10-17",
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. Most slides are editorial (they explain the app and make no health claim); only the 'why-prepare' slide and the summary cite sources."
   },
   "sources": [
     {
@@ -23,21 +23,21 @@
       "organization": "Lamaze",
       "title": "Braxton-Hicks Contractions (Giving Birth with Confidence)",
       "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/braxton-hicks-contractions",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "lamaze-third-trimester",
       "organization": "Lamaze",
       "title": "Your Third Trimester (Giving Birth with Confidence)",
       "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/your-third-trimester",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-prenatal-care",
       "organization": "ACOG",
       "title": "Prenatal Care (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/prenatal-care",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     }
   ],
   "slides": [

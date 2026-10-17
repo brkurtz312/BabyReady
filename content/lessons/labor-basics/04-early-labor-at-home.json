@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 10,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Reviewer: eating and drinking guidance differs between ACOG/ASA (clear liquids once admitted) and ACNM/Lamaze (light food in low-risk labor). The lesson presents both and points learners to their own team. Bath guidance after water breaks also varies; lesson defers to the care team."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-17",
+    "nextReviewBy": "2027-10-17",
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Committee Opinion 766 confirmed for admission timing, eating and drinking, and baths after the water breaks. Eating and drinking guidance differs between ACOG/ASA (clear liquids once admitted) and ACNM/Lamaze (light food in low-risk labor); the lesson presents both and points learners to their own team. The Lamaze post is kept alongside WHO 2018."
   },
   "sources": [
     {
@@ -24,42 +24,42 @@
       "organization": "ACOG",
       "title": "Approaches to Limit Intervention During Labor and Birth (Committee Opinion No. 766)",
       "url": "https://www.acog.org/clinical/guidance/committee-opinion/2019/02/approaches-to-limit-intervention-during-labor-and-birth",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acnm-am-i-in-labor",
       "organization": "ACNM",
       "title": "Am I in Labor? (Discover Midwives)",
       "url": "https://discovermidwives.midwife.org/am-i-in-labor/",
-      "verifiedOn": "2026-10-14"
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "lamaze-eating-drinking",
       "organization": "Lamaze",
       "title": "Eating and Drinking in Labor Should Not Be Restricted (Connecting the Dots)",
       "url": "https://lamaze.org/Connecting-the-Dots/time-for-acog-and-asa-to-change-their-guidelines-eating-and-drinking-in-labor-should-not-be-restricted",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "cdc-hear-her-warning-signs",
       "organization": "CDC",
       "title": "Hear Her: Urgent Maternal Warning Signs",
       "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-labor-begins",
       "organization": "ACOG",
       "title": "How to Tell When Labor Begins (FAQ004)",
       "url": "https://www.acog.org/womens-health/faqs/how-to-tell-when-labor-begins",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "who-intrapartum-2018",
       "organization": "WHO",
       "title": "WHO Recommendations: Intrapartum Care for a Positive Childbirth Experience (2018)",
       "url": "https://www.who.int/publications/i/item/9789241550215",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     }
   ],
   "slides": [

@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 12,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Reviewer: delayed cord clamping is stated as 'at least 30 to 60 seconds' per ACOG CO 814; ACNM favors longer. Newborn medications (vitamin K, eye ointment, hepatitis B) are deferred to lesson 5.2. Heavy-bleeding thresholds are kept general; confirm wording against unit teaching."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-17",
+    "nextReviewBy": "2027-10-17",
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Delayed cord clamping is stated as 'at least 30 to 60 seconds' per ACOG CO 814; ACNM favors longer. Newborn skin-to-skin and feeding-cue wording softened to what the sources support. Apgar timing and the five checks confirmed against CO 644. Newborn medications are deferred to lesson 5.2. Heavy bleeding at home keeps \"call 911\"."
   },
   "sources": [
     {
@@ -24,49 +24,49 @@
       "organization": "ACOG",
       "title": "Delayed Umbilical Cord Clamping After Birth (Committee Opinion No. 814)",
       "url": "https://www.acog.org/clinical/guidance/committee-opinion/2020/12/delayed-umbilical-cord-clamping-after-birth",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "who-intrapartum-2018",
       "organization": "WHO",
       "title": "WHO Recommendations: Intrapartum Care for a Positive Childbirth Experience (2018)",
       "url": "https://www.who.int/publications/i/item/9789241550215",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "aap-breastfeeding-2022",
       "organization": "AAP",
       "title": "Breastfeeding and the Use of Human Milk (Policy Statement, 2022)",
       "url": "https://publications.aap.org/pediatrics/article/150/1/e2022057988/188347/",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-apgar",
       "organization": "ACOG",
       "title": "The Apgar Score (Committee Opinion No. 644, with AAP)",
       "url": "https://www.acog.org/clinical/guidance/committee-opinion/2015/10/the-apgar-score",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-pb198",
       "organization": "ACOG",
       "title": "Prevention and Management of Obstetric Lacerations at Vaginal Delivery (Practice Bulletin No. 198)",
       "url": "https://www.acog.org/clinical/guidance/practice-bulletin/2018/09/prevention-and-management-of-obstetric-lacerations-at-vaginal-delivery",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "cdc-hear-her-warning-signs",
       "organization": "CDC",
       "title": "Hear Her: Urgent Maternal Warning Signs",
       "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "aafp-lacerations",
       "organization": "AAFP",
       "title": "Obstetric Lacerations: Prevention and Repair (American Family Physician, 2021)",
       "url": "https://www.aafp.org/afp/2021/0615/p745",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     }
   ],
   "slides": [

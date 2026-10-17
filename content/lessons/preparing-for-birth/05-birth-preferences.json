@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 12,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-15. Sources fetched and checked against slides by an automated first pass; needs clinician review. Committee Opinion 766 was checked against its public abstract only (full text is on the Obstetrics & Gynecology site). Eating in labor is framed as a question for the care team because no approved page fetched gave guidance on it."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-17",
+    "nextReviewBy": "2027-10-17",
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. Committee Opinion 766 was checked against its public abstract only (full text is on the Obstetrics & Gynecology site). Eating in labor is framed as a question for the care team because no approved page fetched gave guidance on it."
   },
   "sources": [
     {
@@ -24,42 +24,42 @@
       "organization": "ACOG",
       "title": "Sample Birth Plan Template (HT001)",
       "url": "https://www.acog.org/womens-health/health-tools/sample-birth-plan",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-co766-limit-intervention",
       "organization": "ACOG",
       "title": "Approaches to Limit Intervention During Labor and Birth (Committee Opinion No. 766)",
       "url": "https://www.acog.org/clinical/guidance/committee-opinion/2019/02/approaches-to-limit-intervention-during-labor-and-birth",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-pain-relief-faq",
       "organization": "ACOG",
       "title": "Medications for Pain Relief During Labor and Delivery (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/medications-for-pain-relief-during-labor-and-delivery",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-co814-cord-clamping",
       "organization": "ACOG",
       "title": "Delayed Umbilical Cord Clamping After Birth (Committee Opinion No. 814)",
       "url": "https://www.acog.org/clinical/guidance/committee-opinion/2020/12/delayed-umbilical-cord-clamping-after-birth",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "lamaze-healthy-birth-practices",
       "organization": "Lamaze",
       "title": "Lamaze Healthy Birth Practices",
       "url": "https://lamaze.org/childbirth-practices",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "lamaze-brain",
       "organization": "Lamaze",
       "title": "Use Your BRAIN When Communicating with Your Care Provider About Birth",
       "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/use-your-brain-when-communicating-with-your-care-provider-about-birth-1",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     }
   ],
   "slides": [
