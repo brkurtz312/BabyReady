@@ -16,7 +16,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Delayed cord clamping is stated as 'at least 30 to 60 seconds' per ACOG CO 814; ACNM favors longer. Newborn skin-to-skin and feeding-cue wording softened to what the sources support. Apgar timing and the five checks confirmed against CO 644. Newborn medications are deferred to lesson 5.2. Heavy bleeding at home keeps \"call 911\"."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Delayed cord clamping is stated as 'at least 30 to 60 seconds' per ACOG CO 814; ACNM favors longer. Newborn skin-to-skin and feeding-cue wording softened to what the sources support. Apgar timing and the five checks confirmed against CO 644. Newborn medications are deferred to lesson 5.2. Heavy bleeding at home keeps \"call 911\". Heavy-bleeding threshold changed on 2026-10-17 to ACOG's 'soaking through two pads an hour for more than an hour or two' (reviewer decision while reviewing lesson 6.2), cited to ACOG's '3 Conditions to Watch for After Childbirth'."
   },
   "sources": [
     {
@@ -66,6 +66,13 @@
       "organization": "AAFP",
       "title": "Obstetric Lacerations: Prevention and Repair (American Family Physician, 2021)",
       "url": "https://www.aafp.org/afp/2021/0615/p745",
+      "verifiedOn": "2026-10-17"
+    },
+    {
+      "id": "acog-after-childbirth-conditions",
+      "organization": "ACOG",
+      "title": "3 Conditions to Watch for After Childbirth",
+      "url": "https://www.acog.org/womens-health/experts-and-stories/the-latest/3-conditions-to-watch-for-after-childbirth",
       "verifiedOn": "2026-10-17"
     }
   ],
@@ -265,16 +272,17 @@
       "type": "safety",
       "heading": "Heavy bleeding after birth: tell someone right away",
       "onScreen": [
-        "Soaking through a pad in an hour or less",
+        "Soaking through two pads an hour for more than an hour or two",
         "Passing large clots",
         "Feeling dizzy, faint, or a racing heart",
         "In the hospital: press your call button now",
         "At home: call 911"
       ],
-      "narration": "Some bleeding after birth is normal. But heavy bleeding is an emergency, and it can happen in the hospital or after you go home. Get help right away if you're soaking through a pad in an hour or less, passing large clots, or feeling dizzy, faint, or like your heart is racing. In the hospital, press your call button and tell your nurse immediately. At home, call 911. Support people, if your partner seems pale, confused, or faint, don't wait. Get help.",
+      "narration": "Some bleeding after birth is normal. But heavy bleeding is an emergency, and it can happen in the hospital or after you go home. Get help right away if you're soaking through two pads an hour for more than an hour or two, passing large clots, or feeling dizzy, faint, or like your heart is racing. In the hospital, press your call button and tell your nurse immediately. At home, call 911. Support people, if your partner seems pale, confused, or faint, don't wait. Get help.",
       "sourceIds": [
         "cdc-hear-her-warning-signs",
-        "who-intrapartum-2018"
+        "who-intrapartum-2018",
+        "acog-after-childbirth-conditions"
       ]
     },
     {
@@ -284,17 +292,18 @@
       "onScreen": [],
       "narration": "One more check-in.",
       "sourceIds": [
-        "cdc-hear-her-warning-signs"
+        "cdc-hear-her-warning-signs",
+        "acog-after-childbirth-conditions"
       ],
       "question": {
-        "prompt": "Two hours after birth, you've soaked through a large pad in less than an hour and feel lightheaded. What should you do?",
+        "prompt": "Two hours after birth, you've soaked through two pads in the last hour and feel lightheaded. What should you do?",
         "options": [
           "Wait for the nurse's next routine check",
           "Press your call button and tell your nurse right away",
           "Change the pad and take a nap"
         ],
         "correctIndex": 1,
-        "explanation": "Soaking a pad in an hour or less, especially with dizziness, can be a sign of serious bleeding. Get help immediately."
+        "explanation": "Soaking through two pads an hour, or feeling dizzy or faint, can be a sign of serious bleeding. Get help immediately."
       }
     },
     {
@@ -350,17 +359,17 @@
         "It's only for breastfeeding parents"
       ],
       "correctIndex": 0,
-      "explanation": "Skin to skin keeps babies warm and calm and helps steady breathing, heart rate, and blood sugar, whatever your feeding plan."
+      "explanation": "Skin to skin helps babies settle and stay warm, whatever your feeding plan."
     },
     {
       "prompt": "Which of these is a warning sign of heavy bleeding after birth?",
       "options": [
         "Bleeding like a heavy period",
         "Mild cramping",
-        "Soaking through a pad in an hour or less"
+        "Soaking through two pads an hour for more than an hour or two"
       ],
       "correctIndex": 2,
-      "explanation": "Bleeding like a heavy period is expected, but soaking a pad in an hour or less, large clots, or dizziness mean get help right away."
+      "explanation": "Bleeding like a heavy period is expected, but soaking through two pads an hour for more than an hour or two, large clots, or dizziness mean get help right away."
     }
   ]
 }
