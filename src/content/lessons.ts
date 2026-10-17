@@ -19,6 +19,8 @@ import earlyPregnancyFirstSteps from '../../content/lessons/early-pregnancy-basi
 import firstTrimesterCommonChanges from '../../content/lessons/early-pregnancy-basics/02-first-trimester-common-changes.json';
 import firstPrenatalVisit from '../../content/lessons/early-pregnancy-basics/03-first-prenatal-visit.json';
 
+import postpartumWarningSigns from '../../content/lessons/postpartum-recovery/02-postpartum-warning-signs.json';
+
 export type Course = {
   courseId: string;
   title: string;
@@ -63,6 +65,8 @@ const earlyPregnancyLessons = sortedLessons([
   firstPrenatalVisit,
 ]);
 
+const postpartumRecoveryLessons = sortedLessons([postpartumWarningSigns]);
+
 export const LABOR_BASICS_TITLE = 'Labor Basics and When to Call';
 
 /** The class courses, in the order they appear on the home screen. */
@@ -87,6 +91,13 @@ export const courses: Course[] = [
     label: 'CLASS · MODULE 2',
     description: `Six narrated lessons on how labor begins, when to call, and birth, with check-ins and a review quiz after each lesson. About ${minutes(laborBasicsLessons)} minutes.`,
     lessons: laborBasicsLessons,
+  },
+  {
+    courseId: 'postpartum-recovery',
+    title: 'Postpartum Recovery, Mood, and Red Flags',
+    label: 'CLASS · MODULE 6',
+    description: `Warning signs to know for the year after birth: high blood pressure, blood clots, heavy bleeding, and your mood. About ${minutes(postpartumRecoveryLessons)} minutes.`,
+    lessons: postpartumRecoveryLessons,
   },
 ];
 
