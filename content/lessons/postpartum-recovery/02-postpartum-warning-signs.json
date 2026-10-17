@@ -10,13 +10,13 @@
     "Tell the baby blues apart from postpartum depression, and know where to get help",
     "Make a plan with your support people for the weeks after birth"
   ],
-  "estimatedMinutes": 12,
+  "estimatedMinutes": 13,
   "review": {
     "status": "draft",
     "reviewedBy": null,
     "reviewedOn": null,
     "nextReviewBy": null,
-    "notes": "Drafted 2026-10-17 as the first lesson of Module 6 (6.2 in the curriculum map; 6.1 is not written yet). Sources were found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. Warning-sign slides say 'seek medical care immediately', matching CDC and the 2026-10-17 review decision; 911 appears only where CDC's depression resources page says to call 911 or go to an emergency department. The National Maternal Mental Health Hotline number (1-833-TLC-MAMA) and the 988 line are quoted from CDC's depression resources page. The 140/90 home blood pressure threshold is from ACOG's '3 Conditions to Watch for After Childbirth'. For the reviewer: 'bleeding should slowly get lighter over the weeks', 'soaking through a pad in an hour or less or large clots' (same wording as Labor Basics lesson 6) and 'bad-smelling fluid can mean infection, especially with a fever' are not on a page found so far; confirm or point to a source. No video slide yet."
+    "notes": "Drafted 2026-10-17 as the first lesson of Module 6 (6.2 in the curriculum map; it keeps order 2 so 6.1 can slot in ahead). Sources were found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. Reviewer decisions so far (Bryan Kurtz MD, FACOG, 2026-10-17): heavy bleeding uses ACOG's threshold of soaking through two pads an hour for more than an hour or two (Labor Basics lesson 6 changed to match); bad-smelling or greenish fluid is cited to Lamaze, and 'can be a sign of infection' and 'bleeding should slowly get lighter' are BabyReady's own guidance; the mental-health safety slide keeps 911 because CDC's depression resources page says to call 911 or go to an emergency department, while other warning slides say 'seek medical care immediately'; a 60-second storyboard video was added before the support-people slide. The National Maternal Mental Health Hotline number (1-833-TLC-MAMA) and the 988 line are quoted from CDC's depression resources page. The 140/90 home blood pressure threshold is from ACOG's '3 Conditions to Watch for After Childbirth'."
   },
   "sources": [
     {
@@ -80,6 +80,13 @@
       "organization": "ACOG",
       "title": "Optimizing Postpartum Care (Committee Opinion No. 736)",
       "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2018/05/optimizing-postpartum-care",
+      "verifiedOn": null
+    },
+    {
+      "id": "lamaze-severe-post-birth-complications",
+      "organization": "Lamaze",
+      "title": "Severe Post-Birth Complications: Know the Warning Signs",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/severe-post-birth-complications-know-the-warning-signs",
       "verifiedOn": null
     }
   ],
@@ -152,14 +159,15 @@
       "heading": "Bleeding after birth",
       "onScreen": [
         "Bleeding should slowly get lighter",
-        "Heavy bleeding or bad-smelling fluid is a warning sign",
-        "Soaking through a pad in an hour or less, or large clots: get care now"
+        "Heavy bleeding can happen up to 12 weeks after birth",
+        "Bad-smelling or greenish fluid is a warning sign",
+        "Soaking through two pads an hour for more than an hour or two, or large clots: get care now"
       ],
-      "narration": "Bleeding after birth is normal, and it should slowly get lighter over the following weeks. But heavy bleeding is a warning sign, even after you've gone home. Get care right away if you're soaking through a pad in an hour or less, passing large clots, or feeling dizzy or faint. Fluid that smells bad can be a sign of infection, especially with a fever, so call about that too.",
-      "sourceIds": ["cdc-hear-her-warning-signs"],
+      "narration": "Bleeding after birth is normal, and it should slowly get lighter over the following weeks. But heavy bleeding is a warning sign, and it can happen up to twelve weeks after birth, long after you've gone home. Get care right away if you're soaking through two pads an hour for more than an hour or two, passing large clots, or feeling dizzy or faint. Fluid that smells bad or looks greenish can be a sign of infection, especially with a fever, so call about that too.",
+      "sourceIds": ["cdc-hear-her-warning-signs", "acog-after-childbirth-conditions", "lamaze-severe-post-birth-complications"],
       "visual": {
         "kind": "icon-list",
-        "description": "Three simple icons in a row: a pad with a clock showing one hour, a droplet, and a thermometer. No blood shown."
+        "description": "Three simple icons in a row: two pads beside a clock, a droplet, and a thermometer. No blood shown."
       }
     },
     {
@@ -257,6 +265,20 @@
       "visual": {
         "kind": "illustration",
         "description": "A new parent on the phone at home, holding the baby in one arm, with a sticky note of phone numbers on the fridge behind them. The note has no readable writing."
+      }
+    },
+    {
+      "id": "speaking-up-video",
+      "type": "video",
+      "heading": "Noticing a warning sign at home",
+      "onScreen": [
+        "Notice how quickly they act, and the first thing they say"
+      ],
+      "narration": "Here's a short example of a family noticing a warning sign at home, and getting care.",
+      "sourceIds": ["cdc-hear-her-warning-signs", "cdc-hear-her-about"],
+      "video": {
+        "brief": "Two weeks after birth, at home in the evening. The new parent, holding the baby, mentions a headache that hasn't gone away all day and blurry vision. Their partner takes it seriously, looks at the warning-sign list saved on their phone, and calls the care team while the new parent rests. Cut to an urgent care front desk: the partner says they had a baby two weeks ago. Narration-free with soft music and short captions. No numbers or clinical readings shown.",
+        "maxSeconds": 60
       }
     },
     {
