@@ -199,9 +199,9 @@
         "Fever of 100.4°F or higher",
         "Extreme swelling of hands or face",
         "Thoughts of harming yourself or your baby",
-        "If it feels like an emergency, call 911"
+        "Seek medical care immediately"
       ],
-      "narration": "Some symptoms need help right away, whether or not you're in labor. These include a severe headache that won't go away or changes in your vision, trouble breathing, chest pain, or a racing heart, severe belly pain that doesn't go away, a fever of 100.4 degrees or higher, extreme swelling of your hands or face, and thoughts of harming yourself or your baby. If you have any of these, contact your care team immediately. If it feels like an emergency, call 911.",
+      "narration": "Some symptoms need help right away, whether or not you're in labor. These include a severe headache that won't go away or changes in your vision, trouble breathing, chest pain, or a racing heart, severe belly pain that doesn't go away, a fever of 100.4 degrees or higher, extreme swelling of your hands or face, and thoughts of harming yourself or your baby. If you have any of these, seek medical care immediately.",
       "sourceIds": ["cdc-hear-her-warning-signs"]
     },
     {

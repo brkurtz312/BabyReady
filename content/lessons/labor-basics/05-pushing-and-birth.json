@@ -85,7 +85,7 @@
         "Many people feel a powerful urge to push",
         "Sometimes there's a short lull first"
       ],
-      "narration": "Once your cervix is fully open, your baby begins moving down through your pelvis. Most people feel strong pressure low down, often a lot like needing to have a bowel movement. That's normal, and it's a sign your baby is moving in the right direction. Many people feel a powerful, natural urge to push. Some get a short break first, a lull where contractions ease for a bit. If you have an epidural, you may feel less of the urge, and your care team may suggest resting for a while to let your baby move down on its own before you start pushing.",
+      "narration": "Once your cervix is fully open, your baby begins moving down through your pelvis. Most people feel strong pressure low down, often a lot like needing to have a bowel movement. That's normal, and it's a sign your baby is moving in the right direction. Many people feel a powerful, natural urge to push. Some get a short break first, a lull where contractions ease for a bit. If you have an epidural, you may feel less of the urge. Your care team will guide you on when to start pushing. Some suggest resting first to let your baby move down, others pushing right away.",
       "sourceIds": ["acog-cpg8-labor", "acog-co766"],
       "visual": {
         "kind": "diagram",
@@ -215,9 +215,9 @@
         "First the head, then the shoulders turn and slip out",
         "The rest of the body follows quickly",
         "If baby is doing well, they go right onto your chest",
-        "Babies may look bluish or be covered in a white coating at first"
+        "Your baby may look a bit blue and be covered in a creamy coating at first"
       ],
-      "narration": "Once your baby's head is born, the shoulders turn and slip out, and the rest of the body follows quickly. If your baby is doing well, they can be placed right onto your bare chest, dried off, and covered with a warm blanket. Don't be surprised by how your baby looks at first. Newborns are often a little bluish until they start breathing, and may be covered in a white, creamy coating that protects their skin. In the next lesson, we'll talk about that first precious hour together.",
+      "narration": "Once your baby's head is born, the shoulders turn and slip out, and the rest of the body follows quickly. If your baby is doing well, they can be placed right onto your bare chest, dried off, and covered with a warm blanket. Don't be surprised by how your baby looks at first. Your baby may look a bit blue and be covered in a creamy coating at first. In the next lesson, we'll talk about that first precious hour together.",
       "sourceIds": ["aap-breastfeeding-2022", "who-intrapartum-2018"],
       "visual": {
         "kind": "illustration",

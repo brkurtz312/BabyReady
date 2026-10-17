@@ -242,9 +242,9 @@
         "Your baby is moving less, or not at all",
         "Severe pain that doesn't ease between contractions",
         "Fever, severe headache, or vision changes",
-        "If it feels like an emergency, call 911"
+        "Seek medical care immediately"
       ],
-      "narration": "Before we wrap up, a safety reminder. Whether you're in early labor at home or anywhere along the way, call your care team right away for heavy bleeding, if your baby is moving less or not at all, for severe pain that doesn't ease between contractions, or for a fever, a severe headache, or changes in your vision. If it feels like an emergency, call 911.",
+      "narration": "Before we wrap up, a safety reminder. Whether you're in early labor at home or anywhere along the way, call your care team right away for heavy bleeding, if your baby is moving less or not at all, for severe pain that doesn't ease between contractions, or for a fever, a severe headache, or changes in your vision. Seek medical care immediately.",
       "sourceIds": ["acnm-am-i-in-labor", "cdc-hear-her-warning-signs", "acog-labor-begins"]
     },
     {
