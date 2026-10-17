@@ -27,6 +27,17 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'first-trimester-common-changes/early-bleeding': require('../../assets/lessons/first-trimester-common-changes/early-bleeding.jpg'),
   'first-prenatal-visit/welcome': require('../../assets/lessons/first-prenatal-visit/welcome.jpg'),
   'first-prenatal-visit/first-visit-talk': require('../../assets/lessons/first-prenatal-visit/first-visit-talk.jpg'),
+  // Batch 2: Prepare, Ask Questions, and Make a Plan; How This Class Works; third-trimester welcome.
+  'first-prenatal-visit/in-person-checks': require('../../assets/lessons/first-prenatal-visit/in-person-checks.jpg'),
+  'first-prenatal-visit/what-to-bring': require('../../assets/lessons/first-prenatal-visit/what-to-bring.jpg'),
+  'first-prenatal-visit/honest-answers': require('../../assets/lessons/first-prenatal-visit/honest-answers.jpg'),
+  'first-prenatal-visit/make-a-plan': require('../../assets/lessons/first-prenatal-visit/make-a-plan.jpg'),
+  'welcome-how-this-class-works/welcome': require('../../assets/lessons/welcome-how-this-class-works/welcome.jpg'),
+  'welcome-how-this-class-works/learning-tools': require('../../assets/lessons/welcome-how-this-class-works/learning-tools.jpg'),
+  'welcome-how-this-class-works/safety-and-care-team': require('../../assets/lessons/welcome-how-this-class-works/safety-and-care-team.jpg'),
+  'welcome-how-this-class-works/ask-your-instructor': require('../../assets/lessons/welcome-how-this-class-works/ask-your-instructor.jpg'),
+  'welcome-how-this-class-works/why-prepare': require('../../assets/lessons/welcome-how-this-class-works/why-prepare.jpg'),
+  'third-trimester-body/welcome': require('../../assets/lessons/third-trimester-body/welcome.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
