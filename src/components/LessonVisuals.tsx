@@ -1,5 +1,6 @@
 import { useState, type ComponentType } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View } from 'react-native';
+import Svg, { Circle, Ellipse, G, Line, Path, Polygon, Rect, Text as SvgText } from 'react-native-svg';
 import type { LucideProps } from 'lucide-react-native';
 
 import Activity from 'lucide-react-native/icons/activity';
@@ -67,7 +68,15 @@ const c = {
   alert: '#B3262F',
   alertSoft: '#FBE6E7',
   sky: '#E4ECF7',
+  baby: '#F3D9C4',
+  babyLine: '#C99E80',
+  skin: '#E8C4A6',
+  skinLine: '#B98D6E',
+  pelvis: '#F1E3C2',
 };
+
+// SVG text otherwise falls back to a serif face on the web.
+const FONT = Platform.OS === 'web' ? 'system-ui, -apple-system, "Segoe UI", Roboto, sans-serif' : undefined;
 
 type Icon = ComponentType<LucideProps>;
 type IconItem = { icon: Icon; label: string; tone?: 'lagoon' | 'marigold' | 'alert' };
@@ -446,6 +455,258 @@ function BackAndHeartburn() {
   );
 }
 
+// ---------- Maps and side views drawn with SVG ----------
+
+/** A drawing in a frame, scaled to the slide's width, with an optional caption. */
+function Drawing({ label, caption, height = 200, children }: { label: string; caption?: string; height?: number; children: React.ReactNode }) {
+  return (
+    <Frame label={label}>
+      <Svg style={[s.drawing, { aspectRatio: 360 / height }]} viewBox={`0 0 360 ${height}`}>
+        {children}
+      </Svg>
+      {caption ? <Text style={s.caption}>{caption}</Text> : null}
+    </Frame>
+  );
+}
+
+function Label({ x, y, children, color = c.ink, size = 12, weight = '700' }: { x: number; y: number; children: string; color?: string; size?: number; weight?: '400' | '700' | '800' }) {
+  return (
+    <SvgText fill={color} fontFamily={FONT} fontSize={size} fontWeight={weight} textAnchor="middle" x={x} y={y}>
+      {children}
+    </SvgText>
+  );
+}
+
+function HouseIcon({ x, y }: { x: number; y: number }) {
+  return (
+    <G>
+      <Polygon fill={c.marigold} points={`${x - 24},${y - 14} ${x},${y - 34} ${x + 24},${y - 14}`} />
+      <Rect fill={c.surface} height={28} rx={3} stroke={c.ink} strokeWidth={2} width={40} x={x - 20} y={y - 14} />
+      <Rect fill={c.lagoon} height={14} rx={2} width={10} x={x - 5} y={y} />
+    </G>
+  );
+}
+
+function BirthCenterIcon({ x, y }: { x: number; y: number }) {
+  return (
+    <G>
+      <Rect fill={c.surface} height={34} rx={4} stroke={c.ink} strokeWidth={2} width={48} x={x - 24} y={y - 20} />
+      <Path d={`M ${x} ${y + 2} c -9 -6 -11 -14 -5 -16 c 3 -1 5 1 5 3 c 0 -2 2 -4 5 -3 c 6 2 4 10 -5 16 z`} fill={c.marigold} />
+    </G>
+  );
+}
+
+function HospitalIcon({ x, y }: { x: number; y: number }) {
+  return (
+    <G>
+      <Rect fill={c.surface} height={52} rx={4} stroke={c.ink} strokeWidth={2} width={58} x={x - 29} y={y - 38} />
+      <Rect fill={c.lagoon} height={18} width={6} x={x - 3} y={y - 30} />
+      <Rect fill={c.lagoon} height={6} width={18} x={x - 9} y={y - 24} />
+      <Rect fill={c.lagoonSoft} height={10} width={10} x={x - 20} y={y - 2} />
+      <Rect fill={c.lagoonSoft} height={10} width={10} x={x + 10} y={y - 2} />
+    </G>
+  );
+}
+
+function CarIcon({ x, y }: { x: number; y: number }) {
+  return (
+    <G>
+      <Path d={`M ${x - 18} ${y} L ${x - 18} ${y - 8} L ${x - 10} ${y - 16} L ${x + 8} ${y - 16} L ${x + 18} ${y - 8} L ${x + 18} ${y} Z`} fill={c.lagoon} />
+      <Rect fill={c.lagoonSoft} height={6} rx={1} width={14} x={x - 8} y={y - 14} />
+      <Circle cx={x - 10} cy={y} fill={c.ink} r={4.5} />
+      <Circle cx={x + 10} cy={y} fill={c.ink} r={4.5} />
+    </G>
+  );
+}
+
+function ClockIcon({ x, y, r = 13 }: { x: number; y: number; r?: number }) {
+  return (
+    <G>
+      <Circle cx={x} cy={y} fill={c.surface} r={r} stroke={c.ink} strokeWidth={2} />
+      <Line stroke={c.ink} strokeLinecap="round" strokeWidth={2} x1={x} x2={x} y1={y} y2={y - r + 4} />
+      <Line stroke={c.ink} strokeLinecap="round" strokeWidth={2} x1={x} x2={x + r - 5} y1={y} y2={y} />
+    </G>
+  );
+}
+
+function PersonBadge({ x, y, tone }: { x: number; y: number; tone: string }) {
+  return (
+    <G>
+      <Circle cx={x} cy={y} fill={tone} r={15} />
+      <Circle cx={x} cy={y - 4} fill={c.surface} r={4.5} />
+      <Path d={`M ${x - 8} ${y + 9} a 8 7 0 0 1 16 0 z`} fill={c.surface} />
+    </G>
+  );
+}
+
+function TransferPlan() {
+  return (
+    <Drawing
+      caption="Know which hospital, how you'll get there, and who comes with you."
+      label="Map of a transfer plan: dotted routes lead from a home and from a birth center to a nearby hospital, with a car and a clock along the way."
+    >
+      <Rect fill={c.lagoonSoft} height={176} rx={12} width={344} x={8} y={8} />
+      <Path d="M 70 62 C 150 62, 170 96, 262 104" fill="none" stroke={c.lagoon} strokeDasharray="2 9" strokeLinecap="round" strokeWidth={4} />
+      <Path d="M 70 148 C 150 148, 170 116, 262 110" fill="none" stroke={c.lagoon} strokeDasharray="2 9" strokeLinecap="round" strokeWidth={4} />
+      <HouseIcon x={52} y={64} />
+      <Label x={52} y={96}>Home</Label>
+      <BirthCenterIcon x={52} y={146} />
+      <Label x={52} y={178}>Birth center</Label>
+      <HospitalIcon x={296} y={112} />
+      <Label x={296} y={146}>Hospital</Label>
+      <CarIcon x={176} y={92} />
+      <ClockIcon x={176} y={138} />
+    </Drawing>
+  );
+}
+
+function PlanYourRoute() {
+  return (
+    <Drawing
+      caption="Do a practice drive, and pick a backup route and a backup driver."
+      height={236}
+      label="Map from home to the hospital: a solid main route and a dotted backup route, a clock for travel time, and two people: a driver and a backup driver."
+    >
+      <Rect fill={c.sky} height={176} rx={12} width={344} x={8} y={8} />
+      <Path d="M 78 96 C 140 40, 220 40, 268 92" fill="none" stroke={c.lagoon} strokeLinecap="round" strokeWidth={6} />
+      <Path d="M 78 104 C 140 162, 220 162, 268 112" fill="none" stroke={c.lagoon} strokeDasharray="2 10" strokeLinecap="round" strokeWidth={5} />
+      <Label x={172} y={34}>Main route</Label>
+      <Label x={172} y={174}>Backup route</Label>
+      <HouseIcon x={52} y={104} />
+      <Label x={52} y={136}>Home</Label>
+      <HospitalIcon x={300} y={110} />
+      <Label x={300} y={144}>Hospital</Label>
+      <ClockIcon x={172} y={84} r={14} />
+      <Label color={c.muted} size={11} weight="400" x={172} y={116}>Travel time</Label>
+      <PersonBadge tone={c.lagoon} x={96} y={214} />
+      <Label x={138} y={218}>Driver</Label>
+      <PersonBadge tone={c.marigold} x={204} y={214} />
+      <Label x={274} y={218}>Backup driver</Label>
+    </Drawing>
+  );
+}
+
+/**
+ * A side view of the body, facing right, in local units (170 wide, 210 tall): head, back, belly and the
+ * pelvis (the sacrum behind, the pubic bone in front). `belly` is how far the belly reaches forward,
+ * `low` how far down it sits. Children (the uterus, baby, arrows) draw inside, on top of the pelvis.
+ */
+function BodySide({ x, belly, low = 0, children }: { x: number; belly: number; low?: number; children?: React.ReactNode }) {
+  const f = 96 + belly; // the front of the belly at its fullest
+  const y = 132 + low; // the height of the fullest point
+  const body = `M 52 44 C 40 62, 34 92, 40 120 C 44 140, 30 160, 34 184 L 34 206 L 98 206 L 98 192
+    C ${f - 10} ${186 + low * 0.2}, ${f + 2} ${y + 26}, ${f} ${y}
+    C ${f - 2} ${y - 36 + low * 0.3}, ${f - 22} ${86 + low * 0.4}, 92 74 C 88 62, 82 52, 72 46 Z`;
+  return (
+    <G transform={`translate(${x} 0)`}>
+      <Rect fill={c.skin} height={14} rx={4} stroke={c.skinLine} strokeWidth={2} width={14} x={55} y={34} />
+      <Circle cx={62} cy={24} fill={c.skin} r={16} stroke={c.skinLine} strokeWidth={2} />
+      <Path d={body} fill="#FBF6F1" stroke={c.skinLine} strokeLinejoin="round" strokeWidth={2} />
+      {/* Pelvis: the sacrum curving down the back, and the pubic bone at the front. */}
+      <Path d="M 48 128 C 42 146, 42 166, 54 184" fill="none" stroke={c.pelvis} strokeLinecap="round" strokeWidth={11} />
+      <Ellipse cx={90} cy={182} fill={c.pelvis} rx={7} ry={11} />
+      {children}
+    </G>
+  );
+}
+
+/** A pear-shaped uterus between `left` and `right`, from `top` down to the cervix at `bottom`. */
+function Uterus({ top, bottom = 176, left = 58, right = 124, open = false, firm = false }: { top: number; bottom?: number; left?: number; right?: number; open?: boolean; firm?: boolean }) {
+  const h = bottom - top;
+  const cx = (left + right) / 2 - 6;
+  const sides = `C ${left} ${bottom - h * 0.25}, ${left} ${top + h * 0.3}, ${left + 10} ${top + h * 0.1}
+    C ${left + 20} ${top - 3}, ${right - 8} ${top - 3}, ${right} ${top + h * 0.25}
+    C ${right + 4} ${top + h * 0.55}, ${right - 14} ${bottom - h * 0.15},`;
+  const d = open ? `M ${cx - 9} ${bottom + 2} ${sides} ${cx + 9} ${bottom + 4}` : `M ${cx - 5} ${bottom} ${sides} ${cx + 5} ${bottom + 1} Z`;
+  return <Path d={d} fill={open ? 'none' : c.lagoonSoft} stroke={c.lagoon} strokeLinecap="round" strokeLinejoin="round" strokeWidth={firm ? 6 : 3} />;
+}
+
+/** A baby curled head-down: the head centred at (hx, hy), the body above it toward the mother's front. */
+function BabyCurled({ hx, hy, ghost = false }: { hx: number; hy: number; ghost?: boolean }) {
+  if (ghost) return <Circle cx={hx} cy={hy} fill="none" r={11} stroke={c.babyLine} strokeDasharray="3 4" strokeWidth={2} />;
+  return (
+    <G>
+      <Ellipse cx={hx + 12} cy={hy - 30} fill={c.baby} rx={16} ry={23} stroke={c.babyLine} strokeWidth={2} transform={`rotate(-18 ${hx + 12} ${hy - 30})`} />
+      <Circle cx={hx} cy={hy} fill={c.baby} r={11} stroke={c.babyLine} strokeWidth={2} />
+    </G>
+  );
+}
+
+function SignsLaborClose() {
+  return (
+    <Drawing
+      caption="Not every baby drops before labor. It can happen days or weeks ahead."
+      label="Two side views of a pregnant body. Before: the baby's head sits above the pelvis and the belly is high. After the baby drops: the head has settled lower, into the pelvis, and the belly sits lower."
+      height={236}
+    >
+      <BodySide belly={36} x={6}>
+        <Uterus bottom={168} top={70} />
+        <BabyCurled hx={86} hy={150} />
+      </BodySide>
+      <BodySide belly={36} low={14} x={186}>
+        <Uterus bottom={186} left={60} top={88} />
+        <BabyCurled hx={86} hy={170} />
+      </BodySide>
+      <Path d="M 172 120 L 190 120" stroke={c.muted} strokeLinecap="round" strokeWidth={2.5} />
+      <Path d="M 184 114 L 190 120 L 184 126" fill="none" stroke={c.muted} strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} />
+      <Label x={90} y={226}>Before</Label>
+      <Label x={270} y={226}>After the baby drops</Label>
+    </Drawing>
+  );
+}
+
+function SecondStage() {
+  return (
+    <Drawing
+      caption="Once the cervix is fully open, your baby moves down through your pelvis."
+      label="Side view of the body: with the cervix fully open, the baby's head moves down through the pelvis, between the sacrum behind and the pubic bone in front. An arrow shows the direction, down and forward."
+      height={214}
+    >
+      <BodySide belly={36} low={10} x={70}>
+        <Uterus open top={84} />
+        <BabyCurled ghost hx={76} hy={158} />
+        <BabyCurled hx={72} hy={178} />
+      </BodySide>
+      <Path d="M 232 92 C 238 124, 232 152, 212 174" fill="none" stroke={c.marigold} strokeLinecap="round" strokeWidth={4} />
+      <Path d="M 210 162 L 212 174 L 223 170" fill="none" stroke={c.marigold} strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} />
+      <Label x={296} y={136}>Moving down</Label>
+      <Label color={c.muted} size={11} weight="400" x={44} y={198}>Sacrum</Label>
+      <Line stroke={c.muted} strokeWidth={1.2} x1={66} x2={114} y1={194} y2={178} />
+      <Label color={c.muted} size={11} weight="400" x={272} y={204}>Pubic bone</Label>
+      <Line stroke={c.muted} strokeWidth={1.2} x1={242} x2={166} y1={200} y2={188} />
+    </Drawing>
+  );
+}
+
+function ThirdStage() {
+  return (
+    <Drawing
+      caption="Your uterus keeps contracting after birth, which helps the placenta separate."
+      label="Side view of the body after birth: the uterus is much smaller and contracting, and the placenta gently separates from its upper wall."
+      height={214}
+    >
+      <BodySide belly={16} low={4} x={70}>
+        <Uterus bottom={174} firm left={62} right={106} top={120} />
+        {/* The placenta, lifting away from the upper wall of the uterus. */}
+        <Path d="M 68 134 C 72 126, 84 122, 94 125 C 90 133, 78 138, 68 134 Z" fill={c.marigoldSoft} stroke={c.marigold} strokeWidth={2} />
+        <Path d="M 67 130 C 71 121, 84 117, 96 121" fill="none" stroke={c.surface} strokeDasharray="2 3" strokeWidth={1.8} />
+        {[[44, 150, 1], [124, 150, -1]].map(([ax, ay, dir]) => (
+          <G key={ax}>
+            <Line stroke={c.muted} strokeLinecap="round" strokeWidth={2.5} x1={ax} x2={ax + 10 * dir} y1={ay} y2={ay} />
+            <Path d={`M ${ax + 5 * dir} ${ay - 5} L ${ax + 10 * dir} ${ay} L ${ax + 5 * dir} ${ay + 5}`} fill="none" stroke={c.muted} strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} />
+          </G>
+        ))}
+      </BodySide>
+      <Label x={290} y={108}>Placenta</Label>
+      <Label color={c.muted} size={11} weight="400" x={290} y={122}>separating</Label>
+      <Line stroke={c.muted} strokeWidth={1.5} x1={164} x2={258} y1={128} y2={114} />
+      <Label x={290} y={168}>Uterus</Label>
+      <Label color={c.muted} size={11} weight="400" x={290} y={182}>contracting</Label>
+      <Line stroke={c.muted} strokeWidth={1.5} x1={198} x2={262} y1={162} y2={170} />
+    </Drawing>
+  );
+}
+
 // ---------- The registry ----------
 
 const VISUALS: Record<string, () => React.ReactElement> = {
@@ -656,6 +917,11 @@ const VISUALS: Record<string, () => React.ReactElement> = {
       ]}
     />
   ),
+  'care-team-and-birth-setting/transfer-plans': () => <TransferPlan />,
+  'getting-ready-bags-routes-car-seat/plan-your-route': () => <PlanYourRoute />,
+  'how-labor-begins/signs-labor-close': () => <SignsLaborClose />,
+  'pushing-and-birth/what-it-feels-like': () => <SecondStage />,
+  'placenta-and-first-hour/third-stage': () => <ThirdStage />,
   'placenta-and-first-hour/baby-checks': () => (
     <IconPanel
       label="The Apgar score checks breathing, heart rate, color, muscle tone, and reflexes at 1 and 5 minutes after birth."
@@ -689,6 +955,7 @@ const s = StyleSheet.create({
     gap: 10,
   },
   caption: { color: c.muted, fontSize: 13, lineHeight: 18, textAlign: 'center' },
+  drawing: { width: '100%', maxWidth: 520, alignSelf: 'center' },
   iconRow: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 12 },
   iconTile: { width: 104, alignItems: 'center', gap: 6 },
   iconCircle: {
