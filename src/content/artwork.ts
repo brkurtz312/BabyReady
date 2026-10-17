@@ -60,6 +60,17 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'birth-preferences/why-preferences': require('../../assets/lessons/birth-preferences/why-preferences.jpg'),
   'birth-preferences/room-and-people': require('../../assets/lessons/birth-preferences/room-and-people.jpg'),
   'birth-preferences/pain-relief-preview': require('../../assets/lessons/birth-preferences/pain-relief-preview.jpg'),
+  // Batch 5: birth preferences, getting ready, how labor begins, when to contact your care team.
+  'birth-preferences/pushing-and-after-birth': require('../../assets/lessons/birth-preferences/pushing-and-after-birth.jpg'),
+  'birth-preferences/when-things-change': require('../../assets/lessons/birth-preferences/when-things-change.jpg'),
+  'getting-ready-bags-routes-car-seat/welcome': require('../../assets/lessons/getting-ready-bags-routes-car-seat/welcome.jpg'),
+  'getting-ready-bags-routes-car-seat/support-person-bag': require('../../assets/lessons/getting-ready-bags-routes-car-seat/support-person-bag.jpg'),
+  'getting-ready-bags-routes-car-seat/baby-going-home': require('../../assets/lessons/getting-ready-bags-routes-car-seat/baby-going-home.jpg'),
+  'getting-ready-bags-routes-car-seat/papers-and-questions': require('../../assets/lessons/getting-ready-bags-routes-car-seat/papers-and-questions.jpg'),
+  'how-labor-begins/welcome': require('../../assets/lessons/how-labor-begins/welcome.jpg'),
+  'how-labor-begins/every-labor-different': require('../../assets/lessons/how-labor-begins/every-labor-different.jpg'),
+  'how-labor-begins/what-is-a-contraction': require('../../assets/lessons/how-labor-begins/what-is-a-contraction.jpg'),
+  'when-to-contact-your-care-team/welcome': require('../../assets/lessons/when-to-contact-your-care-team/welcome.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
