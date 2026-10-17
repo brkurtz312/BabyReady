@@ -11,11 +11,11 @@
   ],
   "estimatedMinutes": 10,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-15. Sources fetched and checked against slides by an automated first pass; needs clinician review. ACOG Committee Opinion 766 was checked against its public abstract only. No approved source was found giving typical hospital limits on the number of support people, so the lesson tells learners to ask their birth place. Pet care appears only in the reflection prompt, since no approved source covers it."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-17",
+    "nextReviewBy": "2027-10-17",
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. ACOG Committee Opinion 766 was checked against its public abstract only. No approved source was found giving typical hospital limits on the number of support people, so the lesson tells learners to ask their birth place. Pet care appears only in the reflection prompt, since no approved source covers it."
   },
   "sources": [
     {
@@ -23,70 +23,70 @@
       "organization": "ACOG",
       "title": "Approaches to Limit Intervention During Labor and Birth (Committee Opinion No. 766)",
       "url": "https://www.acog.org/clinical/guidance/committee-opinion/2019/02/approaches-to-limit-intervention-during-labor-and-birth",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-labor-pain-relief",
       "organization": "ACOG",
       "title": "Medications for Pain Relief During Labor and Delivery (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/medications-for-pain-relief-during-labor-and-delivery",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-postpartum-checkup",
       "organization": "ACOG",
       "title": "What to Expect at a Postpartum Checkup, and Why the Visit Matters",
       "url": "https://www.acog.org/womens-health/experts-and-stories/the-latest/what-to-expect-at-a-postpartum-checkup-and-why-the-visit-matters",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-postpartum-depression",
       "organization": "ACOG",
       "title": "Postpartum Depression (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/postpartum-depression",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "lamaze-birth-team",
       "organization": "Lamaze",
       "title": "Choosing Your Birth Team",
       "url": "https://lamaze.org/birth-support",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "lamaze-healthy-birth-practices",
       "organization": "Lamaze",
       "title": "Lamaze Healthy Birth Practices",
       "url": "https://lamaze.org/childbirth-practices",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "lamaze-doulas-difference",
       "organization": "Lamaze",
       "title": "How Doulas Make a Difference in Childbirth",
       "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/how-doulas-make-a-difference-in-childbirth",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "lamaze-who-does-what",
       "organization": "Lamaze",
       "title": "Who Does What at Your Birth?",
       "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/who-does-what-at-your-birth-1",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acnm-healthy-birth-101",
       "organization": "ACNM",
       "title": "Healthy Birth 101 (Discover Midwives)",
       "url": "https://discovermidwives.midwife.org/healthy-birth-101/",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "cdc-hear-her-warning-signs",
       "organization": "CDC",
       "title": "Hear Her: Urgent Maternal Warning Signs",
       "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     }
   ],
   "slides": [
@@ -328,9 +328,9 @@
         "Warning signs can happen during pregnancy and up to a year after",
         "Heavy bleeding, trouble breathing, chest pain, severe headache",
         "Thoughts of harming yourself or your baby",
-        "Get medical care immediately. In an emergency, call 911."
+        "Get medical care immediately."
       ],
-      "narration": "Your support people can help keep you safe, so share this with them. Some symptoms during pregnancy and in the year after birth need care right away. These include heavy vaginal bleeding, trouble breathing, chest pain or a racing heart, a severe headache that won't go away, changes in vision, a fever of 100.4 degrees or higher, swelling, redness, or pain in a leg, and thoughts about harming yourself or your baby. If you or your loved ones notice any of these, get medical care immediately, and say that you're pregnant or recently gave birth. If you have thoughts of hurting yourself or others, call your care team or emergency services right away. In an emergency, call 911.",
+      "narration": "Your support people can help keep you safe, so share this with them. Some symptoms during pregnancy and in the year after birth need care right away. These include heavy vaginal bleeding, trouble breathing, chest pain or a racing heart, a severe headache that won't go away, changes in vision, a fever of 100.4 degrees or higher, swelling, redness, or pain in a leg, and thoughts about harming yourself or your baby. If you or your loved ones notice any of these, get medical care immediately, and say that you're pregnant or recently gave birth. If you have thoughts of hurting yourself or others, call your care team or emergency services right away.",
       "sourceIds": [
         "cdc-hear-her-warning-signs",
         "acog-postpartum-depression"

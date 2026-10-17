@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 15,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Reviewer: active labor is defined at about 6 cm per ACOG Clinical Practice Guideline No. 8 (WHO uses 5 cm); the lesson says 'around 6' to stay accurate for both. Durations are intentionally broad. Transition signs and support tips are standard childbirth-education content; confirm against Lamaze materials."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-17",
+    "nextReviewBy": "2027-10-17",
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Active labor at about 6 cm and the stage descriptions are confirmed against ACOG Clinical Practice Guideline No. 8, which also backs the cervix and transition slides (WHO uses 5 cm; the lesson says 'around 6'). BabyReady's own guidance: support tips for active labor, transition and pushing (slide 11; the Lamaze source covers early labor only)."
   },
   "sources": [
     {
@@ -24,35 +24,42 @@
       "organization": "ACOG",
       "title": "First and Second Stage Labor Management (Clinical Practice Guideline No. 8)",
       "url": "https://www.acog.org/clinical/guidance/clinical-practice-guideline/2024/01/first-and-second-stage-labor-management",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "nichd-start-of-labor",
       "organization": "NICHD",
       "title": "When does labor usually start?",
       "url": "https://www.nichd.nih.gov/health/topics/labor-delivery/topicinfo/Pages/start-of-labor.aspx",
-      "verifiedOn": "2026-10-12"
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acnm-am-i-in-labor",
       "organization": "ACNM",
       "title": "Am I in Labor? (Discover Midwives)",
       "url": "https://discovermidwives.midwife.org/am-i-in-labor/",
-      "verifiedOn": "2026-10-14"
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "cdc-hear-her-warning-signs",
       "organization": "CDC",
       "title": "Hear Her: Urgent Maternal Warning Signs",
       "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-labor-begins",
       "organization": "ACOG",
       "title": "How to Tell When Labor Begins (FAQ004)",
       "url": "https://www.acog.org/womens-health/faqs/how-to-tell-when-labor-begins",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
+    },
+    {
+      "id": "lamaze-support-early-labor",
+      "organization": "Lamaze",
+      "title": "How to Support Someone Through Early Labor",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/how-to-support-someone-through-early-labor",
+      "verifiedOn": "2026-10-17"
     }
   ],
   "slides": [
@@ -220,7 +227,7 @@
       "heading": "What helps in each part",
       "onScreen": ["Support people: this one's for you, too"],
       "narration": "Different parts of labor call for different kinds of support. In early labor, focus on rest, light food and drink, distraction, and timing contractions. In active labor, it's time for focused comfort: breathing together, massage, counterpressure on the lower back, and changing positions. In transition, keep it simple. Stay close, speak calmly, and offer short, steady encouragement. And when it's time to push, cheer each effort, offer sips of water, and help with positions.",
-      "sourceIds": ["acnm-am-i-in-labor"],
+      "sourceIds": ["acnm-am-i-in-labor", "lamaze-support-early-labor"],
       "columns": ["Part of labor", "What helps most"],
       "rows": [
         ["Early labor", "Rest, light food and fluids, distraction, timing contractions"],
@@ -242,9 +249,9 @@
         "Your baby is moving less, or not at all",
         "Severe pain that doesn't ease between contractions",
         "Fever, severe headache, or vision changes",
-        "If it feels like an emergency, call 911"
+        "Seek medical care immediately"
       ],
-      "narration": "Before we wrap up, a safety reminder. Whether you're in early labor at home or anywhere along the way, call your care team right away for heavy bleeding, if your baby is moving less or not at all, for severe pain that doesn't ease between contractions, or for a fever, a severe headache, or changes in your vision. If it feels like an emergency, call 911.",
+      "narration": "Before we wrap up, a safety reminder. Whether you're in early labor at home or anywhere along the way, call your care team right away for heavy bleeding, if your baby is moving less or not at all, for severe pain that doesn't ease between contractions, or for a fever, a severe headache, or changes in your vision. Seek medical care immediately.",
       "sourceIds": ["acnm-am-i-in-labor", "cdc-hear-her-warning-signs", "acog-labor-begins"]
     },
     {

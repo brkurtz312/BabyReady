@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 10,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-15. Sources fetched and checked against slides by an automated first pass; needs clinician review. No approved-organization page was found for hospital pre-registration, insurance paperwork, or 'don't drive yourself in labor', so those points are framed as questions to ask the hospital and as planning a driver, without a safety claim. The 36-week target is the course's suggested goal date, not a sourced guideline."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-17",
+    "nextReviewBy": "2027-10-17",
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. No approved-organization page was found for hospital pre-registration, insurance paperwork, or 'don't drive yourself in labor', so those points are framed as questions to ask the hospital and as planning a driver, without a safety claim. The 36-week target is the course's suggested goal date, not a sourced guideline."
   },
   "sources": [
     {
@@ -24,28 +24,28 @@
       "organization": "ACOG",
       "title": "How to Tell When Labor Begins (FAQ004)",
       "url": "https://www.acog.org/womens-health/faqs/how-to-tell-when-labor-begins",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "lamaze-labor-bag",
       "organization": "Lamaze",
       "title": "What to Pack in Your Labor Bag",
       "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/what-to-pack-in-your-labor-bag",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "aap-car-seats-families",
       "organization": "AAP",
       "title": "Car Seats: Information for Families (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "aap-winter-car-seat",
       "organization": "AAP",
       "title": "Winter Car Seat Safety Tips: Keeping Kids Safe & Warm (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Winter-Car-Seat-Safety-Tips.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     }
   ],
   "slides": [

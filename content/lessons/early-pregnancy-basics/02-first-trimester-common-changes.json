@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 10,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course. Sources fetched and checked against slides by an automated first pass; needs clinician review. The old course cited CDC 'Videos: Vaccines and Pregnancy' for general healthy-pregnancy tips, but that page only covers flu and whooping cough vaccines, so the tips now cite CDC folic acid, alcohol, and medicine pages instead. Specific vaccine advice was left out because CDC's vaccines-in-pregnancy page was under revision when fetched. The CDC Hear Her page does not mention calling 911, so the safety slides say to get medical care right away instead; reviewer may wish to add 911 guidance with a supporting source."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-17",
+    "nextReviewBy": "2027-10-17",
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course. The old course cited CDC 'Videos: Vaccines and Pregnancy' for general healthy-pregnancy tips, but that page only covers flu and whooping cough vaccines, so the tips now cite CDC folic acid, alcohol, and medicine pages instead. Specific vaccine advice was left out because CDC's vaccines-in-pregnancy page was under revision when fetched. The safety slides say to get medical care right away, matching CDC; the safety-slide Call 911 button stays."
   },
   "sources": [
     {
@@ -24,49 +24,49 @@
       "organization": "NICHD",
       "title": "What are some common signs of pregnancy?",
       "url": "https://www.nichd.nih.gov/health/topics/pregnancy/conditioninfo/signs",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-morning-sickness",
       "organization": "ACOG",
       "title": "Morning Sickness: Nausea and Vomiting of Pregnancy (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/morning-sickness-nausea-and-vomiting-of-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-bleeding",
       "organization": "ACOG",
       "title": "Bleeding During Pregnancy (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/bleeding-during-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "cdc-hear-her-warning-signs",
       "organization": "CDC",
       "title": "Hear Her: Urgent Maternal Warning Signs",
       "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "cdc-folic-acid",
       "organization": "CDC",
       "title": "About Folic Acid",
       "url": "https://www.cdc.gov/folic-acid/about/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "cdc-alcohol-pregnancy",
       "organization": "CDC",
       "title": "About Alcohol Use During Pregnancy",
       "url": "https://www.cdc.gov/alcohol-pregnancy/about/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "cdc-medicine-pregnancy",
       "organization": "CDC",
       "title": "About Medicine and Pregnancy",
       "url": "https://www.cdc.gov/medicine-and-pregnancy/about/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     }
   ],
   "slides": [

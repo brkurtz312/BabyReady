@@ -7,6 +7,29 @@ The source fixes that needed no clinical judgment have already been made: suppor
 
 Slide numbers count from 1, including the title slide, as they play in the class. The slide id in brackets matches the lesson file.
 
+## Decisions (17 October 2026)
+
+Reviewed by Bryan Kurtz MD, FACOG. All 15 lessons in the three modules are now marked `reviewed`, with every source dated 2026-10-17 and a re-check due by 2027-10-17.
+
+1. **Epidural pushing:** reworded to present both options: "Your care team will guide you on when to start pushing. Some suggest resting first to let your baby move down, others pushing right away."
+2. **Fast birth:** now cites the Lamaze article "How to Safely Deliver a Baby When Medical Assistance is Still Minutes Away". The wording stays. "Call 911" and "pull over if driving" are recorded as BabyReady's own safety guidance.
+3. **"Call 911":** the warning-sign slides now say "Seek medical care immediately", matching CDC. The same change was made on the Labor Basics lesson 2 recap and on the Preparing for Birth safety slides. Three things stay as they were: the Call 911 button on safety slides, "At home: call 911" for heavy bleeding after birth, and "call right away, or 911" for heavy bleeding in pregnancy.
+4. **Preterm signs:** "spotting" stays. ACNM's "Am I in Labor?" is now cited alongside NICHD.
+5. **Bleeding:** the stricter "even spotting" advice is intended (ACNM).
+6. **Labor stages:** 6 cm and the stage descriptions are confirmed against CPG 8. CPG 8 also covers the cervix and transition slides.
+7. **Early labor at home:** all three claims are confirmed against CO 766. The Lamaze post stays alongside WHO 2018.
+8. **Pushing approaches and length:** confirmed against CPG 8 and CO 766.
+9. **Tears:** PB 198 stays alongside AAFP.
+10. **Newborn:** the wording was softened. Skin-to-skin now "helps your baby settle and stay warm". Feeding cues are now "like turning toward the breast". At birth, babies "may look a bit blue and be covered in a creamy coating at first".
+11. **Apgar:** the timing and the five checks are confirmed. The on-screen line now reads "Can often be done while baby is on your chest".
+12. **Smaller details:**
+    - New sources: ACOG Committee Opinion 579 for early term, the ACNM Share With Women handout on ruptured membranes for fluid time and color (including brown fluid), and Lamaze "How to Support Someone Through Early Labor".
+    - Recorded as BabyReady's own guidance in the lesson notes, because no approved-organization page was found:
+      - timing contractions
+      - "babies don't run out of room"
+      - the what-to-have-ready list
+      - support tips for active labor, transition and pushing
+
 ---
 
 ## Safety slides (please review first)

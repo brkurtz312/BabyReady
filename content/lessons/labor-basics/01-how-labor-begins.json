@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 12,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Pilot lesson. Reviewer: confirm each source page is live and supports its slides, then set verifiedOn dates."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-17",
+    "nextReviewBy": "2027-10-17",
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Preterm signs keep \"spotting\" (stricter than NICHD, consistent with ACNM). Warning-sign slide says \"seek medical care immediately\" to match CDC; the safety-slide Call 911 button stays. BabyReady's own guidance, no approved-organization page found: timing contractions start to start and start to end (slide 8)."
   },
   "sources": [
     {
@@ -24,35 +24,56 @@
       "organization": "ACOG",
       "title": "How to Tell When Labor Begins (FAQ004)",
       "url": "https://www.acog.org/womens-health/faqs/how-to-tell-when-labor-begins",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "nichd-start-of-labor",
       "organization": "NICHD",
       "title": "When does labor usually start?",
       "url": "https://www.nichd.nih.gov/health/topics/labor-delivery/topicinfo/Pages/start-of-labor.aspx",
-      "verifiedOn": "2026-10-12"
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "aafp-know-in-labor",
       "organization": "AAFP",
       "title": "How Do I Know I'm in Labor? (familydoctor.org)",
       "url": "https://familydoctor.org/how-do-i-know-im-in-labor/",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "cdc-hear-her-warning-signs",
       "organization": "CDC",
       "title": "Hear Her: Urgent Maternal Warning Signs",
       "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "nichd-preterm-symptoms",
       "organization": "NICHD",
       "title": "What are the symptoms of preterm labor?",
       "url": "https://www.nichd.nih.gov/health/topics/preterm/conditioninfo/symptoms",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
+    },
+    {
+      "id": "acog-co579-term",
+      "organization": "ACOG",
+      "title": "Definition of Term Pregnancy (Committee Opinion No. 579)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2013/11/definition-of-term-pregnancy",
+      "verifiedOn": "2026-10-17"
+    },
+    {
+      "id": "acnm-sww-ruptured-membranes",
+      "organization": "ACNM",
+      "title": "Ruptured Membranes: When the Bag of Waters Breaks (Share With Women)",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jmwh.13336",
+      "verifiedOn": "2026-10-17"
+    },
+    {
+      "id": "acnm-am-i-in-labor",
+      "organization": "ACNM",
+      "title": "Am I in Labor? (Discover Midwives)",
+      "url": "https://discovermidwives.midwife.org/am-i-in-labor/",
+      "verifiedOn": "2026-10-17"
     }
   ],
   "slides": [
@@ -83,7 +104,8 @@
       ],
       "narration": "Your due date is set at 40 weeks, but it's really a best guess. Most people go into labor somewhere between 37 and 42 weeks. Labor that starts before 37 weeks is called preterm, and it's important to call your care team right away if that happens. Babies born at 37 or 38 weeks are called early term, because they're still doing some important growing. Unless there's a medical reason to deliver sooner, waiting until at least 39 weeks gives babies the best chance for a healthy start.",
       "sourceIds": [
-        "nichd-start-of-labor"
+        "nichd-start-of-labor",
+        "acog-co579-term"
       ],
       "visual": {
         "kind": "diagram",
@@ -254,7 +276,8 @@
       ],
       "narration": "Your baby is surrounded by a sac of fluid called the amniotic sac. When that sac breaks, we call it your water breaking. In movies it's always a dramatic gush, but in real life it can also be a slow, steady trickle that's easy to confuse with urine or discharge. It can happen before labor starts or during labor. Either way, call your care team when it happens, even if you aren't having contractions. It helps to note what time it happened and what the fluid looks like, for example, clear, greenish, brownish, or bloody, because your team will likely ask.",
       "sourceIds": [
-        "acog-labor-begins"
+        "acog-labor-begins",
+        "acnm-sww-ruptured-membranes"
       ],
       "visual": {
         "kind": "icon-list",
@@ -292,7 +315,8 @@
       "narration": "If you notice signs of labor before 37 weeks, don't wait to see if they go away. Call your care team right away. Signs include contractions every 10 minutes or more often, a change in your vaginal discharge, spotting or bleeding, pressure in your pelvis or rectum, a low, dull backache, or cramps, with or without diarrhea. Your care team can check what's happening and, if needed, give specialized care.",
       "sourceIds": [
         "nichd-start-of-labor",
-        "nichd-preterm-symptoms"
+        "nichd-preterm-symptoms",
+        "acnm-am-i-in-labor"
       ]
     },
     {
@@ -307,9 +331,9 @@
         "Trouble breathing, chest pain, or a racing heart",
         "Fever of 100.4°F or higher",
         "Extreme swelling of hands or face",
-        "If it feels like an emergency, call 911"
+        "Seek medical care immediately"
       ],
-      "narration": "Finally, some symptoms need attention right away, at any point in pregnancy. These include vaginal bleeding or fluid leaking, your baby moving less or stopping moving, a severe headache that won't go away or changes in your vision, severe belly pain that doesn't go away, trouble breathing, chest pain, or a racing heart, a fever of 100.4 degrees or higher, or extreme swelling of your hands or face. If you have any of these, contact your care team immediately. If it feels like an emergency, call 911. Trust yourself. You know your body, and it's always okay to call.",
+      "narration": "Finally, some symptoms need attention right away, at any point in pregnancy. These include vaginal bleeding or fluid leaking, your baby moving less or stopping moving, a severe headache that won't go away or changes in your vision, severe belly pain that doesn't go away, trouble breathing, chest pain, or a racing heart, a fever of 100.4 degrees or higher, or extreme swelling of your hands or face. If you have any of these, seek medical care immediately. Trust yourself. You know your body, and it's always okay to call.",
       "sourceIds": [
         "cdc-hear-her-warning-signs"
       ]

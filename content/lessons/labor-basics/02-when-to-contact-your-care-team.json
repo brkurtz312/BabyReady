@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 10,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Reviewer: confirm the 5-1-1 framing matches the practices our learners use, and confirm each source page. Kick-count instructions are intentionally left out; the lesson teaches 'know your baby's normal and call if it changes' instead."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-17",
+    "nextReviewBy": "2027-10-17",
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. The 5-1-1 framing is confirmed. Bleeding slide intentionally says to call \"even for spotting\" (stricter than CDC, backed by ACNM) and keeps \"call right away, or 911\" for heavy bleeding. Warning-sign slides say \"seek medical care immediately\" to match CDC; the safety-slide Call 911 button stays. Kick-count instructions are intentionally left out; the lesson teaches 'know your baby's normal and call if it changes' instead. BabyReady's own guidance, no approved-organization page found: \"babies don't run out of room\" (slide 7) and the what-to-have-ready list (slide 10)."
   },
   "sources": [
     {
@@ -24,35 +24,42 @@
       "organization": "ACNM",
       "title": "Am I in Labor? (Discover Midwives)",
       "url": "https://discovermidwives.midwife.org/am-i-in-labor/",
-      "verifiedOn": "2026-10-14"
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-labor-begins",
       "organization": "ACOG",
       "title": "How to Tell When Labor Begins (FAQ004)",
       "url": "https://www.acog.org/womens-health/faqs/how-to-tell-when-labor-begins",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "cdc-hear-her-warning-signs",
       "organization": "CDC",
       "title": "Hear Her: Urgent Maternal Warning Signs",
       "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "cdc-group-b-strep",
       "organization": "CDC",
       "title": "About Group B Strep",
       "url": "https://www.cdc.gov/group-b-strep/about/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "cdc-gbs-screening",
       "organization": "CDC",
       "title": "Screening for Group B Strep Bacteria",
       "url": "https://www.cdc.gov/group-b-strep/testing/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
+    },
+    {
+      "id": "acnm-sww-ruptured-membranes",
+      "organization": "ACNM",
+      "title": "Ruptured Membranes: When the Bag of Waters Breaks (Share With Women)",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jmwh.13336",
+      "verifiedOn": "2026-10-17"
     }
   ],
   "slides": [
@@ -149,7 +156,7 @@
         "Tell them if you tested positive for group B strep"
       ],
       "narration": "If your water breaks, or you think it might have, call your care team, even if you aren't having any contractions. Note the time it happened and the color of the fluid. It's usually clear or slightly pink, but sometimes it's green or brown, and your team will want to know that. Also tell them if you tested positive for group B strep, a common bacteria checked near the end of pregnancy. If you did, you'll usually get antibiotics during labor to protect your baby.",
-      "sourceIds": ["acnm-am-i-in-labor", "cdc-group-b-strep", "cdc-gbs-screening"],
+      "sourceIds": ["acnm-am-i-in-labor", "cdc-group-b-strep", "cdc-gbs-screening", "acnm-sww-ruptured-membranes"],
       "visual": {
         "kind": "icon-list",
         "description": "Four icons: phone, clock, color swatches (clear, pink, green, brown), and a small lab test tube labeled GBS."
@@ -199,9 +206,9 @@
         "Fever of 100.4°F or higher",
         "Extreme swelling of hands or face",
         "Thoughts of harming yourself or your baby",
-        "If it feels like an emergency, call 911"
+        "Seek medical care immediately"
       ],
-      "narration": "Some symptoms need help right away, whether or not you're in labor. These include a severe headache that won't go away or changes in your vision, trouble breathing, chest pain, or a racing heart, severe belly pain that doesn't go away, a fever of 100.4 degrees or higher, extreme swelling of your hands or face, and thoughts of harming yourself or your baby. If you have any of these, contact your care team immediately. If it feels like an emergency, call 911.",
+      "narration": "Some symptoms need help right away, whether or not you're in labor. These include a severe headache that won't go away or changes in your vision, trouble breathing, chest pain, or a racing heart, severe belly pain that doesn't go away, a fever of 100.4 degrees or higher, extreme swelling of your hands or face, and thoughts of harming yourself or your baby. If you have any of these, seek medical care immediately.",
       "sourceIds": ["cdc-hear-her-warning-signs"]
     },
     {
@@ -275,10 +282,10 @@
         "It's always okay to call",
         "Labor call: when contractions match your team's pattern",
         "Call right away: water breaks, bleeding, baby moving less",
-        "Urgent warning signs: get help now, or call 911",
+        "Urgent warning signs: seek medical care immediately",
         "Have your answers and your call card ready"
       ],
-      "narration": "Let's recap. It's always okay to call your care team. Make a labor call when your contractions match the pattern your team gave you. Call right away if your water breaks, if you have bleeding beyond light spotting, or if your baby is moving less. For urgent warning signs, get help immediately, or call 911. And have your call card ready before you need it. Next up, a few review questions.",
+      "narration": "Let's recap. It's always okay to call your care team. Make a labor call when your contractions match the pattern your team gave you. Call right away if your water breaks, if you have bleeding beyond light spotting, or if your baby is moving less. For urgent warning signs, seek medical care immediately. And have your call card ready before you need it. Next up, a few review questions.",
       "sourceIds": ["acnm-am-i-in-labor", "cdc-hear-her-warning-signs"]
     }
   ],

@@ -58,6 +58,7 @@ test('a reviewed lesson needs a reviewer, dates within 12 months, and verified s
   const [lesson] = loadCourse('labor-basics');
   const reviewed = structuredClone(lesson);
   reviewed.review = { status: 'reviewed', reviewedBy: null, reviewedOn: '2026-10-01', nextReviewBy: '2028-01-01' };
+  reviewed.sources[0].verifiedOn = null;
   const messages = checkLesson(reviewed).errors.map((e) => e.message);
   assert.ok(messages.some((m) => m.includes('name the reviewer')));
   assert.ok(messages.some((m) => m.includes('at most 12 months')));

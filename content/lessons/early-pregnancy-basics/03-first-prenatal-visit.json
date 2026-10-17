@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 8,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course. Sources fetched and checked against slides by an automated first pass; needs clinician review."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-17",
+    "nextReviewBy": "2027-10-17",
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course."
   },
   "sources": [
     {
@@ -24,14 +24,14 @@
       "organization": "ACOG",
       "title": "Prenatal Care (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/prenatal-care",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "cdc-medicine-pregnancy",
       "organization": "CDC",
       "title": "About Medicine and Pregnancy",
       "url": "https://www.cdc.gov/medicine-and-pregnancy/about/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     }
   ],
   "slides": [

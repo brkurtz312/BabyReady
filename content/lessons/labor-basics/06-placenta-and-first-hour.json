@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 12,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Reviewer: delayed cord clamping is stated as 'at least 30 to 60 seconds' per ACOG CO 814; ACNM favors longer. Newborn medications (vitamin K, eye ointment, hepatitis B) are deferred to lesson 5.2. Heavy-bleeding thresholds are kept general; confirm wording against unit teaching."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-17",
+    "nextReviewBy": "2027-10-17",
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Delayed cord clamping is stated as 'at least 30 to 60 seconds' per ACOG CO 814; ACNM favors longer. Newborn skin-to-skin and feeding-cue wording softened to what the sources support. Apgar timing and the five checks confirmed against CO 644. Newborn medications are deferred to lesson 5.2. Heavy bleeding at home keeps \"call 911\"."
   },
   "sources": [
     {
@@ -24,49 +24,49 @@
       "organization": "ACOG",
       "title": "Delayed Umbilical Cord Clamping After Birth (Committee Opinion No. 814)",
       "url": "https://www.acog.org/clinical/guidance/committee-opinion/2020/12/delayed-umbilical-cord-clamping-after-birth",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "who-intrapartum-2018",
       "organization": "WHO",
       "title": "WHO Recommendations: Intrapartum Care for a Positive Childbirth Experience (2018)",
       "url": "https://www.who.int/publications/i/item/9789241550215",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "aap-breastfeeding-2022",
       "organization": "AAP",
       "title": "Breastfeeding and the Use of Human Milk (Policy Statement, 2022)",
       "url": "https://publications.aap.org/pediatrics/article/150/1/e2022057988/188347/",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-apgar",
       "organization": "ACOG",
       "title": "The Apgar Score (Committee Opinion No. 644, with AAP)",
       "url": "https://www.acog.org/clinical/guidance/committee-opinion/2015/10/the-apgar-score",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "acog-pb198",
       "organization": "ACOG",
       "title": "Prevention and Management of Obstetric Lacerations at Vaginal Delivery (Practice Bulletin No. 198)",
       "url": "https://www.acog.org/clinical/guidance/practice-bulletin/2018/09/prevention-and-management-of-obstetric-lacerations-at-vaginal-delivery",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "cdc-hear-her-warning-signs",
       "organization": "CDC",
       "title": "Hear Her: Urgent Maternal Warning Signs",
       "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     },
     {
       "id": "aafp-lacerations",
       "organization": "AAFP",
       "title": "Obstetric Lacerations: Prevention and Repair (American Family Physician, 2021)",
       "url": "https://www.aafp.org/afp/2021/0615/p745",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-17"
     }
   ],
   "slides": [
@@ -169,10 +169,10 @@
       "onScreen": [
         "Baby goes on your bare chest right after birth",
         "Keeps baby warm and calm",
-        "Helps steady breathing, heart rate, and blood sugar",
+        "Helps your baby settle and stay warm",
         "Often possible after a cesarean, too"
       ],
-      "narration": "If you and your baby are doing well, your baby can be placed directly on your bare chest right after birth, dried off, and covered with a warm blanket. This is called skin-to-skin contact. Your body is the perfect warmer. Skin to skin helps keep your baby warm and calm, and it helps steady their breathing, heart rate, and blood sugar. It also supports breastfeeding. Ask for at least the first hour without interruption if possible. Many hospitals offer it after a cesarean, too, and partners can do skin to skin as well.",
+      "narration": "If you and your baby are doing well, your baby can be placed directly on your bare chest right after birth, dried off, and covered with a warm blanket. This is called skin-to-skin contact. Your body is the perfect warmer. Skin to skin helps your baby settle and stay warm. It also supports breastfeeding. Ask for at least the first hour without interruption if possible. Many hospitals offer it after a cesarean, too, and partners can do skin to skin as well.",
       "sourceIds": [
         "aap-breastfeeding-2022",
         "who-intrapartum-2018"
@@ -188,11 +188,11 @@
       "heading": "The first feeding",
       "onScreen": [
         "Many babies are ready to feed within the first hour",
-        "Watch for rooting, licking, and hands to mouth",
+        "Watch for early feeding cues, like turning toward the breast",
         "Your nurse can help with positioning",
         "If you plan to formula feed, skin to skin still matters"
       ],
-      "narration": "Many babies are alert and ready to feed in the first hour after birth. Watch for early signs, like rooting, which is turning toward your chest with an open mouth, licking, or bringing hands to the mouth. If you're breastfeeding, skin to skin makes it easier for your baby to find the breast, and your nurse can help with positioning. There's no need for a perfect first latch. It's a first try for both of you. If you plan to formula feed, skin to skin is still wonderful for bonding and for keeping your baby warm.",
+      "narration": "Many babies are alert and ready to feed in the first hour after birth. Watch for early feeding cues, like turning toward the breast. If you're breastfeeding, skin to skin makes it easier for your baby to find the breast, and your nurse can help with positioning. There's no need for a perfect first latch. It's a first try for both of you. If you plan to formula feed, skin to skin is still wonderful for bonding and for keeping your baby warm.",
       "sourceIds": [
         "aap-breastfeeding-2022",
         "who-intrapartum-2018"
@@ -209,7 +209,7 @@
       "onScreen": [
         "Apgar score at 1 and 5 minutes after birth",
         "Checks breathing, heart rate, color, tone, and reflexes",
-        "Often done while baby is on your chest",
+        "Can often be done while baby is on your chest",
         "Weighing and newborn medications can usually wait"
       ],
       "narration": "Your care team will quickly check your baby at one minute and five minutes after birth. This is called the Apgar score. It looks at breathing, heart rate, color, muscle tone, and reflexes, and it tells the team whether your baby needs any extra help adjusting. These checks can often be done while your baby is on your chest. Weighing, measuring, and routine newborn medications can usually wait until after that first hour together. We'll cover those medications in Module 5.",
