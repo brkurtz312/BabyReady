@@ -49,6 +49,17 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'care-team-and-birth-setting/in-the-room': require('../../assets/lessons/care-team-and-birth-setting/in-the-room.jpg'),
   'building-your-support-team/welcome': require('../../assets/lessons/building-your-support-team/welcome.jpg'),
   'building-your-support-team/choosing-support-people': require('../../assets/lessons/building-your-support-team/choosing-support-people.jpg'),
+  // Batch 4: building your support team, birth preferences.
+  'building-your-support-team/what-support-people-do': require('../../assets/lessons/building-your-support-team/what-support-people-do.jpg'),
+  'building-your-support-team/what-a-doula-does': require('../../assets/lessons/building-your-support-team/what-a-doula-does.jpg'),
+  'building-your-support-team/finding-a-doula': require('../../assets/lessons/building-your-support-team/finding-a-doula.jpg'),
+  'building-your-support-team/birth-place-policies': require('../../assets/lessons/building-your-support-team/birth-place-policies.jpg'),
+  'building-your-support-team/support-after-birth': require('../../assets/lessons/building-your-support-team/support-after-birth.jpg'),
+  'birth-preferences/welcome': require('../../assets/lessons/birth-preferences/welcome.jpg'),
+  'birth-preferences/what-are-preferences': require('../../assets/lessons/birth-preferences/what-are-preferences.jpg'),
+  'birth-preferences/why-preferences': require('../../assets/lessons/birth-preferences/why-preferences.jpg'),
+  'birth-preferences/room-and-people': require('../../assets/lessons/birth-preferences/room-and-people.jpg'),
+  'birth-preferences/pain-relief-preview': require('../../assets/lessons/birth-preferences/pain-relief-preview.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
