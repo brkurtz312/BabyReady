@@ -93,6 +93,13 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'pushing-and-birth/crowning': require('../../assets/lessons/pushing-and-birth/crowning.jpg'),
   'pushing-and-birth/baby-is-born': require('../../assets/lessons/pushing-and-birth/baby-is-born.jpg'),
   'placenta-and-first-hour/welcome': require('../../assets/lessons/placenta-and-first-hour/welcome.jpg'),
+  // Batch 8: the placenta and the first hour, plus medicines and supplements.
+  'early-pregnancy-first-steps/medicines': require('../../assets/lessons/early-pregnancy-first-steps/medicines.jpg'),
+  'placenta-and-first-hour/preventing-bleeding': require('../../assets/lessons/placenta-and-first-hour/preventing-bleeding.jpg'),
+  'placenta-and-first-hour/cord-clamping': require('../../assets/lessons/placenta-and-first-hour/cord-clamping.jpg'),
+  'placenta-and-first-hour/skin-to-skin': require('../../assets/lessons/placenta-and-first-hour/skin-to-skin.jpg'),
+  'placenta-and-first-hour/first-feeding': require('../../assets/lessons/placenta-and-first-hour/first-feeding.jpg'),
+  'placenta-and-first-hour/your-recovery': require('../../assets/lessons/placenta-and-first-hour/your-recovery.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
