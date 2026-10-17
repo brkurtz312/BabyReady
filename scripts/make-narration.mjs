@@ -46,7 +46,7 @@ const apiKey = process.env.GEMINI_API_KEY;
 
 const LEAD_IN = 0.15; // seconds of quiet before the first sentence
 const TAIL = 0.3; // seconds of quiet after the last sentence
-const CONCURRENCY = 2;
+const CONCURRENCY = 4;
 
 // ---------- What to record ----------
 // These strings must match what src/screens/ClassPlayerScreen.tsx speaks.
