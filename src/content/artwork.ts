@@ -17,6 +17,16 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'third-trimester-body/sleep-bathroom-breathing': require('../../assets/lessons/third-trimester-body/sleep-bathroom-breathing.jpg'),
   'getting-ready-bags-routes-car-seat/your-labor-bag': require('../../assets/lessons/getting-ready-bags-routes-car-seat/your-labor-bag.jpg'),
   'stages-of-labor/early-labor': require('../../assets/lessons/stages-of-labor/early-labor.jpg'),
+  // Early Pregnancy Basics, made with scripts/make-artwork.mjs and approved in review.
+  'early-pregnancy-first-steps/folic-acid': require('../../assets/lessons/early-pregnancy-first-steps/folic-acid.jpg'),
+  'early-pregnancy-first-steps/nausea-basics': require('../../assets/lessons/early-pregnancy-first-steps/nausea-basics.jpg'),
+  'early-pregnancy-first-steps/your-next-steps': require('../../assets/lessons/early-pregnancy-first-steps/your-next-steps.jpg'),
+  'first-trimester-common-changes/welcome': require('../../assets/lessons/first-trimester-common-changes/welcome.jpg'),
+  'first-trimester-common-changes/nausea-support': require('../../assets/lessons/first-trimester-common-changes/nausea-support.jpg'),
+  'first-trimester-common-changes/nausea-more-help': require('../../assets/lessons/first-trimester-common-changes/nausea-more-help.jpg'),
+  'first-trimester-common-changes/early-bleeding': require('../../assets/lessons/first-trimester-common-changes/early-bleeding.jpg'),
+  'first-prenatal-visit/welcome': require('../../assets/lessons/first-prenatal-visit/welcome.jpg'),
+  'first-prenatal-visit/first-visit-talk': require('../../assets/lessons/first-prenatal-visit/first-visit-talk.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
