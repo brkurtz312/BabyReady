@@ -38,6 +38,17 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'welcome-how-this-class-works/ask-your-instructor': require('../../assets/lessons/welcome-how-this-class-works/ask-your-instructor.jpg'),
   'welcome-how-this-class-works/why-prepare': require('../../assets/lessons/welcome-how-this-class-works/why-prepare.jpg'),
   'third-trimester-body/welcome': require('../../assets/lessons/third-trimester-body/welcome.jpg'),
+  // Batch 3: third trimester, care team and birth setting, building your support team.
+  'third-trimester-body/braxton-hicks': require('../../assets/lessons/third-trimester-body/braxton-hicks.jpg'),
+  'third-trimester-body/swelling': require('../../assets/lessons/third-trimester-body/swelling.jpg'),
+  'third-trimester-body/baby-movements': require('../../assets/lessons/third-trimester-body/baby-movements.jpg'),
+  'third-trimester-body/prenatal-visits': require('../../assets/lessons/third-trimester-body/prenatal-visits.jpg'),
+  'care-team-and-birth-setting/welcome': require('../../assets/lessons/care-team-and-birth-setting/welcome.jpg'),
+  'care-team-and-birth-setting/doctors': require('../../assets/lessons/care-team-and-birth-setting/doctors.jpg'),
+  'care-team-and-birth-setting/midwives': require('../../assets/lessons/care-team-and-birth-setting/midwives.jpg'),
+  'care-team-and-birth-setting/in-the-room': require('../../assets/lessons/care-team-and-birth-setting/in-the-room.jpg'),
+  'building-your-support-team/welcome': require('../../assets/lessons/building-your-support-team/welcome.jpg'),
+  'building-your-support-team/choosing-support-people': require('../../assets/lessons/building-your-support-team/choosing-support-people.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
