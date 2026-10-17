@@ -82,6 +82,17 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'stages-of-labor/placenta': require('../../assets/lessons/stages-of-labor/placenta.jpg'),
   'early-labor-at-home/welcome': require('../../assets/lessons/early-labor-at-home/welcome.jpg'),
   'early-labor-at-home/why-home': require('../../assets/lessons/early-labor-at-home/why-home.jpg'),
+  // Batch 7: early labor at home, pushing and birth, the placenta and the first hour.
+  'early-labor-at-home/eat-drink': require('../../assets/lessons/early-labor-at-home/eat-drink.jpg'),
+  'early-labor-at-home/comfort-tools': require('../../assets/lessons/early-labor-at-home/comfort-tools.jpg'),
+  'early-labor-at-home/tracking': require('../../assets/lessons/early-labor-at-home/tracking.jpg'),
+  'early-labor-at-home/when-to-leave': require('../../assets/lessons/early-labor-at-home/when-to-leave.jpg'),
+  'pushing-and-birth/welcome': require('../../assets/lessons/pushing-and-birth/welcome.jpg'),
+  'pushing-and-birth/how-to-push': require('../../assets/lessons/pushing-and-birth/how-to-push.jpg'),
+  'pushing-and-birth/positions': require('../../assets/lessons/pushing-and-birth/positions.jpg'),
+  'pushing-and-birth/crowning': require('../../assets/lessons/pushing-and-birth/crowning.jpg'),
+  'pushing-and-birth/baby-is-born': require('../../assets/lessons/pushing-and-birth/baby-is-born.jpg'),
+  'placenta-and-first-hour/welcome': require('../../assets/lessons/placenta-and-first-hour/welcome.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
