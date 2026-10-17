@@ -7,10 +7,7 @@ import * as Speech from 'expo-speech';
 
 export const NARRATION_RATE = 0.97;
 
-/** Splits narration into sentences so captions can show one at a time. */
-export function splitSentences(text: string): string[] {
-  return (text.match(/[^.!?]+[.!?]+["'”’]?\s*/g) ?? [text]).map((s) => s.trim()).filter(Boolean);
-}
+export { splitSentences } from './sentences';
 
 const PREFERRED_VOICE_NAMES = [
   /premium/i,

@@ -8,6 +8,7 @@ node_modules/
 dist/
 dist-tour/
 artwork-drafts/
+narration-drafts/
 web-build/
 expo-env.d.ts
 
