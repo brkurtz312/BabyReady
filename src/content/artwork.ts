@@ -71,6 +71,17 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'how-labor-begins/every-labor-different': require('../../assets/lessons/how-labor-begins/every-labor-different.jpg'),
   'how-labor-begins/what-is-a-contraction': require('../../assets/lessons/how-labor-begins/what-is-a-contraction.jpg'),
   'when-to-contact-your-care-team/welcome': require('../../assets/lessons/when-to-contact-your-care-team/welcome.jpg'),
+  // Batch 6: when to contact your care team, stages of labor, early labor at home.
+  'when-to-contact-your-care-team/always-ok-to-call': require('../../assets/lessons/when-to-contact-your-care-team/always-ok-to-call.jpg'),
+  'when-to-contact-your-care-team/baby-movement': require('../../assets/lessons/when-to-contact-your-care-team/baby-movement.jpg'),
+  'when-to-contact-your-care-team/what-to-say': require('../../assets/lessons/when-to-contact-your-care-team/what-to-say.jpg'),
+  'stages-of-labor/welcome': require('../../assets/lessons/stages-of-labor/welcome.jpg'),
+  'stages-of-labor/active-labor': require('../../assets/lessons/stages-of-labor/active-labor.jpg'),
+  'stages-of-labor/transition': require('../../assets/lessons/stages-of-labor/transition.jpg'),
+  'stages-of-labor/pushing': require('../../assets/lessons/stages-of-labor/pushing.jpg'),
+  'stages-of-labor/placenta': require('../../assets/lessons/stages-of-labor/placenta.jpg'),
+  'early-labor-at-home/welcome': require('../../assets/lessons/early-labor-at-home/welcome.jpg'),
+  'early-labor-at-home/why-home': require('../../assets/lessons/early-labor-at-home/why-home.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
