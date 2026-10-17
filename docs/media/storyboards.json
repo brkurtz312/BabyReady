@@ -1,0 +1,733 @@
+{
+  "_about": "Storyboards for the lesson videos made by scripts/make-storyboard-videos.mjs. Each video is a short sequence of scenes: a picture with a caption, or a plain card. Captions only repeat what the video brief and its lesson already say. Every finished video needs clinical review before it is listed in src/content/videos.ts.",
+  "early-pregnancy-first-steps/nausea-tips-video": {
+    "cast": "a woman in early pregnancy, drawn as an ordinary woman with a slim, flat waist, exactly like someone who is not pregnant: no rounded belly, and her hands never rest on her belly; warm brown skin, dark curly shoulder-length hair, wearing a soft sage-green cardigan over a long, loose cream top that fully covers her waist and stomach, with full-length trousers (no crop top, no bare skin at the waist)",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "Simple ways to ease nausea"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "Early morning in a calm bedroom: she sits up in bed and takes a dry cracker from a small plate of crackers and toast on the bedside table.",
+        "caption": "Keep dry crackers or toast by your bed.",
+        "sub": "Eat a few before you get up."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "In her kitchen she sets out several small plates with mini meals: half a sandwich, a few crackers with cheese, a small bowl of rice.",
+        "caption": "Eat five or six mini meals a day.",
+        "sub": "Small meals often, so your stomach is never empty."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "At the kitchen table she eats a simple bland meal: plain toast, a banana and a small bowl of plain rice.",
+        "caption": "Choose bland foods that stay down."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "At a desk at home she sips water from a reusable water bottle, smiling.",
+        "caption": "Sip water all through the day,",
+        "sub": "not just when you're thirsty."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "She cooks a simple pan of vegetables at the stove while a small electric fan on the counter blows the air away from her.",
+        "caption": "Use a fan while you cook."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "Her partner, a man with a short beard in a grey sweater, carries a tied kitchen trash bag toward the door while she smiles gratefully from the kitchen.",
+        "caption": "Ask someone else to take out the trash.",
+        "sub": "Steer clear of smells that bother you."
+      },
+      {
+        "type": "end",
+        "seconds": 7,
+        "text": "Before trying any medicine or supplement for nausea, ask your care team what's right for you."
+      }
+    ]
+  },
+  "first-trimester-common-changes/calling-video": {
+    "cast": "a woman about eight weeks pregnant, drawn as an ordinary woman with a slim, flat waist, exactly like someone who is not pregnant: no rounded belly, and her hands never rest on her belly; deep brown skin, long dark braids, wearing a mustard-yellow sweater. Her support person is a man with short dark hair and a trimmed beard in a teal sweater. They stay at home on their couch the whole time; the clinic nurse is only ever shown alone at the clinic. In every scene at home she holds the same plain teal cushion on her lap, so her waist is not visible",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "How to call about a symptom"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "In a calm living room she sits on the couch holding her phone to her ear, calling her clinic. Her support person sits beside her with a reassuring hand on her shoulder.",
+        "caption": "Call your clinic's nurse line.",
+        "sub": "A support person can sit with you."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "Close-up of her on the phone, speaking clearly and calmly.",
+        "caption": "“I'm about eight weeks pregnant.”",
+        "sub": "Tell them you're pregnant, and how far along."
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "She talks on the phone, gesturing gently with her free hand as she explains, her support person listening beside her.",
+        "caption": "Describe what you feel,",
+        "sub": "when it started, and how it has changed."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "She speaks into the phone with quiet confidence, her support person nodding.",
+        "caption": "“Something doesn't feel right to me.”",
+        "sub": "If something isn't right, say so."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "A friendly nurse wearing a headset sits alone at a clinic desk, listening on the phone and taking notes. Nobody else is at the desk or in the room: the caller is at home.",
+        "caption": "The nurse listens and asks a few questions."
+      },
+      {
+        "type": "end",
+        "seconds": 8,
+        "text": "Tell them you're pregnant. Describe what you feel. Trust yourself."
+      }
+    ]
+  },
+  "first-prenatal-visit/visit-prep-video": {
+    "cast": "a woman in early pregnancy with a flat waist and no visible bump, light brown skin, short natural black hair and round glasses, wearing a coral sweater; her partner is a tall man with curly brown hair in a forest-green sweater",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "Getting ready for your visit"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "Evening at a kitchen table with a warm lamp: the couple sits together with a notebook and a pen, getting organized.",
+        "caption": "The night before, gather what you know in one place."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "She marks a day on a simple wall calendar with a pen while her partner watches. The calendar has a plain grid with no numbers or words.",
+        "caption": "Note the first day of your last period."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "On the table, a few pill bottles and a vitamin bottle are lined up in a row while she writes a list beside them.",
+        "caption": "List every medicine and supplement you take."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "Her partner opens a folder of papers and pulls out a record card while she adds to the list.",
+        "caption": "Jot down past surgeries,",
+        "sub": "and find your vaccine records."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "She types on her phone, the screen showing a short list of plain lines, as her partner leans in to suggest something.",
+        "caption": "Type a few questions into your phone."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "Next morning at a bright clinic front desk, she hands her written list to a smiling nurse while her partner stands beside her.",
+        "caption": "Next morning, hand your list to the nurse at check-in."
+      },
+      {
+        "type": "end",
+        "seconds": 7,
+        "text": "You don't need every answer. Bring what you know."
+      }
+    ]
+  },
+  "third-trimester-body/side-sleeping-video": {
+    "cast": "a woman in the third trimester with a clearly rounded pregnant belly, medium skin, long wavy brown hair, wearing soft lavender pajamas; an instructor, a woman with a silver bob in a teal cardigan; and her partner, a man with a short beard in a grey t-shirt. The pregnant woman always lies fully on her own on the bed; the instructor and the partner stay standing beside the bed, and nobody else sits or lies on the bed",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "Getting comfortable with pillows"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "In a calm bedroom, the instructor gently guides the pregnant woman as she lies down on her side on the bed. She lies fully on her left side along the bed, head on a pillow, not leaning on anyone.",
+        "caption": "Lie on your side."
+      },
+      {
+        "type": "image",
+        "seconds": 6,
+        "prompt": "Side view: the pregnant woman lies on her side on the bed with both knees bent, head on a pillow. She lies fully on her left side along the bed, head on a pillow, not leaning on anyone.",
+        "caption": "Bend one or both knees."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "Her partner hands a pillow to the instructor, who places it between the pregnant woman's bent knees as she lies on her side. She lies fully on her left side along the bed, head on a pillow, not leaning on anyone.",
+        "caption": "Put a pillow between your knees."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The instructor tucks a second pillow under the pregnant woman's belly as she lies on her side with a pillow between her knees. She lies fully on her left side along the bed, head on a pillow, not leaning on anyone.",
+        "caption": "Tuck another pillow under your belly."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The pregnant woman lies on her side hugging a long full-length body pillow that runs from her head to between her knees. She lies fully on her left side along the bed, head on a pillow, not leaning on anyone.",
+        "caption": "A full-length body pillow is another option."
+      },
+      {
+        "type": "image",
+        "seconds": 6,
+        "prompt": "The pregnant woman rests comfortably on her side with her pillows, eyes closed, a small smile, a blanket over her legs. She lies fully on her left side along the bed, head on a pillow, not leaning on anyone.",
+        "caption": "Settle in and rest."
+      },
+      {
+        "type": "end",
+        "seconds": 7,
+        "text": "If you wake up on your back, just roll onto your side."
+      }
+    ]
+  },
+  "care-team-and-birth-setting/tour-and-questions-video": {
+    "cast": "a woman in the third trimester with a clearly rounded pregnant belly, East Asian, black hair in a low bun, wearing a mustard top; her partner, a man with glasses and short hair in a navy-and-white striped sweater; a friendly staff member in teal scrubs",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "Touring your birth place"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The staff member welcomes the couple at the entrance of a bright hospital birth unit and gestures down the hallway.",
+        "caption": "“Where do I go when I arrive in labor?”"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "Inside a calm hospital labor room with a bed, a birth ball and a deep tub, the couple looks around while the staff member points to the tub.",
+        "caption": "“Can I move around, use a tub, eat and drink?”"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "In the labor room, the staff member talks warmly with the couple.",
+        "caption": "“Who will be with me?”"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "In a cozy birth center room with a large bed, soft lamps and a tub, a midwife in a cardigan shows the couple around.",
+        "caption": "“How many support people can come?”"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "In the birth center room, the couple listens closely as the midwife explains something.",
+        "caption": "“What happens if I need more care?”"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The couple sits on a bench in a quiet hallway writing answers in a notebook together.",
+        "caption": "Write down the answers."
+      },
+      {
+        "type": "end",
+        "seconds": 7,
+        "text": "Every place is different, so ask."
+      }
+    ]
+  },
+  "building-your-support-team/labor-rehearsal-video": {
+    "cast": "a woman in the third trimester with a clearly rounded pregnant belly, fair skin, long auburn hair in a loose braid, wearing a soft blue dress; her partner, a man with dark brown skin and short black hair in a mustard sweater",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "Practice with your team"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "In a cozy living room, she leans forward on the back of a chair while her partner presses firmly on her lower back with both palms.",
+        "caption": "Firm pressure on the lower back",
+        "sub": "“More pressure or less?”"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "She sits on a stool leaning forward while her partner rolls a tennis ball on her lower back.",
+        "caption": "A tennis-ball massage",
+        "sub": "“More pressure or less?”"
+      },
+      {
+        "type": "image",
+        "seconds": 6,
+        "prompt": "She reclines on the couch with her feet up while her partner gives her a gentle foot massage.",
+        "caption": "A foot massage"
+      },
+      {
+        "type": "image",
+        "seconds": 6,
+        "prompt": "Her partner holds a folded warm cloth against her lower back as she sits on the couch.",
+        "caption": "A warm compress"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "She sits on a large birth ball, gently rocking her hips, while her partner sits nearby smiling.",
+        "caption": "Try positions on a birth ball"
+      },
+      {
+        "type": "image",
+        "seconds": 6,
+        "prompt": "She kneels on a cushion on the floor and leans her arms and upper body against the couch seat, relaxed.",
+        "caption": "and leaning against the couch."
+      },
+      {
+        "type": "end",
+        "seconds": 7,
+        "text": "Practice now, so it feels natural later."
+      }
+    ]
+  },
+  "birth-preferences/prenatal-visit-video": {
+    "cast": "a woman about 30 weeks pregnant with a clearly rounded pregnant belly, South Asian, long black hair, wearing a rust-orange top; her support partner, a man with short curly hair in an olive sweater; a midwife, a woman with grey hair in teal scrubs",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "Talking it through at a prenatal visit"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "In a warm, softly lit exam room, the pregnant woman, sitting beside her partner, hands a one-page list to the midwife.",
+        "caption": "“These are my top three wishes.”"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The midwife reads the one-page list and nods, smiling, while the couple watches.",
+        "caption": "The midwife reads the list."
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "The midwife explains, gesturing with an open hand, while the couple listens. Small simple thought-bubble pictures of a birth ball and a shower float near her.",
+        "caption": "She explains what the hospital offers,",
+        "sub": "like a birth ball and a shower."
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "The midwife leans in and asks the pregnant woman a question, warm and curious.",
+        "caption": "“Which pain relief options would you like to learn about?”"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The partner writes in a small notebook while the pregnant woman talks with the midwife.",
+        "caption": "Her partner writes down one follow-up question."
+      },
+      {
+        "type": "end",
+        "seconds": 7,
+        "text": "Your list starts the conversation."
+      }
+    ]
+  },
+  "getting-ready-bags-routes-car-seat/harness-check-video": {
+    "cast": "a parent, a woman with short black hair in a teal sweater; a soft newborn-sized baby doll with simple stitched features, clearly a doll, in a thin long-sleeved bodysuit, buckled with the chest clip high at armpit level; a rear-facing infant car seat with a carry handle, installed in the back seat of a car",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "How to check the harness"
+      },
+      {
+        "type": "image",
+        "seconds": 6,
+        "prompt": "Through the open rear door of a car, the parent places the doll into a rear-facing infant car seat installed in the back seat. The seat faces the back of the car. The chest clip sits high, level with the baby's armpits, never down on the belly.",
+        "caption": "Rear-facing, in the back seat,",
+        "sub": "with baby in thin clothing."
+      },
+      {
+        "type": "graphic",
+        "graphic": "harness-straps",
+        "seconds": 7,
+        "caption": "Straps come from slots at or below the shoulders."
+      },
+      {
+        "type": "image",
+        "seconds": 6,
+        "prompt": "Close-up: the parent pulls the harness adjuster strap at the front of the infant seat to tighten the harness snugly over the doll. The chest clip sits high, level with the baby's armpits, never down on the belly.",
+        "caption": "Tighten the harness until it's snug."
+      },
+      {
+        "type": "graphic",
+        "graphic": "harness-pinch",
+        "seconds": 7,
+        "caption": "Pinch test: no slack at the shoulder."
+      },
+      {
+        "type": "graphic",
+        "graphic": "harness-clip",
+        "seconds": 7,
+        "caption": "Slide the chest clip up to armpit level."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The parent tucks a soft blanket over the doll on top of the buckled harness straps, so the straps stay underneath the blanket against the doll. The chest clip sits high, level with the baby's armpits, never down on the belly.",
+        "caption": "For warmth, tuck a blanket over the buckled straps,",
+        "sub": "not a bulky coat under them."
+      },
+      {
+        "type": "image",
+        "seconds": 6,
+        "prompt": "Side view: the parent grips the base of the installed infant car seat where the seat belt passes through and tugs it to check that it is secure. The chest clip sits high, level with the baby's armpits, never down on the belly.",
+        "caption": "Tug the seat at the belt path",
+        "sub": "to check it doesn't move much."
+      },
+      {
+        "type": "end",
+        "seconds": 7,
+        "text": "Get your install checked by a certified technician."
+      }
+    ]
+  },
+  "how-labor-begins/timing-contractions-video": {
+    "cast": "a woman in the third trimester with a clearly rounded pregnant belly, medium-dark skin, dark wavy hair, wearing a mint-green top; an instructor, a woman with silver hair in a navy cardigan; her partner, a man with a short beard in a mustard sweater",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "How to time contractions"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "In a bright living room, the instructor holds up a phone showing a simple round stopwatch icon, explaining to the couple on the couch.",
+        "caption": "Use a phone stopwatch or a timing app."
+      },
+      {
+        "type": "graphic",
+        "graphic": "how-long",
+        "seconds": 9,
+        "caption": "How long: from the start to the end of one contraction."
+      },
+      {
+        "type": "graphic",
+        "graphic": "how-often",
+        "seconds": 9,
+        "caption": "How often: from the start of one to the start of the next."
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "On the couch, the pregnant woman closes her eyes and breathes as a contraction begins, while her partner taps start on a phone stopwatch.",
+        "caption": "When a contraction starts, start the timer."
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "The pregnant woman relaxes and opens her eyes as the contraction ends, and her partner glances at the phone.",
+        "caption": "When it ends, note how long it lasted."
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "Later, the pregnant woman leans forward as another contraction begins, and her partner checks the phone stopwatch.",
+        "caption": "When the next one starts,",
+        "sub": "note how long since the last one started."
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "The partner writes in a small notebook with plain lines while the pregnant woman rests beside him.",
+        "caption": "Write the times down.",
+        "sub": "A support partner can keep the record."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The instructor smiles and gives a thumbs up to the couple, who sit together with the phone and the notebook.",
+        "caption": "Time three contractions in a row."
+      },
+      {
+        "type": "graphic",
+        "graphic": "both",
+        "seconds": 8,
+        "caption": "Track both: how long, and how often."
+      },
+      {
+        "type": "end",
+        "seconds": 7,
+        "text": "Share these times with your care team when you call."
+      }
+    ]
+  },
+  "when-to-contact-your-care-team/practice-call-video": {
+    "cast": "a support partner, a man with glasses and short dark hair in a grey hoodie; a woman in the third trimester with a clearly rounded pregnant belly, light brown skin, curly hair tied up, in comfortable clothes; a friendly labor and delivery nurse, a woman with a headset in teal scrubs. The couple is at home and the nurse is far away at the hospital: they are never in the same room",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "Hear a practice call"
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "At night in a dim living room lit by a lamp, the partner holds a phone to his ear and a small notebook, while the pregnant woman sits on the couch breathing calmly. A window shows a dark night sky. Only the partner and the pregnant woman are in their living room; the nurse is not there.",
+        "caption": "“Hi, I'm calling for my partner. We think she's in labor.”"
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "At a calm hospital nurses' station at night, the nurse with a headset listens and types, smiling kindly. The nurse is alone at the hospital nurses' station; nobody else is there.",
+        "caption": "“How many weeks pregnant is she?”",
+        "sub": "“39 weeks.”"
+      },
+      {
+        "type": "image",
+        "seconds": 10,
+        "prompt": "The partner reads from his small notebook while talking on the phone; the pregnant woman leans on the couch arm behind him. Only the partner and the pregnant woman are in their living room; the nurse is not there.",
+        "caption": "“How far apart are the contractions, and how long do they last?”",
+        "sub": "“About five minutes apart, about a minute each, for the past hour.”"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The nurse at the nurses' station nods as she listens on her headset. The nurse is alone at the hospital nurses' station; nobody else is there.",
+        "caption": "“Has her water broken?”",
+        "sub": "“No, not yet.”"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The partner on the phone checks his notebook, calm. Only the partner and the pregnant woman are in their living room; the nurse is not there.",
+        "caption": "“What was her group B strep result?”",
+        "sub": "“Negative.”"
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "The nurse at the nurses' station asks a question warmly, hand resting on the desk. The nurse is alone at the hospital nurses' station; nobody else is there.",
+        "caption": "“Is the baby moving like usual? Any bleeding, or anything else?”",
+        "sub": "“Moving like usual. No bleeding.”"
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "At the hospital nurses' station at night, the nurse smiles reassuringly as she speaks into her headset. The nurse is alone at the station; nobody else is there.",
+        "caption": "“Thanks. Come in now, and bring your bag.”"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The partner lowers the phone and smiles at the pregnant woman, relieved; she smiles back from the couch. Only the partner and the pregnant woman are in their living room; the nurse is not there.",
+        "caption": "“That was easier than I expected.”"
+      },
+      {
+        "type": "end",
+        "seconds": 7,
+        "text": "Have these answers ready. A support person can make the call."
+      }
+    ]
+  },
+  "early-labor-at-home/early-labor-video": {
+    "cast": "a woman in the third trimester with a clearly rounded pregnant belly, dark brown skin, short curly black hair, wearing an oversized cream sweater and soft pants; her partner, a man with short locs in a forest-green shirt",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "A calm early labor at home"
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "Evening on the couch with a blanket and a bowl of popcorn: the couple watches a movie (the screen shows only soft colors), and she breathes slowly through a contraction while he holds her hand.",
+        "caption": "A movie, breathing through contractions"
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "She stands in a warm shower behind a frosted glass door, seen only from the shoulders up, eyes closed, relaxed, with gentle steam.",
+        "caption": "A warm shower"
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "In the kitchen she eats a slice of toast and sips water while he makes tea.",
+        "caption": "A light snack and plenty to drink"
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "He sits beside her on the couch timing contractions on a phone app (the screen shows only plain bars), as she leans into him.",
+        "caption": "Timing a few contractions in a row"
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "She naps on her side on the bed under a blanket, with a pillow between her knees, in soft lamplight.",
+        "caption": "A nap"
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "Later, he makes a calm phone call to their care team, standing by the couch, while she rests and listens.",
+        "caption": "A calm call to the care team"
+      },
+      {
+        "type": "end",
+        "seconds": 7,
+        "text": "Rest, comfort, check in."
+      }
+    ]
+  },
+  "pushing-and-birth/pushing-video": {
+    "cast": "a woman in the third trimester with a clearly rounded pregnant belly, deep brown skin, black hair in a long braid, wearing a loose teal knee-length dress over leggings; her partner, a man with brown curly hair in a mustard sweater; a childbirth educator, a woman with a grey bob in a navy cardigan. Everyone is fully clothed. A calm classroom with exercise mats and a bed.",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "Pushing positions, demonstrated"
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "The educator stands beside the couple in the classroom, gesturing warmly as she explains.",
+        "caption": "You don't have to push lying flat on your back."
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "The pregnant woman lies on her left side on the bed facing the viewer, head on a pillow, knees bent. Her partner stands at the side of the bed holding her upper leg raised at the knee with both hands.",
+        "caption": "Side-lying:",
+        "sub": "your partner supports your top leg."
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "The pregnant woman is on her hands and knees on an exercise mat, back level, while her partner kneels beside her with one hand resting on her lower back.",
+        "caption": "Hands and knees:",
+        "sub": "your partner can kneel beside you."
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "The pregnant woman is in a deep squat on the floor: hips low, close to her heels, knees wide apart and both feet flat. Her partner stands right behind her with his arms under her armpits, holding her up.",
+        "caption": "Supported squat:",
+        "sub": "your partner holds you under the arms."
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "The pregnant woman sits on the bed holding a horizontal squat bar attached to the bed, the educator beside her.",
+        "caption": "Or use a squat bar,",
+        "sub": "if your birth place has one."
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "The pregnant woman sits propped up at about a 45-degree angle against a stack of pillows on the bed, knees bent and apart, while her partner stands beside the bed holding one of her knees.",
+        "caption": "Semi-sitting:",
+        "sub": "lean back, with your partner holding one leg."
+      },
+      {
+        "type": "card",
+        "seconds": 9,
+        "text": "With an epidural, some upright positions are harder.",
+        "sub": "Side-lying and semi-sitting are still great options."
+      },
+      {
+        "type": "card",
+        "seconds": 8,
+        "text": "Changing positions can help.",
+        "sub": "Ask your care team which positions they support."
+      },
+      {
+        "type": "end",
+        "seconds": 6,
+        "text": "Try these with your support person at home."
+      }
+    ]
+  },
+  "placenta-and-first-hour/golden-hour-video": {
+    "cast": "a new parent, a woman with medium-brown skin and short black curls in a hospital gown, reclining in a hospital bed and covered by a warm blanket; her partner, a man with a beard in a grey sweater; a nurse, a woman in teal scrubs; their newborn baby. Gentle and non-graphic: no blood, the parent always modestly covered.",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "The golden hour"
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "The nurse gently places the newborn, wearing only a diaper, on the parent's chest as she reclines in the hospital bed; a warm blanket covers the parent.",
+        "caption": "Baby is placed skin to skin on your chest."
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "The nurse dries the newborn with a soft towel and covers the baby's back with a warm blanket while the baby lies on the parent's chest.",
+        "caption": "Dried off and covered with a warm blanket."
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "The nurse listens to the newborn with a small stethoscope while the baby stays on the parent's chest under the blanket.",
+        "caption": "The Apgar check can often be done",
+        "sub": "right on your chest."
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "With the nurse guiding him, the partner holds a pair of small blunt scissors near a thin, soft, pale cord with a small clip, close to the blanket. The baby rests on the parent's chest. Clean and non-graphic.",
+        "caption": "After a short wait to clamp the cord,",
+        "sub": "your partner may get to cut it."
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "Close-up: the newborn on the parent's chest turns its head toward her with its mouth open, rooting. The parent is covered by her gown and a blanket.",
+        "caption": "Watch for rooting:",
+        "sub": "turning toward your chest with an open mouth."
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "The nurse helps gently position the baby for a first feeding while the parent stays covered by her gown and a blanket; no breast is shown.",
+        "caption": "A first feeding try.",
+        "sub": "There's no need for a perfect first latch."
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "The nurse presses gently on the parent's lower belly over the blanket to check it, while the parent holds the baby on her chest and the partner sits close.",
+        "caption": "Your nurse checks that your uterus is staying firm."
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "A quiet, dim moment: the parent and partner gaze at the baby resting skin to skin on her chest under the blanket.",
+        "caption": "Ask for the first hour together without interruption,",
+        "sub": "if possible."
+      },
+      {
+        "type": "end",
+        "seconds": 6,
+        "text": "So much can happen with baby on your chest."
+      }
+    ]
+  }
+}
