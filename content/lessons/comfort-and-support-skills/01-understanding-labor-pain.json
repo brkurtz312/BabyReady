@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 8,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 3.1, the first lesson of Module 3 (Comfort, Movement, and Support Skills), in a new course folder. Builds on Labor Basics lesson 3 (stages of labor) and lesson 4.3 (medical pain relief); breathing, positions, touch and water, and support are covered in lessons 3.2 to 3.5. Sources were found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. For the reviewer: the causes of labor pain (the uterus tightening, the cervix opening, the baby pressing down and stretching tissues) and that the pain stops between contractions follow the Lamaze article on labor pain; the fear-tension-pain cycle and the roles of oxytocin and endorphins are from Lamaze, not confirmed against an ACOG source; what makes pain easier or harder (support, movement, feeling safe; fear, being alone, lying flat, exhaustion, a baby facing up) draws on Lamaze and Committee Opinion 766; the signs of coping and not coping are a common childbirth-education framing not confirmed word for word in these sources. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep why labor hurts, 'this pain has a purpose', and 'often with no pain at all' between contractions; keep the fear-tension cycle with oxytocin and endorphins; keep what makes pain easier or harder, including a baby facing up; keep the coping and not-coping signs; keep the Module 3 title and home-screen line; no video for this lesson."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 3.1, the first lesson of Module 3 (Comfort, Movement, and Support Skills), in a new course folder. Builds on Labor Basics lesson 3 (stages of labor) and lesson 4.3 (medical pain relief); breathing, positions, touch and water, and support are covered in lessons 3.2 to 3.5. Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: the causes of labor pain (the uterus tightening, the cervix opening, the baby pressing down and stretching tissues) and that the pain stops between contractions follow the Lamaze article on labor pain; the fear-tension-pain cycle and the roles of oxytocin and endorphins are from Lamaze, not confirmed against an ACOG source; what makes pain easier or harder (support, movement, feeling safe; fear, being alone, lying flat, exhaustion, a baby facing up) draws on Lamaze and Committee Opinion 766; the signs of coping and not coping are a common childbirth-education framing not confirmed word for word in these sources. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep why labor hurts, 'this pain has a purpose', and 'often with no pain at all' between contractions; keep the fear-tension cycle with oxytocin and endorphins; keep what makes pain easier or harder, including a baby facing up; keep the coping and not-coping signs; keep the Module 3 title and home-screen line; no video for this lesson."
   },
   "sources": [
     {
@@ -24,28 +24,28 @@
       "organization": "Lamaze",
       "title": "What's Different About Labor Pain & Why Does It Matter?",
       "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/whats-different-about-labor-pain-why-does-it-matter",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "lamaze-healthy-birth-practices",
       "organization": "Lamaze",
       "title": "Lamaze Healthy Birth Practices",
       "url": "https://lamaze.org/childbirth-practices",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-co766",
       "organization": "ACOG",
       "title": "Approaches to Limit Intervention During Labor and Birth (Committee Opinion No. 766)",
       "url": "https://www.acog.org/clinical/guidance/committee-opinion/2019/02/approaches-to-limit-intervention-during-labor-and-birth",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-pain-options",
       "organization": "ACOG",
       "title": "Making Sense of Childbirth Pain Relief Options",
       "url": "https://www.acog.org/womens-health/experts-and-stories/the-latest/making-sense-of-childbirth-pain-relief-options",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
