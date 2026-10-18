@@ -1,0 +1,281 @@
+{
+  "courseId": "interventions-and-flexible-decisions",
+  "lessonId": "when-plans-change",
+  "order": 7,
+  "title": "When Plans Change",
+  "learningGoals": [
+    "Expect that labor may not go exactly as planned, and stay flexible",
+    "Use a few calm steps when a change comes up in labor",
+    "Know which preferences can often be kept even when plans change",
+    "Understand the mixed feelings that can follow an unexpected birth",
+    "Know how to make sense of your birth afterward, and when to get help"
+  ],
+  "estimatedMinutes": 8,
+  "review": {
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 4.7, the last lesson of Module 4 (Interventions and Flexible Decisions). Builds on Preparing for Birth lesson 5 (flexible preferences), lesson 4.1 (the four questions), and lessons 4.4 to 4.6; postpartum depression and anxiety are covered in full in lesson 6.4, and the urgent crisis slide is in lesson 6.2. Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: the preferences that can often be kept (your support person, music and lighting, skin-to-skin, delayed cord clamping when possible, feeding plans) vary by hospital and situation; the mixed feelings (relief, gratitude, disappointment, grief, guilt) and that being included in decisions helps are drawn from a Lamaze article on family-centered cesareans; reviewing your birth with your care team at the postpartum visit follows Committee Opinion 736; the 'more than 2 weeks' threshold follows the ACOG postpartum depression FAQ; nightmares or flashbacks as a reason to get help is a general sign of birth trauma, not confirmed against these sources; the crisis line repeats lesson 6.2's wording but this is a content slide, not a safety slide. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the list of what you can often keep, including delayed cord clamping; keep the feelings slide as written; keep going over the birth before discharge or at the postpartum visit; keep all three reasons to get help, including nightmares or flashbacks; keep the crisis line on a content slide (lesson 6.2 carries the safety slide); keep the reference to lesson 6.4; no video for this lesson."
+  },
+  "sources": [
+    {
+      "id": "lamaze-birth-plan",
+      "organization": "Lamaze",
+      "title": "Forming Your Birth Plan",
+      "url": "https://lamaze.org/birth-plan",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "lamaze-family-centered-cesarean",
+      "organization": "Lamaze",
+      "title": "Creating a Positive, Family-Centered Cesarean Birth Experience",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/Creating-a-Positive-Family-Centered-Cesarean-Birth-Experience",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "acog-co819",
+      "organization": "ACOG",
+      "title": "Informed Consent and Shared Decision Making in Obstetrics and Gynecology (Committee Opinion No. 819)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2021/02/informed-consent-and-shared-decision-making-in-obstetrics-and-gynecology",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "acog-co736",
+      "organization": "ACOG",
+      "title": "Optimizing Postpartum Care (Committee Opinion No. 736)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2018/05/optimizing-postpartum-care",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "acog-postpartum-depression",
+      "organization": "ACOG",
+      "title": "Postpartum Depression (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/postpartum-depression",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "cdc-depression-resources",
+      "organization": "CDC",
+      "title": "Depression Resources",
+      "url": "https://www.cdc.gov/reproductive-health/depression/resources.html",
+      "verifiedOn": "2026-10-18"
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "When Plans Change",
+      "onScreen": [
+        "Module 4: Interventions and Flexible Decisions"
+      ],
+      "narration": "In this module, you've learned about decisions, monitoring, pain relief, induction, assisted birth, and cesareans. This last lesson is about what to do when labor doesn't go the way you pictured, both in the moment and afterward, as you make sense of your birth.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A laboring person and their support partner in a hospital room, foreheads close together, sharing a calm, quiet moment. No readable writing."
+      }
+    },
+    {
+      "id": "plans-change",
+      "type": "content",
+      "heading": "Plans often change, and that's okay",
+      "onScreen": [
+        "Labor is hard to predict",
+        "Your preferences are a guide, not a promise",
+        "Safety for you and your baby comes first",
+        "You're still part of every decision"
+      ],
+      "narration": "Labor is hard to predict, and many births include at least one change from the original plan. That's why we call them birth preferences, not a script. They guide your team, but they can't promise how labor will go. When something changes, it's usually to keep you or your baby safe. And even then, you're still part of the decision.",
+      "sourceIds": [
+        "lamaze-birth-plan",
+        "acog-co819"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person and their partner looking over a plain page together at home, both relaxed and smiling, with a cup of tea nearby. The page has no readable writing."
+      }
+    },
+    {
+      "id": "in-the-moment",
+      "type": "content",
+      "heading": "When a change comes up",
+      "onScreen": [
+        "Pause and take a breath",
+        "Ask why, the options, and how much time",
+        "Talk it over with your support person",
+        "Ask what you can still keep"
+      ],
+      "narration": "When your team suggests a change, a few steps can help you stay steady. Pause, and take a slow breath. Ask the questions from the first lesson of this module: why is this recommended, what are the options, and how much time do we have? Talk it over with your support person, if there's time. And ask which of your preferences you can still keep.",
+      "sourceIds": [
+        "acog-co819"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a wind symbol for pausing to breathe, a question mark for asking, two people for talking it over, and a heart for what you can keep."
+      }
+    },
+    {
+      "id": "what-you-can-keep",
+      "type": "content",
+      "heading": "What you can often keep",
+      "onScreen": [
+        "Your support person by your side",
+        "Music, lighting, and comfort items",
+        "Skin-to-skin with your baby soon after birth",
+        "Your feeding plans"
+      ],
+      "narration": "Even when plans change, many of your wishes can often still happen. Your support person can usually stay with you. You can often keep your music, dim lights, or comfort items. Skin-to-skin with your baby soon after birth is often possible, even after a cesarean, and so is waiting a short time to clamp the cord, when it's safe. And your feeding plans can go ahead. Ask your team what's possible for you.",
+      "sourceIds": [
+        "lamaze-family-centered-cesarean",
+        "lamaze-birth-plan"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A laboring person in a hospital bed wearing a monitor belt and an IV, listening to music through headphones in a softly lit room with a string of small warm lights, while their partner holds their hand. No readable writing."
+      }
+    },
+    {
+      "id": "checkin-change",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": [
+        "acog-co819"
+      ],
+      "question": {
+        "prompt": "Your team recommends a cesarean during labor. What's a helpful thing to ask?",
+        "options": [
+          "Nothing; all my preferences are gone now",
+          "Why is it recommended, and which of my preferences can we still keep?",
+          "Can we wait until tomorrow no matter what?"
+        ],
+        "correctIndex": 1,
+        "explanation": "Asking why helps you understand the change, and asking what you can keep, like skin-to-skin or your support person, helps you hold on to what matters most."
+      }
+    },
+    {
+      "id": "afterward-feelings",
+      "type": "content",
+      "heading": "Feelings afterward",
+      "onScreen": [
+        "Relief, gratitude, disappointment, or grief can all be normal",
+        "Mixed feelings at the same time are common",
+        "A birth can feel hard even when everyone is healthy",
+        "A change in plans isn't a failure"
+      ],
+      "narration": "After an unexpected birth, people feel many things: relief, gratitude, disappointment, grief, or even guilt, sometimes all at once. All of these feelings are normal. A birth can feel hard, or even frightening, even when you and your baby are healthy. A change in plans doesn't mean you or your body failed. Many people find their feelings settle over time, especially when they felt included in the decisions along the way.",
+      "sourceIds": [
+        "lamaze-family-centered-cesarean",
+        "acog-co736"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A new parent sitting in a hospital bed holding their sleeping newborn, looking thoughtful, while their partner sits beside them with an arm around their shoulders. Exactly one baby. No pregnant belly. No readable writing."
+      }
+    },
+    {
+      "id": "making-sense",
+      "type": "content",
+      "heading": "Making sense of your birth",
+      "onScreen": [
+        "Ask your team to go over what happened",
+        "Bring questions to your postpartum visit",
+        "Write or tell your birth story",
+        "Talk with people who support you"
+      ],
+      "narration": "It can help to understand what happened, and why. Ask your care team to go over your birth with you, before you leave the hospital, or at your postpartum visit. Bring your questions. Some people find it helps to write down their birth story, or tell it to their partner, a doula, a friend, or a support group. Talking it through can help you see your birth more clearly.",
+      "sourceIds": [
+        "acog-co736",
+        "lamaze-family-centered-cesarean"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A new parent with their baby in a carrier, sitting in an exam room with an ob-gyn who is listening and explaining kindly. Exactly one baby. No pregnant belly. No readable writing."
+      }
+    },
+    {
+      "id": "when-to-get-help",
+      "type": "content",
+      "heading": "When to get more help",
+      "onScreen": [
+        "Sadness or worry that lasts more than 2 weeks",
+        "Nightmares or flashbacks about the birth",
+        "Feelings that make it hard to care for yourself or your baby",
+        "Thoughts of harming yourself: call or text 988"
+      ],
+      "narration": "Tell your care team if sadness or worry lasts more than 2 weeks, if you have nightmares or flashbacks about the birth, or if your feelings make it hard to care for yourself or your baby. These are common, and treatable, and you deserve support. Lesson 6.4 covers emotional health after birth in more detail. If you ever have thoughts of harming yourself or your baby, call or text 988, or call the National Maternal Mental Health Hotline at 1-833-TLC-MAMA.",
+      "sourceIds": [
+        "acog-postpartum-depression",
+        "cdc-depression-resources"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a calendar for more than 2 weeks, a moon for nightmares or flashbacks, a heart with a handshake for asking for support, and a phone for calling or texting 988."
+      }
+    },
+    {
+      "id": "what-matters",
+      "type": "reflection",
+      "heading": "What matters most, whatever happens",
+      "onScreen": [
+        "Two things you'd most want to keep if plans change",
+        "Who you'd want to talk with afterward"
+      ],
+      "narration": "Let's put this into practice. If your plans change, what are the two things you'd most want to keep? Maybe it's your support person by your side, skin-to-skin, or a certain song. And who would you want to talk with afterward about your birth? Save your answers to your Birth Readiness Brief.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write the two things you'd most want to keep if plans change, and who you'd want to talk with afterward."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Plans often change; you're still part of the decisions",
+        "Pause, ask, talk it over, and ask what you can keep",
+        "Mixed feelings afterward are normal; it isn't a failure",
+        "Go over your birth with your team, and get help if feelings linger"
+      ],
+      "narration": "Let's recap. Labor plans often change, and you're still part of the decisions. When a change comes up, pause, ask your questions, talk it over, and ask what you can keep. Afterward, mixed feelings are normal, and a change in plans isn't a failure. Go over your birth with your team, and get help if hard feelings linger. That's the end of Module 4. Next up, a few review questions.",
+      "sourceIds": [
+        "acog-co819",
+        "acog-co736"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "Why are they called birth preferences rather than a birth plan you must follow?",
+      "options": [
+        "Because labor is hard to predict, and they guide rather than promise",
+        "Because hospitals ignore them",
+        "Because they only matter for cesareans"
+      ],
+      "correctIndex": 0,
+      "explanation": "Labor is hard to predict. Preferences guide your team, but they can't promise how labor will go, so it helps to stay flexible."
+    },
+    {
+      "prompt": "Which of these can often still happen after an unplanned cesarean?",
+      "options": [
+        "Skin-to-skin with your baby soon after birth",
+        "Nothing from your preferences",
+        "Leaving the hospital the same day"
+      ],
+      "correctIndex": 0,
+      "explanation": "Skin-to-skin, your support person by your side, and your feeding plans are often still possible after a cesarean."
+    },
+    {
+      "prompt": "A month after a hard birth, you still have nightmares about it. What's the best step?",
+      "options": [
+        "Wait; it's not worth mentioning",
+        "Tell your care team; help is available",
+        "Avoid talking about it with anyone"
+      ],
+      "correctIndex": 1,
+      "explanation": "Nightmares, flashbacks, or sadness or worry lasting more than 2 weeks are reasons to tell your care team. These are common and treatable."
+    }
+  ]
+}

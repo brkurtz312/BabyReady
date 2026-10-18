@@ -1112,6 +1112,28 @@ const VISUALS: Record<string, () => React.ReactElement> = {
       ]}
     />
   ),
+  'when-plans-change/in-the-moment': () => (
+    <IconPanel
+      label="When a change comes up: pause and take a breath, ask why, the options, and how much time, talk it over with your support person, and ask what you can still keep."
+      items={[
+        { icon: Wind, label: 'Pause and breathe' },
+        { icon: MessageCircleQuestionMark, label: 'Why, options, time?' },
+        { icon: Users, label: 'Talk it over' },
+        { icon: Heart, label: 'What can we keep?' },
+      ]}
+    />
+  ),
+  'when-plans-change/when-to-get-help': () => (
+    <IconPanel
+      label="When to get more help: sadness or worry lasting more than 2 weeks, nightmares or flashbacks, feelings that make it hard to care for yourself or your baby; for thoughts of harming yourself, call or text 988."
+      items={[
+        { icon: Calendar, label: 'Lasting more than 2 weeks' },
+        { icon: Moon, label: 'Nightmares or flashbacks' },
+        { icon: HeartHandshake, label: 'Hard to care for yourself' },
+        { icon: Phone, label: 'Thoughts of harm: 988', tone: 'alert' },
+      ]}
+    />
+  ),
 };
 
 /** The drawn picture for a slide, or null when it has none. */
