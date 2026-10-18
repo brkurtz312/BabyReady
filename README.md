@@ -104,6 +104,8 @@ Keep it off in production until written permission to use the scale in the app h
 
 The home screen's **Delete my data** button (`src/components/DeleteDataSheet.tsx`) calls the `deleteMyAccount` Cloud Function, which deletes everything under `users/{uid}` and the learner's sign-in. If that succeeds, the app clears the device copies of progress and reflection answers and signs out, which starts a new, empty anonymous session. If the server step fails, nothing on the device is touched, so the learner can try again. Without Firebase, the button clears the device copies only. Deploy the function (`firebase deploy --only functions`) before turning on Firebase in production.
 
+Accounts nobody opens for 12 months are deleted the same way by `deleteInactiveAccounts`, which runs at 3:15am Pacific on the 1st of each month. The 12 months are counted from the account's latest sign-in or session refresh, which happens whenever the app is opened (`functions/src/retention.ts`, tested in `tests/retention.test.mjs`). Scheduled functions need the Cloud Scheduler API, which `firebase deploy` offers to enable on first deploy. A copy on a phone that hasn't opened the app stays there until the app is opened again or deleted.
+
 The rules still include the collections used by the archived governance workflow, so existing published course content stays readable.
 
 ## Production deployment

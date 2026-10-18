@@ -4,9 +4,11 @@ import { getAuth } from 'firebase-admin/auth';
 import { FieldValue, getFirestore } from 'firebase-admin/firestore';
 import { defineSecret } from 'firebase-functions/params';
 import { HttpsError, onCall } from 'firebase-functions/v2/https';
+import { onSchedule } from 'firebase-functions/v2/scheduler';
 
 import { MAX_QUESTION_LENGTH, routeQuestion } from '../../src/lib/askSafety';
 import { findLesson, lessonText } from './lessons';
+import { INACTIVE_DAYS, isInactive } from './retention';
 
 initializeApp();
 
@@ -164,6 +166,12 @@ export const askLessonQuestion = onCall(
   },
 );
 
+/** Deletes every document under users/{uid}: profile, progress, Brief, reflection answers, question counts. */
+async function deleteLearnerData(uid: string): Promise<void> {
+  const firestore = getFirestore();
+  await firestore.recursiveDelete(firestore.doc(`users/${uid}`));
+}
+
 /**
  * Deletes everything BabyReady keeps for the signed-in learner: every document
  * under users/{uid} (profile, progress, Brief, reflection answers, question
@@ -175,8 +183,7 @@ export const deleteMyAccount = onCall({ maxInstances: 5, timeoutSeconds: 120 }, 
     throw new HttpsError('unauthenticated', 'BabyReady is still starting your private session. Try again in a moment.');
   }
   try {
-    const firestore = getFirestore();
-    await firestore.recursiveDelete(firestore.doc(`users/${uid}`));
+    await deleteLearnerData(uid);
     await getAuth()
       .deleteUser(uid)
       .catch((error: { code?: string }) => {
@@ -189,3 +196,44 @@ export const deleteMyAccount = onCall({ maxInstances: 5, timeoutSeconds: 120 }, 
   }
   return { deleted: true };
 });
+
+/**
+ * Once a month, deletes accounts nobody has opened for INACTIVE_DAYS (12
+ * months), with everything stored under them, as the privacy policy says.
+ * An account whose data can't be deleted is kept and tried again next month.
+ */
+export const deleteInactiveAccounts = onSchedule(
+  { schedule: '15 3 1 * *', timeZone: 'America/Los_Angeles', timeoutSeconds: 540, maxInstances: 1 },
+  async () => {
+    const auth = getAuth();
+    const now = Date.now();
+
+    // Collect first, then delete, so deleting doesn't disturb the paging.
+    const inactive: string[] = [];
+    let pageToken: string | undefined;
+    do {
+      const page = await auth.listUsers(1000, pageToken);
+      for (const user of page.users) {
+        if (isInactive(user.metadata, now)) inactive.push(user.uid);
+      }
+      pageToken = page.pageToken;
+    } while (pageToken);
+
+    const dataDeleted: string[] = [];
+    for (const uid of inactive) {
+      try {
+        await deleteLearnerData(uid);
+        dataDeleted.push(uid);
+      } catch {
+        console.error('Inactive account data deletion failed; will retry next month');
+      }
+    }
+
+    let accountsDeleted = 0;
+    for (let k = 0; k < dataDeleted.length; k += 1000) {
+      const result = await auth.deleteUsers(dataDeleted.slice(k, k + 1000));
+      accountsDeleted += result.successCount;
+    }
+    console.log(`Inactive cleanup: ${accountsDeleted} of ${inactive.length} accounts unused for ${INACTIVE_DAYS} days deleted`);
+  },
+);
