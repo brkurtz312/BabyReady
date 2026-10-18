@@ -151,7 +151,8 @@ function CmScale({ cm }: { cm: number }) {
   );
 }
 
-function DilationAnimation({ onPlay }: { onPlay: () => void }) {
+/** Plays an animation of `total` seconds: the current time, and a play/pause/replay toggle. */
+function usePlayback(total: number, onPlay: () => void) {
   const [t, setT] = useState(0);
   const [playing, setPlaying] = useState(false);
   const startRef = useRef(0);
@@ -163,8 +164,8 @@ function DilationAnimation({ onPlay }: { onPlay: () => void }) {
     let last = 0;
     const tick = () => {
       const now = (Date.now() - startRef.current) / 1000;
-      if (now >= TOTAL) {
-        setT(TOTAL);
+      if (now >= total) {
+        setT(total);
         setPlaying(false);
         return;
       }
@@ -183,9 +184,7 @@ function DilationAnimation({ onPlay }: { onPlay: () => void }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [playing]);
 
-  const m = momentAt(t);
-  const squeeze = playing ? squeezeAt(t) : 0;
-  const finished = t >= TOTAL;
+  const finished = t >= total;
 
   function toggle() {
     if (playing) {
@@ -196,6 +195,28 @@ function DilationAnimation({ onPlay }: { onPlay: () => void }) {
     onPlay();
     setPlaying(true);
   }
+
+  return { t, playing, finished, toggle };
+}
+
+function PlayButton({ playing, finished, onPress }: { playing: boolean; finished: boolean; onPress: () => void }) {
+  return (
+    <Pressable
+      accessibilityLabel={playing ? 'Pause animation' : finished ? 'Replay animation' : 'Play animation'}
+      accessibilityRole="button"
+      onPress={onPress}
+      style={s.button}
+    >
+      <Text style={s.buttonText}>{playing ? '❚❚  Pause' : finished ? '↺  Replay' : '▶  Play'}</Text>
+    </Pressable>
+  );
+}
+
+function DilationAnimation({ onPlay }: { onPlay: () => void }) {
+  const { t, playing, finished, toggle } = usePlayback(TOTAL, onPlay);
+
+  const m = momentAt(t);
+  const squeeze = playing ? squeezeAt(t) : 0;
 
   return (
     <View
@@ -214,15 +235,100 @@ function DilationAnimation({ onPlay }: { onPlay: () => void }) {
         <CmScale cm={m.cm} />
       </Svg>
       <View style={s.footer}>
-        <Pressable
-          accessibilityLabel={playing ? 'Pause animation' : finished ? 'Replay animation' : 'Play animation'}
-          accessibilityRole="button"
-          onPress={toggle}
-          style={s.button}
-        >
-          <Text style={s.buttonText}>{playing ? '❚❚  Pause' : finished ? '↺  Replay' : '▶  Play'}</Text>
-        </Pressable>
+        <PlayButton finished={finished} onPress={toggle} playing={playing} />
         <Text style={s.note}>Not to scale in time. Every labor has its own pace.</Text>
+      </View>
+    </View>
+  );
+}
+
+// ---------- Breathing along with a practice contraction ----------
+
+/** One step of a breathing pattern: the circle grows on a breath in and shrinks on a breath out. */
+type Breath = { cue: string; seconds: number; to: number };
+
+// The circle's size runs from 0 (empty lungs) to 1 (a full, deep breath).
+const cleansing: Breath[] = [
+  { cue: 'Cleansing breath in', seconds: 3, to: 1 },
+  { cue: 'And sigh it out', seconds: 4, to: 0 },
+];
+const slow: Breath[] = [
+  { cue: 'Breathe in slowly', seconds: 4, to: 0.8 },
+  { cue: 'Long, slow breath out', seconds: 6, to: 0.1 },
+];
+const light: Breath[] = [
+  { cue: 'Light breath in', seconds: 1, to: 0.45 },
+  { cue: 'Light breath out', seconds: 1, to: 0.2 },
+];
+const repeat = (pattern: Breath[], times: number) => Array.from({ length: times }, () => pattern).flat();
+
+// Slow breathing follows the lesson: in for about 4 counts, out for about 6.
+const BREATHING: Record<'slow' | 'lighter', Breath[]> = {
+  slow: [...cleansing, ...repeat(slow, 5), ...cleansing],
+  lighter: [...cleansing, ...repeat(slow, 2), ...repeat(light, 8), ...repeat(slow, 2), ...cleansing],
+};
+
+function breathAt(pattern: Breath[], t: number): { cue: string; size: number; step: number } {
+  let start = 0;
+  let from = 0;
+  for (const [step, breath] of pattern.entries()) {
+    if (t < start + breath.seconds) {
+      const x = ease((t - start) / breath.seconds);
+      return { cue: breath.cue, size: from + (breath.to - from) * x, step };
+    }
+    start += breath.seconds;
+    from = breath.to;
+  }
+  return { cue: 'Contraction over. Rest.', size: 0, step: pattern.length };
+}
+
+/** How strong the practice contraction is (0 to 1): it builds, peaks in the middle, and fades. */
+const strengthAt = (t: number, total: number) => Math.sin(Math.PI * Math.min(Math.max(t / total, 0), 1)) ** 1.5;
+
+function BreathingGuide({ kind, onPlay }: { kind: 'slow' | 'lighter'; onPlay: () => void }) {
+  const pattern = BREATHING[kind];
+  const total = pattern.reduce((sum, b) => sum + b.seconds, 0);
+  const { t, playing, finished, toggle } = usePlayback(total, onPlay);
+  const breath = breathAt(pattern, t);
+  const strength = strengthAt(t, total);
+  const phase = t === 0 ? 'Ready' : finished ? 'Rest' : strength < 0.35 ? 'Building' : strength > 0.85 ? 'Peak' : t < total / 2 ? 'Building' : 'Fading';
+  const radius = 34 + breath.size * 46;
+
+  // The wave across the bottom: the contraction's strength over time, with a dot for now.
+  const wave = Array.from({ length: 61 }, (_, i) => {
+    const x = 20 + (i / 60) * 320;
+    const y = 200 - strengthAt((i / 60) * total, total) * 44;
+    return `${i === 0 ? 'M' : 'L'}${x.toFixed(1)} ${y.toFixed(1)}`;
+  }).join(' ');
+  const dotX = 20 + (Math.min(t, total) / total) * 320;
+  const dotY = 200 - strength * 44;
+
+  return (
+    <View
+      accessibilityLabel={
+        kind === 'slow'
+          ? 'Breathing guide for one practice contraction, about one minute. A cleansing breath, then slow breaths in for about 4 counts and out for about 6, then a closing cleansing breath. A circle grows on each breath in and shrinks on each breath out, and a wave shows the contraction building, peaking, and fading.'
+          : 'Breathing guide for one practice contraction, about one minute. A cleansing breath and slow breathing as it builds, lighter quicker breaths at the peak, slow breathing as it fades, and a closing cleansing breath. A circle grows and shrinks with each breath, and a wave shows the contraction building, peaking, and fading.'
+      }
+      style={s.frame}
+    >
+      <View accessibilityLiveRegion="polite" style={s.copy}>
+        <Text style={s.title}>{t === 0 ? 'Press play when you are ready' : breath.cue}</Text>
+        <Text style={s.detail}>Contraction: {phase.toLowerCase()}</Text>
+      </View>
+      <Svg style={s.breathing} viewBox="0 0 360 215">
+        <Circle cx={180} cy={92} fill={c.lagoonSoft} r={80} />
+        <Circle cx={180} cy={92} fill={c.lagoon} opacity={0.85} r={radius} />
+        <SvgText fill={c.surface} fontFamily={FONT} fontSize={15} fontWeight="700" textAnchor="middle" x={180} y={97}>
+          {breath.step >= pattern.length || t === 0 ? '' : breath.cue.includes('out') ? 'Out' : 'In'}
+        </SvgText>
+        <Line stroke={c.line} strokeWidth={1} x1={20} x2={340} y1={200} y2={200} />
+        <Path d={wave} fill="none" stroke={c.marigold} strokeWidth={3} />
+        <Circle cx={dotX} cy={dotY} fill={c.ink} r={5} />
+      </Svg>
+      <View style={s.footer}>
+        <PlayButton finished={finished} onPress={toggle} playing={playing} />
+        <Text style={s.note}>A practice contraction of about a minute. Real ones vary.</Text>
       </View>
     </View>
   );
@@ -232,6 +338,8 @@ function DilationAnimation({ onPlay }: { onPlay: () => void }) {
 
 const ANIMATIONS: Record<string, (onPlay: () => void) => React.ReactElement> = {
   'stages-of-labor/dilation-video': (onPlay) => <DilationAnimation onPlay={onPlay} />,
+  'breathing-and-relaxation/practice-slow': (onPlay) => <BreathingGuide kind="slow" onPlay={onPlay} />,
+  'breathing-and-relaxation/practice-lighter': (onPlay) => <BreathingGuide kind="lighter" onPlay={onPlay} />,
 };
 
 /** The drawn animation for a video slide, or null when it has none. */
@@ -247,6 +355,7 @@ const s = StyleSheet.create({
   detail: { color: c.ink, fontSize: 14, lineHeight: 19 },
   drawing: { width: '100%', maxWidth: 520, alignSelf: 'center', aspectRatio: 360 / 205 },
   scale: { width: '100%', maxWidth: 520, alignSelf: 'center', aspectRatio: 360 / 50 },
+  breathing: { width: '100%', maxWidth: 520, alignSelf: 'center', aspectRatio: 360 / 215 },
   footer: { flexDirection: 'row', alignItems: 'center', gap: 12, flexWrap: 'wrap' },
   button: { backgroundColor: c.lagoon, borderRadius: 999, paddingHorizontal: 18, paddingVertical: 9 },
   buttonText: { color: c.surface, fontSize: 15, fontWeight: '800' },
