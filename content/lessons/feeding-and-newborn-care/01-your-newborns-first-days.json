@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 12,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 5.1, the first lesson of Module 5 (Feeding and Newborn Care) in course order. Covers what's normal; warning signs and when to call are taught in lesson 6.3, and this lesson points there rather than repeating them. Safe sleep is in lesson 5.5. Sources were found by web search only; this session could not open the pages, so every new source needs to be opened and confirmed. For the reviewer: head molding rounding out within a few days, soft spots that may pulse, and milia clearing in 2 to 3 weeks follow the AAP head and appearance pages; swollen breasts or genitals and a little vaginal discharge or spotting from the mother's hormones are common newborn findings not confirmed in these exact pages; the breathing slide repeats lesson 6.3's reviewed wording and adds that short pauses can be normal, not confirmed word for word; about 16 to 17 hours of sleep a day follows an AAP page that gives about 17; early weight loss with birth weight regained by about 2 weeks follows the AAP first-month page, and the slide gives no percentage; the stool color changes (black and sticky, then greenish, then yellow and seedy for breastfed babies by about day 5) are standard teaching not confirmed word for word; the jaundice slide repeats lesson 6.3's call-back signs by reference and adds that jaundice is checked before discharge. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the hormone effects, including a few drops of blood in baby girls; keep the breathing slide, including brief pauses of a few seconds; keep 16 to 17 hours of sleep and asking the baby's doctor about waking for feeds; keep the weight slide without a percentage; keep the stool color changes, including formula-fed stools; keep the jaundice basics, with call-back signs left to lesson 6.3; no video for this lesson."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 5.1, the first lesson of Module 5 (Feeding and Newborn Care) in course order. Covers what's normal; warning signs and when to call are taught in lesson 6.3, and this lesson points there rather than repeating them. Safe sleep is in lesson 5.5. Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: head molding rounding out within a few days, soft spots that may pulse, and milia clearing in 2 to 3 weeks follow the AAP head and appearance pages; swollen breasts or genitals and a little vaginal discharge or spotting from the mother's hormones are common newborn findings not confirmed in these exact pages; the breathing slide repeats lesson 6.3's reviewed wording and adds that short pauses can be normal, not confirmed word for word; about 16 to 17 hours of sleep a day follows an AAP page that gives about 17; early weight loss with birth weight regained by about 2 weeks follows the AAP first-month page, and the slide gives no percentage; the stool color changes (black and sticky, then greenish, then yellow and seedy for breastfed babies by about day 5) are standard teaching not confirmed word for word; the jaundice slide repeats lesson 6.3's call-back signs by reference and adds that jaundice is checked before discharge. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the hormone effects, including a few drops of blood in baby girls; keep the breathing slide, including brief pauses of a few seconds; keep 16 to 17 hours of sleep and asking the baby's doctor about waking for feeds; keep the weight slide without a percentage; keep the stool color changes, including formula-fed stools; keep the jaundice basics, with call-back signs left to lesson 6.3; no video for this lesson."
   },
   "sources": [
     {
@@ -24,42 +24,42 @@
       "organization": "AAP",
       "title": "How Your Newborn Looks (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/How-Your-Newborn-Looks.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-babys-head",
       "organization": "AAP",
       "title": "Your Baby's Head (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Your-Babys-Head.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-first-month",
       "organization": "AAP",
       "title": "Your Baby's First Month: Growth & Physical Appearance (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/First-Month-Physical-Appearance-and-Growth.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-common-conditions",
       "organization": "AAP",
       "title": "11 Common Conditions in Newborns (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Common-Conditions-in-Newborns.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-jaundice",
       "organization": "AAP",
       "title": "Jaundice in Newborns (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/jaundice.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-enough-milk",
       "organization": "AAP",
       "title": "How to Tell if Your Breastfed Baby is Getting Enough Milk (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/breastfeeding/Pages/How-to-Tell-if-Baby-is-Getting-Enough-Milk.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
