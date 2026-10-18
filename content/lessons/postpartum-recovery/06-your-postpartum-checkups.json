@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 12,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 6.6 of Module 6 (Postpartum Recovery, Mood, and Red Flags), the last lesson in the class. Builds on lesson 6.2 (warning signs, the 3-week contact and 12-week visit), lesson 6.4 (mood screening), and lesson 6.1 (recovery). Sources were found by web search only; this session could not open the pages, so every new source needs to be opened and confirmed. For the reviewer: the visit schedule (contact within 3 weeks, a full visit by 12 weeks, then transition to primary care) follows Committee Opinion 736 and matches lesson 6.2; a blood pressure check 3 to 10 days after birth for high blood pressure in pregnancy follows the ACOG postpartum checkup article, with Committee Opinion 736 adding 72 hours for severe hypertension, which the slide does not mention; what gets checked follows Committee Opinion 736 and the ACOG checklist; glucose testing 4 to 12 weeks after gestational diabetes follows the ACOG toolkit, while the ACOG diabetes FAQ says 6 to 12 weeks, and repeat testing every 1 to 3 years is standard ADA and ACOG teaching, with the toolkit citing every 3 years after a normal result; later heart disease and diabetes risk is standard teaching; no set date for sex, many ob-gyns suggesting about 6 weeks, and pregnancy being possible soon after birth follow the ACOG partner's guide; lower desire from breastfeeding hormones and fatigue follows the ACOG toolkit; lubricant and treatable painful sex are standard teaching; ovulation before the first period, and within weeks when not breastfeeding, follows the ACOG birth control FAQ; birth control timing (IUD or implant before discharge or later, progestin-only methods and the copper IUD fine while breastfeeding, estrogen methods waiting at least about 3 weeks and longer with breastfeeding or clot risk, condoms any time, and the three conditions for lactational amenorrhea) follows the ACOG birth control and LARC FAQs and ACOG's Postpartum Contraception Access Initiative pages, with the estrogen week counts (not before 21 days; 30 to 42 days when breastfeeding without other clot risks; after 42 days with other risks such as cesarean, preeclampsia, hemorrhage, age 35 or older, or smoking) following the CDC U.S. Medical Eligibility Criteria, 2024, simplified to about 4 to 6 weeks and about 6 weeks; healthy habits lowering later risk (breastfeeding, activity, healthy eating, a healthy weight) are standard teaching; spacing (avoid less than 6 months, counsel about pregnancy sooner than 18 months, with preterm birth and low birth weight risks) follows Committee Opinion 736 and the ACOG toolkit. The age caveat on spacing (people 35 or older weighing a shorter wait) reflects ACOG's advice to counsel about the risks and benefits of pregnancy sooner than 18 months. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the 3 to 10 day blood pressure check, gestational diabetes testing at 4 to 12 weeks then every 1 to 3 years, and the sex after birth slide as written; add week counts for estrogen methods from the CDC guidelines; add an age caveat to spacing; add healthy habits to the later-risk slide; keep 12 minutes; no video."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 6.6 of Module 6 (Postpartum Recovery, Mood, and Red Flags), the last lesson in the class. Builds on lesson 6.2 (warning signs, the 3-week contact and 12-week visit), lesson 6.4 (mood screening), and lesson 6.1 (recovery). Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: the visit schedule (contact within 3 weeks, a full visit by 12 weeks, then transition to primary care) follows Committee Opinion 736 and matches lesson 6.2; a blood pressure check 3 to 10 days after birth for high blood pressure in pregnancy follows the ACOG postpartum checkup article, with Committee Opinion 736 adding 72 hours for severe hypertension, which the slide does not mention; what gets checked follows Committee Opinion 736 and the ACOG checklist; glucose testing 4 to 12 weeks after gestational diabetes follows the ACOG toolkit, while the ACOG diabetes FAQ says 6 to 12 weeks, and repeat testing every 1 to 3 years is standard ADA and ACOG teaching, with the toolkit citing every 3 years after a normal result; later heart disease and diabetes risk is standard teaching; no set date for sex, many ob-gyns suggesting about 6 weeks, and pregnancy being possible soon after birth follow the ACOG partner's guide; lower desire from breastfeeding hormones and fatigue follows the ACOG toolkit; lubricant and treatable painful sex are standard teaching; ovulation before the first period, and within weeks when not breastfeeding, follows the ACOG birth control FAQ; birth control timing (IUD or implant before discharge or later, progestin-only methods and the copper IUD fine while breastfeeding, estrogen methods waiting at least about 3 weeks and longer with breastfeeding or clot risk, condoms any time, and the three conditions for lactational amenorrhea) follows the ACOG birth control and LARC FAQs and ACOG's Postpartum Contraception Access Initiative pages, with the estrogen week counts (not before 21 days; 30 to 42 days when breastfeeding without other clot risks; after 42 days with other risks such as cesarean, preeclampsia, hemorrhage, age 35 or older, or smoking) following the CDC U.S. Medical Eligibility Criteria, 2024, simplified to about 4 to 6 weeks and about 6 weeks; healthy habits lowering later risk (breastfeeding, activity, healthy eating, a healthy weight) are standard teaching; spacing (avoid less than 6 months, counsel about pregnancy sooner than 18 months, with preterm birth and low birth weight risks) follows Committee Opinion 736 and the ACOG toolkit. The age caveat on spacing (people 35 or older weighing a shorter wait) reflects ACOG's advice to counsel about the risks and benefits of pregnancy sooner than 18 months. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the 3 to 10 day blood pressure check, gestational diabetes testing at 4 to 12 weeks then every 1 to 3 years, and the sex after birth slide as written; add week counts for estrogen methods from the CDC guidelines; add an age caveat to spacing; add healthy habits to the later-risk slide; keep 12 minutes; no video."
   },
   "sources": [
     {
@@ -24,56 +24,56 @@
       "organization": "ACOG",
       "title": "Optimizing Postpartum Care (Committee Opinion No. 736)",
       "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2018/05/optimizing-postpartum-care",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-postpartum-checkup",
       "organization": "ACOG",
       "title": "What to Expect at a Postpartum Checkup—And Why the Visit Matters",
       "url": "https://www.acog.org/womens-health/experts-and-stories/the-latest/what-to-expect-at-a-postpartum-checkup-and-why-the-visit-matters",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-postpartum-checklist",
       "organization": "ACOG",
       "title": "My Postpartum Care Checklist",
       "url": "https://www.acog.org/womens-health/health-tools/my-postpartum-care-checklist",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-postpartum-birth-control",
       "organization": "ACOG",
       "title": "Postpartum Birth Control (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/postpartum-birth-control",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-larc-after-birth",
       "organization": "ACOG",
       "title": "Using Long-Acting Reversible Contraception (LARC) Right After Childbirth (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/using-long-acting-reversible-contraception-right-after-childbirth",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-partners-guide",
       "organization": "ACOG",
       "title": "A Partner's Guide to Pregnancy (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/a-partners-guide-to-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-diabetes-women",
       "organization": "ACOG",
       "title": "Diabetes and Women (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/diabetes-and-women",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "cdc-us-mec-2024",
       "organization": "CDC",
       "title": "U.S. Medical Eligibility Criteria for Contraceptive Use, 2024",
       "url": "https://www.cdc.gov/contraception/hcp/usmec/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
