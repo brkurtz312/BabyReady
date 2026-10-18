@@ -20,6 +20,7 @@ import firstTrimesterCommonChanges from '../../content/lessons/early-pregnancy-b
 import firstPrenatalVisit from '../../content/lessons/early-pregnancy-basics/03-first-prenatal-visit.json';
 
 import safeSleep from '../../content/lessons/feeding-and-newborn-care/05-safe-sleep.json';
+import carSeatSafety from '../../content/lessons/feeding-and-newborn-care/06-car-seat-safety.json';
 
 import postpartumWarningSigns from '../../content/lessons/postpartum-recovery/02-postpartum-warning-signs.json';
 import whenToCallAboutYourBaby from '../../content/lessons/postpartum-recovery/03-when-to-call-about-your-baby.json';
@@ -68,7 +69,7 @@ const earlyPregnancyLessons = sortedLessons([
   firstPrenatalVisit,
 ]);
 
-const feedingAndNewbornCareLessons = sortedLessons([safeSleep]);
+const feedingAndNewbornCareLessons = sortedLessons([safeSleep, carSeatSafety]);
 
 const postpartumRecoveryLessons = sortedLessons([postpartumWarningSigns, whenToCallAboutYourBaby]);
 
@@ -101,7 +102,7 @@ export const courses: Course[] = [
     courseId: 'feeding-and-newborn-care',
     title: 'Feeding and Newborn Care',
     label: 'CLASS · MODULE 5',
-    description: `Caring for your newborn, starting with safe sleep: on the back, in a bare crib, in your room. About ${minutes(feedingAndNewbornCareLessons)} minutes.`,
+    description: `Keeping your newborn safe: sleep on the back in a bare crib, and car seats used right on every ride. About ${minutes(feedingAndNewbornCareLessons)} minutes.`,
     lessons: feedingAndNewbornCareLessons,
   },
   {

@@ -58,7 +58,8 @@ for (const [courseId, courseTitle] of COURSES) {
       } else {
         return;
       }
-      const target = `assets/lessons/${lesson.lessonId}/${slide.id}.${extension}`;
+      // A video slide can reuse another slide's video through video.assetId (lessonId/slideId).
+      const target = `assets/lessons/${slide.video?.assetId ?? `${lesson.lessonId}/${slide.id}`}.${extension}`;
       const delivered =
         existsSync(path.join(root, target)) ||
         (extension === 'png' && ['.jpg', '.webp'].some((ext) => existsSync(path.join(root, target.replace(/\.png$/, ext)))));

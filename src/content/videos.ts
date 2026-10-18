@@ -27,6 +27,9 @@ const VIDEOS: Record<string, number> = {
   'when-to-contact-your-care-team/practice-call-video': require('../../assets/lessons/when-to-contact-your-care-team/practice-call-video.mp4'),
   'postpartum-warning-signs/speaking-up-video': require('../../assets/lessons/postpartum-warning-signs/speaking-up-video.mp4'),
   'when-to-call-about-your-baby/calming-video': require('../../assets/lessons/when-to-call-about-your-baby/calming-video.mp4'),
+  'safe-sleep/safe-sleep-video': require('../../assets/lessons/safe-sleep/safe-sleep-video.mp4'),
+  // Reuses the Preparing for Birth harness video (video.assetId in the lesson file).
+  'car-seat-safety/harness-refresher': require('../../assets/lessons/getting-ready-bags-routes-car-seat/harness-check-video.mp4'),
 };
 
 export function videoFor(lessonId: string, slideId: string): number | null {
