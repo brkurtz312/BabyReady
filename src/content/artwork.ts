@@ -154,6 +154,10 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'induction-of-labor/starting-contractions': require('../../assets/lessons/induction-of-labor/starting-contractions.jpg'),
   'induction-of-labor/what-to-expect': require('../../assets/lessons/induction-of-labor/what-to-expect.jpg'),
   'induction-of-labor/risks': require('../../assets/lessons/induction-of-labor/risks.jpg'),
+  'assisted-vaginal-birth/welcome': require('../../assets/lessons/assisted-vaginal-birth/welcome.jpg'),
+  'assisted-vaginal-birth/how': require('../../assets/lessons/assisted-vaginal-birth/how.jpg'),
+  'assisted-vaginal-birth/for-baby': require('../../assets/lessons/assisted-vaginal-birth/for-baby.jpg'),
+  'assisted-vaginal-birth/for-you': require('../../assets/lessons/assisted-vaginal-birth/for-you.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
