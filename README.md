@@ -96,6 +96,16 @@ EXPO_PUBLIC_ENABLE_EPDS=true
 
 Keep it off in production until written permission to use the scale in the app has come from its copyright holder, the Royal College of Psychiatrists. Answers are never saved or sent anywhere.
 
+### What instructor answers cost
+
+Each answer from `askLessonQuestion` writes one `ask_usage` line to Cloud Logging: the lesson, the model, the token counts, and the cost in dollars (`functions/src/askCost.ts`, tested in `tests/askCost.test.mjs`). It never includes the question, the answer, or the account. To see the totals:
+
+```bash
+node scripts/ask-cost-report.mjs --days 30
+```
+
+It needs the `gcloud` CLI signed in to the Firebase project. Update the prices in `functions/src/askCost.ts` if the model or Anthropic's prices change.
+
 ### Public pages
 
 `public/` holds static pages that Expo's web export copies into `dist`; with `cleanUrls`, Hosting serves them ahead of the app:

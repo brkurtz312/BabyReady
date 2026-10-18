@@ -2,11 +2,13 @@ import Anthropic from '@anthropic-ai/sdk';
 import { initializeApp } from 'firebase-admin/app';
 import { getAuth } from 'firebase-admin/auth';
 import { FieldValue, getFirestore } from 'firebase-admin/firestore';
+import { logger } from 'firebase-functions';
 import { defineSecret } from 'firebase-functions/params';
 import { HttpsError, onCall } from 'firebase-functions/v2/https';
 import { onSchedule } from 'firebase-functions/v2/scheduler';
 
 import { MAX_QUESTION_LENGTH, routeQuestion } from '../../src/lib/askSafety';
+import { usageRecord } from './askCost';
 import { findLesson, lessonText } from './lessons';
 import { INACTIVE_DAYS, isInactive } from './retention';
 
@@ -144,6 +146,13 @@ export const askLessonQuestion = onCall(
       }
       throw new HttpsError('unavailable', 'Something went wrong getting an answer. Try asking again.');
     }
+
+    // Token counts and cost only: never the question, the answer, or who asked.
+    logger.info('ask_usage', {
+      lessonId: lesson.lessonId,
+      stopReason: response.stop_reason,
+      ...usageRecord(response.model, response.usage),
+    });
 
     if (response.stop_reason === 'refusal') {
       return {
