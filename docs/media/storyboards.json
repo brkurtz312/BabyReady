@@ -893,5 +893,56 @@
         "text": "Back, bare, and in their own space, for every sleep."
       }
     ]
+  },
+  "making-decisions-with-your-care-team/decision-video": {
+    "cast": "a laboring woman in a hospital gown with medium-brown skin and long dark braids, in a hospital bed; her support partner, a man with light skin, short red hair and a beard, in a grey sweater; an ob-gyn, a woman with dark skin and short grey hair in navy scrubs and a white coat; a nurse, a man with light brown skin in teal scrubs. They are in a calm hospital labor room",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "A decision in labor"
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "In a calm, softly lit labor room, the ob-gyn sits on a stool beside the bed at eye level, explaining something kindly to the laboring woman and her partner, with the nurse standing nearby. Only the couple and the care team are in the labor room.",
+        "caption": "“We'd like to suggest a change to the plan.”"
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "The laboring woman asks a question, her partner holding her hand and leaning in, while the ob-gyn listens. Only the couple and the care team are in the labor room.",
+        "caption": "“Why do you recommend it for me?”",
+        "sub": "“What are the other options?”"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The partner asks the ob-gyn a question while the woman rests between contractions. Only the couple and the care team are in the labor room.",
+        "caption": "“How much time do we have to decide?”"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The ob-gyn smiles reassuringly and gestures toward the door, the nurse beside her. Only the couple and the care team are in the labor room.",
+        "caption": "“You're both doing well. Take a few minutes; we'll be right outside.”"
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "The couple alone in the labor room, talking quietly with their foreheads close, holding hands. Only the couple are in the room.",
+        "caption": "A few minutes alone to talk it over."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The ob-gyn and nurse are back at the bedside; the woman speaks and everyone nods. Only the couple and the care team are in the labor room.",
+        "caption": "They share their decision, and the team listens."
+      },
+      {
+        "type": "end",
+        "seconds": 6,
+        "text": "Ask why, the options, and how much time. It's okay to ask for a few minutes."
+      }
+    ]
   }
 }

@@ -130,6 +130,11 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'car-seat-safety/extra-products': require('../../assets/lessons/car-seat-safety/extra-products.jpg'),
   'car-seat-safety/used-seats-and-crashes': require('../../assets/lessons/car-seat-safety/used-seats-and-crashes.jpg'),
   'car-seat-safety/get-it-checked': require('../../assets/lessons/car-seat-safety/get-it-checked.jpg'),
+  'making-decisions-with-your-care-team/welcome': require('../../assets/lessons/making-decisions-with-your-care-team/welcome.jpg'),
+  'making-decisions-with-your-care-team/shared-decisions': require('../../assets/lessons/making-decisions-with-your-care-team/shared-decisions.jpg'),
+  'making-decisions-with-your-care-team/understand-it': require('../../assets/lessons/making-decisions-with-your-care-team/understand-it.jpg'),
+  'making-decisions-with-your-care-team/support-person-role': require('../../assets/lessons/making-decisions-with-your-care-team/support-person-role.jpg'),
+  'making-decisions-with-your-care-team/not-yet-or-no': require('../../assets/lessons/making-decisions-with-your-care-team/not-yet-or-no.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
