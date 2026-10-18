@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 8,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 4.7, the last lesson of Module 4 (Interventions and Flexible Decisions). Builds on Preparing for Birth lesson 5 (flexible preferences), lesson 4.1 (the four questions), and lessons 4.4 to 4.6; postpartum depression and anxiety are covered in full in lesson 6.4, and the urgent crisis slide is in lesson 6.2. Sources were found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. For the reviewer: the preferences that can often be kept (your support person, music and lighting, skin-to-skin, delayed cord clamping when possible, feeding plans) vary by hospital and situation; the mixed feelings (relief, gratitude, disappointment, grief, guilt) and that being included in decisions helps are drawn from a Lamaze article on family-centered cesareans; reviewing your birth with your care team at the postpartum visit follows Committee Opinion 736; the 'more than 2 weeks' threshold follows the ACOG postpartum depression FAQ; nightmares or flashbacks as a reason to get help is a general sign of birth trauma, not confirmed against these sources; the crisis line repeats lesson 6.2's wording but this is a content slide, not a safety slide. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the list of what you can often keep, including delayed cord clamping; keep the feelings slide as written; keep going over the birth before discharge or at the postpartum visit; keep all three reasons to get help, including nightmares or flashbacks; keep the crisis line on a content slide (lesson 6.2 carries the safety slide); keep the reference to lesson 6.4; no video for this lesson."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 4.7, the last lesson of Module 4 (Interventions and Flexible Decisions). Builds on Preparing for Birth lesson 5 (flexible preferences), lesson 4.1 (the four questions), and lessons 4.4 to 4.6; postpartum depression and anxiety are covered in full in lesson 6.4, and the urgent crisis slide is in lesson 6.2. Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: the preferences that can often be kept (your support person, music and lighting, skin-to-skin, delayed cord clamping when possible, feeding plans) vary by hospital and situation; the mixed feelings (relief, gratitude, disappointment, grief, guilt) and that being included in decisions helps are drawn from a Lamaze article on family-centered cesareans; reviewing your birth with your care team at the postpartum visit follows Committee Opinion 736; the 'more than 2 weeks' threshold follows the ACOG postpartum depression FAQ; nightmares or flashbacks as a reason to get help is a general sign of birth trauma, not confirmed against these sources; the crisis line repeats lesson 6.2's wording but this is a content slide, not a safety slide. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the list of what you can often keep, including delayed cord clamping; keep the feelings slide as written; keep going over the birth before discharge or at the postpartum visit; keep all three reasons to get help, including nightmares or flashbacks; keep the crisis line on a content slide (lesson 6.2 carries the safety slide); keep the reference to lesson 6.4; no video for this lesson."
   },
   "sources": [
     {
@@ -24,42 +24,42 @@
       "organization": "Lamaze",
       "title": "Forming Your Birth Plan",
       "url": "https://lamaze.org/birth-plan",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "lamaze-family-centered-cesarean",
       "organization": "Lamaze",
       "title": "Creating a Positive, Family-Centered Cesarean Birth Experience",
       "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/Creating-a-Positive-Family-Centered-Cesarean-Birth-Experience",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-co819",
       "organization": "ACOG",
       "title": "Informed Consent and Shared Decision Making in Obstetrics and Gynecology (Committee Opinion No. 819)",
       "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2021/02/informed-consent-and-shared-decision-making-in-obstetrics-and-gynecology",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-co736",
       "organization": "ACOG",
       "title": "Optimizing Postpartum Care (Committee Opinion No. 736)",
       "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2018/05/optimizing-postpartum-care",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-postpartum-depression",
       "organization": "ACOG",
       "title": "Postpartum Depression (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/postpartum-depression",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "cdc-depression-resources",
       "organization": "CDC",
       "title": "Depression Resources",
       "url": "https://www.cdc.gov/reproductive-health/depression/resources.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
