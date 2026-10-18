@@ -98,7 +98,7 @@ Keep it off in production until written permission to use the scale in the app h
 
 ### Firestore rules
 
-`firestore.rules` keeps each learner's progress, Birth Readiness Brief, and class reflection answers inside `users/{uid}`, readable and writable only by that learner. Reflection answers live at `users/{uid}/birthReadinessReflections/{lessonId}__{slideId}`, with bounded text and server timestamps. `tests/firestore.rules.test.mjs` covers these rules, and CI runs it on each pull request.
+`firestore.rules` keeps each learner's progress, Birth Readiness Brief, and class reflection answers inside `users/{uid}`, readable and writable only by that learner. Reflection answers live at `users/{uid}/birthReadinessReflections/{lessonId}__{slideId}`, with bounded text and server timestamps. Lesson progress (finished lessons and the last lesson opened, for the home screen's lesson list and Continue card) lives at `users/{uid}/courseProgress/class`, with a copy kept on the device. `tests/firestore.rules.test.mjs` covers these rules, and CI runs it on each pull request.
 
 The rules still include the collections used by the archived governance workflow, so existing published course content stays readable.
 

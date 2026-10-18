@@ -15,6 +15,7 @@ import {
 
 import { AskQuestionSheet } from '../components/AskQuestionSheet';
 import { animationFor } from '../components/LessonAnimations';
+import { LessonListSheet } from '../components/LessonListSheet';
 import { LessonVideo } from '../components/LessonVideo';
 import { drawnVisualFor } from '../components/LessonVisuals';
 import { SelfCheckSheet } from '../components/SelfCheckSheet';
@@ -141,6 +142,12 @@ type ClassPlayerScreenProps = {
   /** Signed-in learner. Without one, reflections are kept on this device only. */
   userId: string | null;
   course: Course;
+  /** The lesson to open first, from the home screen's table of contents. */
+  initialLessonIndex?: number;
+  /** Lessons already finished, for checkmarks in the lesson list. */
+  completedLessonIds: string[];
+  onLessonOpened: (courseId: string, lessonId: string) => void;
+  onLessonCompleted: (lessonId: string) => void;
 };
 
 export function ClassPlayerScreen({
@@ -148,11 +155,19 @@ export function ClassPlayerScreen({
   onOpenBrief,
   userId,
   course,
+  initialLessonIndex = 0,
+  completedLessonIds,
+  onLessonOpened,
+  onLessonCompleted,
 }: ClassPlayerScreenProps) {
   const lessons = course.lessons;
   const courseTitle = course.title;
   const reducer = useMemo(() => makeReducer(lessons), [lessons]);
-  const [state, dispatch] = useReducer(reducer, 0, startOfLesson);
+  const [state, dispatch] = useReducer(
+    reducer,
+    Math.min(Math.max(initialLessonIndex, 0), lessons.length - 1),
+    startOfLesson,
+  );
 
   const [voiceOn, setVoiceOn] = useState(true);
   const [captionsOn, setCaptionsOn] = useState(true);
@@ -161,6 +176,7 @@ export function ClassPlayerScreen({
   const [narrationDone, setNarrationDone] = useState(false);
   const [askOpen, setAskOpen] = useState(false);
   const [selfCheckOpen, setSelfCheckOpen] = useState(false);
+  const [lessonListOpen, setLessonListOpen] = useState(false);
   const resumeAfterAskRef = useRef(false);
 
   const voiceIdRef = useRef<string | undefined>(undefined);
@@ -173,6 +189,17 @@ export function ClassPlayerScreen({
   const slide = state.mode === 'slides' ? lesson.slides[state.slideIndex] : null;
   const quizQuestion = state.mode === 'quiz' ? lesson.reviewQuiz[state.quizIndex] : null;
   const nextLesson = lessons[state.lessonIndex + 1];
+
+  // Remember the lesson the learner is in, and mark it finished once they reach the end.
+  useEffect(() => {
+    onLessonOpened(lesson.courseId, lesson.lessonId);
+    // Only when the lesson changes; the callback is stable enough for this.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lesson.lessonId]);
+  useEffect(() => {
+    if (state.mode === 'done') onLessonCompleted(lesson.lessonId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.mode, lesson.lessonId]);
   const sourcesById = useMemo(
     () => Object.fromEntries(lesson.sources.map((s) => [s.id, s])) as Record<string, Source>,
     [lesson],
@@ -360,7 +387,17 @@ export function ClassPlayerScreen({
     else stopSpeech();
   }
 
+  function openLessonList() {
+    clearAdvance();
+    if (playing) {
+      stopSpeech();
+      setPlaying(false);
+    }
+    setLessonListOpen(true);
+  }
+
   function loadLesson(index: number) {
+    setLessonListOpen(false);
     clearAdvance();
     stopSpeech();
     dispatch({ type: 'load', lessonIndex: index });
@@ -410,6 +447,17 @@ export function ClassPlayerScreen({
           >
             <Text style={styles.homeButtonText}>‹ Home</Text>
           </Pressable>
+          <Pressable
+            accessibilityHint="Shows every lesson in this module, so you can switch."
+            accessibilityLabel="Lessons"
+            accessibilityRole="button"
+            hitSlop={8}
+            onPress={openLessonList}
+            style={styles.lessonsButton}
+            testID="button-open-lesson-list"
+          >
+            <Text style={styles.homeButtonText}>☰ Lessons</Text>
+          </Pressable>
           <Text numberOfLines={1} style={styles.agendaTitle}>
             {lesson.title}
           </Text>
@@ -435,7 +483,13 @@ export function ClassPlayerScreen({
 
       <ScrollView ref={stageRef} contentContainerStyle={styles.stage} keyboardShouldPersistTaps="handled">
         {state.mode === 'intro' ? (
-          <IntroSlide courseTitle={courseTitle} lesson={lesson} lessons={lessons} onPickLesson={loadLesson} />
+          <IntroSlide
+            completedLessonIds={completedLessonIds}
+            courseTitle={courseTitle}
+            lesson={lesson}
+            lessons={lessons}
+            onPickLesson={loadLesson}
+          />
         ) : null}
         {slide ? (
           <SlideView
@@ -535,6 +589,15 @@ export function ClassPlayerScreen({
         visible={askOpen}
         voiceOn={voiceOn}
       />
+      <LessonListSheet
+        completedLessonIds={completedLessonIds}
+        courseTitle={courseTitle}
+        currentLessonId={lesson.lessonId}
+        lessons={lessons}
+        onClose={() => setLessonListOpen(false)}
+        onPick={loadLesson}
+        visible={lessonListOpen}
+      />
       {epdsEnabled ? <SelfCheckSheet onClose={() => setSelfCheckOpen(false)} visible={selfCheckOpen} /> : null}
     </SafeAreaView>
   );
@@ -571,11 +634,13 @@ function IntroSlide({
   lesson,
   lessons,
   courseTitle,
+  completedLessonIds,
   onPickLesson,
 }: {
   lesson: Lesson;
   lessons: Lesson[];
   courseTitle: string;
+  completedLessonIds: string[];
   onPickLesson: (index: number) => void;
 }) {
   return (
@@ -593,6 +658,7 @@ function IntroSlide({
             >
               <Text style={[styles.lessonChipText, current && styles.lessonChipTextCurrent]}>
                 {l.order}. {l.title}
+                {completedLessonIds.includes(l.lessonId) ? ' ✓' : ''}
               </Text>
             </Pressable>
           );
@@ -953,6 +1019,7 @@ const styles = StyleSheet.create({
   agenda: { paddingHorizontal: 16, paddingTop: 10, paddingBottom: 8, gap: 8 },
   agendaTop: { flexDirection: 'row', alignItems: 'center', gap: 12 },
   homeButton: { paddingVertical: 4 },
+  lessonsButton: { paddingVertical: 4 },
   homeButtonText: { color: colors.lagoon, fontSize: 16, fontWeight: '700' },
   agendaTitle: { flex: 1, color: colors.ink, fontSize: 16, fontWeight: '700' },
   askButton: {
