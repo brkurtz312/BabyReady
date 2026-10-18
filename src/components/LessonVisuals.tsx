@@ -56,6 +56,7 @@ import HeartPlus from 'lucide-react-native/icons/heart-plus';
 import CircleDot from 'lucide-react-native/icons/circle-dot';
 import FaceSlightlySmiling from 'lucide-react-native/icons/face-slightly-smiling';
 import Hand from 'lucide-react-native/icons/hand';
+import Volleyball from 'lucide-react-native/icons/volleyball';
 
 /**
  * Pictures drawn in code for lesson slides: icon panels and simple diagrams.
@@ -1187,6 +1188,17 @@ const VISUALS: Record<string, () => React.ReactElement> = {
         { icon: PersonStanding, label: 'Shoulders down' },
         { icon: Hand, label: 'Loose, open hands' },
         { icon: Moon, label: 'Rest between' },
+      ]}
+    />
+  ),
+  'positions-and-movement/back-pain': () => (
+    <IconPanel
+      label="Positions for back pain: lean forward standing or sitting, kneel over a ball or get on hands and knees, try a lunge with one foot on a chair, and add counterpressure and heat."
+      items={[
+        { icon: PersonStanding, label: 'Lean forward' },
+        { icon: Volleyball, label: 'Kneel over a ball' },
+        { icon: Footprints, label: 'Lunge, foot on a chair' },
+        { icon: HeartHandshake, label: 'Counterpressure and heat' },
       ]}
     />
   ),
