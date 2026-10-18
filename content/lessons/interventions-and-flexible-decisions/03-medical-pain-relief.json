@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 12,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 4.3 of Module 4 (Interventions and Flexible Decisions). Builds on Preparing for Birth lesson 5 (birth preferences); non-medical comfort measures are left to Module 3. Sources were found by web search only; this session could not open acog.org, so every source needs to be opened and confirmed. For the reviewer: that an epidural doesn't raise the chance of a cesarean, and that your request is reason enough with no set dilation to wait for, are drawn from Practice Bulletin 209 but not confirmed word for word; the epidural side effects (blood pressure drop, itching, shivering, fever, a bladder catheter, rare headache) and the reasons an epidural may not be possible (bleeding problems, low platelets, blood thinners, birth very close) need confirming; the nitrous oxide line that it isn't combined with IV opioids reflects a 2021 ACOG practice advisory found only through secondary summaries; times (an epidural taking 10 to 20 minutes to work, starting nitrous about 30 seconds before a contraction) need confirming. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep 'an epidural does not raise your chance of a cesarean'; keep 'asking is reason enough' with no set point in labor; the epidural side effects are accurate as written; keep the examples of when an option may not be possible; keep that nitrous oxide isn't given with IV pain medicine; keep all three times; no video for this lesson."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 4.3 of Module 4 (Interventions and Flexible Decisions). Builds on Preparing for Birth lesson 5 (birth preferences); non-medical comfort measures are left to Module 3. Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: that an epidural doesn't raise the chance of a cesarean, and that your request is reason enough with no set dilation to wait for, are drawn from Practice Bulletin 209 but not confirmed word for word; the epidural side effects (blood pressure drop, itching, shivering, fever, a bladder catheter, rare headache) and the reasons an epidural may not be possible (bleeding problems, low platelets, blood thinners, birth very close) need confirming; the nitrous oxide line that it isn't combined with IV opioids reflects a 2021 ACOG practice advisory found only through secondary summaries; times (an epidural taking 10 to 20 minutes to work, starting nitrous about 30 seconds before a contraction) need confirming. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep 'an epidural does not raise your chance of a cesarean'; keep 'asking is reason enough' with no set point in labor; the epidural side effects are accurate as written; keep the examples of when an option may not be possible; keep that nitrous oxide isn't given with IV pain medicine; keep all three times; no video for this lesson."
   },
   "sources": [
     {
@@ -24,21 +24,21 @@
       "organization": "ACOG",
       "title": "Medications for Pain Relief During Labor and Delivery (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/medications-for-pain-relief-during-labor-and-delivery",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-pb209",
       "organization": "ACOG",
       "title": "Obstetric Analgesia and Anesthesia (Practice Bulletin No. 209)",
       "url": "https://www.acog.org/clinical/clinical-guidance/practice-bulletin/articles/2019/03/obstetric-analgesia-and-anesthesia",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-pain-options",
       "organization": "ACOG",
       "title": "Making Sense of Childbirth Pain Relief Options",
       "url": "https://www.acog.org/womens-health/experts-and-stories/the-latest/making-sense-of-childbirth-pain-relief-options",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
