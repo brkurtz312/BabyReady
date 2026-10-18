@@ -47,6 +47,7 @@ import postpartumWarningSigns from '../../content/lessons/postpartum-recovery/02
 import whenToCallAboutYourBaby from '../../content/lessons/postpartum-recovery/03-when-to-call-about-your-baby.json';
 import emotionalHealthAfterBirth from '../../content/lessons/postpartum-recovery/04-emotional-health-after-birth.json';
 import restFoodAndHelpAtHome from '../../content/lessons/postpartum-recovery/05-rest-food-and-help-at-home.json';
+import yourPostpartumCheckups from '../../content/lessons/postpartum-recovery/06-your-postpartum-checkups.json';
 
 export type Course = {
   courseId: string;
@@ -98,7 +99,7 @@ const interventionsLessons = sortedLessons([makingDecisions, monitoringYourBaby,
 
 const feedingAndNewbornCareLessons = sortedLessons([yourNewbornsFirstDays, newbornCareInTheHospital, breastfeedingBasics, formulaAndCombinationFeeding, safeSleep, carSeatSafety, diapersBathsCryingAndSoothing, infantCprAndChoking]);
 
-const postpartumRecoveryLessons = sortedLessons([physicalRecoveryAfterBirth, postpartumWarningSigns, whenToCallAboutYourBaby, emotionalHealthAfterBirth, restFoodAndHelpAtHome]);
+const postpartumRecoveryLessons = sortedLessons([physicalRecoveryAfterBirth, postpartumWarningSigns, whenToCallAboutYourBaby, emotionalHealthAfterBirth, restFoodAndHelpAtHome, yourPostpartumCheckups]);
 
 export const LABOR_BASICS_TITLE = 'Labor Basics and When to Call';
 
@@ -150,7 +151,7 @@ export const courses: Course[] = [
     courseId: 'postpartum-recovery',
     title: 'Postpartum Recovery, Mood, and Red Flags',
     label: 'CLASS · MODULE 6',
-    description: `Healing after birth, your emotional health, rest and help at home, and the warning signs to know for the year after, for you and your baby: when to call, when to call 911, and getting help. About ${minutes(postpartumRecoveryLessons)} minutes.`,
+    description: `Healing after birth, your emotional health, rest and help at home, your postpartum checkups, and the warning signs to know for the year after, for you and your baby: when to call, when to call 911, and getting help. About ${minutes(postpartumRecoveryLessons)} minutes.`,
     lessons: postpartumRecoveryLessons,
   },
 ];

@@ -1,0 +1,310 @@
+{
+  "courseId": "postpartum-recovery",
+  "lessonId": "your-postpartum-checkups",
+  "order": 6,
+  "title": "Your Postpartum Checkups",
+  "learningGoals": [
+    "Know when your postpartum checkups happen",
+    "Know what gets checked, including after pregnancy conditions",
+    "Know that you can get pregnant before your period returns",
+    "Choose birth control that fits your plans and feeding",
+    "Plan the spacing of any future pregnancy"
+  ],
+  "estimatedMinutes": 12,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Drafted 2026-10-18 as lesson 6.6 of Module 6 (Postpartum Recovery, Mood, and Red Flags), the last lesson in the class. Builds on lesson 6.2 (warning signs, the 3-week contact and 12-week visit), lesson 6.4 (mood screening), and lesson 6.1 (recovery). Sources were found by web search only; this session could not open the pages, so every new source needs to be opened and confirmed. For the reviewer: the visit schedule (contact within 3 weeks, a full visit by 12 weeks, then transition to primary care) follows Committee Opinion 736 and matches lesson 6.2; a blood pressure check 3 to 10 days after birth for high blood pressure in pregnancy follows the ACOG postpartum checkup article, with Committee Opinion 736 adding 72 hours for severe hypertension, which the slide does not mention; what gets checked follows Committee Opinion 736 and the ACOG checklist; glucose testing 4 to 12 weeks after gestational diabetes follows the ACOG toolkit, while the ACOG diabetes FAQ says 6 to 12 weeks, and repeat testing every 1 to 3 years is standard ADA and ACOG teaching, with the toolkit citing every 3 years after a normal result; later heart disease and diabetes risk is standard teaching; no set date for sex, many ob-gyns suggesting about 6 weeks, and pregnancy being possible soon after birth follow the ACOG partner's guide; lower desire from breastfeeding hormones and fatigue follows the ACOG toolkit; lubricant and treatable painful sex are standard teaching; ovulation before the first period, and within weeks when not breastfeeding, follows the ACOG birth control FAQ; birth control timing (IUD or implant before discharge or later, progestin-only methods and the copper IUD fine while breastfeeding, estrogen methods waiting at least about 3 weeks and longer with breastfeeding or clot risk, condoms any time, and the three conditions for lactational amenorrhea) follows the ACOG birth control and LARC FAQs and ACOG's Postpartum Contraception Access Initiative pages, with exact week counts from the CDC contraception guidelines not shown on the slide; spacing (avoid less than 6 months, counsel about pregnancy sooner than 18 months, with preterm birth and low birth weight risks) follows Committee Opinion 736 and the ACOG toolkit."
+  },
+  "sources": [
+    {
+      "id": "acog-co736",
+      "organization": "ACOG",
+      "title": "Optimizing Postpartum Care (Committee Opinion No. 736)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2018/05/optimizing-postpartum-care",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-postpartum-checkup",
+      "organization": "ACOG",
+      "title": "What to Expect at a Postpartum Checkup—And Why the Visit Matters",
+      "url": "https://www.acog.org/womens-health/experts-and-stories/the-latest/what-to-expect-at-a-postpartum-checkup-and-why-the-visit-matters",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-postpartum-checklist",
+      "organization": "ACOG",
+      "title": "My Postpartum Care Checklist",
+      "url": "https://www.acog.org/womens-health/health-tools/my-postpartum-care-checklist",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-postpartum-birth-control",
+      "organization": "ACOG",
+      "title": "Postpartum Birth Control (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/postpartum-birth-control",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-larc-after-birth",
+      "organization": "ACOG",
+      "title": "Using Long-Acting Reversible Contraception (LARC) Right After Childbirth (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/using-long-acting-reversible-contraception-right-after-childbirth",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-partners-guide",
+      "organization": "ACOG",
+      "title": "A Partner's Guide to Pregnancy (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/a-partners-guide-to-pregnancy",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-diabetes-women",
+      "organization": "ACOG",
+      "title": "Diabetes and Women (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/diabetes-and-women",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Your Postpartum Checkups",
+      "onScreen": [
+        "Module 6: Postpartum Recovery, Mood, and Red Flags"
+      ],
+      "narration": "Your care doesn't end when you leave the hospital. In this lesson, we'll cover when your postpartum checkups happen, what gets checked, sex and birth control after birth, spacing your next pregnancy, and how to get the most out of each visit.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A bright, friendly clinic room: a new parent in everyday clothes sits on the exam room chair talking with a smiling ob-gyn who holds a tablet with a blank screen; the newborn sleeps in a car seat carrier on the floor beside the parent. No pregnant belly. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "visit-schedule",
+      "type": "content",
+      "heading": "When your checkups happen",
+      "onScreen": [
+        "A check-in within the first 3 weeks, in person or by phone",
+        "High blood pressure in pregnancy? A blood pressure check 3 to 10 days after birth",
+        "A full visit by 12 weeks after birth",
+        "Then ongoing care with your primary care clinician"
+      ],
+      "narration": "Postpartum care is a series of visits, not a single checkup. Your care team should check in with you within the first three weeks after birth, in person or by phone. If you had high blood pressure during pregnancy, you need a blood pressure check sooner, three to ten days after birth. Then you'll have a full visit by twelve weeks after birth. After that, your care moves on to your regular primary care clinician, and your team should share what happened during your pregnancy. Before you leave the hospital, make sure your first appointments are booked.",
+      "sourceIds": [
+        "acog-co736",
+        "acog-postpartum-checkup"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a phone for a check-in within 3 weeks, a heart pulse for a blood pressure check in 3 to 10 days if needed, a calendar for a full visit by 12 weeks, and a stethoscope for ongoing primary care."
+      }
+    },
+    {
+      "id": "what-gets-checked",
+      "type": "content",
+      "heading": "What gets checked",
+      "onScreen": [
+        "Your mood, sleep, and how you're coping",
+        "Your healing, bleeding, bladder, and bowels",
+        "Feeding, and how your baby is doing",
+        "Sex, birth control, and your plans for future pregnancies"
+      ],
+      "narration": "Your postpartum visits cover your whole well-being. Your care team will ask about your mood, sleep, and how you're coping, and you'll fill out a short questionnaire about depression and anxiety. They'll check how you're healing, including bleeding, your incision or any tear, and your bladder and bowels. They'll ask how feeding is going, whether you need help with breastfeeding, and how your baby is doing. And they'll talk with you about sex, birth control, and your plans for any future pregnancies. You can bring up anything, even if it feels small or embarrassing.",
+      "sourceIds": [
+        "acog-co736",
+        "acog-postpartum-checklist"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a heart for mood and coping, a bandage for healing, a baby for feeding and your baby, and a calendar for birth control and future plans."
+      }
+    },
+    {
+      "id": "pregnancy-conditions",
+      "type": "content",
+      "heading": "After a pregnancy condition",
+      "onScreen": [
+        "Gestational diabetes: a glucose test 4 to 12 weeks after birth, then every 1 to 3 years",
+        "High blood pressure or preeclampsia: blood pressure checks, now and in the years ahead",
+        "These conditions raise your risk of diabetes and heart disease later",
+        "Tell your primary care clinician about your pregnancy"
+      ],
+      "narration": "Some pregnancy conditions need follow-up after birth. If you had gestational diabetes, you'll need a glucose test four to twelve weeks after birth, and then regular diabetes testing every one to three years. If you had high blood pressure or preeclampsia, your blood pressure needs checking now and in the years ahead. These conditions raise your risk of diabetes and heart disease later in life, so tell your primary care clinician about your pregnancy, and keep up with checkups. Knowing your risk early gives you time to lower it.",
+      "sourceIds": [
+        "acog-co736",
+        "acog-diabetes-women"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a droplet for a glucose test after gestational diabetes, a heart pulse for blood pressure checks, a clipboard for higher risk later, and a stethoscope for telling your primary care clinician."
+      }
+    },
+    {
+      "id": "sex-after-birth",
+      "type": "content",
+      "heading": "Sex after birth",
+      "onScreen": [
+        "There's no set date; many care teams suggest waiting about 6 weeks",
+        "Wait until you've healed and feel ready",
+        "Tiredness, breastfeeding, and healing can lower desire; a lubricant can help",
+        "You can get pregnant before your first period returns"
+      ],
+      "narration": "There's no set date for having sex again after birth. Many care teams suggest waiting about six weeks, until bleeding has stopped and you've healed, and until you feel ready. It's common for desire to be lower for a while, from tiredness, healing, and the hormone changes of breastfeeding, and a water-based lubricant can help with dryness. If sex is painful, tell your care team; it's common and can be treated. And know that you can get pregnant before your first period comes back, because you release an egg before your period returns. So plan your birth control before you have sex.",
+      "sourceIds": [
+        "acog-partners-guide",
+        "acog-postpartum-birth-control"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a calendar for no set date, a heart for when you feel ready, a droplet for a lubricant, and a warning sign for pregnancy before your first period."
+      }
+    },
+    {
+      "id": "checkin-period",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": [
+        "acog-postpartum-birth-control",
+        "acog-partners-guide"
+      ],
+      "question": {
+        "prompt": "Five weeks after birth, your period hasn't come back yet. Can you get pregnant if you have sex without birth control?",
+        "options": [
+          "No, not until your period returns",
+          "Yes, because you release an egg before your first period",
+          "No, not while you're breastfeeding at all"
+        ],
+        "correctIndex": 1,
+        "explanation": "You release an egg before your first period comes back, so you can get pregnant before you know it. If you're not breastfeeding, this can happen within a few weeks of birth."
+      }
+    },
+    {
+      "id": "birth-control",
+      "type": "content",
+      "heading": "Birth control after birth",
+      "onScreen": [
+        "Talk about it before birth, so your choice is ready",
+        "An IUD or implant can be placed before you leave the hospital or at a checkup",
+        "Progestin-only methods and the copper IUD are fine while breastfeeding",
+        "Methods with estrogen usually wait a few weeks after birth"
+      ],
+      "narration": "It's best to choose your birth control before your baby arrives, so it's ready when you need it. Many methods can start right after birth. An IUD or a birth control implant can be placed before you leave the hospital or at a later checkup, and they're among the most effective methods. Progestin-only pills, the shot, the implant, and IUDs are all fine while breastfeeding. Methods with estrogen, like the combined pill, patch, or ring, usually wait at least a few weeks after birth, longer if you're breastfeeding or have a higher risk of blood clots. Condoms can be used any time. Breastfeeding alone prevents pregnancy only if you're exclusively breastfeeding, your period hasn't returned, and your baby is under six months old.",
+      "sourceIds": [
+        "acog-postpartum-birth-control",
+        "acog-larc-after-birth"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A calm clinic room: a new parent sits beside their partner, both in everyday clothes, talking with a clinician who points to a simple chart of small birth control shapes on the table, with no readable writing; the swaddled newborn sleeps in a car seat carrier at their feet. No pregnant belly. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "spacing",
+      "type": "content",
+      "heading": "Spacing your next pregnancy",
+      "onScreen": [
+        "Wait at least 6 months after a birth before getting pregnant again",
+        "About 18 months or more gives your body the most time to recover",
+        "Shorter gaps raise the chance of preterm birth and a small baby",
+        "Talk with your team about your plans and what's right for you"
+      ],
+      "narration": "If you'd like more children, the timing of your next pregnancy matters. Getting pregnant less than six months after a birth carries the most risk, including a higher chance of preterm birth and a small baby, so it's best to avoid that. Waiting about eighteen months or more before getting pregnant again gives your body the most time to recover. Your own situation, like your age or health, may change what's best, so talk with your care team about your plans.",
+      "sourceIds": [
+        "acog-co736"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a calendar for at least 6 months, an hourglass for about 18 months or more, a warning sign for higher risks with short gaps, and a speech bubble for talking with your team."
+      }
+    },
+    {
+      "id": "your-visit",
+      "type": "content",
+      "heading": "Getting the most from your visits",
+      "onScreen": [
+        "Write your questions down ahead of time",
+        "Use your Birth Readiness Brief and ACOG's postpartum checklist",
+        "Bring a support person if you'd like",
+        "Don't wait for a visit if something seems wrong"
+      ],
+      "narration": "Make the most of each visit. Write your questions down ahead of time, because new-parent brain fog is real. Your Birth Readiness Brief and ACOG's postpartum checklist can help you remember what to ask. You can bring a support person, and your baby can usually come along. And don't wait for a scheduled visit if something seems wrong. The warning signs from lesson 6.2 need a call or care right away, any time in the first year.",
+      "sourceIds": [
+        "acog-postpartum-checklist",
+        "acog-postpartum-checkup"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a clipboard for writing questions down, a circle check for the checklist, a group of people for bringing a support person, and a phone for calling sooner if something seems wrong."
+      }
+    },
+    {
+      "id": "checkup-plan",
+      "type": "reflection",
+      "heading": "Your checkup plan",
+      "onScreen": [
+        "Who you'll see, and when your first check-in is",
+        "The birth control you're thinking about",
+        "Questions you want to ask"
+      ],
+      "narration": "Let's make your checkup plan. Who will you see after birth, and when is your first check-in? What birth control are you thinking about? And what questions do you want to ask? Save your answers to your Birth Readiness Brief.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write who you'll see after birth and when your first check-in is, the birth control you're thinking about, and the questions you want to ask."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "A check-in within 3 weeks, and a full visit by 12 weeks",
+        "After gestational diabetes or high blood pressure, keep up with follow-up tests",
+        "You can get pregnant before your period returns; plan your birth control",
+        "Wait at least 6 months, ideally about 18, before your next pregnancy"
+      ],
+      "narration": "Let's recap. Plan for a check-in within three weeks after birth, a blood pressure check in three to ten days if you had high blood pressure, and a full visit by twelve weeks. After gestational diabetes or high blood pressure, keep up with your follow-up tests. You can get pregnant before your period returns, so choose your birth control ahead of time. And wait at least six months, ideally about eighteen, before your next pregnancy. Next up, a few review questions, and that's the end of the class. Congratulations.",
+      "sourceIds": [
+        "acog-co736",
+        "acog-postpartum-birth-control"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "When should your full postpartum visit happen?",
+      "options": [
+        "Within 24 hours of birth",
+        "By 12 weeks after birth",
+        "At your baby's first birthday"
+      ],
+      "correctIndex": 1,
+      "explanation": "Plan for a check-in within the first 3 weeks and a full visit by 12 weeks after birth, sooner for a blood pressure check if you had high blood pressure."
+    },
+    {
+      "prompt": "You had gestational diabetes. What follow-up do you need?",
+      "options": [
+        "None, it went away at birth",
+        "A glucose test 4 to 12 weeks after birth, then regular testing",
+        "Only a test if you get pregnant again"
+      ],
+      "correctIndex": 1,
+      "explanation": "Gestational diabetes raises your risk of type 2 diabetes later, so you need a glucose test 4 to 12 weeks after birth and regular testing after that."
+    },
+    {
+      "prompt": "Which birth control method can be placed before you leave the hospital?",
+      "options": [
+        "An IUD or implant",
+        "A diaphragm",
+        "The combined estrogen pill"
+      ],
+      "correctIndex": 0,
+      "explanation": "An IUD or implant can be placed right after birth or at a checkup, and both are fine while breastfeeding. Estrogen methods usually wait a few weeks, and a diaphragm waits about 6 weeks."
+    }
+  ]
+}
