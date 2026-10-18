@@ -16,7 +16,7 @@
     "reviewedBy": null,
     "reviewedOn": null,
     "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 6.5 of Module 6 (Postpartum Recovery, Mood, and Red Flags). Builds on lesson 5.5 (safe sleep, couches and armchairs), lesson 5.3 (feeding in bed), lesson 6.1 (recovery), and lessons 6.2 and 6.4 (warning signs and mood). Sources were found by web search only; this session could not open the pages, so every new source needs to be opened and confirmed. For the reviewer: the fourth trimester, fatigue and sleep disruption, involving family and friends, and asking about help with childcare, chores, transportation, and meals follow ACOG Committee Opinion 736 and the ACOG postpartum checklist as described in search results; feeds every 2 to 3 hours matches lessons 5.3 and 5.4; the drowsy-feeding guidance (back to the crib, never a couch or armchair, safer in a bed with pillows and blankets moved away, then back to the baby's own space) matches lessons 5.3 and 5.5 and the AAP safe sleep page, and ACOG's toolkit similarly notes dozing in a bed is less dangerous than a chair or couch; about 450 to 500 extra calories while breastfeeding, a prenatal vitamin if the team advises, drinking more when urine is dark, and waiting at least 2 hours after a drink follow the ACOG breastfeeding FAQ; the CDC alcohol page says wait 2 hours per drink and not drinking is safest; caffeine differs between sources, with ACOG citing about 200 mg and the CDC about 300 mg (2 to 3 cups), so the slide says about two cups of coffee; sick visitors waiting, hand washing, cocooning with whooping cough (Tdap) and flu vaccines at least 2 weeks before visiting follow the AAP cocooning and flu pages; no smoking or vaping around the baby is standard teaching and matches lesson 5.5; postpartum doulas, home visiting, WIC, and work leave as supports are common practice, with ACOG's checklist encouraging parents to ask for help."
+    "notes": "Drafted 2026-10-18 as lesson 6.5 of Module 6 (Postpartum Recovery, Mood, and Red Flags). Builds on lesson 5.5 (safe sleep, couches and armchairs), lesson 5.3 (feeding in bed), lesson 6.1 (recovery), and lessons 6.2 and 6.4 (warning signs and mood). Sources were found by web search only; this session could not open the pages, so every new source needs to be opened and confirmed. For the reviewer: the fourth trimester, fatigue and sleep disruption, involving family and friends, and asking about help with childcare, chores, transportation, and meals follow ACOG Committee Opinion 736 and the ACOG postpartum checklist as described in search results; feeds every 2 to 3 hours matches lessons 5.3 and 5.4; the drowsy-feeding guidance (back to the crib, never a couch or armchair, safer in a bed with pillows and blankets moved away, then back to the baby's own space) matches lessons 5.3 and 5.5 and the AAP safe sleep page, and ACOG's toolkit similarly notes dozing in a bed is less dangerous than a chair or couch; about 450 to 500 extra calories while breastfeeding, a prenatal vitamin if the team advises, drinking more when urine is dark, and waiting at least 2 hours after a drink follow the ACOG breastfeeding FAQ; the CDC alcohol page says wait 2 hours per drink and not drinking is safest; caffeine differs between sources, with ACOG citing about 200 mg and the CDC about 300 mg (2 to 3 cups), so the slide says about two cups of coffee; sick visitors waiting, hand washing, cocooning with whooping cough (Tdap) and flu vaccines at least 2 weeks before visiting follow the AAP cocooning and flu pages; COVID among the vaccines for close contacts follows the AAP cocooning page, which names COVID and RSV; the RSV vaccine for adults 75 and older, and 50 to 74 at increased risk, follows the CDC adult RSV vaccine page; no smoking or vaping around the baby is standard teaching and matches lesson 5.5; postpartum doulas, home visiting, WIC, and work leave as supports are common practice, with ACOG's checklist encouraging parents to ask for help. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the sleep, caffeine (about two cups), alcohol, nutrition, and practical help slides as written; add COVID and RSV to the vaccines for close contacts; keep 12 minutes; no video."
   },
   "sources": [
     {
@@ -73,6 +73,13 @@
       "organization": "AAP",
       "title": "How to Keep Your Sleeping Baby Safe: AAP Policy Explained (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/a-parents-guide-to-safe-sleep.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-rsv-adults",
+      "organization": "CDC",
+      "title": "RSV Vaccines for Adults",
+      "url": "https://www.cdc.gov/rsv/vaccines/adults.html",
       "verifiedOn": null
     }
   ],
@@ -159,12 +166,13 @@
         "It's okay to limit visits, and to keep them short",
         "Anyone who's sick should wait until they're well",
         "Everyone washes their hands before holding your baby",
-        "Ask close contacts to get their whooping cough and flu vaccines"
+        "Ask close contacts to get their whooping cough, flu, and COVID vaccines, and RSV if they're eligible"
       ],
-      "narration": "Visitors can be a joy, and a lot of work. It's okay to say not yet, to keep visits short, and to ask guests to help with a chore instead of just holding the baby. Newborns catch infections easily, so anyone who's sick should wait until they're well. Everyone should wash their hands before holding your baby. Ask the people who'll be around your baby most, like grandparents and caregivers, to get up to date on their vaccines, including whooping cough and flu, ideally at least two weeks before they visit. Babies can't get some of these vaccines until they're older, so the people around them are their protection. And no one should smoke or vape around your baby.",
+      "narration": "Visitors can be a joy, and a lot of work. It's okay to say not yet, to keep visits short, and to ask guests to help with a chore instead of just holding the baby. Newborns catch infections easily, so anyone who's sick should wait until they're well. Everyone should wash their hands before holding your baby. Ask the people who'll be around your baby most, like grandparents and caregivers, to get up to date on their vaccines, including whooping cough, flu, and COVID, ideally at least two weeks before they visit. Grandparents who are 75 or older, or 50 or older with certain health conditions, can also get an RSV vaccine. Babies can't get some of these vaccines until they're older, so the people around them are their protection. And no one should smoke or vape around your baby.",
       "sourceIds": [
         "aap-cocoon",
-        "aap-protect-from-flu"
+        "aap-protect-from-flu",
+        "cdc-rsv-adults"
       ],
       "visual": {
         "kind": "illustration",
@@ -296,7 +304,7 @@
       "explanation": "Couches and armchairs are the most dangerous places to fall asleep with a baby. If you're drowsy, put your baby back on their back in their own crib or bassinet."
     },
     {
-      "prompt": "Who should get whooping cough and flu vaccines to help protect your newborn?",
+      "prompt": "Who should get whooping cough, flu, and COVID vaccines to help protect your newborn?",
       "options": [
         "No one; newborns are protected",
         "Only the baby's doctor",
