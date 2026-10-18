@@ -166,6 +166,11 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'cesarean-birth/first-moments': require('../../assets/lessons/cesarean-birth/first-moments.jpg'),
   'cesarean-birth/recovery-hospital': require('../../assets/lessons/cesarean-birth/recovery-hospital.jpg'),
   'cesarean-birth/next-time': require('../../assets/lessons/cesarean-birth/next-time.jpg'),
+  'when-plans-change/welcome': require('../../assets/lessons/when-plans-change/welcome.jpg'),
+  'when-plans-change/plans-change': require('../../assets/lessons/when-plans-change/plans-change.jpg'),
+  'when-plans-change/what-you-can-keep': require('../../assets/lessons/when-plans-change/what-you-can-keep.jpg'),
+  'when-plans-change/afterward-feelings': require('../../assets/lessons/when-plans-change/afterward-feelings.jpg'),
+  'when-plans-change/making-sense': require('../../assets/lessons/when-plans-change/making-sense.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
