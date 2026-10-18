@@ -219,6 +219,9 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'diapers-baths-crying-and-soothing/sponge-baths': require('../../assets/lessons/diapers-baths-crying-and-soothing/sponge-baths.jpg'),
   'diapers-baths-crying-and-soothing/why-babies-cry': require('../../assets/lessons/diapers-baths-crying-and-soothing/why-babies-cry.jpg'),
   'infant-cpr-and-choking/welcome': require('../../assets/lessons/infant-cpr-and-choking/welcome.jpg'),
+  'physical-recovery-after-birth/welcome': require('../../assets/lessons/physical-recovery-after-birth/welcome.jpg'),
+  'physical-recovery-after-birth/cesarean-healing': require('../../assets/lessons/physical-recovery-after-birth/cesarean-healing.jpg'),
+  'physical-recovery-after-birth/moving-again': require('../../assets/lessons/physical-recovery-after-birth/moving-again.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
