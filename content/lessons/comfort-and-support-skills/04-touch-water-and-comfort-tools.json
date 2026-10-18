@@ -1,0 +1,282 @@
+{
+  "courseId": "comfort-and-support-skills",
+  "lessonId": "touch-water-and-comfort-tools",
+  "order": 4,
+  "title": "Touch, Water, and Other Comfort Tools",
+  "learningGoals": [
+    "Use massage and light touch for comfort",
+    "Give counterpressure and a double hip squeeze for back and hip pain",
+    "Know how a warm shower or tub can help in labor, and its limits",
+    "Use heat and cold safely",
+    "Choose other comfort tools, like a birth ball, music, and dim light"
+  ],
+  "estimatedMinutes": 10,
+  "review": {
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 3.4 of Module 3 (Comfort, Movement, and Support Skills). Builds on lessons 3.2 (relaxation) and 3.3 (positions and back pain); the support person's broader role is left to lesson 3.5. Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: counterpressure and the double hip squeeze follow the Lamaze back labor article, with hand placement (the heel of the hand or a fist on the low back; palms on the fleshy part of the hips pressing in and up) described in common childbirth-education terms not confirmed word for word; the water slide follows ACOG Committee Opinion 679 (2016), found only through summaries and possibly reaffirmed or replaced since: laboring in a tub in the first stage may ease pain, shorten labor, and lower epidural use, for healthy pregnancies at term, and giving birth underwater is experimental; the address for Committee Opinion 679 follows ACOG's usual pattern and needs checking; the heat and cold advice (a cloth between skin and pack, not too hot, especially with an epidural) is common practice not confirmed in these sources; the demonstration video is a proposal, to be made after review. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): the hand placement for counterpressure and the double hip squeeze is accurate as written; Committee Opinion 679 is current, so keep the water slide as written; keep the heat and cold advice, including asking the nurse with an epidural; keep 'not wanting touch is normal, and not about you'; make the demonstration video as proposed, with arrows for the direction of pressure."
+  },
+  "sources": [
+    {
+      "id": "lamaze-back-labor",
+      "organization": "Lamaze",
+      "title": "When Back Labor Strikes: Tips & Tricks for Optimal Comfort",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/when-back-labor-strikes-tips-tricks-for-optimal-comfort",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "lamaze-ways-to-relax",
+      "organization": "Lamaze",
+      "title": "Ways to Relax During Labor",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/ways-to-relax-during-labor-1",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "acog-co679",
+      "organization": "ACOG",
+      "title": "Immersion in Water During Labor and Delivery (Committee Opinion No. 679)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2016/11/immersion-in-water-during-labor-and-delivery",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "lamaze-move-positions",
+      "organization": "Lamaze",
+      "title": "Hormones & Healthy Birth: Walk, Move Around and Change Positions Throughout Labor",
+      "url": "https://www.lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/hormones-healthy-birth-walk-move-around-and-change-positions-throughout-labor",
+      "verifiedOn": "2026-10-18"
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Touch, Water, and Other Comfort Tools",
+      "onScreen": [
+        "Module 3: Comfort, Movement, and Support Skills"
+      ],
+      "narration": "Breathing and moving are a great start. In this lesson, we'll add more tools: massage and touch, counterpressure for back pain, warm water, heat and cold, and a few other simple comforts. Support people, this lesson is especially for you, so try these hands-on as we go.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person sitting on a birth ball, leaning forward onto the edge of a bed, eyes closed and relaxed, while their support partner kneels behind them, massaging their lower back. Calm, warm light. No readable writing."
+      }
+    },
+    {
+      "id": "massage",
+      "type": "content",
+      "heading": "Massage and touch",
+      "onScreen": [
+        "Try shoulders, back, hands, and feet",
+        "Light stroking, or firmer pressure",
+        "Ask what feels good, and ask again later",
+        "It's okay not to want touch at times"
+      ],
+      "narration": "Touch can ease tension and help you feel cared for. Support people, try rubbing their shoulders, back, hands, or feet. Some people like light, slow stroking. Others want firm pressure. Ask what feels good, and keep asking, because what helps can change as labor goes on. And it's okay if, at times, they don't want to be touched at all. That's normal, and not about you.",
+      "sourceIds": [
+        "lamaze-ways-to-relax"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person sitting on a sofa with eyes closed and a gentle smile while their support partner, sitting beside them, massages one of their hands with both thumbs. No readable writing."
+      }
+    },
+    {
+      "id": "counterpressure",
+      "type": "content",
+      "heading": "Counterpressure",
+      "onScreen": [
+        "Firm, steady pressure on the lower back",
+        "Use the heel of your hand, or a fist",
+        "Press during the contraction, and ease off after",
+        "Ask: harder, softer, higher, or lower?"
+      ],
+      "narration": "Counterpressure is a favorite for back pain. During a contraction, the support person presses firmly and steadily on the lower back, right where it hurts most, often just above the tailbone. Use the heel of your hand or a loose fist, and lean your body weight in, rather than pushing with your arms alone. Hold it through the contraction, then ease off. Keep asking: harder, softer, higher, or lower?",
+      "sourceIds": [
+        "lamaze-back-labor"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A laboring person standing and leaning forward with their forearms on a counter, while their support partner stands behind them, pressing the heel of one hand firmly on the center of their lower back, just above the tailbone. No readable writing."
+      }
+    },
+    {
+      "id": "hip-squeeze",
+      "type": "content",
+      "heading": "The double hip squeeze",
+      "onScreen": [
+        "The laboring person leans forward",
+        "Palms on the fleshy part of each hip",
+        "Press in toward the middle, and slightly up",
+        "Hold during the contraction, release after"
+      ],
+      "narration": "The double hip squeeze can ease hip and back pain. The laboring person leans forward, on a bed, a counter, or hands and knees. The support person places a palm on the fleshy part of each hip, the upper buttocks, and presses in toward the middle and slightly up, as if gently squeezing the hips together. Hold it during the contraction, then release. It takes strength, so a second helper or a doula can take turns.",
+      "sourceIds": [
+        "lamaze-back-labor"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A laboring person on hands and knees on a bed, leaning forward over pillows, while their support partner stands behind the bed with a palm placed on each side of their hips, pressing inward. Calm faces. No readable writing."
+      }
+    },
+    {
+      "id": "practice-touch",
+      "type": "video",
+      "heading": "Watch, then try: counterpressure and the hip squeeze",
+      "onScreen": [
+        "Watch where the hands go",
+        "Then try it, and ask: harder or softer?"
+      ],
+      "narration": "Here's a short demonstration. Watch where the support person's hands go, then try it yourselves, and keep checking in.",
+      "sourceIds": [
+        "lamaze-back-labor"
+      ],
+      "video": {
+        "brief": "A short demonstration with the same couple in a calm living room. Counterpressure: the pregnant person leans forward on a counter and the partner presses the heel of a hand on the lower back, leaning in. The double hip squeeze: she kneels over a birth ball and the partner places a palm on each side of her hips and presses inward. Close-ups show hand placement, with simple arrows for direction of pressure. Short captions. No narration; soft music.",
+        "maxSeconds": 60
+      }
+    },
+    {
+      "id": "checkin-touch",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": [
+        "lamaze-back-labor"
+      ],
+      "question": {
+        "prompt": "Your partner has strong back pain during contractions. What's a good way to help?",
+        "options": [
+          "Firm, steady counterpressure on their lower back during each contraction",
+          "Light tickling on their arms",
+          "Asking them to lie flat on their back"
+        ],
+        "correctIndex": 0,
+        "explanation": "Firm counterpressure on the lower back, held through the contraction, often helps back pain. Keep asking where and how hard."
+      }
+    },
+    {
+      "id": "water",
+      "type": "content",
+      "heading": "Warm water",
+      "onScreen": [
+        "A warm shower on your back or belly",
+        "A tub in early and active labor may ease pain",
+        "It may shorten labor, and lower epidural use",
+        "Giving birth underwater isn't recommended by ACOG"
+      ],
+      "narration": "Warm water is one of the most soothing comfort tools. A shower aimed at your lower back or belly can ease pain, and you can sit on a stool or ball in the shower. If your hospital has tubs, laboring in warm water during the first stage of labor may ease pain, shorten labor, and lower the need for an epidural. It's usually offered to people with healthy pregnancies at term, and your team will check on you and your baby while you're in the tub. ACOG doesn't recommend giving birth underwater, outside of research, so you'll be asked to get out for the birth.",
+      "sourceIds": [
+        "acog-co679"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A laboring person sitting in a warm birthing tub in a softly lit hospital room, water up to their chest, wearing a dark sports top, eyes closed and relaxed, while their support partner kneels beside the tub holding their hand. No readable writing."
+      }
+    },
+    {
+      "id": "heat-cold",
+      "type": "content",
+      "heading": "Heat and cold",
+      "onScreen": [
+        "A warm pack on your lower back or belly",
+        "A cool cloth on your face or neck",
+        "Put a cloth between skin and a hot or cold pack",
+        "Not too hot, especially with an epidural"
+      ],
+      "narration": "Heat and cold are simple and cheap. A warm pack or warm towel on the lower back or belly can ease aching. A cool, damp cloth on the face or neck can feel wonderful when you're hot and working hard. Always put a cloth between the skin and a hot or cold pack, and check that it's not too hot. If you have an epidural, you may not feel heat well, so ask your nurse before using a warm pack.",
+      "sourceIds": [
+        "lamaze-back-labor",
+        "lamaze-ways-to-relax"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a thermometer for a warm pack, a snowflake for a cool cloth, a bandage for a cloth between skin and pack, and a warning triangle for not too hot."
+      }
+    },
+    {
+      "id": "other-tools",
+      "type": "content",
+      "heading": "Other comfort tools",
+      "onScreen": [
+        "A birth ball, to sit, rock, or lean on",
+        "Music or a calming playlist",
+        "Dim lights and familiar things from home",
+        "A focal point, or picturing a calm place"
+      ],
+      "narration": "A few more tools are worth packing. A birth ball, to sit, rock, or lean over, as you practiced last lesson. Music or a calming playlist. Dim lights, and familiar things from home, like your own pillow. And a focal point, like a photo, or picturing a calm place during contractions. Try a few, and keep the ones you like.",
+      "sourceIds": [
+        "lamaze-ways-to-relax",
+        "lamaze-move-positions"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a ball for a birth ball, music notes for a playlist, a lamp for dim lights, and an eye for a focal point."
+      }
+    },
+    {
+      "id": "your-tools",
+      "type": "reflection",
+      "heading": "Your comfort toolkit",
+      "onScreen": [
+        "The kinds of touch you like, and don't",
+        "Whether you'd like a shower or tub",
+        "Comfort items to pack"
+      ],
+      "narration": "Let's build your comfort toolkit. What kinds of touch do you like, and are there any you don't? Would you like to use a shower or tub, if it's available? And what comfort items will you pack, like a playlist, your own pillow, or a warm pack? Save your answers to your Birth Readiness Brief.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write the kinds of touch you like and don't, whether you'd like a shower or tub, and comfort items to pack."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Massage and touch: ask what helps, and keep asking",
+        "Counterpressure and the hip squeeze for back and hip pain",
+        "Warm water can ease pain; birth underwater isn't recommended",
+        "Heat, cold, a ball, music, and dim light"
+      ],
+      "narration": "Let's recap. Massage and touch can ease tension, so ask what helps, and keep asking. Counterpressure and the double hip squeeze can ease back and hip pain. Warm water in a shower or tub can ease pain in labor, though giving birth underwater isn't recommended. And heat, cold, a birth ball, music, and dim light are simple tools to pack. Next up, a few review questions.",
+      "sourceIds": [
+        "lamaze-back-labor",
+        "acog-co679"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "Where does a support person usually press for counterpressure?",
+      "options": [
+        "On the lower back, often just above the tailbone",
+        "On the belly",
+        "On the neck"
+      ],
+      "correctIndex": 0,
+      "explanation": "Counterpressure is firm, steady pressure on the lower back, where it hurts most, held through the contraction."
+    },
+    {
+      "prompt": "What does ACOG say about laboring in a warm tub during the first stage of labor?",
+      "options": [
+        "It's never allowed",
+        "It may ease pain, shorten labor, and lower epidural use for healthy pregnancies at term",
+        "It's required for every birth"
+      ],
+      "correctIndex": 1,
+      "explanation": "ACOG says laboring in water in the first stage may ease pain, shorten labor, and lower epidural use, though giving birth underwater isn't recommended outside of research."
+    },
+    {
+      "prompt": "You have an epidural and want a warm pack on your back. What should you do first?",
+      "options": [
+        "Use it as hot as possible",
+        "Ask your nurse, since you may not feel heat well",
+        "Put it directly on your skin"
+      ],
+      "correctIndex": 1,
+      "explanation": "With an epidural you may not feel heat well, so ask your nurse first, and always put a cloth between your skin and the pack."
+    }
+  ]
+}

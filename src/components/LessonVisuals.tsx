@@ -57,6 +57,10 @@ import CircleDot from 'lucide-react-native/icons/circle-dot';
 import FaceSlightlySmiling from 'lucide-react-native/icons/face-slightly-smiling';
 import Hand from 'lucide-react-native/icons/hand';
 import Volleyball from 'lucide-react-native/icons/volleyball';
+import Snowflake from 'lucide-react-native/icons/snowflake';
+import Music from 'lucide-react-native/icons/music';
+import Lamp from 'lucide-react-native/icons/lamp';
+import Eye from 'lucide-react-native/icons/eye';
 
 /**
  * Pictures drawn in code for lesson slides: icon panels and simple diagrams.
@@ -1199,6 +1203,28 @@ const VISUALS: Record<string, () => React.ReactElement> = {
         { icon: Volleyball, label: 'Kneel over a ball' },
         { icon: Footprints, label: 'Lunge, foot on a chair' },
         { icon: HeartHandshake, label: 'Counterpressure and heat' },
+      ]}
+    />
+  ),
+  'touch-water-and-comfort-tools/heat-cold': () => (
+    <IconPanel
+      label="Heat and cold: a warm pack on the lower back or belly, a cool cloth on the face or neck, a cloth between skin and pack, and not too hot, especially with an epidural."
+      items={[
+        { icon: Thermometer, label: 'Warm pack on back or belly' },
+        { icon: Snowflake, label: 'Cool cloth on face or neck' },
+        { icon: Bandage, label: 'Cloth between skin and pack' },
+        { icon: TriangleAlert, label: 'Not too hot, especially with an epidural', tone: 'marigold' },
+      ]}
+    />
+  ),
+  'touch-water-and-comfort-tools/other-tools': () => (
+    <IconPanel
+      label="Other comfort tools: a birth ball, music or a calming playlist, dim lights and familiar things from home, and a focal point."
+      items={[
+        { icon: Volleyball, label: 'Birth ball' },
+        { icon: Music, label: 'Music' },
+        { icon: Lamp, label: 'Dim lights' },
+        { icon: Eye, label: 'A focal point' },
       ]}
     />
   ),
