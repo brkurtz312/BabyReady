@@ -1,0 +1,250 @@
+{
+  "courseId": "interventions-and-flexible-decisions",
+  "lessonId": "making-decisions-with-your-care-team",
+  "order": 1,
+  "title": "Making Decisions With Your Care Team",
+  "learningGoals": [
+    "Understand shared decision making and informed consent",
+    "Ask about benefits, risks, alternatives, and timing for any recommendation",
+    "Tell the difference between decisions with time to talk and true emergencies",
+    "Make sure you understand, with plain words, an interpreter, or your support person",
+    "Know that you can ask for time, say not yet, or decline, and change your mind"
+  ],
+  "estimatedMinutes": 9,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Drafted 2026-10-18 as lesson 4.1, the first lesson of Module 4 (Interventions and Flexible Decisions). Builds on Preparing for Birth lesson 5, which teaches the BRAIN questions; this lesson recaps them in one line and adds timing, understanding, support people, and declining. Sources were found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. For the reviewer: the three levels of urgency (time to talk, time in labor, emergency), asking for an interpreter, and repeating back what you heard are drawn from ACOG Committee Opinion 819's description of informed consent but not confirmed word for word; the curriculum map lists ACNM as a source, but no ACNM page on shared decision making was found; the video slide is a proposal."
+  },
+  "sources": [
+    {
+      "id": "acog-co819",
+      "organization": "ACOG",
+      "title": "Informed Consent and Shared Decision Making in Obstetrics and Gynecology (Committee Opinion No. 819)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2021/02/informed-consent-and-shared-decision-making-in-obstetrics-and-gynecology",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-health-care-visit",
+      "organization": "ACOG",
+      "title": "Making the Most of Your Health Care Visit (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/making-the-most-of-your-health-care-visit",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-induction-questions",
+      "organization": "ACOG",
+      "title": "8 Questions to Ask Your Doctor Before Labor Induction",
+      "url": "https://www.acog.org/womens-health/experts-and-stories/the-latest/8-questions-to-ask-your-doctor-before-labor-induction",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Making Decisions With Your Care Team",
+      "onScreen": [
+        "Module 4: Interventions and Flexible Decisions"
+      ],
+      "narration": "Welcome to Module 4, Interventions and Flexible Decisions. Many births go as hoped, and some take a turn. Either way, you'll likely be part of some decisions along the way. In this first lesson, we'll talk about how those decisions are made with your care team, the questions that help, and what to do when time is short.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person and their support partner sitting with an ob-gyn in a calm exam room, all three leaning in over a printed page, talking."
+      }
+    },
+    {
+      "id": "shared-decisions",
+      "type": "content",
+      "heading": "You're part of the team",
+      "onScreen": [
+        "Shared decision making: your team's knowledge plus your values",
+        "Informed consent: clear information, then your own choice",
+        "Your choice can include saying no"
+      ],
+      "narration": "Good care is a partnership. Your care team brings medical knowledge and experience. You bring what matters most to you, your values, and your preferences. Shared decision making puts those together. Before most tests, treatments, or procedures, your team should explain what they recommend, why, and what the options are, in words you understand. Then the choice is yours. That's called informed consent, and it includes the right to say no.",
+      "sourceIds": ["acog-co819"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Two overlapping circles drawn as soft shapes: one holding a stethoscope, one holding a heart, with a small checkmark where they overlap. No words."
+      }
+    },
+    {
+      "id": "four-questions",
+      "type": "content",
+      "heading": "Four questions for any recommendation",
+      "onScreen": [
+        "Why is this recommended for me?",
+        "What are the benefits and the risks?",
+        "What are the other options, including waiting?",
+        "How much time do we have to decide?"
+      ],
+      "narration": "In Preparing for Birth, you learned the BRAIN questions. Here's a short version you can use for any recommendation, in pregnancy or in labor. Why is this recommended for me? What are the benefits, and what are the risks? What are the other options, including waiting? And how much time do we have to decide? That last question tells you a lot about what kind of decision you're facing.",
+      "sourceIds": ["acog-co819", "acog-induction-questions"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons in a row: a question mark, a balance scale, two branching arrows, and a clock. No words."
+      }
+    },
+    {
+      "id": "how-much-time",
+      "type": "content",
+      "heading": "How much time is there?",
+      "onScreen": [
+        "Before labor: time to talk it over at visits, and to ask for a second opinion",
+        "In labor: often minutes to hours; you can ask for a few minutes to talk",
+        "An emergency: your team acts fast and explains as they go, or right after"
+      ],
+      "narration": "Decisions come with different amounts of time. Before labor, there's usually time to talk things over at your visits, read more, and even get a second opinion. In labor, there's often time to ask your questions and take a few minutes alone with your support person before deciding. In a true emergency, your team may need to act quickly. They'll explain what they can as they go, and more afterward. It helps to talk about likely decisions ahead of time, so you're not hearing about them for the first time in labor.",
+      "sourceIds": ["acog-co819", "acog-induction-questions"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Three stacked bands from calm to urgent: before labor, in labor, and an emergency, each with how much time there usually is."
+      }
+    },
+    {
+      "id": "checkin-time",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": ["acog-co819"],
+      "question": {
+        "prompt": "In labor, your nurse says the doctor recommends a change to your plan. You and your baby are doing well right now. What's a good first question?",
+        "options": [
+          "There's nothing to ask; just agree",
+          "Why is this recommended, and how much time do we have to decide?",
+          "Can we decide after the baby is born?"
+        ],
+        "correctIndex": 1,
+        "explanation": "Asking why and how much time there is helps you understand the recommendation and whether you can take a few minutes to talk it over."
+      }
+    },
+    {
+      "id": "understand-it",
+      "type": "content",
+      "heading": "Make sure you understand",
+      "onScreen": [
+        "Ask for plain words, or a drawing",
+        "Say back what you heard: \"So you're saying...\"",
+        "Ask for an interpreter if you need one",
+        "It's okay to ask again"
+      ],
+      "narration": "A choice only works if you understand it. If something isn't clear, ask your team to explain it in plain words, or to draw it. A good check is to say back what you heard: so you're saying, if we wait, this might happen. If you'd be more comfortable talking in another language, ask for a medical interpreter, rather than relying on a family member. And it's always okay to ask again, especially when you're tired or in pain.",
+      "sourceIds": ["acog-co819", "acog-health-care-visit"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A doctor sketching a simple picture on a notepad for a pregnant person and their support person, who are nodding along. No readable writing on the notepad."
+      }
+    },
+    {
+      "id": "support-person-role",
+      "type": "content",
+      "heading": "Your support person can help",
+      "onScreen": [
+        "Ask questions when you can't",
+        "Write down what the team says",
+        "Remind everyone what matters most to you"
+      ],
+      "narration": "Decisions are easier with someone beside you. Your support person can ask questions when you're in the middle of a contraction, write down what the team says, and remind everyone of what matters most to you. Talk with them before labor about your preferences, so they know your wishes. But the decision is still yours. Your support person helps you decide; they don't decide for you.",
+      "sourceIds": ["acog-health-care-visit", "acog-co819"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A support partner sitting beside a laboring person in a hospital bed, holding a small notebook, while a nurse explains something at the bedside. No readable writing."
+      }
+    },
+    {
+      "id": "not-yet-or-no",
+      "type": "content",
+      "heading": "Saying \"not yet\" or \"no\"",
+      "onScreen": [
+        "You can ask for more time, or say not yet",
+        "You can decline; your team will explain what may happen",
+        "Your decision will be written in your record",
+        "You can change your mind"
+      ],
+      "narration": "You can ask for more time, say not yet, or decline a recommendation. If you do, your team should explain what might happen, and what they'd suggest instead, and they'll write your decision in your record. That's a normal part of care, not a sign of conflict. And you can change your mind later. Many families find that when they understand the reasons, they and their team end up agreeing on a plan.",
+      "sourceIds": ["acog-co819"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person in a hospital gown talking calmly with a doctor and nurse at the bedside, everyone relaxed and listening."
+      }
+    },
+    {
+      "id": "decision-video",
+      "type": "video",
+      "heading": "A decision in labor",
+      "onScreen": [
+        "Notice the questions they ask, and the pause they take"
+      ],
+      "narration": "Here's a short example of a family making a decision with their care team during labor.",
+      "sourceIds": ["acog-co819"],
+      "video": {
+        "brief": "In a calm labor room, a doctor explains a recommended change to the plan. The laboring person and their support partner ask why, what the options are, and how much time they have. The doctor says there's time to talk. The doctor and nurse step out for a few minutes; the couple talk quietly, then call the team back and share their decision, and everyone nods. Narration-free with soft music and short captions. No medical procedures shown.",
+        "maxSeconds": 60
+      }
+    },
+    {
+      "id": "what-matters",
+      "type": "reflection",
+      "heading": "What matters most to you",
+      "onScreen": [
+        "The two or three things that matter most to you in labor",
+        "Who will help you decide",
+        "A question you want to ask your team before labor"
+      ],
+      "narration": "Let's put this into practice. What are the two or three things that matter most to you in labor? Who will be with you to help you decide? And what's one question you want to ask your care team before labor starts, about a decision you might face? Save your answers to your Birth Readiness Brief, and bring them to your next visit.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write the two or three things that matter most to you in labor, who will help you decide, and one question for your care team."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Decisions are shared: your team's knowledge plus your values",
+        "Ask why, benefits and risks, other options, and how much time",
+        "Plain words, an interpreter, and your support person help",
+        "You can ask for time, say not yet, or decline"
+      ],
+      "narration": "Let's recap. Decisions in pregnancy and birth are shared, combining your team's knowledge with your values. For any recommendation, ask why, what the benefits and risks are, what the other options are, and how much time there is. Ask for plain words or an interpreter, and lean on your support person. And remember, you can ask for time, say not yet, or decline. Next up, a few review questions.",
+      "sourceIds": ["acog-co819"]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "What does informed consent mean?",
+      "options": [
+        "Signing forms when you arrive at the hospital",
+        "Getting clear information about a recommendation, then making your own choice",
+        "Letting your support person decide for you"
+      ],
+      "correctIndex": 1,
+      "explanation": "Informed consent means your team explains what they recommend, why, and the options, in words you understand, and then you choose, which can include saying no."
+    },
+    {
+      "prompt": "Which question best tells you whether you have time to talk a decision over?",
+      "options": [
+        "Who else has had this done?",
+        "How much time do we have to decide?",
+        "Will it hurt?"
+      ],
+      "correctIndex": 1,
+      "explanation": "Asking how much time there is tells you whether you can take a few minutes, or whether it's an emergency where your team needs to act quickly."
+    },
+    {
+      "prompt": "You'd rather talk about a medical decision in Spanish. What's the best step?",
+      "options": [
+        "Have a family member translate",
+        "Ask for a medical interpreter",
+        "Agree without fully understanding"
+      ],
+      "correctIndex": 1,
+      "explanation": "A medical interpreter helps make sure you understand your options and your team understands you."
+    }
+  ]
+}
