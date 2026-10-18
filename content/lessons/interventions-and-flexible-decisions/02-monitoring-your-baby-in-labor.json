@@ -1,0 +1,252 @@
+{
+  "courseId": "interventions-and-flexible-decisions",
+  "lessonId": "monitoring-your-baby-in-labor",
+  "order": 2,
+  "title": "Monitoring Your Baby in Labor",
+  "learningGoals": [
+    "Explain why your care team checks your baby's heart rate during labor",
+    "Tell the difference between listening at intervals and continuous monitoring",
+    "Know common reasons continuous monitoring is recommended",
+    "Know what usually happens if the heart rate pattern changes",
+    "Ask your care team how monitoring works where you plan to give birth"
+  ],
+  "estimatedMinutes": 10,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Drafted 2026-10-18 as lesson 4.2 of Module 4 (Interventions and Flexible Decisions). Sources were found by web search only; this session could not open acog.org, so every source needs to be opened and confirmed. ACOG Practice Bulletin 106 has been replaced by a 2025 Clinical Practice Guideline on intrapartum fetal heart rate monitoring; search results disagree on its number (10 or 22), so the title is given without one. For the reviewer: the reasons for continuous monitoring (epidural, oxytocin, medical conditions, a change heard while listening) are drawn from the ACOG FAQ and Committee Opinion 766 but not confirmed word for word, and the epidural reason is from common practice rather than a confirmed ACOG line; the internal monitoring slide (scalp electrode, pressure catheter) needs confirming against the FAQ; the first steps for a changed pattern (position change, IV fluids, pausing oxytocin) follow the 2025 guideline summary."
+  },
+  "sources": [
+    {
+      "id": "acog-fhr-faq",
+      "organization": "ACOG",
+      "title": "Fetal Heart Rate Monitoring During Labor (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/fetal-heart-rate-monitoring-during-labor",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-co766",
+      "organization": "ACOG",
+      "title": "Approaches to Limit Intervention During Labor and Birth (Committee Opinion No. 766)",
+      "url": "https://www.acog.org/clinical/guidance/committee-opinion/2019/02/approaches-to-limit-intervention-during-labor-and-birth",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-fhr-cpg",
+      "organization": "ACOG",
+      "title": "Intrapartum Fetal Heart Rate Monitoring: Interpretation and Management (Clinical Practice Guideline, 2025)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2025/10/intrapartum-fetal-heart-rate-monitoring-interpretation-and-management",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Monitoring Your Baby in Labor",
+      "onScreen": [
+        "Module 4: Interventions and Flexible Decisions"
+      ],
+      "narration": "During labor, your care team will keep track of how your baby is doing by checking their heartbeat. In this lesson, we'll look at the two main ways that's done, why one might be recommended over the other, and what usually happens if the heartbeat pattern changes.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A laboring person sitting up in a hospital bed with a soft monitor belt around their belly, their support partner beside them, and a nurse glancing at a monitor screen with a gentle wavy line. Calm room, no readable numbers or writing."
+      }
+    },
+    {
+      "id": "why-monitor",
+      "type": "content",
+      "heading": "Why check your baby's heartbeat?",
+      "onScreen": [
+        "It shows how your baby is handling labor",
+        "A normal pattern is reassuring",
+        "A change can prompt your team to look closer"
+      ],
+      "narration": "Contractions squeeze the uterus, and most babies handle that well. Checking your baby's heart rate is how your team keeps an eye on them. A normal heart rate pattern is reassuring, and tells everyone that labor can keep going. If the pattern changes, your team can look closer, try simple steps to help, and decide whether anything else is needed. Monitoring can also help avoid treatments that aren't needed.",
+      "sourceIds": ["acog-fhr-faq"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A close, warm view of a nurse's hands holding a small handheld heartbeat listener against a pregnant belly, with soft curved lines suggesting a heartbeat. No words."
+      }
+    },
+    {
+      "id": "two-ways",
+      "type": "content",
+      "heading": "Two ways to check",
+      "onScreen": [
+        "Listening at set times, with a handheld device",
+        "Continuous monitoring, with belts and a monitor"
+      ],
+      "narration": "There are two main ways to check your baby's heart rate in labor. The first is listening at set times, called intermittent auscultation. Your nurse or midwife listens with a small handheld device. The second is continuous electronic fetal monitoring, which records your baby's heartbeat and your contractions the whole time. Which one you have depends on your health, how labor is going, and your hospital's policy. If you and your baby have no complications or risk factors, either one is a reasonable choice.",
+      "sourceIds": ["acog-fhr-faq"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Two simple icons side by side: an ear for listening at set times, and a heartbeat line for continuous monitoring, each with a short label."
+      }
+    },
+    {
+      "id": "listening",
+      "type": "content",
+      "heading": "Listening at set times",
+      "onScreen": [
+        "A nurse or midwife listens with a handheld device",
+        "Usually during and right after contractions",
+        "You're free to move between checks",
+        "An option for many low-risk labors"
+      ],
+      "narration": "With intermittent listening, your nurse or midwife holds a small handheld device against your belly at regular times, usually during and just after a contraction. Between checks, nothing is attached, so you're free to walk, change positions, or use a birth ball. It's an option for many people with a low-risk labor, if your hospital has a plan and staff for it. If you'd like it, ask about it at a prenatal visit.",
+      "sourceIds": ["acog-fhr-faq", "acog-co766"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A laboring person leaning forward on a birth ball while a nurse kneels beside them, holding a small handheld heartbeat listener to their belly. The partner rubs their back. No cords attached. No readable writing."
+      }
+    },
+    {
+      "id": "continuous",
+      "type": "content",
+      "heading": "Continuous monitoring",
+      "onScreen": [
+        "Two soft belts around your belly",
+        "One tracks your baby's heartbeat, one your contractions",
+        "The monitor shows both as lines",
+        "You can often still change positions"
+      ],
+      "narration": "With continuous monitoring, two soft belts go around your belly. One picks up your baby's heartbeat, and the other picks up your contractions. A monitor shows both as lines, so your team can see how the heartbeat responds to each contraction. You can usually still change positions in bed, sit up, or use a birth ball nearby. Some hospitals have wireless monitors that let you walk around. The belts may need adjusting now and then if they slip.",
+      "sourceIds": ["acog-fhr-faq"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A laboring person sitting upright on a birth ball beside a hospital bed, wearing two soft monitor belts around their belly, with a cord running to a monitor whose screen shows two gentle wavy lines. Their partner sits beside them. No readable numbers or writing."
+      }
+    },
+    {
+      "id": "checkin-ways",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": ["acog-fhr-faq"],
+      "question": {
+        "prompt": "With intermittent listening, how is your baby's heartbeat checked?",
+        "options": [
+          "With belts worn the whole time",
+          "With a handheld device at set times",
+          "Only once, when you arrive"
+        ],
+        "correctIndex": 1,
+        "explanation": "With intermittent listening, a nurse or midwife checks with a handheld device at regular times, and you're free to move between checks."
+      }
+    },
+    {
+      "id": "when-continuous",
+      "type": "content",
+      "heading": "When continuous monitoring is recommended",
+      "onScreen": [
+        "Medicine to start or speed up labor (oxytocin)",
+        "An epidural",
+        "Some health conditions in you or your baby",
+        "A change heard while listening"
+      ],
+      "narration": "Continuous monitoring is often recommended when labor needs a closer watch. That includes when you're given oxytocin to start or speed up labor, and usually when you have an epidural. It may be recommended if you or your baby have certain health conditions, such as high blood pressure, or if your baby is early. And if your nurse hears a change while listening at set times, they may switch to continuous monitoring for a while. If it's recommended, it's fair to ask why, as you learned in the last lesson.",
+      "sourceIds": ["acog-fhr-faq", "acog-co766"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a drop for oxytocin, a syringe for an epidural, a heart with a plus for health conditions, and an ear for a change heard while listening."
+      }
+    },
+    {
+      "id": "internal",
+      "type": "content",
+      "heading": "Internal monitoring",
+      "onScreen": [
+        "Used if the belts can't get a clear reading",
+        "A thin wire placed on your baby's scalp",
+        "Only after your water has broken"
+      ],
+      "narration": "Sometimes the belts can't get a clear reading, for example if you or your baby move a lot. Then your team may suggest internal monitoring. A thin wire is placed on your baby's scalp, through the cervix, to read the heartbeat directly. A thin tube can also measure the strength of contractions. This can only be done after your water has broken and your cervix has opened some. Your team will explain it and ask first.",
+      "sourceIds": ["acog-fhr-faq"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A nurse sitting at the bedside calmly explaining something to a laboring person and their partner, gesturing toward a monitor with a gentle wavy line. No procedure shown. No readable writing."
+      }
+    },
+    {
+      "id": "pattern-changes",
+      "type": "content",
+      "heading": "If the pattern changes",
+      "onScreen": [
+        "Changes are common, and many are brief",
+        "First steps: a new position, IV fluids, slowing labor medicine",
+        "Ask what they're seeing and what comes next",
+        "If it doesn't improve, a faster birth may be advised"
+      ],
+      "narration": "Changes in the heart rate pattern are common during labor, and many are brief. If your team sees a change, they'll usually start with simple steps, like helping you turn onto your side or change position, giving IV fluids, or slowing or stopping medicine that's making contractions stronger. You can ask what they're seeing and what comes next. Most of the time, the pattern improves. If it doesn't, your team may recommend helping your baby be born sooner, with a vacuum, forceps, or a cesarean. We'll cover those in later lessons.",
+      "sourceIds": ["acog-fhr-cpg", "acog-fhr-faq"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A nurse gently helping a laboring person turn onto their left side in a hospital bed, with the partner holding their hand. Calm and supportive. No readable writing."
+      }
+    },
+    {
+      "id": "your-questions",
+      "type": "reflection",
+      "heading": "Questions for your care team",
+      "onScreen": [
+        "How do you usually monitor babies in a low-risk labor?",
+        "Is intermittent listening, or a wireless monitor, available?",
+        "What would make you recommend continuous monitoring for me?"
+      ],
+      "narration": "Monitoring is a good topic for your next prenatal visit. You might ask how your care team usually monitors babies in a low-risk labor, whether intermittent listening or a wireless monitor is available, and what would make them recommend continuous monitoring for you. Write down the questions you want to ask, and save them to your Birth Readiness Brief.",
+      "sourceIds": ["acog-fhr-faq", "acog-co766"],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write the questions you want to ask your care team about monitoring your baby in labor."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Checking your baby's heartbeat shows how they're handling labor",
+        "Listening at set times, or continuous monitoring with belts",
+        "Continuous is often advised with oxytocin, an epidural, or some conditions",
+        "If the pattern changes, simple steps come first"
+      ],
+      "narration": "Let's recap. Your team checks your baby's heartbeat to see how they're handling labor. That can be done by listening at set times with a handheld device, or continuously with two belts and a monitor. Continuous monitoring is often recommended with oxytocin, an epidural, or some health conditions. And if the heartbeat pattern changes, your team usually starts with simple steps, like a change of position. Next up, a few review questions.",
+      "sourceIds": ["acog-fhr-faq", "acog-fhr-cpg"]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "Why does your care team check your baby's heartbeat during labor?",
+      "options": [
+        "To find out the baby's sex",
+        "To see how your baby is handling labor",
+        "To measure how dilated you are"
+      ],
+      "correctIndex": 1,
+      "explanation": "The heart rate pattern shows how your baby is handling contractions. A normal pattern is reassuring, and a change helps your team decide whether to look closer."
+    },
+    {
+      "prompt": "You're given oxytocin to speed up labor. What kind of monitoring is usually recommended?",
+      "options": [
+        "Continuous monitoring",
+        "Listening once an hour",
+        "No monitoring"
+      ],
+      "correctIndex": 0,
+      "explanation": "Oxytocin makes contractions stronger, so continuous monitoring is recommended to watch how your baby responds."
+    },
+    {
+      "prompt": "Your nurse notices a change in your baby's heart rate pattern. What usually happens first?",
+      "options": [
+        "An immediate cesarean",
+        "Simple steps, like changing your position or giving IV fluids",
+        "Nothing; changes are always ignored"
+      ],
+      "correctIndex": 1,
+      "explanation": "Your team usually starts with simple steps, like a new position, IV fluids, or slowing labor medicine, and most of the time the pattern improves."
+    }
+  ]
+}
