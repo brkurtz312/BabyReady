@@ -53,6 +53,7 @@ import Milk from 'lucide-react-native/icons/milk';
 import Syringe from 'lucide-react-native/icons/syringe';
 import Ear from 'lucide-react-native/icons/ear';
 import HeartPlus from 'lucide-react-native/icons/heart-plus';
+import CircleDot from 'lucide-react-native/icons/circle-dot';
 
 /**
  * Pictures drawn in code for lesson slides: icon panels and simple diagrams.
@@ -1085,6 +1086,29 @@ const VISUALS: Record<string, () => React.ReactElement> = {
         { icon: Bed, label: 'Too exhausted to push' },
         { icon: HeartPulse, label: "Baby's heart rate" },
         { icon: HeartPlus, label: 'A health condition' },
+      ]}
+    />
+  ),
+  'cesarean-birth/reasons': () => (
+    <IconPanel
+      label="Common reasons for a cesarean: labor stops making progress, the baby's heart rate shows they need to be born soon, the baby isn't head-down, the placenta covers the cervix, or twins or more."
+      items={[
+        { icon: Hourglass, label: 'Labor stops progressing' },
+        { icon: HeartPulse, label: "Baby's heart rate" },
+        { icon: Baby, label: 'Baby not head-down' },
+        { icon: CircleDot, label: 'Placenta covers the cervix' },
+        { icon: Users, label: 'Twins or more' },
+      ]}
+    />
+  ),
+  'cesarean-birth/recovery-home': () => (
+    <IconPanel
+      label="After a cesarean, call your care team for a fever, a red or leaking incision, pain that gets worse, or heavy bleeding."
+      items={[
+        { icon: Thermometer, label: 'Fever', tone: 'alert' },
+        { icon: Bandage, label: 'Red or leaking incision', tone: 'alert' },
+        { icon: TriangleAlert, label: 'Pain getting worse', tone: 'alert' },
+        { icon: Droplet, label: 'Heavy bleeding', tone: 'alert' },
       ]}
     />
   ),
