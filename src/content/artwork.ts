@@ -171,6 +171,10 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'when-plans-change/what-you-can-keep': require('../../assets/lessons/when-plans-change/what-you-can-keep.jpg'),
   'when-plans-change/afterward-feelings': require('../../assets/lessons/when-plans-change/afterward-feelings.jpg'),
   'when-plans-change/making-sense': require('../../assets/lessons/when-plans-change/making-sense.jpg'),
+  'understanding-labor-pain/welcome': require('../../assets/lessons/understanding-labor-pain/welcome.jpg'),
+  'understanding-labor-pain/fear-tension': require('../../assets/lessons/understanding-labor-pain/fear-tension.jpg'),
+  'understanding-labor-pain/what-affects': require('../../assets/lessons/understanding-labor-pain/what-affects.jpg'),
+  'understanding-labor-pain/coping': require('../../assets/lessons/understanding-labor-pain/coping.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
