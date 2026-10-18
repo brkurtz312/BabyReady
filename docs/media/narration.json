@@ -61,5 +61,74 @@
       29457,
       32698
     ]
+  },
+  "early-pregnancy-first-steps/checkin-folic-acid.m4a": {
+    "fingerprint": "47eb3ac7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "early-pregnancy-first-steps/checkin-folic-acid-right.m4a": {
+    "fingerprint": "467717c8",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      952,
+      9192,
+      12689
+    ]
+  },
+  "early-pregnancy-first-steps/checkin-folic-acid-wrong.m4a": {
+    "fingerprint": "d2f3b13e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1265,
+      9595,
+      13192
+    ]
+  },
+  "early-pregnancy-first-steps/nausea-tips-video.m4a": {
+    "fingerprint": "0eb82cf3",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2794
+    ]
+  },
+  "early-pregnancy-first-steps/welcome.m4a": {
+    "fingerprint": "7735ef23",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2393,
+      4134,
+      8706,
+      11038,
+      12624,
+      23429,
+      25702,
+      28669
+    ]
+  },
+  "early-pregnancy-first-steps/medicines.m4a": {
+    "fingerprint": "ba9ef718",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1998,
+      8044,
+      10665,
+      17375,
+      19417,
+      26489
+    ]
   }
 }
