@@ -19,6 +19,8 @@ import earlyPregnancyFirstSteps from '../../content/lessons/early-pregnancy-basi
 import firstTrimesterCommonChanges from '../../content/lessons/early-pregnancy-basics/02-first-trimester-common-changes.json';
 import firstPrenatalVisit from '../../content/lessons/early-pregnancy-basics/03-first-prenatal-visit.json';
 
+import makingDecisions from '../../content/lessons/interventions-and-flexible-decisions/01-making-decisions-with-your-care-team.json';
+
 import safeSleep from '../../content/lessons/feeding-and-newborn-care/05-safe-sleep.json';
 import carSeatSafety from '../../content/lessons/feeding-and-newborn-care/06-car-seat-safety.json';
 
@@ -69,6 +71,8 @@ const earlyPregnancyLessons = sortedLessons([
   firstPrenatalVisit,
 ]);
 
+const interventionsLessons = sortedLessons([makingDecisions]);
+
 const feedingAndNewbornCareLessons = sortedLessons([safeSleep, carSeatSafety]);
 
 const postpartumRecoveryLessons = sortedLessons([postpartumWarningSigns, whenToCallAboutYourBaby]);
@@ -97,6 +101,13 @@ export const courses: Course[] = [
     label: 'CLASS · MODULE 2',
     description: `Six narrated lessons on how labor begins, when to call, and birth, with check-ins and a review quiz after each lesson. About ${minutes(laborBasicsLessons)} minutes.`,
     lessons: laborBasicsLessons,
+  },
+  {
+    courseId: 'interventions-and-flexible-decisions',
+    title: 'Interventions and Flexible Decisions',
+    label: 'CLASS · MODULE 4',
+    description: `Making decisions with your care team, and what to know about common interventions. About ${minutes(interventionsLessons)} minutes.`,
+    lessons: interventionsLessons,
   },
   {
     courseId: 'feeding-and-newborn-care',

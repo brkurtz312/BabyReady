@@ -47,6 +47,7 @@ import TriangleAlert from 'lucide-react-native/icons/triangle-alert';
 import Users from 'lucide-react-native/icons/users';
 import Utensils from 'lucide-react-native/icons/utensils';
 import Wind from 'lucide-react-native/icons/wind';
+import Scale from 'lucide-react-native/icons/scale';
 import CigaretteOff from 'lucide-react-native/icons/cigarette-off';
 import Milk from 'lucide-react-native/icons/milk';
 import Syringe from 'lucide-react-native/icons/syringe';
@@ -977,6 +978,27 @@ const VISUALS: Record<string, () => React.ReactElement> = {
         { icon: Droplet, label: '6+ wet diapers a day after day 5' },
         { icon: Moon, label: 'Too sleepy to feed? Call' },
         { icon: Phone, label: 'Worried? Call' },
+      ]}
+    />
+  ),
+  'making-decisions-with-your-care-team/four-questions': () => (
+    <IconPanel
+      label="Four questions for any recommendation: why it is recommended, its benefits and risks, the other options including waiting, and how much time there is to decide."
+      items={[
+        { icon: MessageCircleQuestionMark, label: 'Why for me?' },
+        { icon: Scale, label: 'Benefits and risks' },
+        { icon: Split, label: 'Other options, including waiting' },
+        { icon: Clock, label: 'How much time?' },
+      ]}
+    />
+  ),
+  'making-decisions-with-your-care-team/how-much-time': () => (
+    <Steps
+      label="How much time there is: before labor, time to talk at visits; in labor, often minutes to hours; in an emergency, your team acts fast and explains as they go."
+      steps={[
+        { title: 'Before labor', detail: 'Time to talk it over at visits', tone: 'lagoon' },
+        { title: 'In labor', detail: 'Often minutes to hours; ask for a few minutes', tone: 'marigold' },
+        { title: 'An emergency', detail: 'Your team acts fast and explains as they go', tone: 'alert' },
       ]}
     />
   ),
