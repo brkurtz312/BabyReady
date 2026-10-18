@@ -1,0 +1,294 @@
+{
+  "courseId": "comfort-and-support-skills",
+  "lessonId": "for-support-people",
+  "order": 5,
+  "title": "For Support People: How to Help",
+  "learningGoals": [
+    "Understand why steady, continuous support matters in labor",
+    "Prepare before labor, and help in early and active labor",
+    "Respond calmly when labor gets hard",
+    "Advocate for the laboring person without deciding for them",
+    "Take care of yourself so you can keep helping"
+  ],
+  "estimatedMinutes": 12,
+  "review": {
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 3.5, the last lesson of Module 3 (Comfort, Movement, and Support Skills). Written to the support person. Builds on Preparing for Birth lesson 4 (support team and doulas), Labor Basics lessons 2 and 4 (when to call, early labor), lesson 4.1 (the four questions), and lessons 3.2 to 3.4 (comfort skills). Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: continuous one-to-one support being linked to better outcomes repeats lesson 1.4's wording from Committee Opinion 766; 'don't ask questions during a contraction', following their lead, speaking with the care team privately about concerns, and eating, drinking, and resting when a backup can cover all follow the Lamaze partner articles; 'I can't do this' often coming near the end of active labor (transition) is a common childbirth-education point not confirmed word for word; eating and drinking for the laboring person is left to the care team's guidance, as in lesson 2.4. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the continuous-support line as in lesson 1.4; keep the Lamaze partner advice as written, including raising worries away from the bedside and a nurse among those who can take over; keep 'I can't do this' and that it often means birth is getting closer; keep reminding them to empty their bladder every hour or two; keep both lines on the support person's limits; no video for this lesson."
+  },
+  "sources": [
+    {
+      "id": "lamaze-partner-active-labor",
+      "organization": "Lamaze",
+      "title": "Tips for Supporting Your Partner in Active Labor",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/tips-for-supporting-your-partner-in-active-labor-1",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "lamaze-partner-cheat-sheet",
+      "organization": "Lamaze",
+      "title": "Helping Your Partner Through Labor and Birth: A Cheat Sheet",
+      "url": "https://lamaze.org/New-Giving-Birth-with-Confidence/New-GBWC-Post/helping-your-partner-through-labor-and-birth-a-cheat-sheet-1",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "lamaze-early-labor-support",
+      "organization": "Lamaze",
+      "title": "How to Support Someone Through Early Labor",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/how-to-support-someone-through-early-labor",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "acog-co766",
+      "organization": "ACOG",
+      "title": "Approaches to Limit Intervention During Labor and Birth (Committee Opinion No. 766)",
+      "url": "https://www.acog.org/clinical/guidance/committee-opinion/2019/02/approaches-to-limit-intervention-during-labor-and-birth",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "icea-comfort-measures",
+      "organization": "ICEA",
+      "title": "Comfort Measures",
+      "url": "https://icea.org/?p=10431",
+      "verifiedOn": "2026-10-18"
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "For Support People: How to Help",
+      "onScreen": [
+        "Module 3: Comfort, Movement, and Support Skills",
+        "For partners, family, and friends"
+      ],
+      "narration": "This lesson is for you, the support person: a partner, a family member, or a friend. You don't need to be an expert to make a real difference. We'll cover how to get ready, how to help in early and active labor, what to do when it gets hard, how to speak up, and how to take care of yourself, too.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A support partner sitting on a sofa with headphones around their neck, watching a lesson on a phone and taking a note, while the pregnant person beside them smiles and points at the screen. The phone screen shows only shapes, no readable writing."
+      }
+    },
+    {
+      "id": "your-role",
+      "type": "content",
+      "heading": "Your role",
+      "onScreen": [
+        "Be a steady, calm presence",
+        "Continuous support is linked to better outcomes",
+        "Follow their lead",
+        "You don't have to know everything"
+      ],
+      "narration": "Your most important job is simply to be there: steady, calm, and close. Having someone with you the whole time really can make a difference. ACOG says continuous one-to-one support in labor is linked to better outcomes. Follow their lead. Watch how they're coping, stay close when things are going well, and offer ideas when they seem to need them. And you don't have to know everything. The care team is there for the medical side. You're there for them.",
+      "sourceIds": [
+        "acog-co766",
+        "lamaze-partner-active-labor"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A laboring person resting their forehead against their support partner's chest, both standing in a softly lit hospital room, the partner's arms around them and eyes calm. No readable writing."
+      }
+    },
+    {
+      "id": "before-labor",
+      "type": "content",
+      "heading": "Before labor",
+      "onScreen": [
+        "Take this class together, and practice the comfort skills",
+        "Know their birth preferences and their top three wishes",
+        "Pack your own bag: snacks, charger, clothes",
+        "Know the route, and when to call"
+      ],
+      "narration": "Getting ready makes a big difference. Take this class together, and practice the breathing, positions, and touch from this module. Read their Birth Readiness Brief, and know their top three wishes. Pack your own bag too, with snacks, a phone charger, and a change of clothes. And know the route to the hospital, and when to call the care team, from Module 2.",
+      "sourceIds": [
+        "lamaze-partner-cheat-sheet"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a heart with a handshake for practicing comfort skills, a check for knowing their wishes, a suitcase for packing your own bag, and a route for knowing the way and when to call."
+      }
+    },
+    {
+      "id": "early-labor",
+      "type": "content",
+      "heading": "In early labor",
+      "onScreen": [
+        "Stay calm, and help them rest",
+        "Time contractions, and offer drinks and snacks",
+        "Distract with walks, shows, or music",
+        "Call the care team when it's time"
+      ],
+      "narration": "Early labor at home is often long. Help them rest, especially at night. Time contractions when they ask, and offer water and light snacks, as the care team advises. Gentle distraction helps: a walk, a show, music, or a warm shower. Stay calm yourself, because your mood is catching. And when contractions reach the pattern the care team gave you, or anything worries you, call.",
+      "sourceIds": [
+        "lamaze-early-labor-support"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "At home in the evening, a support partner looks at a stopwatch on their phone while the pregnant person sways beside the kitchen counter during a contraction, a glass of water nearby. The phone screen shows only shapes, no readable numbers."
+      }
+    },
+    {
+      "id": "checkin-support",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": [
+        "lamaze-partner-active-labor"
+      ],
+      "question": {
+        "prompt": "Your partner is in the middle of a strong contraction. What's the best thing to do?",
+        "options": [
+          "Ask them what they want for dinner",
+          "Stay close and quiet, breathe with them, and save questions for after",
+          "Step out to make a phone call"
+        ],
+        "correctIndex": 1,
+        "explanation": "During a contraction, stay close, breathe with them, and keep words short. Save questions and conversations for the break between contractions."
+      }
+    },
+    {
+      "id": "active-labor",
+      "type": "content",
+      "heading": "In active labor",
+      "onScreen": [
+        "Stay close; quiet during contractions",
+        "Breathe with them, and use short, calm words",
+        "Offer comfort: touch, counterpressure, a new position",
+        "Remind them to sip and to empty their bladder"
+      ],
+      "narration": "As labor gets stronger, stay close. During contractions, keep quiet, and save questions and conversations for the breaks. Breathe with them, and use short, calm words, like you're doing it, or let it go. Offer the comfort tools you've practiced: touch, counterpressure, warm water, or a new position. Between contractions, offer sips of water or ice chips, if allowed, and remind them to empty their bladder every hour or two.",
+      "sourceIds": [
+        "lamaze-partner-active-labor",
+        "icea-comfort-measures"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A laboring person on hands and knees on a hospital bed during a contraction, eyes closed, while their support partner kneels at the head of the bed, face close, breathing slowly with them and holding their hand. No readable writing."
+      }
+    },
+    {
+      "id": "when-hard",
+      "type": "content",
+      "heading": "When it gets hard",
+      "onScreen": [
+        "\"I can't do this\" is common near the end of active labor",
+        "Stay calm and close; find a rhythm together",
+        "Take it one contraction at a time",
+        "Ask the team about options, and respect their choice"
+      ],
+      "narration": "Near the end of active labor, many people say something like, I can't do this. It's common, and it often means birth is getting closer. Stay calm and close. Help them find a rhythm again, with breathing, a sound, or swaying. Take it one contraction at a time. If they want more help, ask the care team about options, including pain medicine, and respect their choice. Your job is to support them, not to talk them into or out of anything.",
+      "sourceIds": [
+        "lamaze-partner-active-labor",
+        "lamaze-partner-cheat-sheet"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A support partner holding a tired laboring person's face gently in both hands, foreheads nearly touching, speaking softly, in a dim hospital room. Calm and tender. No readable writing."
+      }
+    },
+    {
+      "id": "advocate",
+      "type": "content",
+      "heading": "Speaking up",
+      "onScreen": [
+        "Help them ask: why, what are the options, and how much time?",
+        "Share their wishes with the care team",
+        "Raise worries with the team privately, if you can",
+        "Support their decision; don't decide for them"
+      ],
+      "narration": "Part of your role is to help them be heard. When a decision comes up, help them ask the questions from Module 4: why, what are the options, and how much time do we have? Share their wishes with the care team. If you have a worry, try raising it with the team quietly, away from the bedside, so it doesn't add to their stress. And remember, the decision is theirs. You support it, and you don't make it for them. In a true emergency, let the team work, and ask questions afterward.",
+      "sourceIds": [
+        "lamaze-partner-cheat-sheet"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A support partner standing just outside a labor room door, talking calmly with a nurse who is listening, while through the open door the laboring person rests in bed. No readable writing or signs."
+      }
+    },
+    {
+      "id": "take-care",
+      "type": "content",
+      "heading": "Take care of yourself",
+      "onScreen": [
+        "Eat and drink regularly",
+        "Rest when someone else can take over",
+        "Have a backup support person",
+        "It's okay to feel emotional"
+      ],
+      "narration": "You can't pour from an empty cup. Eat and drink regularly, even if you don't feel like it. If labor is long, rest when someone else, like a doula, a nurse, or a backup support person, can take over for a while. It helps to plan that backup ahead of time. And it's okay to feel emotional, tired, or worried. Labor is a big experience for you, too.",
+      "sourceIds": [
+        "lamaze-partner-active-labor",
+        "lamaze-partner-cheat-sheet"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a fork and knife for eating, a water glass for drinking, a moon for resting, and two people for a backup support person."
+      }
+    },
+    {
+      "id": "your-plan",
+      "type": "reflection",
+      "heading": "Your support plan",
+      "onScreen": [
+        "Three things they want from you in labor",
+        "Comfort skills you'll offer",
+        "Your backup person, and your own snacks"
+      ],
+      "narration": "Support people, let's make a plan. Ask your partner for three things they want most from you in labor. Write down the comfort skills you'll offer. And name your backup support person, and what you'll pack for yourself. Save your answers to the Birth Readiness Brief, and go over them together.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Support person: write three things your partner wants from you in labor, the comfort skills you'll offer, and your backup person and snacks."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Be steady, calm, and close, and follow their lead",
+        "Prepare, help them rest early, and coach in active labor",
+        "When it gets hard, stay close and take it one contraction at a time",
+        "Help them be heard, and take care of yourself"
+      ],
+      "narration": "Let's recap. Your most important job is to be steady, calm, and close, and to follow their lead. Prepare before labor, help them rest in early labor, and coach with comfort skills in active labor. When it gets hard, stay close and take it one contraction at a time. Help them be heard, without deciding for them. And take care of yourself, too. That's the end of Module 3. Next up, a few review questions.",
+      "sourceIds": [
+        "acog-co766",
+        "lamaze-partner-active-labor"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "Why does continuous support in labor matter?",
+      "options": [
+        "It's linked to better outcomes",
+        "It makes labor shorter for everyone",
+        "It replaces the care team"
+      ],
+      "correctIndex": 0,
+      "explanation": "ACOG says continuous one-to-one support in labor is linked to better outcomes. You're there for the person; the care team handles the medical side."
+    },
+    {
+      "prompt": "Your partner says, \"I can't do this,\" late in labor. What's a good response?",
+      "options": [
+        "Tell them they're doing it wrong",
+        "Stay calm and close, help them find a rhythm, and take it one contraction at a time",
+        "Leave the room to give them space"
+      ],
+      "correctIndex": 1,
+      "explanation": "Saying \"I can't do this\" is common near the end of active labor. Stay close, help them find a rhythm, and ask the team about options if they want more help."
+    },
+    {
+      "prompt": "A decision comes up during labor. What's the support person's role?",
+      "options": [
+        "Decide for them",
+        "Help them ask questions and be heard, and support their decision",
+        "Stay out of it completely"
+      ],
+      "correctIndex": 1,
+      "explanation": "Help them ask why, what the options are, and how much time there is, share their wishes, and support the decision they make."
+    }
+  ]
+}
