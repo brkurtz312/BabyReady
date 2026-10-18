@@ -61,6 +61,7 @@ import Snowflake from 'lucide-react-native/icons/snowflake';
 import Music from 'lucide-react-native/icons/music';
 import Lamp from 'lucide-react-native/icons/lamp';
 import Eye from 'lucide-react-native/icons/eye';
+import Sparkles from 'lucide-react-native/icons/sparkles';
 
 /**
  * Pictures drawn in code for lesson slides: icon panels and simple diagrams.
@@ -1301,6 +1302,48 @@ const VISUALS: Record<string, () => React.ReactElement> = {
         { icon: GlassWater, label: 'Drink' },
         { icon: Moon, label: 'Rest when covered' },
         { icon: Users, label: 'A backup support person' },
+      ]}
+    />
+  ),
+  'your-newborns-first-days/skin': () => (
+    <IconPanel
+      label="Normal newborn skin: tiny white bumps called milia, blotchy red spots, pink or bluish-gray birthmarks, and dry, peeling skin. Most fade on their own."
+      items={[
+        { icon: Sparkles, label: 'Tiny white bumps' },
+        { icon: CircleDot, label: 'Blotchy red spots' },
+        { icon: Palette, label: 'Birthmarks' },
+        { icon: Hand, label: 'Peeling hands and feet' },
+      ]}
+    />
+  ),
+  'your-newborns-first-days/normal-surprises': () => (
+    <IconPanel
+      label="Other normal surprises: swollen breasts or genitals from hormones, a little vaginal discharge in baby girls, hiccups, sneezes, and startles, and eyes that sometimes cross."
+      items={[
+        { icon: Heart, label: 'Swelling from hormones' },
+        { icon: Droplet, label: 'A little discharge' },
+        { icon: Wind, label: 'Hiccups and sneezes' },
+        { icon: Eye, label: 'Eyes that sometimes cross' },
+      ]}
+    />
+  ),
+  'your-newborns-first-days/weight': () => (
+    <Steps
+      label="Weight in the first weeks: some weight loss in the first days, steady gains starting around day 5, and back to birth weight by about 2 weeks."
+      steps={[
+        { title: 'First days', detail: 'Some weight loss is expected', tone: 'marigold' },
+        { title: 'Around day 5', detail: 'Steady gains begin', tone: 'lagoon' },
+        { title: 'By about 2 weeks', detail: 'Back to birth weight', tone: 'lagoon' },
+      ]}
+    />
+  ),
+  'your-newborns-first-days/poop': () => (
+    <Steps
+      label="Poop in the first week: black and sticky in the first days, greenish-brown around days 3 to 4, and yellow and seedy by about day 5 for breastfed babies."
+      steps={[
+        { title: 'Days 1 to 2', detail: 'Black and sticky (meconium)', tone: 'marigold' },
+        { title: 'Days 3 to 4', detail: 'Greenish-brown', tone: 'marigold' },
+        { title: 'By about day 5', detail: 'Yellow and seedy if breastfed', tone: 'lagoon' },
       ]}
     />
   ),
