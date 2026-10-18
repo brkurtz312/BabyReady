@@ -1371,6 +1371,49 @@ const VISUALS: Record<string, () => React.ReactElement> = {
       ]}
     />
   ),
+  'breastfeeding-basics/why-and-choice': () => (
+    <IconPanel
+      label="Why breastfeeding: it protects against infections, has benefits for you, experts recommend about 6 months of breast milk only, and any amount helps."
+      items={[
+        { icon: Shield, label: 'Protects against infections' },
+        { icon: Heart, label: 'Benefits for you, too' },
+        { icon: Calendar, label: 'About 6 months, then continue' },
+        { icon: CircleCheck, label: 'Any amount helps' },
+      ]}
+    />
+  ),
+  'breastfeeding-basics/cues': () => (
+    <IconPanel
+      label="Hunger cues: hands to mouth and turning the head; crying is a late sign. When full, babies relax, turn away, and often fall asleep."
+      items={[
+        { icon: Hand, label: 'Hands to mouth' },
+        { icon: Baby, label: 'Turning the head' },
+        { icon: TriangleAlert, label: 'Crying is a late sign', tone: 'marigold' },
+        { icon: Moon, label: 'Full: relaxed and sleepy' },
+      ]}
+    />
+  ),
+  'breastfeeding-basics/latch': () => (
+    <Steps
+      label="A good latch: line up your baby's nose with your nipple, wait for a wide-open mouth and bring baby in close, then check for lips turned out and comfortable tugging."
+      steps={[
+        { title: 'Nose to nipple', detail: 'Hold baby close, tummy to tummy', tone: 'lagoon' },
+        { title: 'Wide-open mouth', detail: 'Then bring baby in, chin first', tone: 'marigold' },
+        { title: 'Check the latch', detail: 'Lips turned out; tugging, not pinching', tone: 'lagoon' },
+      ]}
+    />
+  ),
+  'breastfeeding-basics/get-help': () => (
+    <IconPanel
+      label="Getting help: nurses and your baby's doctor, a lactation consultant, support groups, and asking before taking any medicine."
+      items={[
+        { icon: Stethoscope, label: 'Nurses and doctors' },
+        { icon: HeartHandshake, label: 'A lactation consultant' },
+        { icon: Users, label: 'Support groups and WIC' },
+        { icon: Pill, label: 'Ask about medicines' },
+      ]}
+    />
+  ),
 };
 
 /** The drawn picture for a slide, or null when it has none. */

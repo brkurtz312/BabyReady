@@ -1,0 +1,311 @@
+{
+  "courseId": "feeding-and-newborn-care",
+  "lessonId": "breastfeeding-basics",
+  "order": 3,
+  "title": "Breastfeeding Basics",
+  "learningGoals": [
+    "Know what to expect in the first days of breastfeeding",
+    "Read your baby's hunger and fullness cues",
+    "Use common breastfeeding positions and help your baby latch",
+    "Tell whether your baby is getting enough",
+    "Know common early challenges, and when and where to get help"
+  ],
+  "estimatedMinutes": 15,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Drafted 2026-10-18 as lesson 5.3 of Module 5 (Feeding and Newborn Care). Supports every family's feeding choice; formula and combination feeding are in lesson 5.4. Builds on Labor Basics lesson 6 (skin-to-skin, the first hour), lesson 5.1 (diapers and weight), and lesson 6.3 (feeding and diaper warning signs). Sources were found by web search only; this session could not open the pages, so every new source needs to be opened and confirmed. For the reviewer: the recommendation of about 6 months of breastfeeding only, then continuing with other foods for as long as you both want, follows the AAP 2022 policy and the ACOG FAQ; milk 'coming in' around days 2 to 5 is standard teaching not confirmed word for word; the hunger and fullness cues follow the CDC cues page; the positions (cradle, cross-cradle, football or clutch, side-lying) and latch steps (nose to nipple, wait for a wide mouth, bring baby to breast, lips flanged) are standard teaching found mainly in non-approved sources, with the ACOG FAQ describing latch steps generally; the reminder to move baby back to their own sleep space after side-lying feeds repeats lesson 5.5; the early challenges (tenderness in the first days versus pain that lasts, engorgement, cluster feeding) follow the CDC what-to-expect page in part; IBCLC, WIC, and support groups as places to get help are common practice, with lactation consultants, peer counselors, and nurses named in the ACOG FAQ."
+  },
+  "sources": [
+    {
+      "id": "acog-breastfeeding-faq",
+      "organization": "ACOG",
+      "title": "Breastfeeding Your Baby (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/breastfeeding-your-baby",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-breastfeeding-2022",
+      "organization": "AAP",
+      "title": "Breastfeeding and the Use of Human Milk (Policy Statement, 2022)",
+      "url": "https://publications.aap.org/pediatrics/article/150/1/e2022057988/188347/",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-newborn-bf-basics",
+      "organization": "CDC",
+      "title": "Newborn Breastfeeding Basics",
+      "url": "https://www.cdc.gov/infant-toddler-nutrition/breastfeeding/newborn-basics.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-hungry-full",
+      "organization": "CDC",
+      "title": "Signs Your Child Is Hungry or Full",
+      "url": "https://www.cdc.gov/infant-toddler-nutrition/mealtime/signs-your-child-is-hungry-or-full.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-bf-what-to-expect",
+      "organization": "CDC",
+      "title": "What to Expect While Breastfeeding",
+      "url": "https://www.cdc.gov/infant-toddler-nutrition/breastfeeding/what-to-expect-while-breastfeeding.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-enough-milk",
+      "organization": "AAP",
+      "title": "How to Tell if Your Breastfed Baby is Getting Enough Milk (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/breastfeeding/Pages/How-to-Tell-if-Baby-is-Getting-Enough-Milk.aspx",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Breastfeeding Basics",
+      "onScreen": [
+        "Module 5: Feeding and Newborn Care"
+      ],
+      "narration": "Breastfeeding is natural, but it's also a skill that you and your baby learn together, and it often takes practice and help. In this lesson, we'll cover the first days, reading your baby's cues, positions and latch, how to tell your baby is getting enough, and where to get help. Every family's feeding choice is supported, and formula and combination feeding are covered in the next lesson.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A new parent sitting in a comfortable armchair, breastfeeding their newborn under a soft draped blanket so only the baby's head and the parent's shoulder show, smiling down at the baby, while their partner sets a glass of water beside them. Exactly one baby. No exposed breast. No readable writing."
+      }
+    },
+    {
+      "id": "why-and-choice",
+      "type": "content",
+      "heading": "Why breastfeeding, and your choice",
+      "onScreen": [
+        "Breast milk protects against infections and some illnesses",
+        "Breastfeeding has health benefits for you, too",
+        "Experts recommend about 6 months of breast milk only, then continuing",
+        "Any amount helps, and the choice is yours"
+      ],
+      "narration": "Breast milk gives your baby antibodies that help protect against infections, and lowers the risk of some illnesses, including SIDS. Breastfeeding has health benefits for you, too. The AAP and ACOG recommend breast milk only for about the first six months, then continuing along with other foods for as long as you and your baby want. But any amount of breast milk helps, and how you feed your baby is your choice. Your team will support you either way.",
+      "sourceIds": ["aap-breastfeeding-2022", "acog-breastfeeding-faq"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a shield for protection from infections, a heart for benefits for you, a calendar for about 6 months, and a circle check for any amount helps."
+      }
+    },
+    {
+      "id": "first-days",
+      "type": "content",
+      "heading": "The first days",
+      "onScreen": [
+        "Skin-to-skin and a first feed in the first hour, if you can",
+        "Early milk, called colostrum, comes in small amounts; it's just right",
+        "Your milk usually comes in around days 2 to 5",
+        "Feed 8 to 12 times in 24 hours"
+      ],
+      "narration": "Many babies are ready to feed in the first hour after birth, and skin-to-skin helps. Your first milk, called colostrum, is thick and yellowish, and comes in small amounts, which is just right for your baby's tiny stomach. Around days two to five, your milk comes in, and your breasts feel fuller. In the early weeks, most babies feed eight to twelve times in 24 hours, including at night. Frequent feeding helps your milk supply build.",
+      "sourceIds": ["acog-breastfeeding-faq", "cdc-newborn-bf-basics"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Right after birth in a hospital bed, a newborn rests skin-to-skin on the parent's chest under a warm blanket that covers both of them to the baby's shoulders, the parent gazing down. Exactly one baby. No exposed breast. No readable writing."
+      }
+    },
+    {
+      "id": "cues",
+      "type": "content",
+      "heading": "Reading your baby's cues",
+      "onScreen": [
+        "Hungry: hands to mouth, turning the head, lip smacking, fussing",
+        "Crying is a late sign of hunger",
+        "Full: relaxed hands, turning away, slowing down, falling asleep",
+        "Feed when you see early cues"
+      ],
+      "narration": "Babies tell you when they're hungry. Early signs include bringing hands to the mouth, turning the head to look for the breast, smacking or licking the lips, and fussing. Crying is a late sign of hunger, and a crying baby can have a harder time latching, so try to feed when you see the early cues. When your baby is full, their hands relax, they turn away or slow down, and they often fall asleep.",
+      "sourceIds": ["cdc-hungry-full", "acog-breastfeeding-faq"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a hand for hands to mouth, a baby for turning the head, a warning triangle for crying is a late sign, and a moon for relaxed and sleepy when full."
+      }
+    },
+    {
+      "id": "positions",
+      "type": "content",
+      "heading": "Positions to try",
+      "onScreen": [
+        "Cradle and cross-cradle: baby across your lap, tummy to tummy",
+        "Football: baby tucked at your side; good after a cesarean",
+        "Side-lying: both of you lying on your sides",
+        "Use pillows, and bring your baby to you"
+      ],
+      "narration": "There's no single right position. In the cradle and cross-cradle holds, your baby lies across your lap, tummy to tummy with you. The cross-cradle gives you more control, which helps in the early days. In the football hold, your baby is tucked along your side, which keeps weight off your belly after a cesarean. Side-lying lets you rest while you feed, but if you might fall asleep, move your baby back to their own sleep space afterward. In any position, use pillows for support, and bring your baby to the breast, rather than leaning over.",
+      "sourceIds": ["acog-breastfeeding-faq", "cdc-newborn-bf-basics"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A new parent in a hospital bed using the football hold: the newborn tucked along their side on a pillow, held under the parent's arm and feeding, covered by a draped blanket so no breast is visible, the parent relaxed and supported by pillows. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "latch",
+      "type": "content",
+      "heading": "A good latch",
+      "onScreen": [
+        "Line up your baby's nose with your nipple",
+        "Wait for a wide-open mouth, then bring baby in close",
+        "Lips turned out, chin touching the breast",
+        "Tugging is normal; pinching pain means try again"
+      ],
+      "narration": "A good latch makes feeding more comfortable and helps your baby get milk. Hold your baby close, with their nose lined up with your nipple. Wait for a wide-open mouth, like a yawn, then bring your baby in quickly, chin first. Your baby's lips should be turned out, with their chin touching the breast, and more of the darker skin showing above their top lip than below. You'll feel tugging, which is normal. If it pinches or hurts, slide a clean finger into the corner of your baby's mouth to break the suction, and try again.",
+      "sourceIds": ["acog-breastfeeding-faq", "cdc-newborn-bf-basics"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Three stacked steps for a latch: nose to nipple, wait for a wide-open mouth then bring baby in, and check for lips turned out and comfortable tugging."
+      }
+    },
+    {
+      "id": "checkin-latch",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": ["acog-breastfeeding-faq"],
+      "question": {
+        "prompt": "Your baby latches, and it pinches and hurts. What should you do?",
+        "options": [
+          "Keep going; pain means it's working",
+          "Break the suction with a clean finger in the corner of the mouth, and try again",
+          "Stop breastfeeding for the day"
+        ],
+        "correctIndex": 1,
+        "explanation": "Tugging is normal, but pinching pain usually means a shallow latch. Break the suction with a clean finger and try again, and ask for help if it keeps hurting."
+      }
+    },
+    {
+      "id": "enough",
+      "type": "content",
+      "heading": "Is my baby getting enough?",
+      "onScreen": [
+        "8 to 12 feeds in 24 hours",
+        "You can hear or see swallowing",
+        "More wet and dirty diapers each day (lesson 5.1)",
+        "Back to birth weight by about 2 weeks"
+      ],
+      "narration": "It's hard to see how much milk your baby gets, so look for these signs. Your baby feeds eight to twelve times in 24 hours, and you can hear or see swallowing. Your baby seems content after most feeds. Wet and dirty diapers increase each day, as you learned in the first lesson of this module. And your baby is back to birth weight by about two weeks. Call your baby's doctor if there are fewer diapers than expected, if your baby is too sleepy to feed, or if you're worried, as lesson 6.3 explains.",
+      "sourceIds": ["aap-enough-milk", "cdc-newborn-bf-basics"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A content, sleepy newborn in a sleeper lying in a parent's arms after a feed, milk-drunk and relaxed, while the parent smiles. The parent is fully clothed. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "challenges",
+      "type": "content",
+      "heading": "Common early challenges",
+      "onScreen": [
+        "Some tenderness in the first days is common; pain that lasts isn't",
+        "Full, hard breasts (engorgement): feed often; cool packs after",
+        "Cluster feeding: many feeds close together, often in the evening",
+        "Cracked or bleeding nipples: get help with the latch"
+      ],
+      "narration": "Some challenges are common, and most get better with help. Some nipple tenderness in the first days is common, but pain that lasts through feeds, or cracked or bleeding nipples, usually means the latch needs adjusting, so get help. When your milk comes in, your breasts may feel full and hard. Feeding often helps, and cool packs after feeds can ease swelling. And many babies cluster feed, wanting to eat many times close together, often in the evening. That's normal, and it helps build your supply.",
+      "sourceIds": ["cdc-bf-what-to-expect", "acog-breastfeeding-faq"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Evening at home: a new parent on a sofa feeding their newborn under a draped blanket, looking tired but calm, while their partner sits beside them offering a snack and a glass of water. Exactly one baby. No exposed breast. No readable writing."
+      }
+    },
+    {
+      "id": "get-help",
+      "type": "content",
+      "heading": "Getting help",
+      "onScreen": [
+        "Ask your nurses for help before you go home",
+        "A lactation consultant (IBCLC), your baby's doctor, or WIC",
+        "Get help early: pain, poor feeding, few diapers, or worry",
+        "Ask before taking any medicine while breastfeeding"
+      ],
+      "narration": "Help makes a big difference, and it's best to ask early. In the hospital, ask your nurses or a lactation consultant to watch a feed and help with the latch. After you go home, a lactation consultant, often called an IBCLC, your baby's doctor, WIC, or a breastfeeding support group can help. Reach out if feeding hurts, if your baby isn't feeding well or has fewer diapers than expected, or any time you're worried. And ask your care team before taking any medicine, so you know it's safe while breastfeeding.",
+      "sourceIds": ["acog-breastfeeding-faq", "cdc-bf-what-to-expect"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a stethoscope for nurses and doctors, a heart with a handshake for a lactation consultant, two people for support groups, and a pill for asking about medicines."
+      }
+    },
+    {
+      "id": "support-person",
+      "type": "content",
+      "heading": "How support people can help",
+      "onScreen": [
+        "Bring the baby for feeds, and help get settled",
+        "Water, snacks, and pillows within reach",
+        "Burping, diaper changes, and soothing between feeds",
+        "Encouragement, and protecting rest"
+      ],
+      "narration": "Support people play a big part in breastfeeding going well. Bring the baby for feeds, especially at night, and help get settled with pillows. Keep water and snacks within reach, since breastfeeding is thirsty work. Take over burping, diaper changes, and soothing between feeds. And offer encouragement, and protect time for rest. Feeding a newborn is a team effort.",
+      "sourceIds": ["acog-breastfeeding-faq"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Night time: a support partner gently passing a swaddled newborn to a parent sitting up in bed propped on pillows, a glass of water on the nightstand, soft lamp light. Both adults fully clothed. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "your-plan",
+      "type": "reflection",
+      "heading": "Your feeding plan",
+      "onScreen": [
+        "How you'd like to feed your baby",
+        "Who you'll call for help, and their number",
+        "How your support person will help"
+      ],
+      "narration": "Let's make a plan. How would you like to feed your baby? Who will you call if you need breastfeeding help, and do you have their number? And how will your support person help? Save your answers to your Birth Readiness Brief. Plans can change, and that's okay.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write how you'd like to feed your baby, who you'll call for help and their number, and how your support person will help."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Colostrum first; milk comes in around days 2 to 5",
+        "Feed on early cues, 8 to 12 times a day",
+        "Bring baby to breast, wait for a wide mouth; tugging, not pinching",
+        "Watch diapers and weight, and get help early"
+      ],
+      "narration": "Let's recap. Your first milk, colostrum, is just right, and your milk comes in around days two to five. Feed when you see early hunger cues, about eight to twelve times a day. For a good latch, bring your baby to the breast and wait for a wide-open mouth; tugging is normal, pinching isn't. Watch diapers and weight to know your baby is getting enough, and get help early. Next up, a few review questions.",
+      "sourceIds": ["acog-breastfeeding-faq", "cdc-newborn-bf-basics"]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "Which is an early sign your baby is hungry?",
+      "options": [
+        "Hands to the mouth and turning the head",
+        "Sleeping deeply",
+        "Turning away from the breast"
+      ],
+      "correctIndex": 0,
+      "explanation": "Hands to the mouth, turning the head, lip smacking, and fussing are early hunger cues. Crying is a late sign."
+    },
+    {
+      "prompt": "How often do most newborns breastfeed in the early weeks?",
+      "options": [
+        "2 to 3 times a day",
+        "8 to 12 times in 24 hours",
+        "Only when they cry"
+      ],
+      "correctIndex": 1,
+      "explanation": "Most newborns feed 8 to 12 times in 24 hours, including at night, which also helps build your milk supply."
+    },
+    {
+      "prompt": "Feeding hurts all the way through, and your nipples are cracked. What's the best step?",
+      "options": [
+        "Wait it out; it's normal",
+        "Get help with the latch from a nurse or lactation consultant",
+        "Stop feeding at night"
+      ],
+      "correctIndex": 1,
+      "explanation": "Some tenderness early is common, but lasting pain or cracked nipples usually mean the latch needs adjusting. Get help early."
+    }
+  ]
+}
