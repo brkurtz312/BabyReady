@@ -78,6 +78,8 @@ import Droplets from 'lucide-react-native/icons/droplets';
 import Cloud from 'lucide-react-native/icons/cloud';
 import Zap from 'lucide-react-native/icons/zap';
 import MessageCircleMore from 'lucide-react-native/icons/message-circle-more';
+import Coffee from 'lucide-react-native/icons/coffee';
+import Soup from 'lucide-react-native/icons/soup';
 
 /**
  * Pictures drawn in code for lesson slides: icon panels and simple diagrams.
@@ -1827,6 +1829,61 @@ const VISUALS: Record<string, () => React.ReactElement> = {
         { icon: Users, label: 'Family history' },
         { icon: House, label: 'Big stresses, little support' },
         { icon: Hospital, label: 'A hard birth or NICU stay' },
+      ]}
+    />
+  ),
+  'rest-food-and-help-at-home/first-weeks': () => (
+    <IconPanel
+      label="The first weeks: feeds every 2 to 3 hours, your body healing, sleep in short pieces, and rest first."
+      items={[
+        { icon: Clock, label: 'Feeds every 2 to 3 hours' },
+        { icon: HeartPulse, label: 'Your body is healing' },
+        { icon: Moon, label: 'Sleep in short pieces' },
+        { icon: Bed, label: 'Rest comes first' },
+      ]}
+    />
+  ),
+  'rest-food-and-help-at-home/sleep': () => (
+    <IconPanel
+      label="Getting rest: rest when your baby sleeps, take turns at night, put your baby back in their crib when you're drowsy, and never sleep with your baby on a couch or armchair."
+      items={[
+        { icon: Bed, label: 'Rest when your baby sleeps' },
+        { icon: Users, label: 'Take turns at night' },
+        { icon: Baby, label: 'Drowsy? Baby back in the crib' },
+        { icon: Armchair, label: 'Never sleep with baby on a couch', tone: 'alert' },
+      ]}
+    />
+  ),
+  'rest-food-and-help-at-home/food-and-drink': () => (
+    <IconPanel
+      label="Food and drink: regular meals and snacks, drink to your thirst, your prenatal vitamin if your team advises, and caffeine in moderation."
+      items={[
+        { icon: Utensils, label: 'Easy meals and snacks' },
+        { icon: GlassWater, label: 'Drink to your thirst' },
+        { icon: Pill, label: 'Prenatal vitamin, if advised' },
+        { icon: Coffee, label: 'Caffeine in moderation' },
+      ]}
+    />
+  ),
+  'rest-food-and-help-at-home/practical-help': () => (
+    <IconPanel
+      label="Practical help: a list of jobs, give helpers a specific job, a meal schedule, and home visits and other support."
+      items={[
+        { icon: ClipboardCheck, label: 'A list of jobs' },
+        { icon: Hand, label: 'Give helpers a job' },
+        { icon: Soup, label: 'A meal schedule' },
+        { icon: House, label: 'Home visits and support' },
+      ]}
+    />
+  ),
+  'rest-food-and-help-at-home/care-for-you': () => (
+    <IconPanel
+      label="Taking care of you: a shower, a short walk outside, staying in touch with friends, and telling your team if you're struggling."
+      items={[
+        { icon: ShowerHead, label: 'A shower' },
+        { icon: Footprints, label: 'A short walk outside' },
+        { icon: Phone, label: 'Stay in touch' },
+        { icon: Heart, label: 'Struggling? Tell your team' },
       ]}
     />
   ),
