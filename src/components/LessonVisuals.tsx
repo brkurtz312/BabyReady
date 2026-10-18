@@ -62,6 +62,8 @@ import Music from 'lucide-react-native/icons/music';
 import Lamp from 'lucide-react-native/icons/lamp';
 import Eye from 'lucide-react-native/icons/eye';
 import Sparkles from 'lucide-react-native/icons/sparkles';
+import Shield from 'lucide-react-native/icons/shield';
+import ClipboardCheck from 'lucide-react-native/icons/clipboard-check';
 
 /**
  * Pictures drawn in code for lesson slides: icon panels and simple diagrams.
@@ -1344,6 +1346,28 @@ const VISUALS: Record<string, () => React.ReactElement> = {
         { title: 'Days 1 to 2', detail: 'Black and sticky (meconium)', tone: 'marigold' },
         { title: 'Days 3 to 4', detail: 'Greenish-brown', tone: 'marigold' },
         { title: 'By about day 5', detail: 'Yellow and seedy if breastfed', tone: 'lagoon' },
+      ]}
+    />
+  ),
+  'newborn-care-in-the-hospital/overview': () => (
+    <IconPanel
+      label="Routine newborn care: a vitamin K shot, antibiotic eye ointment, the hepatitis B vaccine, and screening with a blood test, hearing test, and heart check."
+      items={[
+        { icon: Syringe, label: 'Vitamin K shot' },
+        { icon: Eye, label: 'Eye ointment' },
+        { icon: Shield, label: 'Hepatitis B vaccine' },
+        { icon: ClipboardCheck, label: 'Blood, hearing, and heart screening' },
+      ]}
+    />
+  ),
+  'newborn-care-in-the-hospital/your-say': () => (
+    <IconPanel
+      label="Your questions and preferences: ask before birth, ask for care to wait until after skin-to-skin, hold or feed your baby during care, and your team explains the risks if you decline."
+      items={[
+        { icon: MessageCircleQuestionMark, label: 'Ask before birth' },
+        { icon: Clock, label: 'Wait until after skin-to-skin' },
+        { icon: Heart, label: 'Hold or feed your baby' },
+        { icon: CircleCheck, label: 'Your team explains' },
       ]}
     />
   ),
