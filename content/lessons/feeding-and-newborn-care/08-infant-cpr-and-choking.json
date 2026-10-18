@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 12,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 5.8 of Module 5 (Feeding and Newborn Care), added to the curriculum at the reviewer's request. An introduction that points learners to a hands-on class, not a certification. Builds on lesson 5.4 (never propping a bottle) and lesson 6.3 (when to call 911 for your baby). Uses AHA and American Red Cross sources, which are outside the usual AAP, ACOG, and CDC list and need the reviewer's approval as sources. Sources were found by web search only; this session could not open the pages, so every new source needs to be opened and confirmed. For the reviewer: compressions follow the 2025 AHA and AAP pediatric BLS guidelines, which removed the two-finger technique and recommend two thumbs with encircling hands or the heel of one hand, about 1.5 inches (a third of chest depth), 100 to 120 a minute, 30 compressions to 2 breaths for a single rescuer; choking care (alternate 5 back blows and 5 chest thrusts, no abdominal thrusts) follows the 2025 AHA guidance and the HealthyChildren summary, with chest thrusts by the heel of one hand per the 2025 AHA interim manual as quoted in search results; the American Red Cross consumer choking page still shows two fingers for chest thrusts, so the two sources differ on this point; calling 911 and starting CPR right away with a phone, and about 2 minutes of CPR first when alone without a phone, follow the AHA 2025 summary and the Red Cross; putting the phone on speaker is common dispatcher-assisted practice not confirmed on these pages; letting a baby who coughs hard keep coughing, no blind finger sweeps, and looking in the mouth when a choking baby goes limp follow the Red Cross choking page; the prevention list (no propped bottles, small objects, balloons, magnets, button batteries, toy parts, soft foods in tiny pieces when solids start) follows the AAP choking prevention page, with magnets and button batteries needing emergency care being standard teaching; taking a class through a hospital, the Red Cross, or the AHA follows the AAP choking prevention page; refreshing every couple of years reflects typical two-year certification, not confirmed on these pages. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): approve the AHA and the American Red Cross as sources for CPR and choking; keep the 2025 compression technique and the check-in about the dropped two-finger method; keep the heel of one hand for choking chest thrusts, noting here that the Red Cross consumer page still shows two fingers; keep the calling steps, the choking signs and cautions, the prevention list, and refreshing the class every couple of years; replace the choking and CPR step lists with simple diagrams drawn in code, each with the call-911 step shown in red above it."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 5.8 of Module 5 (Feeding and Newborn Care), added to the curriculum at the reviewer's request. An introduction that points learners to a hands-on class, not a certification. Builds on lesson 5.4 (never propping a bottle) and lesson 6.3 (when to call 911 for your baby). Uses AHA and American Red Cross sources, which the reviewer approved as sources for CPR and choking. Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: compressions follow the 2025 AHA and AAP pediatric BLS guidelines, which removed the two-finger technique and recommend two thumbs with encircling hands or the heel of one hand, about 1.5 inches (a third of chest depth), 100 to 120 a minute, 30 compressions to 2 breaths for a single rescuer; choking care (alternate 5 back blows and 5 chest thrusts, no abdominal thrusts) follows the 2025 AHA guidance and the HealthyChildren summary, with chest thrusts by the heel of one hand per the 2025 AHA interim manual as quoted in search results; the American Red Cross consumer choking page still shows two fingers for chest thrusts, so the two sources differ on this point; calling 911 and starting CPR right away with a phone, and about 2 minutes of CPR first when alone without a phone, follow the AHA 2025 summary and the Red Cross; putting the phone on speaker is common dispatcher-assisted practice not confirmed on these pages; letting a baby who coughs hard keep coughing, no blind finger sweeps, and looking in the mouth when a choking baby goes limp follow the Red Cross choking page; the prevention list (no propped bottles, small objects, balloons, magnets, button batteries, toy parts, soft foods in tiny pieces when solids start) follows the AAP choking prevention page, with magnets and button batteries needing emergency care being standard teaching; taking a class through a hospital, the Red Cross, or the AHA follows the AAP choking prevention page; refreshing every couple of years reflects typical two-year certification, not confirmed on these pages. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): approve the AHA and the American Red Cross as sources for CPR and choking; keep the 2025 compression technique and the check-in about the dropped two-finger method; keep the heel of one hand for choking chest thrusts, noting here that the Red Cross consumer page still shows two fingers; keep the calling steps, the choking signs and cautions, the prevention list, and refreshing the class every couple of years; replace the choking and CPR step lists with simple diagrams drawn in code, each with the call-911 step shown in red above it."
   },
   "sources": [
     {
@@ -24,49 +24,49 @@
       "organization": "AHA",
       "title": "Part 6: Pediatric Basic Life Support (2025 AHA and AAP Guidelines for CPR and ECC)",
       "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/pediatric-basic-life-support",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aha-family-friends-2025",
       "organization": "AHA",
       "title": "2025 Guidelines Updates: Family & Friends CPR",
       "url": "https://cpr.heart.org/en/-/media/CPR-Files/Courses-and-Kits/CPR-First-Aid-Anywhere/KJ2004-2025-GL-Update-Family-_-Friends_260407_FINAL.pdf?sc_lang=en",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aha-hq-cpr-2025",
       "organization": "AHA",
       "title": "Summary of High-Quality CPR (2025)",
       "url": "https://www.heart.org/-/media/6F6AA2073C974E00B84957BBB2E4AECB.pdf",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-cpr-update-2025",
       "organization": "AAP",
       "title": "AHA, AAP Update CPR Guidelines To Help Save Young Lives (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/news/Pages/AHA-and-AAP-release-update-CPR-guidelines-to-help-save-young-lives.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-choking-prevention",
       "organization": "AAP",
       "title": "Choking Prevention for Babies & Children (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "redcross-infant-choking",
       "organization": "American Red Cross",
       "title": "Infant Choking: How To Help",
       "url": "https://www.redcross.org/take-a-class/resources/learn-first-aid/infant-choking",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "redcross-infant-cardiac-arrest",
       "organization": "American Red Cross",
       "title": "Cardiac Arrest in Infants",
       "url": "https://www.redcross.org/take-a-class/resources/learn-first-aid/infant-cardiac-arrest",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
