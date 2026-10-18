@@ -944,5 +944,57 @@
         "text": "Ask why, the options, and how much time. It's okay to ask for a few minutes."
       }
     ]
+  },
+  "positions-and-movement/practice-positions": {
+    "cast": "a pregnant woman in her third trimester with a clearly rounded pregnant belly, warm brown skin and shoulder-length dark curly hair, in a soft teal long-sleeved top and dark leggings; her support partner, a man with light olive skin and short dark wavy hair, in a mustard-yellow sweater and jeans. They are in a calm, bright living room with a sofa, a kitchen counter, a teal birth ball, a sturdy wooden chair, and pillows",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "Practice: move through the positions"
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "The pregnant woman stands and leans forward with her forearms resting on the kitchen counter, her belly hanging forward, hips tilted mid-sway, while her partner stands beside her with a hand on her lower back. Only the couple are in the room.",
+        "caption": "Lean forward and sway",
+        "sub": "Try it for a few slow breaths."
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "The pregnant woman and her partner in a slow dance, her arms around his neck and her head on his shoulder, his arms around her back, both swaying gently. Only the couple are in the room.",
+        "caption": "Slow dance"
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "The pregnant woman sits upright on the teal birth ball with her feet wide apart and flat on the floor, hands on her knees, circling her hips, while her partner sits on the sofa in front of her, smiling. Only the couple are in the room.",
+        "caption": "Hip circles on a birth ball"
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "Side view of the pregnant woman sitting the wrong way round on a wooden kitchen chair, like riding a horse: the chair's backrest is in FRONT of her chest, her legs spread on either side of the seat, and she hugs a pillow on top of the backrest, resting her cheek on it with eyes closed. Her partner stands BEHIND her back, rubbing her shoulders. Only the couple are in the room.",
+        "caption": "Sit backward on a chair"
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "The pregnant woman kneels on a soft mat and leans forward with her arms and chest draped over the teal birth ball, eyes closed and relaxed, while her partner kneels beside her. Only the couple are in the room.",
+        "caption": "Kneel over a birth ball"
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "The pregnant woman rests lying on her left side on the sofa with a pillow between her knees and a small pillow under her belly, eyes closed, while her partner kneels beside the sofa holding her hand. Only the couple are in the room.",
+        "caption": "Rest on your side",
+        "sub": "A pillow between your knees."
+      },
+      {
+        "type": "end",
+        "seconds": 6,
+        "text": "Change positions often, and follow what your body tells you."
+      }
+    ]
   }
 }

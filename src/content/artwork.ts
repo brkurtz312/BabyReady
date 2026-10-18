@@ -179,6 +179,12 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'breathing-and-relaxation/why-breathing': require('../../assets/lessons/breathing-and-relaxation/why-breathing.jpg'),
   'breathing-and-relaxation/lighter-breathing': require('../../assets/lessons/breathing-and-relaxation/lighter-breathing.jpg'),
   'breathing-and-relaxation/practice-together': require('../../assets/lessons/breathing-and-relaxation/practice-together.jpg'),
+  'positions-and-movement/welcome': require('../../assets/lessons/positions-and-movement/welcome.jpg'),
+  'positions-and-movement/why-move': require('../../assets/lessons/positions-and-movement/why-move.jpg'),
+  'positions-and-movement/upright': require('../../assets/lessons/positions-and-movement/upright.jpg'),
+  'positions-and-movement/sitting': require('../../assets/lessons/positions-and-movement/sitting.jpg'),
+  'positions-and-movement/hands-and-knees': require('../../assets/lessons/positions-and-movement/hands-and-knees.jpg'),
+  'positions-and-movement/resting': require('../../assets/lessons/positions-and-movement/resting.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
