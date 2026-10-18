@@ -55,6 +55,10 @@ for (const [courseId, courseTitle] of COURSES) {
         kind = slide.visual.kind;
         brief = slide.visual.description;
         extension = 'png';
+      } else if (slide.visual?.kind === 'icon-list' && !drawn.has(key)) {
+        // Icon lists are drawn in src/components/LessonVisuals.tsx; until then the slide shows a placeholder.
+        rows.push([courseTitle, `${lesson.order}. ${lesson.title}`, index + 1, slide.id, slide.heading, 'icon-list', slide.visual.description, 'src/components/LessonVisuals.tsx', 'To draw in code']);
+        return;
       } else {
         return;
       }

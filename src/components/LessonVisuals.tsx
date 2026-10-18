@@ -47,6 +47,9 @@ import TriangleAlert from 'lucide-react-native/icons/triangle-alert';
 import Users from 'lucide-react-native/icons/users';
 import Utensils from 'lucide-react-native/icons/utensils';
 import Wind from 'lucide-react-native/icons/wind';
+import CigaretteOff from 'lucide-react-native/icons/cigarette-off';
+import Milk from 'lucide-react-native/icons/milk';
+import Syringe from 'lucide-react-native/icons/syringe';
 
 /**
  * Pictures drawn in code for lesson slides: icon panels and simple diagrams.
@@ -933,6 +936,48 @@ const VISUALS: Record<string, () => React.ReactElement> = {
         { icon: Activity, label: 'Reflexes' },
       ]}
       caption="Checked at 1 and 5 minutes after birth."
+    />
+  ),
+  'safe-sleep/more-ways': () => (
+    <IconPanel
+      label="More ways to lower the risk: breastfeed if you can, offer a pacifier at sleep times, don't let your baby get too hot, keep a smoke-free home, and keep vaccines on schedule."
+      items={[
+        { icon: Milk, label: 'Breastfeed if you can' },
+        { icon: Moon, label: 'Pacifier at sleep times' },
+        { icon: Thermometer, label: 'Not too hot' },
+        { icon: CigaretteOff, label: 'Smoke-free home' },
+        { icon: Syringe, label: 'Vaccines on schedule' },
+      ]}
+    />
+  ),
+  'postpartum-warning-signs/heavy-bleeding': () => (
+    <Steps
+      label="Bleeding after birth: bleeding that slowly gets lighter is normal; bad-smelling or greenish fluid, call your care team; soaking two pads an hour for more than an hour or two, large clots, or feeling faint, get care now."
+      steps={[
+        { title: 'Bleeding that slowly gets lighter', detail: 'Normal', tone: 'lagoon' },
+        { title: 'Bad-smelling or greenish fluid', detail: 'Call your care team', tone: 'marigold' },
+        { title: 'Two pads an hour for an hour or two, large clots, or feeling faint', detail: 'Get care now', tone: 'alert' },
+      ]}
+    />
+  ),
+  'postpartum-warning-signs/blood-clots': () => (
+    <Steps
+      label="Blood clots: in a leg or arm, swelling, pain, or warm or red skin, call your care team; in the lungs, trouble breathing, chest pain, coughing up blood, or a fast heartbeat, get care immediately."
+      steps={[
+        { title: 'Leg or arm: swelling, pain, warm or red skin', detail: 'Call your care team', tone: 'marigold' },
+        { title: 'Lungs: trouble breathing, chest pain, coughing up blood, fast heartbeat', detail: 'Get care immediately', tone: 'alert' },
+      ]}
+    />
+  ),
+  'when-to-call-about-your-baby/feeding-and-diapers': () => (
+    <IconPanel
+      label="Feeding and diapers: breastfed babies feed about 8 to 12 times a day; after day 5, at least 6 wet diapers a day; call if your baby is too sleepy to feed or you're worried."
+      items={[
+        { icon: Clock, label: '8 to 12 feeds a day' },
+        { icon: Droplet, label: '6+ wet diapers a day after day 5' },
+        { icon: Moon, label: 'Too sleepy to feed? Call' },
+        { icon: Phone, label: 'Worried? Call' },
+      ]}
     />
   ),
 };
