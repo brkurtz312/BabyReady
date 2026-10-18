@@ -9,4 +9,8 @@ export type NarrationClip = {
 };
 
 export const narrationClips: Record<string, NarrationClip> = {
+  'fa5cbe82': { source: require('../../assets/narration/early-pregnancy-first-steps/early-signs.m4a'), starts: [150, 3969, 6410, 9699, 12057, 17494, 23092, 25491, 27437, 31136] }, // early-pregnancy-first-steps/early-signs.m4a
+  '241cfd78': { source: require('../../assets/narration/early-pregnancy-first-steps/folic-acid.m4a'), starts: [150, 2290, 8889, 12597, 16351, 22331, 25104, 29457, 32698] }, // early-pregnancy-first-steps/folic-acid.m4a
+  '7d248065': { source: require('../../assets/narration/early-pregnancy-first-steps/start-care-early.m4a'), starts: [150, 4121, 9660, 14291, 18927, 20530, 24633, 27232] }, // early-pregnancy-first-steps/start-care-early.m4a
+  'f73502b2': { source: require('../../assets/narration/early-pregnancy-first-steps/who-gives-care.m4a'), starts: [150, 3515, 5971, 9953, 16317, 20170, 24355, 30460] }, // early-pregnancy-first-steps/who-gives-care.m4a
 };

@@ -19,7 +19,7 @@
 // The model reads every word it is sent, including any "say this warmly" direction,
 // so only the script text itself is sent.
 
-import { execFileSync } from 'node:child_process';
+import { execFileSync, spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
@@ -148,10 +148,11 @@ const duration = (file) =>
   Number(execFileSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration', '-of', 'csv=p=0', file]).toString());
 
 /** The pauses in a take, as [start, end] pairs in seconds. */
-function pauses(file) {
-  const log = execFileSync('ffmpeg', ['-hide_banner', '-nostats', '-i', file, '-af', 'silencedetect=noise=-40dB:d=0.15', '-f', 'null', '-'], {
-    stdio: ['ignore', 'ignore', 'pipe'],
-  }).toString();
+function pauses(file, shortest = 0.15) {
+  // silencedetect reports on stderr.
+  const log = spawnSync('ffmpeg', ['-hide_banner', '-nostats', '-i', file, '-af', `silencedetect=noise=-40dB:d=${shortest}`, '-f', 'null', '-'], {
+    encoding: 'utf8',
+  }).stderr;
   const found = [];
   for (const m of log.matchAll(/silence_end: ([\d.]+) \| silence_duration: ([\d.]+)/g)) {
     found.push([Number(m[1]) - Number(m[2]), Number(m[1])]);
@@ -160,35 +161,49 @@ function pauses(file) {
 }
 
 /**
- * Finds when each sentence starts. Each boundary is expected roughly where its share
- * of the text falls; the pause nearest that point (in order) is taken as the boundary.
+ * Finds when each sentence starts. Sentence breaks are usually the longest pauses in a
+ * take, so this picks, in order, the set of pauses with the most total pause time, with a
+ * light pull toward where each break is expected from its share of the text. Short
+ * sentences ("But life happens.") break a pure share-of-text guess, so length matters more.
  */
 function sentenceStarts(sentences, take) {
   const total = duration(take);
-  const chars = sentences.map((s) => s.length);
-  const sum = chars.reduce((a, b) => a + b, 0);
-  const gaps = pauses(take);
-  const starts = [0];
-  let used = -1;
+  const n = sentences.length - 1; // breaks to find
+  if (n === 0) return [0];
+  const sum = sentences.reduce((a, s) => a + s.length, 0);
+  const expected = [];
   let before = 0;
-  for (let i = 1; i < sentences.length; i++) {
-    before += chars[i - 1];
-    const expected = (before / sum) * total;
-    let best = -1;
-    for (let k = used + 1; k < gaps.length; k++) {
-      // Leave enough later pauses for the boundaries still to come.
-      if (gaps.length - k < sentences.length - i) break;
-      const mid = (gaps[k][0] + gaps[k][1]) / 2;
-      if (best < 0 || Math.abs(mid - expected) < Math.abs((gaps[best][0] + gaps[best][1]) / 2 - expected)) best = k;
-    }
-    if (best >= 0 && Math.abs((gaps[best][0] + gaps[best][1]) / 2 - expected) < total * 0.15) {
-      used = best;
-      starts.push(Math.max(gaps[best][1] - 0.05, 0));
-    } else {
-      starts.push(expected);
+  for (let i = 0; i < n; i++) {
+    before += sentences[i].length;
+    expected.push((before / sum) * total);
+  }
+  // Quick speech can leave fewer clear pauses than breaks; look for shorter ones before guessing.
+  let gaps = pauses(take);
+  if (gaps.length < n) gaps = pauses(take, 0.06);
+  if (gaps.length < n) return [0, ...expected];
+  const score = (i, k) => gaps[k][1] - gaps[k][0] - Math.abs((gaps[k][0] + gaps[k][1]) / 2 - expected[i]) / total;
+  // best[i][k]: best total score with break i placed at pause k.
+  const best = Array.from({ length: n }, () => new Array(gaps.length).fill(-Infinity));
+  const from = Array.from({ length: n }, () => new Array(gaps.length).fill(-1));
+  for (let k = 0; k < gaps.length; k++) best[0][k] = score(0, k);
+  for (let i = 1; i < n; i++) {
+    for (let k = i; k < gaps.length; k++) {
+      for (let j = i - 1; j < k; j++) {
+        const value = best[i - 1][j] + score(i, k);
+        if (value > best[i][k]) {
+          best[i][k] = value;
+          from[i][k] = j;
+        }
+      }
     }
   }
-  return starts;
+  let k = best[n - 1].indexOf(Math.max(...best[n - 1]));
+  const picked = [];
+  for (let i = n - 1; i >= 0; i--) {
+    picked.unshift(k);
+    k = from[i][k];
+  }
+  return [0, ...picked.map((g) => Math.max(gaps[g][1] - 0.05, 0))];
 }
 
 /** Records a clip and returns when each sentence starts, in ms. */
