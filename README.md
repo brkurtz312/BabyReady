@@ -86,6 +86,16 @@ EXPO_PUBLIC_FIREBASE_FIRESTORE_EMULATOR_PORT=8080
 
 Use a reachable LAN IP instead of `127.0.0.1` for a physical device. `npm run test:emulators` starts isolated emulators automatically (it needs Java).
 
+### EPDS self-check
+
+Lesson 6.4 can offer a private Edinburgh Postnatal Depression Scale check (`src/components/SelfCheckSheet.tsx`, scoring in `src/lib/epds.ts`). It's off unless this is set:
+
+```bash
+EXPO_PUBLIC_ENABLE_EPDS=true
+```
+
+Keep it off in production until written permission to use the scale in the app has come from its copyright holder, the Royal College of Psychiatrists. Answers are never saved or sent anywhere.
+
 ### Firestore rules
 
 `firestore.rules` keeps each learner's progress, Birth Readiness Brief, and class reflection answers inside `users/{uid}`, readable and writable only by that learner. Reflection answers live at `users/{uid}/birthReadinessReflections/{lessonId}__{slideId}`, with bounded text and server timestamps. `tests/firestore.rules.test.mjs` covers these rules, and CI runs it on each pull request.
