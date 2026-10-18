@@ -37,3 +37,11 @@ export const firebaseEmulatorConfig = {
   firestorePort: integerValue(process.env.EXPO_PUBLIC_FIREBASE_FIRESTORE_EMULATOR_PORT, 8080),
   functionsPort: integerValue(process.env.EXPO_PUBLIC_FIREBASE_FUNCTIONS_EMULATOR_PORT, 5001),
 };
+
+/**
+ * The Edinburgh Postnatal Depression Scale self-check. Off unless
+ * EXPO_PUBLIC_ENABLE_EPDS is "true": the scale is copyright of the Royal College
+ * of Psychiatrists, and it stays off until permission to use it in the app is
+ * confirmed.
+ */
+export const epdsEnabled = booleanValue(process.env.EXPO_PUBLIC_ENABLE_EPDS);
