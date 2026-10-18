@@ -228,6 +228,8 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'rest-food-and-help-at-home/welcome': require('../../assets/lessons/rest-food-and-help-at-home/welcome.jpg'),
   'rest-food-and-help-at-home/visitors': require('../../assets/lessons/rest-food-and-help-at-home/visitors.jpg'),
   'rest-food-and-help-at-home/support-person': require('../../assets/lessons/rest-food-and-help-at-home/support-person.jpg'),
+  'your-postpartum-checkups/welcome': require('../../assets/lessons/your-postpartum-checkups/welcome.jpg'),
+  'your-postpartum-checkups/birth-control': require('../../assets/lessons/your-postpartum-checkups/birth-control.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
