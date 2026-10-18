@@ -175,6 +175,10 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'understanding-labor-pain/fear-tension': require('../../assets/lessons/understanding-labor-pain/fear-tension.jpg'),
   'understanding-labor-pain/what-affects': require('../../assets/lessons/understanding-labor-pain/what-affects.jpg'),
   'understanding-labor-pain/coping': require('../../assets/lessons/understanding-labor-pain/coping.jpg'),
+  'breathing-and-relaxation/welcome': require('../../assets/lessons/breathing-and-relaxation/welcome.jpg'),
+  'breathing-and-relaxation/why-breathing': require('../../assets/lessons/breathing-and-relaxation/why-breathing.jpg'),
+  'breathing-and-relaxation/lighter-breathing': require('../../assets/lessons/breathing-and-relaxation/lighter-breathing.jpg'),
+  'breathing-and-relaxation/practice-together': require('../../assets/lessons/breathing-and-relaxation/practice-together.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
