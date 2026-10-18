@@ -1,0 +1,236 @@
+{
+  "courseId": "interventions-and-flexible-decisions",
+  "lessonId": "assisted-vaginal-birth",
+  "order": 5,
+  "title": "Assisted Vaginal Birth",
+  "learningGoals": [
+    "Explain what an assisted vaginal birth is",
+    "Know common reasons a vacuum or forceps might be used",
+    "Describe what happens during a vacuum- or forceps-assisted birth",
+    "Know the common effects on your baby and on you, and what recovery involves"
+  ],
+  "estimatedMinutes": 8,
+  "review": {
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 4.5 of Module 4 (Interventions and Flexible Decisions). Builds on Labor Basics lesson 5 (pushing) and lesson 4.2 (heart rate pattern changes). Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: the reasons (long pushing without progress, exhaustion, a heart rate pattern that means the baby should be born soon, a health condition that makes pushing unsafe) need confirming against the FAQ and Practice Bulletin 219; the conditions for use (cervix fully open, baby low in the pelvis) and that forceps are more likely to succeed but more likely to cause larger tears are from secondary summaries of Practice Bulletin 219; the effects on the baby (swelling or a mark on the head, marks on the face, more jaundice, rare serious injury) and on you (tears, soreness, trouble controlling urine or gas for a while) need confirming. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the conditions for use and 'a way to avoid a cesarean'; keep all four reasons, including the heart condition example; the description of the vacuum, forceps and numbing is accurate as written; keep the baby slide, including jaundice and 'serious injuries are rare'; keep the recovery slide, including the forceps comparison and call-back signs; no video for this lesson."
+  },
+  "sources": [
+    {
+      "id": "acog-assisted-faq",
+      "organization": "ACOG",
+      "title": "Assisted Vaginal Delivery (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/assisted-vaginal-delivery",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "acog-pb219",
+      "organization": "ACOG",
+      "title": "Operative Vaginal Birth (Practice Bulletin No. 219)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/practice-bulletin/articles/2020/04/operative-vaginal-birth",
+      "verifiedOn": "2026-10-18"
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Assisted Vaginal Birth",
+      "onScreen": [
+        "Module 4: Interventions and Flexible Decisions"
+      ],
+      "narration": "Sometimes, during pushing, a baby needs a little help to be born. Your team may suggest using a vacuum or forceps. In this short lesson, we'll look at why that might happen, what it involves, and what recovery is like for you and your baby.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A laboring person in a calm birth room, semi-reclined in bed and resting between contractions, their support partner at the head of the bed holding their hand, and a nurse nearby. No procedure shown. No readable writing."
+      }
+    },
+    {
+      "id": "what-is",
+      "type": "content",
+      "heading": "What is an assisted vaginal birth?",
+      "onScreen": [
+        "A vaginal birth with help from a vacuum or forceps",
+        "Used during pushing, once your cervix is fully open",
+        "Your baby must be low in the pelvis",
+        "You keep pushing while your provider guides"
+      ],
+      "narration": "An assisted vaginal birth is a vaginal birth where your provider uses a vacuum or forceps to help your baby out. It's only done during pushing, once your cervix is fully open, and when your baby has moved low enough in the pelvis. You keep pushing with your contractions, and your provider gently guides your baby's head. For some families, it can be a way to avoid a cesarean.",
+      "sourceIds": [
+        "acog-assisted-faq",
+        "acog-pb219"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Three stacked steps: cervix fully open, baby low in the pelvis, then you push while your provider guides."
+      }
+    },
+    {
+      "id": "when",
+      "type": "content",
+      "heading": "Why it might be suggested",
+      "onScreen": [
+        "Pushing for a long time without progress",
+        "You're too exhausted to push effectively",
+        "Your baby's heart rate shows they should be born soon",
+        "A health condition makes hard pushing unsafe"
+      ],
+      "narration": "Your team might suggest an assisted birth for a few reasons. Pushing may have gone on a long time without your baby moving down. You may be too exhausted to push effectively. Your baby's heart rate pattern may show they should be born soon. Or you may have a health condition, such as some heart conditions, that makes long, hard pushing unsafe. As with any recommendation, you can ask why, and what the other options are.",
+      "sourceIds": [
+        "acog-assisted-faq",
+        "acog-pb219"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: an hourglass for long pushing, a bed for exhaustion, a heartbeat for the baby's heart rate, and a heart with a plus for a health condition."
+      }
+    },
+    {
+      "id": "how",
+      "type": "content",
+      "heading": "What happens",
+      "onScreen": [
+        "Vacuum: a soft cup on your baby's head, with gentle suction",
+        "Forceps: two smooth, curved tools that cradle the head",
+        "Your provider pulls gently while you push",
+        "You'll have numbing, and a baby care team may join"
+      ],
+      "narration": "With a vacuum, your provider places a soft cup on your baby's head and uses gentle suction. With forceps, they place two smooth, curved tools around your baby's head, like cupped hands. Either way, they gently guide your baby while you push with a contraction. Which one is used depends on your situation and your provider's experience. You'll have an epidural or numbing medicine, and a team that cares for newborns may be in the room to check your baby right away.",
+      "sourceIds": [
+        "acog-assisted-faq",
+        "acog-pb219"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A calm birth room seen from the head of the bed: the laboring person's support partner holding their hand and leaning close, a nurse beside them, and a small newborn warmer with a second nurse waiting in the background. The lower body is covered by a sheet. No procedure or instruments shown. No readable writing."
+      }
+    },
+    {
+      "id": "checkin-what",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": [
+        "acog-pb219"
+      ],
+      "question": {
+        "prompt": "When can a vacuum or forceps be used?",
+        "options": [
+          "Any time in labor",
+          "During pushing, once the cervix is fully open and the baby is low",
+          "Only before labor starts"
+        ],
+        "correctIndex": 1,
+        "explanation": "An assisted birth is only done during pushing, once your cervix is fully open and your baby has moved low in the pelvis."
+      }
+    },
+    {
+      "id": "for-baby",
+      "type": "content",
+      "heading": "What it means for your baby",
+      "onScreen": [
+        "Swelling or a mark on the head is common",
+        "Forceps can leave marks on the face",
+        "These usually fade within days",
+        "Your baby's team will check them carefully"
+      ],
+      "narration": "After a vacuum birth, many babies have some swelling or a round mark on their head where the cup was. After forceps, there may be marks on the face. These usually fade within a few days. Some babies have a little more jaundice, or yellow skin, in the first days. Serious injuries are rare. Your baby's care team will check them carefully, and tell you what to watch for.",
+      "sourceIds": [
+        "acog-assisted-faq",
+        "acog-pb219"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A new parent in a hospital bed holding their newborn wrapped in a blanket, smiling, while a nurse gently examines the baby's head with a fingertip. Exactly one baby. No pregnant belly. No readable writing."
+      }
+    },
+    {
+      "id": "for-you",
+      "type": "content",
+      "heading": "What it means for you",
+      "onScreen": [
+        "A tear is more likely, especially with forceps",
+        "Soreness and bruising for a few weeks",
+        "Leaking urine or gas can happen for a while",
+        "Ice, pain medicine, and stool softeners help"
+      ],
+      "narration": "For you, an assisted birth makes a tear in the area between the vagina and anus more likely, and larger tears are more common with forceps. You may feel sore and bruised for a few weeks. Some people have trouble holding in urine or gas for a while. Ice packs, pain medicine, warm water, and stool softeners can help. Tell your care team if your pain gets worse instead of better, or if you have trouble controlling your bowels.",
+      "sourceIds": [
+        "acog-assisted-faq",
+        "acog-pb219"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A new parent resting on a cushion in a hospital bed, holding their newborn, while their support partner brings a cup of water and smiles. Exactly one baby. No pregnant belly. No readable writing."
+      }
+    },
+    {
+      "id": "your-questions",
+      "type": "reflection",
+      "heading": "Questions for your care team",
+      "onScreen": [
+        "How often do you use a vacuum or forceps?",
+        "Which do you usually use, and why?",
+        "What would make you suggest one for me?"
+      ],
+      "narration": "It can help to ask about assisted birth before labor. You might ask how often your care team uses a vacuum or forceps, which one they usually use and why, and what would make them suggest one for you. Write down any questions you'd like to ask, and save them to your Birth Readiness Brief.",
+      "sourceIds": [
+        "acog-assisted-faq"
+      ],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write the questions you'd like to ask your care team about vacuum or forceps births."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "A vacuum or forceps can help during pushing",
+        "Reasons include long pushing, exhaustion, or your baby's heart rate",
+        "Marks on your baby usually fade within days",
+        "A tear is more likely; ice, pain medicine, and time help"
+      ],
+      "narration": "Let's recap. During pushing, a vacuum or forceps can help your baby be born, once your cervix is fully open and your baby is low. It may be suggested after long pushing, if you're exhausted, or if your baby needs to be born soon. Marks or swelling on your baby usually fade within days. And for you, a tear is more likely, with soreness that improves with ice, pain medicine, and time. Next up, a few review questions.",
+      "sourceIds": [
+        "acog-assisted-faq",
+        "acog-pb219"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "What does a vacuum do in an assisted vaginal birth?",
+      "options": [
+        "Numbs the lower body",
+        "A soft cup on the baby's head helps guide them out while you push",
+        "Starts contractions"
+      ],
+      "correctIndex": 1,
+      "explanation": "A vacuum uses a soft cup and gentle suction on your baby's head, and your provider guides your baby while you push."
+    },
+    {
+      "prompt": "Which is a common reason a vacuum or forceps might be suggested?",
+      "options": [
+        "You've pushed for a long time without progress",
+        "Your water just broke",
+        "It's your first prenatal visit"
+      ],
+      "correctIndex": 0,
+      "explanation": "Long pushing without progress, exhaustion, or a heart rate pattern showing your baby should be born soon are common reasons."
+    },
+    {
+      "prompt": "Your baby has a swollen area on the head after a vacuum birth. What's most likely?",
+      "options": [
+        "It's permanent",
+        "It usually fades within a few days",
+        "It means surgery is needed"
+      ],
+      "correctIndex": 1,
+      "explanation": "Swelling or a mark where the cup was is common, and usually fades within a few days. Your baby's team will check it."
+    }
+  ]
+}

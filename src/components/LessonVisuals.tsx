@@ -1067,6 +1067,27 @@ const VISUALS: Record<string, () => React.ReactElement> = {
       ]}
     />
   ),
+  'assisted-vaginal-birth/what-is': () => (
+    <Steps
+      label="An assisted vaginal birth happens during pushing: once the cervix is fully open and the baby is low in the pelvis, you push while your provider guides."
+      steps={[
+        { title: 'Cervix fully open', detail: 'Only during pushing', tone: 'lagoon' },
+        { title: 'Baby low in the pelvis', detail: 'Low enough to guide out', tone: 'lagoon' },
+        { title: 'You push, they guide', detail: 'With a vacuum or forceps', tone: 'marigold' },
+      ]}
+    />
+  ),
+  'assisted-vaginal-birth/when': () => (
+    <IconPanel
+      label="Why an assisted birth might be suggested: long pushing without progress, exhaustion, a heart rate pattern showing the baby should be born soon, or a health condition that makes hard pushing unsafe."
+      items={[
+        { icon: Hourglass, label: 'Long pushing, no progress' },
+        { icon: Bed, label: 'Too exhausted to push' },
+        { icon: HeartPulse, label: "Baby's heart rate" },
+        { icon: HeartPlus, label: 'A health condition' },
+      ]}
+    />
+  ),
 };
 
 /** The drawn picture for a slide, or null when it has none. */
