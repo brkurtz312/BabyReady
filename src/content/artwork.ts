@@ -158,6 +158,14 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'assisted-vaginal-birth/how': require('../../assets/lessons/assisted-vaginal-birth/how.jpg'),
   'assisted-vaginal-birth/for-baby': require('../../assets/lessons/assisted-vaginal-birth/for-baby.jpg'),
   'assisted-vaginal-birth/for-you': require('../../assets/lessons/assisted-vaginal-birth/for-you.jpg'),
+  'cesarean-birth/welcome': require('../../assets/lessons/cesarean-birth/welcome.jpg'),
+  'cesarean-birth/what-is': require('../../assets/lessons/cesarean-birth/what-is.jpg'),
+  'cesarean-birth/planned-unplanned': require('../../assets/lessons/cesarean-birth/planned-unplanned.jpg'),
+  'cesarean-birth/before': require('../../assets/lessons/cesarean-birth/before.jpg'),
+  'cesarean-birth/during': require('../../assets/lessons/cesarean-birth/during.jpg'),
+  'cesarean-birth/first-moments': require('../../assets/lessons/cesarean-birth/first-moments.jpg'),
+  'cesarean-birth/recovery-hospital': require('../../assets/lessons/cesarean-birth/recovery-hospital.jpg'),
+  'cesarean-birth/next-time': require('../../assets/lessons/cesarean-birth/next-time.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
