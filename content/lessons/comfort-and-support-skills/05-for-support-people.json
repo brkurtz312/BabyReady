@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 12,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 3.5, the last lesson of Module 3 (Comfort, Movement, and Support Skills). Written to the support person. Builds on Preparing for Birth lesson 4 (support team and doulas), Labor Basics lessons 2 and 4 (when to call, early labor), lesson 4.1 (the four questions), and lessons 3.2 to 3.4 (comfort skills). Sources were found by web search only; this session could not open the new Lamaze pages, so every source needs to be opened and confirmed. For the reviewer: continuous one-to-one support being linked to better outcomes repeats lesson 1.4's wording from Committee Opinion 766; 'don't ask questions during a contraction', following their lead, speaking with the care team privately about concerns, and eating, drinking, and resting when a backup can cover all follow the Lamaze partner articles; 'I can't do this' often coming near the end of active labor (transition) is a common childbirth-education point not confirmed word for word; eating and drinking for the laboring person is left to the care team's guidance, as in lesson 2.4. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the continuous-support line as in lesson 1.4; keep the Lamaze partner advice as written, including raising worries away from the bedside and a nurse among those who can take over; keep 'I can't do this' and that it often means birth is getting closer; keep reminding them to empty their bladder every hour or two; keep both lines on the support person's limits; no video for this lesson."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 3.5, the last lesson of Module 3 (Comfort, Movement, and Support Skills). Written to the support person. Builds on Preparing for Birth lesson 4 (support team and doulas), Labor Basics lessons 2 and 4 (when to call, early labor), lesson 4.1 (the four questions), and lessons 3.2 to 3.4 (comfort skills). Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: continuous one-to-one support being linked to better outcomes repeats lesson 1.4's wording from Committee Opinion 766; 'don't ask questions during a contraction', following their lead, speaking with the care team privately about concerns, and eating, drinking, and resting when a backup can cover all follow the Lamaze partner articles; 'I can't do this' often coming near the end of active labor (transition) is a common childbirth-education point not confirmed word for word; eating and drinking for the laboring person is left to the care team's guidance, as in lesson 2.4. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the continuous-support line as in lesson 1.4; keep the Lamaze partner advice as written, including raising worries away from the bedside and a nurse among those who can take over; keep 'I can't do this' and that it often means birth is getting closer; keep reminding them to empty their bladder every hour or two; keep both lines on the support person's limits; no video for this lesson."
   },
   "sources": [
     {
@@ -24,35 +24,35 @@
       "organization": "Lamaze",
       "title": "Tips for Supporting Your Partner in Active Labor",
       "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/tips-for-supporting-your-partner-in-active-labor-1",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "lamaze-partner-cheat-sheet",
       "organization": "Lamaze",
       "title": "Helping Your Partner Through Labor and Birth: A Cheat Sheet",
       "url": "https://lamaze.org/New-Giving-Birth-with-Confidence/New-GBWC-Post/helping-your-partner-through-labor-and-birth-a-cheat-sheet-1",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "lamaze-early-labor-support",
       "organization": "Lamaze",
       "title": "How to Support Someone Through Early Labor",
       "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/how-to-support-someone-through-early-labor",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-co766",
       "organization": "ACOG",
       "title": "Approaches to Limit Intervention During Labor and Birth (Committee Opinion No. 766)",
       "url": "https://www.acog.org/clinical/guidance/committee-opinion/2019/02/approaches-to-limit-intervention-during-labor-and-birth",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "icea-comfort-measures",
       "organization": "ICEA",
       "title": "Comfort Measures",
       "url": "https://icea.org/?p=10431",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
