@@ -547,6 +547,39 @@ function HipSqueeze() {
   );
 }
 
+/** A good latch in side view: mouth wide on the breast, lips turned out, chin in, nose free. */
+function Latch() {
+  return (
+    <Drawing
+      caption="More of the darker skin shows above the top lip than below. Tugging is normal; pinching means try again."
+      height={220}
+      label="A good latch seen from the side: the baby's mouth wide open on the breast, lips turned out, chin touching the breast, nose free, and more of the darker skin showing above the top lip than below."
+    >
+      {/* The breast, and the darker skin around the nipple, set higher so more shows above the top lip */}
+      <Path d="M360 22 C300 22 230 64 192 114 C206 146 280 200 360 200 Z" fill={c.skin} stroke={c.skinLine} strokeWidth={2} />
+      <Path d="M250 56 C228 74 208 94 192 114 C200 128 208 138 218 148 C240 128 254 90 250 56 Z" fill="#C08A66" />
+      {/* The baby's head, facing right, with the mouth open wide around the breast */}
+      <Path d="M215 86 A70 70 0 1 0 214 140 L194 114 Z" fill={c.baby} stroke={c.babyLine} strokeWidth={2} />
+      <Path d="M199 63 q12 2 12 14" fill={c.baby} stroke={c.babyLine} strokeWidth={2} />
+      <Path d="M166 82 q8 5 16 0" fill="none" stroke={c.babyLine} strokeLinecap="round" strokeWidth={2.5} />
+      <Path d="M108 108 q-10 10 0 20" fill="none" stroke={c.babyLine} strokeWidth={2} />
+      {/* Lips turned out onto the breast */}
+      <Path d="M215 86 q6 -6 12 -4 q-4 6 -10 8 Z" fill="#E39A8A" stroke={c.babyLine} strokeWidth={1.2} />
+      <Path d="M214 140 q8 4 12 12 q-8 0 -14 -6 Z" fill="#E39A8A" stroke={c.babyLine} strokeWidth={1.2} />
+      {/* Labels */}
+      <Line stroke={c.muted} strokeWidth={1} x1={206} x2={178} y1={62} y2={36} />
+      <Label x={150} y={30}>Nose free</Label>
+      <Line stroke={c.muted} strokeWidth={1} x1={238} x2={262} y1={68} y2={40} />
+      <Label x={290} y={18}>More dark skin</Label>
+      <Label x={290} y={32}>above the top lip</Label>
+      <Line stroke={c.muted} strokeWidth={1} x1={222} x2={258} y1={150} y2={186} />
+      <Label x={290} y={200}>Lips turned out</Label>
+      <Line stroke={c.muted} strokeWidth={1} x1={204} x2={160} y1={158} y2={186} />
+      <Label x={120} y={200}>Chin close to the breast</Label>
+    </Drawing>
+  );
+}
+
 function HouseIcon({ x, y }: { x: number; y: number }) {
   return (
     <G>
@@ -1393,16 +1426,7 @@ const VISUALS: Record<string, () => React.ReactElement> = {
       ]}
     />
   ),
-  'breastfeeding-basics/latch': () => (
-    <Steps
-      label="A good latch: line up your baby's nose with your nipple, wait for a wide-open mouth and bring baby in close, then check for lips turned out and comfortable tugging."
-      steps={[
-        { title: 'Nose to nipple', detail: 'Hold baby close, tummy to tummy', tone: 'lagoon' },
-        { title: 'Wide-open mouth', detail: 'Then bring baby in, chin first', tone: 'marigold' },
-        { title: 'Check the latch', detail: 'Lips turned out; tugging, not pinching', tone: 'lagoon' },
-      ]}
-    />
-  ),
+  'breastfeeding-basics/latch': () => <Latch />,
   'breastfeeding-basics/get-help': () => (
     <IconPanel
       label="Getting help: nurses and your baby's doctor, a lactation consultant, support groups, and asking before taking any medicine."
