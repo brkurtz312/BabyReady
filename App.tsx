@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import {
   Alert,
+  Linking,
   Pressable,
   SafeAreaView,
   ScrollView,
@@ -27,6 +28,8 @@ import {
 import { BirthReadinessBriefScreen } from './src/screens/BirthReadinessBriefScreen';
 import { ClassPlayerScreen } from './src/screens/ClassPlayerScreen';
 import { loadProgress, saveProgress } from './src/services/learnerProgressService';
+
+const CONTACT_EMAIL = 'admin@brk-services.com';
 
 export default function App() {
   return (
@@ -298,6 +301,18 @@ function BabyReadyApp() {
           >
             <Text style={styles.deleteDataButtonText}>Delete my data</Text>
           </Pressable>
+          <Text style={styles.contactText}>
+            Questions or privacy requests? Email{' '}
+            <Text
+              accessibilityHint="Opens your email app."
+              accessibilityRole="link"
+              onPress={() => void Linking.openURL(`mailto:${CONTACT_EMAIL}`).catch(() => undefined)}
+              style={styles.contactLink}
+              testID="link-contact-email"
+            >
+              {CONTACT_EMAIL}
+            </Text>
+          </Text>
         </View>
 
         {!firebaseIsConfigured || authState.status === 'error' ? (
@@ -564,6 +579,17 @@ const styles = StyleSheet.create({
     color: '#A1262C',
     fontSize: 13,
     fontWeight: '800',
+  },
+  contactText: {
+    color: '#55534D',
+    fontSize: 14,
+    lineHeight: 20,
+    marginTop: 14,
+  },
+  contactLink: {
+    color: '#01696F',
+    fontWeight: '800',
+    textDecorationLine: 'underline',
   },
   foundationMeta: {
     color: '#77746D',
