@@ -54,6 +54,8 @@ import Syringe from 'lucide-react-native/icons/syringe';
 import Ear from 'lucide-react-native/icons/ear';
 import HeartPlus from 'lucide-react-native/icons/heart-plus';
 import CircleDot from 'lucide-react-native/icons/circle-dot';
+import FaceSlightlySmiling from 'lucide-react-native/icons/face-slightly-smiling';
+import Hand from 'lucide-react-native/icons/hand';
 
 /**
  * Pictures drawn in code for lesson slides: icon panels and simple diagrams.
@@ -1164,6 +1166,27 @@ const VISUALS: Record<string, () => React.ReactElement> = {
         { icon: ShowerHead, label: 'Water' },
         { icon: Syringe, label: 'Epidural', tone: 'marigold' },
         { icon: Pill, label: 'IV medicine', tone: 'marigold' },
+      ]}
+    />
+  ),
+  'breathing-and-relaxation/through-a-contraction': () => (
+    <Steps
+      label="Breathing through a contraction: a cleansing breath as it begins, slow breathing through it with a long breath out, and another cleansing breath as it ends."
+      steps={[
+        { title: 'As it begins', detail: 'A cleansing breath, like a big sigh', tone: 'lagoon' },
+        { title: 'Through it', detail: 'Slow breaths: in about 4, out about 6', tone: 'marigold' },
+        { title: 'As it ends', detail: 'Another cleansing breath, then rest', tone: 'lagoon' },
+      ]}
+    />
+  ),
+  'breathing-and-relaxation/relaxing-your-body': () => (
+    <IconPanel
+      label="Relaxing your body: soften your forehead and jaw, drop your shoulders, loosen your hands, and rest fully between contractions."
+      items={[
+        { icon: FaceSlightlySmiling, label: 'Soft forehead and jaw' },
+        { icon: PersonStanding, label: 'Shoulders down' },
+        { icon: Hand, label: 'Loose, open hands' },
+        { icon: Moon, label: 'Rest between' },
       ]}
     />
   ),

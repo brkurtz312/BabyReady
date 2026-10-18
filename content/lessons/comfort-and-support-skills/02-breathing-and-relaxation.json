@@ -1,0 +1,283 @@
+{
+  "courseId": "comfort-and-support-skills",
+  "lessonId": "breathing-and-relaxation",
+  "order": 2,
+  "title": "Breathing and Relaxation (practice-along)",
+  "learningGoals": [
+    "Know why breathing and relaxation help in labor",
+    "Use a cleansing breath and slow breathing through a contraction",
+    "Switch to lighter breathing at the peak of a contraction, if it helps",
+    "Notice and release tension in your body",
+    "Practice with your support person"
+  ],
+  "estimatedMinutes": 12,
+  "review": {
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 3.2, a practice-along lesson in Module 3 (Comfort, Movement, and Support Skills). Builds on lesson 3.1 (pain in waves, fear and tension). The two practice slides are video slides that play animations drawn in code, a breathing guide over one practice contraction, so they need no generated video. Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: the slow breathing pace (in for about 4 counts, out for about 6) follows the Lamaze Breathing page's 'in for four, out for four to six'; the cleansing breath at the start and end of each contraction, and lighter quicker breathing at the peak, are traditional Lamaze patterns that Lamaze now presents as options rather than rules; the warning to slow down if you feel dizzy or tingly (from breathing too fast) is standard childbirth-education advice not confirmed word for word in these sources; the practice contractions in the animations are about a minute long, a typical length, and the narration says real ones vary; the ICEA source is a short Comfort Measures page whose web address is unusual (icea.org/?p=10431) and needs checking. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep slow breathing at about 4 in and 6 out; keep the cleansing breath and lighter breathing as starting points, not rules; keep the advice to slow down if dizzy or tingly; keep practice contractions of about a minute; keep the line on low, deep sounds; the ICEA Comfort Measures page opens correctly at its address."
+  },
+  "sources": [
+    {
+      "id": "lamaze-breathing",
+      "organization": "Lamaze",
+      "title": "Lamaze Breathing",
+      "url": "https://lamaze.org/lamaze-breathing",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "lamaze-breathing-today",
+      "organization": "Lamaze",
+      "title": "Lamaze Breathing Today: Teaching Flexible Breathing for Labor Comfort",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/lamaze-breathing-today-teaching-flexible-breathing-for-labor-comfort",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "lamaze-ways-to-relax",
+      "organization": "Lamaze",
+      "title": "Ways to Relax During Labor",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/ways-to-relax-during-labor-1",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "icea-comfort-measures",
+      "organization": "ICEA",
+      "title": "Comfort Measures",
+      "url": "https://icea.org/?p=10431",
+      "verifiedOn": "2026-10-18"
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Breathing and Relaxation",
+      "onScreen": [
+        "Module 3: Comfort, Movement, and Support Skills",
+        "A practice-along lesson"
+      ],
+      "narration": "This is a practice-along lesson, so find a comfortable seat, and if you can, invite your support person to join you. We'll learn a few simple ways to breathe and relax through contractions, and then practice them together, right now.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person and their support partner sitting cross-legged on cushions on a living room floor, facing the same way, both with eyes closed and hands resting on their knees, breathing calmly. No readable writing."
+      }
+    },
+    {
+      "id": "why-breathing",
+      "type": "content",
+      "heading": "Why breathing helps",
+      "onScreen": [
+        "It gives you a rhythm and something to focus on",
+        "A long, slow breath out helps your body let go",
+        "Holding your breath can make pain feel worse",
+        "There's no single right way; find what works for you"
+      ],
+      "narration": "Breathing is a comfort tool you always have with you. A steady rhythm gives your mind something to focus on during a contraction. A long, slow breath out helps relax your shoulders, jaw, and pelvic floor. Holding your breath, or breathing very fast, can make pain feel worse. There's no single right way to breathe in labor. The patterns in this lesson are starting points. Use whatever feels right.",
+      "sourceIds": [
+        "lamaze-breathing-today",
+        "lamaze-breathing"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person sitting upright in a comfortable chair, one hand resting on their chest and one on their rounded belly, eyes closed, breathing out slowly, with relaxed shoulders. Soft light. No readable writing."
+      }
+    },
+    {
+      "id": "through-a-contraction",
+      "type": "content",
+      "heading": "Breathing through a contraction",
+      "onScreen": [
+        "As it begins: a cleansing breath, like a big sigh",
+        "Through it: slow, easy breaths, with a long breath out",
+        "As it ends: another cleansing breath, then rest"
+      ],
+      "narration": "Here's a simple pattern. As a contraction begins, take a cleansing breath: a big, relaxed breath in, and a long sigh out. It tells your body, and your support person, that a contraction is starting. Then breathe slowly and easily, in through your nose for about 4 counts, and out through your mouth for about 6. Let each breath out carry tension away. As the contraction ends, take another cleansing breath, and rest.",
+      "sourceIds": [
+        "lamaze-breathing",
+        "lamaze-breathing-today"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Three stacked steps: a cleansing breath as the contraction begins, slow breathing through it, and a cleansing breath as it ends."
+      }
+    },
+    {
+      "id": "practice-slow",
+      "type": "video",
+      "heading": "Practice: slow breathing",
+      "onScreen": [
+        "Press play, and breathe along with the circle",
+        "In as it grows, out as it shrinks"
+      ],
+      "narration": "Let's practice. Get comfortable, and drop your shoulders. When you press play, a practice contraction will begin. Breathe in as the circle grows, and out as it shrinks. Real contractions vary in length, so this is just practice.",
+      "sourceIds": [
+        "lamaze-breathing"
+      ],
+      "video": {
+        "brief": "Breathing guide drawn in code, about one minute: a practice contraction shown as a wave that builds, peaks, and fades. A circle grows as you breathe in and shrinks as you breathe out, with a cleansing breath at the start and end and slow breathing (in about 4 counts, out about 6) in between. Short on-screen cues only.",
+        "maxSeconds": 75
+      }
+    },
+    {
+      "id": "checkin-breathing",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": [
+        "lamaze-breathing-today"
+      ],
+      "question": {
+        "prompt": "In slow breathing, which part of the breath is especially helpful to make long and relaxed?",
+        "options": [
+          "The breath in",
+          "The breath out",
+          "Holding your breath between"
+        ],
+        "correctIndex": 1,
+        "explanation": "A long, relaxed breath out helps release tension in your shoulders, jaw, and pelvic floor."
+      }
+    },
+    {
+      "id": "lighter-breathing",
+      "type": "content",
+      "heading": "Lighter breathing at the peak",
+      "onScreen": [
+        "At the strongest part, some people breathe lighter and quicker",
+        "Light breaths in and out through your mouth",
+        "Slow back down as the contraction fades",
+        "Dizzy or tingly? Slow your breathing down"
+      ],
+      "narration": "As labor gets stronger, slow breathing may feel hard at the peak of a contraction. Some people switch to lighter, quicker breaths there, in and out through the mouth, then slow back down as the contraction fades. Keep it light and easy. If you feel dizzy, or your fingers or lips tingle, you're breathing too fast. Slow down, and make your breath out longer.",
+      "sourceIds": [
+        "lamaze-breathing",
+        "lamaze-breathing-today"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A laboring person leaning forward on a birth ball, focused, with lips slightly parted as they breathe lightly, while their support partner kneels in front, breathing along with them and holding their hands. No readable writing."
+      }
+    },
+    {
+      "id": "practice-lighter",
+      "type": "video",
+      "heading": "Practice: lighter breathing at the peak",
+      "onScreen": [
+        "Start slow, go lighter at the peak, then slow down again",
+        "Keep it easy; slow down if you feel dizzy"
+      ],
+      "narration": "Let's practice once more. This time, as the contraction builds to its peak, the circle will pulse faster for lighter breaths. Then it slows down again as the contraction fades.",
+      "sourceIds": [
+        "lamaze-breathing"
+      ],
+      "video": {
+        "brief": "Breathing guide drawn in code, about one minute: a practice contraction as a wave. A cleansing breath, slow breathing as it builds, lighter quicker breaths at the peak, slow breathing as it fades, and a closing cleansing breath. Short on-screen cues only.",
+        "maxSeconds": 75
+      }
+    },
+    {
+      "id": "relaxing-your-body",
+      "type": "content",
+      "heading": "Relaxing your body",
+      "onScreen": [
+        "Notice where you hold tension",
+        "Soften your forehead, jaw, shoulders, and hands",
+        "Low, deep sounds can help keep your jaw loose",
+        "Rest fully between contractions"
+      ],
+      "narration": "Relaxing your body works hand in hand with breathing. Try it now. Notice where you're holding tension. Soften your forehead. Let your jaw drop. Lower your shoulders. Open your hands. If you make sounds in labor, low, deep sounds tend to keep your jaw and body loose, while high, tight sounds can add tension. And between contractions, let your whole body rest.",
+      "sourceIds": [
+        "lamaze-ways-to-relax",
+        "lamaze-breathing-today"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a face for a soft forehead and jaw, a person for dropped shoulders, an open hand for loose hands, and a moon for resting between contractions."
+      }
+    },
+    {
+      "id": "practice-together",
+      "type": "content",
+      "heading": "Practice together",
+      "onScreen": [
+        "Practice for a few minutes most days",
+        "Support person: watch for tension, and touch that spot",
+        "Breathe along, and use calm, short words",
+        "Agree ahead on what helps, and what doesn't"
+      ],
+      "narration": "These skills work best when they're familiar, so practice for a few minutes most days. Support people, you have a real role. Watch for tension, like raised shoulders or clenched hands, and gently touch that spot as a signal to let go. Breathe along at the same pace. Use calm, short words, like slow, or let go. And talk ahead of time about what helps, and what doesn't, because in labor, some people want quiet.",
+      "sourceIds": [
+        "lamaze-ways-to-relax",
+        "icea-comfort-measures"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person sitting on a cushion with eyes closed while their support partner, sitting behind them, rests a gentle hand on their raised shoulder as a cue to relax. Calm living room. No readable writing."
+      }
+    },
+    {
+      "id": "your-practice",
+      "type": "reflection",
+      "heading": "Your breathing and relaxation plan",
+      "onScreen": [
+        "Which breathing felt most natural",
+        "Where you tend to hold tension",
+        "Words or touch that help you relax"
+      ],
+      "narration": "Now that you've practiced, which breathing felt most natural to you? Where do you tend to hold tension? And what words or touch from your support person help you relax? Save your answers to your Birth Readiness Brief, so your support person knows what helps.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write which breathing felt most natural, where you hold tension, and words or touch that help you relax."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Breathing gives you rhythm and focus; a long breath out helps you let go",
+        "Cleansing breath, slow breathing, cleansing breath",
+        "Lighter breaths at the peak, if they help; slow down if dizzy",
+        "Release tension, and practice with your support person"
+      ],
+      "narration": "Let's recap. Breathing gives you a rhythm to focus on, and a long breath out helps your body let go. A simple pattern is a cleansing breath, slow breathing through the contraction, and another cleansing breath. At the peak, lighter breaths can help, and if you feel dizzy, slow down. Release tension in your face, shoulders, and hands, and practice together most days. Next up, a few review questions.",
+      "sourceIds": [
+        "lamaze-breathing",
+        "lamaze-ways-to-relax"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "What is a cleansing breath?",
+      "options": [
+        "Holding your breath for 10 seconds",
+        "A big, relaxed breath in and a long sigh out at the start and end of a contraction",
+        "Breathing as fast as you can"
+      ],
+      "correctIndex": 1,
+      "explanation": "A cleansing breath is a big, relaxed breath in and a long sigh out. It marks the start and end of a contraction."
+    },
+    {
+      "prompt": "While breathing quickly, your fingers start to tingle. What should you do?",
+      "options": [
+        "Breathe even faster",
+        "Slow your breathing down and make your breath out longer",
+        "Hold your breath"
+      ],
+      "correctIndex": 1,
+      "explanation": "Tingling or dizziness means you're breathing too fast. Slow down and lengthen your breath out."
+    },
+    {
+      "prompt": "How can a support person help you relax?",
+      "options": [
+        "Notice tension and gently touch that spot as a cue to let go",
+        "Count loudly and quickly",
+        "Leave the room during contractions"
+      ],
+      "correctIndex": 0,
+      "explanation": "A support person can watch for tension, touch that spot as a cue, breathe along, and use calm, short words."
+    }
+  ]
+}
