@@ -222,6 +222,9 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'physical-recovery-after-birth/welcome': require('../../assets/lessons/physical-recovery-after-birth/welcome.jpg'),
   'physical-recovery-after-birth/cesarean-healing': require('../../assets/lessons/physical-recovery-after-birth/cesarean-healing.jpg'),
   'physical-recovery-after-birth/moving-again': require('../../assets/lessons/physical-recovery-after-birth/moving-again.jpg'),
+  'emotional-health-after-birth/welcome': require('../../assets/lessons/emotional-health-after-birth/welcome.jpg'),
+  'emotional-health-after-birth/getting-treatment': require('../../assets/lessons/emotional-health-after-birth/getting-treatment.jpg'),
+  'emotional-health-after-birth/partners': require('../../assets/lessons/emotional-health-after-birth/partners.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
