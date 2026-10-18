@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 12,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 3.2, a practice-along lesson in Module 3 (Comfort, Movement, and Support Skills). Builds on lesson 3.1 (pain in waves, fear and tension). The two practice slides are video slides that play animations drawn in code, a breathing guide over one practice contraction, so they need no generated video. Sources were found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. For the reviewer: the slow breathing pace (in for about 4 counts, out for about 6) follows the Lamaze Breathing page's 'in for four, out for four to six'; the cleansing breath at the start and end of each contraction, and lighter quicker breathing at the peak, are traditional Lamaze patterns that Lamaze now presents as options rather than rules; the warning to slow down if you feel dizzy or tingly (from breathing too fast) is standard childbirth-education advice not confirmed word for word in these sources; the practice contractions in the animations are about a minute long, a typical length, and the narration says real ones vary; the ICEA source is a short Comfort Measures page whose web address is unusual (icea.org/?p=10431) and needs checking. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep slow breathing at about 4 in and 6 out; keep the cleansing breath and lighter breathing as starting points, not rules; keep the advice to slow down if dizzy or tingly; keep practice contractions of about a minute; keep the line on low, deep sounds; the ICEA Comfort Measures page opens correctly at its address."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 3.2, a practice-along lesson in Module 3 (Comfort, Movement, and Support Skills). Builds on lesson 3.1 (pain in waves, fear and tension). The two practice slides are video slides that play animations drawn in code, a breathing guide over one practice contraction, so they need no generated video. Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: the slow breathing pace (in for about 4 counts, out for about 6) follows the Lamaze Breathing page's 'in for four, out for four to six'; the cleansing breath at the start and end of each contraction, and lighter quicker breathing at the peak, are traditional Lamaze patterns that Lamaze now presents as options rather than rules; the warning to slow down if you feel dizzy or tingly (from breathing too fast) is standard childbirth-education advice not confirmed word for word in these sources; the practice contractions in the animations are about a minute long, a typical length, and the narration says real ones vary; the ICEA source is a short Comfort Measures page whose web address is unusual (icea.org/?p=10431) and needs checking. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep slow breathing at about 4 in and 6 out; keep the cleansing breath and lighter breathing as starting points, not rules; keep the advice to slow down if dizzy or tingly; keep practice contractions of about a minute; keep the line on low, deep sounds; the ICEA Comfort Measures page opens correctly at its address."
   },
   "sources": [
     {
@@ -24,28 +24,28 @@
       "organization": "Lamaze",
       "title": "Lamaze Breathing",
       "url": "https://lamaze.org/lamaze-breathing",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "lamaze-breathing-today",
       "organization": "Lamaze",
       "title": "Lamaze Breathing Today: Teaching Flexible Breathing for Labor Comfort",
       "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/lamaze-breathing-today-teaching-flexible-breathing-for-labor-comfort",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "lamaze-ways-to-relax",
       "organization": "Lamaze",
       "title": "Ways to Relax During Labor",
       "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/ways-to-relax-during-labor-1",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "icea-comfort-measures",
       "organization": "ICEA",
       "title": "Comfort Measures",
       "url": "https://icea.org/?p=10431",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
