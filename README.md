@@ -100,6 +100,10 @@ Keep it off in production until written permission to use the scale in the app h
 
 `firestore.rules` keeps each learner's progress, Birth Readiness Brief, and class reflection answers inside `users/{uid}`, readable and writable only by that learner. Reflection answers live at `users/{uid}/birthReadinessReflections/{lessonId}__{slideId}`, with bounded text and server timestamps. Lesson progress (finished lessons and the last lesson opened, for the home screen's lesson list and Continue card) lives at `users/{uid}/courseProgress/class`, with a copy kept on the device. `tests/firestore.rules.test.mjs` covers these rules, and CI runs it on each pull request.
 
+### Deleting a learner's data
+
+The home screen's **Delete my data** button (`src/components/DeleteDataSheet.tsx`) calls the `deleteMyAccount` Cloud Function, which deletes everything under `users/{uid}` and the learner's sign-in. If that succeeds, the app clears the device copies of progress and reflection answers and signs out, which starts a new, empty anonymous session. If the server step fails, nothing on the device is touched, so the learner can try again. Without Firebase, the button clears the device copies only. Deploy the function (`firebase deploy --only functions`) before turning on Firebase in production.
+
 The rules still include the collections used by the archived governance workflow, so existing published course content stays readable.
 
 ## Production deployment

@@ -1,5 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { initializeApp } from 'firebase-admin/app';
+import { getAuth } from 'firebase-admin/auth';
 import { FieldValue, getFirestore } from 'firebase-admin/firestore';
 import { defineSecret } from 'firebase-functions/params';
 import { HttpsError, onCall } from 'firebase-functions/v2/https';
@@ -162,3 +163,29 @@ export const askLessonQuestion = onCall(
     };
   },
 );
+
+/**
+ * Deletes everything BabyReady keeps for the signed-in learner: every document
+ * under users/{uid} (profile, progress, Brief, reflection answers, question
+ * counts), then the sign-in itself. The app then starts a new, empty session.
+ */
+export const deleteMyAccount = onCall({ maxInstances: 5, timeoutSeconds: 120 }, async (request) => {
+  const uid = request.auth?.uid;
+  if (!uid) {
+    throw new HttpsError('unauthenticated', 'BabyReady is still starting your private session. Try again in a moment.');
+  }
+  try {
+    const firestore = getFirestore();
+    await firestore.recursiveDelete(firestore.doc(`users/${uid}`));
+    await getAuth()
+      .deleteUser(uid)
+      .catch((error: { code?: string }) => {
+        // Already gone (for example, a retry after a dropped connection) is fine.
+        if (error?.code !== 'auth/user-not-found') throw error;
+      });
+  } catch {
+    console.error('Account deletion failed');
+    throw new HttpsError('internal', 'Your data couldn’t be deleted just now. Please try again.');
+  }
+  return { deleted: true };
+});

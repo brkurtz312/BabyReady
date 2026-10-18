@@ -47,3 +47,8 @@ export async function saveProgress(userId: string | null, progress: LearnerProgr
   if (!reference) return;
   await setDoc(reference, { ...progress, updatedAt: serverTimestamp() }).catch(() => undefined);
 }
+
+/** Removes the device copy of progress. Used when the learner deletes their data. */
+export async function clearDeviceProgress(): Promise<void> {
+  await AsyncStorage.removeItem(LOCAL_KEY);
+}

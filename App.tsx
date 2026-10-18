@@ -14,6 +14,7 @@ import {
   BabyReadyAuthProvider,
   useBabyReadyAuth,
 } from './src/auth/AuthProvider';
+import { DeleteDataSheet } from './src/components/DeleteDataSheet';
 import { courses, type Course } from './src/content/lessons';
 import { firebaseIsConfigured } from './src/lib/firebase';
 import {
@@ -46,6 +47,7 @@ function BabyReadyApp() {
   const [openCount, setOpenCount] = useState(0);
   const [expandedCourseId, setExpandedCourseId] = useState<string | null>(null);
   const [progress, setProgress] = useState<LearnerProgress>(EMPTY_PROGRESS);
+  const [deleteSheetOpen, setDeleteSheetOpen] = useState(false);
 
   const userId = authState.status === 'ready' ? authState.user.uid : null;
 
@@ -281,6 +283,23 @@ function BabyReadyApp() {
           </Pressable>
         </View>
 
+        <View style={styles.foundationCard}>
+          <Text style={styles.foundationTitle}>Your data</Text>
+          <Text style={styles.foundationText}>
+            Delete your lesson progress, Birth Readiness Brief, and class answers from this device
+            and your private BabyReady account at any time.
+          </Text>
+          <Pressable
+            accessibilityHint="Asks you to confirm before anything is deleted."
+            accessibilityRole="button"
+            onPress={() => setDeleteSheetOpen(true)}
+            style={styles.deleteDataButton}
+            testID="button-delete-my-data"
+          >
+            <Text style={styles.deleteDataButtonText}>Delete my data</Text>
+          </Pressable>
+        </View>
+
         {!firebaseIsConfigured || authState.status === 'error' ? (
           <View accessibilityRole="alert" style={styles.foundationCard}>
             <Text style={styles.foundationTitle}>Saving is not connected</Text>
@@ -295,6 +314,15 @@ function BabyReadyApp() {
           </View>
         ) : null}
       </ScrollView>
+      <DeleteDataSheet
+        onClose={() => setDeleteSheetOpen(false)}
+        onDeleted={() => {
+          setProgress(EMPTY_PROGRESS);
+          setExpandedCourseId(null);
+        }}
+        userId={userId}
+        visible={deleteSheetOpen}
+      />
     </SafeAreaView>
   );
 }
@@ -521,6 +549,21 @@ const styles = StyleSheet.create({
     fontSize: 14,
     lineHeight: 20,
     marginTop: 4,
+  },
+  deleteDataButton: {
+    alignSelf: 'flex-start',
+    borderColor: '#A1262C',
+    borderRadius: 9,
+    borderWidth: 1,
+    marginTop: 12,
+    minHeight: 44,
+    justifyContent: 'center',
+    paddingHorizontal: 12,
+  },
+  deleteDataButtonText: {
+    color: '#A1262C',
+    fontSize: 13,
+    fontWeight: '800',
   },
   foundationMeta: {
     color: '#77746D',
