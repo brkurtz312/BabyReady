@@ -150,9 +150,9 @@ export function SelfCheckSheet({ visible, onClose }: { visible: boolean; onClose
           ) : null}
 
           {step === 'crisis' ? (
-            <View>
+            <View style={styles.stack}>
               <CrisisCard />
-              <Pressable accessibilityRole="button" onPress={goNext} style={[styles.secondary, styles.continue]}>
+              <Pressable accessibilityRole="button" onPress={goNext} style={styles.secondary}>
                 <Text style={styles.secondaryText}>{isLast ? 'Continue to my result' : 'Continue the questions'}</Text>
               </Pressable>
             </View>
@@ -193,7 +193,7 @@ function CallButton({ label, url }: { label: string; url: string }) {
 function ResultView({ result, onRetake }: { result: EpdsResult; onRetake: () => void }) {
   const message = BAND_MESSAGES[result.band];
   return (
-    <View>
+    <View style={styles.stack}>
       {result.selfHarm ? <CrisisCard /> : null}
       <View style={[styles.card, result.band !== 'low' && styles.resultConcern]}>
         <Text style={styles.kicker}>Your score: {result.total} of 30</Text>
@@ -276,7 +276,7 @@ const styles = StyleSheet.create({
   },
   secondaryText: { color: colors.lagoon, fontSize: 15, fontWeight: '800' },
   disabled: { opacity: 0.4 },
-  continue: { marginTop: 12 },
+  stack: { gap: 14 },
   crisisCard: { backgroundColor: colors.alertSoft, borderColor: colors.alert, borderWidth: 2 },
   crisisTitle: { color: colors.alert, fontSize: 20, fontWeight: '800' },
   callRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
