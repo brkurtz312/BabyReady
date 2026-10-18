@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 9,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 4.1, the first lesson of Module 4 (Interventions and Flexible Decisions). Builds on Preparing for Birth lesson 5, which teaches the BRAIN questions; this lesson recaps them in one line and adds timing, understanding, support people, and declining. Sources were found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): ACOG sources only (no ACNM page needed); keep the three levels of urgency, 'say back what you heard', and asking for a medical interpreter rather than a family member; make the decision video as proposed."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 4.1, the first lesson of Module 4 (Interventions and Flexible Decisions). Builds on Preparing for Birth lesson 5, which teaches the BRAIN questions; this lesson recaps them in one line and adds timing, understanding, support people, and declining. Every source was confirmed against its slides by the reviewer on 2026-10-18. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): ACOG sources only (no ACNM page needed); keep the three levels of urgency, 'say back what you heard', and asking for a medical interpreter rather than a family member; make the decision video as proposed."
   },
   "sources": [
     {
@@ -24,21 +24,21 @@
       "organization": "ACOG",
       "title": "Informed Consent and Shared Decision Making in Obstetrics and Gynecology (Committee Opinion No. 819)",
       "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2021/02/informed-consent-and-shared-decision-making-in-obstetrics-and-gynecology",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-health-care-visit",
       "organization": "ACOG",
       "title": "Making the Most of Your Health Care Visit (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/making-the-most-of-your-health-care-visit",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-induction-questions",
       "organization": "ACOG",
       "title": "8 Questions to Ask Your Doctor Before Labor Induction",
       "url": "https://www.acog.org/womens-health/experts-and-stories/the-latest/8-questions-to-ask-your-doctor-before-labor-induction",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
