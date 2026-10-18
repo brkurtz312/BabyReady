@@ -73,6 +73,8 @@ import AudioLines from 'lucide-react-native/icons/audio-lines';
 import MessageCircle from 'lucide-react-native/icons/message-circle';
 import CircleX from 'lucide-react-native/icons/circle-x';
 import Puzzle from 'lucide-react-native/icons/puzzle';
+import BathIcon from 'lucide-react-native/icons/bath';
+import Droplets from 'lucide-react-native/icons/droplets';
 
 /**
  * Pictures drawn in code for lesson slides: icon panels and simple diagrams.
@@ -1712,6 +1714,72 @@ const VISUALS: Record<string, () => React.ReactElement> = {
         { icon: Ban, label: 'Small objects and batteries out of reach', tone: 'alert' },
         { icon: Puzzle, label: 'Check toys for small parts' },
         { icon: Utensils, label: 'Soft foods, tiny pieces' },
+      ]}
+    />
+  ),
+  'physical-recovery-after-birth/recovery-takes-time': () => (
+    <IconPanel
+      label="Recovery takes time: most healing in about 6 weeks, rest when you can, let others help, and your care team checks in."
+      items={[
+        { icon: Calendar, label: 'Most healing in about 6 weeks' },
+        { icon: Bed, label: 'Rest when you can' },
+        { icon: Users, label: 'Let others help' },
+        { icon: Stethoscope, label: 'Your team checks in' },
+      ]}
+    />
+  ),
+  'physical-recovery-after-birth/bleeding': () => (
+    <Steps
+      label="Bleeding after birth: bright red and heavy in the first days, then pink or brown, then yellowish-white over several weeks. Soaking 2 pads an hour for 1 to 2 hours needs care right away."
+      steps={[
+        { title: 'First days', detail: 'Bright red, like a heavy period', tone: 'lagoon' },
+        { title: 'Then lighter', detail: 'Pink or brown', tone: 'lagoon' },
+        { title: 'Over several weeks', detail: 'Yellowish-white, then gone', tone: 'lagoon' },
+        { title: '2 pads an hour, for 1 to 2 hours', detail: 'Get care right away', tone: 'alert' },
+      ]}
+    />
+  ),
+  'physical-recovery-after-birth/cramping-and-pain': () => (
+    <IconPanel
+      label="Cramping and pain relief: cramps as the uterus shrinks, often stronger while breastfeeding; ibuprofen and acetaminophen as directed; ask before taking anything else."
+      items={[
+        { icon: HeartPulse, label: 'Cramps as your uterus shrinks' },
+        { icon: Baby, label: 'Stronger while breastfeeding' },
+        { icon: Pill, label: 'Ibuprofen or acetaminophen' },
+        { icon: Phone, label: 'Ask before anything else' },
+      ]}
+    />
+  ),
+  'physical-recovery-after-birth/vaginal-birth-healing': () => (
+    <IconPanel
+      label="Healing after a vaginal birth: ice packs in the first days, warm sitz baths, a squeeze bottle of warm water when you pee, and a pillow to sit on."
+      items={[
+        { icon: Snowflake, label: 'Ice packs, first 1 to 3 days' },
+        { icon: BathIcon, label: 'Warm sitz baths' },
+        { icon: Droplets, label: 'Squeeze bottle when you pee' },
+        { icon: Armchair, label: 'A pillow to sit on' },
+      ]}
+    />
+  ),
+  'physical-recovery-after-birth/bathroom': () => (
+    <IconPanel
+      label="Bathroom changes: peeing may sting at first; leaking a little often improves; fluids and fiber for constipation; ice packs for hemorrhoids."
+      items={[
+        { icon: Droplets, label: 'Peeing may sting at first' },
+        { icon: CircleDot, label: 'Leaking often improves' },
+        { icon: GlassWater, label: 'Fluids and fiber' },
+        { icon: Snowflake, label: 'Ice for hemorrhoids' },
+      ]}
+    />
+  ),
+  'physical-recovery-after-birth/other-changes': () => (
+    <IconPanel
+      label="Other changes: breasts may fill around days 2 to 5, night sweats in the first weeks, the belly shrinks over months, and some hair loss around 3 to 4 months grows back."
+      items={[
+        { icon: Milk, label: 'Breasts fill, days 2 to 5' },
+        { icon: Moon, label: 'Night sweats' },
+        { icon: Calendar, label: 'Belly shrinks over months' },
+        { icon: Sparkles, label: 'Hair loss that grows back' },
       ]}
     />
   ),

@@ -1,0 +1,349 @@
+{
+  "courseId": "postpartum-recovery",
+  "lessonId": "physical-recovery-after-birth",
+  "order": 1,
+  "title": "Physical Recovery After Birth",
+  "learningGoals": [
+    "Know what normal bleeding looks like after birth, and when it's too much",
+    "Manage cramping and pain safely",
+    "Care for yourself after a vaginal birth or a cesarean",
+    "Know common bathroom and body changes, and what helps",
+    "Get moving again safely, including pelvic floor exercises"
+  ],
+  "estimatedMinutes": 14,
+  "review": {
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 6.1 of Module 6 (Postpartum Recovery, Mood, and Red Flags). Covers normal recovery; the warning signs are in lesson 6.2, and the postpartum visits, sex, and birth control are in lesson 6.6. Builds on Interventions lesson 4.6 (cesarean birth) and lesson 6.2 (heavy bleeding, blood clots). Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: lochia starting bright red and getting lighter and pinker follows the ACOG 3 Conditions article, and the heavy bleeding threshold matches lesson 6.2; the color sequence to yellowish-white, lasting several weeks, and heavier bleeding with activity are standard teaching not confirmed word for word; pads rather than tampons follows the ACOG cesarean FAQ; afterpains being stronger while breastfeeding and after later babies, and easing within a few days, are standard teaching; ibuprofen and acetaminophen as first choice, both compatible with breastfeeding, and opioids in small amounts for a short time when needed, follow the ACOG postpartum pain FAQ as summarized in search results; perineal care (ice 10 to 20 minutes, best in the first 24 to 72 hours, sitz baths, witch hazel pads, a pillow, a squeeze bottle) follows the ACOG postpartum pain FAQ; cesarean care (soreness for days, tender for weeks, holding a pillow, walking early, limiting strenuous activity, asking about driving and exercise) follows the ACOG cesarean and pain FAQs in part; splinting with a pillow and walking to lower clot risk are standard teaching; leaking urine often resolving within about 3 months and pelvic floor exercises follow the ACOG postpartum toolkit and urinary incontinence FAQ; constipation and hemorrhoid care follow the ACOG pain FAQ and hemorrhoid advice; breast fullness around days 2 to 5 when not breastfeeding, night sweats and frequent urination, the belly shrinking over months, and hair shedding around 3 to 4 months are standard teaching not confirmed on ACOG pages; exercise timing follows the ACOG exercise FAQ, and the Kegel technique (hold 3, relax 3, 10 times, 3 times a day, working up) follows the ACOG pelvic support FAQ; the 3-week contact and 12-week visit follow Committee Opinion 736 and match lesson 6.2. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the bleeding, pain relief, cesarean care (no specific lifting or driving rule), perineal care, body changes, and exercise and Kegel slides as written; keep 14 minutes; no video. Separately, redraw lesson 6.2's welcome picture so the parent holding the baby on the couch is clearly awake."
+  },
+  "sources": [
+    {
+      "id": "acog-postpartum-pain",
+      "organization": "ACOG",
+      "title": "Postpartum Pain Management (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/postpartum-pain-management",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "acog-cesarean",
+      "organization": "ACOG",
+      "title": "Cesarean Birth (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/cesarean-birth",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "acog-exercise-after",
+      "organization": "ACOG",
+      "title": "Exercise After Pregnancy (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/exercise-after-pregnancy",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "acog-pelvic-support",
+      "organization": "ACOG",
+      "title": "Pelvic Support Problems (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/pelvic-support-problems",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "acog-urinary-incontinence",
+      "organization": "ACOG",
+      "title": "Urinary Incontinence (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/urinary-incontinence",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "acog-after-childbirth-conditions",
+      "organization": "ACOG",
+      "title": "3 Conditions to Watch for After Childbirth",
+      "url": "https://www.acog.org/womens-health/experts-and-stories/the-latest/3-conditions-to-watch-for-after-childbirth",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "acog-co736",
+      "organization": "ACOG",
+      "title": "Optimizing Postpartum Care (Committee Opinion No. 736)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2018/05/optimizing-postpartum-care",
+      "verifiedOn": "2026-10-18"
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Physical Recovery After Birth",
+      "onScreen": [
+        "Module 6: Postpartum Recovery, Mood, and Red Flags"
+      ],
+      "narration": "Your body did something huge, and it needs time to heal. In this lesson, we'll cover what's normal in the weeks after birth: bleeding, cramping and pain relief, healing after a vaginal birth or a cesarean, bathroom changes, other changes in your body, and getting moving again. Knowing what's normal makes it easier to spot what isn't, and the warning signs are in the next lesson.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "At home in soft daylight, a new parent rests propped up on pillows on a bed, smiling and relaxed, while their partner sets down a tray with a glass of water and a light snack; the newborn sleeps on their back in a bare bassinet beside the bed. Both adults in everyday clothes. No pregnant belly. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "recovery-takes-time",
+      "type": "content",
+      "heading": "Recovery takes time",
+      "onScreen": [
+        "Most healing happens over the first 6 weeks; feeling fully yourself can take longer",
+        "Rest when you can, and let others help",
+        "Your care team checks in within 3 weeks, with a full visit by 12 weeks",
+        "Know the warning signs, for a full year after birth"
+      ],
+      "narration": "Recovery after birth takes time, and it's different for everyone. Most of your body's healing happens over the first six weeks or so, but feeling fully like yourself can take months. Rest when you can, eat and drink well, and let other people help with meals, chores, and older children. Your care team should check in with you within the first three weeks, and see you for a full visit by twelve weeks. And while most people recover well, warning signs can show up any time in the first year, so the next lesson covers what to watch for.",
+      "sourceIds": [
+        "acog-co736"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a calendar for most healing in about 6 weeks, a bed for resting when you can, a group of people for letting others help, and a stethoscope for your care team checking in."
+      }
+    },
+    {
+      "id": "bleeding",
+      "type": "content",
+      "heading": "Bleeding after birth",
+      "onScreen": [
+        "First days: bright red, like a heavy period, with small clots",
+        "Then lighter: pink or brown, then yellowish-white, over several weeks",
+        "Use pads, not tampons or anything in the vagina, until your team says it's okay",
+        "Soaking 2 pads an hour for 1 to 2 hours: get care right away"
+      ],
+      "narration": "Everyone bleeds after birth, whether the baby was born vaginally or by cesarean. This bleeding, called lochia, starts bright red and heavy, like a heavy period, and can include small clots. Over the next days and weeks, it gets lighter, turning pink or brown, then yellowish-white, and it can last several weeks. It may get heavier for a bit when you're more active, which is a sign to rest. Use pads, not tampons or anything else in the vagina, until your care team says it's okay. But if you're soaking through two pads an hour for more than an hour or two, passing large clots, or feeling dizzy, get care right away.",
+      "sourceIds": [
+        "acog-after-childbirth-conditions",
+        "acog-cesarean"
+      ],
+      "visual": {
+        "kind": "diagram",
+        "description": "Four numbered steps: first days, bright red and heavy; then pink or brown; then yellowish-white over several weeks; soaking 2 pads an hour for 1 to 2 hours, get care now (alert)."
+      }
+    },
+    {
+      "id": "cramping-and-pain",
+      "type": "content",
+      "heading": "Cramping and pain relief",
+      "onScreen": [
+        "Cramps as your uterus shrinks, often stronger while breastfeeding",
+        "They usually ease within a few days",
+        "Ibuprofen and acetaminophen, as directed, are the first choice",
+        "Ask before taking anything else, especially while breastfeeding"
+      ],
+      "narration": "As your uterus shrinks back toward its usual size, you'll feel cramps, sometimes called afterpains. They're often stronger while you breastfeed, and after a second or later baby, and they usually ease within a few days. For most pain after birth, ibuprofen and acetaminophen, taken as directed, work well, and both are fine while breastfeeding. If you need stronger medicine, like after a cesarean, your team may prescribe a small amount for a short time. Ask your care team before taking anything else, and tell them if your pain is getting worse instead of better.",
+      "sourceIds": [
+        "acog-postpartum-pain"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a heart pulse for cramps as the uterus shrinks, a baby for stronger while breastfeeding, a pill for ibuprofen and acetaminophen, and a phone for asking before anything else."
+      }
+    },
+    {
+      "id": "vaginal-birth-healing",
+      "type": "content",
+      "heading": "Healing after a vaginal birth",
+      "onScreen": [
+        "Soreness and swelling for a few weeks, more with a tear or stitches",
+        "Ice packs for 10 to 20 minutes, most helpful in the first 1 to 3 days",
+        "Warm sitz baths, witch hazel pads, and a pillow to sit on",
+        "A squeeze bottle of warm water when you pee"
+      ],
+      "narration": "After a vaginal birth, the area between your vagina and anus, called the perineum, is usually sore and swollen for a few weeks. A tear or stitches can make it hurt more and heal more slowly; most stitches dissolve on their own. Ice packs for ten to twenty minutes at a time help most in the first one to three days. After that, warm sitz baths, sitting in a few inches of warm water, can soothe it. Witch hazel pads and sitting on a pillow help, too. When you pee, squirt warm water from a squeeze bottle over the area to ease the sting, and pat dry from front to back.",
+      "sourceIds": [
+        "acog-postpartum-pain"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a snowflake for ice packs in the first days, a bath for warm sitz baths, droplets for a squeeze bottle when you pee, and an armchair for a pillow to sit on."
+      }
+    },
+    {
+      "id": "cesarean-healing",
+      "type": "content",
+      "heading": "Healing after a cesarean",
+      "onScreen": [
+        "Your incision will be sore for days to weeks",
+        "Shower as your team says; keep it clean and dry",
+        "Hold a pillow against your belly to cough, laugh, or get up",
+        "Walk a little, early and often; avoid heavy lifting and hard activity at first"
+      ],
+      "narration": "A cesarean is major surgery, and recovery usually takes several weeks. Your incision will be sore for the first few days, and tender for a few weeks. Follow your team's advice about showering and caring for it, and keep it clean and dry. Holding a pillow firmly against your belly when you cough, laugh, or get out of bed eases the pain. Get up and walk a little, early and often, because it helps you heal and lowers the risk of blood clots. Let others do the heavy lifting and chores at first, and ask your team when you can drive and exercise. A fever, or an incision that becomes red, swollen, or leaks fluid, needs a call.",
+      "sourceIds": [
+        "acog-cesarean",
+        "acog-postpartum-pain"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "At home, a new parent who recently had a cesarean walks slowly down a hallway, holding a small pillow against their belly with one arm and smiling, while their partner walks beside them holding the swaddled newborn. Both adults in everyday clothes. No pregnant belly. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "checkin-bleeding",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": [
+        "acog-after-childbirth-conditions"
+      ],
+      "question": {
+        "prompt": "Ten days after birth, your bleeding had turned light pink. Now you're soaking through two pads an hour, for the past two hours. What should you do?",
+        "options": [
+          "Lie down and wait for it to slow",
+          "Get medical care right away",
+          "Switch to tampons"
+        ],
+        "correctIndex": 1,
+        "explanation": "Soaking through two pads an hour for more than an hour or two is heavy bleeding, and it can happen weeks after birth. Get medical care right away, and say you recently had a baby."
+      }
+    },
+    {
+      "id": "bathroom",
+      "type": "content",
+      "heading": "Bathroom changes",
+      "onScreen": [
+        "Peeing may sting or feel hard at first",
+        "Leaking a little when you cough or sneeze is common, and often improves",
+        "For constipation: fluids, fiber, short walks, and ask about a stool softener",
+        "Hemorrhoids often flare after birth, then slowly get better"
+      ],
+      "narration": "Bathroom changes are common and rarely talked about. Peeing may sting or feel hard to start in the first days; the squeeze bottle helps. Many people leak a little urine when they cough, sneeze, or laugh. It often gets better over the first few months, and pelvic floor exercises help; if it doesn't improve, tell your care team, because treatment works. Your first bowel movement can feel scary, but it's okay. Drink plenty of fluids, eat fiber, take short walks, and ask about a stool softener. Hemorrhoids often flare right after birth, then slowly get better; ice packs and witch hazel pads can ease them.",
+      "sourceIds": [
+        "acog-postpartum-pain",
+        "acog-urinary-incontinence"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: droplets for peeing may sting at first, a circle for leaking that often improves, a glass of water for fluids and fiber, and a snowflake for ice packs for hemorrhoids."
+      }
+    },
+    {
+      "id": "other-changes",
+      "type": "content",
+      "heading": "Other changes in your body",
+      "onScreen": [
+        "Breasts may fill and feel firm around days 2 to 5, even if you're not breastfeeding",
+        "Sweating at night and peeing a lot in the first weeks",
+        "Your belly shrinks slowly over months",
+        "Some hair loss around 3 to 4 months is normal"
+      ],
+      "narration": "Your body goes through other changes, too. Around days two to five, your breasts may fill and feel firm and sore, even if you're not breastfeeding. If you're not breastfeeding, a supportive bra and cool packs help, and the fullness eases over several days. In the first weeks, your body clears extra fluid, so many people sweat a lot at night and pee more often. Your belly shrinks slowly over months, not weeks. And a few months after birth, many people notice more hair falling out; that's normal, and it grows back.",
+      "sourceIds": [
+        "acog-postpartum-pain",
+        "acog-co736"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a milk icon for breasts that fill around days 2 to 5, a moon for night sweats, a calendar for the belly shrinking over months, and sparkles for some hair loss that grows back."
+      }
+    },
+    {
+      "id": "moving-again",
+      "type": "content",
+      "heading": "Getting moving again",
+      "onScreen": [
+        "Gentle walking soon after birth helps you heal",
+        "After an uncomplicated vaginal birth, exercise when you feel ready",
+        "After a cesarean or complications, ask your team when to start",
+        "Pelvic floor squeezes: hold 3 seconds, relax 3 seconds, 10 times, 3 times a day"
+      ],
+      "narration": "Gentle walking soon after birth helps you heal and lowers the risk of blood clots. After an uncomplicated vaginal birth, it's usually safe to start exercising within days, or whenever you feel ready, building up slowly. After a cesarean or a complicated birth, ask your care team when to start. Pelvic floor exercises, also called Kegels, strengthen the muscles that support your bladder: squeeze the muscles you'd use to stop peeing, hold for three seconds, relax for three seconds, and do ten in a row, three times a day. Over the weeks, work up to longer holds. Stop and call your team if exercise brings on heavier bleeding or pain.",
+      "sourceIds": [
+        "acog-exercise-after",
+        "acog-pelvic-support"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A sunny morning in a neighborhood park: a new parent in comfortable everyday clothes walks at an easy pace, pushing a stroller with the newborn inside, smiling, with trees and a path. No pregnant belly. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "checkin-leaking",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": [
+        "acog-urinary-incontinence",
+        "acog-pelvic-support"
+      ],
+      "question": {
+        "prompt": "Three weeks after birth, you leak a little urine when you sneeze. What's true?",
+        "options": [
+          "It's permanent, so there's nothing to do",
+          "It's common, often improves, and pelvic floor exercises help",
+          "It means something went wrong during birth"
+        ],
+        "correctIndex": 1,
+        "explanation": "Leaking a little is common after birth and often gets better over the first few months. Pelvic floor exercises help, and if it doesn't improve, your care team can treat it."
+      }
+    },
+    {
+      "id": "recovery-plan",
+      "type": "reflection",
+      "heading": "Your recovery plan",
+      "onScreen": [
+        "Supplies to have ready: pads, a squeeze bottle, ice packs",
+        "Who will help with meals, chores, and lifting",
+        "Questions for your care team about your recovery"
+      ],
+      "narration": "Let's plan for your recovery. What supplies will you have ready at home, like pads, a squeeze bottle, and ice packs? Who will help with meals, chores, and anything heavy in the first weeks? And what questions do you have for your care team about recovery? Save your answers to your Birth Readiness Brief.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write the recovery supplies you'll have ready, who will help with meals, chores, and lifting, and your questions for your care team."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Bleeding starts heavy, then gets lighter over several weeks",
+        "Cramps, soreness, and bathroom changes are common, and ease with time",
+        "Ice, sitz baths, and pain relievers for a vaginal birth; a pillow and walking after a cesarean",
+        "Rest, accept help, and know the warning signs"
+      ],
+      "narration": "Let's recap. Bleeding after birth starts heavy and gets lighter over several weeks; soaking two pads an hour for an hour or two needs care right away. Cramps, soreness, and bathroom changes are common and ease with time. After a vaginal birth, ice packs, sitz baths, and pain relievers help; after a cesarean, a pillow against your belly and short, frequent walks help. Rest, let others help, and know the warning signs, which are next.",
+      "sourceIds": [
+        "acog-after-childbirth-conditions",
+        "acog-postpartum-pain",
+        "acog-cesarean"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "What's normal for bleeding after birth?",
+      "options": [
+        "It stops completely within 2 days",
+        "It starts heavy and red, then gets lighter over several weeks",
+        "It stays bright red and heavy for 6 weeks"
+      ],
+      "correctIndex": 1,
+      "explanation": "Bleeding starts bright red and heavy, then turns pink or brown, then yellowish-white over several weeks. Soaking two pads an hour for more than an hour or two needs care right away."
+    },
+    {
+      "prompt": "Which helps most with perineal soreness in the first day or two?",
+      "options": [
+        "A heating pad",
+        "Ice packs for 10 to 20 minutes at a time",
+        "A long, hot bath"
+      ],
+      "correctIndex": 1,
+      "explanation": "Ice packs for 10 to 20 minutes at a time help most in the first 1 to 3 days. After that, warm sitz baths can soothe the area."
+    },
+    {
+      "prompt": "After a cesarean, what helps when you need to cough or get out of bed?",
+      "options": [
+        "Holding a pillow firmly against your belly",
+        "Holding your breath",
+        "Staying in bed for two weeks"
+      ],
+      "correctIndex": 0,
+      "explanation": "Holding a pillow against your belly supports the incision. Getting up to walk a little, early and often, helps you heal and lowers the risk of blood clots."
+    }
+  ]
+}
