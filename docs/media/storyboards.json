@@ -729,5 +729,57 @@
         "text": "So much can happen with baby on your chest."
       }
     ]
+  },
+  "postpartum-warning-signs/speaking-up-video": {
+    "cast": "a new mother two weeks after giving birth, with no pregnant belly, dark brown skin and short natural curly hair, in a soft oversized teal sweater and leggings; her partner, a man with light brown skin and short black hair, in a navy sweater; their tiny newborn, swaddled in a pale teal blanket; at the urgent care clinic only, a friendly front-desk staff member in teal scrubs, who never appears at the couple's home",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "Noticing a warning sign at home"
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "Evening in a cozy living room lit by a lamp. The new mother sits on the couch holding the swaddled newborn in one arm, her other hand pressed to her forehead, eyes squinting. Only the couple and their baby are at home; nobody else is there.",
+        "caption": "“My headache hasn’t gone away all day.”",
+        "sub": "“And things look blurry.”"
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "The partner sits down beside the new mother on the couch, looking concerned and attentive, glancing at his phone screen, which is blank. The baby sleeps in a bassinet beside the couch. Only the couple and their baby are at home; nobody else is there.",
+        "caption": "A headache that won’t go away and vision changes are urgent warning signs."
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "The partner stands in the living room talking on his phone, calm and focused, while the new mother rests on the couch with her eyes closed and the baby sleeps in the bassinet nearby. Only the couple and their baby are at home; nobody else is there.",
+        "caption": "“My partner had a baby two weeks ago. She has a bad headache and blurry vision.”"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The partner, still on the phone, nods and reaches for the car keys on a side table; the new mother is putting on her coat. Only the couple and their baby are at home; nobody else is there.",
+        "caption": "“Thanks. We’ll get her seen right away.”"
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "At an urgent care clinic front desk, the partner speaks to the front-desk staff member, with the newborn in a baby carrier on his chest; the new mother stands beside him in her coat. Calm, bright waiting area.",
+        "caption": "“She had a baby two weeks ago.”",
+        "sub": "That one sentence changes what the team checks for."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "In a clinic exam room, the new mother sits on the exam table looking relieved while her partner sits in the chair holding the sleeping baby. No medical equipment in use, no clinician shown.",
+        "caption": "They acted quickly, together."
+      },
+      {
+        "type": "end",
+        "seconds": 7,
+        "text": "Any urgent warning sign: seek medical care immediately. Always say you recently had a baby."
+      }
+    ]
   }
 }

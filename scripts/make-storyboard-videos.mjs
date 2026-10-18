@@ -16,7 +16,7 @@
 // in src/content/videos.ts.
 
 import { execFileSync } from 'node:child_process';
-import { existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -42,7 +42,7 @@ const keys = Object.keys(boards).filter((k) => !k.startsWith('_') && (!only.leng
 
 // Lesson file facts: each video's length limit.
 const maxSeconds = {};
-for (const course of ['early-pregnancy-basics', 'preparing-for-birth', 'labor-basics']) {
+for (const course of readdirSync(path.join(root, 'content/lessons'))) {
   const dir = path.join(root, 'content/lessons', course);
   for (const file of execFileSync('ls', [dir]).toString().split('\n').filter((f) => f.endsWith('.json'))) {
     const lesson = JSON.parse(readFileSync(path.join(dir, file), 'utf8'));
