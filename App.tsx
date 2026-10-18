@@ -141,7 +141,7 @@ function BabyReadyApp() {
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.header}>
-          <View>
+          <View style={styles.headerText}>
             <Text style={styles.brand}>BABYREADY VIRTUAL EDUCATOR</Text>
             <Text style={styles.title}>Prepare for birth, your way.</Text>
           </View>
@@ -370,6 +370,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     marginBottom: 20,
+  },
+  headerText: {
+    // Lets the title wrap on narrow phones instead of running off the screen.
+    flex: 1,
   },
   brand: {
     color: '#01696F',
