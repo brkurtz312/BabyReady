@@ -21,7 +21,7 @@ export const EPDS_INTRO =
   'As you are pregnant or have recently had a baby, we would like to know how you are feeling. Please choose the answer that comes closest to how you have felt in the past 7 days, not just how you feel today.';
 
 export const EPDS_CITATION =
-  'Edinburgh Postnatal Depression Scale. Cox JL, Holden JM, Sagovsky R. British Journal of Psychiatry 1987;150:782-786. © 1987 The Royal College of Psychiatrists.';
+  'Edinburgh Postnatal Depression Scale. Cox JL, Holden JM, Sagovsky R. Detection of postnatal depression: development of the 10-item Edinburgh Postnatal Depression Scale. British Journal of Psychiatry 1987;150:782-786. © 1987 The Royal College of Psychiatrists.';
 
 export const EPDS_QUESTIONS: EpdsQuestion[] = [
   {
