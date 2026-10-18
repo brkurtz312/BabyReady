@@ -1,0 +1,403 @@
+{
+  "courseId": "postpartum-recovery",
+  "lessonId": "when-to-call-about-your-baby",
+  "order": 3,
+  "title": "When to Call About Your Baby",
+  "learningGoals": [
+    "Know when your baby's first checkup should happen",
+    "Recognize the signs that mean call 911 for your baby",
+    "Know why any fever in a baby under 3 months needs a call right away",
+    "Know when breathing, jaundice, feeding, diapers, or the cord stump need a call",
+    "Have a plan for crying that won't stop, including when to take a break"
+  ],
+  "estimatedMinutes": 13,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Drafted 2026-10-18 as lesson 6.3. Sources are AAP's HealthyChildren.org pages (including its symptom checker) and CDC, found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. Thresholds used: rectal temperature of 100.4°F (38°C) or higher under 3 months; breathing faster than 60 breaths a minute; at least 6 wet diapers a day after about day 5; first checkup within 48 to 72 hours of leaving the hospital, or at 3 to 5 days old. Fever medicine is mentioned only as 'don't give it before your baby is seen unless your pediatrician tells you to', from the AAP symptom checker. For the reviewer: the video slide is a proposal (calming a crying baby, and taking a safe break)."
+  },
+  "sources": [
+    {
+      "id": "aap-first-week-checkup",
+      "organization": "AAP",
+      "title": "1st Week Checkup Checklist: 3 to 5 Days Old (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/Your-Childs-Checkups/Pages/Your-Checkup-Checklist-Newborn-Visit-2-to-5-days-old.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-bringing-baby-home",
+      "organization": "AAP",
+      "title": "Bringing Baby Home: What to Do Before Leaving the Hospital (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/prenatal/delivery-beyond/Pages/bringing-baby-home-what-to-do-before-leaving-the-hospital.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-newborn-illness",
+      "organization": "AAP",
+      "title": "Newborn Illness: How to Recognize (HealthyChildren.org Symptom Checker)",
+      "url": "https://www.healthychildren.org/English/tips-tools/symptom-checker/Pages/symptomviewer.aspx?symptom=Newborn+Illness+-+How+to+Recognize",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-ems",
+      "organization": "AAP",
+      "title": "When to Call Emergency Medical Services (EMS) for Your Child (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/When-to-Call-Emergency-Medical-Services-EMS.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-fever-baby",
+      "organization": "AAP",
+      "title": "Fever and Your Baby (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/Fever-and-Your-Baby.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-common-conditions",
+      "organization": "AAP",
+      "title": "11 Common Conditions in Newborns (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Common-Conditions-in-Newborns.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-jaundice",
+      "organization": "AAP",
+      "title": "Jaundice in Newborns (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/jaundice.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-jaundice-checker",
+      "organization": "AAP",
+      "title": "Jaundiced Newborn (HealthyChildren.org Symptom Checker)",
+      "url": "https://www.healthychildren.org/English/tips-tools/symptom-checker/Pages/symptomviewer.aspx?symptom=Jaundiced+Newborn",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-enough-milk",
+      "organization": "AAP",
+      "title": "How to Tell if Your Breastfed Baby is Getting Enough Milk (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/breastfeeding/Pages/How-to-Tell-if-Baby-is-Getting-Enough-Milk.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-dehydration",
+      "organization": "AAP",
+      "title": "Signs of Dehydration in Infants & Children (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/dehydration.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-cord-care",
+      "organization": "AAP",
+      "title": "Umbilical Cord Care in Newborns (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/Umbilical-Cord-Care.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-cord-checker",
+      "organization": "AAP",
+      "title": "Umbilical Cord Symptoms (HealthyChildren.org Symptom Checker)",
+      "url": "https://www.healthychildren.org/English/tips-tools/symptom-checker/Pages/symptomviewer.aspx?symptom=Umbilical+Cord+Symptoms",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-urgent-care-guide",
+      "organization": "AAP",
+      "title": "Urgent Care, ER or Pediatrician? A Parent Guide (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/family-life/health-management/Pages/urgent-care-ER-or-pediatrician-a-parent-guide.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-abusive-head-trauma",
+      "organization": "CDC",
+      "title": "About Abusive Head Trauma",
+      "url": "https://www.cdc.gov/child-abuse-neglect/about/about-abusive-head-trauma.html",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "When to Call About Your Baby",
+      "onScreen": [
+        "Module 6: Postpartum Recovery, Mood, and Red Flags"
+      ],
+      "narration": "Welcome to When to Call About Your Baby. In the first weeks, almost everything your baby does is new to you, and it can be hard to know what's normal. In this lesson, we'll go over the signs that need a call to your pediatrician, the signs that mean call 911, and what to do when crying won't stop. The goal isn't to worry you. It's to help you feel ready.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A parent at home gently holding a newborn against their shoulder, looking calm and attentive, with a phone resting on the arm of the chair."
+      }
+    },
+    {
+      "id": "first-checkup",
+      "type": "content",
+      "heading": "Your baby's first checkup",
+      "onScreen": [
+        "Within 48 to 72 hours of leaving the hospital, or at 3 to 5 days old",
+        "Feeding, weight, diapers, and jaundice get checked",
+        "Save the pediatrician's number, including after hours"
+      ],
+      "narration": "Your baby's first checkup comes quickly, usually within two to three days of leaving the hospital, or when your baby is three to five days old. At that visit, the pediatrician checks feeding, weight, diapers, and skin color for jaundice, and answers your questions. Before you go home, make sure you know your pediatrician's number, and how to reach someone after hours and on weekends. Save it in your phone and your support person's phone.",
+      "sourceIds": ["aap-first-week-checkup", "aap-bringing-baby-home"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pediatrician in a bright exam room gently placing a newborn on an infant scale while a parent watches, smiling. The scale display is blank."
+      }
+    },
+    {
+      "id": "trust-yourself",
+      "type": "content",
+      "heading": "If something seems wrong, call",
+      "onScreen": [
+        "You'll learn your baby's normal quickly",
+        "If your baby looks or acts sick in any way, call",
+        "Pediatric offices expect calls from new parents"
+      ],
+      "narration": "Newborns sleep a lot, eat often, and make all kinds of noises, and you'll learn what's normal for your baby surprisingly fast. Here's the rule to remember: if your baby looks or acts sick, or just not like themselves, call your pediatrician. You don't need to be sure something is wrong. Pediatric offices get calls from new parents all day, and they would much rather hear from you early.",
+      "sourceIds": ["aap-newborn-illness", "aap-common-conditions"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A parent on the phone in a nursery at night, calm, looking at their sleeping newborn in a crib. Soft lamp light."
+      }
+    },
+    {
+      "id": "call-911",
+      "type": "safety",
+      "heading": "Call 911 for your baby",
+      "onScreen": [
+        "Bluish or gray lips, tongue, or face",
+        "Struggling to breathe, grunting with each breath, or not breathing",
+        "Can't wake up, not moving, or very weak and floppy",
+        "A seizure"
+      ],
+      "narration": "Some signs need emergency help right away. Call 911 if your baby's lips, tongue, or face look bluish or gray. If your baby is struggling to breathe, is making grunting noises with each breath, or has stopped breathing. If your baby can't be woken up, isn't moving, or is very weak and floppy. Or if your baby has a seizure. Don't wait to call your pediatrician first. Call 911.",
+      "sourceIds": ["aap-newborn-illness", "aap-ems"]
+    },
+    {
+      "id": "fever",
+      "type": "safety",
+      "heading": "Fever in a baby under 3 months",
+      "onScreen": [
+        "Rectal temperature of 100.4°F (38°C) or higher",
+        "Call your pediatrician immediately, even if your baby seems fine",
+        "Don't give fever medicine before your baby is seen, unless your pediatrician tells you to",
+        "A rectal reading is the most reliable at this age"
+      ],
+      "narration": "In a baby three months old or younger, a fever can be the only sign of a serious infection. If your baby's rectal temperature is 100.4 degrees or higher, call your pediatrician immediately, even if your baby seems fine otherwise. If you can't reach them, go to the emergency room. Don't give fever medicine before your baby is seen, unless your pediatrician tells you to. At this age, a rectal temperature is the most reliable, so ask at your first checkup how to take one.",
+      "sourceIds": ["aap-fever-baby", "aap-newborn-illness", "aap-urgent-care-guide"]
+    },
+    {
+      "id": "checkin-fever",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": ["aap-fever-baby"],
+      "question": {
+        "prompt": "Your 5-week-old feels warm. A rectal temperature reads 100.6°F, but your baby is feeding and seems content. What should you do?",
+        "options": [
+          "Wait a few hours and check again",
+          "Call your pediatrician right away",
+          "Give fever medicine and see if it comes down"
+        ],
+        "correctIndex": 1,
+        "explanation": "For a baby 3 months or younger, a rectal temperature of 100.4°F or higher means call your pediatrician immediately, even if your baby seems well. Don't give fever medicine first unless your pediatrician tells you to."
+      }
+    },
+    {
+      "id": "breathing-and-color",
+      "type": "content",
+      "heading": "Breathing and skin color",
+      "onScreen": [
+        "Babies breathe faster than adults, and sometimes unevenly",
+        "Slightly bluish hands and feet can be normal",
+        "Call for breathing faster than 60 breaths a minute, skin pulling in between the ribs, nostrils flaring, or skin that stays blue"
+      ],
+      "narration": "Newborns breathe faster than adults, and their breathing can speed up and slow down, especially in sleep. Slightly bluish hands and feet can be normal too, and a baby's face may turn a little blue while crying hard, then pink up again. Call your pediatrician right away if your baby is breathing faster than sixty breaths a minute, if the skin pulls in between the ribs with each breath, if the nostrils flare, or if your baby's skin stays blue. Remember, bluish lips or face, or struggling to breathe, means call 911.",
+      "sourceIds": ["aap-common-conditions", "aap-newborn-illness"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A newborn asleep on their back in a bare crib, chest gently rising, with a parent watching quietly from beside the crib."
+      }
+    },
+    {
+      "id": "jaundice",
+      "type": "content",
+      "heading": "Jaundice: yellow skin",
+      "onScreen": [
+        "Yellow skin is common in the first week",
+        "Call now if it starts in the first 24 hours",
+        "Call for deep yellow or orange skin, yellow reaching the legs, or yellow that's getting worse",
+        "Hard to wake or not feeding well: get care now"
+      ],
+      "narration": "Many babies look a little yellow in the first week. This is called jaundice, and it usually clears up on its own, but sometimes it needs treatment. Call your pediatrician right away if yellow skin shows up in the first twenty-four hours, if the skin looks deep yellow or orange, if the yellow has spread down to the legs, or if it seems to be getting worse. A yellow baby who is hard to wake up or isn't feeding well needs care right away.",
+      "sourceIds": ["aap-jaundice", "aap-jaundice-checker"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A parent holding a newborn near a sunny window, gently looking at the baby's face and chest. The baby's skin tone is natural, not exaggerated."
+      }
+    },
+    {
+      "id": "feeding-and-diapers",
+      "type": "content",
+      "heading": "Feeding and diapers",
+      "onScreen": [
+        "Breastfed babies feed about 8 to 12 times a day",
+        "After the first 5 days: at least 6 wet diapers a day, with pale urine",
+        "Call if there are fewer wet diapers, or your baby is too sleepy to feed",
+        "Worried your baby isn't getting enough? Call"
+      ],
+      "narration": "Diapers are one of the best ways to tell your baby is getting enough to eat. Breastfed babies usually feed eight to twelve times in twenty-four hours. In the first few days, there are only a few wet diapers, but after about day five, you should see at least six wet diapers a day, with pale yellow urine. Call your pediatrician if there are fewer wet diapers than that, if your baby rarely wakes for feeds or seems too sleepy to eat, or any time you're worried your baby isn't getting enough.",
+      "sourceIds": ["aap-enough-milk", "aap-dehydration", "aap-common-conditions"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Simple icons: a feeding bottle and a breast-feeding outline side by side, a clock showing many feeds, and a row of six small diapers. No numbers."
+      }
+    },
+    {
+      "id": "cord-stump",
+      "type": "content",
+      "heading": "The umbilical cord stump",
+      "onScreen": [
+        "Keep it clean and dry; it falls off in about 1 to 3 weeks",
+        "A few drops of blood when it comes off can be normal",
+        "Call for redness at the base, bad-smelling yellowish discharge, or crying when it's touched",
+        "Red skin spreading around the navel: get care now"
+      ],
+      "narration": "Your baby's umbilical cord stump usually dries up and falls off in one to three weeks. Keep it clean and dry, and stick to sponge baths until it comes off. A few drops of blood when it falls off can be normal. Call your pediatrician if the skin at the base of the cord is red, if there's bad-smelling, yellowish discharge, or if your baby cries when you touch it. Redness that spreads out around the belly button, or bleeding that won't stop, needs care right away.",
+      "sourceIds": ["aap-cord-care", "aap-cord-checker"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A parent giving a newborn a gentle sponge bath on a towel, the diaper folded down below the belly button. Simple and non-clinical."
+      }
+    },
+    {
+      "id": "checkin-diapers",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": ["aap-enough-milk", "aap-jaundice-checker"],
+      "question": {
+        "prompt": "Your baby is 8 days old, has had only 3 wet diapers today, and is hard to wake for feeds. What should you do?",
+        "options": [
+          "Call your pediatrician now",
+          "Wait for the next scheduled checkup",
+          "Let your baby sleep, since newborns sleep a lot"
+        ],
+        "correctIndex": 0,
+        "explanation": "After about day 5, babies should have at least 6 wet diapers a day. Fewer diapers and a baby who is too sleepy to feed can mean your baby isn't getting enough. Call now."
+      }
+    },
+    {
+      "id": "crying",
+      "type": "content",
+      "heading": "When crying won't stop",
+      "onScreen": [
+        "Long stretches of crying are normal, and it gets better",
+        "Try swaddling, skin to skin, a pacifier, rocking, or soft singing",
+        "A stroller walk or car ride can help",
+        "If you think your baby is sick, call"
+      ],
+      "narration": "All babies cry, and in the first few months, some cry for long stretches no matter what you do. That's normal, and it gets better as your baby grows. Things you can try include swaddling, holding your baby skin to skin, offering a pacifier, gentle rocking, or singing and talking softly. A walk in the stroller or a car ride can help, too. And if the crying seems different, or you think your baby might be sick, call your pediatrician.",
+      "sourceIds": ["cdc-abusive-head-trauma"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A parent swaying gently with a swaddled newborn in a dim room, singing softly, the baby beginning to settle."
+      }
+    },
+    {
+      "id": "calming-video",
+      "type": "video",
+      "heading": "Calming a crying baby, and taking a break",
+      "onScreen": [
+        "Notice what they try, and the safe break at the end"
+      ],
+      "narration": "Here's a short look at calming a crying baby, and how to take a safe break when you need one.",
+      "sourceIds": ["cdc-abusive-head-trauma"],
+      "video": {
+        "brief": "Late evening at home. A parent tries to calm a crying newborn: swaddling, holding skin to skin, gentle rocking, a pacifier, a slow walk around the room while softly singing. The baby keeps crying and the parent looks worn out. They lay the baby on their back in a bare crib, step out of the room, take slow breaths, text a friend, and go back in a few minutes later, calmer. Narration-free with soft music and short captions. No text on screen beyond captions.",
+        "maxSeconds": 60
+      }
+    },
+    {
+      "id": "never-shake",
+      "type": "safety",
+      "heading": "If you feel frustrated, take a break",
+      "onScreen": [
+        "Never shake a baby",
+        "Lay your baby on their back in the crib, and step away",
+        "Calm down, then check on your baby every 5 to 10 minutes",
+        "Call a friend, family member, or your baby's doctor for help"
+      ],
+      "narration": "Hours of crying can push anyone to their limit, and feeling frustrated doesn't make you a bad parent. But never shake a baby. A baby's neck muscles are weak, and shaking can cause brain damage or death. If you feel overwhelmed, lay your baby on their back in the crib, which is a safe place, and step away to calm down. Check on your baby every five to ten minutes. Call a friend, a family member, or your baby's doctor for help. And only leave your baby with people who stay calm with crying.",
+      "sourceIds": ["cdc-abusive-head-trauma"]
+    },
+    {
+      "id": "baby-call-plan",
+      "type": "reflection",
+      "heading": "Your baby call plan",
+      "onScreen": [
+        "Your pediatrician's number, and the after-hours line",
+        "The nearest emergency room",
+        "A digital thermometer, ready at home",
+        "Who you can call to take a break"
+      ],
+      "narration": "Let's make your baby call plan. Write down your pediatrician's number, and how to reach someone after hours. Where's the nearest emergency room? Do you have a digital thermometer at home, and do you know how to use it? And who can you call when you need a break from a crying baby? Save your plan to your Birth Readiness Brief, and share it with everyone who will care for your baby.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write your pediatrician's number and after-hours line, the nearest emergency room, whether you have a digital thermometer, and who you can call for a break."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "First checkup within 2 to 3 days of going home",
+        "Bluish lips, struggling to breathe, can't wake, or a seizure: call 911",
+        "Under 3 months with a rectal temperature of 100.4°F or more: call right away",
+        "Jaundice, diapers, feeding, and the cord stump: know when to call",
+        "Never shake a baby; it's okay to take a break"
+      ],
+      "narration": "Let's recap. Your baby's first checkup comes within two to three days of going home. Bluish lips or face, struggling to breathe, a baby who can't be woken, or a seizure means call 911. Any fever of 100.4 degrees or higher in a baby under three months means call your pediatrician right away. Watch for jaundice, count wet diapers, and keep an eye on the cord stump. If your baby seems sick in any way, call. And when crying won't stop, never shake a baby. It's okay to lay them down safely and take a break. Next up, a few review questions.",
+      "sourceIds": ["aap-first-week-checkup", "aap-newborn-illness", "aap-fever-baby", "cdc-abusive-head-trauma"]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "Which of these means call 911 for your baby?",
+      "options": [
+        "Hiccups after a feed",
+        "Bluish or gray lips",
+        "Slightly bluish hands and feet"
+      ],
+      "correctIndex": 1,
+      "explanation": "Bluish or gray lips, tongue, or face is an emergency. Slightly bluish hands and feet can be normal in a newborn."
+    },
+    {
+      "prompt": "When does yellow skin in a newborn need a call right away?",
+      "options": [
+        "When it starts in the first 24 hours",
+        "Only after two weeks",
+        "Never; it always goes away on its own"
+      ],
+      "correctIndex": 0,
+      "explanation": "Jaundice that starts in the first 24 hours, looks deep yellow or orange, reaches the legs, or is getting worse needs a call right away."
+    },
+    {
+      "prompt": "Your baby has been crying for an hour and you feel like you're losing your temper. What's the safest thing to do?",
+      "options": [
+        "Keep bouncing the baby faster until they stop",
+        "Lay your baby on their back in the crib and step away to calm down",
+        "Hand the baby to anyone nearby, even if they're also upset"
+      ],
+      "correctIndex": 1,
+      "explanation": "It's always okay to lay your baby down safely and take a break. Check on them every 5 to 10 minutes, and call someone for help. Never shake a baby."
+    }
+  ]
+}
