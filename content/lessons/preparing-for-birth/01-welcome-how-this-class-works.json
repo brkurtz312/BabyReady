@@ -15,7 +15,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. Most slides are editorial (they explain the app and make no health claim); only the 'why-prepare' slide and the summary cite sources."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. Most slides are editorial (they explain the app and make no health claim); only the 'why-prepare' slide and the summary cite sources. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed."
   },
   "sources": [
     {
@@ -46,8 +46,7 @@
       "type": "title",
       "heading": "Welcome: How This Class Works",
       "onScreen": [
-        "Preparing for Birth · Lesson 1",
-        "About 5 minutes"
+        "Module 1: Preparing for Birth"
       ],
       "narration": "Hi, and welcome. I'm so glad you're here. This class will walk you through birth, feeding, and the first weeks after your baby arrives, one short lesson at a time. In this first lesson, I'll show you how the class works, so you can get the most out of it. If you have a support person, invite them to watch with you. Let's begin.",
       "sourceIds": [],

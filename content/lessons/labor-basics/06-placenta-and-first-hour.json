@@ -16,7 +16,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Delayed cord clamping is stated as 'at least 30 to 60 seconds' per ACOG CO 814; ACNM favors longer. Newborn skin-to-skin and feeding-cue wording softened to what the sources support. Apgar timing and the five checks confirmed against CO 644. Newborn medications are deferred to lesson 5.2. Heavy bleeding at home keeps \"call 911\". Heavy-bleeding threshold changed on 2026-10-17 to ACOG's 'soaking through two pads an hour for more than an hour or two' (reviewer decision while reviewing lesson 6.2), cited to ACOG's '3 Conditions to Watch for After Childbirth'."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Delayed cord clamping is stated as 'at least 30 to 60 seconds' per ACOG CO 814; ACNM favors longer. Newborn skin-to-skin and feeding-cue wording softened to what the sources support. Apgar timing and the five checks confirmed against CO 644. Newborn medications are deferred to lesson 5.2. Heavy bleeding at home keeps \"call 911\". Heavy-bleeding threshold changed on 2026-10-17 to ACOG's 'soaking through two pads an hour for more than an hour or two' (reviewer decision while reviewing lesson 6.2), cited to ACOG's '3 Conditions to Watch for After Childbirth'. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed."
   },
   "sources": [
     {
@@ -82,8 +82,7 @@
       "type": "title",
       "heading": "The Placenta and the First Hour",
       "onScreen": [
-        "Labor Basics · Lesson 6",
-        "About 12 minutes"
+        "Module 2: Labor Basics and When to Call"
       ],
       "narration": "Welcome to the final lesson of Labor Basics. Your baby is here. But a few important things still happen in the minutes and hours after birth: the placenta is delivered, your care team watches your bleeding, and you and your baby begin getting to know each other. Many people call this the golden hour. Let's walk through it.",
       "sourceIds": [],

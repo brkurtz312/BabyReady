@@ -16,7 +16,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course. The old course cited CDC 'Videos: Vaccines and Pregnancy' for general healthy-pregnancy tips, but that page only covers flu and whooping cough vaccines, so the tips now cite CDC folic acid, alcohol, and medicine pages instead. Specific vaccine advice was left out because CDC's vaccines-in-pregnancy page was under revision when fetched. The safety slides say to get medical care right away, matching CDC; the safety-slide Call 911 button stays."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course. The old course cited CDC 'Videos: Vaccines and Pregnancy' for general healthy-pregnancy tips, but that page only covers flu and whooping cough vaccines, so the tips now cite CDC folic acid, alcohol, and medicine pages instead. Specific vaccine advice was left out because CDC's vaccines-in-pregnancy page was under revision when fetched. The safety slides say to get medical care right away, matching CDC; the safety-slide Call 911 button stays. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed."
   },
   "sources": [
     {
@@ -75,8 +75,7 @@
       "type": "title",
       "heading": "Common Changes, Simple Support, and When to Reach Out",
       "onScreen": [
-        "Early Pregnancy Basics · Lesson 2",
-        "About 10 minutes"
+        "Early Pregnancy Basics"
       ],
       "narration": "Welcome back. In this lesson, we'll talk about the changes many people notice in the first trimester, and simple things that may help. Then we'll talk about something just as important: knowing when to reach out to your care team, and when to get help right away. You don't have to memorize everything. You'll be able to save the key parts to your Birth Readiness Brief. Let's begin.",
       "sourceIds": [],
