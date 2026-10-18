@@ -837,5 +837,61 @@
         "text": "Never shake a baby. It's always okay to take a break."
       }
     ]
+  },
+  "safe-sleep/safe-sleep-video": {
+    "cast": "a parent, a man with light brown skin, short curly dark hair and a short beard, in a navy t-shirt and grey lounge pants; their newborn, small, in a pale teal wearable blanket (sleep sack). They are at home; nobody else is there",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "Setting up a safe sleep space"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "In a calm bedroom, the parent stands beside a bassinet placed right next to the adult bed, holding a fluffy pillow, a folded quilt and a stuffed bear he has just taken out of the bassinet.",
+        "caption": "Take out pillows, blankets, bumpers, and toys."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The parent smooths a fitted sheet over the firm, flat bassinet mattress. The bassinet is bare: a firm flat mattress with a fitted sheet only, no pillows, blankets, bumpers or toys.",
+        "caption": "A firm, flat mattress and a fitted sheet. That's all."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The parent zips the newborn into a pale teal wearable blanket on the changing table, the baby's arms free.",
+        "caption": "A wearable blanket keeps baby warm without loose bedding."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The parent gently lays the newborn on their back in the bassinet beside the adult bed. The bassinet is bare: a firm flat mattress with a fitted sheet only, no pillows, blankets, bumpers or toys.",
+        "caption": "On the back, for every sleep."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "At night, the parent lies in his own adult bed, and the newborn sleeps on their back in the bassinet right beside the bed. The bassinet is bare: a firm flat mattress with a fitted sheet only, no pillows, blankets, bumpers or toys.",
+        "caption": "Same room, separate sleep space."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "In the daytime living room after a drive, the newborn is asleep in an infant car seat set on the floor; the parent unbuckles the harness.",
+        "caption": "Asleep in the car seat after a drive?"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The parent lays the sleeping newborn on their back in the bassinet. The bassinet is bare: a firm flat mattress with a fitted sheet only, no pillows, blankets, bumpers or toys.",
+        "caption": "Move baby to a flat sleep space."
+      },
+      {
+        "type": "end",
+        "seconds": 6,
+        "text": "Back, bare, and in their own space, for every sleep."
+      }
+    ]
   }
 }
