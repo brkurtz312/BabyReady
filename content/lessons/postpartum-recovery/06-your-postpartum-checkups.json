@@ -16,7 +16,7 @@
     "reviewedBy": null,
     "reviewedOn": null,
     "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 6.6 of Module 6 (Postpartum Recovery, Mood, and Red Flags), the last lesson in the class. Builds on lesson 6.2 (warning signs, the 3-week contact and 12-week visit), lesson 6.4 (mood screening), and lesson 6.1 (recovery). Sources were found by web search only; this session could not open the pages, so every new source needs to be opened and confirmed. For the reviewer: the visit schedule (contact within 3 weeks, a full visit by 12 weeks, then transition to primary care) follows Committee Opinion 736 and matches lesson 6.2; a blood pressure check 3 to 10 days after birth for high blood pressure in pregnancy follows the ACOG postpartum checkup article, with Committee Opinion 736 adding 72 hours for severe hypertension, which the slide does not mention; what gets checked follows Committee Opinion 736 and the ACOG checklist; glucose testing 4 to 12 weeks after gestational diabetes follows the ACOG toolkit, while the ACOG diabetes FAQ says 6 to 12 weeks, and repeat testing every 1 to 3 years is standard ADA and ACOG teaching, with the toolkit citing every 3 years after a normal result; later heart disease and diabetes risk is standard teaching; no set date for sex, many ob-gyns suggesting about 6 weeks, and pregnancy being possible soon after birth follow the ACOG partner's guide; lower desire from breastfeeding hormones and fatigue follows the ACOG toolkit; lubricant and treatable painful sex are standard teaching; ovulation before the first period, and within weeks when not breastfeeding, follows the ACOG birth control FAQ; birth control timing (IUD or implant before discharge or later, progestin-only methods and the copper IUD fine while breastfeeding, estrogen methods waiting at least about 3 weeks and longer with breastfeeding or clot risk, condoms any time, and the three conditions for lactational amenorrhea) follows the ACOG birth control and LARC FAQs and ACOG's Postpartum Contraception Access Initiative pages, with exact week counts from the CDC contraception guidelines not shown on the slide; spacing (avoid less than 6 months, counsel about pregnancy sooner than 18 months, with preterm birth and low birth weight risks) follows Committee Opinion 736 and the ACOG toolkit."
+    "notes": "Drafted 2026-10-18 as lesson 6.6 of Module 6 (Postpartum Recovery, Mood, and Red Flags), the last lesson in the class. Builds on lesson 6.2 (warning signs, the 3-week contact and 12-week visit), lesson 6.4 (mood screening), and lesson 6.1 (recovery). Sources were found by web search only; this session could not open the pages, so every new source needs to be opened and confirmed. For the reviewer: the visit schedule (contact within 3 weeks, a full visit by 12 weeks, then transition to primary care) follows Committee Opinion 736 and matches lesson 6.2; a blood pressure check 3 to 10 days after birth for high blood pressure in pregnancy follows the ACOG postpartum checkup article, with Committee Opinion 736 adding 72 hours for severe hypertension, which the slide does not mention; what gets checked follows Committee Opinion 736 and the ACOG checklist; glucose testing 4 to 12 weeks after gestational diabetes follows the ACOG toolkit, while the ACOG diabetes FAQ says 6 to 12 weeks, and repeat testing every 1 to 3 years is standard ADA and ACOG teaching, with the toolkit citing every 3 years after a normal result; later heart disease and diabetes risk is standard teaching; no set date for sex, many ob-gyns suggesting about 6 weeks, and pregnancy being possible soon after birth follow the ACOG partner's guide; lower desire from breastfeeding hormones and fatigue follows the ACOG toolkit; lubricant and treatable painful sex are standard teaching; ovulation before the first period, and within weeks when not breastfeeding, follows the ACOG birth control FAQ; birth control timing (IUD or implant before discharge or later, progestin-only methods and the copper IUD fine while breastfeeding, estrogen methods waiting at least about 3 weeks and longer with breastfeeding or clot risk, condoms any time, and the three conditions for lactational amenorrhea) follows the ACOG birth control and LARC FAQs and ACOG's Postpartum Contraception Access Initiative pages, with the estrogen week counts (not before 21 days; 30 to 42 days when breastfeeding without other clot risks; after 42 days with other risks such as cesarean, preeclampsia, hemorrhage, age 35 or older, or smoking) following the CDC U.S. Medical Eligibility Criteria, 2024, simplified to about 4 to 6 weeks and about 6 weeks; healthy habits lowering later risk (breastfeeding, activity, healthy eating, a healthy weight) are standard teaching; spacing (avoid less than 6 months, counsel about pregnancy sooner than 18 months, with preterm birth and low birth weight risks) follows Committee Opinion 736 and the ACOG toolkit. The age caveat on spacing (people 35 or older weighing a shorter wait) reflects ACOG's advice to counsel about the risks and benefits of pregnancy sooner than 18 months. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the 3 to 10 day blood pressure check, gestational diabetes testing at 4 to 12 weeks then every 1 to 3 years, and the sex after birth slide as written; add week counts for estrogen methods from the CDC guidelines; add an age caveat to spacing; add healthy habits to the later-risk slide; keep 12 minutes; no video."
   },
   "sources": [
     {
@@ -66,6 +66,13 @@
       "organization": "ACOG",
       "title": "Diabetes and Women (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/diabetes-and-women",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-us-mec-2024",
+      "organization": "CDC",
+      "title": "U.S. Medical Eligibility Criteria for Contraceptive Use, 2024",
+      "url": "https://www.cdc.gov/contraception/hcp/usmec/index.html",
       "verifiedOn": null
     }
   ],
@@ -131,10 +138,10 @@
       "onScreen": [
         "Gestational diabetes: a glucose test 4 to 12 weeks after birth, then every 1 to 3 years",
         "High blood pressure or preeclampsia: blood pressure checks, now and in the years ahead",
-        "These conditions raise your risk of diabetes and heart disease later",
+        "They raise your risk of diabetes and heart disease later; healthy habits help lower it",
         "Tell your primary care clinician about your pregnancy"
       ],
-      "narration": "Some pregnancy conditions need follow-up after birth. If you had gestational diabetes, you'll need a glucose test four to twelve weeks after birth, and then regular diabetes testing every one to three years. If you had high blood pressure or preeclampsia, your blood pressure needs checking now and in the years ahead. These conditions raise your risk of diabetes and heart disease later in life, so tell your primary care clinician about your pregnancy, and keep up with checkups. Knowing your risk early gives you time to lower it.",
+      "narration": "Some pregnancy conditions need follow-up after birth. If you had gestational diabetes, you'll need a glucose test four to twelve weeks after birth, and then regular diabetes testing every one to three years. If you had high blood pressure or preeclampsia, your blood pressure needs checking now and in the years ahead. These conditions raise your risk of diabetes and heart disease later in life, so tell your primary care clinician about your pregnancy, and keep up with checkups. Knowing your risk early gives you time to lower it: breastfeeding, regular activity, healthy eating, and reaching a healthy weight all help.",
       "sourceIds": [
         "acog-co736",
         "acog-diabetes-women"
@@ -193,12 +200,13 @@
         "Talk about it before birth, so your choice is ready",
         "An IUD or implant can be placed before you leave the hospital or at a checkup",
         "Progestin-only methods and the copper IUD are fine while breastfeeding",
-        "Methods with estrogen usually wait a few weeks after birth"
+        "Estrogen methods: not before 3 weeks; about 4 to 6 weeks if breastfeeding or at higher risk of clots"
       ],
-      "narration": "It's best to choose your birth control before your baby arrives, so it's ready when you need it. Many methods can start right after birth. An IUD or a birth control implant can be placed before you leave the hospital or at a later checkup, and they're among the most effective methods. Progestin-only pills, the shot, the implant, and IUDs are all fine while breastfeeding. Methods with estrogen, like the combined pill, patch, or ring, usually wait at least a few weeks after birth, longer if you're breastfeeding or have a higher risk of blood clots. Condoms can be used any time. Breastfeeding alone prevents pregnancy only if you're exclusively breastfeeding, your period hasn't returned, and your baby is under six months old.",
+      "narration": "It's best to choose your birth control before your baby arrives, so it's ready when you need it. Many methods can start right after birth. An IUD or a birth control implant can be placed before you leave the hospital or at a later checkup, and they're among the most effective methods. Progestin-only pills, the shot, the implant, and IUDs are all fine while breastfeeding. Methods with estrogen, like the combined pill, patch, or ring, raise the risk of blood clots right after birth, so they aren't used in the first three weeks. If you're breastfeeding, they usually wait until about four to six weeks, and if you have a higher risk of blood clots, for example after a cesarean, preeclampsia, or heavy bleeding, or if you're 35 or older or smoke, they usually wait until about six weeks. Condoms can be used any time. Breastfeeding alone prevents pregnancy only if you're exclusively breastfeeding, your period hasn't returned, and your baby is under six months old.",
       "sourceIds": [
         "acog-postpartum-birth-control",
-        "acog-larc-after-birth"
+        "acog-larc-after-birth",
+        "cdc-us-mec-2024"
       ],
       "visual": {
         "kind": "illustration",
@@ -213,9 +221,9 @@
         "Wait at least 6 months after a birth before getting pregnant again",
         "About 18 months or more gives your body the most time to recover",
         "Shorter gaps raise the chance of preterm birth and a small baby",
-        "Talk with your team about your plans and what's right for you"
+        "35 or older? Talk with your team about balancing spacing with your age"
       ],
-      "narration": "If you'd like more children, the timing of your next pregnancy matters. Getting pregnant less than six months after a birth carries the most risk, including a higher chance of preterm birth and a small baby, so it's best to avoid that. Waiting about eighteen months or more before getting pregnant again gives your body the most time to recover. Your own situation, like your age or health, may change what's best, so talk with your care team about your plans.",
+      "narration": "If you'd like more children, the timing of your next pregnancy matters. Getting pregnant less than six months after a birth carries the most risk, including a higher chance of preterm birth and a small baby, so it's best to avoid that. Waiting about eighteen months or more before getting pregnant again gives your body the most time to recover. If you're 35 or older, the time it takes to wait matters too, so you might weigh a shorter wait with your care team. Your health and plans matter, so talk with your team about what's right for you.",
       "sourceIds": [
         "acog-co736"
       ],
