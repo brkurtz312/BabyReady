@@ -16,7 +16,7 @@
     "reviewedBy": null,
     "reviewedOn": null,
     "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 3.3, a practice-along lesson in Module 3 (Comfort, Movement, and Support Skills). Builds on lesson 3.2 (breathing) and lesson 4.2 (monitoring); touch and counterpressure are left to lesson 3.4. Sources were found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. For the reviewer: that moving and upright positions can help labor progress and the baby move down, and that lying flat on your back can make contractions less effective and reduce blood flow, follow the Lamaze Healthy Birth Practice article (which cites a 2013 Cochrane review) and Committee Opinion 766, not confirmed word for word; the advice to change positions about every 30 to 60 minutes, and to turn from side to side about every hour with an epidural, is common practice not confirmed in these sources; the peanut ball is mentioned as an option without a source that names it; the back-labor positions (hands and knees, lunges, leaning forward) follow the Lamaze back labor article; the practice video is a proposal, to be made after review."
+    "notes": "Drafted 2026-10-18 as lesson 3.3, a practice-along lesson in Module 3 (Comfort, Movement, and Support Skills). Builds on lesson 3.2 (breathing) and lesson 4.2 (monitoring); touch and counterpressure are left to lesson 3.4. Sources were found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. For the reviewer: that moving and upright positions can help labor progress and the baby move down, and that lying flat on your back can make contractions less effective and reduce blood flow, follow the Lamaze Healthy Birth Practice article (which cites a 2013 Cochrane review) and Committee Opinion 766, not confirmed word for word; the advice to change positions about every 30 to 60 minutes, and to turn from side to side about every hour with an epidural, is common practice not confirmed in these sources; the peanut ball is mentioned as an option without a source that names it; the back-labor positions (hands and knees, lunges, leaning forward) follow the Lamaze back labor article; the practice video is a proposal, to be made after review. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep why moving helps, including the research line and lying flat pressing on large blood vessels; keep changing positions every 30 to 60 minutes; keep turning about every hour with an epidural, the peanut ball, and asking what's possible with monitors and an IV; keep sitting on the toilet; keep the lunge with the partner steadying; make the practice video as proposed, with six positions."
   },
   "sources": [
     {
@@ -68,7 +68,10 @@
         "Lying flat on your back is often the least comfortable"
       ],
       "narration": "Moving in labor helps in two ways. It helps you cope with contractions, and it may help labor progress, as gravity and changing positions help your baby settle into your pelvis and move down. Research suggests that moving and staying upright in early labor may shorten labor. Lying flat on your back is often the least comfortable position, and it can press on large blood vessels. So try to change positions often, every 30 to 60 minutes or whenever you feel like it, and follow what your body tells you.",
-      "sourceIds": ["lamaze-move-positions", "acog-co766"],
+      "sourceIds": [
+        "lamaze-move-positions",
+        "acog-co766"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A laboring person in a hospital gown walking slowly beside a hospital bed, one hand on their lower back and the other holding their support partner's hand. Calm, bright room. No readable writing."
@@ -85,7 +88,9 @@
         "Try it now: stand, lean, and sway"
       ],
       "narration": "Let's start upright. Between contractions, walking can help. During a contraction, try leaning forward onto your partner, a counter, or the raised head of the bed, and let your belly hang. Gently sway your hips from side to side. Or try a slow dance, with your arms around your partner's neck and theirs around your back. Try it now: stand up, lean forward, and sway for a few breaths.",
-      "sourceIds": ["lamaze-move-positions"],
+      "sourceIds": [
+        "lamaze-move-positions"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A laboring person standing and leaning forward with forearms resting on the raised head of a hospital bed, hips tilted mid-sway, while their support partner stands beside them with a hand on their back. No readable writing."
@@ -102,7 +107,9 @@
         "Try it now: sit and make slow circles"
       ],
       "narration": "Sitting upright still uses gravity, and gives your legs a rest. On a birth ball, sit with your feet wide apart and flat on the floor, and gently rock or make slow circles with your hips. Or sit backward on a sturdy chair, leaning forward on a pillow over the back of it. A rocking chair can be soothing, and many people find sitting on the toilet surprisingly comfortable. Try it now: sit, and make a few slow circles.",
-      "sourceIds": ["lamaze-move-positions"],
+      "sourceIds": [
+        "lamaze-move-positions"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A pregnant person sitting on a birth ball with feet wide apart and flat on the floor, hands on their knees, gently circling their hips, while their support partner sits on a chair in front of them, smiling. No readable writing."
@@ -114,7 +121,9 @@
       "heading": "Quick check-in",
       "onScreen": [],
       "narration": "Let's check in.",
-      "sourceIds": ["lamaze-move-positions"],
+      "sourceIds": [
+        "lamaze-move-positions"
+      ],
       "question": {
         "prompt": "Which position is often the least comfortable during a contraction?",
         "options": [
@@ -137,7 +146,10 @@
         "Try it now: kneel, lean forward, and rock"
       ],
       "narration": "Getting on your hands and knees takes the weight of your baby off your back, and many people find it helps with back pain. You can also kneel and lean forward over a birth ball, a stack of pillows, or the raised head of the bed, which is easier on your wrists. Gently rock your hips forward and back. Try it now: kneel, lean forward over a ball or pillows, and rock slowly for a few breaths.",
-      "sourceIds": ["lamaze-back-labor", "lamaze-move-positions"],
+      "sourceIds": [
+        "lamaze-back-labor",
+        "lamaze-move-positions"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A laboring person kneeling on a padded mat and leaning forward with arms and chest draped over a birth ball, eyes closed and relaxed, while their support partner kneels beside them. No readable writing."
@@ -154,7 +166,10 @@
         "A peanut-shaped ball between your knees can help"
       ],
       "narration": "Labor can be long, so rest is important too. Lie on your side with a pillow between your knees and one under your belly, or sit propped up in bed, leaning slightly forward rather than lying flat. If you have an epidural, you'll rest in bed, but you can still change positions. Your nurse can help you turn from side to side, about every hour, and many hospitals use a peanut-shaped ball between your knees. Monitors and an IV don't have to keep you still, either. Ask what's possible.",
-      "sourceIds": ["lamaze-move-positions", "acog-co766"],
+      "sourceIds": [
+        "lamaze-move-positions",
+        "acog-co766"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A laboring person resting on their side in a hospital bed with a peanut-shaped ball between their knees and a pillow under their belly, wearing a monitor belt, while their support partner adjusts a pillow behind their back. No readable writing."
@@ -169,7 +184,9 @@
         "Notice which ones feel best for you"
       ],
       "narration": "Let's practice. Follow along with this short video, and try each position for a few slow breaths. Notice which ones feel best, and tell your support person.",
-      "sourceIds": ["lamaze-move-positions"],
+      "sourceIds": [
+        "lamaze-move-positions"
+      ],
       "video": {
         "brief": "A practice-along sequence with the same pregnant person and support partner in a calm living room, holding each position for a few breaths: leaning forward on a counter and swaying, a slow dance, sitting on a birth ball making hip circles, sitting backward on a chair over a pillow, kneeling over a birth ball, and resting on the side with a pillow between the knees. Short captions name each position. No narration; soft music.",
         "maxSeconds": 75
@@ -186,7 +203,9 @@
         "Add counterpressure and heat (lesson 3.4)"
       ],
       "narration": "Some people feel a lot of pain in their lower back, often when the baby is facing up. Positions that lean you forward can help: hands and knees, kneeling over a ball, or leaning forward while standing or sitting. A slow lunge can help too. Put one foot up on a sturdy chair, with your partner steadying you, and lean gently into it, then switch sides. In the next lesson, you'll learn counterpressure and other ways to use touch and heat for back pain.",
-      "sourceIds": ["lamaze-back-labor"],
+      "sourceIds": [
+        "lamaze-back-labor"
+      ],
       "visual": {
         "kind": "icon-list",
         "description": "Four simple icons with short labels: a standing person for leaning forward, a ball for kneeling over a ball, footprints for a lunge, and a heart with a handshake for counterpressure."
@@ -217,7 +236,10 @@
         "Lean forward and use lunges for back pain"
       ],
       "narration": "Let's recap. Moving and changing positions help you cope, and may help labor progress. Try standing and leaning, swaying, sitting on a ball, and hands and knees. Rest on your side rather than flat on your back, and if you have an epidural, turn from side to side every hour or so. For back pain, lean forward and try a lunge. Keep practicing at home. Next up, a few review questions.",
-      "sourceIds": ["lamaze-move-positions", "lamaze-back-labor"]
+      "sourceIds": [
+        "lamaze-move-positions",
+        "lamaze-back-labor"
+      ]
     }
   ],
   "reviewQuiz": [
