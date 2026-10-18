@@ -211,6 +211,10 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'breastfeeding-basics/enough': require('../../assets/lessons/breastfeeding-basics/enough.jpg'),
   'breastfeeding-basics/challenges': require('../../assets/lessons/breastfeeding-basics/challenges.jpg'),
   'breastfeeding-basics/support-person': require('../../assets/lessons/breastfeeding-basics/support-person.jpg'),
+  'formula-and-combination-feeding/welcome': require('../../assets/lessons/formula-and-combination-feeding/welcome.jpg'),
+  'formula-and-combination-feeding/how-much': require('../../assets/lessons/formula-and-combination-feeding/how-much.jpg'),
+  'formula-and-combination-feeding/giving-bottle': require('../../assets/lessons/formula-and-combination-feeding/giving-bottle.jpg'),
+  'formula-and-combination-feeding/combining': require('../../assets/lessons/formula-and-combination-feeding/combining.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
