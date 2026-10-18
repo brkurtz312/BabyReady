@@ -1,0 +1,315 @@
+{
+  "courseId": "feeding-and-newborn-care",
+  "lessonId": "car-seat-safety",
+  "order": 6,
+  "title": "Car Seat Safety",
+  "learningGoals": [
+    "Keep your child rear-facing as long as their seat allows",
+    "Buckle your baby correctly on every ride, including in cold weather",
+    "Know which extra products to skip, and that car seats are for travel",
+    "Never leave a child alone in a car, and build habits so you never forget",
+    "Know when a used car seat or a seat that's been in a crash isn't safe"
+  ],
+  "estimatedMinutes": 11,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Drafted 2026-10-18 as lesson 5.6. It builds on the car seat slides in Preparing for Birth lesson 6 (installing the seat, airbags, the harness basics and the harness-check video) instead of repeating them. Sources are AAP's HealthyChildren.org pages, found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. Numbers used: rear-facing in many convertible seats to 40 to 50 pounds and 2 years or more; a child's body heats up 3 to 5 times faster than an adult's; if a seat has no expiration date, 6 years from the manufacture date. For the reviewer: there is no video slide; the Preparing for Birth harness video could be reused here."
+  },
+  "sources": [
+    {
+      "id": "aap-car-seats-families",
+      "organization": "AAP",
+      "title": "Car Seats: Information for Families (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-rear-facing",
+      "organization": "AAP",
+      "title": "Rear-Facing Car Seats for Infants & Toddlers (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Rear-Facing-Car-Seats-for-Infants-Toddlers.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-airbag",
+      "organization": "AAP",
+      "title": "Air Bag Safety for Children (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Air-Bag-Safety.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-winter-car-seat",
+      "organization": "AAP",
+      "title": "Winter Car Seat Safety Tips (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Winter-Car-Seat-Safety-Tips.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-shopping-car-seats",
+      "organization": "AAP",
+      "title": "Shopping for Car Seats: Tips for Parents (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Shopping-for-Car-Seats-Tips-for-Parents.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-car-seat-checkup",
+      "organization": "AAP",
+      "title": "Car Seat Safety Checkup: 10 Questions to Consider (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seat-Checkup.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-hot-cars",
+      "organization": "AAP",
+      "title": "Prevent Child Deaths in Hot Cars (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Prevent-Child-Deaths-in-Hot-Cars.aspx",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Car Seat Safety",
+      "onScreen": [
+        "Module 5: Feeding and Newborn Care"
+      ],
+      "narration": "Welcome to Car Seat Safety. In Preparing for Birth, you learned how to install a rear-facing car seat and check the harness. Now that your baby is here, this lesson is about using the seat well on every ride, for years to come: staying rear-facing, buckling right in every season, avoiding hot cars, and knowing when a seat isn't safe anymore.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A parent buckling a baby into a rear-facing car seat in the back seat of a car, the parent leaning in through the open rear door, calm daylight."
+      }
+    },
+    {
+      "id": "quick-recap",
+      "type": "content",
+      "heading": "A quick recap",
+      "onScreen": [
+        "Rear-facing, in the back seat",
+        "Never in front of an active front airbag",
+        "Harness snug, chest clip at armpit level",
+        "No bulky coats under the straps"
+      ],
+      "narration": "First, a quick recap. Your baby rides rear-facing, in the back seat, and never in front of an active front passenger airbag. The harness is snug enough that you can't pinch any slack at the shoulders, and the chest clip sits at armpit level. And no bulky coats or snowsuits under the straps. If you'd like a refresher, you can rewatch the harness video in Preparing for Birth anytime.",
+      "sourceIds": ["aap-car-seats-families", "aap-airbag"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Close view of a baby in a rear-facing car seat with the harness snug and the chest clip level with the armpits, the baby in thin clothes."
+      }
+    },
+    {
+      "id": "rear-facing-longer",
+      "type": "content",
+      "heading": "Stay rear-facing as long as possible",
+      "onScreen": [
+        "Rear-facing until your child reaches the seat's highest weight or height for rear-facing",
+        "Many convertible seats allow rear-facing for 2 years or more",
+        "Rear-facing cradles the head, neck, and back in a crash"
+      ],
+      "narration": "Keep your child rear-facing for as long as possible, until they reach the highest weight or height their seat allows for rear-facing. When your baby outgrows an infant seat, that usually means moving to a convertible seat, still facing the back. Many convertible seats allow children to ride rear-facing for two years or more, up to about forty to fifty pounds. Rear-facing is safest because in a crash or sudden stop, the seat cradles your child's whole head, neck, and back, and spreads out the force.",
+      "sourceIds": ["aap-rear-facing", "aap-car-seats-families"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A toddler riding happily in a rear-facing convertible car seat in the back seat, legs bent comfortably, a parent glancing back from the front seat."
+      }
+    },
+    {
+      "id": "checkin-rear-facing",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": ["aap-rear-facing"],
+      "question": {
+        "prompt": "Your child just turned 1 and their legs touch the back of the vehicle seat. Their convertible seat allows rear-facing to 40 pounds, and they weigh 22. What should you do?",
+        "options": [
+          "Turn the seat forward, since they're 1 and their legs are cramped",
+          "Keep them rear-facing until they reach the seat's rear-facing limit",
+          "Move them to a booster seat"
+        ],
+        "correctIndex": 1,
+        "explanation": "Keep your child rear-facing until they reach the highest weight or height the seat allows for rear-facing. Bent legs are comfortable and safe for children."
+      }
+    },
+    {
+      "id": "every-ride",
+      "type": "content",
+      "heading": "Buckle right, every ride",
+      "onScreen": [
+        "Every ride, even short trips, taxis, and rideshares",
+        "Rear-facing: harness straps at or below your baby's shoulders",
+        "Snug harness: no slack you can pinch at the shoulder",
+        "Move the straps as your baby grows"
+      ],
+      "narration": "Use the car seat on every ride, even a quick trip to the store, and in taxis and rideshares too. Most crashes happen close to home. For a rear-facing seat, the harness straps should come from slots at or below your baby's shoulders. Tighten the harness until you can't pinch any slack at the shoulder, and keep the chest clip at armpit level. Babies grow fast, so check the strap height every few weeks and move the straps up as needed.",
+      "sourceIds": ["aap-car-seats-families", "aap-car-seat-checkup"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A parent doing the pinch test at the shoulder of a snug harness on a baby in a rear-facing car seat, fingers unable to pinch any slack."
+      }
+    },
+    {
+      "id": "winter",
+      "type": "content",
+      "heading": "Car seats in cold weather",
+      "onScreen": [
+        "Take off bulky coats and snowsuits before buckling",
+        "Dress baby in thin, warm layers",
+        "After buckling, add a blanket or the coat over the harness",
+        "Skip padded inserts and covers that didn't come with the seat"
+      ],
+      "narration": "In cold weather, take off bulky coats and snowsuits before you buckle your baby in. Puffy layers squish down in a crash, leaving the harness too loose to hold your baby. Instead, dress your baby in thin, warm layers, like a fleece, and a hat. Buckle the harness snugly, then put a blanket or your baby's coat over the top of the straps. Skip padded bundling bags or covers that go under or behind your baby unless they came with your car seat.",
+      "sourceIds": ["aap-winter-car-seat"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A parent in a winter coat tucking a blanket over a baby who is snugly buckled into a rear-facing car seat, the baby in a thin fleece and knit hat, snow outside the car window."
+      }
+    },
+    {
+      "id": "extra-products",
+      "type": "content",
+      "heading": "Extra products, and travel only",
+      "onScreen": [
+        "Only use add-ons that came with your seat, or that its maker approves",
+        "Other products aren't covered by safety standards",
+        "Car seats are for travel, not for sleeping, feeding, or play outside the car"
+      ],
+      "narration": "Stores sell all kinds of car seat add-ons, like strap covers, head supports, and padded inserts. Only use the ones that came with your seat, or that the seat's maker approves. Other products aren't covered by safety standards and haven't been crash tested with your seat. And remember, car seats are for travel. Once you've arrived, take your baby out for sleeping, feeding, and play, and use a firm, flat sleep space for naps.",
+      "sourceIds": ["aap-shopping-car-seats", "aap-winter-car-seat", "aap-car-seats-families"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A parent in a store aisle setting back a plush strap cover and head pillow on a shelf, holding a car seat manual. No text on packages."
+      }
+    },
+    {
+      "id": "hot-cars",
+      "type": "safety",
+      "heading": "Never leave your baby alone in a car",
+      "onScreen": [
+        "Not even for a minute",
+        "A child's body heats up 3 to 5 times faster than an adult's",
+        "Cracking a window or parking in shade doesn't keep a car cool",
+        "Look in the back seat every time you get out",
+        "See a child alone in a car? Call 911"
+      ],
+      "narration": "Never leave your baby alone in a car, not even for a minute. A car can get dangerously hot very quickly, even on a mild day, and a child's body heats up three to five times faster than an adult's. Cracking a window or parking in the shade doesn't help much. Tired, busy parents can forget a quiet, sleeping baby, so build habits: look in the back seat every time you get out, put your phone or bag in the back seat, and ask your child care provider to call you if your baby doesn't arrive. And if you ever see a child alone in a car, call 911.",
+      "sourceIds": ["aap-hot-cars"]
+    },
+    {
+      "id": "checkin-hot-car",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": ["aap-hot-cars"],
+      "question": {
+        "prompt": "Your baby is asleep in the car and you need to run into a shop for two minutes. It's cloudy and cool out. What should you do?",
+        "options": [
+          "Leave the windows cracked and hurry",
+          "Take your baby with you",
+          "Park in the shade and lock the car"
+        ],
+        "correctIndex": 1,
+        "explanation": "Never leave a baby alone in a car, even for a minute or on a cool day. Cars heat up fast, and a baby's body heats up 3 to 5 times faster than an adult's."
+      }
+    },
+    {
+      "id": "used-seats-and-crashes",
+      "type": "content",
+      "heading": "Used seats and seats after a crash",
+      "onScreen": [
+        "Only use a used seat if you know its full history",
+        "Replace a seat that's been in a moderate or severe crash",
+        "Check the expiration date; if there isn't one, 6 years from manufacture",
+        "No cracks or missing parts, and a label so you can check for recalls"
+      ],
+      "narration": "Be careful with used car seats. Only use one if you know its full history. A seat that's been in a moderate or severe crash needs to be replaced, and some makers say to replace it after any crash, so check your manual. Look for the seat's expiration date. If there isn't one, the general rule is six years from when it was made. Skip any seat with cracks, missing parts, or no label, because without the label you can't check whether it's been recalled. When you get a new seat, register it with the maker so you'll hear about recalls.",
+      "sourceIds": ["aap-shopping-car-seats", "aap-car-seat-checkup"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A parent turning a car seat over to look at the label and date sticker on its underside, at a kitchen table. The label is blank, with no readable writing."
+      }
+    },
+    {
+      "id": "get-it-checked",
+      "type": "content",
+      "heading": "Get your seat checked",
+      "onScreen": [
+        "A certified child passenger safety technician can check your seat",
+        "Check again when you change seats or cars",
+        "Ask your pediatrician where to find a checkup near you"
+      ],
+      "narration": "Even careful parents can miss something, so it's worth having a certified child passenger safety technician check your seat. They'll look at the installation, the harness, and whether the seat fits your child, and show you how to do it yourself. Check again when you switch to a new seat or a different car. Your pediatrician's office can help you find a car seat check near you.",
+      "sourceIds": ["aap-car-seat-checkup", "aap-car-seats-families"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A car seat technician in a polo shirt kneeling at an open car door, showing a parent how to check a rear-facing car seat's installation."
+      }
+    },
+    {
+      "id": "car-seat-plan",
+      "type": "reflection",
+      "heading": "Your car seat plan",
+      "onScreen": [
+        "Which cars your baby will ride in, and who will drive",
+        "Your seat's rear-facing limits and expiration date",
+        "Your back-seat reminder habit",
+        "When your seat will be checked"
+      ],
+      "narration": "Let's make your car seat plan. Which cars will your baby ride in, and who will drive them? Do those cars have a seat or a base? Write down your seat's rear-facing weight and height limits, and its expiration date. Choose your back-seat reminder habit, like leaving your phone or bag in the back. And when will you get your seat checked? Save your plan to your Birth Readiness Brief.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write which cars your baby will ride in, your seat's rear-facing limits and expiration date, your back-seat reminder habit, and when your seat will be checked."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Rear-facing until the seat's rear-facing limit",
+        "Buckle snug on every ride; coats go over the straps",
+        "Only add-ons that came with the seat; car seats are for travel",
+        "Never leave a child alone in a car",
+        "Know a used seat's history; replace after a moderate or severe crash"
+      ],
+      "narration": "Let's recap. Keep your child rear-facing until they reach the seat's rear-facing limit. Buckle snugly on every ride, and in cold weather put coats and blankets over the straps, not under. Only use add-ons that came with your seat, and use car seats for travel, not sleep. Never leave a child alone in a car, and make looking in the back seat a habit. Know a used seat's history, check its expiration date, and replace a seat after a moderate or severe crash. Next up, a few review questions.",
+      "sourceIds": ["aap-rear-facing", "aap-winter-car-seat", "aap-hot-cars", "aap-shopping-car-seats"]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "When should your child stop riding rear-facing?",
+      "options": [
+        "On their first birthday",
+        "When their legs touch the vehicle seat",
+        "When they reach the highest weight or height the seat allows for rear-facing"
+      ],
+      "correctIndex": 2,
+      "explanation": "Keep your child rear-facing as long as possible, until they reach the seat's rear-facing weight or height limit. Many seats allow 2 years or more."
+    },
+    {
+      "prompt": "It's cold out. How should you keep your baby warm in the car seat?",
+      "options": [
+        "Buckle them in over their puffy snowsuit",
+        "Thin layers under the harness, then a blanket or coat over the buckled straps",
+        "Add a thick padded insert under them"
+      ],
+      "correctIndex": 1,
+      "explanation": "Bulky layers squish down in a crash and leave the harness loose. Use thin layers and put warmth over the buckled harness."
+    },
+    {
+      "prompt": "A friend offers you their old car seat. It has no label and they're not sure if it's been in a crash. What should you do?",
+      "options": [
+        "Use it if it looks fine",
+        "Don't use it",
+        "Use it only for short trips"
+      ],
+      "correctIndex": 1,
+      "explanation": "Only use a used seat if you know its full history. Without a label you can't check for recalls or its age, and an unknown crash history means it may not protect your baby."
+    }
+  ]
+}
