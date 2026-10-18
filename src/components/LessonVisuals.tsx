@@ -75,6 +75,9 @@ import CircleX from 'lucide-react-native/icons/circle-x';
 import Puzzle from 'lucide-react-native/icons/puzzle';
 import BathIcon from 'lucide-react-native/icons/bath';
 import Droplets from 'lucide-react-native/icons/droplets';
+import Cloud from 'lucide-react-native/icons/cloud';
+import Zap from 'lucide-react-native/icons/zap';
+import MessageCircleMore from 'lucide-react-native/icons/message-circle-more';
 
 /**
  * Pictures drawn in code for lesson slides: icon panels and simple diagrams.
@@ -1780,6 +1783,50 @@ const VISUALS: Record<string, () => React.ReactElement> = {
         { icon: Moon, label: 'Night sweats' },
         { icon: Calendar, label: 'Belly shrinks over months' },
         { icon: Sparkles, label: 'Hair loss that grows back' },
+      ]}
+    />
+  ),
+  'emotional-health-after-birth/baby-blues': () => (
+    <IconPanel
+      label="The baby blues: weepy or moody in the first days, with short sleep; usually passes within about 2 weeks; rest and help from others make a difference."
+      items={[
+        { icon: Droplet, label: 'Weepy or moody' },
+        { icon: Moon, label: 'Short on sleep' },
+        { icon: Calendar, label: 'Usually passes in 2 weeks' },
+        { icon: Users, label: 'Rest and help' },
+      ]}
+    />
+  ),
+  'emotional-health-after-birth/depression-signs': () => (
+    <IconPanel
+      label="Postpartum depression: sad or hopeless most days, feeling distant from your baby, doubting yourself, and it can start any time in the first year."
+      items={[
+        { icon: Cloud, label: 'Sad or hopeless most days' },
+        { icon: Heart, label: 'Feeling distant from your baby' },
+        { icon: MessageCircleQuestionMark, label: 'Doubting yourself' },
+        { icon: Calendar, label: 'Any time in the first year' },
+      ]}
+    />
+  ),
+  'emotional-health-after-birth/anxiety': () => (
+    <IconPanel
+      label="Anxiety and scary thoughts: racing worry or panic, trouble sleeping, unwanted scary thoughts that are common, and telling your care team."
+      items={[
+        { icon: Zap, label: 'Racing worry or panic' },
+        { icon: Moon, label: 'Trouble sleeping' },
+        { icon: MessageCircleMore, label: 'Scary thoughts are common' },
+        { icon: Phone, label: 'Tell your team' },
+      ]}
+    />
+  ),
+  'emotional-health-after-birth/who-is-at-risk': () => (
+    <IconPanel
+      label="Higher risk: past depression or anxiety, bipolar disorder or a family history, big stresses or little support, and a hard birth or NICU stay."
+      items={[
+        { icon: ClipboardCheck, label: 'Past depression or anxiety' },
+        { icon: Users, label: 'Family history' },
+        { icon: House, label: 'Big stresses, little support' },
+        { icon: Hospital, label: 'A hard birth or NICU stay' },
       ]}
     />
   ),

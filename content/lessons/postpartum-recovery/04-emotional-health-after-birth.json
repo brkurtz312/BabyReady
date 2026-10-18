@@ -1,0 +1,354 @@
+{
+  "courseId": "postpartum-recovery",
+  "lessonId": "emotional-health-after-birth",
+  "order": 4,
+  "title": "Emotional Health After Birth",
+  "learningGoals": [
+    "Tell the baby blues from postpartum depression",
+    "Recognize postpartum anxiety and know that scary thoughts are common",
+    "Know that postpartum psychosis is an emergency",
+    "Know who's at higher risk, and that treatment works",
+    "Know where to get help right away, for you or a partner"
+  ],
+  "estimatedMinutes": 14,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Drafted 2026-10-18 as lesson 6.4 of Module 6 (Postpartum Recovery, Mood, and Red Flags). Goes deeper than lesson 6.2's baby blues comparison and crisis slide; the crisis slide here repeats 6.2's wording and numbers on purpose. Builds on lesson 6.2 (blues or depression, thoughts of harm) and lesson 6.5 (rest and help at home). Sources were found by web search only; this session could not open the pages, so every new source needs to be opened and confirmed. For the reviewer: the baby blues being very common and passing within about 2 weeks matches lesson 6.2 and the ACOG FAQ in part; postpartum depression symptoms and about 1 in 8 follow the CDC symptoms page; onset most often 1 to 3 weeks and up to a year after birth, risk factors, and treatability follow the ACOG FAQ; anxiety being as common as depression, and unwanted intrusive thoughts being common and not acted on, are standard perinatal mental health teaching not found on ACOG or CDC patient pages; ACOG CPG 5 covers anxiety treatment; postpartum psychosis being rare, starting suddenly in the first weeks, its signs, emergency care, and higher risk with bipolar disorder follow ACOG CPG 5 and 4 in part, with the symptom list and 'don't leave them alone with the baby' as standard teaching; not stopping mental health medicines only because of pregnancy or breastfeeding follows ACOG CPG 5; many medicines being compatible with breastfeeding follows the AAP postpartum depression and breastfeeding page as described in search results; nearly everyone who gets treatment recovering follows the ACOG FAQ; mood screening at postpartum visits follows ACOG CPG 4, and screening at the baby's 1, 2, 4, and 6 month checkups follows the AAP policy news page; the Postpartum Support International helpline (1-800-944-4773, call or text) is listed on the ACOG FAQ, though PSI itself is not an approved organization; partners' depression follows the AAP partner page; the crisis slide's 988, 1-833-TLC-MAMA, and 911 follow the CDC resources page and match lesson 6.2, with 'call or text' for the hotline as listed by CDC."
+  },
+  "sources": [
+    {
+      "id": "acog-postpartum-depression",
+      "organization": "ACOG",
+      "title": "Postpartum Depression (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/postpartum-depression",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-cpg5-treatment",
+      "organization": "ACOG",
+      "title": "Treatment and Management of Mental Health Conditions During Pregnancy and Postpartum (Clinical Practice Guideline No. 5, 2023)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2023/06/treatment-and-management-of-mental-health-conditions-during-pregnancy-and-postpartum",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-cpg4-screening",
+      "organization": "ACOG",
+      "title": "Screening and Diagnosis of Mental Health Conditions During Pregnancy and Postpartum (Clinical Practice Guideline No. 4, 2023)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2023/06/screening-and-diagnosis-of-mental-health-conditions-during-pregnancy-and-postpartum",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-depression",
+      "organization": "CDC",
+      "title": "Symptoms of Depression Among Women",
+      "url": "https://www.cdc.gov/reproductive-health/depression/index.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-depression-resources",
+      "organization": "CDC",
+      "title": "Depression Resources",
+      "url": "https://www.cdc.gov/reproductive-health/depression/resources.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-perinatal-depression",
+      "organization": "AAP",
+      "title": "Infants, Family are Affected by Mother's Perinatal Depression: AAP Policy Statement (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/news/Pages/Infants-Family-Affected-By-Mothers-Perinatal-Depression.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-partner-depression",
+      "organization": "AAP",
+      "title": "Perinatal Depression in Partners: Can Both Parents Get the \"Baby Blues?\" (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/prenatal/delivery-beyond/Pages/dads-can-get-postpartum-depression-too.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-ppd-breastfeeding",
+      "organization": "AAP",
+      "title": "Postpartum Depression & Breastfeeding (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/breastfeeding/Pages/Postpartum-Depression-Breastfeeding.aspx",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Emotional Health After Birth",
+      "onScreen": [
+        "Module 6: Postpartum Recovery, Mood, and Red Flags"
+      ],
+      "narration": "Having a baby brings big feelings: joy, love, worry, and sometimes sadness, all mixed together, often on very little sleep. In this lesson, we'll cover the baby blues, postpartum depression and anxiety, a rare emergency called postpartum psychosis, who's at higher risk, how treatment helps, and how partners can be affected too. Mood changes after birth are common, they're not your fault, and help works.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "At home in soft morning light, a new parent sits by a window holding a mug, looking thoughtful but calm, while their partner sits beside them with a gentle hand on their shoulder; the newborn sleeps on their back in a bare bassinet nearby. Both adults in everyday clothes. No pregnant belly. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "baby-blues",
+      "type": "content",
+      "heading": "The baby blues",
+      "onScreen": [
+        "Weepy, moody, worried, or overwhelmed in the first days",
+        "Very common, as hormones shift and sleep is short",
+        "Usually passes on its own within about 2 weeks",
+        "Rest, food, and help from others make a difference"
+      ],
+      "narration": "In the first days after birth, many new parents feel weepy, moody, worried, or overwhelmed, sometimes all in the same hour. This is called the baby blues. It's very common, as hormone levels drop quickly after birth and sleep is short. The baby blues usually pass on their own within about two weeks. Rest when you can, eat regular meals, and let others help. Talking about how you feel helps, too. If the feelings last longer than two weeks, or feel too big, it may be something more, and it's time to tell your care team.",
+      "sourceIds": [
+        "acog-postpartum-depression",
+        "cdc-depression"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a droplet for weepy or moody, a moon for short sleep, a calendar for usually passes within 2 weeks, and a group of people for rest and help from others."
+      }
+    },
+    {
+      "id": "depression-signs",
+      "type": "content",
+      "heading": "Postpartum depression",
+      "onScreen": [
+        "Sad, empty, or hopeless most days; little joy in things you used to enjoy",
+        "Crying more than usual, anger, or feeling distant from your baby",
+        "Doubting you can care for your baby",
+        "Common, about 1 in 8, and can start any time in the first year"
+      ],
+      "narration": "Postpartum depression is stronger and lasts longer than the baby blues. You might feel sad, empty, or hopeless most of the day, or lose interest in things you used to enjoy. You might cry more than usual, feel angry, feel distant from your baby, or doubt that you can take care of them. Sleep and appetite may change in ways that aren't just from caring for a newborn. Postpartum depression is common, affecting about one in eight people who give birth. It most often starts in the first few weeks, but it can begin any time in the first year. It's a health condition, not a weakness, and it can be treated.",
+      "sourceIds": [
+        "cdc-depression",
+        "acog-postpartum-depression"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a cloud for sad or hopeless most days, a heart for feeling distant from your baby, a circled question mark for doubting yourself, and a calendar for any time in the first year."
+      }
+    },
+    {
+      "id": "anxiety",
+      "type": "content",
+      "heading": "Anxiety and scary thoughts",
+      "onScreen": [
+        "Worry that won't stop, racing thoughts, or panic",
+        "Trouble sleeping even when your baby sleeps",
+        "Unwanted, frightening thoughts about your baby getting hurt are common",
+        "Having these thoughts doesn't mean you'll act on them; tell your team"
+      ],
+      "narration": "Anxiety after birth is as common as depression, and the two often come together. You might worry constantly, have racing thoughts or panic attacks, feel on edge, or be unable to sleep even when your baby is sleeping. Some parents have sudden, unwanted thoughts or images of their baby getting hurt, and may check on the baby again and again. These thoughts are common, they're upsetting precisely because you don't want them, and having them doesn't mean you'll act on them. Tell your care team; anxiety and these thoughts respond well to treatment.",
+      "sourceIds": [
+        "cdc-depression",
+        "acog-cpg5-treatment"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a lightning bolt for racing worry or panic, a moon for trouble sleeping, a thought bubble for unwanted scary thoughts, and a phone for telling your team."
+      }
+    },
+    {
+      "id": "checkin-blues",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": [
+        "acog-postpartum-depression",
+        "cdc-depression"
+      ],
+      "question": {
+        "prompt": "Four days after birth, you cry easily and feel overwhelmed, but you're also enjoying your baby. What's most likely?",
+        "options": [
+          "The baby blues, which usually pass within about 2 weeks",
+          "Postpartum psychosis",
+          "A sign you'll never bond with your baby"
+        ],
+        "correctIndex": 0,
+        "explanation": "Feeling weepy and overwhelmed in the first days is common and usually passes within about two weeks. If it lasts longer or feels too big, tell your care team."
+      }
+    },
+    {
+      "id": "psychosis",
+      "type": "safety",
+      "heading": "Postpartum psychosis is an emergency",
+      "onScreen": [
+        "Rare, usually in the first weeks after birth",
+        "Seeing or hearing things that aren't there, or believing things that aren't true",
+        "Confusion, not sleeping for days, or acting very differently",
+        "Call 911 or go to the emergency department right away"
+      ],
+      "narration": "Postpartum psychosis is rare, but it's a medical emergency. It usually starts suddenly, in the first weeks after birth. Signs include seeing or hearing things that aren't there, believing things that aren't true, feeling confused, being unable to sleep for days, or acting very differently from usual. The person may not realize anything is wrong, so support people often notice first. Call 911 or go to the nearest emergency department right away, and don't leave them alone with the baby. With quick treatment, people recover. The risk is higher with a history of bipolar disorder, so tell your care team about that before birth.",
+      "sourceIds": [
+        "acog-cpg5-treatment",
+        "acog-cpg4-screening"
+      ]
+    },
+    {
+      "id": "who-is-at-risk",
+      "type": "content",
+      "heading": "Who's at higher risk",
+      "onScreen": [
+        "Depression or anxiety before or during pregnancy, or after a past birth",
+        "Bipolar disorder, or a family history of mood conditions",
+        "Little support, or big stresses like money worries, loss, or a move",
+        "A hard pregnancy or birth, or a baby in the NICU"
+      ],
+      "narration": "Anyone can have a mood or anxiety condition after birth, but some people are at higher risk. That includes people who've had depression or anxiety at any time, before, during, or after a pregnancy, and people with bipolar disorder or a family history of mood conditions. Having little support, or big stresses like money worries, a loss, or a move, raises the risk, and so can a hard pregnancy or birth, or a baby in the NICU. If any of these apply to you, tell your care team now, so you can plan ahead together. If you take medicine for your mental health, don't stop it without talking to your team.",
+      "sourceIds": [
+        "acog-postpartum-depression",
+        "acog-cpg5-treatment"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a clipboard for past depression or anxiety, a family of people for family history, a house for big stresses, and a hospital for a hard birth or NICU stay."
+      }
+    },
+    {
+      "id": "getting-treatment",
+      "type": "content",
+      "heading": "Getting help works",
+      "onScreen": [
+        "You'll be asked about your mood at checkups, yours and your baby's; answer honestly",
+        "Talk therapy, medicine, or both",
+        "Many medicines can be taken while breastfeeding; ask your team",
+        "Postpartum Support International: 1-800-944-4773, call or text"
+      ],
+      "narration": "Your care team will ask about your mood at your postpartum visits, and your baby's doctor will ask at your baby's checkups in the first six months. Answer honestly; these questions are there to help you, not to judge you. Treatment works. It may include talk therapy, medicine, or both, and nearly everyone who gets treatment gets better. Many medicines for depression and anxiety can be taken while breastfeeding, so you don't have to choose between your health and feeding your baby; ask your team. Support groups help, too, and Postpartum Support International offers a free helpline at 1-800-944-4773, by call or text.",
+      "sourceIds": [
+        "acog-postpartum-depression",
+        "acog-cpg5-treatment",
+        "aap-perinatal-depression",
+        "aap-ppd-breastfeeding"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A calm, bright clinic room: a new parent sits in a comfortable chair talking with a kind clinician who listens and takes notes on a clipboard with no readable writing; the parent's newborn sleeps in a car seat carrier on the floor beside them. Both adults in everyday clothes. No pregnant belly. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "partners",
+      "type": "content",
+      "heading": "Partners and support people",
+      "onScreen": [
+        "Partners can get depression and anxiety after a birth, too",
+        "Watch for changes in your loved one, and believe them",
+        "Help with nights, meals, and time to rest",
+        "Encourage care, and go with them if you can"
+      ],
+      "narration": "Partners can have depression and anxiety after a baby arrives, too, and it can show up as irritability, pulling away, or working all the time. If that sounds like you, talk to your own doctor. Support people, you're often the first to notice a change. Watch for the signs we've covered, and if your loved one says they're struggling, believe them. Help in practical ways: take a night feed so they can sleep, bring meals, and protect time for rest. Encourage them to talk to their care team, and offer to go with them.",
+      "sourceIds": [
+        "aap-partner-depression",
+        "cdc-depression"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Evening at home under soft lamp light: a partner in everyday clothes gives the newborn a bottle in an armchair while the new parent rests on the sofa nearby under a blanket, and the two smile at each other. Both adults fully clothed. No pregnant belly. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "get-help-now",
+      "type": "safety",
+      "heading": "Thoughts of harming yourself or your baby",
+      "onScreen": [
+        "These thoughts need help right away",
+        "Call or text 988, the Suicide and Crisis Lifeline",
+        "National Maternal Mental Health Hotline: 1-833-TLC-MAMA (1-833-852-6262), free, 24/7",
+        "In an emergency, call 911 or go to the nearest emergency department"
+      ],
+      "narration": "If you have thoughts of harming yourself or your baby, you are not alone, and you deserve help right away. Call or text 988 to reach the Suicide and Crisis Lifeline. You can also call or text the National Maternal Mental Health Hotline, at 1-833-TLC-MAMA, which is free, confidential, and open 24 hours a day, in English and Spanish. If you feel you might act on these thoughts, call 911 or go to the nearest emergency department. Support people, if someone you love says something like this, stay with them and help them get care.",
+      "sourceIds": [
+        "cdc-depression-resources",
+        "cdc-depression"
+      ]
+    },
+    {
+      "id": "checkin-thoughts",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": [
+        "acog-cpg5-treatment"
+      ],
+      "question": {
+        "prompt": "Your partner, two weeks after birth, hasn't slept in three days and says the TV is sending them messages about the baby. What should you do?",
+        "options": [
+          "Let them rest and check again in the morning",
+          "Call 911 or go to the emergency department now, and stay with them",
+          "Schedule a visit at their next checkup"
+        ],
+        "correctIndex": 1,
+        "explanation": "Not sleeping for days and believing things that aren't true can be signs of postpartum psychosis, a medical emergency. Get emergency care now, and don't leave them alone with the baby."
+      }
+    },
+    {
+      "id": "emotional-health-plan",
+      "type": "reflection",
+      "heading": "Your emotional health plan",
+      "onScreen": [
+        "Anything in your history to share with your care team",
+        "Who you'll tell if you're struggling",
+        "Who will help you get rest in the first weeks"
+      ],
+      "narration": "Let's make a plan. Is there anything in your history, like past depression, anxiety, or bipolar disorder, that you'll share with your care team? Who will you tell if you're struggling? And who will help you get rest in the first weeks? Save your answers to your Birth Readiness Brief, along with the helpline numbers.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write anything in your history to share with your care team, who you'll tell if you're struggling, and who will help you rest in the first weeks."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Baby blues: common, and usually gone within about 2 weeks",
+        "Depression or anxiety: stronger, longer, any time in the first year, and treatable",
+        "Seeing or hearing things, or not sleeping for days: call 911",
+        "Thoughts of harm: 988 or 1-833-TLC-MAMA, any time"
+      ],
+      "narration": "Let's recap. The baby blues are common and usually pass within about two weeks. Postpartum depression and anxiety are stronger, last longer, can start any time in the first year, and get better with treatment, including medicines that work with breastfeeding. Postpartum psychosis is rare but an emergency: call 911. And if you have thoughts of harming yourself or your baby, call or text 988 or 1-833-TLC-MAMA, any time. Partners can be affected too. Whatever you're feeling, you're not alone, and help works.",
+      "sourceIds": [
+        "acog-postpartum-depression",
+        "cdc-depression",
+        "acog-cpg5-treatment",
+        "cdc-depression-resources"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "How long do the baby blues usually last?",
+      "options": [
+        "A few hours",
+        "About 2 weeks or less",
+        "The whole first year"
+      ],
+      "correctIndex": 1,
+      "explanation": "The baby blues usually pass on their own within about two weeks. Feelings that last longer or feel too big may be postpartum depression or anxiety, so tell your care team."
+    },
+    {
+      "prompt": "Which is true about treatment for postpartum depression?",
+      "options": [
+        "You have to stop breastfeeding to take medicine",
+        "Therapy, medicine, or both work, and many medicines are fine while breastfeeding",
+        "It goes away on its own, so treatment isn't needed"
+      ],
+      "correctIndex": 1,
+      "explanation": "Talk therapy, medicine, or both help, and many medicines can be taken while breastfeeding. Nearly everyone who gets treatment gets better."
+    },
+    {
+      "prompt": "Who can get depression after a baby is born?",
+      "options": [
+        "Only the person who gave birth",
+        "Only people with a history of depression",
+        "The birthing parent and partners, too"
+      ],
+      "correctIndex": 2,
+      "explanation": "Postpartum depression is common in people who give birth, and partners can be affected, too. Anyone who's struggling should talk to their doctor."
+    }
+  ]
+}
