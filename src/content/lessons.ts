@@ -22,6 +22,7 @@ import firstPrenatalVisit from '../../content/lessons/early-pregnancy-basics/03-
 import makingDecisions from '../../content/lessons/interventions-and-flexible-decisions/01-making-decisions-with-your-care-team.json';
 import monitoringYourBaby from '../../content/lessons/interventions-and-flexible-decisions/02-monitoring-your-baby-in-labor.json';
 import medicalPainRelief from '../../content/lessons/interventions-and-flexible-decisions/03-medical-pain-relief.json';
+import inductionOfLabor from '../../content/lessons/interventions-and-flexible-decisions/04-induction-of-labor.json';
 
 import safeSleep from '../../content/lessons/feeding-and-newborn-care/05-safe-sleep.json';
 import carSeatSafety from '../../content/lessons/feeding-and-newborn-care/06-car-seat-safety.json';
@@ -73,7 +74,7 @@ const earlyPregnancyLessons = sortedLessons([
   firstPrenatalVisit,
 ]);
 
-const interventionsLessons = sortedLessons([makingDecisions, monitoringYourBaby, medicalPainRelief]);
+const interventionsLessons = sortedLessons([makingDecisions, monitoringYourBaby, medicalPainRelief, inductionOfLabor]);
 
 const feedingAndNewbornCareLessons = sortedLessons([safeSleep, carSeatSafety]);
 

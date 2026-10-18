@@ -1045,6 +1045,28 @@ const VISUALS: Record<string, () => React.ReactElement> = {
       ]}
     />
   ),
+  'induction-of-labor/reasons': () => (
+    <IconPanel
+      label="Common reasons for induction: past 41 weeks, high blood pressure or preeclampsia, diabetes, water broken without labor, and a baby not growing as expected."
+      items={[
+        { icon: Calendar, label: 'Past 41 weeks' },
+        { icon: HeartPulse, label: 'High blood pressure' },
+        { icon: TestTube, label: 'Diabetes' },
+        { icon: Droplet, label: 'Water broke, no labor' },
+        { icon: Baby, label: 'Baby not growing as expected' },
+      ]}
+    />
+  ),
+  'induction-of-labor/how-it-works': () => (
+    <Steps
+      label="How an induction works: first soften and open the cervix if needed, then start contractions, then labor continues, often slowly at first."
+      steps={[
+        { title: 'Soften the cervix', detail: 'Medicine or a small balloon, if needed', tone: 'lagoon' },
+        { title: 'Start contractions', detail: 'Oxytocin, breaking the water, or both', tone: 'marigold' },
+        { title: 'Labor continues', detail: 'Often slowly at first', tone: 'lagoon' },
+      ]}
+    />
+  ),
 };
 
 /** The drawn picture for a slide, or null when it has none. */
