@@ -25,6 +25,7 @@ const VIDEOS: Record<string, number> = {
   'pushing-and-birth/pushing-video': require('../../assets/lessons/pushing-and-birth/pushing-video.mp4'),
   'third-trimester-body/side-sleeping-video': require('../../assets/lessons/third-trimester-body/side-sleeping-video.mp4'),
   'when-to-contact-your-care-team/practice-call-video': require('../../assets/lessons/when-to-contact-your-care-team/practice-call-video.mp4'),
+  'postpartum-warning-signs/speaking-up-video': require('../../assets/lessons/postpartum-warning-signs/speaking-up-video.mp4'),
 };
 
 export function videoFor(lessonId: string, slideId: string): number | null {

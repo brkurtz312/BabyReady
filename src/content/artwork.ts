@@ -100,6 +100,12 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'placenta-and-first-hour/skin-to-skin': require('../../assets/lessons/placenta-and-first-hour/skin-to-skin.jpg'),
   'placenta-and-first-hour/first-feeding': require('../../assets/lessons/placenta-and-first-hour/first-feeding.jpg'),
   'placenta-and-first-hour/your-recovery': require('../../assets/lessons/placenta-and-first-hour/your-recovery.jpg'),
+  'postpartum-warning-signs/welcome': require('../../assets/lessons/postpartum-warning-signs/welcome.jpg'),
+  'postpartum-warning-signs/the-year-after': require('../../assets/lessons/postpartum-warning-signs/the-year-after.jpg'),
+  'postpartum-warning-signs/say-you-had-a-baby': require('../../assets/lessons/postpartum-warning-signs/say-you-had-a-baby.jpg'),
+  'postpartum-warning-signs/blood-pressure': require('../../assets/lessons/postpartum-warning-signs/blood-pressure.jpg'),
+  'postpartum-warning-signs/early-check-in': require('../../assets/lessons/postpartum-warning-signs/early-check-in.jpg'),
+  'postpartum-warning-signs/support-people': require('../../assets/lessons/postpartum-warning-signs/support-people.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
