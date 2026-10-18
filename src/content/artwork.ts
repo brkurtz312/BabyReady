@@ -141,6 +141,12 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'monitoring-your-baby-in-labor/continuous': require('../../assets/lessons/monitoring-your-baby-in-labor/continuous.jpg'),
   'monitoring-your-baby-in-labor/internal': require('../../assets/lessons/monitoring-your-baby-in-labor/internal.jpg'),
   'monitoring-your-baby-in-labor/pattern-changes': require('../../assets/lessons/monitoring-your-baby-in-labor/pattern-changes.jpg'),
+  'medical-pain-relief/welcome': require('../../assets/lessons/medical-pain-relief/welcome.jpg'),
+  'medical-pain-relief/your-choice': require('../../assets/lessons/medical-pain-relief/your-choice.jpg'),
+  'medical-pain-relief/epidural-how': require('../../assets/lessons/medical-pain-relief/epidural-how.jpg'),
+  'medical-pain-relief/iv-medicine': require('../../assets/lessons/medical-pain-relief/iv-medicine.jpg'),
+  'medical-pain-relief/nitrous': require('../../assets/lessons/medical-pain-relief/nitrous.jpg'),
+  'medical-pain-relief/when-to-ask': require('../../assets/lessons/medical-pain-relief/when-to-ask.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
