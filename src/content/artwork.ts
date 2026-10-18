@@ -189,6 +189,12 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'touch-water-and-comfort-tools/massage': require('../../assets/lessons/touch-water-and-comfort-tools/massage.jpg'),
   'touch-water-and-comfort-tools/counterpressure': require('../../assets/lessons/touch-water-and-comfort-tools/counterpressure.jpg'),
   'touch-water-and-comfort-tools/water': require('../../assets/lessons/touch-water-and-comfort-tools/water.jpg'),
+  'for-support-people/welcome': require('../../assets/lessons/for-support-people/welcome.jpg'),
+  'for-support-people/your-role': require('../../assets/lessons/for-support-people/your-role.jpg'),
+  'for-support-people/early-labor': require('../../assets/lessons/for-support-people/early-labor.jpg'),
+  'for-support-people/active-labor': require('../../assets/lessons/for-support-people/active-labor.jpg'),
+  'for-support-people/when-hard': require('../../assets/lessons/for-support-people/when-hard.jpg'),
+  'for-support-people/advocate': require('../../assets/lessons/for-support-people/advocate.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
