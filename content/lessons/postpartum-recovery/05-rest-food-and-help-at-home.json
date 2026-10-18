@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 12,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 6.5 of Module 6 (Postpartum Recovery, Mood, and Red Flags). Builds on lesson 5.5 (safe sleep, couches and armchairs), lesson 5.3 (feeding in bed), lesson 6.1 (recovery), and lessons 6.2 and 6.4 (warning signs and mood). Sources were found by web search only; this session could not open the pages, so every new source needs to be opened and confirmed. For the reviewer: the fourth trimester, fatigue and sleep disruption, involving family and friends, and asking about help with childcare, chores, transportation, and meals follow ACOG Committee Opinion 736 and the ACOG postpartum checklist as described in search results; feeds every 2 to 3 hours matches lessons 5.3 and 5.4; the drowsy-feeding guidance (back to the crib, never a couch or armchair, safer in a bed with pillows and blankets moved away, then back to the baby's own space) matches lessons 5.3 and 5.5 and the AAP safe sleep page, and ACOG's toolkit similarly notes dozing in a bed is less dangerous than a chair or couch; about 450 to 500 extra calories while breastfeeding, a prenatal vitamin if the team advises, drinking more when urine is dark, and waiting at least 2 hours after a drink follow the ACOG breastfeeding FAQ; the CDC alcohol page says wait 2 hours per drink and not drinking is safest; caffeine differs between sources, with ACOG citing about 200 mg and the CDC about 300 mg (2 to 3 cups), so the slide says about two cups of coffee; sick visitors waiting, hand washing, cocooning with whooping cough (Tdap) and flu vaccines at least 2 weeks before visiting follow the AAP cocooning and flu pages; COVID among the vaccines for close contacts follows the AAP cocooning page, which names COVID and RSV; the RSV vaccine for adults 75 and older, and 50 to 74 at increased risk, follows the CDC adult RSV vaccine page; no smoking or vaping around the baby is standard teaching and matches lesson 5.5; postpartum doulas, home visiting, WIC, and work leave as supports are common practice, with ACOG's checklist encouraging parents to ask for help. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the sleep, caffeine (about two cups), alcohol, nutrition, and practical help slides as written; add COVID and RSV to the vaccines for close contacts; keep 12 minutes; no video."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 6.5 of Module 6 (Postpartum Recovery, Mood, and Red Flags). Builds on lesson 5.5 (safe sleep, couches and armchairs), lesson 5.3 (feeding in bed), lesson 6.1 (recovery), and lessons 6.2 and 6.4 (warning signs and mood). Every source was confirmed against its slides by the reviewer on 2026-10-18; the ACOG checklist's old PDF link no longer worked, so the source points to its current web page. For the reviewer: the fourth trimester, fatigue and sleep disruption, involving family and friends, and asking about help with childcare, chores, transportation, and meals follow ACOG Committee Opinion 736 and the ACOG postpartum checklist as described in search results; feeds every 2 to 3 hours matches lessons 5.3 and 5.4; the drowsy-feeding guidance (back to the crib, never a couch or armchair, safer in a bed with pillows and blankets moved away, then back to the baby's own space) matches lessons 5.3 and 5.5 and the AAP safe sleep page, and ACOG's toolkit similarly notes dozing in a bed is less dangerous than a chair or couch; about 450 to 500 extra calories while breastfeeding, a prenatal vitamin if the team advises, drinking more when urine is dark, and waiting at least 2 hours after a drink follow the ACOG breastfeeding FAQ; the CDC alcohol page says wait 2 hours per drink and not drinking is safest; caffeine differs between sources, with ACOG citing about 200 mg and the CDC about 300 mg (2 to 3 cups), so the slide says about two cups of coffee; sick visitors waiting, hand washing, cocooning with whooping cough (Tdap) and flu vaccines at least 2 weeks before visiting follow the AAP cocooning and flu pages; COVID among the vaccines for close contacts follows the AAP cocooning page, which names COVID and RSV; the RSV vaccine for adults 75 and older, and 50 to 74 at increased risk, follows the CDC adult RSV vaccine page; no smoking or vaping around the baby is standard teaching and matches lesson 5.5; postpartum doulas, home visiting, WIC, and work leave as supports are common practice, with ACOG's checklist encouraging parents to ask for help. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the sleep, caffeine (about two cups), alcohol, nutrition, and practical help slides as written; add COVID and RSV to the vaccines for close contacts; keep 12 minutes; no video."
   },
   "sources": [
     {
@@ -24,63 +24,63 @@
       "organization": "ACOG",
       "title": "Optimizing Postpartum Care (Committee Opinion No. 736)",
       "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2018/05/optimizing-postpartum-care",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-postpartum-checklist",
       "organization": "ACOG",
       "title": "My Postpartum Care Checklist",
       "url": "https://www.acog.org/womens-health/health-tools/my-postpartum-care-checklist",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-breastfeeding-faq",
       "organization": "ACOG",
       "title": "Breastfeeding Your Baby (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/breastfeeding-your-baby",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "cdc-maternal-diet",
       "organization": "CDC",
       "title": "Maternal Diet and Breastfeeding",
       "url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/maternal-diet.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "cdc-breastfeeding-alcohol",
       "organization": "CDC",
       "title": "Alcohol and Breastfeeding",
       "url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/vaccine-medication-drugs/alcohol.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-cocoon",
       "organization": "AAP",
       "title": "How to Cocoon a Newborn: Family & Friends Can Protect Baby From Germs (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/safety-prevention/immunizations/Pages/How-to-Cocoon-a-Newborn-Only-an-E-Mail-Away.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-protect-from-flu",
       "organization": "AAP",
       "title": "Protecting Babies & Young Children From Flu: What Parents Need to Know (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/health-issues/conditions/flu/Pages/protecting-babies-and-young-children-from-flu-what-parents-should-know.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-safe-sleep-explained",
       "organization": "AAP",
       "title": "How to Keep Your Sleeping Baby Safe: AAP Policy Explained (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/a-parents-guide-to-safe-sleep.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "cdc-rsv-adults",
       "organization": "CDC",
       "title": "RSV Vaccines for Adults",
       "url": "https://www.cdc.gov/rsv/vaccines/adults.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
