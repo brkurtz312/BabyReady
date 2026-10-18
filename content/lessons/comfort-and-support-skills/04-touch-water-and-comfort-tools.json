@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 10,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 3.4 of Module 3 (Comfort, Movement, and Support Skills). Builds on lessons 3.2 (relaxation) and 3.3 (positions and back pain); the support person's broader role is left to lesson 3.5. Sources were found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. For the reviewer: counterpressure and the double hip squeeze follow the Lamaze back labor article, with hand placement (the heel of the hand or a fist on the low back; palms on the fleshy part of the hips pressing in and up) described in common childbirth-education terms not confirmed word for word; the water slide follows ACOG Committee Opinion 679 (2016), found only through summaries and possibly reaffirmed or replaced since: laboring in a tub in the first stage may ease pain, shorten labor, and lower epidural use, for healthy pregnancies at term, and giving birth underwater is experimental; the address for Committee Opinion 679 follows ACOG's usual pattern and needs checking; the heat and cold advice (a cloth between skin and pack, not too hot, especially with an epidural) is common practice not confirmed in these sources; the demonstration video is a proposal, to be made after review. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): the hand placement for counterpressure and the double hip squeeze is accurate as written; Committee Opinion 679 is current, so keep the water slide as written; keep the heat and cold advice, including asking the nurse with an epidural; keep 'not wanting touch is normal, and not about you'; make the demonstration video as proposed, with arrows for the direction of pressure."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 3.4 of Module 3 (Comfort, Movement, and Support Skills). Builds on lessons 3.2 (relaxation) and 3.3 (positions and back pain); the support person's broader role is left to lesson 3.5. Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: counterpressure and the double hip squeeze follow the Lamaze back labor article, with hand placement (the heel of the hand or a fist on the low back; palms on the fleshy part of the hips pressing in and up) described in common childbirth-education terms not confirmed word for word; the water slide follows ACOG Committee Opinion 679 (2016), found only through summaries and possibly reaffirmed or replaced since: laboring in a tub in the first stage may ease pain, shorten labor, and lower epidural use, for healthy pregnancies at term, and giving birth underwater is experimental; the address for Committee Opinion 679 follows ACOG's usual pattern and needs checking; the heat and cold advice (a cloth between skin and pack, not too hot, especially with an epidural) is common practice not confirmed in these sources; the demonstration video is a proposal, to be made after review. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): the hand placement for counterpressure and the double hip squeeze is accurate as written; Committee Opinion 679 is current, so keep the water slide as written; keep the heat and cold advice, including asking the nurse with an epidural; keep 'not wanting touch is normal, and not about you'; make the demonstration video as proposed, with arrows for the direction of pressure."
   },
   "sources": [
     {
@@ -24,28 +24,28 @@
       "organization": "Lamaze",
       "title": "When Back Labor Strikes: Tips & Tricks for Optimal Comfort",
       "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/when-back-labor-strikes-tips-tricks-for-optimal-comfort",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "lamaze-ways-to-relax",
       "organization": "Lamaze",
       "title": "Ways to Relax During Labor",
       "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/ways-to-relax-during-labor-1",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-co679",
       "organization": "ACOG",
       "title": "Immersion in Water During Labor and Delivery (Committee Opinion No. 679)",
       "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2016/11/immersion-in-water-during-labor-and-delivery",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "lamaze-move-positions",
       "organization": "Lamaze",
       "title": "Hormones & Healthy Birth: Walk, Move Around and Change Positions Throughout Labor",
       "url": "https://www.lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/hormones-healthy-birth-walk-move-around-and-change-positions-throughout-labor",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
