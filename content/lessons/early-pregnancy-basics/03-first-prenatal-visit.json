@@ -16,7 +16,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed."
   },
   "sources": [
     {
@@ -40,8 +40,7 @@
       "type": "title",
       "heading": "Prepare, Ask Questions, and Make a Plan",
       "onScreen": [
-        "Early Pregnancy Basics · Lesson 3",
-        "About 8 minutes"
+        "Early Pregnancy Basics"
       ],
       "narration": "Welcome to the last lesson in Early Pregnancy Basics. Today we're getting ready for your first prenatal visit. We'll talk about what may happen there, what to bring, and how to make a plan with your care team. By the end, you'll have your own list of questions saved and ready to go. Let's dive in.",
       "sourceIds": [],

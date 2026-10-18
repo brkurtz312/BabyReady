@@ -16,7 +16,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. The 5-1-1 framing is confirmed. Bleeding slide intentionally says to call \"even for spotting\" (stricter than CDC, backed by ACNM) and keeps \"call right away, or 911\" for heavy bleeding. Warning-sign slides say \"seek medical care immediately\" to match CDC; the safety-slide Call 911 button stays. Kick-count instructions are intentionally left out; the lesson teaches 'know your baby's normal and call if it changes' instead. BabyReady's own guidance, no approved-organization page found: \"babies don't run out of room\" (slide 7) and the what-to-have-ready list (slide 10)."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. The 5-1-1 framing is confirmed. Bleeding slide intentionally says to call \"even for spotting\" (stricter than CDC, backed by ACNM) and keeps \"call right away, or 911\" for heavy bleeding. Warning-sign slides say \"seek medical care immediately\" to match CDC; the safety-slide Call 911 button stays. Kick-count instructions are intentionally left out; the lesson teaches 'know your baby's normal and call if it changes' instead. BabyReady's own guidance, no approved-organization page found: \"babies don't run out of room\" (slide 7) and the what-to-have-ready list (slide 10). Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed."
   },
   "sources": [
     {
@@ -67,7 +67,7 @@
       "id": "welcome",
       "type": "title",
       "heading": "When to Contact Your Care Team",
-      "onScreen": ["Labor Basics · Lesson 2", "About 10 minutes"],
+      "onScreen": ["Module 2: Labor Basics and When to Call"],
       "narration": "Welcome back. In the last lesson, we talked about how labor begins. Now let's answer one of the most common questions in any childbirth class: when do I call? By the end of this lesson, you'll know the signals to watch for, the symptoms that mean call right away, and exactly what to say when you pick up the phone.",
       "sourceIds": [],
       "visual": {

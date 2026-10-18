@@ -16,7 +16,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course. The old course's dehydration list included 'unable to urinate', which the ACOG page does not list; it now follows ACOG's three signs plus not keeping food or fluids down."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course. The old course's dehydration list included 'unable to urinate', which the ACOG page does not list; it now follows ACOG's three signs plus not keeping food or fluids down. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed."
   },
   "sources": [
     {
@@ -61,8 +61,7 @@
       "type": "title",
       "heading": "Your First Steps",
       "onScreen": [
-        "Early Pregnancy Basics · Lesson 1",
-        "About 8 minutes"
+        "Early Pregnancy Basics"
       ],
       "narration": "Welcome to Early Pregnancy Basics. I'm so glad you're here. Finding out you're pregnant can bring a lot of feelings at once. Excitement, worry, and plenty of questions. All of that is normal. In this first lesson, we'll talk about what early pregnancy can feel like, why it helps to start prenatal care early, a vitamin called folic acid, and some simple ways to handle nausea. This class is general information. Your own care team will help you make a plan that fits you. Let's get started.",
       "sourceIds": [],

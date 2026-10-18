@@ -16,7 +16,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Preterm signs keep \"spotting\" (stricter than NICHD, consistent with ACNM). Warning-sign slide says \"seek medical care immediately\" to match CDC; the safety-slide Call 911 button stays. BabyReady's own guidance, no approved-organization page found: timing contractions start to start and start to end (slide 8)."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Preterm signs keep \"spotting\" (stricter than NICHD, consistent with ACNM). Warning-sign slide says \"seek medical care immediately\" to match CDC; the safety-slide Call 911 button stays. BabyReady's own guidance, no approved-organization page found: timing contractions start to start and start to end (slide 8). Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed."
   },
   "sources": [
     {
@@ -82,8 +82,7 @@
       "type": "title",
       "heading": "How Labor Begins",
       "onScreen": [
-        "Labor Basics · Lesson 1",
-        "About 12 minutes"
+        "Module 2: Labor Basics and When to Call"
       ],
       "narration": "Welcome to Labor Basics. I'm so glad you're here. In this first lesson, we'll talk about how labor begins. We'll cover when labor usually starts, the early signs your body may give you, how to tell practice contractions from the real thing, and what to do if your water breaks. If you have a support person, this is a great lesson to watch together. Let's get started.",
       "sourceIds": [],

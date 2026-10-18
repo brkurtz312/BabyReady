@@ -16,7 +16,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Committee Opinion 766 confirmed for admission timing, eating and drinking, and baths after the water breaks. Eating and drinking guidance differs between ACOG/ASA (clear liquids once admitted) and ACNM/Lamaze (light food in low-risk labor); the lesson presents both and points learners to their own team. The Lamaze post is kept alongside WHO 2018."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Committee Opinion 766 confirmed for admission timing, eating and drinking, and baths after the water breaks. Eating and drinking guidance differs between ACOG/ASA (clear liquids once admitted) and ACNM/Lamaze (light food in low-risk labor); the lesson presents both and points learners to their own team. The Lamaze post is kept alongside WHO 2018. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed."
   },
   "sources": [
     {
@@ -67,7 +67,7 @@
       "id": "welcome",
       "type": "title",
       "heading": "Early Labor at Home",
-      "onScreen": ["Labor Basics · Lesson 4", "About 10 minutes"],
+      "onScreen": ["Module 2: Labor Basics and When to Call"],
       "narration": "Welcome back. In the last lesson, you learned that early labor is often the longest part of labor. So what do you actually do during all those hours? That's what this lesson is about: how to rest, eat, stay comfortable, and keep track of things at home, so you arrive at active labor with energy to spare.",
       "sourceIds": [],
       "visual": {

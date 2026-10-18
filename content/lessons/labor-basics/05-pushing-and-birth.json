@@ -16,7 +16,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Pushing with an epidural now presents both resting first and pushing right away. Urge-guided and coached pushing, and longer pushing with a first baby or an epidural, confirmed against CPG 8 and CO 766. Practice Bulletin 198 is kept alongside AAFP for tears. The fast-birth safety slide cites Lamaze; \"call 911\" and \"pull over if driving\" are BabyReady's own safety guidance."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Pushing with an epidural now presents both resting first and pushing right away. Urge-guided and coached pushing, and longer pushing with a first baby or an epidural, confirmed against CPG 8 and CO 766. Practice Bulletin 198 is kept alongside AAFP for tears. The fast-birth safety slide cites Lamaze; \"call 911\" and \"pull over if driving\" are BabyReady's own safety guidance. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed."
   },
   "sources": [
     {
@@ -74,7 +74,7 @@
       "id": "welcome",
       "type": "title",
       "heading": "Pushing and Birth",
-      "onScreen": ["Labor Basics · Lesson 5", "About 12 minutes"],
+      "onScreen": ["Module 2: Labor Basics and When to Call"],
       "narration": "Welcome back. You've made it through the first stage, and your cervix is fully open. Now comes the part many people wonder about most: pushing, and the moment your baby is born. Let's walk through what it feels like, the choices you'll have, and how your care team helps along the way.",
       "sourceIds": [],
       "visual": {
