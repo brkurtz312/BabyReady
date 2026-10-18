@@ -21,7 +21,7 @@
 
 import { execFileSync, spawnSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
-import { existsSync, mkdirSync, readdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
 import { splitSentences, textFingerprint } from '../src/lib/sentences.ts';
@@ -330,6 +330,21 @@ await inPool(clips, async (clip) => {
   const fp = textFingerprint(clip.text);
   const outFile = path.join(outDir, clip.file);
   if (manifest[clip.file]?.fingerprint === fp && manifest[clip.file]?.voice === voice && existsSync(outFile)) return;
+  // Identical lines are shared, and which lesson's file holds a shared line can change as
+  // lessons are added. Reuse a recording of the same text under its new name instead of
+  // spending quota on it again.
+  const earlier = Object.entries(manifest).find(
+    ([file, e]) => file !== clip.file && e.fingerprint === fp && e.voice === voice && existsSync(path.join(outDir, file)),
+  );
+  if (earlier) {
+    const [oldFile, entry] = earlier;
+    mkdirSync(path.dirname(outFile), { recursive: true });
+    renameSync(path.join(outDir, oldFile), outFile);
+    manifest[clip.file] = entry;
+    delete manifest[oldFile];
+    writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);
+    return;
+  }
   try {
     const starts = await recordClip(clip);
     manifest[clip.file] = { fingerprint: fp, voice, model, starts };
