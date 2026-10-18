@@ -1024,6 +1024,27 @@ const VISUALS: Record<string, () => React.ReactElement> = {
       ]}
     />
   ),
+  'medical-pain-relief/three-options': () => (
+    <IconPanel
+      label="Three main options: an epidural numbs the lower body, IV pain medicine takes the edge off, and nitrous oxide is a gas you breathe through a mask."
+      items={[
+        { icon: Syringe, label: 'An epidural' },
+        { icon: Droplet, label: 'IV pain medicine' },
+        { icon: Wind, label: 'Nitrous oxide' },
+      ]}
+    />
+  ),
+  'medical-pain-relief/epidural-tradeoffs': () => (
+    <IconPanel
+      label="Epidurals: the strongest relief, and many people can rest; blood pressure can drop; itching, shivering, or fever can happen; legs feel heavy."
+      items={[
+        { icon: Moon, label: 'Strong relief; many can rest' },
+        { icon: HeartPulse, label: 'Blood pressure can drop' },
+        { icon: Thermometer, label: 'Itching, shivering, or fever' },
+        { icon: Footprints, label: 'Legs feel heavy' },
+      ]}
+    />
+  ),
 };
 
 /** The drawn picture for a slide, or null when it has none. */
