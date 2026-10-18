@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 15,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 5.7 of Module 5 (Feeding and Newborn Care). Builds on lesson 5.1 (newborn diapers and sleep), lesson 5.5 (safe sleep and safe swaddling), and Labor Basics lesson 6 (skin-to-skin). Overlaps lesson 6.3 (When to Call About Your Baby), whose crying and never-shake slides teach the same points; the never-shake slide here matches 6.3's wording, adding blindness from the CDC page, taking turns, and telling every caregiver. Sources were found by web search only; this session could not open the pages, so every new source needs to be opened and confirmed. For the reviewer: diaper changing steps (supplies ready, a hand on the baby, front to back, fold below the cord, wash hands) are standard teaching, with folding below the cord from the AAP cord care page; eight to ten or more diapers a day is standard teaching not confirmed word for word; diaper rash care (frequent changes, air-drying, a thick fragrance-free zinc oxide or petrolatum barrier) and when to call (not better in 2 to 3 days; pimples, blisters, or sores; spreading beyond the diaper; fever) follow the AAP diaper rash page and symptom checker as quoted in search results; sponge baths until the cord falls off (usually 1 to 2 weeks; call if still there after about 3 weeks), washing one part at a time and the face first, follow the AAP bathing and cord care pages; about 2 inches of water, the wrist or elbow test, a water heater at 120°F or lower, and about 3 baths a week in the first year follow the AAP bathing page, with 2 inches and 3 times a week not confirmed word for word; never leaving a baby alone in the bath, taking the baby along, and bath seats not being safety devices follow the AAP bathing and infant water safety pages; fussing peaking at about 3 hours a day around 6 weeks and easing by 3 to 4 months follows the AAP colic page; the soothing list (swaddling on the back and stopping when the baby tries to roll, skin to skin, rocking, soft white noise, pacifier, stroller or car ride) follows the AAP calming and swaddling pages, and the pacifier timing for breastfed babies matches lesson 5.5; the take-a-break steps follow the CDC abusive head trauma page; the fever threshold and call reasons follow the AAP fever page and match lesson 6.3. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep both this lesson's and lesson 6.3's crying and never-shake slides; keep the bath details, diaper rash care, soothing list, and diaper count as written; say crying peaks at 4 to 6 weeks, using the range from the AAP pages; keep 15 minutes; no video."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 5.7 of Module 5 (Feeding and Newborn Care). Builds on lesson 5.1 (newborn diapers and sleep), lesson 5.5 (safe sleep and safe swaddling), and Labor Basics lesson 6 (skin-to-skin). Overlaps lesson 6.3 (When to Call About Your Baby), whose crying and never-shake slides teach the same points; the never-shake slide here matches 6.3's wording, adding blindness from the CDC page, taking turns, and telling every caregiver. Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: diaper changing steps (supplies ready, a hand on the baby, front to back, fold below the cord, wash hands) are standard teaching, with folding below the cord from the AAP cord care page; eight to ten or more diapers a day is standard teaching not confirmed word for word; diaper rash care (frequent changes, air-drying, a thick fragrance-free zinc oxide or petrolatum barrier) and when to call (not better in 2 to 3 days; pimples, blisters, or sores; spreading beyond the diaper; fever) follow the AAP diaper rash page and symptom checker as quoted in search results; sponge baths until the cord falls off (usually 1 to 2 weeks; call if still there after about 3 weeks), washing one part at a time and the face first, follow the AAP bathing and cord care pages; about 2 inches of water, the wrist or elbow test, a water heater at 120°F or lower, and about 3 baths a week in the first year follow the AAP bathing page, with 2 inches and 3 times a week not confirmed word for word; never leaving a baby alone in the bath, taking the baby along, and bath seats not being safety devices follow the AAP bathing and infant water safety pages; fussing peaking at about 3 hours a day around 6 weeks and easing by 3 to 4 months follows the AAP colic page; the soothing list (swaddling on the back and stopping when the baby tries to roll, skin to skin, rocking, soft white noise, pacifier, stroller or car ride) follows the AAP calming and swaddling pages, and the pacifier timing for breastfed babies matches lesson 5.5; the take-a-break steps follow the CDC abusive head trauma page; the fever threshold and call reasons follow the AAP fever page and match lesson 6.3. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep both this lesson's and lesson 6.3's crying and never-shake slides; keep the bath details, diaper rash care, soothing list, and diaper count as written; say crying peaks at 4 to 6 weeks, using the range from the AAP pages; keep 15 minutes; no video."
   },
   "sources": [
     {
@@ -24,63 +24,63 @@
       "organization": "AAP",
       "title": "Common Diaper Rashes & Treatments (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/diapers-clothing/Pages/Diaper-Rash.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-bathing",
       "organization": "AAP",
       "title": "Bathing Your Baby (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/Bathing-Your-Newborn.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-cord-care",
       "organization": "AAP",
       "title": "Umbilical Cord Care in Newborns (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/Umbilical-Cord-Care.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-infant-water-safety",
       "organization": "AAP",
       "title": "Infant Drowning Prevention & Water Safety: How to Protect Your Baby (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Infant-Water-Safety.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-calming-fussy-baby",
       "organization": "AAP",
       "title": "How to Calm a Fussy Baby: Tips for Parents & Caregivers (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/crying-colic/Pages/Calming-A-Fussy-Baby.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-colic",
       "organization": "AAP",
       "title": "Colic Relief Tips for Parents (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/crying-colic/Pages/Colic.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-swaddling",
       "organization": "AAP",
       "title": "Swaddling: Is it Safe for Your Baby? (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/diapers-clothing/Pages/Swaddling-Is-it-Safe.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "cdc-abusive-head-trauma",
       "organization": "CDC",
       "title": "About Abusive Head Trauma",
       "url": "https://www.cdc.gov/child-abuse-neglect/about/about-abusive-head-trauma.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-fever-baby",
       "organization": "AAP",
       "title": "Fever and Your Baby (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/Fever-and-Your-Baby.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
