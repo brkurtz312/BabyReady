@@ -1,0 +1,359 @@
+{
+  "courseId": "feeding-and-newborn-care",
+  "lessonId": "safe-sleep",
+  "order": 5,
+  "title": "Safe Sleep",
+  "learningGoals": [
+    "Place your baby on their back for every sleep, on a firm, flat, bare surface",
+    "Share a room with your baby, but not a bed, for at least the first 6 months",
+    "Know why couches, armchairs, and sitting devices aren't safe for sleep",
+    "Know which products and habits to skip, and which lower the risk",
+    "Share the safe sleep rules with everyone who cares for your baby"
+  ],
+  "estimatedMinutes": 12,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Drafted 2026-10-18 as lesson 5.5, the first lesson of Module 5 (Feeding and Newborn Care); it keeps order 5 so 5.1 to 5.4 can slot in ahead. Based on AAP's 2022 safe sleep policy, its HealthyChildren.org explainers, and NICHD's Safe to Sleep campaign. Sources were found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. For the reviewer: the 'up to 50%' room-sharing figure is from AAP's HealthyChildren.org explainer; the pacifier line follows AAP's advice to wait until breastfeeding is going well; the video slide is a proposal (setting up a safe sleep space)."
+  },
+  "sources": [
+    {
+      "id": "aap-safe-sleep-explained",
+      "organization": "AAP",
+      "title": "How to Keep Your Sleeping Baby Safe: AAP Policy Explained (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/a-parents-guide-to-safe-sleep.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-safe-sleep-ways",
+      "organization": "AAP",
+      "title": "Safe Sleep: 9 Ways to Reduce a Baby's Risk of SIDS & Suffocation (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Preventing-SIDS.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-sleep-policy-2022",
+      "organization": "AAP",
+      "title": "Sleep-Related Infant Deaths: Updated 2022 Recommendations for Reducing Infant Deaths in the Sleep Environment (Policy Statement)",
+      "url": "https://publications.aap.org/pediatrics/article/150/1/e2022057990/188304/Sleep-Related-Infant-Deaths-Updated-2022",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-swaddling",
+      "organization": "AAP",
+      "title": "Swaddling: Is it Safe for Your Baby? (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/diapers-clothing/Pages/Swaddling-Is-it-Safe.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-tummy-time",
+      "organization": "AAP",
+      "title": "Back to Sleep, Tummy to Play (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/sleep/pages/Back-to-Sleep-Tummy-to-Play.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "nichd-reduce-risk",
+      "organization": "NICHD",
+      "title": "Safe to Sleep: Ways to Reduce Baby's Risk",
+      "url": "https://safetosleep.nichd.nih.gov/reduce-risk/reduce",
+      "verifiedOn": null
+    },
+    {
+      "id": "nichd-back-sleeping",
+      "organization": "NICHD",
+      "title": "Safe to Sleep: About Back Sleeping",
+      "url": "https://safetosleep.nichd.nih.gov/reduce-risk/back-sleeping",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Safe Sleep",
+      "onScreen": [
+        "Module 5: Feeding and Newborn Care"
+      ],
+      "narration": "Welcome to Safe Sleep. Your baby will spend more time asleep than awake in the first months, so where and how they sleep really matters. In this lesson, we'll go over the simple steps that lower the risk of sleep-related deaths, the places and products to avoid, and how to share these rules with everyone who cares for your baby.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A newborn asleep on their back in a bare bassinet beside a parent's bed, in a calm, softly lit bedroom. Fitted sheet only, nothing else in the bassinet."
+      }
+    },
+    {
+      "id": "why-it-matters",
+      "type": "content",
+      "heading": "Why safe sleep matters",
+      "onScreen": [
+        "SIDS and accidental suffocation are leading causes of death in the first year",
+        "There's no guaranteed way to prevent SIDS",
+        "These steps lower the risk, every sleep, every time"
+      ],
+      "narration": "Sudden infant death syndrome, or SIDS, and accidental suffocation during sleep are among the leading causes of death in a baby's first year. There's no guaranteed way to prevent SIDS. But a few simple steps lower the risk a great deal, and they work best when they're followed for every sleep, naps included, every time.",
+      "sourceIds": ["nichd-reduce-risk", "aap-safe-sleep-explained"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A parent gently laying a swaddled newborn on their back in a bare crib, looking calm and confident."
+      }
+    },
+    {
+      "id": "back-to-sleep",
+      "type": "content",
+      "heading": "Back to sleep, for every sleep",
+      "onScreen": [
+        "On their back for naps and at night, until their first birthday",
+        "Side sleeping is as risky as stomach sleeping",
+        "Once your baby rolls both ways on their own, you don't need to turn them back"
+      ],
+      "narration": "Always place your baby on their back to sleep, for naps and at night, until their first birthday. Sleeping on the side is just as risky as sleeping on the stomach, so it's back, every time. Healthy babies don't choke more on their backs. Their bodies protect the airway. Once your baby can roll from back to tummy and tummy to back on their own, you can leave them in the position they roll into. But always start them on their back.",
+      "sourceIds": ["aap-safe-sleep-explained", "nichd-back-sleeping"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A close, simple view of a newborn sleeping on their back in a sleep sack, arms relaxed up by their head, on a plain fitted sheet."
+      }
+    },
+    {
+      "id": "firm-flat-bare",
+      "type": "content",
+      "heading": "Firm, flat, and bare",
+      "onScreen": [
+        "A crib, bassinet, or play yard that meets safety standards",
+        "A firm, flat mattress with a fitted sheet",
+        "Nothing else: no pillows, blankets, bumpers, or toys",
+        "No inclined sleepers; a slope of more than 10 degrees isn't safe"
+      ],
+      "narration": "Your baby's sleep space should be firm, flat, and bare. Use a crib, bassinet, or portable play yard that meets current safety standards, with a firm mattress that doesn't dent when your baby lies on it, and a fitted sheet. That's all. No pillows, blankets, bumpers, or stuffed toys, even though they look cozy. And skip anything that tilts your baby's head up. A sleep surface that slopes more than ten degrees isn't safe.",
+      "sourceIds": ["aap-safe-sleep-explained", "aap-sleep-policy-2022", "nichd-reduce-risk"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Side-by-side: a bare crib with only a fitted sheet and a baby on their back in a sleep sack, beside a crib with pillows, a thick blanket, bumpers, and stuffed toys, marked with a gentle cross. No words."
+      }
+    },
+    {
+      "id": "checkin-crib",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": ["aap-safe-sleep-explained", "nichd-reduce-risk"],
+      "question": {
+        "prompt": "Which sleep space is safest for a newborn?",
+        "options": [
+          "A crib with soft bumpers so baby doesn't bump their head",
+          "A firm crib mattress with just a fitted sheet",
+          "An adult bed with pillows around the baby"
+        ],
+        "correctIndex": 1,
+        "explanation": "A firm, flat mattress with only a fitted sheet is safest. Bumpers, pillows, and blankets raise the risk of suffocation."
+      }
+    },
+    {
+      "id": "room-share",
+      "type": "content",
+      "heading": "Share a room, not a bed",
+      "onScreen": [
+        "Keep baby's crib or bassinet in your room for at least 6 months",
+        "Room sharing can lower the risk of SIDS by as much as half",
+        "Your baby gets their own sleep space, separate from your bed"
+      ],
+      "narration": "For at least the first six months, keep your baby's crib or bassinet in your room, close to your bed. Room sharing can lower the risk of SIDS by as much as half, and it makes night feeds easier. But your baby should have their own sleep space. Sharing your bed isn't recommended, because adult beds have soft mattresses, pillows, and blankets, and a sleeping adult can roll toward a baby without knowing it.",
+      "sourceIds": ["aap-safe-sleep-explained", "nichd-reduce-risk"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A parent asleep in their own bed, with a bare bassinet right beside the bed and a newborn asleep on their back in it. Night-time, soft light."
+      }
+    },
+    {
+      "id": "couches-armchairs",
+      "type": "safety",
+      "heading": "Never sleep with your baby on a couch or armchair",
+      "onScreen": [
+        "Couches and armchairs are never safe for baby's sleep",
+        "Most dangerous when an adult dozes off while feeding or holding baby",
+        "Feeling sleepy? Put baby in their own sleep space first",
+        "If you fall asleep feeding in bed, move baby back to their own space when you wake"
+      ],
+      "narration": "Couches and armchairs are never safe places for a baby to sleep, alone or with anyone else. They're extremely dangerous when an adult falls asleep while feeding or holding a baby, because the baby can slip into a gap or against the cushions and be unable to breathe. If you feel yourself getting sleepy during a feed, put your baby down in their own sleep space first. If you feed in your bed, take away pillows and blankets first, and if you do fall asleep, move your baby back to their own space as soon as you wake up.",
+      "sourceIds": ["nichd-reduce-risk", "aap-safe-sleep-explained"]
+    },
+    {
+      "id": "sitting-devices",
+      "type": "content",
+      "heading": "Car seats, swings, and carriers",
+      "onScreen": [
+        "Not for routine sleep at home",
+        "If your baby falls asleep in one, move them to a firm, flat surface",
+        "In the car, the car seat is the right place to ride"
+      ],
+      "narration": "Car seats, strollers, swings, bouncers, and baby carriers aren't made for routine sleep. When a baby sleeps sitting up, their head can fall forward and make it harder to breathe. If your baby falls asleep in one of these, move them to a crib, bassinet, or play yard on their back as soon as you can. In the car, of course, the car seat is exactly where your baby should be. Just don't use it for sleep once you're home.",
+      "sourceIds": ["aap-safe-sleep-explained", "aap-sleep-policy-2022"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A parent at home gently lifting a sleeping baby out of an infant car seat set on the floor, a bare bassinet waiting nearby."
+      }
+    },
+    {
+      "id": "products-and-swaddling",
+      "type": "content",
+      "heading": "Products to skip, and safe swaddling",
+      "onScreen": [
+        "Skip products that claim to prevent SIDS; none are proven",
+        "No weighted blankets, sleep sacks, or swaddles",
+        "Swaddle only on the back, and stop once baby starts trying to roll",
+        "A wearable blanket keeps baby warm without loose bedding"
+      ],
+      "narration": "Many products claim to prevent SIDS, like wedges, positioners, and special mattresses, but there's no evidence any of them work, and some are dangerous. Skip weighted blankets, sleep sacks, and swaddles, too. Swaddling can help a newborn settle, but only on the back, and stop once your baby starts trying to roll over. To keep your baby warm without loose bedding, use a wearable blanket, sometimes called a sleep sack.",
+      "sourceIds": ["aap-safe-sleep-explained", "aap-sleep-policy-2022", "aap-swaddling"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A newborn asleep on their back in a simple teal wearable blanket in a bare crib, arms free. Nothing else in the crib."
+      }
+    },
+    {
+      "id": "more-ways",
+      "type": "content",
+      "heading": "More ways to lower the risk",
+      "onScreen": [
+        "Breastfeeding lowers the risk, if you're able",
+        "Offer a pacifier at naps and bedtime; if breastfeeding, once it's going well",
+        "Don't let baby get too hot; keep the head and face uncovered",
+        "A smoke-free home, and vaccines on schedule"
+      ],
+      "narration": "A few more things help. Breastfeeding lowers the risk, so if you're able to, any amount helps. Offering a pacifier at naps and bedtime can lower the risk too. If you're breastfeeding, wait until it's going well before you start one. Dress your baby lightly for sleep, and keep their head and face uncovered so they don't get too hot. Keep your home and car smoke-free. And keep up with your baby's vaccines, which also lower the risk.",
+      "sourceIds": ["aap-safe-sleep-ways", "aap-safe-sleep-explained"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Simple icons in a row: a feeding baby, a pacifier, a light sleep sack with a cool thermometer, a no-smoking sign, and a bandage on an arm for vaccines. No words."
+      }
+    },
+    {
+      "id": "checkin-car-seat",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": ["aap-safe-sleep-explained"],
+      "question": {
+        "prompt": "You get home and your baby is sound asleep in their car seat. What should you do?",
+        "options": [
+          "Leave them in the car seat so they stay asleep",
+          "Move them, on their back, to their crib or bassinet",
+          "Put them on the couch next to you"
+        ],
+        "correctIndex": 1,
+        "explanation": "Car seats are for riding, not routine sleep at home. Move your baby to a firm, flat sleep space on their back. Couches are never safe for sleep."
+      }
+    },
+    {
+      "id": "tummy-time",
+      "type": "content",
+      "heading": "Tummy time while awake",
+      "onScreen": [
+        "Back to sleep, tummy to play",
+        "Short tummy time sessions while awake and watched, every day",
+        "Builds neck and shoulder strength"
+      ],
+      "narration": "Back to sleep, tummy to play. When your baby is awake and you're watching, give them some time on their tummy every day. Start with a few minutes at a time, a few times a day, and build up as your baby grows. Tummy time builds neck and shoulder strength and helps prevent flat spots on the back of the head. If your baby falls asleep during tummy time, turn them onto their back in their own sleep space.",
+      "sourceIds": ["aap-tummy-time"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A baby doing tummy time on a play mat on the floor, lifting their head, with a parent lying face to face with them, smiling."
+      }
+    },
+    {
+      "id": "safe-sleep-video",
+      "type": "video",
+      "heading": "Setting up a safe sleep space",
+      "onScreen": [
+        "Notice what's in the crib, and what isn't"
+      ],
+      "narration": "Here's a short look at setting up a safe sleep space, step by step.",
+      "sourceIds": ["aap-safe-sleep-explained", "nichd-reduce-risk"],
+      "video": {
+        "brief": "A parent sets up a bassinet beside their bed: a firm mattress, a fitted sheet, and nothing else; a pillow, blanket, and stuffed toy are taken out. They zip the baby into a wearable blanket, lay the baby on their back, and get into their own bed nearby. Then, at home after a drive, they lift the sleeping baby from the car seat into the bassinet. Narration-free with soft music and short captions.",
+        "maxSeconds": 60
+      }
+    },
+    {
+      "id": "every-caregiver",
+      "type": "content",
+      "heading": "Share the rules with every caregiver",
+      "onScreen": [
+        "Grandparents, sitters, child care, and visitors",
+        "Back, bare, and in their own space, every sleep",
+        "Some advice has changed since older relatives raised babies"
+      ],
+      "narration": "Everyone who cares for your baby needs to know these rules, including grandparents, babysitters, child care providers, and friends who help out. Some of this advice has changed since older relatives raised their own children, when babies often slept on their tummies with soft bedding. Kindly share the basics: on the back, in a bare crib or bassinet, in their own space, for every sleep.",
+      "sourceIds": ["nichd-reduce-risk", "aap-safe-sleep-explained"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A grandparent laying a baby on their back in a bare crib while a parent watches warmly from the doorway."
+      }
+    },
+    {
+      "id": "sleep-plan",
+      "type": "reflection",
+      "heading": "Your safe sleep plan",
+      "onScreen": [
+        "Where your baby will sleep for the first 6 months",
+        "What you'll use instead of blankets",
+        "What you'll do if you get sleepy during night feeds",
+        "Who needs to hear the safe sleep rules"
+      ],
+      "narration": "Let's make your safe sleep plan. Where will your baby sleep for the first six months? What will you use to keep them warm instead of blankets? What will you do if you feel sleepy during a night feed? And who needs to hear the safe sleep rules, like grandparents or a sitter? Save your plan to your Birth Readiness Brief.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write where your baby will sleep, what you'll use instead of blankets, your plan for sleepy night feeds, and who needs to hear the safe sleep rules."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "On the back, for every sleep",
+        "Firm, flat, and bare: a fitted sheet and nothing else",
+        "Share a room, not a bed, for at least 6 months",
+        "Never sleep with baby on a couch or armchair",
+        "Move baby from car seats and swings to a flat sleep space"
+      ],
+      "narration": "Let's recap. Place your baby on their back for every sleep, on a firm, flat surface with just a fitted sheet. Share a room, but not a bed, for at least six months. Never sleep with your baby on a couch or armchair. If your baby falls asleep in a car seat, swing, or carrier, move them to their own sleep space. Skip products that claim to prevent SIDS, and share these rules with everyone who cares for your baby. Next up, a few review questions.",
+      "sourceIds": ["aap-safe-sleep-explained", "nichd-reduce-risk"]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "What's the safest position for your baby to sleep in?",
+      "options": [
+        "On their side, propped with a rolled towel",
+        "On their back",
+        "On their tummy"
+      ],
+      "correctIndex": 1,
+      "explanation": "On the back, for every sleep, until their first birthday. Side sleeping is as risky as tummy sleeping."
+    },
+    {
+      "prompt": "How long should your baby sleep in your room, in their own crib or bassinet?",
+      "options": [
+        "Just the first week",
+        "At least the first 6 months",
+        "Only for naps"
+      ],
+      "correctIndex": 1,
+      "explanation": "Room sharing for at least the first 6 months can lower the risk of SIDS by as much as half. Your baby should have their own sleep space, not your bed."
+    },
+    {
+      "prompt": "Which of these is never a safe place for a baby to sleep?",
+      "options": [
+        "A bassinet with a fitted sheet",
+        "A portable play yard",
+        "A couch or armchair"
+      ],
+      "correctIndex": 2,
+      "explanation": "Couches and armchairs are never safe for a baby's sleep, especially if an adult might doze off with the baby."
+    }
+  ]
+}

@@ -18,6 +18,7 @@ const COURSES = [
   ['early-pregnancy-basics', 'Early Pregnancy Basics'],
   ['preparing-for-birth', 'Preparing for Birth'],
   ['labor-basics', 'Labor Basics and When to Call'],
+  ['feeding-and-newborn-care', 'Feeding and Newborn Care'],
   ['postpartum-recovery', 'Postpartum Recovery, Mood, and Red Flags'],
 ];
 
