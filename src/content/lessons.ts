@@ -139,7 +139,7 @@ export const courses: Course[] = [
     courseId: 'feeding-and-newborn-care',
     title: 'Feeding and Newborn Care',
     label: 'CLASS · MODULE 5',
-    description: `Your newborn's first days and hospital care, breastfeeding, formula and bottles, and keeping your newborn safe: sleep on the back in a bare crib, car seats used right on every ride, and everyday care: diapers, baths, and soothing a crying baby. About ${minutes(feedingAndNewbornCareLessons)} minutes.`,
+    description: `Your newborn's first days and hospital care, breastfeeding, formula and bottles, diapers, baths, and soothing, and keeping your newborn safe: sleep on the back in a bare crib, and car seats used right on every ride. About ${minutes(feedingAndNewbornCareLessons)} minutes.`,
     lessons: feedingAndNewbornCareLessons,
   },
   {
