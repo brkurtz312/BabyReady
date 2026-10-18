@@ -484,9 +484,28 @@ function BackAndHeartburn() {
 // ---------- Maps and side views drawn with SVG ----------
 
 /** A drawing in a frame, scaled to the slide's width, with an optional caption. */
-function Drawing({ label, caption, height = 200, children }: { label: string; caption?: string; height?: number; children: React.ReactNode }) {
+function Drawing({
+  label,
+  caption,
+  alert,
+  height = 200,
+  children,
+}: {
+  label: string;
+  caption?: string;
+  /** A first step shown in red above the drawing, such as calling 911. */
+  alert?: string;
+  height?: number;
+  children: React.ReactNode;
+}) {
   return (
     <Frame label={label}>
+      {alert ? (
+        <View style={s.alertStep}>
+          <Phone color={c.alert} size={20} strokeWidth={2.4} />
+          <Text style={s.alertStepText}>{alert}</Text>
+        </View>
+      ) : null}
       <Svg style={[s.drawing, { aspectRatio: 360 / height }]} viewBox={`0 0 360 ${height}`}>
         {children}
       </Svg>
@@ -627,9 +646,10 @@ function HeelOfHand({ x, y }: { x: number; y: number }) {
 function ChokingFirstAid() {
   return (
     <Drawing
+      alert="First: shout for help, and have someone call 911"
       caption="Keep alternating 5 back blows and 5 chest thrusts until the object comes out or your baby goes limp. Never abdominal thrusts."
       height={210}
-      label="First aid for a severely choking baby. Left: 5 back blows, the baby face down along your forearm with the head lower, the heel of your hand between the shoulder blades. Right: 5 chest thrusts, the baby face up along your forearm with the head lower, the heel of one hand on the center of the chest."
+      label="First aid for a severely choking baby. First, shout for help and have someone call 911. Left: 5 back blows, the baby face down along your forearm with the head lower, the heel of your hand between the shoulder blades. Right: 5 chest thrusts, the baby face up along your forearm with the head lower, the heel of one hand on the center of the chest."
     >
       <Label size={14} weight="800" x={90} y={22}>5 back blows</Label>
       <Label size={14} weight="800" x={270} y={22}>5 chest thrusts</Label>
@@ -666,9 +686,10 @@ function BabyFromAbove({ x }: { x: number }) {
 function CprHands() {
   return (
     <Drawing
+      alert="First: call 911 on speaker, then start CPR"
       caption="Push about 1½ inches deep, 100 to 120 times a minute. Give 30 compressions, then 2 gentle breaths."
       height={210}
-      label="Infant CPR hand positions, looking down on a baby lying on their back. Left: two thumbs side by side on the center of the chest just below the nipple line, with the hands wrapped around the chest. Right: the heel of one hand in the same spot."
+      label="Infant CPR hand positions. First, call 911 on speaker, then start CPR. Looking down on a baby lying on their back. Left: two thumbs side by side on the center of the chest just below the nipple line, with the hands wrapped around the chest. Right: the heel of one hand in the same spot."
     >
       <BabyFromAbove x={80} />
       {/* Hands wrapped around the chest, thumbs side by side on the breastbone */}
@@ -1713,6 +1734,18 @@ const s = StyleSheet.create({
     padding: 14,
     gap: 10,
   },
+  alertStep: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+    backgroundColor: c.alertSoft,
+    borderColor: c.alert,
+    borderWidth: 1.5,
+    borderRadius: 12,
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+  },
+  alertStepText: { flex: 1, color: c.alert, fontSize: 15, fontWeight: '700', lineHeight: 20 },
   caption: { color: c.muted, fontSize: 13, lineHeight: 18, textAlign: 'center' },
   drawing: { width: '100%', maxWidth: 520, alignSelf: 'center' },
   iconRow: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 12 },
