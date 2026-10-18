@@ -36,6 +36,7 @@ import whenPlansChange from '../../content/lessons/interventions-and-flexible-de
 import yourNewbornsFirstDays from '../../content/lessons/feeding-and-newborn-care/01-your-newborns-first-days.json';
 import newbornCareInTheHospital from '../../content/lessons/feeding-and-newborn-care/02-newborn-care-in-the-hospital.json';
 import breastfeedingBasics from '../../content/lessons/feeding-and-newborn-care/03-breastfeeding-basics.json';
+import formulaAndCombinationFeeding from '../../content/lessons/feeding-and-newborn-care/04-formula-and-combination-feeding.json';
 import safeSleep from '../../content/lessons/feeding-and-newborn-care/05-safe-sleep.json';
 import carSeatSafety from '../../content/lessons/feeding-and-newborn-care/06-car-seat-safety.json';
 
@@ -90,7 +91,7 @@ const comfortAndSupportLessons = sortedLessons([understandingLaborPain, breathin
 
 const interventionsLessons = sortedLessons([makingDecisions, monitoringYourBaby, medicalPainRelief, inductionOfLabor, assistedVaginalBirth, cesareanBirth, whenPlansChange]);
 
-const feedingAndNewbornCareLessons = sortedLessons([yourNewbornsFirstDays, newbornCareInTheHospital, breastfeedingBasics, safeSleep, carSeatSafety]);
+const feedingAndNewbornCareLessons = sortedLessons([yourNewbornsFirstDays, newbornCareInTheHospital, breastfeedingBasics, formulaAndCombinationFeeding, safeSleep, carSeatSafety]);
 
 const postpartumRecoveryLessons = sortedLessons([postpartumWarningSigns, whenToCallAboutYourBaby]);
 
@@ -137,7 +138,7 @@ export const courses: Course[] = [
     courseId: 'feeding-and-newborn-care',
     title: 'Feeding and Newborn Care',
     label: 'CLASS · MODULE 5',
-    description: `Your newborn's first days and hospital care, breastfeeding, and keeping your newborn safe: sleep on the back in a bare crib, and car seats used right on every ride. About ${minutes(feedingAndNewbornCareLessons)} minutes.`,
+    description: `Your newborn's first days and hospital care, breastfeeding, formula and bottles, and keeping your newborn safe: sleep on the back in a bare crib, and car seats used right on every ride. About ${minutes(feedingAndNewbornCareLessons)} minutes.`,
     lessons: feedingAndNewbornCareLessons,
   },
   {

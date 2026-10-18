@@ -64,6 +64,11 @@ import Eye from 'lucide-react-native/icons/eye';
 import Sparkles from 'lucide-react-native/icons/sparkles';
 import Shield from 'lucide-react-native/icons/shield';
 import ClipboardCheck from 'lucide-react-native/icons/clipboard-check';
+import Refrigerator from 'lucide-react-native/icons/refrigerator';
+import Trash from 'lucide-react-native/icons/trash';
+import Flame from 'lucide-react-native/icons/flame';
+import Ban from 'lucide-react-native/icons/ban';
+import MicrowaveIcon from 'lucide-react-native/icons/microwave';
 
 /**
  * Pictures drawn in code for lesson slides: icon panels and simple diagrams.
@@ -1435,6 +1440,61 @@ const VISUALS: Record<string, () => React.ReactElement> = {
         { icon: HeartHandshake, label: 'A lactation consultant' },
         { icon: Users, label: 'Support groups and WIC' },
         { icon: Pill, label: 'Ask about medicines' },
+      ]}
+    />
+  ),
+  'formula-and-combination-feeding/your-choice': () => (
+    <IconPanel
+      label="Choosing formula: babies thrive on breast milk, formula, or both; use infant formula with iron; never homemade formula or other milks before age 1; call for help if formula runs low."
+      items={[
+        { icon: Heart, label: 'Breast milk, formula, or both' },
+        { icon: Milk, label: 'Infant formula with iron' },
+        { icon: Ban, label: 'No homemade formula or other milks', tone: 'alert' },
+        { icon: Phone, label: 'Running low? Call for help' },
+      ]}
+    />
+  ),
+  'formula-and-combination-feeding/making-formula': () => (
+    <Steps
+      label="Making a bottle: wash your hands and use clean bottles; water first, then powder, as the label says; never extra water or extra powder; shake, then test on your wrist."
+      steps={[
+        { title: 'Wash your hands', detail: 'Clean bottles and nipples', tone: 'lagoon' },
+        { title: 'Water first, then powder', detail: 'Exactly as the label says', tone: 'lagoon' },
+        { title: 'Never extra water or powder', detail: 'It can make your baby ill', tone: 'alert' },
+        { title: 'Shake, then test', detail: 'A few drops on your wrist', tone: 'marigold' },
+      ]}
+    />
+  ),
+  'formula-and-combination-feeding/extra-care': () => (
+    <IconPanel
+      label="Extra care for babies under 2 months, born early, or with a weak immune system: boil the water, wait about 5 minutes before mixing, and cool the bottle before feeding."
+      items={[
+        { icon: Calendar, label: 'Under 2 months or born early' },
+        { icon: Flame, label: 'Boil the water' },
+        { icon: Timer, label: 'Wait about 5 minutes' },
+        { icon: Snowflake, label: 'Cool before feeding' },
+      ]}
+    />
+  ),
+  'formula-and-combination-feeding/storing': () => (
+    <IconPanel
+      label="Storing formula: use within 2 hours of mixing, within 1 hour once a feed starts, refrigerate for up to 24 hours, and throw out leftovers."
+      items={[
+        { icon: Clock, label: 'Use within 2 hours' },
+        { icon: Timer, label: '1 hour once a feed starts', tone: 'marigold' },
+        { icon: Refrigerator, label: 'Fridge: up to 24 hours' },
+        { icon: Trash, label: 'Throw out leftovers' },
+      ]}
+    />
+  ),
+  'formula-and-combination-feeding/pumped-milk': () => (
+    <IconPanel
+      label="Storing pumped breast milk: room temperature up to 4 hours, refrigerator up to 4 days, freezer about 6 to 12 months, and never thaw or warm it in the microwave."
+      items={[
+        { icon: Clock, label: 'Room temperature: 4 hours' },
+        { icon: Refrigerator, label: 'Fridge: 4 days' },
+        { icon: Snowflake, label: 'Freezer: 6 to 12 months' },
+        { icon: MicrowaveIcon, label: 'Never the microwave', tone: 'alert' },
       ]}
     />
   ),
