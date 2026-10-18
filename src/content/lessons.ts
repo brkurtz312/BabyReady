@@ -40,6 +40,7 @@ import formulaAndCombinationFeeding from '../../content/lessons/feeding-and-newb
 import safeSleep from '../../content/lessons/feeding-and-newborn-care/05-safe-sleep.json';
 import carSeatSafety from '../../content/lessons/feeding-and-newborn-care/06-car-seat-safety.json';
 import diapersBathsCryingAndSoothing from '../../content/lessons/feeding-and-newborn-care/07-diapers-baths-crying-and-soothing.json';
+import infantCprAndChoking from '../../content/lessons/feeding-and-newborn-care/08-infant-cpr-and-choking.json';
 
 import postpartumWarningSigns from '../../content/lessons/postpartum-recovery/02-postpartum-warning-signs.json';
 import whenToCallAboutYourBaby from '../../content/lessons/postpartum-recovery/03-when-to-call-about-your-baby.json';
@@ -92,7 +93,7 @@ const comfortAndSupportLessons = sortedLessons([understandingLaborPain, breathin
 
 const interventionsLessons = sortedLessons([makingDecisions, monitoringYourBaby, medicalPainRelief, inductionOfLabor, assistedVaginalBirth, cesareanBirth, whenPlansChange]);
 
-const feedingAndNewbornCareLessons = sortedLessons([yourNewbornsFirstDays, newbornCareInTheHospital, breastfeedingBasics, formulaAndCombinationFeeding, safeSleep, carSeatSafety, diapersBathsCryingAndSoothing]);
+const feedingAndNewbornCareLessons = sortedLessons([yourNewbornsFirstDays, newbornCareInTheHospital, breastfeedingBasics, formulaAndCombinationFeeding, safeSleep, carSeatSafety, diapersBathsCryingAndSoothing, infantCprAndChoking]);
 
 const postpartumRecoveryLessons = sortedLessons([postpartumWarningSigns, whenToCallAboutYourBaby]);
 
@@ -139,7 +140,7 @@ export const courses: Course[] = [
     courseId: 'feeding-and-newborn-care',
     title: 'Feeding and Newborn Care',
     label: 'CLASS · MODULE 5',
-    description: `Your newborn's first days and hospital care, breastfeeding, formula and bottles, diapers, baths, and soothing, and keeping your newborn safe: sleep on the back in a bare crib, and car seats used right on every ride. About ${minutes(feedingAndNewbornCareLessons)} minutes.`,
+    description: `Your newborn's first days and hospital care, breastfeeding, formula and bottles, diapers, baths, and soothing, and keeping your newborn safe: sleep on the back in a bare crib, car seats used right on every ride, and infant CPR and choking. About ${minutes(feedingAndNewbornCareLessons)} minutes.`,
     lessons: feedingAndNewbornCareLessons,
   },
   {

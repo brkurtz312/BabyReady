@@ -22,7 +22,9 @@ export type ApprovedOrganization =
   | 'ACNM' // American College of Nurse-Midwives
   | 'WHO'
   | 'Lamaze'
-  | 'ICEA'; // International Childbirth Education Association
+  | 'ICEA' // International Childbirth Education Association
+  | 'AHA' // American Heart Association, for CPR and choking
+  | 'American Red Cross'; // for CPR and choking
 
 export interface Source {
   id: string;

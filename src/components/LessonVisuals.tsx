@@ -70,6 +70,9 @@ import Flame from 'lucide-react-native/icons/flame';
 import Ban from 'lucide-react-native/icons/ban';
 import MicrowaveIcon from 'lucide-react-native/icons/microwave';
 import AudioLines from 'lucide-react-native/icons/audio-lines';
+import MessageCircle from 'lucide-react-native/icons/message-circle';
+import CircleX from 'lucide-react-native/icons/circle-x';
+import Puzzle from 'lucide-react-native/icons/puzzle';
 
 /**
  * Pictures drawn in code for lesson slides: icon panels and simple diagrams.
@@ -1551,6 +1554,61 @@ const VISUALS: Record<string, () => React.ReactElement> = {
         { icon: AudioLines, label: 'A cry that sounds different' },
         { icon: Droplet, label: 'Poor feeding or fewer diapers' },
         { icon: Phone, label: 'Worried? Call' },
+      ]}
+    />
+  ),
+  'infant-cpr-and-choking/take-a-class': () => (
+    <IconPanel
+      label="Take a hands-on class: practice on a manikin; ask your hospital, the American Red Cross, or the American Heart Association; take it before your baby arrives; invite grandparents and sitters."
+      items={[
+        { icon: Hand, label: 'Practice on a manikin' },
+        { icon: Hospital, label: 'Your hospital' },
+        { icon: Heart, label: 'Red Cross or Heart Association' },
+        { icon: Users, label: 'Grandparents and sitters, too' },
+      ]}
+    />
+  ),
+  'infant-cpr-and-choking/is-it-choking': () => (
+    <IconPanel
+      label="Is your baby choking? Coughing hard or crying: let them cough. Can't cry, cough, or breathe, or bluish lips: severe choking. Never a blind finger sweep."
+      items={[
+        { icon: MessageCircle, label: 'Coughing hard: let them cough' },
+        { icon: CircleX, label: "Can't cry, cough, or breathe", tone: 'alert' },
+        { icon: Droplet, label: 'Bluish lips', tone: 'alert' },
+        { icon: Hand, label: 'No blind finger sweeps' },
+      ]}
+    />
+  ),
+  'infant-cpr-and-choking/choking-steps': () => (
+    <Steps
+      label="If your baby is severely choking: shout for help and call 911; 5 back blows, face down with the head lower; 5 chest thrusts, face up, with the heel of one hand; repeat until the object comes out or your baby goes limp."
+      steps={[
+        { title: 'Shout for help; call 911', detail: 'Or have someone call', tone: 'alert' },
+        { title: '5 back blows', detail: 'Face down, head lower', tone: 'lagoon' },
+        { title: '5 chest thrusts', detail: 'Face up, heel of one hand', tone: 'lagoon' },
+        { title: 'Repeat', detail: 'Until it comes out or baby goes limp', tone: 'marigold' },
+      ]}
+    />
+  ),
+  'infant-cpr-and-choking/cpr-steps': () => (
+    <Steps
+      label="Infant CPR: on a firm, flat surface on their back; 30 compressions with two thumbs or the heel of one hand, about 1.5 inches deep, fast; 2 gentle breaths over the mouth and nose; repeat until help arrives."
+      steps={[
+        { title: 'Firm, flat surface', detail: 'Baby on their back', tone: 'lagoon' },
+        { title: '30 compressions', detail: 'Two thumbs or heel of one hand, 1½ inches, fast', tone: 'alert' },
+        { title: '2 gentle breaths', detail: 'Cover the mouth and nose', tone: 'lagoon' },
+        { title: 'Repeat 30 and 2', detail: 'Until help takes over', tone: 'marigold' },
+      ]}
+    />
+  ),
+  'infant-cpr-and-choking/prevent-choking': () => (
+    <IconPanel
+      label="Preventing choking: never prop a bottle; keep small objects, magnets, and button batteries out of reach; check toys for small parts; when solids start, soft foods in tiny pieces."
+      items={[
+        { icon: Milk, label: 'Never prop a bottle' },
+        { icon: Ban, label: 'Small objects and batteries out of reach', tone: 'alert' },
+        { icon: Puzzle, label: 'Check toys for small parts' },
+        { icon: Utensils, label: 'Soft foods, tiny pieces' },
       ]}
     />
   ),

@@ -15,7 +15,7 @@ Safety slides are never AI-generated and cannot be skipped until their narration
 Lessons are JSON files in `content/lessons/<course>/`, using the format in `src/models/lesson.ts`. Git history is the audit trail.
 
 1. Every teaching slide cites at least one source. No source, no slide.
-2. Sources come only from approved organizations: ACOG, AAP, CDC, NICHD, AAFP, ACNM, WHO, Lamaze, ICEA.
+2. Sources come only from approved organizations: ACOG, AAP, CDC, NICHD, AAFP, ACNM, WHO, Lamaze, ICEA, and, for CPR and choking, the AHA and the American Red Cross.
 3. A lesson is `draft` or `reviewed`. Reviewed lessons record the reviewer and credentials, the review date, and a re-check date no more than 12 months later, and every source must have a `verifiedOn` date.
 
 `npm run test:lessons` checks every lesson against these rules, and CI runs it on each pull request.
