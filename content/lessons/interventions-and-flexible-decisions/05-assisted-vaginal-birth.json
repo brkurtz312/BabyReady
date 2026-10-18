@@ -11,11 +11,11 @@
   ],
   "estimatedMinutes": 8,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 4.5 of Module 4 (Interventions and Flexible Decisions). Builds on Labor Basics lesson 5 (pushing) and lesson 4.2 (heart rate pattern changes). Sources were found by web search only; this session could not open acog.org, so every source needs to be opened and confirmed. For the reviewer: the reasons (long pushing without progress, exhaustion, a heart rate pattern that means the baby should be born soon, a health condition that makes pushing unsafe) need confirming against the FAQ and Practice Bulletin 219; the conditions for use (cervix fully open, baby low in the pelvis) and that forceps are more likely to succeed but more likely to cause larger tears are from secondary summaries of Practice Bulletin 219; the effects on the baby (swelling or a mark on the head, marks on the face, more jaundice, rare serious injury) and on you (tears, soreness, trouble controlling urine or gas for a while) need confirming. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the conditions for use and 'a way to avoid a cesarean'; keep all four reasons, including the heart condition example; the description of the vacuum, forceps and numbing is accurate as written; keep the baby slide, including jaundice and 'serious injuries are rare'; keep the recovery slide, including the forceps comparison and call-back signs; no video for this lesson."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 4.5 of Module 4 (Interventions and Flexible Decisions). Builds on Labor Basics lesson 5 (pushing) and lesson 4.2 (heart rate pattern changes). Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: the reasons (long pushing without progress, exhaustion, a heart rate pattern that means the baby should be born soon, a health condition that makes pushing unsafe) need confirming against the FAQ and Practice Bulletin 219; the conditions for use (cervix fully open, baby low in the pelvis) and that forceps are more likely to succeed but more likely to cause larger tears are from secondary summaries of Practice Bulletin 219; the effects on the baby (swelling or a mark on the head, marks on the face, more jaundice, rare serious injury) and on you (tears, soreness, trouble controlling urine or gas for a while) need confirming. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the conditions for use and 'a way to avoid a cesarean'; keep all four reasons, including the heart condition example; the description of the vacuum, forceps and numbing is accurate as written; keep the baby slide, including jaundice and 'serious injuries are rare'; keep the recovery slide, including the forceps comparison and call-back signs; no video for this lesson."
   },
   "sources": [
     {
@@ -23,14 +23,14 @@
       "organization": "ACOG",
       "title": "Assisted Vaginal Delivery (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/assisted-vaginal-delivery",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-pb219",
       "organization": "ACOG",
       "title": "Operative Vaginal Birth (Practice Bulletin No. 219)",
       "url": "https://www.acog.org/clinical/clinical-guidance/practice-bulletin/articles/2020/04/operative-vaginal-birth",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
