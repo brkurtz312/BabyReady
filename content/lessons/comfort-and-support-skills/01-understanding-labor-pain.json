@@ -1,0 +1,246 @@
+{
+  "courseId": "comfort-and-support-skills",
+  "lessonId": "understanding-labor-pain",
+  "order": 1,
+  "title": "Understanding Labor Pain",
+  "learningGoals": [
+    "Explain why labor hurts, and how contractions come in waves",
+    "Understand how fear and tension can make pain feel worse",
+    "Know what can make labor pain easier or harder to cope with",
+    "Know the full range of comfort options, medical and non-medical",
+    "Tell the difference between coping and not coping, and what to do"
+  ],
+  "estimatedMinutes": 8,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Drafted 2026-10-18 as lesson 3.1, the first lesson of Module 3 (Comfort, Movement, and Support Skills), in a new course folder. Builds on Labor Basics lesson 3 (stages of labor) and lesson 4.3 (medical pain relief); breathing, positions, touch and water, and support are covered in lessons 3.2 to 3.5. Sources were found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. For the reviewer: the causes of labor pain (the uterus tightening, the cervix opening, the baby pressing down and stretching tissues) and that the pain stops between contractions follow the Lamaze article on labor pain; the fear-tension-pain cycle and the roles of oxytocin and endorphins are from Lamaze, not confirmed against an ACOG source; what makes pain easier or harder (support, movement, feeling safe; fear, being alone, lying flat, exhaustion, a baby facing up) draws on Lamaze and Committee Opinion 766; the signs of coping and not coping are a common childbirth-education framing not confirmed word for word in these sources."
+  },
+  "sources": [
+    {
+      "id": "lamaze-labor-pain-different",
+      "organization": "Lamaze",
+      "title": "What's Different About Labor Pain & Why Does It Matter?",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/whats-different-about-labor-pain-why-does-it-matter",
+      "verifiedOn": null
+    },
+    {
+      "id": "lamaze-healthy-birth-practices",
+      "organization": "Lamaze",
+      "title": "Lamaze Healthy Birth Practices",
+      "url": "https://lamaze.org/childbirth-practices",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-co766",
+      "organization": "ACOG",
+      "title": "Approaches to Limit Intervention During Labor and Birth (Committee Opinion No. 766)",
+      "url": "https://www.acog.org/clinical/guidance/committee-opinion/2019/02/approaches-to-limit-intervention-during-labor-and-birth",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-pain-options",
+      "organization": "ACOG",
+      "title": "Making Sense of Childbirth Pain Relief Options",
+      "url": "https://www.acog.org/womens-health/experts-and-stories/the-latest/making-sense-of-childbirth-pain-relief-options",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Understanding Labor Pain",
+      "onScreen": [
+        "Module 3: Comfort, Movement, and Support Skills"
+      ],
+      "narration": "Welcome to Module 3, Comfort, Movement, and Support Skills. Many people's biggest question about labor is how much it will hurt, and how they'll cope. In this first lesson, we'll look at why labor hurts, what makes it easier or harder, and the full range of ways to find comfort. The rest of this module is hands-on, with skills you can practice.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person sitting on a birth ball in a calm living room, eyes closed and breathing slowly, while their support partner sits behind them with hands resting gently on their shoulders. No readable writing."
+      }
+    },
+    {
+      "id": "why-it-hurts",
+      "type": "content",
+      "heading": "Why labor hurts",
+      "onScreen": [
+        "Your uterus tightens with each contraction",
+        "Your cervix stretches open",
+        "Your baby presses down and stretches the birth canal",
+        "This pain has a purpose: it's bringing your baby"
+      ],
+      "narration": "Labor pain comes from real, hard work. With each contraction, the muscles of your uterus tighten. Your cervix stretches open. And as your baby moves down, they press on and stretch the tissues of the birth canal. Unlike pain from an injury, labor pain has a purpose. It's a sign your body is working to bring your baby.",
+      "sourceIds": ["lamaze-labor-pain-different"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Three simple icons with short labels: a heartbeat line for the uterus tightening, an open circle for the cervix opening, and a baby for the baby moving down."
+      }
+    },
+    {
+      "id": "waves",
+      "type": "content",
+      "heading": "Pain comes in waves",
+      "onScreen": [
+        "Each contraction builds, peaks, and fades",
+        "Then there's a break, often with no pain at all",
+        "Contractions get longer and stronger as labor goes on",
+        "Take them one at a time"
+      ],
+      "narration": "Labor pain comes in waves. Each contraction builds, peaks, and then fades. Then there's a break, often with no pain at all, where you can rest and gather your strength. As labor goes on, contractions usually get longer, stronger, and closer together, and the breaks get shorter. Many people find it helps to take them one at a time, and to use each break to fully relax.",
+      "sourceIds": ["lamaze-labor-pain-different"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Three stacked steps for one contraction: it builds, it peaks, then a break to rest."
+      }
+    },
+    {
+      "id": "fear-tension",
+      "type": "content",
+      "heading": "Fear, tension, and pain",
+      "onScreen": [
+        "Fear can make you tense up",
+        "Tension can make pain feel worse",
+        "Relaxing, knowing what to expect, and support help",
+        "Your body also makes its own pain relievers"
+      ],
+      "narration": "How you feel can change how pain feels. When you're afraid, it's natural to tense up, and tension can make pain feel stronger, which can make you more afraid. Knowing what to expect, relaxing your body, and having support can help break that cycle. Your body helps, too. It makes oxytocin, which keeps contractions going, and endorphins, natural chemicals that ease pain.",
+      "sourceIds": ["lamaze-labor-pain-different", "lamaze-healthy-birth-practices"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A laboring person standing and leaning on a counter with relaxed, dropped shoulders and a loose jaw, eyes closed, while their support partner gently rubs their lower back. Calm, softly lit room. No readable writing."
+      }
+    },
+    {
+      "id": "checkin-tension",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": ["lamaze-labor-pain-different"],
+      "question": {
+        "prompt": "During a contraction, you notice your shoulders are up and your hands are clenched. What might help?",
+        "options": [
+          "Tense up more to push through it",
+          "Drop your shoulders, loosen your hands, and breathe out slowly",
+          "Hold your breath until it's over"
+        ],
+        "correctIndex": 1,
+        "explanation": "Tension can make pain feel worse. Dropping your shoulders, loosening your hands and jaw, and breathing out slowly can help."
+      }
+    },
+    {
+      "id": "what-affects",
+      "type": "content",
+      "heading": "What makes it easier, or harder",
+      "onScreen": [
+        "Easier: support, feeling safe, moving, and rest between contractions",
+        "Harder: fear, being alone, lying flat, and exhaustion",
+        "Your baby's position matters too",
+        "Everyone's labor feels different"
+      ],
+      "narration": "Many things affect how labor feels. It's often easier when you have continuous support, feel safe, can move and change positions, and rest between contractions. It's often harder when you're frightened, alone, lying flat on your back, or exhausted. Your baby's position matters too. If your baby is facing up, you may feel more pain in your back. And everyone's labor feels different, so there's no right way to feel.",
+      "sourceIds": ["lamaze-healthy-birth-practices", "acog-co766"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A laboring person walking slowly down a quiet hospital hallway, holding their support partner's arm and smiling, while a nurse walks nearby. No readable writing or signs."
+      }
+    },
+    {
+      "id": "options-range",
+      "type": "content",
+      "heading": "The full range of comfort options",
+      "onScreen": [
+        "Without medicine: breathing, movement, touch, water, and support",
+        "With medicine: an epidural, IV pain medicine, or nitrous oxide",
+        "Many people use a mix",
+        "You can change your mind as labor goes"
+      ],
+      "narration": "There's a full range of ways to find comfort. Without medicine, there's breathing, movement and positions, touch and massage, warm water, and continuous support. You'll practice these in the rest of this module. With medicine, there's an epidural, IV pain medicine, or nitrous oxide, which you learned about in Module 4. Many people use a mix, starting with comfort skills and adding medicine later, or not. You can change your mind as labor goes.",
+      "sourceIds": ["acog-pain-options", "acog-co766"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Six simple icons with short labels: wind for breathing, a standing person for movement, a heart with a handshake for touch and support, a shower head for water, a syringe for an epidural, and a pill for IV medicine."
+      }
+    },
+    {
+      "id": "coping",
+      "type": "content",
+      "heading": "Coping, not pain-free",
+      "onScreen": [
+        "The goal is coping, not zero pain",
+        "Coping: finding a rhythm, and relaxing between contractions",
+        "Not coping: panic, tension, or feeling unable to go on",
+        "If you're not coping, change something"
+      ],
+      "narration": "For many people, the goal isn't zero pain. It's coping. You're coping when you find a rhythm, like a breath, a sound, or a movement, and can relax between contractions. You may not be coping if you feel panicked, stay tense between contractions, or feel you can't go on. That's a signal to change something: a new position, more support, a shower, or medical pain relief. All of these are good choices.",
+      "sourceIds": ["lamaze-labor-pain-different", "acog-pain-options"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A laboring person swaying slowly with their arms around their support partner's neck in a slow dance, both calm and in rhythm, in a softly lit hospital room. No readable writing."
+      }
+    },
+    {
+      "id": "your-thoughts",
+      "type": "reflection",
+      "heading": "Your thoughts about labor pain",
+      "onScreen": [
+        "What worries you most about labor pain",
+        "What helps you cope with pain or stress now",
+        "One comfort option you'd like to try"
+      ],
+      "narration": "Let's take a moment. What worries you most about labor pain? What already helps you cope with pain or stress, like music, a warm shower, or a hand to hold? And what's one comfort option you'd like to try in labor? Save your answers to your Birth Readiness Brief, and share them with your support person.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write what worries you about labor pain, what helps you cope with pain or stress now, and one comfort option you'd like to try."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Labor pain comes from your body's work, and comes in waves",
+        "Fear and tension can make pain worse; relaxing and support help",
+        "Comfort options range from breathing and movement to an epidural",
+        "Aim to cope, and change something if you're not"
+      ],
+      "narration": "Let's recap. Labor pain comes from the work of contractions, your cervix opening, and your baby moving down, and it comes in waves with breaks in between. Fear and tension can make pain worse, while relaxing and support help. Comfort options range from breathing and movement to an epidural. And the goal is coping, so if you're not, change something. Next up, a few review questions.",
+      "sourceIds": ["lamaze-labor-pain-different", "acog-pain-options"]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "What makes labor pain different from pain from an injury?",
+      "options": [
+        "It never stops",
+        "It has a purpose, and comes in waves with breaks between",
+        "It only happens in the back"
+      ],
+      "correctIndex": 1,
+      "explanation": "Labor pain comes from your body's work to bring your baby, and it comes in waves, often with no pain between contractions."
+    },
+    {
+      "prompt": "How can fear affect labor pain?",
+      "options": [
+        "Fear can make you tense, and tension can make pain feel worse",
+        "Fear makes labor faster",
+        "Fear has no effect"
+      ],
+      "correctIndex": 0,
+      "explanation": "Fear can lead to tension, which can make pain feel stronger. Knowing what to expect, relaxing, and support can help."
+    },
+    {
+      "prompt": "You feel panicked and can't relax between contractions. What's a good step?",
+      "options": [
+        "Keep going exactly as you are",
+        "Change something: a new position, more support, a shower, or medical pain relief",
+        "Lie flat and hold your breath"
+      ],
+      "correctIndex": 1,
+      "explanation": "Panic and constant tension are signs you may not be coping. Changing something, including choosing medical pain relief, is a good choice."
+    }
+  ]
+}

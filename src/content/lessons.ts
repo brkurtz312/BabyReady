@@ -19,6 +19,8 @@ import earlyPregnancyFirstSteps from '../../content/lessons/early-pregnancy-basi
 import firstTrimesterCommonChanges from '../../content/lessons/early-pregnancy-basics/02-first-trimester-common-changes.json';
 import firstPrenatalVisit from '../../content/lessons/early-pregnancy-basics/03-first-prenatal-visit.json';
 
+import understandingLaborPain from '../../content/lessons/comfort-and-support-skills/01-understanding-labor-pain.json';
+
 import makingDecisions from '../../content/lessons/interventions-and-flexible-decisions/01-making-decisions-with-your-care-team.json';
 import monitoringYourBaby from '../../content/lessons/interventions-and-flexible-decisions/02-monitoring-your-baby-in-labor.json';
 import medicalPainRelief from '../../content/lessons/interventions-and-flexible-decisions/03-medical-pain-relief.json';
@@ -77,6 +79,8 @@ const earlyPregnancyLessons = sortedLessons([
   firstPrenatalVisit,
 ]);
 
+const comfortAndSupportLessons = sortedLessons([understandingLaborPain]);
+
 const interventionsLessons = sortedLessons([makingDecisions, monitoringYourBaby, medicalPainRelief, inductionOfLabor, assistedVaginalBirth, cesareanBirth, whenPlansChange]);
 
 const feedingAndNewbornCareLessons = sortedLessons([safeSleep, carSeatSafety]);
@@ -107,6 +111,13 @@ export const courses: Course[] = [
     label: 'CLASS · MODULE 2',
     description: `Six narrated lessons on how labor begins, when to call, and birth, with check-ins and a review quiz after each lesson. About ${minutes(laborBasicsLessons)} minutes.`,
     lessons: laborBasicsLessons,
+  },
+  {
+    courseId: 'comfort-and-support-skills',
+    title: 'Comfort, Movement, and Support Skills',
+    label: 'CLASS · MODULE 3',
+    description: `Understanding labor pain, and hands-on comfort skills: breathing, positions, touch, water, and how support people can help. About ${minutes(comfortAndSupportLessons)} minutes.`,
+    lessons: comfortAndSupportLessons,
   },
   {
     courseId: 'interventions-and-flexible-decisions',

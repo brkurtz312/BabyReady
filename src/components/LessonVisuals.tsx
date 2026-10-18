@@ -1134,6 +1134,39 @@ const VISUALS: Record<string, () => React.ReactElement> = {
       ]}
     />
   ),
+  'understanding-labor-pain/why-it-hurts': () => (
+    <IconPanel
+      label="Why labor hurts: the uterus tightens with each contraction, the cervix stretches open, and the baby presses down and stretches the birth canal."
+      items={[
+        { icon: Activity, label: 'Uterus tightens' },
+        { icon: CircleDot, label: 'Cervix opens' },
+        { icon: Baby, label: 'Baby moves down' },
+      ]}
+    />
+  ),
+  'understanding-labor-pain/waves': () => (
+    <Steps
+      label="Each contraction comes in a wave: it builds, it peaks, and then there's a break to rest, often with no pain at all."
+      steps={[
+        { title: 'It builds', detail: 'Breathe and loosen your body', tone: 'lagoon' },
+        { title: 'It peaks', detail: 'The strongest part, then it eases', tone: 'marigold' },
+        { title: 'A break', detail: 'Rest, often with no pain', tone: 'lagoon' },
+      ]}
+    />
+  ),
+  'understanding-labor-pain/options-range': () => (
+    <IconPanel
+      label="Comfort options: breathing, movement, touch and support, and water without medicine; an epidural or IV pain medicine with medicine."
+      items={[
+        { icon: Wind, label: 'Breathing' },
+        { icon: PersonStanding, label: 'Movement' },
+        { icon: HeartHandshake, label: 'Touch and support' },
+        { icon: ShowerHead, label: 'Water' },
+        { icon: Syringe, label: 'Epidural', tone: 'marigold' },
+        { icon: Pill, label: 'IV medicine', tone: 'marigold' },
+      ]}
+    />
+  ),
 };
 
 /** The drawn picture for a slide, or null when it has none. */
