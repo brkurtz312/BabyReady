@@ -185,6 +185,10 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'positions-and-movement/sitting': require('../../assets/lessons/positions-and-movement/sitting.jpg'),
   'positions-and-movement/hands-and-knees': require('../../assets/lessons/positions-and-movement/hands-and-knees.jpg'),
   'positions-and-movement/resting': require('../../assets/lessons/positions-and-movement/resting.jpg'),
+  'touch-water-and-comfort-tools/welcome': require('../../assets/lessons/touch-water-and-comfort-tools/welcome.jpg'),
+  'touch-water-and-comfort-tools/massage': require('../../assets/lessons/touch-water-and-comfort-tools/massage.jpg'),
+  'touch-water-and-comfort-tools/counterpressure': require('../../assets/lessons/touch-water-and-comfort-tools/counterpressure.jpg'),
+  'touch-water-and-comfort-tools/water': require('../../assets/lessons/touch-water-and-comfort-tools/water.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {

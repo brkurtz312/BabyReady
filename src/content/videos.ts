@@ -32,6 +32,7 @@ const VIDEOS: Record<string, number> = {
   'car-seat-safety/harness-refresher': require('../../assets/lessons/getting-ready-bags-routes-car-seat/harness-check-video.mp4'),
   'making-decisions-with-your-care-team/decision-video': require('../../assets/lessons/making-decisions-with-your-care-team/decision-video.mp4'),
   'positions-and-movement/practice-positions': require('../../assets/lessons/positions-and-movement/practice-positions.mp4'),
+  'touch-water-and-comfort-tools/practice-touch': require('../../assets/lessons/touch-water-and-comfort-tools/practice-touch.mp4'),
 };
 
 export function videoFor(lessonId: string, slideId: string): number | null {
