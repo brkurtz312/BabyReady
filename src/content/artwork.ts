@@ -106,6 +106,13 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'postpartum-warning-signs/blood-pressure': require('../../assets/lessons/postpartum-warning-signs/blood-pressure.jpg'),
   'postpartum-warning-signs/early-check-in': require('../../assets/lessons/postpartum-warning-signs/early-check-in.jpg'),
   'postpartum-warning-signs/support-people': require('../../assets/lessons/postpartum-warning-signs/support-people.jpg'),
+  'when-to-call-about-your-baby/welcome': require('../../assets/lessons/when-to-call-about-your-baby/welcome.jpg'),
+  'when-to-call-about-your-baby/first-checkup': require('../../assets/lessons/when-to-call-about-your-baby/first-checkup.jpg'),
+  'when-to-call-about-your-baby/trust-yourself': require('../../assets/lessons/when-to-call-about-your-baby/trust-yourself.jpg'),
+  'when-to-call-about-your-baby/breathing-and-color': require('../../assets/lessons/when-to-call-about-your-baby/breathing-and-color.jpg'),
+  'when-to-call-about-your-baby/jaundice': require('../../assets/lessons/when-to-call-about-your-baby/jaundice.jpg'),
+  'when-to-call-about-your-baby/cord-stump': require('../../assets/lessons/when-to-call-about-your-baby/cord-stump.jpg'),
+  'when-to-call-about-your-baby/crying': require('../../assets/lessons/when-to-call-about-your-baby/crying.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
