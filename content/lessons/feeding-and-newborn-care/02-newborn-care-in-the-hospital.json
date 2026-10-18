@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 10,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 5.2 of Module 5 (Feeding and Newborn Care). Builds on Labor Basics lesson 6 (the first hour and skin-to-skin). Sources were found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. For the reviewer, most important first: the hepatitis B guidance has changed and is disputed. The AAP still recommends a first dose for all babies within 24 hours of birth; a CDC release of December 16, 2025 adopted individual-based decision-making for the birth dose when the mother tests negative, with no change (vaccine and immune globulin at birth) when the mother tests positive or her status is unknown. The slide presents both and tells parents to talk with their baby's doctor; please confirm this is still current. Also: vitamin K as a single shot in the thigh soon after birth, and oral vitamin K working less well, follow the AAP vitamin K page; the eye ointment slide (an antibiotic to prevent infection from bacteria picked up during birth, often required by state law, may blur vision briefly) is supported only by a passing AAP mention and common practice, and the state-law point is not confirmed in these sources; the heel-prick test timing (after the first 24 hours, results in about a week) follows the AAP newborn screening page; the hearing 1-3-6 timeline follows the CDC page; declining a procedure possibly meaning signing a form is common practice not confirmed in these sources. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the hepatitis B slide as written, presenting both the AAP recommendation and the CDC's late-2025 change; keep the eye ointment slide, including state requirements, without a picture; give vitamin K timing as 'soon after birth' rather than within six hours; keep the blood test, hearing, and declining slides as written; no video for this lesson."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 5.2 of Module 5 (Feeding and Newborn Care). Builds on Labor Basics lesson 6 (the first hour and skin-to-skin). Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer, most important first: the hepatitis B guidance has changed and is disputed. The AAP still recommends a first dose for all babies within 24 hours of birth; a CDC release of December 16, 2025 adopted individual-based decision-making for the birth dose when the mother tests negative, with no change (vaccine and immune globulin at birth) when the mother tests positive or her status is unknown. The slide presents both and tells parents to talk with their baby's doctor; please confirm this is still current. Also: vitamin K as a single shot in the thigh soon after birth, and oral vitamin K working less well, follow the AAP vitamin K page; the eye ointment slide (an antibiotic to prevent infection from bacteria picked up during birth, often required by state law, may blur vision briefly) is supported only by a passing AAP mention and common practice, and the state-law point is not confirmed in these sources; the heel-prick test timing (after the first 24 hours, results in about a week) follows the AAP newborn screening page; the hearing 1-3-6 timeline follows the CDC page; declining a procedure possibly meaning signing a form is common practice not confirmed in these sources. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the hepatitis B slide as written, presenting both the AAP recommendation and the CDC's late-2025 change; keep the eye ointment slide, including state requirements, without a picture; give vitamin K timing as 'soon after birth' rather than within six hours; keep the blood test, hearing, and declining slides as written; no video for this lesson."
   },
   "sources": [
     {
@@ -24,49 +24,49 @@
       "organization": "AAP",
       "title": "Why Your Newborn Needs a Vitamin K Shot (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/prenatal/delivery-beyond/Pages/Where-We-Stand-Administration-of-Vitamin-K.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-bringing-baby-home",
       "organization": "AAP",
       "title": "Bringing Baby Home: What to Do Before Leaving the Hospital (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/prenatal/delivery-beyond/Pages/bringing-baby-home-what-to-do-before-leaving-the-hospital.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-hepb-vaccine",
       "organization": "AAP",
       "title": "Why Do Babies Need the Hepatitis B Vaccine? (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/safety-prevention/immunizations/Pages/hepatitis-b-vaccine-what-you-need-to-know.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "cdc-hepb-2025",
       "organization": "CDC",
       "title": "CDC Adopts Individual-Based Decision-Making for Hepatitis B Immunization for Infants Born to Women Who Test Negative for Hepatitis B Virus (December 2025)",
       "url": "https://www.cdc.gov/media/releases/2025/2025-hepatitis-b-immunization.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-newborn-screening",
       "organization": "AAP",
       "title": "Newborn Screening Tests (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Newborn-Screening-Tests.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-pulse-ox",
       "organization": "AAP",
       "title": "Newborn Pulse Oximetry Screening to Detect Critical Congenital Heart Disease (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Newborn-Pulse-Oximetry-Screening-to-Detect-Critical-Congenital-Heart-Disease.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "cdc-hearing-136",
       "organization": "CDC",
       "title": "EHDI 1-3-6 Benchmarks",
       "url": "https://www.cdc.gov/hearing-loss-children/articles/baby-hearing-screening-infographic.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
