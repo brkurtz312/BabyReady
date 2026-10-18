@@ -589,6 +589,108 @@ function Latch() {
   );
 }
 
+/** A baby lying along an adult forearm, head lower than the chest; `faceUp` turns the baby over. */
+function BabyOnForearm({ x, faceUp = false }: { x: number; faceUp?: boolean }) {
+  return (
+    <G transform={`rotate(-14 ${x + 95} 125)`}>
+      {/* Forearm, with the hand cupping the jaw */}
+      <Rect fill={c.skin} height={18} rx={9} stroke={c.skinLine} strokeWidth={1.5} width={148} x={x + 22} y={130} />
+      <Ellipse cx={x + 40} cy={133} fill={c.skin} rx={13} ry={9} stroke={c.skinLine} strokeWidth={1.5} />
+      {/* Body in a sleeper, legs, and head */}
+      <Ellipse cx={x + 100} cy={114} fill={c.lagoonSoft} rx={42} ry={15} stroke={c.lagoon} strokeWidth={1.5} />
+      <Ellipse cx={x + 148} cy={118} fill={c.lagoonSoft} rx={14} ry={8} stroke={c.lagoon} strokeWidth={1.5} />
+      <Circle cx={x + 46} cy={116} fill={c.baby} r={17} stroke={c.babyLine} strokeWidth={2} />
+      {faceUp ? (
+        <G>
+          <Path d={`M${x + 38} 108 q4 3 8 0`} fill="none" stroke={c.babyLine} strokeLinecap="round" strokeWidth={2} />
+          <Path d={`M${x + 33} 116 q3 2 6 0`} fill="none" stroke={c.babyLine} strokeLinecap="round" strokeWidth={2} />
+        </G>
+      ) : (
+        <Path d={`M${x + 31} 110 a17 17 0 0 1 30 -2`} fill="none" stroke="#5B4636" strokeLinecap="round" strokeWidth={4} />
+      )}
+    </G>
+  );
+}
+
+/** The heel of a hand seen from the side, with an arrow showing the push. */
+function HeelOfHand({ x, y }: { x: number; y: number }) {
+  return (
+    <G>
+      <Arrow x1={x} x2={x} y1={y - 46} y2={y - 20} />
+      <Rect fill={c.skin} height={16} rx={8} stroke={c.skinLine} strokeWidth={1.5} width={34} x={x - 12} y={y - 12} />
+      <Rect fill={c.skin} height={9} rx={4.5} stroke={c.skinLine} strokeWidth={1.2} width={22} x={x + 14} y={y - 14} />
+    </G>
+  );
+}
+
+/** First aid for a choking baby: back blows face down, then chest thrusts face up, head lower each time. */
+function ChokingFirstAid() {
+  return (
+    <Drawing
+      caption="Keep alternating 5 back blows and 5 chest thrusts until the object comes out or your baby goes limp. Never abdominal thrusts."
+      height={210}
+      label="First aid for a severely choking baby. Left: 5 back blows, the baby face down along your forearm with the head lower, the heel of your hand between the shoulder blades. Right: 5 chest thrusts, the baby face up along your forearm with the head lower, the heel of one hand on the center of the chest."
+    >
+      <Label size={14} weight="800" x={90} y={22}>5 back blows</Label>
+      <Label size={14} weight="800" x={270} y={22}>5 chest thrusts</Label>
+      <Line stroke={c.line} strokeWidth={1.5} x1={180} x2={180} y1={10} y2={200} />
+      <BabyOnForearm x={0} />
+      <HeelOfHand x={70} y={108} />
+      <BabyOnForearm faceUp x={180} />
+      <HeelOfHand x={254} y={108} />
+      <Label x={90} y={180}>Face down, head lower</Label>
+      <Label size={11} weight="400" x={90} y={196}>Between the shoulder blades</Label>
+      <Label x={270} y={180}>Face up, head lower</Label>
+      <Label size={11} weight="400" x={270} y={196}>Center of the chest</Label>
+    </Drawing>
+  );
+}
+
+/** A baby on their back seen from above, for the CPR hand positions. */
+function BabyFromAbove({ x }: { x: number }) {
+  return (
+    <G>
+      <Rect fill={c.lagoonSoft} height={16} rx={8} stroke={c.lagoon} strokeWidth={1.5} transform={`rotate(-50 ${x - 30} 92)`} width={28} x={x - 58} y={84} />
+      <Rect fill={c.lagoonSoft} height={16} rx={8} stroke={c.lagoon} strokeWidth={1.5} transform={`rotate(50 ${x + 30} 92)`} width={28} x={x + 30} y={84} />
+      <Ellipse cx={x} cy={126} fill={c.baby} rx={34} ry={46} stroke={c.babyLine} strokeWidth={2} />
+      <Circle cx={x} cy={52} fill={c.baby} r={24} stroke={c.babyLine} strokeWidth={2} />
+      <Path d={`M${x - 10} 50 q4 3 8 0 M${x + 2} 50 q4 3 8 0`} fill="none" stroke={c.babyLine} strokeLinecap="round" strokeWidth={2} />
+      <Circle cx={x - 14} cy={104} fill={c.babyLine} r={2.5} />
+      <Circle cx={x + 14} cy={104} fill={c.babyLine} r={2.5} />
+      <Line stroke={c.muted} strokeDasharray="4 4" strokeWidth={1.2} x1={x - 30} x2={x + 30} y1={104} y2={104} />
+    </G>
+  );
+}
+
+/** Infant CPR hand positions: two thumbs with hands around the chest, or the heel of one hand. */
+function CprHands() {
+  return (
+    <Drawing
+      caption="Push about 1½ inches deep, 100 to 120 times a minute. Give 30 compressions, then 2 gentle breaths."
+      height={210}
+      label="Infant CPR hand positions, looking down on a baby lying on their back. Left: two thumbs side by side on the center of the chest just below the nipple line, with the hands wrapped around the chest. Right: the heel of one hand in the same spot."
+    >
+      <BabyFromAbove x={80} />
+      {/* Hands wrapped around the chest, thumbs side by side on the breastbone */}
+      <Rect fill={c.skin} height={50} rx={14} stroke={c.skinLine} strokeWidth={1.5} width={24} x={34} y={100} />
+      <Rect fill={c.skin} height={50} rx={14} stroke={c.skinLine} strokeWidth={1.5} width={24} x={102} y={100} />
+      <Ellipse cx={74} cy={116} fill={c.skin} rx={6} ry={11} stroke={c.skinLine} strokeWidth={1.5} />
+      <Ellipse cx={86} cy={116} fill={c.skin} rx={6} ry={11} stroke={c.skinLine} strokeWidth={1.5} />
+      <BabyFromAbove x={280} />
+      {/* The heel of one hand, fingers lifted toward the head */}
+      {[-9, -3, 3, 9].map((dx) => (
+        <Rect key={dx} fill={c.skin} height={dx === -9 ? 22 : 28} rx={3.5} stroke={c.skinLine} strokeWidth={1.2} width={7} x={280 + dx - 3.5} y={dx === -9 ? 90 : 84} />
+      ))}
+      <Rect fill={c.skin} height={28} rx={11} stroke={c.skinLine} strokeWidth={1.5} width={30} x={265} y={106} />
+      <Rect fill={c.skin} height={8} rx={4} stroke={c.skinLine} strokeWidth={1.2} transform="rotate(-35 296 116)" width={18} x={290} y={112} />
+      <Label size={11} x={180} y={106}>Just below</Label>
+      <Label size={11} x={180} y={119}>the nipple line</Label>
+      <Label x={80} y={192}>Two thumbs, hands around</Label>
+      <Label x={280} y={192}>Or the heel of one hand</Label>
+    </Drawing>
+  );
+}
+
 function HouseIcon({ x, y }: { x: number; y: number }) {
   return (
     <G>
@@ -1579,28 +1681,8 @@ const VISUALS: Record<string, () => React.ReactElement> = {
       ]}
     />
   ),
-  'infant-cpr-and-choking/choking-steps': () => (
-    <Steps
-      label="If your baby is severely choking: shout for help and call 911; 5 back blows, face down with the head lower; 5 chest thrusts, face up, with the heel of one hand; repeat until the object comes out or your baby goes limp."
-      steps={[
-        { title: 'Shout for help; call 911', detail: 'Or have someone call', tone: 'alert' },
-        { title: '5 back blows', detail: 'Face down, head lower', tone: 'lagoon' },
-        { title: '5 chest thrusts', detail: 'Face up, heel of one hand', tone: 'lagoon' },
-        { title: 'Repeat', detail: 'Until it comes out or baby goes limp', tone: 'marigold' },
-      ]}
-    />
-  ),
-  'infant-cpr-and-choking/cpr-steps': () => (
-    <Steps
-      label="Infant CPR: on a firm, flat surface on their back; 30 compressions with two thumbs or the heel of one hand, about 1.5 inches deep, fast; 2 gentle breaths over the mouth and nose; repeat until help arrives."
-      steps={[
-        { title: 'Firm, flat surface', detail: 'Baby on their back', tone: 'lagoon' },
-        { title: '30 compressions', detail: 'Two thumbs or heel of one hand, 1½ inches, fast', tone: 'alert' },
-        { title: '2 gentle breaths', detail: 'Cover the mouth and nose', tone: 'lagoon' },
-        { title: 'Repeat 30 and 2', detail: 'Until help takes over', tone: 'marigold' },
-      ]}
-    />
-  ),
+  'infant-cpr-and-choking/choking-steps': () => <ChokingFirstAid />,
+  'infant-cpr-and-choking/cpr-steps': () => <CprHands />,
   'infant-cpr-and-choking/prevent-choking': () => (
     <IconPanel
       label="Preventing choking: never prop a bottle; keep small objects, magnets, and button batteries out of reach; check toys for small parts; when solids start, soft foods in tiny pieces."
