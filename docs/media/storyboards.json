@@ -996,5 +996,53 @@
         "text": "Change positions often, and follow what your body tells you."
       }
     ]
+  },
+  "touch-water-and-comfort-tools/practice-touch": {
+    "cast": "a pregnant woman in her third trimester with a clearly rounded pregnant belly, warm brown skin and shoulder-length dark curly hair, in a soft teal long-sleeved top and dark leggings; her support partner, a man with light olive skin and short dark wavy hair, in a mustard-yellow sweater and jeans. They are in a calm, bright living room with a sofa, a kitchen counter, and a teal birth ball",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "Watch, then try: counterpressure and the hip squeeze"
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "Side view. The pregnant woman stands leaning forward with her forearms on the kitchen counter, eyes closed. Her partner stands behind her and presses the heel of one hand firmly on the center of her lower back, just above the tailbone, leaning his body weight into it. Only the couple are in the room.",
+        "caption": "Counterpressure",
+        "sub": "Firm, steady pressure on the lower back."
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "Close-up of scene 2: the partner's hand on the center of her lower back, just above the tailbone. A marigold arrow, drawn in afterward, points into her lower back to show the direction of pressure. (Cropped from scene 2; the arrow is drawn in code, not generated.)",
+        "caption": "The heel of the hand, just above the tailbone",
+        "sub": "Lean your weight in. Ask: harder or softer?"
+      },
+      {
+        "type": "image",
+        "seconds": 8,
+        "prompt": "Side view. The pregnant woman kneels on a soft mat, leaning forward with her arms and chest draped over the teal birth ball. Her partner kneels behind her with his hand on her near hip. Only the couple are in the room.",
+        "caption": "The double hip squeeze",
+        "sub": "She leans forward, over a ball, a bed, or a counter."
+      },
+      {
+        "type": "image",
+        "seconds": 9,
+        "prompt": "The lesson's drawn diagram of the double hip squeeze seen from behind: a palm on each side of the hips with marigold arrows pointing in and slightly up. (Rendered from the app's drawn diagram, not generated.)",
+        "caption": "Palms on the fleshy part of each hip",
+        "sub": "Press in toward the middle, and slightly up."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The pregnant woman, still kneeling over the birth ball, relaxes and smiles as her partner releases his hands and rests them gently on her back. Only the couple are in the room.",
+        "caption": "Release when the contraction ends"
+      },
+      {
+        "type": "end",
+        "seconds": 6,
+        "text": "Hold through the contraction, then release. Keep asking what helps."
+      }
+    ]
   }
 }

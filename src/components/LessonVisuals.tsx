@@ -491,6 +491,59 @@ function Label({ x, y, children, color = c.ink, size = 12, weight = '700' }: { x
   );
 }
 
+/** A palm laid flat with fingers pointing down, centered on (x, y); `flip` mirrors it for the other side. */
+function Palm({ x, y, flip = false }: { x: number; y: number; flip?: boolean }) {
+  const d = flip ? -1 : 1;
+  return (
+    <G>
+      <Rect fill={c.skin} height={34} rx={11} stroke={c.skinLine} strokeWidth={1.5} width={30} x={x - 15} y={y - 18} />
+      {[-9, -3, 3, 9].map((dx) => (
+        <Rect key={dx} fill={c.skin} height={20} rx={3.5} stroke={c.skinLine} strokeWidth={1.2} width={7} x={x + dx - 3.5} y={y + 10} />
+      ))}
+      <Rect fill={c.skin} height={8} rx={4} stroke={c.skinLine} strokeWidth={1.2} width={18} x={d > 0 ? x + 8 : x - 26} y={y - 8} />
+    </G>
+  );
+}
+
+/** An arrow from (x1, y1) to (x2, y2), with its head at the end. */
+function Arrow({ x1, y1, x2, y2, color = c.marigold }: { x1: number; y1: number; x2: number; y2: number; color?: string }) {
+  const angle = Math.atan2(y2 - y1, x2 - x1);
+  const head = (a: number) => `${x2 - 12 * Math.cos(angle + a)},${y2 - 12 * Math.sin(angle + a)}`;
+  return (
+    <G>
+      <Line stroke={color} strokeLinecap="round" strokeWidth={5} x1={x1} x2={x2 - 6 * Math.cos(angle)} y1={y1} y2={y2 - 6 * Math.sin(angle)} />
+      <Polygon fill={color} points={`${x2},${y2} ${head(0.5)} ${head(-0.5)}`} />
+    </G>
+  );
+}
+
+/** The double hip squeeze seen from behind: a palm on each side of the hips, pressing in and slightly up. */
+function HipSqueeze() {
+  return (
+    <Drawing
+      caption="Seen from behind, with the laboring person leaning forward. Hold through the contraction, then release."
+      height={220}
+      label="The double hip squeeze, seen from behind: one palm on the fleshy part of each hip, pressing in toward the middle and slightly up, held through the contraction."
+    >
+      {/* Lower back and hips */}
+      <Rect fill={c.lagoon} height={86} opacity={0.75} rx={34} width={136} x={112} y={18} />
+      <Ellipse cx={150} cy={128} fill="#3D4D6A" rx={50} ry={54} />
+      <Ellipse cx={210} cy={128} fill="#3D4D6A" rx={50} ry={54} />
+      <Line stroke="#2C3A54" strokeWidth={2} x1={180} x2={180} y1={92} y2={180} />
+      {/* A palm on each hip, and the direction to press */}
+      <Palm x={112} y={112} />
+      <Palm flip x={248} y={112} />
+      <Arrow x1={44} x2={86} y1={138} y2={118} />
+      <Arrow x1={316} x2={274} y1={138} y2={118} />
+      <Label x={58} y={168}>In, and</Label>
+      <Label x={58} y={183}>slightly up</Label>
+      <Label x={302} y={168}>In, and</Label>
+      <Label x={302} y={183}>slightly up</Label>
+      <Label size={13} x={180} y={208}>A palm on the fleshy part of each hip</Label>
+    </Drawing>
+  );
+}
+
 function HouseIcon({ x, y }: { x: number; y: number }) {
   return (
     <G>
@@ -1206,6 +1259,7 @@ const VISUALS: Record<string, () => React.ReactElement> = {
       ]}
     />
   ),
+  'touch-water-and-comfort-tools/hip-squeeze': () => <HipSqueeze />,
   'touch-water-and-comfort-tools/heat-cold': () => (
     <IconPanel
       label="Heat and cold: a warm pack on the lower back or belly, a cool cloth on the face or neck, a cloth between skin and pack, and not too hot, especially with an epidural."
