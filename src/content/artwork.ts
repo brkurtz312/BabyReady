@@ -195,6 +195,11 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'for-support-people/active-labor': require('../../assets/lessons/for-support-people/active-labor.jpg'),
   'for-support-people/when-hard': require('../../assets/lessons/for-support-people/when-hard.jpg'),
   'for-support-people/advocate': require('../../assets/lessons/for-support-people/advocate.jpg'),
+  'your-newborns-first-days/welcome': require('../../assets/lessons/your-newborns-first-days/welcome.jpg'),
+  'your-newborns-first-days/first-look': require('../../assets/lessons/your-newborns-first-days/first-look.jpg'),
+  'your-newborns-first-days/breathing': require('../../assets/lessons/your-newborns-first-days/breathing.jpg'),
+  'your-newborns-first-days/sleep': require('../../assets/lessons/your-newborns-first-days/sleep.jpg'),
+  'your-newborns-first-days/jaundice': require('../../assets/lessons/your-newborns-first-days/jaundice.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
