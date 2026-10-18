@@ -205,6 +205,12 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'newborn-care-in-the-hospital/hep-b': require('../../assets/lessons/newborn-care-in-the-hospital/hep-b.jpg'),
   'newborn-care-in-the-hospital/blood-test': require('../../assets/lessons/newborn-care-in-the-hospital/blood-test.jpg'),
   'newborn-care-in-the-hospital/hearing-heart': require('../../assets/lessons/newborn-care-in-the-hospital/hearing-heart.jpg'),
+  'breastfeeding-basics/welcome': require('../../assets/lessons/breastfeeding-basics/welcome.jpg'),
+  'breastfeeding-basics/first-days': require('../../assets/lessons/breastfeeding-basics/first-days.jpg'),
+  'breastfeeding-basics/positions': require('../../assets/lessons/breastfeeding-basics/positions.jpg'),
+  'breastfeeding-basics/enough': require('../../assets/lessons/breastfeeding-basics/enough.jpg'),
+  'breastfeeding-basics/challenges': require('../../assets/lessons/breastfeeding-basics/challenges.jpg'),
+  'breastfeeding-basics/support-person': require('../../assets/lessons/breastfeeding-basics/support-person.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
