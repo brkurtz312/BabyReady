@@ -135,6 +135,12 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'making-decisions-with-your-care-team/understand-it': require('../../assets/lessons/making-decisions-with-your-care-team/understand-it.jpg'),
   'making-decisions-with-your-care-team/support-person-role': require('../../assets/lessons/making-decisions-with-your-care-team/support-person-role.jpg'),
   'making-decisions-with-your-care-team/not-yet-or-no': require('../../assets/lessons/making-decisions-with-your-care-team/not-yet-or-no.jpg'),
+  'monitoring-your-baby-in-labor/welcome': require('../../assets/lessons/monitoring-your-baby-in-labor/welcome.jpg'),
+  'monitoring-your-baby-in-labor/why-monitor': require('../../assets/lessons/monitoring-your-baby-in-labor/why-monitor.jpg'),
+  'monitoring-your-baby-in-labor/listening': require('../../assets/lessons/monitoring-your-baby-in-labor/listening.jpg'),
+  'monitoring-your-baby-in-labor/continuous': require('../../assets/lessons/monitoring-your-baby-in-labor/continuous.jpg'),
+  'monitoring-your-baby-in-labor/internal': require('../../assets/lessons/monitoring-your-baby-in-labor/internal.jpg'),
+  'monitoring-your-baby-in-labor/pattern-changes': require('../../assets/lessons/monitoring-your-baby-in-labor/pattern-changes.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
