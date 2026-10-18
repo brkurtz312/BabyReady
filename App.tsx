@@ -30,7 +30,7 @@ import { ClassPlayerScreen } from './src/screens/ClassPlayerScreen';
 import { loadProgress, saveProgress } from './src/services/learnerProgressService';
 
 const CONTACT_EMAIL = 'admin@brk-services.com';
-const PRIVACY_POLICY_URL = 'https://babyready-8bfd6.web.app/privacy';
+const PRIVACY_POLICY_URL = 'https://brk-services.com/privacy-policy-babyready.html';
 
 export default function App() {
   return (

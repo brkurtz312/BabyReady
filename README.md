@@ -100,8 +100,9 @@ Keep it off in production until written permission to use the scale in the app h
 
 `public/` holds static pages that Expo's web export copies into `dist`; with `cleanUrls`, Hosting serves them ahead of the app:
 
-- `/privacy`: the privacy policy (`public/privacy.html`), linked from the home screen's "Your data" card and required by both app stores. Keep it in step with the reviewed policy text.
 - `/delete-account`: how to delete BabyReady data, for Google Play's account deletion link.
+
+The privacy policy lives on the company site, at https://brk-services.com/privacy-policy-babyready.html (the `brkurtz312/BRK-Services` repo), with BRK Services LLC's other app policies. The home screen's "Your data" card links to it, and `/privacy` on Hosting redirects there (`firebase.json`).
 
 ### Firestore rules
 
