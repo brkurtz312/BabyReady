@@ -9,12 +9,6 @@
     "userInterfaceStyle": "light",
     "plugins": [
       [
-        "expo-secure-store",
-        {
-          "configureAndroidBackup": true
-        }
-      ],
-      [
         "expo-speech-recognition",
         {
           "microphonePermission": "Allow BabyReady to use the microphone so you can ask your instructor questions out loud.",
