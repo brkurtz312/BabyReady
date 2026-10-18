@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 12,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 5.6. It builds on the car seat slides in Preparing for Birth lesson 6 (installing the seat, airbags, the harness basics and the harness-check video) instead of repeating them. Sources are AAP's HealthyChildren.org pages, found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. Numbers used: rear-facing in many convertible seats to 40 to 50 pounds and 2 years or more; a child's body heats up 3 to 5 times faster than an adult's; if a seat has no expiration date, 6 years from the manufacture date. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): 'most crashes happen close to home' is kept as BabyReady's own guidance; keep 'bent legs are comfortable and safe', 'check the strap height every few weeks' and the fleece-and-hat example; reuse the Preparing for Birth harness video as a refresher after the every-ride slide."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 5.6. It builds on the car seat slides in Preparing for Birth lesson 6 (installing the seat, airbags, the harness basics and the harness-check video) instead of repeating them. Sources are AAP's HealthyChildren.org pages, confirmed against their slides by the reviewer on 2026-10-18. Numbers used: rear-facing in many convertible seats to 40 to 50 pounds and 2 years or more; a child's body heats up 3 to 5 times faster than an adult's; if a seat has no expiration date, 6 years from the manufacture date. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): 'most crashes happen close to home' is kept as BabyReady's own guidance; keep 'bent legs are comfortable and safe', 'check the strap height every few weeks' and the fleece-and-hat example; reuse the Preparing for Birth harness video as a refresher after the every-ride slide."
   },
   "sources": [
     {
@@ -24,49 +24,49 @@
       "organization": "AAP",
       "title": "Car Seats: Information for Families (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seats-Information-for-Families.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-rear-facing",
       "organization": "AAP",
       "title": "Rear-Facing Car Seats for Infants & Toddlers (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Rear-Facing-Car-Seats-for-Infants-Toddlers.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-airbag",
       "organization": "AAP",
       "title": "Air Bag Safety for Children (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Air-Bag-Safety.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-winter-car-seat",
       "organization": "AAP",
       "title": "Winter Car Seat Safety Tips (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Winter-Car-Seat-Safety-Tips.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-shopping-car-seats",
       "organization": "AAP",
       "title": "Shopping for Car Seats: Tips for Parents (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Shopping-for-Car-Seats-Tips-for-Parents.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-car-seat-checkup",
       "organization": "AAP",
       "title": "Car Seat Safety Checkup: 10 Questions to Consider (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Car-Safety-Seat-Checkup.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-hot-cars",
       "organization": "AAP",
       "title": "Prevent Child Deaths in Hot Cars (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/safety-prevention/on-the-go/Pages/Prevent-Child-Deaths-in-Hot-Cars.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
