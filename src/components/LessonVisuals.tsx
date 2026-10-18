@@ -51,6 +51,8 @@ import Scale from 'lucide-react-native/icons/scale';
 import CigaretteOff from 'lucide-react-native/icons/cigarette-off';
 import Milk from 'lucide-react-native/icons/milk';
 import Syringe from 'lucide-react-native/icons/syringe';
+import Ear from 'lucide-react-native/icons/ear';
+import HeartPlus from 'lucide-react-native/icons/heart-plus';
 
 /**
  * Pictures drawn in code for lesson slides: icon panels and simple diagrams.
@@ -999,6 +1001,26 @@ const VISUALS: Record<string, () => React.ReactElement> = {
         { title: 'Before labor', detail: 'Time to talk it over at visits', tone: 'lagoon' },
         { title: 'In labor', detail: 'Often minutes to hours; ask for a few minutes', tone: 'marigold' },
         { title: 'An emergency', detail: 'Your team acts fast and explains as they go', tone: 'alert' },
+      ]}
+    />
+  ),
+  'monitoring-your-baby-in-labor/two-ways': () => (
+    <IconPanel
+      label="Two ways to check your baby's heartbeat: listening at set times with a handheld device, or continuous monitoring with belts and a monitor."
+      items={[
+        { icon: Ear, label: 'Listening at set times' },
+        { icon: Activity, label: 'Continuous, with belts and a monitor' },
+      ]}
+    />
+  ),
+  'monitoring-your-baby-in-labor/when-continuous': () => (
+    <IconPanel
+      label="Continuous monitoring is often recommended with oxytocin, an epidural, some health conditions, or a change heard while listening."
+      items={[
+        { icon: Droplet, label: 'Oxytocin to start or speed labor' },
+        { icon: Syringe, label: 'An epidural' },
+        { icon: HeartPlus, label: 'Some health conditions' },
+        { icon: Ear, label: 'A change heard while listening' },
       ]}
     />
   ),
