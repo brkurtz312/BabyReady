@@ -16,7 +16,7 @@
     "reviewedBy": null,
     "reviewedOn": null,
     "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 5.1, the first lesson of Module 5 (Feeding and Newborn Care) in course order. Covers what's normal; warning signs and when to call are taught in lesson 6.3, and this lesson points there rather than repeating them. Safe sleep is in lesson 5.5. Sources were found by web search only; this session could not open the pages, so every new source needs to be opened and confirmed. For the reviewer: head molding rounding out within a few days, soft spots that may pulse, and milia clearing in 2 to 3 weeks follow the AAP head and appearance pages; swollen breasts or genitals and a little vaginal discharge or spotting from the mother's hormones are common newborn findings not confirmed in these exact pages; the breathing slide repeats lesson 6.3's reviewed wording and adds that short pauses can be normal, not confirmed word for word; about 16 to 17 hours of sleep a day follows an AAP page that gives about 17; early weight loss with birth weight regained by about 2 weeks follows the AAP first-month page, and the slide gives no percentage; the stool color changes (black and sticky, then greenish, then yellow and seedy for breastfed babies by about day 5) are standard teaching not confirmed word for word; the jaundice slide repeats lesson 6.3's call-back signs by reference and adds that jaundice is checked before discharge."
+    "notes": "Drafted 2026-10-18 as lesson 5.1, the first lesson of Module 5 (Feeding and Newborn Care) in course order. Covers what's normal; warning signs and when to call are taught in lesson 6.3, and this lesson points there rather than repeating them. Safe sleep is in lesson 5.5. Sources were found by web search only; this session could not open the pages, so every new source needs to be opened and confirmed. For the reviewer: head molding rounding out within a few days, soft spots that may pulse, and milia clearing in 2 to 3 weeks follow the AAP head and appearance pages; swollen breasts or genitals and a little vaginal discharge or spotting from the mother's hormones are common newborn findings not confirmed in these exact pages; the breathing slide repeats lesson 6.3's reviewed wording and adds that short pauses can be normal, not confirmed word for word; about 16 to 17 hours of sleep a day follows an AAP page that gives about 17; early weight loss with birth weight regained by about 2 weeks follows the AAP first-month page, and the slide gives no percentage; the stool color changes (black and sticky, then greenish, then yellow and seedy for breastfed babies by about day 5) are standard teaching not confirmed word for word; the jaundice slide repeats lesson 6.3's call-back signs by reference and adds that jaundice is checked before discharge. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the hormone effects, including a few drops of blood in baby girls; keep the breathing slide, including brief pauses of a few seconds; keep 16 to 17 hours of sleep and asking the baby's doctor about waking for feeds; keep the weight slide without a percentage; keep the stool color changes, including formula-fed stools; keep the jaundice basics, with call-back signs left to lesson 6.3; no video for this lesson."
   },
   "sources": [
     {
@@ -88,7 +88,10 @@
         "A white, waxy coating on the skin is a natural moisturizer"
       ],
       "narration": "Many newborns don't look like the babies in pictures, and that's normal. A baby's skull is made of soft plates that shift to fit through the birth canal, so the head may look cone-shaped or uneven. It usually rounds out within a few days. There are two soft spots on the head, which are normal, and may gently pulse. The eyes and face may look puffy, and there may be some swelling on the scalp from birth. Some babies have a white, waxy coating on their skin, which is a natural moisturizer.",
-      "sourceIds": ["aap-babys-head", "aap-newborn-looks"],
+      "sourceIds": [
+        "aap-babys-head",
+        "aap-newborn-looks"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A close, gentle view of a sleeping newborn wrapped in a blanket and held in a parent's arms, with a slightly elongated head, puffy eyelids, and a few tiny white spots on the nose. Calm and tender. Exactly one baby. No readable writing."
@@ -105,7 +108,10 @@
         "Dry, peeling skin, especially on hands and feet"
       ],
       "narration": "Newborn skin goes through a lot of changes. Tiny white bumps on the nose and cheeks, called milia, usually clear within two or three weeks. Blotchy red spots that come and go are common in the first days. Many babies have birthmarks, like pink patches on the eyelids or the back of the neck, or bluish-gray patches on the back or bottom. And dry, peeling skin, especially on the hands and feet, is normal too. Most of these fade on their own.",
-      "sourceIds": ["aap-newborn-looks", "aap-common-conditions"],
+      "sourceIds": [
+        "aap-newborn-looks",
+        "aap-common-conditions"
+      ],
       "visual": {
         "kind": "icon-list",
         "description": "Four simple icons with short labels for normal newborn skin: sparkles for tiny white bumps, a dotted circle for blotchy red spots, a palette for birthmarks, and a hand for peeling skin."
@@ -122,7 +128,10 @@
         "Eyes that sometimes cross"
       ],
       "narration": "A few other things can surprise new parents. Hormones from pregnancy can make a newborn's breasts or genitals look swollen for a while, in boys and girls, and baby girls may have a little white discharge, or even a few drops of blood, from the vagina. Hiccups, sneezes, and sudden startles are all normal. And a newborn's eyes may cross or wander at times, as the eye muscles get stronger. Ask your baby's doctor about anything that worries you.",
-      "sourceIds": ["aap-newborn-looks", "aap-first-month"],
+      "sourceIds": [
+        "aap-newborn-looks",
+        "aap-first-month"
+      ],
       "visual": {
         "kind": "icon-list",
         "description": "Four simple icons with short labels: a heart for hormone swelling, a droplet for a little discharge, a wind symbol for hiccups and sneezes, and an eye for eyes that cross."
@@ -134,7 +143,9 @@
       "heading": "Quick check-in",
       "onScreen": [],
       "narration": "Let's check in.",
-      "sourceIds": ["aap-babys-head"],
+      "sourceIds": [
+        "aap-babys-head"
+      ],
       "question": {
         "prompt": "Your newborn's head looks a little cone-shaped after a vaginal birth. What's most likely?",
         "options": [
@@ -157,7 +168,10 @@
         "Struggling to breathe, or blue lips: call 911 (lesson 6.3)"
       ],
       "narration": "Newborns breathe faster than adults, and their breathing is often uneven, especially in sleep. It may speed up, slow down, and pause briefly, for a few seconds, before starting again. Their noses are small, so snuffly, noisy breathing is common. Lesson 6.3 covers the warning signs in detail. Remember, if your baby is struggling to breathe, or their lips or face turn blue, call 911.",
-      "sourceIds": ["aap-first-month", "aap-common-conditions"],
+      "sourceIds": [
+        "aap-first-month",
+        "aap-common-conditions"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A newborn sleeping on their back in a bare bassinet, in a fitted sheet only, while a parent sits beside the bassinet watching calmly. No pillows, blankets, bumpers, toys, or hat. Exactly one baby. No readable writing."
@@ -174,7 +188,9 @@
         "Always on the back, in their own sleep space (lesson 5.5)"
       ],
       "narration": "Newborns sleep a lot, about 16 to 17 hours a day, but in short stretches. They wake often to feed, day and night, because their stomachs are small. Many have their days and nights mixed up at first, and that slowly sorts itself out over the first weeks. Ask your baby's doctor whether to wake your baby for feeds in the early days. And for every sleep, put your baby on their back, in their own safe sleep space, as you learned in the safe sleep lesson.",
-      "sourceIds": ["aap-first-month"],
+      "sourceIds": [
+        "aap-first-month"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "Night time: a tired but smiling parent sitting in a chair beside a bare bassinet where their newborn sleeps on their back in a fitted sheet only, a small night light glowing. No pillows, blankets, bumpers, toys, or hat. Exactly one baby. No readable writing."
@@ -191,7 +207,9 @@
         "Your baby is weighed at each early checkup"
       ],
       "narration": "Most babies lose some weight in the first days after birth, mostly extra fluid they were born with. That's expected. Steady gains usually start around day five, and most babies are back to their birth weight by about two weeks. Your baby will be weighed before you go home and at each early checkup, usually within a few days of leaving the hospital. Your baby's doctor will tell you if the weight loss is more than expected.",
-      "sourceIds": ["aap-first-month"],
+      "sourceIds": [
+        "aap-first-month"
+      ],
       "visual": {
         "kind": "icon-list",
         "description": "Three stacked steps: the first days, some weight loss; around day 5, steady gains begin; by about 2 weeks, back to birth weight."
@@ -208,7 +226,10 @@
         "More wet diapers each day as feeding picks up"
       ],
       "narration": "Diapers change a lot in the first week, and they're a good sign of how feeding is going. The first poops are black and sticky. This is called meconium. Around days three and four, they turn greenish-brown. By about day five, breastfed babies usually have yellow, seedy, loose poops, while formula-fed babies' poops are often tan and firmer. You'll also see more wet diapers each day as feeding picks up. Lesson 6.3 covers how many to expect, and when to call.",
-      "sourceIds": ["aap-enough-milk", "aap-first-month"],
+      "sourceIds": [
+        "aap-enough-milk",
+        "aap-first-month"
+      ],
       "visual": {
         "kind": "icon-list",
         "description": "Three stacked steps of stool color: black and sticky in the first days, greenish-brown around days 3 to 4, and yellow and seedy by about day 5 for breastfed babies."
@@ -225,7 +246,9 @@
         "Sunlight isn't a treatment; call if you're worried (lesson 6.3)"
       ],
       "narration": "Many newborns look a little yellow in the first week. This is called jaundice. It happens because a newborn's body is still learning to clear a substance called bilirubin. The yellow usually starts on the face, and can move down the body. Your baby will be checked for jaundice before you go home, and again at the first checkup. Most jaundice clears on its own, but some babies need treatment with special lights. Don't put your baby in sunlight to treat it. Lesson 6.3 covers when to call.",
-      "sourceIds": ["aap-jaundice"],
+      "sourceIds": [
+        "aap-jaundice"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A nurse gently holding a small handheld skin-check device to a newborn's forehead as the baby lies in a hospital bassinet, while the parent watches beside it. Exactly one baby. No readable writing or numbers."
@@ -256,7 +279,11 @@
         "Poop changes from black to yellow; jaundice is checked early"
       ],
       "narration": "Let's recap. Newborns often have a cone-shaped head, puffy eyes, and skin spots that fade on their own. Their breathing is fast and uneven, and they sleep in short stretches, always on their back. Most babies lose some weight at first, then regain it by about two weeks. Poop changes from black and sticky to yellow, and jaundice is checked before you go home. Next up, a few review questions.",
-      "sourceIds": ["aap-newborn-looks", "aap-first-month", "aap-jaundice"]
+      "sourceIds": [
+        "aap-newborn-looks",
+        "aap-first-month",
+        "aap-jaundice"
+      ]
     }
   ],
   "reviewQuiz": [
