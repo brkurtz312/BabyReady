@@ -200,6 +200,11 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'your-newborns-first-days/breathing': require('../../assets/lessons/your-newborns-first-days/breathing.jpg'),
   'your-newborns-first-days/sleep': require('../../assets/lessons/your-newborns-first-days/sleep.jpg'),
   'your-newborns-first-days/jaundice': require('../../assets/lessons/your-newborns-first-days/jaundice.jpg'),
+  'newborn-care-in-the-hospital/welcome': require('../../assets/lessons/newborn-care-in-the-hospital/welcome.jpg'),
+  'newborn-care-in-the-hospital/vitamin-k': require('../../assets/lessons/newborn-care-in-the-hospital/vitamin-k.jpg'),
+  'newborn-care-in-the-hospital/hep-b': require('../../assets/lessons/newborn-care-in-the-hospital/hep-b.jpg'),
+  'newborn-care-in-the-hospital/blood-test': require('../../assets/lessons/newborn-care-in-the-hospital/blood-test.jpg'),
+  'newborn-care-in-the-hospital/hearing-heart': require('../../assets/lessons/newborn-care-in-the-hospital/hearing-heart.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
