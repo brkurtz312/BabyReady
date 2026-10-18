@@ -10,13 +10,13 @@
     "Never leave a child alone in a car, and build habits so you never forget",
     "Know when a used car seat or a seat that's been in a crash isn't safe"
   ],
-  "estimatedMinutes": 11,
+  "estimatedMinutes": 12,
   "review": {
     "status": "draft",
     "reviewedBy": null,
     "reviewedOn": null,
     "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 5.6. It builds on the car seat slides in Preparing for Birth lesson 6 (installing the seat, airbags, the harness basics and the harness-check video) instead of repeating them. Sources are AAP's HealthyChildren.org pages, found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. Numbers used: rear-facing in many convertible seats to 40 to 50 pounds and 2 years or more; a child's body heats up 3 to 5 times faster than an adult's; if a seat has no expiration date, 6 years from the manufacture date. For the reviewer: there is no video slide; the Preparing for Birth harness video could be reused here."
+    "notes": "Drafted 2026-10-18 as lesson 5.6. It builds on the car seat slides in Preparing for Birth lesson 6 (installing the seat, airbags, the harness basics and the harness-check video) instead of repeating them. Sources are AAP's HealthyChildren.org pages, found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. Numbers used: rear-facing in many convertible seats to 40 to 50 pounds and 2 years or more; a child's body heats up 3 to 5 times faster than an adult's; if a seat has no expiration date, 6 years from the manufacture date. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): 'most crashes happen close to home' is kept as BabyReady's own guidance; keep 'bent legs are comfortable and safe', 'check the strap height every few weeks' and the fleece-and-hat example; reuse the Preparing for Birth harness video as a refresher after the every-ride slide."
   },
   "sources": [
     {
@@ -150,6 +150,23 @@
       "visual": {
         "kind": "illustration",
         "description": "A parent doing the pinch test at the shoulder of a snug harness on a baby in a rear-facing car seat, fingers unable to pinch any slack."
+      }
+    },
+    {
+      "id": "harness-refresher",
+      "type": "video",
+      "heading": "Harness check refresher",
+      "onScreen": [
+        "Straps at or below the shoulders",
+        "Pinch test: no slack at the shoulder",
+        "Chest clip at armpit level"
+      ],
+      "narration": "Here's the harness check again, as a refresher. Watch where the straps sit, the pinch test, and where the chest clip goes.",
+      "sourceIds": ["aap-car-seats-families", "aap-winter-car-seat"],
+      "video": {
+        "assetId": "getting-ready-bags-routes-car-seat/harness-check-video",
+        "brief": "Reuses the approved harness-check video from Preparing for Birth lesson 6: buckling a baby into a rear-facing seat, strap height, the pinch test, the chest clip, and a blanket over the buckled straps.",
+        "maxSeconds": 60
       }
     },
     {
