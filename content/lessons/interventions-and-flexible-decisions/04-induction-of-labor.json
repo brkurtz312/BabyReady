@@ -1,0 +1,280 @@
+{
+  "courseId": "interventions-and-flexible-decisions",
+  "lessonId": "induction-of-labor",
+  "order": 4,
+  "title": "Induction of Labor",
+  "learningGoals": [
+    "Explain what labor induction is, and the difference between a medical and an elective induction",
+    "Know common reasons induction is recommended, including induction at 39 weeks",
+    "Describe the main methods: softening the cervix, breaking the water, and oxytocin",
+    "Know what an induction can be like, and its possible risks",
+    "Ask good questions before agreeing to an induction"
+  ],
+  "estimatedMinutes": 12,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Drafted 2026-10-18 as lesson 4.4 of Module 4 (Interventions and Flexible Decisions). Builds on lesson 4.1 (the four questions) and 4.2 (continuous monitoring with oxytocin). Sources were found by web search only; this session could not open acog.org, so every source needs to be opened and confirmed. Practice Bulletin 107 (2009) may have been replaced by a newer ACOG guideline; none was confirmed, so the lesson cites ACOG's patient FAQs instead. For the reviewer: the list of common reasons (past 41 to 42 weeks, high blood pressure or preeclampsia, diabetes, water broken without labor, a baby not growing well) needs confirming against the Labor Induction FAQ; the 39-week slide (may lower the chance of a cesarean and of high blood pressure, with no more problems for babies, in healthy first pregnancies; waiting is also reasonable) follows the ARRIVE trial as summarized in the 39-week FAQ; the cervical ripening methods (prostaglandin medicine, a balloon catheter) and that ripening can take many hours; and the risks (contractions too strong or too close, infection, induction not working, and a rare tear in the uterus with a past cesarean) need confirming."
+  },
+  "sources": [
+    {
+      "id": "acog-induction-faq",
+      "organization": "ACOG",
+      "title": "Labor Induction (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/labor-induction",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-induction-39-faq",
+      "organization": "ACOG",
+      "title": "Induction of Labor at 39 Weeks (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/induction-of-labor-at-39-weeks",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-past-due-faq",
+      "organization": "ACOG",
+      "title": "When Pregnancy Goes Past Your Due Date (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/when-pregnancy-goes-past-your-due-date",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-induction-questions",
+      "organization": "ACOG",
+      "title": "8 Questions to Ask Your Doctor Before Labor Induction",
+      "url": "https://www.acog.org/womens-health/experts-and-stories/the-latest/8-questions-to-ask-your-doctor-before-labor-induction",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Induction of Labor",
+      "onScreen": [
+        "Module 4: Interventions and Flexible Decisions"
+      ],
+      "narration": "Most labors start on their own, but sometimes there's a good reason to help labor begin. That's called an induction. In this lesson, we'll look at why induction is recommended, how it's done, what it can be like, and the questions to ask before you decide.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person and their support partner arriving at a calm hospital labor unit with a small overnight bag, greeted by a smiling nurse. No readable writing or signs."
+      }
+    },
+    {
+      "id": "what-is",
+      "type": "content",
+      "heading": "What is an induction?",
+      "onScreen": [
+        "Using medicine or other methods to start labor",
+        "Medical induction: for your health or your baby's",
+        "Elective induction: when you're both healthy",
+        "It's done in a hospital"
+      ],
+      "narration": "An induction uses medicine or other methods to start labor before it begins on its own. Sometimes it's recommended because of a health concern for you or your baby. That's a medical induction. Sometimes, when you and your baby are both healthy, you and your team may choose a date together. That's called an elective induction. Either way, inductions are done in a hospital, where your baby can be monitored.",
+      "sourceIds": ["acog-induction-faq"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person and their support partner talking with an ob-gyn in a calm exam room, the doctor gesturing gently with an open hand. No readable writing."
+      }
+    },
+    {
+      "id": "reasons",
+      "type": "content",
+      "heading": "Common reasons for induction",
+      "onScreen": [
+        "Your pregnancy goes past 41 weeks",
+        "High blood pressure or preeclampsia",
+        "Diabetes",
+        "Your water breaks, but labor doesn't start",
+        "Your baby isn't growing as expected"
+      ],
+      "narration": "Induction is often recommended when continuing the pregnancy carries more risk than helping labor begin. Common reasons include a pregnancy that goes past 41 weeks, high blood pressure or preeclampsia, diabetes, your water breaking without labor starting, and a baby who isn't growing as expected. There are other reasons too. If induction is recommended for you, ask your team why, and what would happen if you waited.",
+      "sourceIds": ["acog-induction-faq", "acog-past-due-faq"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Five simple icons with short labels: a calendar for past 41 weeks, a heartbeat for high blood pressure, a drop for diabetes, a water drop for water breaking, and a small baby for growth."
+      }
+    },
+    {
+      "id": "at-39-weeks",
+      "type": "content",
+      "heading": "Induction at 39 weeks",
+      "onScreen": [
+        "An option for some healthy first pregnancies",
+        "May lower the chance of a cesarean and of high blood pressure",
+        "Waiting for labor to start is also reasonable",
+        "Decide together with your care team"
+      ],
+      "narration": "If this is your first baby and you're both healthy, your team may offer an induction at 39 weeks. A large study found that this may lower the chance of a cesarean and of high blood pressure in pregnancy, without more problems for babies. Waiting for labor to start on its own is also a reasonable choice. Not every hospital offers 39-week inductions, and the best choice depends on your health and what matters to you. It's a good one to talk through at a visit.",
+      "sourceIds": ["acog-induction-39-faq"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person and their support partner sitting with an ob-gyn, the couple looking at each other thoughtfully while deciding. A plain calendar shape on the wall with no numbers or writing."
+      }
+    },
+    {
+      "id": "checkin-reasons",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": ["acog-induction-faq"],
+      "question": {
+        "prompt": "Your team recommends an induction because of high blood pressure. What's a good question to ask?",
+        "options": [
+          "There's nothing to ask",
+          "Why is it recommended for me, and what would happen if we waited?",
+          "Can I schedule it for after my due date no matter what?"
+        ],
+        "correctIndex": 1,
+        "explanation": "Asking why, and what waiting would mean, helps you understand the benefits and risks of induction for you."
+      }
+    },
+    {
+      "id": "how-it-works",
+      "type": "content",
+      "heading": "How an induction works",
+      "onScreen": [
+        "First, soften and open the cervix if needed",
+        "Then start contractions",
+        "Then labor continues, often slowly at first"
+      ],
+      "narration": "An induction usually happens in steps. First, if your cervix isn't ready, your team helps it soften and start to open. That's called cervical ripening. Next, they help contractions start, with medicine, by breaking your water, or both. Then labor continues, often slowly at first. Which steps you need depends on how ready your body already is.",
+      "sourceIds": ["acog-induction-faq"],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Three stacked steps from calm to active: soften and open the cervix, start contractions, and labor continues."
+      }
+    },
+    {
+      "id": "ripening",
+      "type": "content",
+      "heading": "Softening the cervix",
+      "onScreen": [
+        "Medicine placed in the vagina, or taken by mouth",
+        "Or a small balloon in the cervix, filled with water",
+        "It can take many hours, sometimes overnight",
+        "You can usually rest, and move around"
+      ],
+      "narration": "To soften the cervix, your team may use a medicine, either placed in your vagina or taken by mouth. Or they may place a thin tube with a small balloon into your cervix, and fill it with water, so it gently presses the cervix open. Some people have both. This step can take many hours, sometimes overnight, so you'll likely rest, walk, and pass the time. Some people feel cramping, and some start labor during this step.",
+      "sourceIds": ["acog-induction-faq"],
+      "visual": {
+        "kind": "illustration",
+        "description": "Evening in a hospital room: a pregnant person resting in bed under a blanket, reading, while their support partner dozes in a recliner beside them. Soft lamp light. No procedure shown. No readable writing."
+      }
+    },
+    {
+      "id": "starting-contractions",
+      "type": "content",
+      "heading": "Starting contractions",
+      "onScreen": [
+        "Oxytocin through your IV, raised slowly",
+        "Breaking your water with a small hook",
+        "Continuous monitoring of your baby",
+        "Pain relief options are still available"
+      ],
+      "narration": "To start contractions, your team may give oxytocin, a medicine that works like the hormone your body makes in labor. It goes through your IV, and the dose is raised slowly until contractions are regular. They may also break your water, using a thin hook. It feels like a vaginal exam for most people, and doesn't hurt the baby. With oxytocin, your baby's heartbeat is monitored continuously, as you learned in the monitoring lesson. And all the pain relief options are still available to you.",
+      "sourceIds": ["acog-induction-faq"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A laboring person sitting up in a hospital bed wearing two soft monitor belts, with an IV line in their hand, while a nurse adjusts an IV pump and the partner holds their hand. No readable numbers or writing."
+      }
+    },
+    {
+      "id": "what-to-expect",
+      "type": "content",
+      "heading": "What an induction can be like",
+      "onScreen": [
+        "It can take a long time, especially with a first baby",
+        "Bring things to pass the time",
+        "Move and change positions when you can",
+        "Ask for updates on how it's going"
+      ],
+      "narration": "An induction can take a long time, especially with a first baby, or if your cervix needed softening first. Many take a day or more. It helps to bring things to pass the time, like music, a book, or a show, and comfortable clothes. Move and change positions when you can. And ask your team for updates along the way: how things are going, and what the next step will be.",
+      "sourceIds": ["acog-induction-faq", "acog-induction-questions"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person and their support partner playing a card game on a hospital bed table, both smiling, with headphones and a water bottle nearby. Calm, daytime light. No readable writing."
+      }
+    },
+    {
+      "id": "risks",
+      "type": "content",
+      "heading": "Possible risks",
+      "onScreen": [
+        "Contractions that come too strong or too close",
+        "Infection",
+        "The induction may not work, and a cesarean may be needed",
+        "Rarely, a tear in the uterus, mainly after a past cesarean"
+      ],
+      "narration": "Like any medical treatment, induction has possible risks. Medicine can make contractions too strong or too close together, which can affect your baby's heart rate; your team would lower or stop the medicine. There's a chance of infection, especially after your water is broken. Sometimes an induction doesn't work, and a cesarean is needed. Rarely, the uterus can tear, mostly in people who've had a cesarean before. Your team will talk with you about the risks and benefits for you.",
+      "sourceIds": ["acog-induction-faq", "acog-past-due-faq"],
+      "visual": {
+        "kind": "illustration",
+        "description": "A nurse sitting at the bedside of a laboring person, calmly explaining, while the support partner listens and nods. No readable writing."
+      }
+    },
+    {
+      "id": "your-questions",
+      "type": "reflection",
+      "heading": "Questions before an induction",
+      "onScreen": [
+        "Why is it recommended, and what if we wait?",
+        "How will it be done, and how long might it take?",
+        "What happens if it doesn't work?"
+      ],
+      "narration": "If induction comes up, it helps to have your questions ready. You might ask why it's recommended for you, and what would happen if you waited. How will it be done, and how long might it take? Can you go home during any part of it? And what happens if it doesn't work? Write down the questions you'd want to ask, and save them to your Birth Readiness Brief.",
+      "sourceIds": ["acog-induction-questions"],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write the questions you'd want to ask your care team if an induction is recommended."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Induction helps labor start, for medical or elective reasons",
+        "Steps: soften the cervix, then start contractions",
+        "It can take a day or more; bring things to pass the time",
+        "Ask why, how, and what happens if it doesn't work"
+      ],
+      "narration": "Let's recap. An induction helps labor start, either for a health reason or, in healthy pregnancies, as a planned choice. It usually happens in steps: softening the cervix if needed, then starting contractions with oxytocin, breaking the water, or both. It can take a day or more, so bring things to pass the time. And before you agree, ask why, how it will be done, and what happens if it doesn't work. Next up, a few review questions.",
+      "sourceIds": ["acog-induction-faq", "acog-induction-questions"]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "What is an elective induction?",
+      "options": [
+        "An induction because of a health problem",
+        "An induction chosen when you and your baby are both healthy",
+        "An emergency cesarean"
+      ],
+      "correctIndex": 1,
+      "explanation": "An elective induction is one you and your team choose when there's no medical reason, for example at 39 weeks in a healthy pregnancy."
+    },
+    {
+      "prompt": "Your cervix isn't ready at the start of an induction. What usually comes first?",
+      "options": [
+        "Pushing",
+        "Softening the cervix with medicine or a small balloon",
+        "An epidural"
+      ],
+      "correctIndex": 1,
+      "explanation": "If the cervix isn't ready, your team first helps it soften and open, with medicine or a small balloon. This can take many hours."
+    },
+    {
+      "prompt": "What's a good thing to bring for an induction?",
+      "options": [
+        "Nothing; it's always quick",
+        "Things to pass the time, like music or a book",
+        "Your own medicine to speed it up"
+      ],
+      "correctIndex": 1,
+      "explanation": "Inductions can take a day or more, especially with a first baby, so things to pass the time help."
+    }
+  ]
+}
