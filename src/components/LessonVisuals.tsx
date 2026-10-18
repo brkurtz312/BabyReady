@@ -1887,6 +1887,72 @@ const VISUALS: Record<string, () => React.ReactElement> = {
       ]}
     />
   ),
+  'your-postpartum-checkups/visit-schedule': () => (
+    <IconPanel
+      label="When your checkups happen: a check-in within 3 weeks, a blood pressure check in 3 to 10 days if you had high blood pressure, a full visit by 12 weeks, then ongoing primary care."
+      items={[
+        { icon: Phone, label: 'Check-in within 3 weeks' },
+        { icon: HeartPulse, label: 'Blood pressure check in 3 to 10 days, if needed', tone: 'marigold' },
+        { icon: Calendar, label: 'Full visit by 12 weeks' },
+        { icon: Stethoscope, label: 'Then ongoing primary care' },
+      ]}
+    />
+  ),
+  'your-postpartum-checkups/what-gets-checked': () => (
+    <IconPanel
+      label="What gets checked: your mood and coping, your healing, feeding and your baby, and birth control and future plans."
+      items={[
+        { icon: Heart, label: 'Mood and coping' },
+        { icon: Bandage, label: 'Your healing' },
+        { icon: Baby, label: 'Feeding and your baby' },
+        { icon: Calendar, label: 'Birth control and plans' },
+      ]}
+    />
+  ),
+  'your-postpartum-checkups/pregnancy-conditions': () => (
+    <IconPanel
+      label="After a pregnancy condition: a glucose test after gestational diabetes, blood pressure checks after high blood pressure, a higher risk later, and telling your primary care clinician."
+      items={[
+        { icon: Droplet, label: 'Glucose test after gestational diabetes' },
+        { icon: HeartPulse, label: 'Blood pressure checks' },
+        { icon: ClipboardCheck, label: 'Higher risk later in life' },
+        { icon: Stethoscope, label: 'Tell your primary care clinician' },
+      ]}
+    />
+  ),
+  'your-postpartum-checkups/sex-after-birth': () => (
+    <IconPanel
+      label="Sex after birth: no set date, when you feel ready, a lubricant can help, and you can get pregnant before your first period."
+      items={[
+        { icon: Calendar, label: 'No set date' },
+        { icon: Heart, label: 'When you feel ready' },
+        { icon: Droplet, label: 'A lubricant can help' },
+        { icon: TriangleAlert, label: 'Pregnancy before your first period', tone: 'marigold' },
+      ]}
+    />
+  ),
+  'your-postpartum-checkups/spacing': () => (
+    <IconPanel
+      label="Spacing your next pregnancy: wait at least 6 months, ideally about 18 months or more; shorter gaps raise risks; talk with your team."
+      items={[
+        { icon: Calendar, label: 'At least 6 months' },
+        { icon: Hourglass, label: 'Ideally about 18 months' },
+        { icon: TriangleAlert, label: 'Shorter gaps raise risks', tone: 'marigold' },
+        { icon: MessageCircle, label: 'Talk with your team' },
+      ]}
+    />
+  ),
+  'your-postpartum-checkups/your-visit': () => (
+    <IconPanel
+      label="Getting the most from your visits: write questions down, use your Brief and ACOG's checklist, bring a support person, and call sooner if something seems wrong."
+      items={[
+        { icon: ClipboardCheck, label: 'Write questions down' },
+        { icon: CircleCheck, label: 'Use a checklist' },
+        { icon: Users, label: 'Bring a support person' },
+        { icon: Phone, label: 'Worried? Call sooner' },
+      ]}
+    />
+  ),
 };
 
 /** The drawn picture for a slide, or null when it has none. */
