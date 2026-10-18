@@ -122,6 +122,14 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'safe-sleep/products-and-swaddling': require('../../assets/lessons/safe-sleep/products-and-swaddling.jpg'),
   'safe-sleep/tummy-time': require('../../assets/lessons/safe-sleep/tummy-time.jpg'),
   'safe-sleep/every-caregiver': require('../../assets/lessons/safe-sleep/every-caregiver.jpg'),
+  'car-seat-safety/welcome': require('../../assets/lessons/car-seat-safety/welcome.jpg'),
+  'car-seat-safety/quick-recap': require('../../assets/lessons/car-seat-safety/quick-recap.jpg'),
+  'car-seat-safety/rear-facing-longer': require('../../assets/lessons/car-seat-safety/rear-facing-longer.jpg'),
+  'car-seat-safety/every-ride': require('../../assets/lessons/car-seat-safety/every-ride.jpg'),
+  'car-seat-safety/winter': require('../../assets/lessons/car-seat-safety/winter.jpg'),
+  'car-seat-safety/extra-products': require('../../assets/lessons/car-seat-safety/extra-products.jpg'),
+  'car-seat-safety/used-seats-and-crashes': require('../../assets/lessons/car-seat-safety/used-seats-and-crashes.jpg'),
+  'car-seat-safety/get-it-checked': require('../../assets/lessons/car-seat-safety/get-it-checked.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
