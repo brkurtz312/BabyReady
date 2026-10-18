@@ -11,6 +11,7 @@ export type NarrationClip = {
 export const narrationClips: Record<string, NarrationClip> = {
   'da32dc35': { source: require('../../assets/narration/car-seat-safety/car-seat-plan.m4a'), starts: [150, 2172, 5874, 8770, 13827, 18570, 20847] }, // car-seat-safety/car-seat-plan.m4a
   '5160b923': { source: require('../../assets/narration/car-seat-safety/checkin-hot-car-right.m4a'), starts: [150, 1005, 6235] }, // car-seat-safety/checkin-hot-car-right.m4a
+  'be9a4939': { source: require('../../assets/narration/car-seat-safety/checkin-hot-car-wrong.m4a'), starts: [150, 1283, 6119] }, // car-seat-safety/checkin-hot-car-wrong.m4a
   '5f5cf1f3': { source: require('../../assets/narration/car-seat-safety/checkin-rear-facing-right.m4a'), starts: [150, 4612, 7665] }, // car-seat-safety/checkin-rear-facing-right.m4a
   'b51b92c9': { source: require('../../assets/narration/car-seat-safety/checkin-rear-facing-wrong.m4a'), starts: [150, 1028, 7220] }, // car-seat-safety/checkin-rear-facing-wrong.m4a
   'bc69b15c': { source: require('../../assets/narration/car-seat-safety/every-ride.m4a'), starts: [150, 6781, 9227, 15190, 21289] }, // car-seat-safety/every-ride.m4a
@@ -19,7 +20,9 @@ export const narrationClips: Record<string, NarrationClip> = {
   'e9c6aa7a': { source: require('../../assets/narration/car-seat-safety/harness-refresher.m4a'), starts: [150, 4805] }, // car-seat-safety/harness-refresher.m4a
   '42e8e61d': { source: require('../../assets/narration/car-seat-safety/hot-cars.m4a'), starts: [150, 4007, 12998, 16356, 29698] }, // car-seat-safety/hot-cars.m4a
   '320a948c': { source: require('../../assets/narration/car-seat-safety/quick-recap.m4a'), starts: [150, 1748, 8350, 15429, 18786] }, // car-seat-safety/quick-recap.m4a
+  '1ac41891': { source: require('../../assets/narration/car-seat-safety/quiz-1-right.m4a'), starts: [150, 4170, 7424] }, // car-seat-safety/quiz-1-right.m4a
   '3a0c9a3c': { source: require('../../assets/narration/car-seat-safety/rear-facing-longer.m4a'), starts: [150, 7985, 14994, 22884] }, // car-seat-safety/rear-facing-longer.m4a
+  '7e5e397c': { source: require('../../assets/narration/car-seat-safety/used-seats-and-crashes.m4a'), starts: [150, 245, 1964, 11817, 13318, 17292, 24057] }, // car-seat-safety/used-seats-and-crashes.m4a
   '01144b24': { source: require('../../assets/narration/car-seat-safety/welcome.m4a'), starts: [150, 2237, 7979] }, // car-seat-safety/welcome.m4a
   '6fb2173d': { source: require('../../assets/narration/car-seat-safety/winter.m4a'), starts: [150, 5044, 10593, 15810, 21159] }, // car-seat-safety/winter.m4a
   '467717c8': { source: require('../../assets/narration/early-pregnancy-first-steps/checkin-folic-acid-right.m4a'), starts: [150, 952, 9192, 12689] }, // early-pregnancy-first-steps/checkin-folic-acid-right.m4a

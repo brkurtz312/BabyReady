@@ -1252,5 +1252,39 @@
       18570,
       20847
     ]
+  },
+  "car-seat-safety/quiz-1-right.m4a": {
+    "fingerprint": "1ac41891",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4170,
+      7424
+    ]
+  },
+  "car-seat-safety/checkin-hot-car-wrong.m4a": {
+    "fingerprint": "be9a4939",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1283,
+      6119
+    ]
+  },
+  "car-seat-safety/used-seats-and-crashes.m4a": {
+    "fingerprint": "7e5e397c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      245,
+      1964,
+      11817,
+      13318,
+      17292,
+      24057
+    ]
   }
 }
