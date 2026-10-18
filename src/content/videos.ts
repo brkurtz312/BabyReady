@@ -26,6 +26,7 @@ const VIDEOS: Record<string, number> = {
   'third-trimester-body/side-sleeping-video': require('../../assets/lessons/third-trimester-body/side-sleeping-video.mp4'),
   'when-to-contact-your-care-team/practice-call-video': require('../../assets/lessons/when-to-contact-your-care-team/practice-call-video.mp4'),
   'postpartum-warning-signs/speaking-up-video': require('../../assets/lessons/postpartum-warning-signs/speaking-up-video.mp4'),
+  'when-to-call-about-your-baby/calming-video': require('../../assets/lessons/when-to-call-about-your-baby/calming-video.mp4'),
 };
 
 export function videoFor(lessonId: string, slideId: string): number | null {

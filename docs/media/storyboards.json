@@ -781,5 +781,61 @@
         "text": "Any urgent warning sign: seek medical care immediately. Always say you recently had a baby."
       }
     ]
+  },
+  "when-to-call-about-your-baby/calming-video": {
+    "cast": "a parent, a woman with medium-brown skin and shoulder-length straight black hair, in a soft grey long-sleeve top and lounge pants, with no pregnant belly; their newborn, small, in a pale teal swaddle or sleeper. The parent is alone at home with the baby",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "Calming a crying baby, and taking a break"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "Late evening in a dim nursery lit by a lamp. The parent holds the crying newborn, wrapping the baby snugly in a swaddle. Only the parent and the baby are in the home; nobody else is there.",
+        "caption": "Swaddling can help a baby feel secure."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The parent sits in a rocking chair, gently rocking the newborn held against her chest, skin to skin under an open top, with a pacifier nearby. Only the parent and the baby are in the home; nobody else is there.",
+        "caption": "Try holding skin to skin, gentle rocking, or a pacifier."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The parent walks slowly around the dim room, swaying with the newborn on her shoulder and softly singing. Only the parent and the baby are in the home; nobody else is there.",
+        "caption": "Walking and soft singing can help, too."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The parent sits on the edge of a chair, looking exhausted, holding the still-crying newborn. Only the parent and the baby are in the home; nobody else is there.",
+        "caption": "Sometimes nothing works. That's normal, and it gets better."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The parent gently lays the newborn on their back in the crib. The crib is bare: a firm flat mattress with a fitted sheet only, no pillows, blankets, bumpers or toys, and the baby lies on their back. Only the parent and the baby are in the home; nobody else is there.",
+        "caption": "Feeling overwhelmed? Lay your baby on their back in the crib."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "In the hallway outside the nursery door, the parent stands with her eyes closed taking a slow breath, holding her phone, about to text a friend. The phone screen is blank. Only the parent and the baby are in the home; nobody else is there.",
+        "caption": "Step away, breathe, and call or text someone for support."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The parent comes back into the nursery calmer and looks over the crib at the newborn, who has settled. The crib is bare: a firm flat mattress with a fitted sheet only, no pillows, blankets, bumpers or toys, and the baby lies on their back. Only the parent and the baby are in the home; nobody else is there.",
+        "caption": "Check on your baby every 5 to 10 minutes."
+      },
+      {
+        "type": "end",
+        "seconds": 6,
+        "text": "Never shake a baby. It's always okay to take a break."
+      }
+    ]
   }
 }
