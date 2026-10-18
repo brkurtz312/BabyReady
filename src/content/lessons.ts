@@ -23,6 +23,7 @@ import understandingLaborPain from '../../content/lessons/comfort-and-support-sk
 import breathingAndRelaxation from '../../content/lessons/comfort-and-support-skills/02-breathing-and-relaxation.json';
 import positionsAndMovement from '../../content/lessons/comfort-and-support-skills/03-positions-and-movement.json';
 import touchWaterAndComfortTools from '../../content/lessons/comfort-and-support-skills/04-touch-water-and-comfort-tools.json';
+import forSupportPeople from '../../content/lessons/comfort-and-support-skills/05-for-support-people.json';
 
 import makingDecisions from '../../content/lessons/interventions-and-flexible-decisions/01-making-decisions-with-your-care-team.json';
 import monitoringYourBaby from '../../content/lessons/interventions-and-flexible-decisions/02-monitoring-your-baby-in-labor.json';
@@ -82,7 +83,7 @@ const earlyPregnancyLessons = sortedLessons([
   firstPrenatalVisit,
 ]);
 
-const comfortAndSupportLessons = sortedLessons([understandingLaborPain, breathingAndRelaxation, positionsAndMovement, touchWaterAndComfortTools]);
+const comfortAndSupportLessons = sortedLessons([understandingLaborPain, breathingAndRelaxation, positionsAndMovement, touchWaterAndComfortTools, forSupportPeople]);
 
 const interventionsLessons = sortedLessons([makingDecisions, monitoringYourBaby, medicalPainRelief, inductionOfLabor, assistedVaginalBirth, cesareanBirth, whenPlansChange]);
 

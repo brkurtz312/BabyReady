@@ -1282,6 +1282,28 @@ const VISUALS: Record<string, () => React.ReactElement> = {
       ]}
     />
   ),
+  'for-support-people/before-labor': () => (
+    <IconPanel
+      label="Before labor: practice the comfort skills together, know their wishes, pack your own bag, and know the route and when to call."
+      items={[
+        { icon: HeartHandshake, label: 'Practice comfort skills' },
+        { icon: CircleCheck, label: 'Know their top wishes' },
+        { icon: Luggage, label: 'Pack your own bag' },
+        { icon: Route, label: 'Know the route, and when to call' },
+      ]}
+    />
+  ),
+  'for-support-people/take-care': () => (
+    <IconPanel
+      label="Take care of yourself: eat, drink, rest when someone else can take over, and have a backup support person."
+      items={[
+        { icon: Utensils, label: 'Eat' },
+        { icon: GlassWater, label: 'Drink' },
+        { icon: Moon, label: 'Rest when covered' },
+        { icon: Users, label: 'A backup support person' },
+      ]}
+    />
+  ),
 };
 
 /** The drawn picture for a slide, or null when it has none. */
