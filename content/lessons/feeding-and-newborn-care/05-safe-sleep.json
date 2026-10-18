@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 12,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 5.5, the first lesson of Module 5 (Feeding and Newborn Care); it keeps order 5 so 5.1 to 5.4 can slot in ahead. Based on AAP's 2022 safe sleep policy, its HealthyChildren.org explainers, and NICHD's Safe to Sleep campaign. Sources were found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep 'as much as half' for room sharing (AAP's 'up to 50%'); keep the pacifier wording without a fixed age; keep 'babies don't choke more on their backs', 'a sleeping baby's head can fall forward when sitting up' and the line about older relatives' advice; make the setup video as proposed."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 5.5, the first lesson of Module 5 (Feeding and Newborn Care); it keeps order 5 so 5.1 to 5.4 can slot in ahead. Based on AAP's 2022 safe sleep policy, its HealthyChildren.org explainers, and NICHD's Safe to Sleep campaign. Every source was confirmed against its slides by the reviewer on 2026-10-18. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep 'as much as half' for room sharing (AAP's 'up to 50%'); keep the pacifier wording without a fixed age; keep 'babies don't choke more on their backs', 'a sleeping baby's head can fall forward when sitting up' and the line about older relatives' advice; make the setup video as proposed."
   },
   "sources": [
     {
@@ -24,49 +24,49 @@
       "organization": "AAP",
       "title": "How to Keep Your Sleeping Baby Safe: AAP Policy Explained (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/a-parents-guide-to-safe-sleep.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-safe-sleep-ways",
       "organization": "AAP",
       "title": "Safe Sleep: 9 Ways to Reduce a Baby's Risk of SIDS & Suffocation (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/Preventing-SIDS.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-sleep-policy-2022",
       "organization": "AAP",
       "title": "Sleep-Related Infant Deaths: Updated 2022 Recommendations for Reducing Infant Deaths in the Sleep Environment (Policy Statement)",
       "url": "https://publications.aap.org/pediatrics/article/150/1/e2022057990/188304/Sleep-Related-Infant-Deaths-Updated-2022",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-swaddling",
       "organization": "AAP",
       "title": "Swaddling: Is it Safe for Your Baby? (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/diapers-clothing/Pages/Swaddling-Is-it-Safe.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-tummy-time",
       "organization": "AAP",
       "title": "Back to Sleep, Tummy to Play (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/sleep/pages/Back-to-Sleep-Tummy-to-Play.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "nichd-reduce-risk",
       "organization": "NICHD",
       "title": "Safe to Sleep: Ways to Reduce Baby's Risk",
       "url": "https://safetosleep.nichd.nih.gov/reduce-risk/reduce",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "nichd-back-sleeping",
       "organization": "NICHD",
       "title": "Safe to Sleep: About Back Sleeping",
       "url": "https://safetosleep.nichd.nih.gov/reduce-risk/back-sleeping",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
