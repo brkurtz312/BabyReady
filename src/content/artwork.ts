@@ -147,6 +147,13 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'medical-pain-relief/iv-medicine': require('../../assets/lessons/medical-pain-relief/iv-medicine.jpg'),
   'medical-pain-relief/nitrous': require('../../assets/lessons/medical-pain-relief/nitrous.jpg'),
   'medical-pain-relief/when-to-ask': require('../../assets/lessons/medical-pain-relief/when-to-ask.jpg'),
+  'induction-of-labor/welcome': require('../../assets/lessons/induction-of-labor/welcome.jpg'),
+  'induction-of-labor/what-is': require('../../assets/lessons/induction-of-labor/what-is.jpg'),
+  'induction-of-labor/at-39-weeks': require('../../assets/lessons/induction-of-labor/at-39-weeks.jpg'),
+  'induction-of-labor/ripening': require('../../assets/lessons/induction-of-labor/ripening.jpg'),
+  'induction-of-labor/starting-contractions': require('../../assets/lessons/induction-of-labor/starting-contractions.jpg'),
+  'induction-of-labor/what-to-expect': require('../../assets/lessons/induction-of-labor/what-to-expect.jpg'),
+  'induction-of-labor/risks': require('../../assets/lessons/induction-of-labor/risks.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
