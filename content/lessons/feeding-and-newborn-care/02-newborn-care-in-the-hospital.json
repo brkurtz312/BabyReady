@@ -16,7 +16,7 @@
     "reviewedBy": null,
     "reviewedOn": null,
     "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 5.2 of Module 5 (Feeding and Newborn Care). Builds on Labor Basics lesson 6 (the first hour and skin-to-skin). Sources were found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. For the reviewer, most important first: the hepatitis B guidance has changed and is disputed. The AAP still recommends a first dose for all babies within 24 hours of birth; a CDC release of December 16, 2025 adopted individual-based decision-making for the birth dose when the mother tests negative, with no change (vaccine and immune globulin at birth) when the mother tests positive or her status is unknown. The slide presents both and tells parents to talk with their baby's doctor; please confirm this is still current. Also: vitamin K as a single shot in the thigh within 6 hours of birth, and oral vitamin K working less well, follow the AAP vitamin K page; the eye ointment slide (an antibiotic to prevent infection from bacteria picked up during birth, often required by state law, may blur vision briefly) is supported only by a passing AAP mention and common practice, and the state-law point is not confirmed in these sources; the heel-prick test timing (after the first 24 hours, results in about a week) follows the AAP newborn screening page; the hearing 1-3-6 timeline follows the CDC page; declining a procedure possibly meaning signing a form is common practice not confirmed in these sources."
+    "notes": "Drafted 2026-10-18 as lesson 5.2 of Module 5 (Feeding and Newborn Care). Builds on Labor Basics lesson 6 (the first hour and skin-to-skin). Sources were found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. For the reviewer, most important first: the hepatitis B guidance has changed and is disputed. The AAP still recommends a first dose for all babies within 24 hours of birth; a CDC release of December 16, 2025 adopted individual-based decision-making for the birth dose when the mother tests negative, with no change (vaccine and immune globulin at birth) when the mother tests positive or her status is unknown. The slide presents both and tells parents to talk with their baby's doctor; please confirm this is still current. Also: vitamin K as a single shot in the thigh soon after birth, and oral vitamin K working less well, follow the AAP vitamin K page; the eye ointment slide (an antibiotic to prevent infection from bacteria picked up during birth, often required by state law, may blur vision briefly) is supported only by a passing AAP mention and common practice, and the state-law point is not confirmed in these sources; the heel-prick test timing (after the first 24 hours, results in about a week) follows the AAP newborn screening page; the hearing 1-3-6 timeline follows the CDC page; declining a procedure possibly meaning signing a form is common practice not confirmed in these sources. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the hepatitis B slide as written, presenting both the AAP recommendation and the CDC's late-2025 change; keep the eye ointment slide, including state requirements, without a picture; give vitamin K timing as 'soon after birth' rather than within six hours; keep the blood test, hearing, and declining slides as written; no video for this lesson."
   },
   "sources": [
     {
@@ -95,7 +95,11 @@
         "Screening: a blood test, hearing, and heart"
       ],
       "narration": "Here's what most babies get in the hospital. A vitamin K shot, to prevent a rare but serious bleeding problem. Antibiotic eye ointment, to prevent eye infections. The first dose of the hepatitis B vaccine. And newborn screening: a small blood test, a hearing test, and a heart check. Many of these can wait until after your first hour of skin-to-skin, so ask your team.",
-      "sourceIds": ["aap-vitamin-k", "aap-bringing-baby-home", "aap-newborn-screening"],
+      "sourceIds": [
+        "aap-vitamin-k",
+        "aap-bringing-baby-home",
+        "aap-newborn-screening"
+      ],
       "visual": {
         "kind": "icon-list",
         "description": "Four simple icons with short labels: a syringe for the vitamin K shot, an eye for eye ointment, a shield for the hepatitis B vaccine, and a clipboard check for newborn screening."
@@ -109,10 +113,12 @@
         "Babies are born with low vitamin K",
         "Vitamin K helps blood clot",
         "One shot prevents rare but serious bleeding, including in the brain",
-        "Given in the thigh, within hours of birth"
+        "Given in the thigh, soon after birth"
       ],
-      "narration": "Babies are born with very little vitamin K, which the body needs to help blood clot. Without it, a small number of babies have serious bleeding, sometimes in the brain, in the first weeks or months. A single shot of vitamin K in the thigh, usually given within six hours of birth, prevents this. The AAP recommends it for all newborns. Vitamin K given by mouth doesn't work as well. You can hold your baby during the shot.",
-      "sourceIds": ["aap-vitamin-k"],
+      "narration": "Babies are born with very little vitamin K, which the body needs to help blood clot. Without it, a small number of babies have serious bleeding, sometimes in the brain, in the first weeks or months. A single shot of vitamin K in the thigh, given soon after birth, prevents this. The AAP recommends it for all newborns. Vitamin K given by mouth doesn't work as well. You can hold your baby during the shot.",
+      "sourceIds": [
+        "aap-vitamin-k"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A new parent holding their swaddled newborn close and soothing them, while a nurse stands beside the bed with a small tray, smiling. No needle shown. Exactly one baby. No readable writing."
@@ -129,7 +135,9 @@
         "It may blur your baby's vision for a short time"
       ],
       "narration": "Soon after birth, a thin line of antibiotic ointment is put in your baby's eyes. It helps prevent eye infections from bacteria your baby may have picked up during birth. Many states require it. The ointment can make your baby's vision a little blurry for a short time, so many families ask for it to wait until after the first hour of skin-to-skin and feeding.",
-      "sourceIds": ["aap-bringing-baby-home"]
+      "sourceIds": [
+        "aap-bringing-baby-home"
+      ]
     },
     {
       "id": "hep-b",
@@ -142,7 +150,10 @@
         "Guidance has changed recently; talk with your baby's doctor"
       ],
       "narration": "Hepatitis B is an infection of the liver. It can pass from a parent to a baby at birth, often without anyone knowing, and babies who get it are very likely to have lifelong liver problems. The vaccine protects against it. The AAP recommends that all babies get a first dose within 24 hours of birth. If the birth parent has hepatitis B, or their status is unknown, the baby also gets a second shot, called immune globulin, at birth. In late 2025, the CDC changed its advice for babies whose mothers test negative, leaving the timing of the birth dose to a decision with your baby's doctor. Because guidance has changed, talk with your baby's doctor before birth.",
-      "sourceIds": ["aap-hepb-vaccine", "cdc-hepb-2025"],
+      "sourceIds": [
+        "aap-hepb-vaccine",
+        "cdc-hepb-2025"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A pregnant person and their partner sitting with a pediatrician in a calm clinic room, the pediatrician explaining kindly, everyone relaxed. No readable writing."
@@ -154,7 +165,9 @@
       "heading": "Quick check-in",
       "onScreen": [],
       "narration": "Let's check in.",
-      "sourceIds": ["aap-vitamin-k"],
+      "sourceIds": [
+        "aap-vitamin-k"
+      ],
       "question": {
         "prompt": "Why do newborns get a vitamin K shot?",
         "options": [
@@ -177,7 +190,9 @@
         "Results come back in about a week"
       ],
       "narration": "Newborn screening starts with a blood test. A few drops of blood are taken from your baby's heel, usually after they're a day old. The blood is tested for a number of rare conditions that babies can look healthy with at first, but that are treatable when they're found early. Results usually come back in about a week. Sometimes a test needs to be repeated. That doesn't necessarily mean something is wrong, so follow up when you're asked to.",
-      "sourceIds": ["aap-newborn-screening"],
+      "sourceIds": [
+        "aap-newborn-screening"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A parent holding their swaddled newborn on their chest while a nurse gently holds the baby's bare foot in one hand. No needle or blood shown. Exactly one baby. No readable writing."
@@ -194,7 +209,11 @@
         "It helps find serious heart problems before you go home"
       ],
       "narration": "Your baby's hearing is checked with small earphones or sensors, often while they sleep. It's quick and painless. If your baby doesn't pass, it's usually not hearing loss, but it's important to get a full hearing test, by three months of age at the latest. The heart screen uses a small sensor, like a soft bandage, on your baby's hand and foot to measure oxygen in the blood. It helps find serious heart problems that might not show up on an exam, before you go home.",
-      "sourceIds": ["cdc-hearing-136", "aap-newborn-screening", "aap-pulse-ox"],
+      "sourceIds": [
+        "cdc-hearing-136",
+        "aap-newborn-screening",
+        "aap-pulse-ox"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A newborn lying on their back in a clear hospital bassinet with a small soft sensor wrapped on one foot, a thin wire running to a small monitor, while a parent watches beside a nurse. Exactly one baby. No readable numbers or writing."
@@ -211,7 +230,10 @@
         "If you decline something, your team will explain the risks"
       ],
       "narration": "You're part of your baby's care, too. Ask about each of these steps before birth, so you know what to expect. Many hospitals can wait to do routine care until after your first hour of skin-to-skin. You can often hold or feed your baby during shots and tests, which can help them stay calm. And if you're thinking of declining something, your team will explain the risks, and may ask you to sign a form.",
-      "sourceIds": ["aap-vitamin-k", "aap-newborn-screening"],
+      "sourceIds": [
+        "aap-vitamin-k",
+        "aap-newborn-screening"
+      ],
       "visual": {
         "kind": "icon-list",
         "description": "Four simple icons with short labels: a question mark for asking before birth, a clock for waiting until after skin-to-skin, a heart for holding your baby during care, and a circle check for a team that explains."
@@ -242,7 +264,11 @@
         "Blood, hearing, and heart screening find problems early"
       ],
       "narration": "Let's recap. The vitamin K shot prevents rare but serious bleeding. Eye ointment helps prevent eye infections. The hepatitis B vaccine protects against a liver infection, and because guidance has changed, ask your baby's doctor about its timing. And the blood, hearing, and heart screens help find problems early, when they're most treatable. Next up, a few review questions.",
-      "sourceIds": ["aap-vitamin-k", "aap-hepb-vaccine", "aap-newborn-screening"]
+      "sourceIds": [
+        "aap-vitamin-k",
+        "aap-hepb-vaccine",
+        "aap-newborn-screening"
+      ]
     }
   ],
   "reviewQuiz": [
