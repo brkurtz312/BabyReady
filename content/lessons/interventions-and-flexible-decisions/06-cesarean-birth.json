@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 15,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 4.6 of Module 4 (Interventions and Flexible Decisions). Builds on Preparing for Birth lesson 5 (naming who you'd like with you at a cesarean) and lessons 4.2 to 4.5; feelings after an unplanned birth are left to lesson 4.7. Sources were found by web search only; this session could not open acog.org, so every source needs to be opened and confirmed. For the reviewer: 'about 1 in 3 births in the US' is from CDC FastStats (32.4% cesarean in 2024, from Births: Final Data for 2024); the reasons (labor not progressing, heart rate concerns, a baby not head-down, placenta covering the cervix, twins in some cases, some prior cesareans, some health conditions) follow the Cesarean Birth FAQ; the steps before surgery (IV, bladder catheter, antibiotics, spinal or epidural, general anesthesia in some emergencies) and timings (baby born within about 10 to 15 minutes, the whole surgery about an hour, hospital stay 2 to 4 days) need confirming; the family-centered options (a clear drape, skin-to-skin in the operating room, music) depend on the hospital and are not confirmed against an ACOG page; the recovery-at-home advice (not lifting more than your baby, no driving while taking opioid pain medicine) and call-back signs need confirming; the VBAC slide follows the VBAC FAQ. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep 'about 1 in 3 births' and cite CDC FastStats for it; keep the reasons as written; the getting-ready slide is accurate as written; keep all three times; keep the first-moments options framed as things to ask your hospital about; keep the recovery-at-home slide and call-back signs; keep the VBAC slide, including asking for surgery notes; partners wear a cap and gown in operating room pictures; no video for this lesson."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 4.6 of Module 4 (Interventions and Flexible Decisions). Builds on Preparing for Birth lesson 5 (naming who you'd like with you at a cesarean) and lessons 4.2 to 4.5; feelings after an unplanned birth are left to lesson 4.7. Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: 'about 1 in 3 births in the US' is from CDC FastStats (32.4% cesarean in 2024, from Births: Final Data for 2024); the reasons (labor not progressing, heart rate concerns, a baby not head-down, placenta covering the cervix, twins in some cases, some prior cesareans, some health conditions) follow the Cesarean Birth FAQ; the steps before surgery (IV, bladder catheter, antibiotics, spinal or epidural, general anesthesia in some emergencies) and timings (baby born within about 10 to 15 minutes, the whole surgery about an hour, hospital stay 2 to 4 days) need confirming; the family-centered options (a clear drape, skin-to-skin in the operating room, music) depend on the hospital and are not confirmed against an ACOG page; the recovery-at-home advice (not lifting more than your baby, no driving while taking opioid pain medicine) and call-back signs need confirming; the VBAC slide follows the VBAC FAQ. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep 'about 1 in 3 births' and cite CDC FastStats for it; keep the reasons as written; the getting-ready slide is accurate as written; keep all three times; keep the first-moments options framed as things to ask your hospital about; keep the recovery-at-home slide and call-back signs; keep the VBAC slide, including asking for surgery notes; partners wear a cap and gown in operating room pictures; no video for this lesson."
   },
   "sources": [
     {
@@ -24,28 +24,28 @@
       "organization": "ACOG",
       "title": "Cesarean Birth (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/cesarean-birth",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-unplanned-cesarean",
       "organization": "ACOG",
       "title": "What to Know About Unplanned Cesarean Births",
       "url": "https://www.acog.org/womens-health/experts-and-stories/the-latest/what-to-know-about-unplanned-cesarean-births",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-vbac-faq",
       "organization": "ACOG",
       "title": "Vaginal Birth After Cesarean Delivery (VBAC) (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/vaginal-birth-after-cesarean-delivery",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "cdc-faststats-delivery",
       "organization": "CDC",
       "title": "FastStats: Births, Method of Delivery",
       "url": "https://www.cdc.gov/nchs/fastats/delivery.htm",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
