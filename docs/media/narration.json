@@ -130,5 +130,1127 @@
       19417,
       26489
     ]
+  },
+  "early-pregnancy-first-steps/nausea-basics.m4a": {
+    "fingerprint": "61a01208",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      8394,
+      11101,
+      17097,
+      22007,
+      22353,
+      25457,
+      29641
+    ]
+  },
+  "early-pregnancy-first-steps/your-next-steps.m4a": {
+    "fingerprint": "519bb5ee",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2041,
+      5810,
+      10107,
+      13859,
+      15486
+    ]
+  },
+  "early-pregnancy-first-steps/dehydration-signs.m4a": {
+    "fingerprint": "e8b3f5d5",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2846,
+      9306,
+      12647,
+      15116,
+      17530,
+      22414,
+      25537
+    ]
+  },
+  "early-pregnancy-first-steps/quiz-1.m4a": {
+    "fingerprint": "cbd13b1e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "early-pregnancy-first-steps/summary.m4a": {
+    "fingerprint": "a229cc9c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      956,
+      2387,
+      5280,
+      6545,
+      12372,
+      15944,
+      18583,
+      20424,
+      25327,
+      27343
+    ]
+  },
+  "early-pregnancy-first-steps/quiz-1-wrong.m4a": {
+    "fingerprint": "b73a4598",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1360,
+      8124,
+      10476
+    ]
+  },
+  "early-pregnancy-first-steps/quiz-1-right.m4a": {
+    "fingerprint": "f7a3f81e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      938,
+      3255,
+      9045
+    ]
+  },
+  "early-pregnancy-first-steps/quiz-3.m4a": {
+    "fingerprint": "d8b68d34",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "early-pregnancy-first-steps/quiz-3-right.m4a": {
+    "fingerprint": "5d75ec2b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1057,
+      8540
+    ]
+  },
+  "early-pregnancy-first-steps/quiz-3-wrong.m4a": {
+    "fingerprint": "97f927a5",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1654,
+      9616
+    ]
+  },
+  "early-pregnancy-first-steps/done.m4a": {
+    "fingerprint": "8fbe7201",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1237,
+      2591
+    ]
+  },
+  "early-pregnancy-first-steps/quiz-2.m4a": {
+    "fingerprint": "05088e23",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "first-trimester-common-changes/welcome.m4a": {
+    "fingerprint": "e4bf8de7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      8508,
+      11722,
+      14247,
+      16864,
+      22847
+    ]
+  },
+  "early-pregnancy-first-steps/quiz-2-right.m4a": {
+    "fingerprint": "b286edca",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      920,
+      4059
+    ]
+  },
+  "first-trimester-common-changes/common-changes.m4a": {
+    "fingerprint": "5009ae7b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5438,
+      8709,
+      11410,
+      12775,
+      17865,
+      19977,
+      22693,
+      25076,
+      28316
+    ]
+  },
+  "first-trimester-common-changes/nausea-more-help.m4a": {
+    "fingerprint": "dd1ea75c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3323,
+      8875,
+      13207,
+      17848,
+      20905,
+      23471,
+      28186
+    ]
+  },
+  "first-trimester-common-changes/checkin-nausea-right.m4a": {
+    "fingerprint": "44de3f50",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      889,
+      3832,
+      8245
+    ]
+  },
+  "first-trimester-common-changes/nausea-support.m4a": {
+    "fingerprint": "c956c528",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6497,
+      8978,
+      13753,
+      17613,
+      23649,
+      28433,
+      31936,
+      37841
+    ]
+  },
+  "early-pregnancy-first-steps/quiz-2-wrong.m4a": {
+    "fingerprint": "d1862284",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1674,
+      4956
+    ]
+  },
+  "first-trimester-common-changes/checkin-nausea-wrong.m4a": {
+    "fingerprint": "705ab68a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1302,
+      4131,
+      8528
+    ]
+  },
+  "first-trimester-common-changes/bleeding-call-now.m4a": {
+    "fingerprint": "e4cdd90c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2835,
+      10082,
+      15150,
+      20140,
+      24001
+    ]
+  },
+  "first-trimester-common-changes/early-bleeding.m4a": {
+    "fingerprint": "a9d3c34d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2740,
+      5118,
+      7728,
+      12790,
+      16243,
+      20531,
+      24821,
+      29382,
+      34404
+    ]
+  },
+  "first-trimester-common-changes/checkin-bleeding-pain.m4a": {
+    "fingerprint": "2f170ca9",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "first-trimester-common-changes/common-vs-call.m4a": {
+    "fingerprint": "6d4940e7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2431,
+      4897,
+      8401,
+      11316,
+      16302,
+      18228,
+      23529,
+      25622,
+      29308,
+      31837,
+      35855,
+      37501,
+      39857,
+      43912
+    ]
+  },
+  "first-trimester-common-changes/checkin-bleeding-pain-right.m4a": {
+    "fingerprint": "e631cdcf",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1300,
+      6004,
+      10935
+    ]
+  },
+  "first-trimester-common-changes/checkin-bleeding-pain-wrong.m4a": {
+    "fingerprint": "6b5ed3a5",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1393,
+      5940,
+      10405
+    ]
+  },
+  "first-trimester-common-changes/urgent-warning-signs.m4a": {
+    "fingerprint": "57799764",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4156,
+      10586,
+      14551,
+      17316,
+      22814,
+      32710,
+      36129,
+      40517
+    ]
+  },
+  "first-trimester-common-changes/calling-video.m4a": {
+    "fingerprint": "32d47e4e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2851
+    ]
+  },
+  "first-trimester-common-changes/your-contact-plan.m4a": {
+    "fingerprint": "8c893354",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2724,
+      7262,
+      13959
+    ]
+  },
+  "first-trimester-common-changes/quiz-1-right.m4a": {
+    "fingerprint": "7fe8c795",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      825,
+      4005,
+      5272
+    ]
+  },
+  "first-trimester-common-changes/healthy-habits.m4a": {
+    "fingerprint": "5b71dfdc",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3186,
+      3557,
+      7971,
+      9398,
+      16330,
+      20972,
+      22690,
+      28489
+    ]
+  },
+  "first-trimester-common-changes/summary.m4a": {
+    "fingerprint": "65c0473f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1139,
+      2158,
+      8356,
+      13949,
+      17693,
+      22977,
+      28316,
+      31605
+    ]
+  },
+  "first-trimester-common-changes/quiz-3-right.m4a": {
+    "fingerprint": "55c8f275",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1081,
+      7246,
+      10718
+    ]
+  },
+  "first-trimester-common-changes/quiz-3-wrong.m4a": {
+    "fingerprint": "ea4be5e7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1445,
+      8030,
+      11474
+    ]
+  },
+  "first-trimester-common-changes/done.m4a": {
+    "fingerprint": "12955bab",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1099,
+      2789
+    ]
+  },
+  "first-prenatal-visit/welcome.m4a": {
+    "fingerprint": "0d51f924",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3924,
+      6718,
+      12560,
+      17035
+    ]
+  },
+  "first-prenatal-visit/what-is-prenatal-care.m4a": {
+    "fingerprint": "8010d9bf",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5360,
+      11229,
+      14413,
+      19176,
+      24864
+    ]
+  },
+  "first-trimester-common-changes/quiz-1-wrong.m4a": {
+    "fingerprint": "479b2c6b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1725,
+      4859,
+      7416
+    ]
+  },
+  "first-trimester-common-changes/quiz-2-right.m4a": {
+    "fingerprint": "d174e02b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1051,
+      6568,
+      9742
+    ]
+  },
+  "first-trimester-common-changes/quiz-2-wrong.m4a": {
+    "fingerprint": "b112ae65",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1130,
+      6026,
+      8670
+    ]
+  },
+  "first-prenatal-visit/first-visit-talk.m4a": {
+    "fingerprint": "081591cf",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2738,
+      7850,
+      10220,
+      13704,
+      20516,
+      24077,
+      26725
+    ]
+  },
+  "first-prenatal-visit/in-person-checks.m4a": {
+    "fingerprint": "55002177",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5195,
+      6786,
+      11358,
+      18439,
+      24000
+    ]
+  },
+  "first-prenatal-visit/honest-answers.m4a": {
+    "fingerprint": "6e579088",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2908,
+      6726,
+      12897,
+      18605
+    ]
+  },
+  "first-prenatal-visit/visit-prep-video.m4a": {
+    "fingerprint": "9b654946",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "first-prenatal-visit/checkin-last-period-right.m4a": {
+    "fingerprint": "022609c9",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      938,
+      5045,
+      6938
+    ]
+  },
+  "first-prenatal-visit/make-a-plan.m4a": {
+    "fingerprint": "1af9254a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2732,
+      6120,
+      10184,
+      13659,
+      18340,
+      23225,
+      26650
+    ]
+  },
+  "first-prenatal-visit/what-to-bring.m4a": {
+    "fingerprint": "1b95bfb7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1359,
+      5035,
+      7365,
+      14715,
+      20165,
+      23613,
+      28454,
+      39192,
+      40779
+    ]
+  },
+  "first-prenatal-visit/checkin-last-period-wrong.m4a": {
+    "fingerprint": "eac6fc83",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1139,
+      5004,
+      7148
+    ]
+  },
+  "first-prenatal-visit/your-questions.m4a": {
+    "fingerprint": "cf93edf7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1507,
+      3949,
+      5517,
+      9828,
+      13425,
+      16397,
+      19728,
+      21428
+    ]
+  },
+  "first-prenatal-visit/quiz-1-wrong.m4a": {
+    "fingerprint": "07a07270",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1365,
+      8292
+    ]
+  },
+  "first-prenatal-visit/quiz-1-right.m4a": {
+    "fingerprint": "1ba25f7e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1033,
+      8645
+    ]
+  },
+  "first-prenatal-visit/quiz-2-right.m4a": {
+    "fingerprint": "567bfb02",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1151,
+      3491
+    ]
+  },
+  "first-prenatal-visit/summary.m4a": {
+    "fingerprint": "1790908a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1550,
+      2620,
+      7494,
+      14594,
+      17849,
+      23475,
+      25654,
+      27715,
+      30050
+    ]
+  },
+  "first-prenatal-visit/quiz-2-wrong.m4a": {
+    "fingerprint": "8a207c64",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1458,
+      5760
+    ]
+  },
+  "first-prenatal-visit/done.m4a": {
+    "fingerprint": "44122fdd",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1002
+    ]
+  },
+  "first-prenatal-visit/quiz-3-right.m4a": {
+    "fingerprint": "508be374",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1091,
+      3918,
+      8410
+    ]
+  },
+  "safe-sleep/back-to-sleep.m4a": {
+    "fingerprint": "5bc7d6c5",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5708,
+      11040,
+      14153,
+      15992,
+      22911
+    ]
+  },
+  "safe-sleep/firm-flat-bare.m4a": {
+    "fingerprint": "1565a615",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3868,
+      12658,
+      13431,
+      13746,
+      17997
+    ]
+  },
+  "safe-sleep/checkin-crib.m4a": {
+    "fingerprint": "5b54209f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "first-prenatal-visit/quiz-3-wrong.m4a": {
+    "fingerprint": "634c1e4e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1466,
+      4457,
+      9194
+    ]
+  },
+  "safe-sleep/checkin-crib-right.m4a": {
+    "fingerprint": "c67b7092",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1072,
+      5412
+    ]
+  },
+  "safe-sleep/checkin-crib-wrong.m4a": {
+    "fingerprint": "6100d23c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1488,
+      5689
+    ]
+  },
+  "safe-sleep/welcome.m4a": {
+    "fingerprint": "86a6f433",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1983,
+      9477
+    ]
+  },
+  "safe-sleep/why-it-matters.m4a": {
+    "fingerprint": "8836160f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      9203,
+      15668
+    ]
+  },
+  "safe-sleep/room-share.m4a": {
+    "fingerprint": "0f52c146",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6061,
+      11874,
+      14773
+    ]
+  },
+  "safe-sleep/sitting-devices.m4a": {
+    "fingerprint": "2dae6ac2",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6850,
+      11877,
+      19143,
+      23257
+    ]
+  },
+  "safe-sleep/couches-armchairs.m4a": {
+    "fingerprint": "2975b7e4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6371,
+      15724,
+      21863
+    ]
+  },
+  "safe-sleep/products-and-swaddling.m4a": {
+    "fingerprint": "97e5ebee",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      9885,
+      13467,
+      20070
+    ]
+  },
+  "safe-sleep/more-ways.m4a": {
+    "fingerprint": "4f9c03cb",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1657,
+      5991,
+      9835,
+      13419,
+      19045,
+      21572
+    ]
+  },
+  "safe-sleep/checkin-car-seat-right.m4a": {
+    "fingerprint": "8b03bda7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      830,
+      4164,
+      7446
+    ]
+  },
+  "safe-sleep/checkin-car-seat-wrong.m4a": {
+    "fingerprint": "f189ac6d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1401,
+      5251,
+      8959
+    ]
+  },
+  "safe-sleep/safe-sleep-video.m4a": {
+    "fingerprint": "b94c2b95",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "safe-sleep/tummy-time.m4a": {
+    "fingerprint": "c4f94c9b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2604,
+      7639,
+      12307,
+      17573
+    ]
+  },
+  "safe-sleep/sleep-plan.m4a": {
+    "fingerprint": "81bc3080",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2259,
+      4997,
+      8395,
+      11743,
+      16464
+    ]
+  },
+  "safe-sleep/every-caregiver.m4a": {
+    "fingerprint": "b3fa1ba7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      8271,
+      16058
+    ]
+  },
+  "safe-sleep/quiz-1-right.m4a": {
+    "fingerprint": "4b26fbea",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      883,
+      5092
+    ]
+  },
+  "safe-sleep/summary.m4a": {
+    "fingerprint": "596df313",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1424,
+      7109,
+      10386,
+      13501,
+      18959,
+      24522
+    ]
+  },
+  "safe-sleep/quiz-1-wrong.m4a": {
+    "fingerprint": "a66d20ec",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1367,
+      4835
+    ]
+  },
+  "safe-sleep/quiz-2-right.m4a": {
+    "fingerprint": "4070eac8",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1108,
+      6622
+    ]
+  },
+  "safe-sleep/quiz-3-right.m4a": {
+    "fingerprint": "87f1186f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      812
+    ]
+  },
+  "safe-sleep/quiz-2-wrong.m4a": {
+    "fingerprint": "9f8d8ff6",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1457,
+      6816
+    ]
+  },
+  "safe-sleep/done.m4a": {
+    "fingerprint": "f4e2a68c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2349,
+      3217
+    ]
+  },
+  "safe-sleep/quiz-3-wrong.m4a": {
+    "fingerprint": "93158be5",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1171
+    ]
+  },
+  "car-seat-safety/checkin-rear-facing-right.m4a": {
+    "fingerprint": "5f5cf1f3",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4612,
+      7665
+    ]
+  },
+  "car-seat-safety/quick-recap.m4a": {
+    "fingerprint": "320a948c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1748,
+      8350,
+      15429,
+      18786
+    ]
+  },
+  "car-seat-safety/welcome.m4a": {
+    "fingerprint": "01144b24",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2237,
+      7979
+    ]
+  },
+  "car-seat-safety/checkin-rear-facing-wrong.m4a": {
+    "fingerprint": "b51b92c9",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1028,
+      7220
+    ]
+  },
+  "car-seat-safety/rear-facing-longer.m4a": {
+    "fingerprint": "3a0c9a3c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      7985,
+      14994,
+      22884
+    ]
+  },
+  "car-seat-safety/harness-refresher.m4a": {
+    "fingerprint": "e9c6aa7a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4805
+    ]
+  },
+  "car-seat-safety/every-ride.m4a": {
+    "fingerprint": "bc69b15c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6781,
+      9227,
+      15190,
+      21289
+    ]
+  },
+  "car-seat-safety/winter.m4a": {
+    "fingerprint": "6fb2173d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5044,
+      10593,
+      15810,
+      21159
+    ]
+  },
+  "car-seat-safety/extra-products.m4a": {
+    "fingerprint": "2d913638",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6528,
+      11012,
+      16250,
+      18831
+    ]
+  },
+  "car-seat-safety/hot-cars.m4a": {
+    "fingerprint": "42e8e61d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4007,
+      12998,
+      16356,
+      29698
+    ]
+  },
+  "car-seat-safety/get-it-checked.m4a": {
+    "fingerprint": "1362f44e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      7758,
+      14460,
+      18028
+    ]
+  },
+  "car-seat-safety/checkin-hot-car-right.m4a": {
+    "fingerprint": "5160b923",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1005,
+      6235
+    ]
+  },
+  "car-seat-safety/car-seat-plan.m4a": {
+    "fingerprint": "da32dc35",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2172,
+      5874,
+      8770,
+      13827,
+      18570,
+      20847
+    ]
   }
 }

@@ -9,8 +9,110 @@ export type NarrationClip = {
 };
 
 export const narrationClips: Record<string, NarrationClip> = {
+  'da32dc35': { source: require('../../assets/narration/car-seat-safety/car-seat-plan.m4a'), starts: [150, 2172, 5874, 8770, 13827, 18570, 20847] }, // car-seat-safety/car-seat-plan.m4a
+  '5160b923': { source: require('../../assets/narration/car-seat-safety/checkin-hot-car-right.m4a'), starts: [150, 1005, 6235] }, // car-seat-safety/checkin-hot-car-right.m4a
+  '5f5cf1f3': { source: require('../../assets/narration/car-seat-safety/checkin-rear-facing-right.m4a'), starts: [150, 4612, 7665] }, // car-seat-safety/checkin-rear-facing-right.m4a
+  'b51b92c9': { source: require('../../assets/narration/car-seat-safety/checkin-rear-facing-wrong.m4a'), starts: [150, 1028, 7220] }, // car-seat-safety/checkin-rear-facing-wrong.m4a
+  'bc69b15c': { source: require('../../assets/narration/car-seat-safety/every-ride.m4a'), starts: [150, 6781, 9227, 15190, 21289] }, // car-seat-safety/every-ride.m4a
+  '2d913638': { source: require('../../assets/narration/car-seat-safety/extra-products.m4a'), starts: [150, 6528, 11012, 16250, 18831] }, // car-seat-safety/extra-products.m4a
+  '1362f44e': { source: require('../../assets/narration/car-seat-safety/get-it-checked.m4a'), starts: [150, 7758, 14460, 18028] }, // car-seat-safety/get-it-checked.m4a
+  'e9c6aa7a': { source: require('../../assets/narration/car-seat-safety/harness-refresher.m4a'), starts: [150, 4805] }, // car-seat-safety/harness-refresher.m4a
+  '42e8e61d': { source: require('../../assets/narration/car-seat-safety/hot-cars.m4a'), starts: [150, 4007, 12998, 16356, 29698] }, // car-seat-safety/hot-cars.m4a
+  '320a948c': { source: require('../../assets/narration/car-seat-safety/quick-recap.m4a'), starts: [150, 1748, 8350, 15429, 18786] }, // car-seat-safety/quick-recap.m4a
+  '3a0c9a3c': { source: require('../../assets/narration/car-seat-safety/rear-facing-longer.m4a'), starts: [150, 7985, 14994, 22884] }, // car-seat-safety/rear-facing-longer.m4a
+  '01144b24': { source: require('../../assets/narration/car-seat-safety/welcome.m4a'), starts: [150, 2237, 7979] }, // car-seat-safety/welcome.m4a
+  '6fb2173d': { source: require('../../assets/narration/car-seat-safety/winter.m4a'), starts: [150, 5044, 10593, 15810, 21159] }, // car-seat-safety/winter.m4a
+  '467717c8': { source: require('../../assets/narration/early-pregnancy-first-steps/checkin-folic-acid-right.m4a'), starts: [150, 952, 9192, 12689] }, // early-pregnancy-first-steps/checkin-folic-acid-right.m4a
+  'd2f3b13e': { source: require('../../assets/narration/early-pregnancy-first-steps/checkin-folic-acid-wrong.m4a'), starts: [150, 1265, 9595, 13192] }, // early-pregnancy-first-steps/checkin-folic-acid-wrong.m4a
+  '47eb3ac7': { source: require('../../assets/narration/early-pregnancy-first-steps/checkin-folic-acid.m4a'), starts: [150] }, // early-pregnancy-first-steps/checkin-folic-acid.m4a
+  'e8b3f5d5': { source: require('../../assets/narration/early-pregnancy-first-steps/dehydration-signs.m4a'), starts: [150, 2846, 9306, 12647, 15116, 17530, 22414, 25537] }, // early-pregnancy-first-steps/dehydration-signs.m4a
+  '8fbe7201': { source: require('../../assets/narration/early-pregnancy-first-steps/done.m4a'), starts: [150, 1237, 2591] }, // early-pregnancy-first-steps/done.m4a
   'fa5cbe82': { source: require('../../assets/narration/early-pregnancy-first-steps/early-signs.m4a'), starts: [150, 3969, 6410, 9699, 12057, 17494, 23092, 25491, 27437, 31136] }, // early-pregnancy-first-steps/early-signs.m4a
   '241cfd78': { source: require('../../assets/narration/early-pregnancy-first-steps/folic-acid.m4a'), starts: [150, 2290, 8889, 12597, 16351, 22331, 25104, 29457, 32698] }, // early-pregnancy-first-steps/folic-acid.m4a
+  'ba9ef718': { source: require('../../assets/narration/early-pregnancy-first-steps/medicines.m4a'), starts: [150, 1998, 8044, 10665, 17375, 19417, 26489] }, // early-pregnancy-first-steps/medicines.m4a
+  '61a01208': { source: require('../../assets/narration/early-pregnancy-first-steps/nausea-basics.m4a'), starts: [150, 8394, 11101, 17097, 22007, 22353, 25457, 29641] }, // early-pregnancy-first-steps/nausea-basics.m4a
+  '0eb82cf3': { source: require('../../assets/narration/early-pregnancy-first-steps/nausea-tips-video.m4a'), starts: [150, 2794] }, // early-pregnancy-first-steps/nausea-tips-video.m4a
+  'f7a3f81e': { source: require('../../assets/narration/early-pregnancy-first-steps/quiz-1-right.m4a'), starts: [150, 938, 3255, 9045] }, // early-pregnancy-first-steps/quiz-1-right.m4a
+  'b73a4598': { source: require('../../assets/narration/early-pregnancy-first-steps/quiz-1-wrong.m4a'), starts: [150, 1360, 8124, 10476] }, // early-pregnancy-first-steps/quiz-1-wrong.m4a
+  'cbd13b1e': { source: require('../../assets/narration/early-pregnancy-first-steps/quiz-1.m4a'), starts: [150] }, // early-pregnancy-first-steps/quiz-1.m4a
+  'b286edca': { source: require('../../assets/narration/early-pregnancy-first-steps/quiz-2-right.m4a'), starts: [150, 920, 4059] }, // early-pregnancy-first-steps/quiz-2-right.m4a
+  'd1862284': { source: require('../../assets/narration/early-pregnancy-first-steps/quiz-2-wrong.m4a'), starts: [150, 1674, 4956] }, // early-pregnancy-first-steps/quiz-2-wrong.m4a
+  '05088e23': { source: require('../../assets/narration/early-pregnancy-first-steps/quiz-2.m4a'), starts: [150] }, // early-pregnancy-first-steps/quiz-2.m4a
+  '5d75ec2b': { source: require('../../assets/narration/early-pregnancy-first-steps/quiz-3-right.m4a'), starts: [150, 1057, 8540] }, // early-pregnancy-first-steps/quiz-3-right.m4a
+  '97f927a5': { source: require('../../assets/narration/early-pregnancy-first-steps/quiz-3-wrong.m4a'), starts: [150, 1654, 9616] }, // early-pregnancy-first-steps/quiz-3-wrong.m4a
+  'd8b68d34': { source: require('../../assets/narration/early-pregnancy-first-steps/quiz-3.m4a'), starts: [150] }, // early-pregnancy-first-steps/quiz-3.m4a
   '7d248065': { source: require('../../assets/narration/early-pregnancy-first-steps/start-care-early.m4a'), starts: [150, 4121, 9660, 14291, 18927, 20530, 24633, 27232] }, // early-pregnancy-first-steps/start-care-early.m4a
+  'a229cc9c': { source: require('../../assets/narration/early-pregnancy-first-steps/summary.m4a'), starts: [150, 956, 2387, 5280, 6545, 12372, 15944, 18583, 20424, 25327, 27343] }, // early-pregnancy-first-steps/summary.m4a
+  '7735ef23': { source: require('../../assets/narration/early-pregnancy-first-steps/welcome.m4a'), starts: [150, 2393, 4134, 8706, 11038, 12624, 23429, 25702, 28669] }, // early-pregnancy-first-steps/welcome.m4a
   'f73502b2': { source: require('../../assets/narration/early-pregnancy-first-steps/who-gives-care.m4a'), starts: [150, 3515, 5971, 9953, 16317, 20170, 24355, 30460] }, // early-pregnancy-first-steps/who-gives-care.m4a
+  '519bb5ee': { source: require('../../assets/narration/early-pregnancy-first-steps/your-next-steps.m4a'), starts: [150, 2041, 5810, 10107, 13859, 15486] }, // early-pregnancy-first-steps/your-next-steps.m4a
+  '022609c9': { source: require('../../assets/narration/first-prenatal-visit/checkin-last-period-right.m4a'), starts: [150, 938, 5045, 6938] }, // first-prenatal-visit/checkin-last-period-right.m4a
+  'eac6fc83': { source: require('../../assets/narration/first-prenatal-visit/checkin-last-period-wrong.m4a'), starts: [150, 1139, 5004, 7148] }, // first-prenatal-visit/checkin-last-period-wrong.m4a
+  '44122fdd': { source: require('../../assets/narration/first-prenatal-visit/done.m4a'), starts: [150, 1002] }, // first-prenatal-visit/done.m4a
+  '081591cf': { source: require('../../assets/narration/first-prenatal-visit/first-visit-talk.m4a'), starts: [150, 2738, 7850, 10220, 13704, 20516, 24077, 26725] }, // first-prenatal-visit/first-visit-talk.m4a
+  '6e579088': { source: require('../../assets/narration/first-prenatal-visit/honest-answers.m4a'), starts: [150, 2908, 6726, 12897, 18605] }, // first-prenatal-visit/honest-answers.m4a
+  '55002177': { source: require('../../assets/narration/first-prenatal-visit/in-person-checks.m4a'), starts: [150, 5195, 6786, 11358, 18439, 24000] }, // first-prenatal-visit/in-person-checks.m4a
+  '1af9254a': { source: require('../../assets/narration/first-prenatal-visit/make-a-plan.m4a'), starts: [150, 2732, 6120, 10184, 13659, 18340, 23225, 26650] }, // first-prenatal-visit/make-a-plan.m4a
+  '1ba25f7e': { source: require('../../assets/narration/first-prenatal-visit/quiz-1-right.m4a'), starts: [150, 1033, 8645] }, // first-prenatal-visit/quiz-1-right.m4a
+  '07a07270': { source: require('../../assets/narration/first-prenatal-visit/quiz-1-wrong.m4a'), starts: [150, 1365, 8292] }, // first-prenatal-visit/quiz-1-wrong.m4a
+  '567bfb02': { source: require('../../assets/narration/first-prenatal-visit/quiz-2-right.m4a'), starts: [150, 1151, 3491] }, // first-prenatal-visit/quiz-2-right.m4a
+  '8a207c64': { source: require('../../assets/narration/first-prenatal-visit/quiz-2-wrong.m4a'), starts: [150, 1458, 5760] }, // first-prenatal-visit/quiz-2-wrong.m4a
+  '508be374': { source: require('../../assets/narration/first-prenatal-visit/quiz-3-right.m4a'), starts: [150, 1091, 3918, 8410] }, // first-prenatal-visit/quiz-3-right.m4a
+  '634c1e4e': { source: require('../../assets/narration/first-prenatal-visit/quiz-3-wrong.m4a'), starts: [150, 1466, 4457, 9194] }, // first-prenatal-visit/quiz-3-wrong.m4a
+  '1790908a': { source: require('../../assets/narration/first-prenatal-visit/summary.m4a'), starts: [150, 1550, 2620, 7494, 14594, 17849, 23475, 25654, 27715, 30050] }, // first-prenatal-visit/summary.m4a
+  '9b654946': { source: require('../../assets/narration/first-prenatal-visit/visit-prep-video.m4a'), starts: [150] }, // first-prenatal-visit/visit-prep-video.m4a
+  '0d51f924': { source: require('../../assets/narration/first-prenatal-visit/welcome.m4a'), starts: [150, 3924, 6718, 12560, 17035] }, // first-prenatal-visit/welcome.m4a
+  '8010d9bf': { source: require('../../assets/narration/first-prenatal-visit/what-is-prenatal-care.m4a'), starts: [150, 5360, 11229, 14413, 19176, 24864] }, // first-prenatal-visit/what-is-prenatal-care.m4a
+  '1b95bfb7': { source: require('../../assets/narration/first-prenatal-visit/what-to-bring.m4a'), starts: [150, 1359, 5035, 7365, 14715, 20165, 23613, 28454, 39192, 40779] }, // first-prenatal-visit/what-to-bring.m4a
+  'cf93edf7': { source: require('../../assets/narration/first-prenatal-visit/your-questions.m4a'), starts: [150, 1507, 3949, 5517, 9828, 13425, 16397, 19728, 21428] }, // first-prenatal-visit/your-questions.m4a
+  'e4cdd90c': { source: require('../../assets/narration/first-trimester-common-changes/bleeding-call-now.m4a'), starts: [150, 2835, 10082, 15150, 20140, 24001] }, // first-trimester-common-changes/bleeding-call-now.m4a
+  '32d47e4e': { source: require('../../assets/narration/first-trimester-common-changes/calling-video.m4a'), starts: [150, 2851] }, // first-trimester-common-changes/calling-video.m4a
+  'e631cdcf': { source: require('../../assets/narration/first-trimester-common-changes/checkin-bleeding-pain-right.m4a'), starts: [150, 1300, 6004, 10935] }, // first-trimester-common-changes/checkin-bleeding-pain-right.m4a
+  '6b5ed3a5': { source: require('../../assets/narration/first-trimester-common-changes/checkin-bleeding-pain-wrong.m4a'), starts: [150, 1393, 5940, 10405] }, // first-trimester-common-changes/checkin-bleeding-pain-wrong.m4a
+  '2f170ca9': { source: require('../../assets/narration/first-trimester-common-changes/checkin-bleeding-pain.m4a'), starts: [150] }, // first-trimester-common-changes/checkin-bleeding-pain.m4a
+  '44de3f50': { source: require('../../assets/narration/first-trimester-common-changes/checkin-nausea-right.m4a'), starts: [150, 889, 3832, 8245] }, // first-trimester-common-changes/checkin-nausea-right.m4a
+  '705ab68a': { source: require('../../assets/narration/first-trimester-common-changes/checkin-nausea-wrong.m4a'), starts: [150, 1302, 4131, 8528] }, // first-trimester-common-changes/checkin-nausea-wrong.m4a
+  '5009ae7b': { source: require('../../assets/narration/first-trimester-common-changes/common-changes.m4a'), starts: [150, 5438, 8709, 11410, 12775, 17865, 19977, 22693, 25076, 28316] }, // first-trimester-common-changes/common-changes.m4a
+  '6d4940e7': { source: require('../../assets/narration/first-trimester-common-changes/common-vs-call.m4a'), starts: [150, 2431, 4897, 8401, 11316, 16302, 18228, 23529, 25622, 29308, 31837, 35855, 37501, 39857, 43912] }, // first-trimester-common-changes/common-vs-call.m4a
+  '12955bab': { source: require('../../assets/narration/first-trimester-common-changes/done.m4a'), starts: [150, 1099, 2789] }, // first-trimester-common-changes/done.m4a
+  'a9d3c34d': { source: require('../../assets/narration/first-trimester-common-changes/early-bleeding.m4a'), starts: [150, 2740, 5118, 7728, 12790, 16243, 20531, 24821, 29382, 34404] }, // first-trimester-common-changes/early-bleeding.m4a
+  '5b71dfdc': { source: require('../../assets/narration/first-trimester-common-changes/healthy-habits.m4a'), starts: [150, 3186, 3557, 7971, 9398, 16330, 20972, 22690, 28489] }, // first-trimester-common-changes/healthy-habits.m4a
+  'dd1ea75c': { source: require('../../assets/narration/first-trimester-common-changes/nausea-more-help.m4a'), starts: [150, 3323, 8875, 13207, 17848, 20905, 23471, 28186] }, // first-trimester-common-changes/nausea-more-help.m4a
+  'c956c528': { source: require('../../assets/narration/first-trimester-common-changes/nausea-support.m4a'), starts: [150, 6497, 8978, 13753, 17613, 23649, 28433, 31936, 37841] }, // first-trimester-common-changes/nausea-support.m4a
+  '7fe8c795': { source: require('../../assets/narration/first-trimester-common-changes/quiz-1-right.m4a'), starts: [150, 825, 4005, 5272] }, // first-trimester-common-changes/quiz-1-right.m4a
+  '479b2c6b': { source: require('../../assets/narration/first-trimester-common-changes/quiz-1-wrong.m4a'), starts: [150, 1725, 4859, 7416] }, // first-trimester-common-changes/quiz-1-wrong.m4a
+  'd174e02b': { source: require('../../assets/narration/first-trimester-common-changes/quiz-2-right.m4a'), starts: [150, 1051, 6568, 9742] }, // first-trimester-common-changes/quiz-2-right.m4a
+  'b112ae65': { source: require('../../assets/narration/first-trimester-common-changes/quiz-2-wrong.m4a'), starts: [150, 1130, 6026, 8670] }, // first-trimester-common-changes/quiz-2-wrong.m4a
+  '55c8f275': { source: require('../../assets/narration/first-trimester-common-changes/quiz-3-right.m4a'), starts: [150, 1081, 7246, 10718] }, // first-trimester-common-changes/quiz-3-right.m4a
+  'ea4be5e7': { source: require('../../assets/narration/first-trimester-common-changes/quiz-3-wrong.m4a'), starts: [150, 1445, 8030, 11474] }, // first-trimester-common-changes/quiz-3-wrong.m4a
+  '65c0473f': { source: require('../../assets/narration/first-trimester-common-changes/summary.m4a'), starts: [150, 1139, 2158, 8356, 13949, 17693, 22977, 28316, 31605] }, // first-trimester-common-changes/summary.m4a
+  '57799764': { source: require('../../assets/narration/first-trimester-common-changes/urgent-warning-signs.m4a'), starts: [150, 4156, 10586, 14551, 17316, 22814, 32710, 36129, 40517] }, // first-trimester-common-changes/urgent-warning-signs.m4a
+  'e4bf8de7': { source: require('../../assets/narration/first-trimester-common-changes/welcome.m4a'), starts: [150, 8508, 11722, 14247, 16864, 22847] }, // first-trimester-common-changes/welcome.m4a
+  '8c893354': { source: require('../../assets/narration/first-trimester-common-changes/your-contact-plan.m4a'), starts: [150, 2724, 7262, 13959] }, // first-trimester-common-changes/your-contact-plan.m4a
+  '5bc7d6c5': { source: require('../../assets/narration/safe-sleep/back-to-sleep.m4a'), starts: [150, 5708, 11040, 14153, 15992, 22911] }, // safe-sleep/back-to-sleep.m4a
+  '8b03bda7': { source: require('../../assets/narration/safe-sleep/checkin-car-seat-right.m4a'), starts: [150, 830, 4164, 7446] }, // safe-sleep/checkin-car-seat-right.m4a
+  'f189ac6d': { source: require('../../assets/narration/safe-sleep/checkin-car-seat-wrong.m4a'), starts: [150, 1401, 5251, 8959] }, // safe-sleep/checkin-car-seat-wrong.m4a
+  'c67b7092': { source: require('../../assets/narration/safe-sleep/checkin-crib-right.m4a'), starts: [150, 1072, 5412] }, // safe-sleep/checkin-crib-right.m4a
+  '6100d23c': { source: require('../../assets/narration/safe-sleep/checkin-crib-wrong.m4a'), starts: [150, 1488, 5689] }, // safe-sleep/checkin-crib-wrong.m4a
+  '5b54209f': { source: require('../../assets/narration/safe-sleep/checkin-crib.m4a'), starts: [150] }, // safe-sleep/checkin-crib.m4a
+  '2975b7e4': { source: require('../../assets/narration/safe-sleep/couches-armchairs.m4a'), starts: [150, 6371, 15724, 21863] }, // safe-sleep/couches-armchairs.m4a
+  'f4e2a68c': { source: require('../../assets/narration/safe-sleep/done.m4a'), starts: [150, 2349, 3217] }, // safe-sleep/done.m4a
+  'b3fa1ba7': { source: require('../../assets/narration/safe-sleep/every-caregiver.m4a'), starts: [150, 8271, 16058] }, // safe-sleep/every-caregiver.m4a
+  '1565a615': { source: require('../../assets/narration/safe-sleep/firm-flat-bare.m4a'), starts: [150, 3868, 12658, 13431, 13746, 17997] }, // safe-sleep/firm-flat-bare.m4a
+  '4f9c03cb': { source: require('../../assets/narration/safe-sleep/more-ways.m4a'), starts: [150, 1657, 5991, 9835, 13419, 19045, 21572] }, // safe-sleep/more-ways.m4a
+  '97e5ebee': { source: require('../../assets/narration/safe-sleep/products-and-swaddling.m4a'), starts: [150, 9885, 13467, 20070] }, // safe-sleep/products-and-swaddling.m4a
+  '4b26fbea': { source: require('../../assets/narration/safe-sleep/quiz-1-right.m4a'), starts: [150, 883, 5092] }, // safe-sleep/quiz-1-right.m4a
+  'a66d20ec': { source: require('../../assets/narration/safe-sleep/quiz-1-wrong.m4a'), starts: [150, 1367, 4835] }, // safe-sleep/quiz-1-wrong.m4a
+  '4070eac8': { source: require('../../assets/narration/safe-sleep/quiz-2-right.m4a'), starts: [150, 1108, 6622] }, // safe-sleep/quiz-2-right.m4a
+  '9f8d8ff6': { source: require('../../assets/narration/safe-sleep/quiz-2-wrong.m4a'), starts: [150, 1457, 6816] }, // safe-sleep/quiz-2-wrong.m4a
+  '87f1186f': { source: require('../../assets/narration/safe-sleep/quiz-3-right.m4a'), starts: [150, 812] }, // safe-sleep/quiz-3-right.m4a
+  '93158be5': { source: require('../../assets/narration/safe-sleep/quiz-3-wrong.m4a'), starts: [150, 1171] }, // safe-sleep/quiz-3-wrong.m4a
+  '0f52c146': { source: require('../../assets/narration/safe-sleep/room-share.m4a'), starts: [150, 6061, 11874, 14773] }, // safe-sleep/room-share.m4a
+  'b94c2b95': { source: require('../../assets/narration/safe-sleep/safe-sleep-video.m4a'), starts: [150] }, // safe-sleep/safe-sleep-video.m4a
+  '2dae6ac2': { source: require('../../assets/narration/safe-sleep/sitting-devices.m4a'), starts: [150, 6850, 11877, 19143, 23257] }, // safe-sleep/sitting-devices.m4a
+  '81bc3080': { source: require('../../assets/narration/safe-sleep/sleep-plan.m4a'), starts: [150, 2259, 4997, 8395, 11743, 16464] }, // safe-sleep/sleep-plan.m4a
+  '596df313': { source: require('../../assets/narration/safe-sleep/summary.m4a'), starts: [150, 1424, 7109, 10386, 13501, 18959, 24522] }, // safe-sleep/summary.m4a
+  'c4f94c9b': { source: require('../../assets/narration/safe-sleep/tummy-time.m4a'), starts: [150, 2604, 7639, 12307, 17573] }, // safe-sleep/tummy-time.m4a
+  '86a6f433': { source: require('../../assets/narration/safe-sleep/welcome.m4a'), starts: [150, 1983, 9477] }, // safe-sleep/welcome.m4a
+  '8836160f': { source: require('../../assets/narration/safe-sleep/why-it-matters.m4a'), starts: [150, 9203, 15668] }, // safe-sleep/why-it-matters.m4a
 };
