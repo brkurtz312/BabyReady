@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 13,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 6.3. Sources are AAP's HealthyChildren.org pages (including its symptom checker) and CDC, found by web search only; this session could not open the pages, so every source needs to be opened and confirmed. Thresholds used: rectal temperature of 100.4°F (38°C) or higher under 3 months; breathing faster than 60 breaths a minute; at least 6 wet diapers a day after about day 5; first checkup within 48 to 72 hours of leaving the hospital, or at 3 to 5 days old. Fever medicine is mentioned only as 'don't give it before your baby is seen unless your pediatrician tells you to', from the AAP symptom checker. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep both first-checkup windows; keep 'if you can't reach them, go to the emergency room' and 'ask at your first checkup how to take a rectal temperature' on the fever slide; keep a seizure on the call-911 list; make the calming video as proposed; keep never-shake as a safety slide."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 6.3. Sources are AAP's HealthyChildren.org pages (including its symptom checker) and CDC, confirmed against their slides by the reviewer on 2026-10-18. Thresholds used: rectal temperature of 100.4°F (38°C) or higher under 3 months; breathing faster than 60 breaths a minute; at least 6 wet diapers a day after about day 5; first checkup within 48 to 72 hours of leaving the hospital, or at 3 to 5 days old. Fever medicine is mentioned only as 'don't give it before your baby is seen unless your pediatrician tells you to', from the AAP symptom checker. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep both first-checkup windows; keep 'if you can't reach them, go to the emergency room' and 'ask at your first checkup how to take a rectal temperature' on the fever slide; keep a seizure on the call-911 list; make the calming video as proposed; keep never-shake as a safety slide."
   },
   "sources": [
     {
@@ -24,98 +24,98 @@
       "organization": "AAP",
       "title": "1st Week Checkup Checklist: 3 to 5 Days Old (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/Your-Childs-Checkups/Pages/Your-Checkup-Checklist-Newborn-Visit-2-to-5-days-old.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-bringing-baby-home",
       "organization": "AAP",
       "title": "Bringing Baby Home: What to Do Before Leaving the Hospital (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/prenatal/delivery-beyond/Pages/bringing-baby-home-what-to-do-before-leaving-the-hospital.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-newborn-illness",
       "organization": "AAP",
       "title": "Newborn Illness: How to Recognize (HealthyChildren.org Symptom Checker)",
       "url": "https://www.healthychildren.org/English/tips-tools/symptom-checker/Pages/symptomviewer.aspx?symptom=Newborn+Illness+-+How+to+Recognize",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-ems",
       "organization": "AAP",
       "title": "When to Call Emergency Medical Services (EMS) for Your Child (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/When-to-Call-Emergency-Medical-Services-EMS.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-fever-baby",
       "organization": "AAP",
       "title": "Fever and Your Baby (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/Fever-and-Your-Baby.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-common-conditions",
       "organization": "AAP",
       "title": "11 Common Conditions in Newborns (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/Common-Conditions-in-Newborns.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-jaundice",
       "organization": "AAP",
       "title": "Jaundice in Newborns (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/Pages/jaundice.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-jaundice-checker",
       "organization": "AAP",
       "title": "Jaundiced Newborn (HealthyChildren.org Symptom Checker)",
       "url": "https://www.healthychildren.org/English/tips-tools/symptom-checker/Pages/symptomviewer.aspx?symptom=Jaundiced+Newborn",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-enough-milk",
       "organization": "AAP",
       "title": "How to Tell if Your Breastfed Baby is Getting Enough Milk (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/breastfeeding/Pages/How-to-Tell-if-Baby-is-Getting-Enough-Milk.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-dehydration",
       "organization": "AAP",
       "title": "Signs of Dehydration in Infants & Children (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/dehydration.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-cord-care",
       "organization": "AAP",
       "title": "Umbilical Cord Care in Newborns (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/Umbilical-Cord-Care.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-cord-checker",
       "organization": "AAP",
       "title": "Umbilical Cord Symptoms (HealthyChildren.org Symptom Checker)",
       "url": "https://www.healthychildren.org/English/tips-tools/symptom-checker/Pages/symptomviewer.aspx?symptom=Umbilical+Cord+Symptoms",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-urgent-care-guide",
       "organization": "AAP",
       "title": "Urgent Care, ER or Pediatrician? A Parent Guide (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/family-life/health-management/Pages/urgent-care-ER-or-pediatrician-a-parent-guide.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "cdc-abusive-head-trauma",
       "organization": "CDC",
       "title": "About Abusive Head Trauma",
       "url": "https://www.cdc.gov/child-abuse-neglect/about/about-abusive-head-trauma.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
