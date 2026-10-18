@@ -113,6 +113,15 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'when-to-call-about-your-baby/jaundice': require('../../assets/lessons/when-to-call-about-your-baby/jaundice.jpg'),
   'when-to-call-about-your-baby/cord-stump': require('../../assets/lessons/when-to-call-about-your-baby/cord-stump.jpg'),
   'when-to-call-about-your-baby/crying': require('../../assets/lessons/when-to-call-about-your-baby/crying.jpg'),
+  'safe-sleep/welcome': require('../../assets/lessons/safe-sleep/welcome.jpg'),
+  'safe-sleep/why-it-matters': require('../../assets/lessons/safe-sleep/why-it-matters.jpg'),
+  'safe-sleep/back-to-sleep': require('../../assets/lessons/safe-sleep/back-to-sleep.jpg'),
+  'safe-sleep/firm-flat-bare': require('../../assets/lessons/safe-sleep/firm-flat-bare.jpg'),
+  'safe-sleep/room-share': require('../../assets/lessons/safe-sleep/room-share.jpg'),
+  'safe-sleep/sitting-devices': require('../../assets/lessons/safe-sleep/sitting-devices.jpg'),
+  'safe-sleep/products-and-swaddling': require('../../assets/lessons/safe-sleep/products-and-swaddling.jpg'),
+  'safe-sleep/tummy-time': require('../../assets/lessons/safe-sleep/tummy-time.jpg'),
+  'safe-sleep/every-caregiver': require('../../assets/lessons/safe-sleep/every-caregiver.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
