@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 14,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 5.4 of Module 5 (Feeding and Newborn Care). Supports every family's feeding choice, following lesson 5.3 (Breastfeeding Basics). Builds on lesson 5.3 (hunger and fullness cues, getting help), lesson 5.5 (safe sleep), and lesson 6.3 (feeding and diaper warning signs). Sources were found by web search only; this session could not open the pages, so every new source needs to be opened and confirmed. For the reviewer: formula preparation (water then powder, never more or less water, shake, no microwave, wrist test), the 2-hour and 1-hour limits, refrigerating within 24 hours, discarding leftovers, and opened powder within about a month follow the CDC preparation page as quoted in search results; the extra steps for babies under 2 months, born early, or with weak immune systems (boil, wait about 5 minutes, cool before feeding) follow the CDC preparation page, and daily sanitizing for these babies follows the CDC cleaning page; ready-to-feed formula being sterile until opened is from CDC emergency guidance, not confirmed on the main page; no homemade formula, no cow's or plant milks before age 1, no extra water before 6 months, and WIC or food banks when formula runs low follow the AAP homemade formula page and related HealthyChildren pages; amounts (1 to 2 ounces every 2 to 3 hours at first, 8 to 12 feeds, later about every 3 to 4 hours) follow the CDC how-much page and the AAP amounts page; the semi-upright hold, keeping the nipple full, and never propping a bottle follow the AAP Bottle Feeding Basics page, which is an older page; 'paced' bottle feeding (letting the baby draw in the nipple, pauses, a nearly level bottle) is widely taught, including by WIC, but was not found on an AAP or CDC page, and the slide balances it with the AAP advice to keep the nipple full; waiting about 3 to 4 weeks before bottles if possible follows the AAP Introducing the Bottle page as described in search results; breastfeed first then formula, and pumping when a bottle replaces a feed, are standard teaching; vitamin D drops for babies taking less than about 32 ounces of formula a day follow the CDC how-much page; breast milk storage times (room temperature 4 hours, refrigerator 4 days, freezer about 6 months and up to 12, thawed milk within 24 hours, never refreeze, leftovers within 2 hours) follow the CDC breast milk storage page. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the bottle-feeding slide as written, naming the paced approach once alongside the AAP semi-upright, nipple-full advice; keep waiting about 3 to 4 weeks before bottles unless the baby's doctor advises sooner; keep the extra-care steps for young babies, including the ready-to-feed option; keep the amounts; keep vitamin D drops for babies taking less than about 32 ounces of formula a day; keep the pumped milk storage slide; keep 14 minutes; no video."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 5.4 of Module 5 (Feeding and Newborn Care). Supports every family's feeding choice, following lesson 5.3 (Breastfeeding Basics). Builds on lesson 5.3 (hunger and fullness cues, getting help), lesson 5.5 (safe sleep), and lesson 6.3 (feeding and diaper warning signs). Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: formula preparation (water then powder, never more or less water, shake, no microwave, wrist test), the 2-hour and 1-hour limits, refrigerating within 24 hours, discarding leftovers, and opened powder within about a month follow the CDC preparation page as quoted in search results; the extra steps for babies under 2 months, born early, or with weak immune systems (boil, wait about 5 minutes, cool before feeding) follow the CDC preparation page, and daily sanitizing for these babies follows the CDC cleaning page; ready-to-feed formula being sterile until opened is from CDC emergency guidance, not confirmed on the main page; no homemade formula, no cow's or plant milks before age 1, no extra water before 6 months, and WIC or food banks when formula runs low follow the AAP homemade formula page and related HealthyChildren pages; amounts (1 to 2 ounces every 2 to 3 hours at first, 8 to 12 feeds, later about every 3 to 4 hours) follow the CDC how-much page and the AAP amounts page; the semi-upright hold, keeping the nipple full, and never propping a bottle follow the AAP Bottle Feeding Basics page, which is an older page; 'paced' bottle feeding (letting the baby draw in the nipple, pauses, a nearly level bottle) is widely taught, including by WIC, but was not found on an AAP or CDC page, and the slide balances it with the AAP advice to keep the nipple full; waiting about 3 to 4 weeks before bottles if possible follows the AAP Introducing the Bottle page as described in search results; breastfeed first then formula, and pumping when a bottle replaces a feed, are standard teaching; vitamin D drops for babies taking less than about 32 ounces of formula a day follow the CDC how-much page; breast milk storage times (room temperature 4 hours, refrigerator 4 days, freezer about 6 months and up to 12, thawed milk within 24 hours, never refreeze, leftovers within 2 hours) follow the CDC breast milk storage page. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the bottle-feeding slide as written, naming the paced approach once alongside the AAP semi-upright, nipple-full advice; keep waiting about 3 to 4 weeks before bottles unless the baby's doctor advises sooner; keep the extra-care steps for young babies, including the ready-to-feed option; keep the amounts; keep vitamin D drops for babies taking less than about 32 ounces of formula a day; keep the pumped milk storage slide; keep 14 minutes; no video."
   },
   "sources": [
     {
@@ -24,56 +24,56 @@
       "organization": "CDC",
       "title": "Infant Formula Preparation and Storage",
       "url": "https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "cdc-formula-how-much",
       "organization": "CDC",
       "title": "How Much and How Often to Feed Infant Formula",
       "url": "https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/how-much-and-how-often.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "cdc-clean-feeding-items",
       "organization": "CDC",
       "title": "How to Clean, Sanitize, and Store Infant Feeding Items",
       "url": "https://www.cdc.gov/hygiene/about/clean-sanitize-store-infant-feeding-items.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "cdc-breast-milk-storage",
       "organization": "CDC",
       "title": "Breast Milk Storage and Preparation",
       "url": "https://www.cdc.gov/breastfeeding/breast-milk-preparation-and-storage/handling-breastmilk.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-formula-amount",
       "organization": "AAP",
       "title": "Amount and Schedule of Baby Formula Feedings (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/formula-feeding/Pages/amount-and-schedule-of-formula-feedings.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-bottle-basics",
       "organization": "AAP",
       "title": "Bottle Feeding Basics (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Bottle-Feeding-How-Its-Done.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-homemade-formula",
       "organization": "AAP",
       "title": "Is Homemade Baby Formula Safe? (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/formula-feeding/Pages/Is-Homemade-Baby-Formula-Safe.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-introducing-bottle",
       "organization": "AAP",
       "title": "Introducing the Bottle (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/breastfeeding/Pages/Introducing-the-Bottle.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
