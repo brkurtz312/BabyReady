@@ -70,6 +70,9 @@ import Flame from 'lucide-react-native/icons/flame';
 import Ban from 'lucide-react-native/icons/ban';
 import MicrowaveIcon from 'lucide-react-native/icons/microwave';
 import AudioLines from 'lucide-react-native/icons/audio-lines';
+import MessageCircle from 'lucide-react-native/icons/message-circle';
+import CircleX from 'lucide-react-native/icons/circle-x';
+import Puzzle from 'lucide-react-native/icons/puzzle';
 
 /**
  * Pictures drawn in code for lesson slides: icon panels and simple diagrams.
@@ -481,9 +484,28 @@ function BackAndHeartburn() {
 // ---------- Maps and side views drawn with SVG ----------
 
 /** A drawing in a frame, scaled to the slide's width, with an optional caption. */
-function Drawing({ label, caption, height = 200, children }: { label: string; caption?: string; height?: number; children: React.ReactNode }) {
+function Drawing({
+  label,
+  caption,
+  alert,
+  height = 200,
+  children,
+}: {
+  label: string;
+  caption?: string;
+  /** A first step shown in red above the drawing, such as calling 911. */
+  alert?: string;
+  height?: number;
+  children: React.ReactNode;
+}) {
   return (
     <Frame label={label}>
+      {alert ? (
+        <View style={s.alertStep}>
+          <Phone color={c.alert} size={20} strokeWidth={2.4} />
+          <Text style={s.alertStepText}>{alert}</Text>
+        </View>
+      ) : null}
       <Svg style={[s.drawing, { aspectRatio: 360 / height }]} viewBox={`0 0 360 ${height}`}>
         {children}
       </Svg>
@@ -582,6 +604,110 @@ function Latch() {
       <Label x={290} y={200}>Lips turned out</Label>
       <Line stroke={c.muted} strokeWidth={1} x1={204} x2={160} y1={158} y2={186} />
       <Label x={120} y={200}>Chin close to the breast</Label>
+    </Drawing>
+  );
+}
+
+/** A baby lying along an adult forearm, head lower than the chest; `faceUp` turns the baby over. */
+function BabyOnForearm({ x, faceUp = false }: { x: number; faceUp?: boolean }) {
+  return (
+    <G transform={`rotate(-14 ${x + 95} 125)`}>
+      {/* Forearm, with the hand cupping the jaw */}
+      <Rect fill={c.skin} height={18} rx={9} stroke={c.skinLine} strokeWidth={1.5} width={148} x={x + 22} y={130} />
+      <Ellipse cx={x + 40} cy={133} fill={c.skin} rx={13} ry={9} stroke={c.skinLine} strokeWidth={1.5} />
+      {/* Body in a sleeper, legs, and head */}
+      <Ellipse cx={x + 100} cy={114} fill={c.lagoonSoft} rx={42} ry={15} stroke={c.lagoon} strokeWidth={1.5} />
+      <Ellipse cx={x + 148} cy={118} fill={c.lagoonSoft} rx={14} ry={8} stroke={c.lagoon} strokeWidth={1.5} />
+      <Circle cx={x + 46} cy={116} fill={c.baby} r={17} stroke={c.babyLine} strokeWidth={2} />
+      {faceUp ? (
+        <G>
+          <Path d={`M${x + 38} 108 q4 3 8 0`} fill="none" stroke={c.babyLine} strokeLinecap="round" strokeWidth={2} />
+          <Path d={`M${x + 33} 116 q3 2 6 0`} fill="none" stroke={c.babyLine} strokeLinecap="round" strokeWidth={2} />
+        </G>
+      ) : (
+        <Path d={`M${x + 31} 110 a17 17 0 0 1 30 -2`} fill="none" stroke="#5B4636" strokeLinecap="round" strokeWidth={4} />
+      )}
+    </G>
+  );
+}
+
+/** The heel of a hand seen from the side, with an arrow showing the push. */
+function HeelOfHand({ x, y }: { x: number; y: number }) {
+  return (
+    <G>
+      <Arrow x1={x} x2={x} y1={y - 46} y2={y - 20} />
+      <Rect fill={c.skin} height={16} rx={8} stroke={c.skinLine} strokeWidth={1.5} width={34} x={x - 12} y={y - 12} />
+      <Rect fill={c.skin} height={9} rx={4.5} stroke={c.skinLine} strokeWidth={1.2} width={22} x={x + 14} y={y - 14} />
+    </G>
+  );
+}
+
+/** First aid for a choking baby: back blows face down, then chest thrusts face up, head lower each time. */
+function ChokingFirstAid() {
+  return (
+    <Drawing
+      alert="First: shout for help, and have someone call 911"
+      caption="Keep alternating 5 back blows and 5 chest thrusts until the object comes out or your baby goes limp. Never abdominal thrusts."
+      height={210}
+      label="First aid for a severely choking baby. First, shout for help and have someone call 911. Left: 5 back blows, the baby face down along your forearm with the head lower, the heel of your hand between the shoulder blades. Right: 5 chest thrusts, the baby face up along your forearm with the head lower, the heel of one hand on the center of the chest."
+    >
+      <Label size={14} weight="800" x={90} y={22}>5 back blows</Label>
+      <Label size={14} weight="800" x={270} y={22}>5 chest thrusts</Label>
+      <Line stroke={c.line} strokeWidth={1.5} x1={180} x2={180} y1={10} y2={200} />
+      <BabyOnForearm x={0} />
+      <HeelOfHand x={70} y={108} />
+      <BabyOnForearm faceUp x={180} />
+      <HeelOfHand x={254} y={108} />
+      <Label x={90} y={180}>Face down, head lower</Label>
+      <Label size={11} weight="400" x={90} y={196}>Between the shoulder blades</Label>
+      <Label x={270} y={180}>Face up, head lower</Label>
+      <Label size={11} weight="400" x={270} y={196}>Center of the chest</Label>
+    </Drawing>
+  );
+}
+
+/** A baby on their back seen from above, for the CPR hand positions. */
+function BabyFromAbove({ x }: { x: number }) {
+  return (
+    <G>
+      <Rect fill={c.lagoonSoft} height={16} rx={8} stroke={c.lagoon} strokeWidth={1.5} transform={`rotate(-50 ${x - 30} 92)`} width={28} x={x - 58} y={84} />
+      <Rect fill={c.lagoonSoft} height={16} rx={8} stroke={c.lagoon} strokeWidth={1.5} transform={`rotate(50 ${x + 30} 92)`} width={28} x={x + 30} y={84} />
+      <Ellipse cx={x} cy={126} fill={c.baby} rx={34} ry={46} stroke={c.babyLine} strokeWidth={2} />
+      <Circle cx={x} cy={52} fill={c.baby} r={24} stroke={c.babyLine} strokeWidth={2} />
+      <Path d={`M${x - 10} 50 q4 3 8 0 M${x + 2} 50 q4 3 8 0`} fill="none" stroke={c.babyLine} strokeLinecap="round" strokeWidth={2} />
+      <Circle cx={x - 14} cy={104} fill={c.babyLine} r={2.5} />
+      <Circle cx={x + 14} cy={104} fill={c.babyLine} r={2.5} />
+      <Line stroke={c.muted} strokeDasharray="4 4" strokeWidth={1.2} x1={x - 30} x2={x + 30} y1={104} y2={104} />
+    </G>
+  );
+}
+
+/** Infant CPR hand positions: two thumbs with hands around the chest, or the heel of one hand. */
+function CprHands() {
+  return (
+    <Drawing
+      alert="First: call 911 on speaker, then start CPR"
+      caption="Push about 1½ inches deep, 100 to 120 times a minute. Give 30 compressions, then 2 gentle breaths."
+      height={210}
+      label="Infant CPR hand positions. First, call 911 on speaker, then start CPR. Looking down on a baby lying on their back. Left: two thumbs side by side on the center of the chest just below the nipple line, with the hands wrapped around the chest. Right: the heel of one hand in the same spot."
+    >
+      <BabyFromAbove x={80} />
+      {/* Hands wrapped around the chest, thumbs side by side on the breastbone */}
+      <Rect fill={c.skin} height={50} rx={14} stroke={c.skinLine} strokeWidth={1.5} width={24} x={34} y={100} />
+      <Rect fill={c.skin} height={50} rx={14} stroke={c.skinLine} strokeWidth={1.5} width={24} x={102} y={100} />
+      <Ellipse cx={74} cy={116} fill={c.skin} rx={6} ry={11} stroke={c.skinLine} strokeWidth={1.5} />
+      <Ellipse cx={86} cy={116} fill={c.skin} rx={6} ry={11} stroke={c.skinLine} strokeWidth={1.5} />
+      <BabyFromAbove x={280} />
+      {/* The heel of one hand, fingers lifted toward the head */}
+      {[-9, -3, 3, 9].map((dx) => (
+        <Rect key={dx} fill={c.skin} height={dx === -9 ? 22 : 28} rx={3.5} stroke={c.skinLine} strokeWidth={1.2} width={7} x={280 + dx - 3.5} y={dx === -9 ? 90 : 84} />
+      ))}
+      <Rect fill={c.skin} height={28} rx={11} stroke={c.skinLine} strokeWidth={1.5} width={30} x={265} y={106} />
+      <Rect fill={c.skin} height={8} rx={4} stroke={c.skinLine} strokeWidth={1.2} transform="rotate(-35 296 116)" width={18} x={290} y={112} />
+      <Label size={11} x={180} y={106}>Just below</Label>
+      <Label size={11} x={180} y={119}>the nipple line</Label>
+      <Label x={80} y={192}>Two thumbs, hands around</Label>
+      <Label x={280} y={192}>Or the heel of one hand</Label>
     </Drawing>
   );
 }
@@ -1554,6 +1680,41 @@ const VISUALS: Record<string, () => React.ReactElement> = {
       ]}
     />
   ),
+  'infant-cpr-and-choking/take-a-class': () => (
+    <IconPanel
+      label="Take a hands-on class: practice on a manikin; ask your hospital, the American Red Cross, or the American Heart Association; take it before your baby arrives; invite grandparents and sitters."
+      items={[
+        { icon: Hand, label: 'Practice on a manikin' },
+        { icon: Hospital, label: 'Your hospital' },
+        { icon: Heart, label: 'Red Cross or Heart Association' },
+        { icon: Users, label: 'Grandparents and sitters, too' },
+      ]}
+    />
+  ),
+  'infant-cpr-and-choking/is-it-choking': () => (
+    <IconPanel
+      label="Is your baby choking? Coughing hard or crying: let them cough. Can't cry, cough, or breathe, or bluish lips: severe choking. Never a blind finger sweep."
+      items={[
+        { icon: MessageCircle, label: 'Coughing hard: let them cough' },
+        { icon: CircleX, label: "Can't cry, cough, or breathe", tone: 'alert' },
+        { icon: Droplet, label: 'Bluish lips', tone: 'alert' },
+        { icon: Hand, label: 'No blind finger sweeps' },
+      ]}
+    />
+  ),
+  'infant-cpr-and-choking/choking-steps': () => <ChokingFirstAid />,
+  'infant-cpr-and-choking/cpr-steps': () => <CprHands />,
+  'infant-cpr-and-choking/prevent-choking': () => (
+    <IconPanel
+      label="Preventing choking: never prop a bottle; keep small objects, magnets, and button batteries out of reach; check toys for small parts; when solids start, soft foods in tiny pieces."
+      items={[
+        { icon: Milk, label: 'Never prop a bottle' },
+        { icon: Ban, label: 'Small objects and batteries out of reach', tone: 'alert' },
+        { icon: Puzzle, label: 'Check toys for small parts' },
+        { icon: Utensils, label: 'Soft foods, tiny pieces' },
+      ]}
+    />
+  ),
 };
 
 /** The drawn picture for a slide, or null when it has none. */
@@ -1573,6 +1734,18 @@ const s = StyleSheet.create({
     padding: 14,
     gap: 10,
   },
+  alertStep: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+    backgroundColor: c.alertSoft,
+    borderColor: c.alert,
+    borderWidth: 1.5,
+    borderRadius: 12,
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+  },
+  alertStepText: { flex: 1, color: c.alert, fontSize: 15, fontWeight: '700', lineHeight: 20 },
   caption: { color: c.muted, fontSize: 13, lineHeight: 18, textAlign: 'center' },
   drawing: { width: '100%', maxWidth: 520, alignSelf: 'center' },
   iconRow: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 12 },
