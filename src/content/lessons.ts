@@ -42,6 +42,7 @@ import carSeatSafety from '../../content/lessons/feeding-and-newborn-care/06-car
 import diapersBathsCryingAndSoothing from '../../content/lessons/feeding-and-newborn-care/07-diapers-baths-crying-and-soothing.json';
 import infantCprAndChoking from '../../content/lessons/feeding-and-newborn-care/08-infant-cpr-and-choking.json';
 
+import physicalRecoveryAfterBirth from '../../content/lessons/postpartum-recovery/01-physical-recovery-after-birth.json';
 import postpartumWarningSigns from '../../content/lessons/postpartum-recovery/02-postpartum-warning-signs.json';
 import whenToCallAboutYourBaby from '../../content/lessons/postpartum-recovery/03-when-to-call-about-your-baby.json';
 
@@ -95,7 +96,7 @@ const interventionsLessons = sortedLessons([makingDecisions, monitoringYourBaby,
 
 const feedingAndNewbornCareLessons = sortedLessons([yourNewbornsFirstDays, newbornCareInTheHospital, breastfeedingBasics, formulaAndCombinationFeeding, safeSleep, carSeatSafety, diapersBathsCryingAndSoothing, infantCprAndChoking]);
 
-const postpartumRecoveryLessons = sortedLessons([postpartumWarningSigns, whenToCallAboutYourBaby]);
+const postpartumRecoveryLessons = sortedLessons([physicalRecoveryAfterBirth, postpartumWarningSigns, whenToCallAboutYourBaby]);
 
 export const LABOR_BASICS_TITLE = 'Labor Basics and When to Call';
 
@@ -147,7 +148,7 @@ export const courses: Course[] = [
     courseId: 'postpartum-recovery',
     title: 'Postpartum Recovery, Mood, and Red Flags',
     label: 'CLASS · MODULE 6',
-    description: `Warning signs to know for the year after birth, for you and your baby: when to call, when to call 911, and getting help. About ${minutes(postpartumRecoveryLessons)} minutes.`,
+    description: `Healing after birth, and the warning signs to know for the year after, for you and your baby: when to call, when to call 911, and getting help. About ${minutes(postpartumRecoveryLessons)} minutes.`,
     lessons: postpartumRecoveryLessons,
   },
 ];
