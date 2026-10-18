@@ -30,6 +30,7 @@ import { ClassPlayerScreen } from './src/screens/ClassPlayerScreen';
 import { loadProgress, saveProgress } from './src/services/learnerProgressService';
 
 const CONTACT_EMAIL = 'admin@brk-services.com';
+const PRIVACY_POLICY_URL = 'https://brk-services.com/privacy-policy-babyready.html';
 
 export default function App() {
   return (
@@ -312,6 +313,15 @@ function BabyReadyApp() {
             >
               {CONTACT_EMAIL}
             </Text>
+          </Text>
+          <Text
+            accessibilityHint="Opens the privacy policy in your browser."
+            accessibilityRole="link"
+            onPress={() => void Linking.openURL(PRIVACY_POLICY_URL).catch(() => undefined)}
+            style={[styles.contactText, styles.contactLink]}
+            testID="link-privacy-policy"
+          >
+            Privacy policy
           </Text>
         </View>
 

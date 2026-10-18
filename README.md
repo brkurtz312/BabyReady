@@ -96,6 +96,14 @@ EXPO_PUBLIC_ENABLE_EPDS=true
 
 Keep it off in production until written permission to use the scale in the app has come from its copyright holder, the Royal College of Psychiatrists. Answers are never saved or sent anywhere.
 
+### Public pages
+
+`public/` holds static pages that Expo's web export copies into `dist`; with `cleanUrls`, Hosting serves them ahead of the app:
+
+- `/delete-account`: how to delete BabyReady data, for Google Play's account deletion link.
+
+The privacy policy lives on the company site, at https://brk-services.com/privacy-policy-babyready.html (the `brkurtz312/BRK-Services` repo), with BRK Services LLC's other app policies. The home screen's "Your data" card links to it, and `/privacy` on Hosting redirects there (`firebase.json`).
+
 ### Firestore rules
 
 `firestore.rules` keeps each learner's progress, Birth Readiness Brief, and class reflection answers inside `users/{uid}`, readable and writable only by that learner. Reflection answers live at `users/{uid}/birthReadinessReflections/{lessonId}__{slideId}`, with bounded text and server timestamps. Lesson progress (finished lessons and the last lesson opened, for the home screen's lesson list and Continue card) lives at `users/{uid}/courseProgress/class`, with a copy kept on the device. `tests/firestore.rules.test.mjs` covers these rules, and CI runs it on each pull request.
