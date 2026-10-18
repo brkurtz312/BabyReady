@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 10,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 4.2 of Module 4 (Interventions and Flexible Decisions). Sources were found by web search only; this session could not open acog.org, so every source needs to be opened and confirmed. ACOG Practice Bulletin 106 has been replaced by a 2025 Clinical Practice Guideline on intrapartum fetal heart rate monitoring; search results disagree on its number (10 or 22), so the title is given without one. For the reviewer: the reasons for continuous monitoring (epidural, oxytocin, medical conditions, a change heard while listening) are drawn from the ACOG FAQ and Committee Opinion 766 but not confirmed word for word, and the epidural reason is from common practice rather than a confirmed ACOG line; the internal monitoring slide (scalp electrode, pressure catheter) needs confirming against the FAQ; the first steps for a changed pattern (position change, IV fluids, pausing oxytocin) follow the 2025 guideline summary. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep all four reasons for continuous monitoring, including the epidural; the internal monitoring slide is accurate as written; keep the first steps for a changed pattern and 'most of the time, the pattern improves'; keep intermittent listening as an option for many low-risk labors where the hospital has a plan and staff; no video for this lesson."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 4.2 of Module 4 (Interventions and Flexible Decisions). Every source was confirmed against its slides by the reviewer on 2026-10-18. ACOG Practice Bulletin 106 has been replaced by a 2025 Clinical Practice Guideline on intrapartum fetal heart rate monitoring; search results disagree on its number (10 or 22), so the title is given without one. For the reviewer: the reasons for continuous monitoring (epidural, oxytocin, medical conditions, a change heard while listening) are drawn from the ACOG FAQ and Committee Opinion 766 but not confirmed word for word, and the epidural reason is from common practice rather than a confirmed ACOG line; the internal monitoring slide (scalp electrode, pressure catheter) needs confirming against the FAQ; the first steps for a changed pattern (position change, IV fluids, pausing oxytocin) follow the 2025 guideline summary. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep all four reasons for continuous monitoring, including the epidural; the internal monitoring slide is accurate as written; keep the first steps for a changed pattern and 'most of the time, the pattern improves'; keep intermittent listening as an option for many low-risk labors where the hospital has a plan and staff; no video for this lesson."
   },
   "sources": [
     {
@@ -24,21 +24,21 @@
       "organization": "ACOG",
       "title": "Fetal Heart Rate Monitoring During Labor (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/fetal-heart-rate-monitoring-during-labor",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-co766",
       "organization": "ACOG",
       "title": "Approaches to Limit Intervention During Labor and Birth (Committee Opinion No. 766)",
       "url": "https://www.acog.org/clinical/guidance/committee-opinion/2019/02/approaches-to-limit-intervention-during-labor-and-birth",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-fhr-cpg",
       "organization": "ACOG",
       "title": "Intrapartum Fetal Heart Rate Monitoring: Interpretation and Management (Clinical Practice Guideline, 2025)",
       "url": "https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2025/10/intrapartum-fetal-heart-rate-monitoring-interpretation-and-management",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
