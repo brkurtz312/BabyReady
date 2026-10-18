@@ -69,6 +69,7 @@ import Trash from 'lucide-react-native/icons/trash';
 import Flame from 'lucide-react-native/icons/flame';
 import Ban from 'lucide-react-native/icons/ban';
 import MicrowaveIcon from 'lucide-react-native/icons/microwave';
+import AudioLines from 'lucide-react-native/icons/audio-lines';
 
 /**
  * Pictures drawn in code for lesson slides: icon panels and simple diagrams.
@@ -1495,6 +1496,61 @@ const VISUALS: Record<string, () => React.ReactElement> = {
         { icon: Refrigerator, label: 'Fridge: 4 days' },
         { icon: Snowflake, label: 'Freezer: 6 to 12 months' },
         { icon: MicrowaveIcon, label: 'Never the microwave', tone: 'alert' },
+      ]}
+    />
+  ),
+  'diapers-baths-crying-and-soothing/diapering': () => (
+    <Steps
+      label="Changing a diaper: get everything ready; keep a hand on your baby and never step away; wipe front to back and let the skin dry; fold the diaper below the cord stump and wash your hands."
+      steps={[
+        { title: 'Get everything ready', detail: 'Diaper, wipes, and cream', tone: 'lagoon' },
+        { title: 'Keep a hand on your baby', detail: 'Never step away from the table', tone: 'alert' },
+        { title: 'Wipe front to back', detail: 'Let the skin dry', tone: 'lagoon' },
+        { title: 'Fold below the cord', detail: 'Then wash your hands', tone: 'marigold' },
+      ]}
+    />
+  ),
+  'diapers-baths-crying-and-soothing/diaper-rash': () => (
+    <IconPanel
+      label="Diaper rash: change often, let the skin air-dry, use a thick barrier cream, and call if it's not better in 2 to 3 days."
+      items={[
+        { icon: Clock, label: 'Change often' },
+        { icon: Wind, label: 'Let skin air-dry' },
+        { icon: Shield, label: 'Thick barrier cream' },
+        { icon: Phone, label: 'Not better in 2 to 3 days? Call', tone: 'marigold' },
+      ]}
+    />
+  ),
+  'diapers-baths-crying-and-soothing/tub-baths': () => (
+    <Steps
+      label="Tub baths: wait until the belly button heals; about 2 inches of warm water tested with your wrist or elbow; set the water heater to 120°F or lower; about 3 baths a week is plenty."
+      steps={[
+        { title: 'Wait for the belly button to heal', detail: 'Sponge baths until then', tone: 'lagoon' },
+        { title: 'About 2 inches of warm water', detail: 'Test with your wrist or elbow', tone: 'lagoon' },
+        { title: 'Water heater at 120°F or lower', detail: 'Hot tap water burns babies', tone: 'marigold' },
+        { title: 'About 3 baths a week', detail: 'More can dry the skin', tone: 'lagoon' },
+      ]}
+    />
+  ),
+  'diapers-baths-crying-and-soothing/soothing': () => (
+    <IconPanel
+      label="Ways to soothe: swaddle, always on the back; hold skin to skin, rock, or walk; soft white noise; a pacifier, stroller walk, or car ride."
+      items={[
+        { icon: Baby, label: 'Swaddle, on the back' },
+        { icon: Heart, label: 'Skin to skin, rock, or walk' },
+        { icon: AudioLines, label: 'Soft white noise' },
+        { icon: Car, label: 'A pacifier, stroller, or car ride' },
+      ]}
+    />
+  ),
+  'diapers-baths-crying-and-soothing/when-to-call': () => (
+    <IconPanel
+      label="When crying means call: under 3 months with a rectal temperature of 100.4°F or higher; a cry that sounds different; poor feeding, vomiting, or fewer wet diapers; any time you think your baby is sick."
+      items={[
+        { icon: Thermometer, label: 'Under 3 months: 100.4°F or higher', tone: 'alert' },
+        { icon: AudioLines, label: 'A cry that sounds different' },
+        { icon: Droplet, label: 'Poor feeding or fewer diapers' },
+        { icon: Phone, label: 'Worried? Call' },
       ]}
     />
   ),
