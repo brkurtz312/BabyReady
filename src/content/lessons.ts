@@ -20,6 +20,7 @@ import firstTrimesterCommonChanges from '../../content/lessons/early-pregnancy-b
 import firstPrenatalVisit from '../../content/lessons/early-pregnancy-basics/03-first-prenatal-visit.json';
 
 import postpartumWarningSigns from '../../content/lessons/postpartum-recovery/02-postpartum-warning-signs.json';
+import whenToCallAboutYourBaby from '../../content/lessons/postpartum-recovery/03-when-to-call-about-your-baby.json';
 
 export type Course = {
   courseId: string;
@@ -65,7 +66,7 @@ const earlyPregnancyLessons = sortedLessons([
   firstPrenatalVisit,
 ]);
 
-const postpartumRecoveryLessons = sortedLessons([postpartumWarningSigns]);
+const postpartumRecoveryLessons = sortedLessons([postpartumWarningSigns, whenToCallAboutYourBaby]);
 
 export const LABOR_BASICS_TITLE = 'Labor Basics and When to Call';
 
@@ -96,7 +97,7 @@ export const courses: Course[] = [
     courseId: 'postpartum-recovery',
     title: 'Postpartum Recovery, Mood, and Red Flags',
     label: 'CLASS · MODULE 6',
-    description: `Warning signs to know for the year after birth: high blood pressure, blood clots, heavy bleeding, and your mood. About ${minutes(postpartumRecoveryLessons)} minutes.`,
+    description: `Warning signs to know for the year after birth, for you and your baby: when to call, when to call 911, and getting help. About ${minutes(postpartumRecoveryLessons)} minutes.`,
     lessons: postpartumRecoveryLessons,
   },
 ];
