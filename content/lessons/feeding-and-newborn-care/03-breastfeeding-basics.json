@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 15,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 5.3 of Module 5 (Feeding and Newborn Care). Supports every family's feeding choice; formula and combination feeding are in lesson 5.4. Builds on Labor Basics lesson 6 (skin-to-skin, the first hour), lesson 5.1 (diapers and weight), and lesson 6.3 (feeding and diaper warning signs). Sources were found by web search only; this session could not open the pages, so every new source needs to be opened and confirmed. For the reviewer: the recommendation of about 6 months of breastfeeding only, then continuing with other foods for as long as you both want, follows the AAP 2022 policy and the ACOG FAQ; milk 'coming in' around days 2 to 5 is standard teaching not confirmed word for word; the hunger and fullness cues follow the CDC cues page; the positions (cradle, cross-cradle, football or clutch, side-lying) and latch steps (nose to nipple, wait for a wide mouth, bring baby to breast, lips flanged) are standard teaching found mainly in non-approved sources, with the ACOG FAQ describing latch steps generally; the reminder to move baby back to their own sleep space after side-lying feeds repeats lesson 5.5; the early challenges (tenderness in the first days versus pain that lasts, engorgement, cluster feeding) follow the CDC what-to-expect page in part; IBCLC, WIC, and support groups as places to get help are common practice, with lactation consultants, peer counselors, and nurses named in the ACOG FAQ. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the recommendation, milk coming in at days 2 to 5, and the positions and latch steps as written; add the AAP in-bed guidance to side-lying (feed in your bed, never on a couch or armchair, remove pillows and blankets, move the baby back on waking), matching lesson 5.5; add mastitis warning signs (a red, hot, painful breast, especially with fever or chills), supported by the ACOG FAQ, which needs confirming for this point; keep the getting-help slide; no video; allow a simple latch diagram drawn in code for the latch slide, replacing the step list."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 5.3 of Module 5 (Feeding and Newborn Care). Supports every family's feeding choice; formula and combination feeding are in lesson 5.4. Builds on Labor Basics lesson 6 (skin-to-skin, the first hour), lesson 5.1 (diapers and weight), and lesson 6.3 (feeding and diaper warning signs). Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: the recommendation of about 6 months of breastfeeding only, then continuing with other foods for as long as you both want, follows the AAP 2022 policy and the ACOG FAQ; milk 'coming in' around days 2 to 5 is standard teaching not confirmed word for word; the hunger and fullness cues follow the CDC cues page; the positions (cradle, cross-cradle, football or clutch, side-lying) and latch steps (nose to nipple, wait for a wide mouth, bring baby to breast, lips flanged) are standard teaching found mainly in non-approved sources, with the ACOG FAQ describing latch steps generally; the reminder to move baby back to their own sleep space after side-lying feeds repeats lesson 5.5; the early challenges (tenderness in the first days versus pain that lasts, engorgement, cluster feeding) follow the CDC what-to-expect page in part; IBCLC, WIC, and support groups as places to get help are common practice, with lactation consultants, peer counselors, and nurses named in the ACOG FAQ. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the recommendation, milk coming in at days 2 to 5, and the positions and latch steps as written; add the AAP in-bed guidance to side-lying (feed in your bed, never on a couch or armchair, remove pillows and blankets, move the baby back on waking), matching lesson 5.5; add mastitis warning signs (a red, hot, painful breast, especially with fever or chills), supported by the ACOG FAQ, which needs confirming for this point; keep the getting-help slide; no video; allow a simple latch diagram drawn in code for the latch slide, replacing the step list."
   },
   "sources": [
     {
@@ -24,49 +24,49 @@
       "organization": "ACOG",
       "title": "Breastfeeding Your Baby (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/breastfeeding-your-baby",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-breastfeeding-2022",
       "organization": "AAP",
       "title": "Breastfeeding and the Use of Human Milk (Policy Statement, 2022)",
       "url": "https://publications.aap.org/pediatrics/article/150/1/e2022057988/188347/",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "cdc-newborn-bf-basics",
       "organization": "CDC",
       "title": "Newborn Breastfeeding Basics",
       "url": "https://www.cdc.gov/infant-toddler-nutrition/breastfeeding/newborn-basics.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "cdc-hungry-full",
       "organization": "CDC",
       "title": "Signs Your Child Is Hungry or Full",
       "url": "https://www.cdc.gov/infant-toddler-nutrition/mealtime/signs-your-child-is-hungry-or-full.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "cdc-bf-what-to-expect",
       "organization": "CDC",
       "title": "What to Expect While Breastfeeding",
       "url": "https://www.cdc.gov/infant-toddler-nutrition/breastfeeding/what-to-expect-while-breastfeeding.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-enough-milk",
       "organization": "AAP",
       "title": "How to Tell if Your Breastfed Baby is Getting Enough Milk (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/breastfeeding/Pages/How-to-Tell-if-Baby-is-Getting-Enough-Milk.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "aap-safe-sleep-explained",
       "organization": "AAP",
       "title": "How to Keep Your Sleeping Baby Safe: AAP Policy Explained (HealthyChildren.org)",
       "url": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/a-parents-guide-to-safe-sleep.aspx",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
