@@ -1,0 +1,323 @@
+{
+  "courseId": "interventions-and-flexible-decisions",
+  "lessonId": "cesarean-birth",
+  "order": 6,
+  "title": "Cesarean Birth",
+  "learningGoals": [
+    "Explain what a cesarean birth is, and the difference between planned and unplanned cesareans",
+    "Know common reasons a cesarean is recommended",
+    "Describe what happens before, during, and right after a cesarean",
+    "Know what recovery is like in the hospital and at home, and when to call",
+    "Know that a vaginal birth may be possible after a cesarean"
+  ],
+  "estimatedMinutes": 15,
+  "review": {
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 4.6 of Module 4 (Interventions and Flexible Decisions). Builds on Preparing for Birth lesson 5 (naming who you'd like with you at a cesarean) and lessons 4.2 to 4.5; feelings after an unplanned birth are left to lesson 4.7. Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: 'about 1 in 3 births in the US' is from CDC FastStats (32.4% cesarean in 2024, from Births: Final Data for 2024); the reasons (labor not progressing, heart rate concerns, a baby not head-down, placenta covering the cervix, twins in some cases, some prior cesareans, some health conditions) follow the Cesarean Birth FAQ; the steps before surgery (IV, bladder catheter, antibiotics, spinal or epidural, general anesthesia in some emergencies) and timings (baby born within about 10 to 15 minutes, the whole surgery about an hour, hospital stay 2 to 4 days) need confirming; the family-centered options (a clear drape, skin-to-skin in the operating room, music) depend on the hospital and are not confirmed against an ACOG page; the recovery-at-home advice (not lifting more than your baby, no driving while taking opioid pain medicine) and call-back signs need confirming; the VBAC slide follows the VBAC FAQ. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep 'about 1 in 3 births' and cite CDC FastStats for it; keep the reasons as written; the getting-ready slide is accurate as written; keep all three times; keep the first-moments options framed as things to ask your hospital about; keep the recovery-at-home slide and call-back signs; keep the VBAC slide, including asking for surgery notes; partners wear a cap and gown in operating room pictures; no video for this lesson."
+  },
+  "sources": [
+    {
+      "id": "acog-cesarean-faq",
+      "organization": "ACOG",
+      "title": "Cesarean Birth (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/cesarean-birth",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "acog-unplanned-cesarean",
+      "organization": "ACOG",
+      "title": "What to Know About Unplanned Cesarean Births",
+      "url": "https://www.acog.org/womens-health/experts-and-stories/the-latest/what-to-know-about-unplanned-cesarean-births",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "acog-vbac-faq",
+      "organization": "ACOG",
+      "title": "Vaginal Birth After Cesarean Delivery (VBAC) (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/vaginal-birth-after-cesarean-delivery",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "cdc-faststats-delivery",
+      "organization": "CDC",
+      "title": "FastStats: Births, Method of Delivery",
+      "url": "https://www.cdc.gov/nchs/fastats/delivery.htm",
+      "verifiedOn": "2026-10-18"
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Cesarean Birth",
+      "onScreen": [
+        "Module 4: Interventions and Flexible Decisions"
+      ],
+      "narration": "Some babies are born by cesarean, whether it's planned ahead or decided during labor. Knowing what to expect can make it feel much less scary. In this lesson, we'll cover why a cesarean might be recommended, what happens before, during, and after, what recovery is like, and what it means for future births.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A new parent lying on an operating table under a soft drape, smiling as their newborn, wrapped in a warm blanket, is held close to their cheek. Their support partner, in a cap and gown, crouches beside them smiling. Exactly one baby. Calm and warm. No surgery shown. No readable writing."
+      }
+    },
+    {
+      "id": "what-is",
+      "type": "content",
+      "heading": "What is a cesarean?",
+      "onScreen": [
+        "Your baby is born through an incision in your belly and uterus",
+        "About 1 in 3 births in the US",
+        "Planned ahead, or decided during labor",
+        "Most people stay awake, with numbing medicine"
+      ],
+      "narration": "A cesarean, sometimes called a C-section, is a surgery where your baby is born through an incision in your belly and uterus. It's common: about 1 in 3 babies in the United States are born this way. Some cesareans are planned ahead of time. Others are decided during labor. Most people stay awake, with numbing medicine, and can see and hold their baby soon after birth.",
+      "sourceIds": [
+        "acog-cesarean-faq",
+        "cdc-faststats-delivery"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person and their support partner sitting with an ob-gyn in a calm exam room, the doctor explaining with an open hand. No readable writing."
+      }
+    },
+    {
+      "id": "reasons",
+      "type": "content",
+      "heading": "Common reasons for a cesarean",
+      "onScreen": [
+        "Labor stops making progress",
+        "Your baby's heart rate shows they need to be born soon",
+        "Your baby isn't head-down",
+        "The placenta covers the cervix",
+        "Twins or more, or some past cesareans"
+      ],
+      "narration": "Common reasons for a cesarean include labor that stops making progress, and a heart rate pattern showing your baby needs to be born soon. These two are the most common reasons for a cesarean during labor. A cesarean may be planned if your baby isn't head-down, if the placenta covers the cervix, in some twin or triplet pregnancies, after some past cesareans, or with some health conditions. As always, you can ask why it's recommended for you.",
+      "sourceIds": [
+        "acog-cesarean-faq",
+        "acog-unplanned-cesarean"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Five simple icons with short labels: an hourglass for labor not progressing, a heartbeat for the baby's heart rate, a baby for not head-down, a dotted circle for the placenta, and two people for twins."
+      }
+    },
+    {
+      "id": "planned-unplanned",
+      "type": "content",
+      "heading": "Planned and unplanned",
+      "onScreen": [
+        "Planned: scheduled ahead, usually at 39 weeks",
+        "Unplanned: decided during labor, with time to talk",
+        "Emergency: things move fast, and your team explains"
+      ],
+      "narration": "A planned cesarean is scheduled ahead of time, usually at 39 weeks, so you can prepare and ask questions at your visits. An unplanned cesarean is decided during labor. There's often time to ask questions and talk it over, as you learned in the first lesson of this module. In a true emergency, things move quickly. Your team will explain what they can as they go, and more afterward.",
+      "sourceIds": [
+        "acog-cesarean-faq",
+        "acog-unplanned-cesarean"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A laboring person in a hospital bed holding their support partner's hand while an ob-gyn sits on a stool at the bedside, calmly explaining. No readable writing."
+      }
+    },
+    {
+      "id": "checkin-reasons",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": [
+        "acog-unplanned-cesarean"
+      ],
+      "question": {
+        "prompt": "Which are the most common reasons for a cesarean during labor?",
+        "options": [
+          "Labor not progressing, or a heart rate pattern showing the baby should be born soon",
+          "The baby is a boy",
+          "Labor started at night"
+        ],
+        "correctIndex": 0,
+        "explanation": "During labor, the most common reasons for a cesarean are labor that stops making progress and a heart rate pattern showing your baby needs to be born soon."
+      }
+    },
+    {
+      "id": "before",
+      "type": "content",
+      "heading": "Getting ready",
+      "onScreen": [
+        "An IV, and a thin tube to empty your bladder",
+        "Antibiotics to prevent infection",
+        "A spinal or epidural to numb you from the chest down",
+        "Your support person can usually join you"
+      ],
+      "narration": "Before a cesarean, you'll have an IV, and a thin tube called a catheter to keep your bladder empty. You'll get antibiotics to help prevent infection. Most people get a spinal, or have their labor epidural topped up, to numb them from the chest down while they stay awake. In some emergencies, general anesthesia is used, and you'd be asleep. If you're awake, your support person can usually be with you, sitting by your head.",
+      "sourceIds": [
+        "acog-cesarean-faq"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A calm operating room seen from near the head of the table: a pregnant person lying on the table with a blue drape across their chest, an anesthesia provider in cap and mask at their head, and their support partner in a cap and gown sitting on a stool beside them holding their hand. No surgery or instruments shown. No readable writing."
+      }
+    },
+    {
+      "id": "during",
+      "type": "content",
+      "heading": "During the birth",
+      "onScreen": [
+        "A drape blocks your view of the surgery",
+        "You'll feel pressure and tugging, but not sharp pain",
+        "Your baby is usually born within 10 to 15 minutes",
+        "The whole surgery takes about an hour"
+      ],
+      "narration": "A drape is hung at your chest, so you don't see the surgery. You'll feel pressure and tugging, but you shouldn't feel sharp pain. If you do, tell your anesthesia team right away. Your baby is usually born within 10 to 15 minutes of the start. Then your team delivers the placenta and closes the incisions, which takes longer. The whole surgery usually takes about an hour.",
+      "sourceIds": [
+        "acog-cesarean-faq"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Operating room from the head of the table: the pregnant person behind a raised blue drape, smiling and listening, their partner in a cap and gown leaning close, and an anesthesia provider gently explaining. No surgery or instruments shown. No readable writing."
+      }
+    },
+    {
+      "id": "first-moments",
+      "type": "content",
+      "heading": "The first moments",
+      "onScreen": [
+        "Your baby is checked, often right in the room",
+        "Skin-to-skin may be possible on the operating table",
+        "Your partner may hold your baby while you're finished",
+        "Ask what your hospital offers"
+      ],
+      "narration": "After birth, your baby is checked, often right in the room. If you and your baby are doing well, many hospitals can place your baby skin-to-skin on your chest while your surgery is finished, or let your support person hold your baby close to you. Some hospitals offer a clear drape so you can see your baby being born. Ask at a prenatal visit what your hospital offers, and add your wishes to your birth preferences.",
+      "sourceIds": [
+        "acog-unplanned-cesarean",
+        "acog-cesarean-faq"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A new parent on the operating table, behind a blue drape, holding their newborn wrapped in a warm blanket on their upper chest, with their partner in a cap and gown beside them smiling. Exactly one baby. No surgery shown. No readable writing."
+      }
+    },
+    {
+      "id": "recovery-hospital",
+      "type": "content",
+      "heading": "Recovery in the hospital",
+      "onScreen": [
+        "Most people stay 2 to 4 days",
+        "Getting up and walking soon helps you heal",
+        "Pain medicine helps you move and care for your baby",
+        "You can breastfeed, and nurses can help with positions"
+      ],
+      "narration": "Most people stay in the hospital for 2 to 4 days after a cesarean. You'll be encouraged to get up and walk soon, often the same day, because it helps you heal and lowers the risk of blood clots. Your catheter comes out, and you can eat and drink again. Pain medicine helps you move and care for your baby. You can breastfeed, and your nurses can show you positions that keep pressure off your incision.",
+      "sourceIds": [
+        "acog-cesarean-faq"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A new parent in a hospital gown walking slowly down a bright hospital hallway, holding the arm of a nurse, while their support partner walks beside them pushing a clear bassinet with a sleeping baby on its back. Exactly one baby. No pregnant belly. No readable writing."
+      }
+    },
+    {
+      "id": "recovery-home",
+      "type": "content",
+      "heading": "Recovery at home",
+      "onScreen": [
+        "Full recovery takes several weeks",
+        "Don't lift anything heavier than your baby",
+        "Accept help, and rest when you can",
+        "Call for fever, a red or leaking incision, or worsening pain"
+      ],
+      "narration": "Full recovery from a cesarean takes several weeks, longer than after a vaginal birth. For the first few weeks, avoid lifting anything heavier than your baby, accept help with chores, and rest when you can. Don't drive while you're taking strong pain medicine. Call your care team if you have a fever, if your incision gets red, swollen, or leaks fluid, if your pain gets worse instead of better, or if you have heavy bleeding. Lesson 6.2 covers the urgent warning signs after any birth.",
+      "sourceIds": [
+        "acog-cesarean-faq"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels for when to call: a thermometer for fever, a bandage for a red or leaking incision, a warning triangle for worsening pain, and a drop for heavy bleeding."
+      }
+    },
+    {
+      "id": "next-time",
+      "type": "content",
+      "heading": "Future births",
+      "onScreen": [
+        "Many people can try a vaginal birth next time",
+        "It depends on your incision and other health factors",
+        "Talk it over with your care team early in your next pregnancy"
+      ],
+      "narration": "Having one cesarean doesn't always mean you'll need another. Many people can try for a vaginal birth next time, called a VBAC, or vaginal birth after cesarean. Whether it's a good choice for you depends on the kind of incision on your uterus, why you had a cesarean, and other health factors. Ask for a copy of your surgery notes, and talk it over with your care team early in your next pregnancy.",
+      "sourceIds": [
+        "acog-vbac-faq"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person holding the hand of a toddler, sitting with their partner and an ob-gyn in a calm exam room, everyone relaxed and talking. No readable writing."
+      }
+    },
+    {
+      "id": "your-preferences",
+      "type": "reflection",
+      "heading": "If you have a cesarean",
+      "onScreen": [
+        "Who you'd like with you",
+        "Your wishes for the first moments with your baby",
+        "A question for your care team"
+      ],
+      "narration": "Even if you're not planning a cesarean, it helps to think ahead. Who would you like with you in the operating room? What are your wishes for the first moments with your baby, like skin-to-skin, or your partner holding your baby? And what's one question you'd like to ask your care team? Save your answers to your Birth Readiness Brief.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write who you'd like with you if you have a cesarean, your wishes for the first moments with your baby, and one question for your care team."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "A cesarean can be planned, unplanned, or an emergency",
+        "Most people are awake, and feel pressure but not pain",
+        "Walk soon, rest at home, and know when to call",
+        "A vaginal birth may be possible next time"
+      ],
+      "narration": "Let's recap. A cesarean can be planned, decided during labor, or done in an emergency. Most people are awake, with numbing medicine, and feel pressure but not pain. Skin-to-skin may be possible in the operating room. Walking soon helps you heal, full recovery takes several weeks, and you should call for a fever, a red or leaking incision, or worsening pain. And a vaginal birth may be possible next time. Next up, a few review questions.",
+      "sourceIds": [
+        "acog-cesarean-faq",
+        "acog-vbac-faq"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "During a cesarean with a spinal or epidural, what will you most likely feel?",
+      "options": [
+        "Sharp pain",
+        "Pressure and tugging, but not sharp pain",
+        "Nothing, because you'll be asleep"
+      ],
+      "correctIndex": 1,
+      "explanation": "With a spinal or epidural, you stay awake and feel pressure and tugging, but not sharp pain. Tell your anesthesia team right away if you do feel pain."
+    },
+    {
+      "prompt": "Why are you encouraged to walk soon after a cesarean?",
+      "options": [
+        "It helps you heal and lowers the risk of blood clots",
+        "It's the only way to leave the hospital",
+        "It makes the incision close faster overnight"
+      ],
+      "correctIndex": 0,
+      "explanation": "Getting up and walking soon helps you heal and lowers the risk of blood clots."
+    },
+    {
+      "prompt": "Which is a reason to call your care team after a cesarean?",
+      "options": [
+        "Feeling tired",
+        "Your incision gets red, swollen, or leaks fluid",
+        "Your baby sleeps a lot"
+      ],
+      "correctIndex": 1,
+      "explanation": "A red, swollen, or leaking incision, a fever, worsening pain, or heavy bleeding are reasons to call."
+    }
+  ]
+}

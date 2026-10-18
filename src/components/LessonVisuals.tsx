@@ -51,6 +51,9 @@ import Scale from 'lucide-react-native/icons/scale';
 import CigaretteOff from 'lucide-react-native/icons/cigarette-off';
 import Milk from 'lucide-react-native/icons/milk';
 import Syringe from 'lucide-react-native/icons/syringe';
+import Ear from 'lucide-react-native/icons/ear';
+import HeartPlus from 'lucide-react-native/icons/heart-plus';
+import CircleDot from 'lucide-react-native/icons/circle-dot';
 
 /**
  * Pictures drawn in code for lesson slides: icon panels and simple diagrams.
@@ -999,6 +1002,135 @@ const VISUALS: Record<string, () => React.ReactElement> = {
         { title: 'Before labor', detail: 'Time to talk it over at visits', tone: 'lagoon' },
         { title: 'In labor', detail: 'Often minutes to hours; ask for a few minutes', tone: 'marigold' },
         { title: 'An emergency', detail: 'Your team acts fast and explains as they go', tone: 'alert' },
+      ]}
+    />
+  ),
+  'monitoring-your-baby-in-labor/two-ways': () => (
+    <IconPanel
+      label="Two ways to check your baby's heartbeat: listening at set times with a handheld device, or continuous monitoring with belts and a monitor."
+      items={[
+        { icon: Ear, label: 'Listening at set times' },
+        { icon: Activity, label: 'Continuous, with belts and a monitor' },
+      ]}
+    />
+  ),
+  'monitoring-your-baby-in-labor/when-continuous': () => (
+    <IconPanel
+      label="Continuous monitoring is often recommended with oxytocin, an epidural, some health conditions, or a change heard while listening."
+      items={[
+        { icon: Droplet, label: 'Oxytocin to start or speed labor' },
+        { icon: Syringe, label: 'An epidural' },
+        { icon: HeartPlus, label: 'Some health conditions' },
+        { icon: Ear, label: 'A change heard while listening' },
+      ]}
+    />
+  ),
+  'medical-pain-relief/three-options': () => (
+    <IconPanel
+      label="Three main options: an epidural numbs the lower body, IV pain medicine takes the edge off, and nitrous oxide is a gas you breathe through a mask."
+      items={[
+        { icon: Syringe, label: 'An epidural' },
+        { icon: Droplet, label: 'IV pain medicine' },
+        { icon: Wind, label: 'Nitrous oxide' },
+      ]}
+    />
+  ),
+  'medical-pain-relief/epidural-tradeoffs': () => (
+    <IconPanel
+      label="Epidurals: the strongest relief, and many people can rest; blood pressure can drop; itching, shivering, or fever can happen; legs feel heavy."
+      items={[
+        { icon: Moon, label: 'Strong relief; many can rest' },
+        { icon: HeartPulse, label: 'Blood pressure can drop' },
+        { icon: Thermometer, label: 'Itching, shivering, or fever' },
+        { icon: Footprints, label: 'Legs feel heavy' },
+      ]}
+    />
+  ),
+  'induction-of-labor/reasons': () => (
+    <IconPanel
+      label="Common reasons for induction: past 41 weeks, high blood pressure or preeclampsia, diabetes, water broken without labor, and a baby not growing as expected."
+      items={[
+        { icon: Calendar, label: 'Past 41 weeks' },
+        { icon: HeartPulse, label: 'High blood pressure' },
+        { icon: TestTube, label: 'Diabetes' },
+        { icon: Droplet, label: 'Water broke, no labor' },
+        { icon: Baby, label: 'Baby not growing as expected' },
+      ]}
+    />
+  ),
+  'induction-of-labor/how-it-works': () => (
+    <Steps
+      label="How an induction works: first soften and open the cervix if needed, then start contractions, then labor continues, often slowly at first."
+      steps={[
+        { title: 'Soften the cervix', detail: 'Medicine or a small balloon, if needed', tone: 'lagoon' },
+        { title: 'Start contractions', detail: 'Oxytocin, breaking the water, or both', tone: 'marigold' },
+        { title: 'Labor continues', detail: 'Often slowly at first', tone: 'lagoon' },
+      ]}
+    />
+  ),
+  'assisted-vaginal-birth/what-is': () => (
+    <Steps
+      label="An assisted vaginal birth happens during pushing: once the cervix is fully open and the baby is low in the pelvis, you push while your provider guides."
+      steps={[
+        { title: 'Cervix fully open', detail: 'Only during pushing', tone: 'lagoon' },
+        { title: 'Baby low in the pelvis', detail: 'Low enough to guide out', tone: 'lagoon' },
+        { title: 'You push, they guide', detail: 'With a vacuum or forceps', tone: 'marigold' },
+      ]}
+    />
+  ),
+  'assisted-vaginal-birth/when': () => (
+    <IconPanel
+      label="Why an assisted birth might be suggested: long pushing without progress, exhaustion, a heart rate pattern showing the baby should be born soon, or a health condition that makes hard pushing unsafe."
+      items={[
+        { icon: Hourglass, label: 'Long pushing, no progress' },
+        { icon: Bed, label: 'Too exhausted to push' },
+        { icon: HeartPulse, label: "Baby's heart rate" },
+        { icon: HeartPlus, label: 'A health condition' },
+      ]}
+    />
+  ),
+  'cesarean-birth/reasons': () => (
+    <IconPanel
+      label="Common reasons for a cesarean: labor stops making progress, the baby's heart rate shows they need to be born soon, the baby isn't head-down, the placenta covers the cervix, or twins or more."
+      items={[
+        { icon: Hourglass, label: 'Labor stops progressing' },
+        { icon: HeartPulse, label: "Baby's heart rate" },
+        { icon: Baby, label: 'Baby not head-down' },
+        { icon: CircleDot, label: 'Placenta covers the cervix' },
+        { icon: Users, label: 'Twins or more' },
+      ]}
+    />
+  ),
+  'cesarean-birth/recovery-home': () => (
+    <IconPanel
+      label="After a cesarean, call your care team for a fever, a red or leaking incision, pain that gets worse, or heavy bleeding."
+      items={[
+        { icon: Thermometer, label: 'Fever', tone: 'alert' },
+        { icon: Bandage, label: 'Red or leaking incision', tone: 'alert' },
+        { icon: TriangleAlert, label: 'Pain getting worse', tone: 'alert' },
+        { icon: Droplet, label: 'Heavy bleeding', tone: 'alert' },
+      ]}
+    />
+  ),
+  'when-plans-change/in-the-moment': () => (
+    <IconPanel
+      label="When a change comes up: pause and take a breath, ask why, the options, and how much time, talk it over with your support person, and ask what you can still keep."
+      items={[
+        { icon: Wind, label: 'Pause and breathe' },
+        { icon: MessageCircleQuestionMark, label: 'Why, options, time?' },
+        { icon: Users, label: 'Talk it over' },
+        { icon: Heart, label: 'What can we keep?' },
+      ]}
+    />
+  ),
+  'when-plans-change/when-to-get-help': () => (
+    <IconPanel
+      label="When to get more help: sadness or worry lasting more than 2 weeks, nightmares or flashbacks, feelings that make it hard to care for yourself or your baby; for thoughts of harming yourself, call or text 988."
+      items={[
+        { icon: Calendar, label: 'Lasting more than 2 weeks' },
+        { icon: Moon, label: 'Nightmares or flashbacks' },
+        { icon: HeartHandshake, label: 'Hard to care for yourself' },
+        { icon: Phone, label: 'Thoughts of harm: 988', tone: 'alert' },
       ]}
     />
   ),
