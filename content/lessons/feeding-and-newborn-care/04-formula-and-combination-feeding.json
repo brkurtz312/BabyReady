@@ -1,0 +1,337 @@
+{
+  "courseId": "feeding-and-newborn-care",
+  "lessonId": "formula-and-combination-feeding",
+  "order": 4,
+  "title": "Formula and Combination Feeding",
+  "learningGoals": [
+    "Choose an infant formula and make bottles safely",
+    "Store formula and pumped breast milk safely",
+    "Know how much and how often to feed, and read your baby's cues",
+    "Give a bottle gently, with your baby setting the pace",
+    "Combine breast and bottle while protecting your milk supply"
+  ],
+  "estimatedMinutes": 14,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Drafted 2026-10-18 as lesson 5.4 of Module 5 (Feeding and Newborn Care). Supports every family's feeding choice, following lesson 5.3 (Breastfeeding Basics). Builds on lesson 5.3 (hunger and fullness cues, getting help), lesson 5.5 (safe sleep), and lesson 6.3 (feeding and diaper warning signs). Sources were found by web search only; this session could not open the pages, so every new source needs to be opened and confirmed. For the reviewer: formula preparation (water then powder, never more or less water, shake, no microwave, wrist test), the 2-hour and 1-hour limits, refrigerating within 24 hours, discarding leftovers, and opened powder within about a month follow the CDC preparation page as quoted in search results; the extra steps for babies under 2 months, born early, or with weak immune systems (boil, wait about 5 minutes, cool before feeding) follow the CDC preparation page, and daily sanitizing for these babies follows the CDC cleaning page; ready-to-feed formula being sterile until opened is from CDC emergency guidance, not confirmed on the main page; no homemade formula, no cow's or plant milks before age 1, no extra water before 6 months, and WIC or food banks when formula runs low follow the AAP homemade formula page and related HealthyChildren pages; amounts (1 to 2 ounces every 2 to 3 hours at first, 8 to 12 feeds, later about every 3 to 4 hours) follow the CDC how-much page and the AAP amounts page; the semi-upright hold, keeping the nipple full, and never propping a bottle follow the AAP Bottle Feeding Basics page, which is an older page; 'paced' bottle feeding (letting the baby draw in the nipple, pauses, a nearly level bottle) is widely taught, including by WIC, but was not found on an AAP or CDC page, and the slide balances it with the AAP advice to keep the nipple full; waiting about 3 to 4 weeks before bottles if possible follows the AAP Introducing the Bottle page as described in search results; breastfeed first then formula, and pumping when a bottle replaces a feed, are standard teaching; vitamin D drops for babies taking less than about 32 ounces of formula a day follow the CDC how-much page; breast milk storage times (room temperature 4 hours, refrigerator 4 days, freezer about 6 months and up to 12, thawed milk within 24 hours, never refreeze, leftovers within 2 hours) follow the CDC breast milk storage page."
+  },
+  "sources": [
+    {
+      "id": "cdc-formula-prep",
+      "organization": "CDC",
+      "title": "Infant Formula Preparation and Storage",
+      "url": "https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/preparation-and-storage.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-formula-how-much",
+      "organization": "CDC",
+      "title": "How Much and How Often to Feed Infant Formula",
+      "url": "https://www.cdc.gov/infant-toddler-nutrition/formula-feeding/how-much-and-how-often.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-clean-feeding-items",
+      "organization": "CDC",
+      "title": "How to Clean, Sanitize, and Store Infant Feeding Items",
+      "url": "https://www.cdc.gov/hygiene/about/clean-sanitize-store-infant-feeding-items.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-breast-milk-storage",
+      "organization": "CDC",
+      "title": "Breast Milk Storage and Preparation",
+      "url": "https://www.cdc.gov/breastfeeding/breast-milk-preparation-and-storage/handling-breastmilk.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-formula-amount",
+      "organization": "AAP",
+      "title": "Amount and Schedule of Baby Formula Feedings (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/formula-feeding/Pages/amount-and-schedule-of-formula-feedings.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-bottle-basics",
+      "organization": "AAP",
+      "title": "Bottle Feeding Basics (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/feeding-nutrition/Pages/Bottle-Feeding-How-Its-Done.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-homemade-formula",
+      "organization": "AAP",
+      "title": "Is Homemade Baby Formula Safe? (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/formula-feeding/Pages/Is-Homemade-Baby-Formula-Safe.aspx",
+      "verifiedOn": null
+    },
+    {
+      "id": "aap-introducing-bottle",
+      "organization": "AAP",
+      "title": "Introducing the Bottle (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/breastfeeding/Pages/Introducing-the-Bottle.aspx",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Formula and Combination Feeding",
+      "onScreen": [
+        "Module 5: Feeding and Newborn Care"
+      ],
+      "narration": "Many families feed their babies formula, or a mix of breast milk and formula, some or all of the time. In this lesson, we'll cover choosing and making formula safely, storing bottles, how much and how often to feed, a gentle way to give a bottle, and how to combine breast and bottle. Whatever you choose, your baby can grow and thrive.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "At home in daylight, a new parent sitting on a sofa holds their newborn semi-upright in the crook of their arm and gives a bottle, the bottle tilted only slightly, smiling down at the baby, while their partner sits beside them with a burp cloth. The parent is fully clothed. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "your-choice",
+      "type": "content",
+      "heading": "Choosing formula",
+      "onScreen": [
+        "Babies thrive on breast milk, formula, or both",
+        "Use a store-bought infant formula with iron",
+        "Never homemade formula, cow's milk, or plant milks before age 1",
+        "Formula running low? Call your baby's doctor or WIC"
+      ],
+      "narration": "Babies can grow and thrive on breast milk, infant formula, or a combination of the two. If you use formula, choose an infant formula with iron, sold in stores in the United States. Your baby's doctor can help if you have questions about which kind. Don't make your own formula, and don't give cow's milk, goat's milk, or plant milks like almond or oat before your baby's first birthday. They don't have what a baby needs, and homemade formulas have made babies seriously ill. If you're running low on formula or money, call your baby's doctor, WIC, or a local food bank for help.",
+      "sourceIds": [
+        "aap-homemade-formula",
+        "aap-formula-amount"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a heart for breast milk, formula, or both; a milk carton for infant formula with iron; a crossed-out circle for no homemade formula or other milks; and a phone for calling for help if formula runs low."
+      }
+    },
+    {
+      "id": "making-formula",
+      "type": "content",
+      "heading": "Making a bottle of formula",
+      "onScreen": [
+        "Wash your hands; use clean bottles",
+        "Water first, then powder, exactly as the label says",
+        "Never add extra water or extra powder",
+        "Shake to mix; test a few drops on your wrist"
+      ],
+      "narration": "Start by washing your hands, and use clean bottles and nipples. Most of the time, tap water is fine; if you're not sure your water is safe, ask your local health department. Measure the water first, then add the powder, exactly as the label says. Never add extra water to make formula last longer, and never add extra powder. Too much water doesn't give your baby enough nutrition and can be dangerous, and too little water is hard on your baby's body. Shake to mix. Warming is optional, but never use a microwave, because it heats unevenly and can burn your baby's mouth. Test a few drops on your wrist first. And before six months, don't give your baby extra water or other drinks.",
+      "sourceIds": [
+        "cdc-formula-prep",
+        "aap-homemade-formula",
+        "cdc-clean-feeding-items"
+      ],
+      "visual": {
+        "kind": "diagram",
+        "description": "Four numbered steps: wash hands and use clean bottles; water first, then powder, as the label says; never extra water or extra powder (alert); shake, then test on your wrist."
+      }
+    },
+    {
+      "id": "extra-care",
+      "type": "content",
+      "heading": "Extra care for young babies",
+      "onScreen": [
+        "Under 2 months, born early, or a weak immune system: take extra care",
+        "Boil the water, then wait about 5 minutes before mixing",
+        "Let the bottle cool before feeding",
+        "Clean and sanitize bottles at least once a day"
+      ],
+      "narration": "Powdered formula isn't sterile, and rarely it can carry germs that make young babies very sick. So if your baby is under two months old, was born early, or has a weak immune system, take a few extra steps. Bring the water to a boil, then let it cool for about five minutes, so it's still very hot when you mix in the powder. Then cool the bottle, for example under cold running water, and test it on your wrist before feeding. Wash bottles and nipples after every feed, and for these babies, also sanitize them at least once a day. Ready-to-feed liquid formula is sterile until it's opened, so it's another option. Ask your baby's doctor which is best for your baby.",
+      "sourceIds": [
+        "cdc-formula-prep",
+        "cdc-clean-feeding-items"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a calendar for under 2 months, a flame for boiling the water, a timer for waiting about 5 minutes, and a snowflake for cooling before feeding."
+      }
+    },
+    {
+      "id": "storing",
+      "type": "content",
+      "heading": "Storing bottles of formula",
+      "onScreen": [
+        "Use within 2 hours of mixing",
+        "Once a feed starts, finish within 1 hour",
+        "Not using it soon? Refrigerate and use within 24 hours",
+        "Throw out what's left after a feed"
+      ],
+      "narration": "Formula can spoil. Use a bottle within two hours of making it, and within one hour once your baby starts feeding. If you won't use it within two hours, put it in the refrigerator right away and use it within twenty-four hours. Throw out any formula left in the bottle after a feed, because germs from your baby's mouth can grow in it. Keep containers of powder closed in a cool, dry place, not the refrigerator, and most need to be used within a month of opening, so check the label.",
+      "sourceIds": [
+        "cdc-formula-prep"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a clock for use within 2 hours, a timer for within 1 hour of starting, a refrigerator for up to 24 hours, and a trash can for throwing out leftovers."
+      }
+    },
+    {
+      "id": "checkin-water",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": [
+        "aap-homemade-formula",
+        "cdc-formula-prep"
+      ],
+      "question": {
+        "prompt": "You're almost out of formula until payday. What's the safest thing to do?",
+        "options": [
+          "Add a little extra water to make it last",
+          "Call your baby's doctor, WIC, or a food bank for help",
+          "Switch to cow's milk for a few days"
+        ],
+        "correctIndex": 1,
+        "explanation": "Watering down formula or giving cow's milk can make a baby seriously ill. Mix formula exactly as the label says, and call your baby's doctor, WIC, or a food bank for help."
+      }
+    },
+    {
+      "id": "how-much",
+      "type": "content",
+      "heading": "How much and how often",
+      "onScreen": [
+        "First days: about 1 to 2 ounces every 2 to 3 hours",
+        "Later in the first month: about every 3 to 4 hours",
+        "Feed on hunger cues; stop when your baby shows they're full",
+        "Don't push your baby to finish the bottle"
+      ],
+      "narration": "In the first days, a formula-fed baby usually takes about one to two ounces every two to three hours, or eight to twelve feeds in twenty-four hours. As your baby grows, they'll take more at each feed, and by later in the first month, many feed about every three to four hours. Feed when you see hunger cues, like hands to the mouth or turning the head, and stop when your baby shows they're full, like turning away, closing their mouth, or relaxing and falling asleep. It's fine to leave some in the bottle. Your baby's doctor will check weight gain at each visit; ask if your baby often seems to want much more or much less.",
+      "sourceIds": [
+        "cdc-formula-how-much",
+        "aap-formula-amount"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A new parent sitting in a rocking chair holds their newborn upright against their shoulder over a burp cloth, gently patting the baby's back after a feed, a half-finished bottle on the side table. The parent is fully clothed. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "giving-bottle",
+      "type": "content",
+      "heading": "Giving a bottle gently",
+      "onScreen": [
+        "Hold your baby fairly upright, close to you",
+        "Tilt the bottle just enough to fill the nipple",
+        "Let your baby pause, and burp partway through",
+        "Never prop a bottle or put your baby to bed with one"
+      ],
+      "narration": "How you hold your baby matters more than which bottle you use. Hold your baby fairly upright, close to you, with their head in the crook of your arm, not lying flat. Touch the nipple to your baby's lips and let them draw it in. Tilt the bottle just enough to keep the nipple full of milk, so your baby doesn't swallow air, but not so steeply that milk pours out faster than they can handle. Let your baby take breaks, and burp them partway through and at the end. This slower, paced way of feeding lets your baby set the pace and stop when full. Never prop a bottle on a pillow or put your baby to bed with a bottle; it can cause choking, ear infections, and later, tooth decay.",
+      "sourceIds": [
+        "aap-bottle-basics"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A support partner in everyday clothes sits on a sofa, holding a newborn fairly upright in the crook of their arm, close to their body, and gives a bottle held nearly level, looking at the baby with a calm smile. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "combining",
+      "type": "content",
+      "heading": "Combining breast and bottle",
+      "onScreen": [
+        "If you can, wait until breastfeeding is going well, often 3 to 4 weeks",
+        "Breastfeed first, then offer formula if needed",
+        "Pump when your baby gets a bottle, to protect your supply",
+        "Ask your baby's doctor about vitamin D drops"
+      ],
+      "narration": "Many families combine breast and bottle, and any amount of breast milk helps. If you can, wait until breastfeeding is going well, often around three to four weeks, before starting bottles, unless your baby's doctor advises formula sooner. Your body makes milk based on how often milk is removed, so when supplementing, breastfeed first, then offer formula if your baby still seems hungry. If your baby gets a bottle instead of a breastfeed, pump at about that time to protect your supply. Babies who get less than about thirty-two ounces of formula a day usually need vitamin D drops, so ask your baby's doctor. And a lactation consultant can help you make a plan that fits your family.",
+      "sourceIds": [
+        "aap-introducing-bottle",
+        "cdc-formula-how-much"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Evening at home: a new parent rests on the sofa with their eyes closed under a blanket while their partner, in everyday clothes, sits nearby in an armchair giving the newborn a bottle, holding the baby fairly upright, under soft lamp light. Both adults fully clothed. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "pumped-milk",
+      "type": "content",
+      "heading": "Storing pumped breast milk",
+      "onScreen": [
+        "Room temperature: up to 4 hours",
+        "Refrigerator: up to 4 days; freezer: about 6 to 12 months",
+        "Thaw in the fridge or lukewarm water, never the microwave",
+        "Use thawed milk within 24 hours; never refreeze it"
+      ],
+      "narration": "If you pump, freshly pumped milk can stay at room temperature for up to four hours, in the refrigerator for up to four days, and in the freezer for about six months, or up to twelve months. Thaw frozen milk in the refrigerator overnight, or in a container of lukewarm water, never in the microwave. Once it's fully thawed, use it within twenty-four hours, and never refreeze it. Once your baby starts drinking from a bottle of breast milk, use it within two hours, then throw out what's left.",
+      "sourceIds": [
+        "cdc-breast-milk-storage"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a clock for room temperature up to 4 hours, a refrigerator for up to 4 days, a snowflake for the freezer, and a crossed-out microwave for never microwaving."
+      }
+    },
+    {
+      "id": "your-plan",
+      "type": "reflection",
+      "heading": "Your feeding plan",
+      "onScreen": [
+        "How you plan to feed: breast, formula, or both",
+        "Who will make bottles and feed at night",
+        "Who you'll call with feeding questions"
+      ],
+      "narration": "Let's add to your plan. How do you plan to feed your baby: breast milk, formula, or both? Who will help make bottles and feed at night? And who will you call with feeding questions? Save your answers to your Birth Readiness Brief. Plans can change, and that's okay.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write how you plan to feed your baby, who will help make bottles and feed at night, and who you'll call with feeding questions."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Use infant formula with iron, mixed exactly as the label says",
+        "Use within 2 hours, and within 1 hour once a feed starts",
+        "Feed on cues, hold your baby upright, never prop a bottle",
+        "Combining? Breastfeed first, and pump to protect your supply"
+      ],
+      "narration": "Let's recap. Use an infant formula with iron, and mix it exactly as the label says, never watered down. Use a bottle within two hours, and within one hour once your baby starts feeding, and throw out leftovers. Feed on hunger cues, hold your baby fairly upright, and never prop a bottle. If you're combining, breastfeed first and pump when your baby gets a bottle. Next up, a few review questions.",
+      "sourceIds": [
+        "cdc-formula-prep",
+        "cdc-formula-how-much",
+        "aap-bottle-basics"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "How should you mix powdered formula?",
+      "options": [
+        "Powder first, then water, adding a little extra to be safe",
+        "Water first, then powder, exactly as the label says",
+        "Any amount, as long as it looks right"
+      ],
+      "correctIndex": 1,
+      "explanation": "Measure the water first, then add the powder exactly as the label says. Too much or too little water can make your baby ill."
+    },
+    {
+      "prompt": "Your baby drank half a bottle of formula an hour and a half ago. What should you do with the rest?",
+      "options": [
+        "Throw it out",
+        "Put it in the fridge for the next feed",
+        "Save it for later today"
+      ],
+      "correctIndex": 0,
+      "explanation": "Once a feed starts, use the bottle within one hour, then throw out what's left. Germs from your baby's mouth can grow in it."
+    },
+    {
+      "prompt": "Which is the safest way to give a bottle?",
+      "options": [
+        "Prop the bottle on a pillow so your hands are free",
+        "Lay your baby flat on their back",
+        "Hold your baby fairly upright and let them set the pace"
+      ],
+      "correctIndex": 2,
+      "explanation": "Hold your baby fairly upright and close, tilt the bottle just enough to fill the nipple, and let your baby pause. Never prop a bottle."
+    }
+  ]
+}
