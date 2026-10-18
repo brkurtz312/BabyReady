@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 12,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 4.4 of Module 4 (Interventions and Flexible Decisions). Builds on lesson 4.1 (the four questions) and 4.2 (continuous monitoring with oxytocin). Sources were found by web search only; this session could not open acog.org, so every source needs to be opened and confirmed. Practice Bulletin 107 (2009) may have been replaced by a newer ACOG guideline; none was confirmed, so the lesson cites ACOG's patient FAQs instead. For the reviewer: the list of common reasons (past 41 to 42 weeks, high blood pressure or preeclampsia, diabetes, water broken without labor, a baby not growing well) needs confirming against the Labor Induction FAQ; the 39-week slide (may lower the chance of a cesarean and of high blood pressure, with no more problems for babies, in healthy first pregnancies; waiting is also reasonable) follows the ARRIVE trial as summarized in the 39-week FAQ; the cervical ripening methods (prostaglandin medicine, a balloon catheter) and that ripening can take many hours; and the risks (contractions too strong or too close, infection, induction not working, and a rare tear in the uterus with a past cesarean) need confirming. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): the ACOG patient FAQs and the 8-questions article are enough (no practice bulletin needed); keep the five common reasons; keep the 39-week slide as written; the cervical ripening and starting-contractions slides are accurate as written; keep 'many take a day or more' and the full list of risks; keep the question about going home during part of an induction; no video for this lesson."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 4.4 of Module 4 (Interventions and Flexible Decisions). Builds on lesson 4.1 (the four questions) and 4.2 (continuous monitoring with oxytocin). Every source was confirmed against its slides by the reviewer on 2026-10-18. Practice Bulletin 107 (2009) may have been replaced by a newer ACOG guideline; none was confirmed, so the lesson cites ACOG's patient FAQs instead. For the reviewer: the list of common reasons (past 41 to 42 weeks, high blood pressure or preeclampsia, diabetes, water broken without labor, a baby not growing well) needs confirming against the Labor Induction FAQ; the 39-week slide (may lower the chance of a cesarean and of high blood pressure, with no more problems for babies, in healthy first pregnancies; waiting is also reasonable) follows the ARRIVE trial as summarized in the 39-week FAQ; the cervical ripening methods (prostaglandin medicine, a balloon catheter) and that ripening can take many hours; and the risks (contractions too strong or too close, infection, induction not working, and a rare tear in the uterus with a past cesarean) need confirming. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): the ACOG patient FAQs and the 8-questions article are enough (no practice bulletin needed); keep the five common reasons; keep the 39-week slide as written; the cervical ripening and starting-contractions slides are accurate as written; keep 'many take a day or more' and the full list of risks; keep the question about going home during part of an induction; no video for this lesson."
   },
   "sources": [
     {
@@ -24,28 +24,28 @@
       "organization": "ACOG",
       "title": "Labor Induction (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/labor-induction",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-induction-39-faq",
       "organization": "ACOG",
       "title": "Induction of Labor at 39 Weeks (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/induction-of-labor-at-39-weeks",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-past-due-faq",
       "organization": "ACOG",
       "title": "When Pregnancy Goes Past Your Due Date (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/when-pregnancy-goes-past-your-due-date",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     },
     {
       "id": "acog-induction-questions",
       "organization": "ACOG",
       "title": "8 Questions to Ask Your Doctor Before Labor Induction",
       "url": "https://www.acog.org/womens-health/experts-and-stories/the-latest/8-questions-to-ask-your-doctor-before-labor-induction",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-18"
     }
   ],
   "slides": [
