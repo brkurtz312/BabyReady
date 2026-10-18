@@ -19,6 +19,8 @@ import earlyPregnancyFirstSteps from '../../content/lessons/early-pregnancy-basi
 import firstTrimesterCommonChanges from '../../content/lessons/early-pregnancy-basics/02-first-trimester-common-changes.json';
 import firstPrenatalVisit from '../../content/lessons/early-pregnancy-basics/03-first-prenatal-visit.json';
 
+import safeSleep from '../../content/lessons/feeding-and-newborn-care/05-safe-sleep.json';
+
 import postpartumWarningSigns from '../../content/lessons/postpartum-recovery/02-postpartum-warning-signs.json';
 import whenToCallAboutYourBaby from '../../content/lessons/postpartum-recovery/03-when-to-call-about-your-baby.json';
 
@@ -66,6 +68,8 @@ const earlyPregnancyLessons = sortedLessons([
   firstPrenatalVisit,
 ]);
 
+const feedingAndNewbornCareLessons = sortedLessons([safeSleep]);
+
 const postpartumRecoveryLessons = sortedLessons([postpartumWarningSigns, whenToCallAboutYourBaby]);
 
 export const LABOR_BASICS_TITLE = 'Labor Basics and When to Call';
@@ -92,6 +96,13 @@ export const courses: Course[] = [
     label: 'CLASS · MODULE 2',
     description: `Six narrated lessons on how labor begins, when to call, and birth, with check-ins and a review quiz after each lesson. About ${minutes(laborBasicsLessons)} minutes.`,
     lessons: laborBasicsLessons,
+  },
+  {
+    courseId: 'feeding-and-newborn-care',
+    title: 'Feeding and Newborn Care',
+    label: 'CLASS · MODULE 5',
+    description: `Caring for your newborn, starting with safe sleep: on the back, in a bare crib, in your room. About ${minutes(feedingAndNewbornCareLessons)} minutes.`,
+    lessons: feedingAndNewbornCareLessons,
   },
   {
     courseId: 'postpartum-recovery',
