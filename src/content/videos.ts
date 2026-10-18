@@ -30,6 +30,7 @@ const VIDEOS: Record<string, number> = {
   'safe-sleep/safe-sleep-video': require('../../assets/lessons/safe-sleep/safe-sleep-video.mp4'),
   // Reuses the Preparing for Birth harness video (video.assetId in the lesson file).
   'car-seat-safety/harness-refresher': require('../../assets/lessons/getting-ready-bags-routes-car-seat/harness-check-video.mp4'),
+  'making-decisions-with-your-care-team/decision-video': require('../../assets/lessons/making-decisions-with-your-care-team/decision-video.mp4'),
 };
 
 export function videoFor(lessonId: string, slideId: string): number | null {
