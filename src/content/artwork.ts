@@ -218,6 +218,7 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'diapers-baths-crying-and-soothing/welcome': require('../../assets/lessons/diapers-baths-crying-and-soothing/welcome.jpg'),
   'diapers-baths-crying-and-soothing/sponge-baths': require('../../assets/lessons/diapers-baths-crying-and-soothing/sponge-baths.jpg'),
   'diapers-baths-crying-and-soothing/why-babies-cry': require('../../assets/lessons/diapers-baths-crying-and-soothing/why-babies-cry.jpg'),
+  'infant-cpr-and-choking/welcome': require('../../assets/lessons/infant-cpr-and-choking/welcome.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
