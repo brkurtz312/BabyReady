@@ -16,7 +16,7 @@
     "reviewedBy": null,
     "reviewedOn": null,
     "nextReviewBy": null,
-    "notes": "Drafted 2026-10-18 as lesson 4.3 of Module 4 (Interventions and Flexible Decisions). Builds on Preparing for Birth lesson 5 (birth preferences); non-medical comfort measures are left to Module 3. Sources were found by web search only; this session could not open acog.org, so every source needs to be opened and confirmed. For the reviewer: that an epidural doesn't raise the chance of a cesarean, and that your request is reason enough with no set dilation to wait for, are drawn from Practice Bulletin 209 but not confirmed word for word; the epidural side effects (blood pressure drop, itching, shivering, fever, a bladder catheter, rare headache) and the reasons an epidural may not be possible (bleeding problems, low platelets, blood thinners, birth very close) need confirming; the nitrous oxide line that it isn't combined with IV opioids reflects a 2021 ACOG practice advisory found only through secondary summaries; times (an epidural taking 10 to 20 minutes to work, starting nitrous about 30 seconds before a contraction) need confirming."
+    "notes": "Drafted 2026-10-18 as lesson 4.3 of Module 4 (Interventions and Flexible Decisions). Builds on Preparing for Birth lesson 5 (birth preferences); non-medical comfort measures are left to Module 3. Sources were found by web search only; this session could not open acog.org, so every source needs to be opened and confirmed. For the reviewer: that an epidural doesn't raise the chance of a cesarean, and that your request is reason enough with no set dilation to wait for, are drawn from Practice Bulletin 209 but not confirmed word for word; the epidural side effects (blood pressure drop, itching, shivering, fever, a bladder catheter, rare headache) and the reasons an epidural may not be possible (bleeding problems, low platelets, blood thinners, birth very close) need confirming; the nitrous oxide line that it isn't combined with IV opioids reflects a 2021 ACOG practice advisory found only through secondary summaries; times (an epidural taking 10 to 20 minutes to work, starting nitrous about 30 seconds before a contraction) need confirming. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep 'an epidural does not raise your chance of a cesarean'; keep 'asking is reason enough' with no set point in labor; the epidural side effects are accurate as written; keep the examples of when an option may not be possible; keep that nitrous oxide isn't given with IV pain medicine; keep all three times; no video for this lesson."
   },
   "sources": [
     {
@@ -67,7 +67,10 @@
         "Comfort skills without medicine are in Module 3"
       ],
       "narration": "Whether to use medical pain relief is your choice. Many people use it, and many don't. It helps to know your options ahead of time, and it's fine to change your mind once labor starts. Choosing pain relief isn't failing, and neither is going without it. Many people combine medical options with comfort skills like breathing, movement, and touch, which we cover in Module 3.",
-      "sourceIds": ["acog-pain-options", "acog-pain-meds-faq"],
+      "sourceIds": [
+        "acog-pain-options",
+        "acog-pain-meds-faq"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A pregnant person and their support partner sitting with a nurse in a calm exam room, the nurse explaining, everyone relaxed. No readable writing."
@@ -83,7 +86,10 @@
         "Nitrous oxide: a gas you breathe through a mask"
       ],
       "narration": "There are three main kinds of medical pain relief in labor. An epidural numbs the lower part of your body, and gives the strongest relief. Pain medicine through an IV, or as a shot, takes the edge off contractions. And nitrous oxide is a gas you breathe through a mask you hold yourself. Not every hospital offers all three, so it's worth asking where you plan to give birth.",
-      "sourceIds": ["acog-pain-meds-faq", "acog-pain-options"],
+      "sourceIds": [
+        "acog-pain-meds-faq",
+        "acog-pain-options"
+      ],
       "visual": {
         "kind": "icon-list",
         "description": "Three simple icons with short labels: a syringe for an epidural, an IV drip drop for IV pain medicine, and a wind symbol for nitrous oxide."
@@ -100,7 +106,10 @@
         "You stay awake and alert"
       ],
       "narration": "An epidural is placed by an anesthesia specialist. You sit on the edge of the bed, or lie on your side, curled forward, and hold as still as you can while they numb a small spot on your lower back. Then they place a thin, soft tube there, and tape it in place. Medicine flows through the tube for the rest of labor, numbing the nerves to your lower body. It usually starts working within about 10 to 20 minutes. You stay awake and alert, and your support person can often stay with you.",
-      "sourceIds": ["acog-pain-meds-faq", "acog-pb209"],
+      "sourceIds": [
+        "acog-pain-meds-faq",
+        "acog-pb209"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A laboring person sitting on the edge of a hospital bed, curled gently forward and hugging a pillow, with their support partner in front holding their hands. An anesthesia provider in a cap and mask stands behind them. No needle or procedure shown. No readable writing."
@@ -118,7 +127,10 @@
         "An epidural doesn't raise your chance of a cesarean"
       ],
       "narration": "An epidural gives the strongest pain relief, and many people find they can rest, or even sleep. It also has trade-offs. Your blood pressure can drop, so you'll have an IV and fluids, and your baby's heart rate will be watched closely. Itching, shivering, and a fever can happen. Your legs may feel heavy or numb, so you'll usually stay in bed, and you may need a thin tube to empty your bladder. Pushing can feel different, and may take longer. A bad headache afterward is rare, and can be treated. And an epidural does not raise your chance of needing a cesarean.",
-      "sourceIds": ["acog-pain-meds-faq", "acog-pb209"],
+      "sourceIds": [
+        "acog-pain-meds-faq",
+        "acog-pb209"
+      ],
       "visual": {
         "kind": "icon-list",
         "description": "Four simple icons with short labels: a moon for strong relief and rest, a heartbeat for blood pressure, a thermometer for itching, shivering, or fever, and footprints for heavy legs."
@@ -130,7 +142,9 @@
       "heading": "Quick check-in",
       "onScreen": [],
       "narration": "Let's check in.",
-      "sourceIds": ["acog-pb209"],
+      "sourceIds": [
+        "acog-pb209"
+      ],
       "question": {
         "prompt": "Which of these is true about epidurals?",
         "options": [
@@ -153,7 +167,10 @@
         "Can make your baby sleepy, so it's not given close to birth"
       ],
       "narration": "Another option is pain medicine called an opioid, given through your IV or as a shot. It works on your whole body, and dulls the pain rather than taking it away. Relief usually lasts an hour or so, and you can still move around. It can make you sleepy or nauseated, or itchy. It also reaches your baby, and can make them sleepy or affect their breathing for a short time after birth, so it's usually not given when birth is close. Your team can treat any effects on your baby.",
-      "sourceIds": ["acog-pain-meds-faq", "acog-pb209"],
+      "sourceIds": [
+        "acog-pain-meds-faq",
+        "acog-pb209"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A nurse adjusting an IV line on a stand beside a laboring person sitting up in bed, the partner holding a cup of ice chips. Calm and gentle. No readable writing."
@@ -170,7 +187,11 @@
         "Wears off within minutes; you can stop anytime"
       ],
       "narration": "Nitrous oxide, sometimes called laughing gas, is a mix of nitrous oxide and oxygen. You hold the mask yourself, and breathe it in starting about 30 seconds before a contraction begins. It doesn't numb the pain, but it can ease worry and make contractions easier to handle. It wears off within minutes, so you can stop anytime, and try something else. Some people feel dizzy or sick to their stomach. It isn't given together with IV pain medicine, and not every hospital offers it.",
-      "sourceIds": ["acog-pain-meds-faq", "acog-pain-options", "acog-pb209"],
+      "sourceIds": [
+        "acog-pain-meds-faq",
+        "acog-pain-options",
+        "acog-pb209"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A laboring person sitting upright in a chair beside a hospital bed, holding a small clear mask near their face with one hand, breathing calmly, while their support partner kneels beside them. No readable writing."
@@ -187,7 +208,10 @@
         "Ask about your options at a prenatal visit"
       ],
       "narration": "You can ask for pain relief whenever you want it. Asking is reason enough, and there's no set point in labor you have to reach first. Sometimes an option isn't possible, for example if birth is very close, or if you have a bleeding problem, low platelets, or take a blood thinner. If you have a health condition, ask your team ahead of time which options are safe for you. At a prenatal visit, ask what your hospital offers, and how long it usually takes to get an epidural there.",
-      "sourceIds": ["acog-pb209", "acog-pain-meds-faq"],
+      "sourceIds": [
+        "acog-pb209",
+        "acog-pain-meds-faq"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A pregnant person in a hospital bed in early labor, pressing a call button, while a nurse arrives through the door smiling. The partner sits beside the bed. No readable writing."
@@ -218,7 +242,10 @@
         "You can ask whenever you want, and change your mind"
       ],
       "narration": "Let's recap. The three main kinds of medical pain relief are an epidural, IV pain medicine, and nitrous oxide. An epidural gives the strongest relief, with trade-offs like low blood pressure and heavy legs. IV medicine and nitrous oxide take the edge off, and wear off sooner. You can ask for pain relief whenever you want it, and change your mind along the way. Next up, a few review questions.",
-      "sourceIds": ["acog-pain-meds-faq", "acog-pb209"]
+      "sourceIds": [
+        "acog-pain-meds-faq",
+        "acog-pb209"
+      ]
     }
   ],
   "reviewQuiz": [
