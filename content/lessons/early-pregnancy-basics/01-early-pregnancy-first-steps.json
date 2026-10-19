@@ -11,13 +11,13 @@
     "Check with your care team before starting or stopping any medicine",
     "Know simple ways to ease nausea and the signs of dehydration that mean you should call"
   ],
-  "estimatedMinutes": 8,
+  "estimatedMinutes": 9,
   "review": {
     "status": "draft",
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course. The old course's dehydration list included 'unable to urinate', which the ACOG page does not list; it now follows ACOG's three signs plus not keeping food or fluids down. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed. Draft 2026-10-19: added the slide 'Confirming your pregnancy' (home tests, hCG, calling the care team to confirm) with an NICHD source, after a learner asked the instructor how to confirm a pregnancy; awaiting clinical review."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course. The old course's dehydration list included 'unable to urinate', which the ACOG page does not list; it now follows ACOG's three signs plus not keeping food or fluids down. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed. Draft 2026-10-19: added the slide 'Confirming your pregnancy' (home tests, hCG, calling the care team to confirm) with an NICHD source, after a learner asked the instructor how to confirm a pregnancy; Reviewer decisions 2026-10-19: test from the first day of a missed period; a negative test with no period means test again in a few days or call; the care team confirms with a urine or blood test or an ultrasound; accuracy phrased as 'accurate when you follow the package directions'; lesson length 9 minutes. The timing, retest, and ultrasound points rest on the reviewer's clinical judgment beyond the NICHD page. Awaiting source confirmation."
   },
   "sources": [
     {
@@ -103,11 +103,12 @@
       "heading": "Confirming your pregnancy",
       "onScreen": [
         "A home pregnancy test checks your urine for a pregnancy hormone called hCG",
-        "Home tests are very accurate and need no prescription",
-        "Follow the directions on the package",
-        "Positive test? Call your care team to confirm it and book your first visit"
+        "Most reliable from the first day of a missed period",
+        "Accurate when you follow the package directions",
+        "Positive test? Call your care team to confirm it and book your first visit",
+        "Negative but still no period? Test again in a few days, or call your care team"
       ],
-      "narration": "Many people first find out they're pregnant with a home pregnancy test. These tests check your urine for a hormone called h C G. Your body starts making it soon after pregnancy begins, and the amount goes up as pregnancy goes on. Home tests are very accurate, and you can buy them without a prescription. Follow the directions on the package. If your test is positive, call your care team. They can confirm your pregnancy, sometimes with a blood test, and help you book your first prenatal visit.",
+      "narration": "Many people first find out they're pregnant with a home pregnancy test. These tests check your urine for a hormone called h C G. Your body starts making it soon after pregnancy begins, and the amount goes up as pregnancy goes on. Tests are most reliable from the first day of a missed period. You can buy them without a prescription, and they're accurate when you follow the directions on the package. If your test is positive, call your care team. They can confirm your pregnancy with a urine or blood test or an ultrasound, and help you book your first prenatal visit. If your test is negative but your period still hasn't come, test again in a few days, or call your care team.",
       "sourceIds": [
         "nichd-know-if-pregnant"
       ],
