@@ -15,7 +15,7 @@ Safety slides are never AI-generated and cannot be skipped until their narration
 Lessons are JSON files in `content/lessons/<course>/`, using the format in `src/models/lesson.ts`. Git history is the audit trail.
 
 1. Every teaching slide cites at least one source. No source, no slide.
-2. Sources come only from approved organizations: ACOG, AAP, CDC, NICHD, AAFP, ACNM, WHO, Lamaze, ICEA.
+2. Sources come only from approved organizations: ACOG, AAP, CDC, NICHD, AAFP, ACNM, WHO, Lamaze, ICEA, and, for CPR and choking, the AHA and the American Red Cross.
 3. A lesson is `draft` or `reviewed`. Reviewed lessons record the reviewer and credentials, the review date, and a re-check date no more than 12 months later, and every source must have a `verifiedOn` date.
 
 `npm run test:lessons` checks every lesson against these rules, and CI runs it on each pull request.
@@ -86,9 +86,43 @@ EXPO_PUBLIC_FIREBASE_FIRESTORE_EMULATOR_PORT=8080
 
 Use a reachable LAN IP instead of `127.0.0.1` for a physical device. `npm run test:emulators` starts isolated emulators automatically (it needs Java).
 
+### EPDS self-check
+
+Lesson 6.4 can offer a private Edinburgh Postnatal Depression Scale check (`src/components/SelfCheckSheet.tsx`, scoring in `src/lib/epds.ts`). It's off unless this is set:
+
+```bash
+EXPO_PUBLIC_ENABLE_EPDS=true
+```
+
+Keep it off in production until written permission to use the scale in the app has come from its copyright holder, the Royal College of Psychiatrists. Answers are never saved or sent anywhere.
+
+### What instructor answers cost
+
+Each answer from `askLessonQuestion` writes one `ask_usage` line to Cloud Logging: the lesson, the model, the token counts, and the cost in dollars (`functions/src/askCost.ts`, tested in `tests/askCost.test.mjs`). It never includes the question, the answer, or the account. To see the totals:
+
+```bash
+node scripts/ask-cost-report.mjs --days 30
+```
+
+It needs the `gcloud` CLI signed in to the Firebase project. Update the prices in `functions/src/askCost.ts` if the model or Anthropic's prices change.
+
+### Public pages
+
+`public/` holds static pages that Expo's web export copies into `dist`; with `cleanUrls`, Hosting serves them ahead of the app:
+
+- `/delete-account`: how to delete BabyReady data, for Google Play's account deletion link.
+
+The privacy policy lives on the company site, at https://brk-services.com/privacy-policy-babyready.html (the `brkurtz312/BRK-Services` repo), with BRK Services LLC's other app policies. The home screen's "Your data" card links to it, and `/privacy` on Hosting redirects there (`firebase.json`).
+
 ### Firestore rules
 
-`firestore.rules` keeps each learner's progress, Birth Readiness Brief, and class reflection answers inside `users/{uid}`, readable and writable only by that learner. Reflection answers live at `users/{uid}/birthReadinessReflections/{lessonId}__{slideId}`, with bounded text and server timestamps. `tests/firestore.rules.test.mjs` covers these rules, and CI runs it on each pull request.
+`firestore.rules` keeps each learner's progress, Birth Readiness Brief, and class reflection answers inside `users/{uid}`, readable and writable only by that learner. Reflection answers live at `users/{uid}/birthReadinessReflections/{lessonId}__{slideId}`, with bounded text and server timestamps. Lesson progress (finished lessons and the last lesson opened, for the home screen's lesson list and Continue card) lives at `users/{uid}/courseProgress/class`, with a copy kept on the device. `tests/firestore.rules.test.mjs` covers these rules, and CI runs it on each pull request.
+
+### Deleting a learner's data
+
+The home screen's **Delete my data** button (`src/components/DeleteDataSheet.tsx`) calls the `deleteMyAccount` Cloud Function, which deletes everything under `users/{uid}` and the learner's sign-in. If that succeeds, the app clears the device copies of progress and reflection answers and signs out, which starts a new, empty anonymous session. If the server step fails, nothing on the device is touched, so the learner can try again. Without Firebase, the button clears the device copies only. Deploy the function (`firebase deploy --only functions`) before turning on Firebase in production.
+
+Accounts nobody opens for 12 months are deleted the same way by `deleteInactiveAccounts`, which runs at 3:15am Pacific on the 1st of each month. The 12 months are counted from the account's latest sign-in or session refresh, which happens whenever the app is opened (`functions/src/retention.ts`, tested in `tests/retention.test.mjs`). Scheduled functions need the Cloud Scheduler API, which `firebase deploy` offers to enable on first deploy. A copy on a phone that hasn't opened the app stays there until the app is opened again or deleted.
 
 The rules still include the collections used by the archived governance workflow, so existing published course content stays readable.
 

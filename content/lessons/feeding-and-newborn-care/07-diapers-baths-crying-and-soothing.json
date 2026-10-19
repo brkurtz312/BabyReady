@@ -1,0 +1,375 @@
+{
+  "courseId": "feeding-and-newborn-care",
+  "lessonId": "diapers-baths-crying-and-soothing",
+  "order": 7,
+  "title": "Diapers, Baths, Crying, and Soothing",
+  "learningGoals": [
+    "Change diapers safely and treat diaper rash",
+    "Give sponge baths and tub baths safely",
+    "Never leave a baby alone in the bath",
+    "Understand normal crying and try ways to soothe your baby",
+    "Know never to shake a baby, and how to take a safe break"
+  ],
+  "estimatedMinutes": 15,
+  "review": {
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 5.7 of Module 5 (Feeding and Newborn Care). Builds on lesson 5.1 (newborn diapers and sleep), lesson 5.5 (safe sleep and safe swaddling), and Labor Basics lesson 6 (skin-to-skin). Overlaps lesson 6.3 (When to Call About Your Baby), whose crying and never-shake slides teach the same points; the never-shake slide here matches 6.3's wording, adding blindness from the CDC page, taking turns, and telling every caregiver. Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: diaper changing steps (supplies ready, a hand on the baby, front to back, fold below the cord, wash hands) are standard teaching, with folding below the cord from the AAP cord care page; eight to ten or more diapers a day is standard teaching not confirmed word for word; diaper rash care (frequent changes, air-drying, a thick fragrance-free zinc oxide or petrolatum barrier) and when to call (not better in 2 to 3 days; pimples, blisters, or sores; spreading beyond the diaper; fever) follow the AAP diaper rash page and symptom checker as quoted in search results; sponge baths until the cord falls off (usually 1 to 2 weeks; call if still there after about 3 weeks), washing one part at a time and the face first, follow the AAP bathing and cord care pages; about 2 inches of water, the wrist or elbow test, a water heater at 120°F or lower, and about 3 baths a week in the first year follow the AAP bathing page, with 2 inches and 3 times a week not confirmed word for word; never leaving a baby alone in the bath, taking the baby along, and bath seats not being safety devices follow the AAP bathing and infant water safety pages; fussing peaking at about 3 hours a day around 6 weeks and easing by 3 to 4 months follows the AAP colic page; the soothing list (swaddling on the back and stopping when the baby tries to roll, skin to skin, rocking, soft white noise, pacifier, stroller or car ride) follows the AAP calming and swaddling pages, and the pacifier timing for breastfed babies matches lesson 5.5; the take-a-break steps follow the CDC abusive head trauma page; the fever threshold and call reasons follow the AAP fever page and match lesson 6.3. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep both this lesson's and lesson 6.3's crying and never-shake slides; keep the bath details, diaper rash care, soothing list, and diaper count as written; say crying peaks at 4 to 6 weeks, using the range from the AAP pages; keep 15 minutes; no video."
+  },
+  "sources": [
+    {
+      "id": "aap-diaper-rash",
+      "organization": "AAP",
+      "title": "Common Diaper Rashes & Treatments (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/diapers-clothing/Pages/Diaper-Rash.aspx",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "aap-bathing",
+      "organization": "AAP",
+      "title": "Bathing Your Baby (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/Bathing-Your-Newborn.aspx",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "aap-cord-care",
+      "organization": "AAP",
+      "title": "Umbilical Cord Care in Newborns (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/bathing-skin-care/Pages/Umbilical-Cord-Care.aspx",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "aap-infant-water-safety",
+      "organization": "AAP",
+      "title": "Infant Drowning Prevention & Water Safety: How to Protect Your Baby (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/safety-prevention/at-play/Pages/Infant-Water-Safety.aspx",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "aap-calming-fussy-baby",
+      "organization": "AAP",
+      "title": "How to Calm a Fussy Baby: Tips for Parents & Caregivers (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/crying-colic/Pages/Calming-A-Fussy-Baby.aspx",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "aap-colic",
+      "organization": "AAP",
+      "title": "Colic Relief Tips for Parents (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/crying-colic/Pages/Colic.aspx",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "aap-swaddling",
+      "organization": "AAP",
+      "title": "Swaddling: Is it Safe for Your Baby? (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/diapers-clothing/Pages/Swaddling-Is-it-Safe.aspx",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "cdc-abusive-head-trauma",
+      "organization": "CDC",
+      "title": "About Abusive Head Trauma",
+      "url": "https://www.cdc.gov/child-abuse-neglect/about/about-abusive-head-trauma.html",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "aap-fever-baby",
+      "organization": "AAP",
+      "title": "Fever and Your Baby (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/health-issues/conditions/fever/Pages/Fever-and-Your-Baby.aspx",
+      "verifiedOn": "2026-10-18"
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Diapers, Baths, Crying, and Soothing",
+      "onScreen": [
+        "Module 5: Feeding and Newborn Care"
+      ],
+      "narration": "Diapers, baths, and comforting a crying baby will fill a lot of your days, and you'll get good at them fast. In this lesson, we'll cover changing diapers and treating diaper rash, sponge baths and tub baths, keeping bath time safe, why babies cry, ways to soothe them, and what to do when the crying gets to be too much.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "At home in soft daylight, a new parent sways gently while holding their swaddled newborn against their chest, and their partner folds a small stack of baby clothes and diapers on a dresser nearby. Both adults in everyday clothes. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "diapering",
+      "type": "content",
+      "heading": "Changing a diaper",
+      "onScreen": [
+        "Get everything ready first",
+        "Keep a hand on your baby; never step away from the changing table",
+        "Wipe front to back, and let the skin dry",
+        "Fold the diaper below the cord stump; wash your hands"
+      ],
+      "narration": "Newborns go through a lot of diapers, often eight to ten or more a day. Get everything ready before you start: a clean diaper, wipes or a soft cloth with warm water, and diaper cream if you use it. Keep one hand on your baby the whole time, and never step away from a changing table or bed, even for a moment; babies can wriggle and fall. Clean gently from front to back, especially for girls, and let the skin dry before putting on the clean diaper. Until the cord stump falls off, fold the top of the diaper down below it. Then wash your hands.",
+      "sourceIds": [
+        "aap-diaper-rash",
+        "aap-cord-care"
+      ],
+      "visual": {
+        "kind": "diagram",
+        "description": "Four numbered steps: get everything ready; keep a hand on your baby, never step away (alert); wipe front to back and let skin dry; fold below the cord stump and wash your hands."
+      }
+    },
+    {
+      "id": "diaper-rash",
+      "type": "content",
+      "heading": "Diaper rash",
+      "onScreen": [
+        "Change wet and dirty diapers often",
+        "Clean gently; let the skin air-dry",
+        "A thick layer of zinc oxide or petroleum jelly",
+        "Call if it's not better in 2 to 3 days, or has blisters, sores, or fever"
+      ],
+      "narration": "Most babies get diaper rash at some point, usually red, irritated skin where the diaper touches. Change wet and dirty diapers often. Clean gently with warm water or fragrance-free wipes, and let the skin air-dry for a few minutes when you can. Then spread on a thick layer of a fragrance-free barrier cream, like zinc oxide or petroleum jelly. Call your baby's doctor if the rash isn't better after two to three days, if there are pimples, blisters, or open sores, if it spreads beyond the diaper area, or if your baby has a fever.",
+      "sourceIds": [
+        "aap-diaper-rash"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a clock for changing often, a wind symbol for letting skin air-dry, a shield for a thick barrier cream, and a phone for calling if it's not better."
+      }
+    },
+    {
+      "id": "sponge-baths",
+      "type": "content",
+      "heading": "Sponge baths first",
+      "onScreen": [
+        "Sponge baths until the cord stump falls off, usually in 1 to 2 weeks",
+        "A warm room, and your baby wrapped in a towel",
+        "Uncover and wash one part at a time, face first",
+        "Keep the cord stump clean and dry"
+      ],
+      "narration": "Until the cord stump falls off, usually in one to two weeks, give your baby sponge baths instead of putting them in water. Choose a warm room and a flat, safe surface, and have everything within reach. Keep your baby wrapped in a dry towel, and uncover just the part you're washing. Start with the face, using plain water and a soft washcloth, then wash the rest of the body, saving the diaper area for last. Keep the cord stump clean and dry. If the stump is still there after about three weeks, or looks red or smells bad, call your baby's doctor.",
+      "sourceIds": [
+        "aap-bathing",
+        "aap-cord-care"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A new parent kneels beside a towel spread on a bed and gently wipes their newborn's face with a soft washcloth, the baby wrapped in a hooded towel with only the face showing, a small bowl of water beside them. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "tub-baths",
+      "type": "content",
+      "heading": "Tub baths",
+      "onScreen": [
+        "Once the belly button has healed",
+        "About 2 inches of warm, not hot, water; test with your wrist or elbow",
+        "Set your water heater to 120°F or lower",
+        "About 3 times a week is plenty in the first year"
+      ],
+      "narration": "Once the belly button has healed, your baby can have tub baths in a baby tub or a sink. Fill it with about two inches of water that feels warm, not hot, on your wrist or elbow. Setting your water heater to 120 degrees Fahrenheit or lower helps prevent burns, because hot tap water is a common cause of burns in babies. Support your baby's head and neck with one hand, and use a mild, fragrance-free soap sparingly. Keep baths short, and wrap your baby in a towel right away. Babies don't get very dirty, so about three baths a week is plenty in the first year, and more can dry out their skin.",
+      "sourceIds": [
+        "aap-bathing"
+      ],
+      "visual": {
+        "kind": "diagram",
+        "description": "Four numbered steps: wait until the belly button heals; about 2 inches of warm water, tested with your wrist or elbow; water heater at 120°F or lower (marigold); about 3 baths a week."
+      }
+    },
+    {
+      "id": "bath-safety",
+      "type": "safety",
+      "heading": "Never leave your baby alone in the bath",
+      "onScreen": [
+        "Not even for a second",
+        "Keep one hand on your baby the whole time",
+        "If you must step away, wrap your baby in a towel and take them with you",
+        "Bath seats aren't a safety device"
+      ],
+      "narration": "Babies can drown quickly and silently, even in an inch or two of water. Never leave your baby alone in the bath, not even for a second, and never leave an older child in charge. Keep one hand on your baby the whole time. If the phone or doorbell rings, or you forgot something, wrap your baby in a towel and take them with you. Bath seats and rings can tip over, so they never replace your hands and your eyes.",
+      "sourceIds": [
+        "aap-bathing",
+        "aap-infant-water-safety"
+      ]
+    },
+    {
+      "id": "checkin-bath",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": [
+        "aap-infant-water-safety"
+      ],
+      "question": {
+        "prompt": "Your baby is in the bath and you realize the towel is in the next room. What do you do?",
+        "options": [
+          "Run and grab it; it only takes a few seconds",
+          "Ask your 6-year-old to watch the baby",
+          "Lift your baby out and bring them with you"
+        ],
+        "correctIndex": 2,
+        "explanation": "Babies can drown in seconds, in very little water. Never leave your baby alone in the bath or with another child in charge; take your baby with you."
+      }
+    },
+    {
+      "id": "why-babies-cry",
+      "type": "content",
+      "heading": "Why babies cry",
+      "onScreen": [
+        "Crying is how babies tell you what they need",
+        "Check the basics: hungry, wet diaper, too hot or cold, tired, wants to be held",
+        "Fussing often peaks at 4 to 6 weeks, and is often worse in the evening",
+        "It usually eases by 3 to 4 months"
+      ],
+      "narration": "Crying is how your baby tells you they need something. Start with the basics: are they hungry, do they need a diaper change, are they too hot or too cold, tired, or do they just want to be held? But sometimes babies cry even when every need is met, and that's normal too. Fussing usually builds over the first weeks, peaks at four to six weeks, when some babies cry for up to three hours a day, and is often worse in the late afternoon and evening. It usually eases by three to four months. Long stretches of crying are hard, but they don't mean you're doing anything wrong.",
+      "sourceIds": [
+        "aap-colic",
+        "aap-calming-fussy-baby"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Evening at home with soft lamp light: a new parent sits on the edge of a bed gently holding their crying newborn, who wears a sleeper, looking calm and patient, a clean diaper and a burp cloth on the bed beside them. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "soothing",
+      "type": "content",
+      "heading": "Ways to soothe your baby",
+      "onScreen": [
+        "Swaddle snugly, on the back; stop when your baby starts trying to roll",
+        "Hold skin to skin, rock, sway, or walk",
+        "Shushing or soft white noise, not too loud",
+        "A pacifier, a stroller walk, or a car ride"
+      ],
+      "narration": "Different things work for different babies, and on different days, so try one at a time and give each a few minutes. Swaddling snugly in a thin blanket helps many young babies; always lay a swaddled baby on their back, keep it loose at the hips, and stop swaddling when your baby starts trying to roll. Hold your baby skin to skin, or rock, sway, or walk with them. Try shushing or a steady white noise, kept soft so it doesn't hurt their hearing. Offer a pacifier; if you're breastfeeding, wait until feeding is going well. A stroller walk or a car ride can help, too.",
+      "sourceIds": [
+        "aap-calming-fussy-baby",
+        "aap-swaddling"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a baby for swaddling on the back, a heart for skin to skin and rocking, sound waves for soft white noise, and a car for a walk or a ride."
+      }
+    },
+    {
+      "id": "never-shake",
+      "type": "safety",
+      "heading": "If you feel frustrated, take a break",
+      "onScreen": [
+        "Never shake a baby",
+        "Lay your baby on their back in the crib, and step away",
+        "Calm down, then check on your baby every 5 to 10 minutes",
+        "Call a friend, family member, or your baby's doctor for help"
+      ],
+      "narration": "Hours of crying can push anyone to their limit, and feeling frustrated doesn't make you a bad parent. But never shake a baby. A baby's neck muscles are weak, and shaking can cause brain damage, blindness, or death. If you feel overwhelmed, lay your baby on their back in the crib, which is a safe place, and step away to calm down. Check on your baby every five to ten minutes. Call a friend, a family member, or your baby's doctor for help, and take turns with your support person when you can. Make sure everyone who cares for your baby knows this, too, and only leave your baby with people who stay calm with crying.",
+      "sourceIds": [
+        "cdc-abusive-head-trauma"
+      ]
+    },
+    {
+      "id": "checkin-crying",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": [
+        "cdc-abusive-head-trauma"
+      ],
+      "question": {
+        "prompt": "It's 3 a.m. Your baby has cried for an hour, nothing works, and you feel angry. What's the best thing to do?",
+        "options": [
+          "Lay your baby on their back in the crib, step away, and calm down",
+          "Keep trying until the crying stops, no matter how you feel",
+          "Bounce your baby harder to stop the crying"
+        ],
+        "correctIndex": 0,
+        "explanation": "It's okay to take a break. Lay your baby on their back in the crib, step away to calm down, check on them every 5 to 10 minutes, and call someone for help. Never shake a baby."
+      }
+    },
+    {
+      "id": "when-to-call",
+      "type": "content",
+      "heading": "When crying means call",
+      "onScreen": [
+        "Under 3 months with a rectal temperature of 100.4°F or higher",
+        "A cry that sounds different: high-pitched, weak, or in pain",
+        "Crying with poor feeding, vomiting, or fewer wet diapers",
+        "Any time you think your baby might be sick"
+      ],
+      "narration": "Most crying isn't a sign of illness, but sometimes it is. Call your baby's doctor right away if your baby is under three months old and has a rectal temperature of 100.4 degrees Fahrenheit or higher, even if they seem fine. Call, too, if the cry sounds different, like high-pitched, weak, or as if your baby is in pain, or if crying comes with poor feeding, vomiting, fewer wet diapers, or your baby seems sleepy and hard to wake. And call any time you think your baby might be sick. Lesson 6.3 covers these warning signs, and when to call 911, in more detail.",
+      "sourceIds": [
+        "aap-fever-baby",
+        "aap-calming-fussy-baby"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a thermometer for 100.4°F or higher under 3 months, sound waves for a cry that sounds different, a droplet for poor feeding or fewer wet diapers, and a phone for calling any time you're worried."
+      }
+    },
+    {
+      "id": "calm-plan",
+      "type": "reflection",
+      "heading": "Your calm-down plan",
+      "onScreen": [
+        "Soothing ideas you'll try first",
+        "Who you'll call when you need a break",
+        "Who will take turns with you at night"
+      ],
+      "narration": "Let's make a plan for the hard moments. Which soothing ideas will you try first? Who will you call when you need a break, and do you have their number? And who will take turns with you at night? Save your answers to your Birth Readiness Brief.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write the soothing ideas you'll try first, who you'll call when you need a break and their number, and who will take turns with you at night."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Keep a hand on your baby; treat diaper rash with a thick barrier cream",
+        "Sponge baths until the cord falls off; warm water, about 3 baths a week",
+        "Never leave your baby alone in the bath",
+        "Crying peaks at 4 to 6 weeks; never shake a baby, take a break instead"
+      ],
+      "narration": "Let's recap. Keep a hand on your baby during changes, change diapers often, and use a thick barrier cream for diaper rash. Give sponge baths until the cord falls off, then short tub baths in warm, not hot, water, about three times a week. Never leave your baby alone in the bath, not even for a second. Crying often peaks at four to six weeks and eases by three to four months. Try soothing one way at a time, and if you feel overwhelmed, lay your baby safely in the crib and take a break. Never shake a baby. Next up, a few review questions.",
+      "sourceIds": [
+        "aap-diaper-rash",
+        "aap-bathing",
+        "aap-colic",
+        "cdc-abusive-head-trauma"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "When can your baby have their first tub bath?",
+      "options": [
+        "The day you get home",
+        "Once the cord stump has fallen off and the belly button has healed",
+        "Not until they can sit up"
+      ],
+      "correctIndex": 1,
+      "explanation": "Give sponge baths until the cord stump falls off, usually in 1 to 2 weeks. Once the belly button has healed, short tub baths are fine."
+    },
+    {
+      "prompt": "What helps most with a mild diaper rash?",
+      "options": [
+        "Scented wipes and baby powder",
+        "Changing diapers less often",
+        "Frequent changes, air-drying, and a thick barrier cream"
+      ],
+      "correctIndex": 2,
+      "explanation": "Change diapers often, let the skin air-dry, and use a thick, fragrance-free barrier cream like zinc oxide or petroleum jelly. Call if it's not better in 2 to 3 days."
+    },
+    {
+      "prompt": "Your 5-week-old cries every evening for hours but feeds well and has no fever. What's most likely?",
+      "options": [
+        "Normal crying, which often peaks at 4 to 6 weeks",
+        "A sign your milk or formula is wrong",
+        "An emergency that needs 911"
+      ],
+      "correctIndex": 0,
+      "explanation": "Fussing often peaks at 4 to 6 weeks and is often worse in the evening, then eases by 3 to 4 months. Call your baby's doctor if the cry sounds different or you think your baby is sick."
+    }
+  ]
+}

@@ -54,6 +54,32 @@ import Syringe from 'lucide-react-native/icons/syringe';
 import Ear from 'lucide-react-native/icons/ear';
 import HeartPlus from 'lucide-react-native/icons/heart-plus';
 import CircleDot from 'lucide-react-native/icons/circle-dot';
+import FaceSlightlySmiling from 'lucide-react-native/icons/face-slightly-smiling';
+import Hand from 'lucide-react-native/icons/hand';
+import Volleyball from 'lucide-react-native/icons/volleyball';
+import Snowflake from 'lucide-react-native/icons/snowflake';
+import Music from 'lucide-react-native/icons/music';
+import Lamp from 'lucide-react-native/icons/lamp';
+import Eye from 'lucide-react-native/icons/eye';
+import Sparkles from 'lucide-react-native/icons/sparkles';
+import Shield from 'lucide-react-native/icons/shield';
+import ClipboardCheck from 'lucide-react-native/icons/clipboard-check';
+import Refrigerator from 'lucide-react-native/icons/refrigerator';
+import Trash from 'lucide-react-native/icons/trash';
+import Flame from 'lucide-react-native/icons/flame';
+import Ban from 'lucide-react-native/icons/ban';
+import MicrowaveIcon from 'lucide-react-native/icons/microwave';
+import AudioLines from 'lucide-react-native/icons/audio-lines';
+import MessageCircle from 'lucide-react-native/icons/message-circle';
+import CircleX from 'lucide-react-native/icons/circle-x';
+import Puzzle from 'lucide-react-native/icons/puzzle';
+import BathIcon from 'lucide-react-native/icons/bath';
+import Droplets from 'lucide-react-native/icons/droplets';
+import Cloud from 'lucide-react-native/icons/cloud';
+import Zap from 'lucide-react-native/icons/zap';
+import MessageCircleMore from 'lucide-react-native/icons/message-circle-more';
+import Coffee from 'lucide-react-native/icons/coffee';
+import Soup from 'lucide-react-native/icons/soup';
 
 /**
  * Pictures drawn in code for lesson slides: icon panels and simple diagrams.
@@ -465,9 +491,28 @@ function BackAndHeartburn() {
 // ---------- Maps and side views drawn with SVG ----------
 
 /** A drawing in a frame, scaled to the slide's width, with an optional caption. */
-function Drawing({ label, caption, height = 200, children }: { label: string; caption?: string; height?: number; children: React.ReactNode }) {
+function Drawing({
+  label,
+  caption,
+  alert,
+  height = 200,
+  children,
+}: {
+  label: string;
+  caption?: string;
+  /** A first step shown in red above the drawing, such as calling 911. */
+  alert?: string;
+  height?: number;
+  children: React.ReactNode;
+}) {
   return (
     <Frame label={label}>
+      {alert ? (
+        <View style={s.alertStep}>
+          <Phone color={c.alert} size={20} strokeWidth={2.4} />
+          <Text style={s.alertStepText}>{alert}</Text>
+        </View>
+      ) : null}
       <Svg style={[s.drawing, { aspectRatio: 360 / height }]} viewBox={`0 0 360 ${height}`}>
         {children}
       </Svg>
@@ -481,6 +526,196 @@ function Label({ x, y, children, color = c.ink, size = 12, weight = '700' }: { x
     <SvgText fill={color} fontFamily={FONT} fontSize={size} fontWeight={weight} textAnchor="middle" x={x} y={y}>
       {children}
     </SvgText>
+  );
+}
+
+/** A palm laid flat with fingers pointing down, centered on (x, y); `flip` mirrors it for the other side. */
+function Palm({ x, y, flip = false }: { x: number; y: number; flip?: boolean }) {
+  const d = flip ? -1 : 1;
+  return (
+    <G>
+      <Rect fill={c.skin} height={34} rx={11} stroke={c.skinLine} strokeWidth={1.5} width={30} x={x - 15} y={y - 18} />
+      {[-9, -3, 3, 9].map((dx) => (
+        <Rect key={dx} fill={c.skin} height={20} rx={3.5} stroke={c.skinLine} strokeWidth={1.2} width={7} x={x + dx - 3.5} y={y + 10} />
+      ))}
+      <Rect fill={c.skin} height={8} rx={4} stroke={c.skinLine} strokeWidth={1.2} width={18} x={d > 0 ? x + 8 : x - 26} y={y - 8} />
+    </G>
+  );
+}
+
+/** An arrow from (x1, y1) to (x2, y2), with its head at the end. */
+function Arrow({ x1, y1, x2, y2, color = c.marigold }: { x1: number; y1: number; x2: number; y2: number; color?: string }) {
+  const angle = Math.atan2(y2 - y1, x2 - x1);
+  const head = (a: number) => `${x2 - 12 * Math.cos(angle + a)},${y2 - 12 * Math.sin(angle + a)}`;
+  return (
+    <G>
+      <Line stroke={color} strokeLinecap="round" strokeWidth={5} x1={x1} x2={x2 - 6 * Math.cos(angle)} y1={y1} y2={y2 - 6 * Math.sin(angle)} />
+      <Polygon fill={color} points={`${x2},${y2} ${head(0.5)} ${head(-0.5)}`} />
+    </G>
+  );
+}
+
+/** The double hip squeeze seen from behind: a palm on each side of the hips, pressing in and slightly up. */
+function HipSqueeze() {
+  return (
+    <Drawing
+      caption="Seen from behind, with the laboring person leaning forward. Hold through the contraction, then release."
+      height={220}
+      label="The double hip squeeze, seen from behind: one palm on the fleshy part of each hip, pressing in toward the middle and slightly up, held through the contraction."
+    >
+      {/* Lower back and hips */}
+      <Rect fill={c.lagoon} height={86} opacity={0.75} rx={34} width={136} x={112} y={18} />
+      <Ellipse cx={150} cy={128} fill="#3D4D6A" rx={50} ry={54} />
+      <Ellipse cx={210} cy={128} fill="#3D4D6A" rx={50} ry={54} />
+      <Line stroke="#2C3A54" strokeWidth={2} x1={180} x2={180} y1={92} y2={180} />
+      {/* A palm on each hip, and the direction to press */}
+      <Palm x={112} y={112} />
+      <Palm flip x={248} y={112} />
+      <Arrow x1={44} x2={86} y1={138} y2={118} />
+      <Arrow x1={316} x2={274} y1={138} y2={118} />
+      <Label x={58} y={168}>In, and</Label>
+      <Label x={58} y={183}>slightly up</Label>
+      <Label x={302} y={168}>In, and</Label>
+      <Label x={302} y={183}>slightly up</Label>
+      <Label size={13} x={180} y={208}>A palm on the fleshy part of each hip</Label>
+    </Drawing>
+  );
+}
+
+/** A good latch in side view: mouth wide on the breast, lips turned out, chin in, nose free. */
+function Latch() {
+  return (
+    <Drawing
+      caption="More of the darker skin shows above the top lip than below. Tugging is normal; pinching means try again."
+      height={220}
+      label="A good latch seen from the side: the baby's mouth wide open on the breast, lips turned out, chin touching the breast, nose free, and more of the darker skin showing above the top lip than below."
+    >
+      {/* The breast, and the darker skin around the nipple, set higher so more shows above the top lip */}
+      <Path d="M360 22 C300 22 230 64 192 114 C206 146 280 200 360 200 Z" fill={c.skin} stroke={c.skinLine} strokeWidth={2} />
+      <Path d="M250 56 C228 74 208 94 192 114 C200 128 208 138 218 148 C240 128 254 90 250 56 Z" fill="#C08A66" />
+      {/* The baby's head, facing right, with the mouth open wide around the breast */}
+      <Path d="M215 86 A70 70 0 1 0 214 140 L194 114 Z" fill={c.baby} stroke={c.babyLine} strokeWidth={2} />
+      <Path d="M199 63 q12 2 12 14" fill={c.baby} stroke={c.babyLine} strokeWidth={2} />
+      <Path d="M166 82 q8 5 16 0" fill="none" stroke={c.babyLine} strokeLinecap="round" strokeWidth={2.5} />
+      <Path d="M108 108 q-10 10 0 20" fill="none" stroke={c.babyLine} strokeWidth={2} />
+      {/* Lips turned out onto the breast */}
+      <Path d="M215 86 q6 -6 12 -4 q-4 6 -10 8 Z" fill="#E39A8A" stroke={c.babyLine} strokeWidth={1.2} />
+      <Path d="M214 140 q8 4 12 12 q-8 0 -14 -6 Z" fill="#E39A8A" stroke={c.babyLine} strokeWidth={1.2} />
+      {/* Labels */}
+      <Line stroke={c.muted} strokeWidth={1} x1={206} x2={178} y1={62} y2={36} />
+      <Label x={150} y={30}>Nose free</Label>
+      <Line stroke={c.muted} strokeWidth={1} x1={238} x2={262} y1={68} y2={40} />
+      <Label x={290} y={18}>More dark skin</Label>
+      <Label x={290} y={32}>above the top lip</Label>
+      <Line stroke={c.muted} strokeWidth={1} x1={222} x2={258} y1={150} y2={186} />
+      <Label x={290} y={200}>Lips turned out</Label>
+      <Line stroke={c.muted} strokeWidth={1} x1={204} x2={160} y1={158} y2={186} />
+      <Label x={120} y={200}>Chin close to the breast</Label>
+    </Drawing>
+  );
+}
+
+/** A baby lying along an adult forearm, head lower than the chest; `faceUp` turns the baby over. */
+function BabyOnForearm({ x, faceUp = false }: { x: number; faceUp?: boolean }) {
+  return (
+    <G transform={`rotate(-14 ${x + 95} 125)`}>
+      {/* Forearm, with the hand cupping the jaw */}
+      <Rect fill={c.skin} height={18} rx={9} stroke={c.skinLine} strokeWidth={1.5} width={148} x={x + 22} y={130} />
+      <Ellipse cx={x + 40} cy={133} fill={c.skin} rx={13} ry={9} stroke={c.skinLine} strokeWidth={1.5} />
+      {/* Body in a sleeper, legs, and head */}
+      <Ellipse cx={x + 100} cy={114} fill={c.lagoonSoft} rx={42} ry={15} stroke={c.lagoon} strokeWidth={1.5} />
+      <Ellipse cx={x + 148} cy={118} fill={c.lagoonSoft} rx={14} ry={8} stroke={c.lagoon} strokeWidth={1.5} />
+      <Circle cx={x + 46} cy={116} fill={c.baby} r={17} stroke={c.babyLine} strokeWidth={2} />
+      {faceUp ? (
+        <G>
+          <Path d={`M${x + 38} 108 q4 3 8 0`} fill="none" stroke={c.babyLine} strokeLinecap="round" strokeWidth={2} />
+          <Path d={`M${x + 33} 116 q3 2 6 0`} fill="none" stroke={c.babyLine} strokeLinecap="round" strokeWidth={2} />
+        </G>
+      ) : (
+        <Path d={`M${x + 31} 110 a17 17 0 0 1 30 -2`} fill="none" stroke="#5B4636" strokeLinecap="round" strokeWidth={4} />
+      )}
+    </G>
+  );
+}
+
+/** The heel of a hand seen from the side, with an arrow showing the push. */
+function HeelOfHand({ x, y }: { x: number; y: number }) {
+  return (
+    <G>
+      <Arrow x1={x} x2={x} y1={y - 46} y2={y - 20} />
+      <Rect fill={c.skin} height={16} rx={8} stroke={c.skinLine} strokeWidth={1.5} width={34} x={x - 12} y={y - 12} />
+      <Rect fill={c.skin} height={9} rx={4.5} stroke={c.skinLine} strokeWidth={1.2} width={22} x={x + 14} y={y - 14} />
+    </G>
+  );
+}
+
+/** First aid for a choking baby: back blows face down, then chest thrusts face up, head lower each time. */
+function ChokingFirstAid() {
+  return (
+    <Drawing
+      alert="First: shout for help, and have someone call 911"
+      caption="Keep alternating 5 back blows and 5 chest thrusts until the object comes out or your baby goes limp. Never abdominal thrusts."
+      height={210}
+      label="First aid for a severely choking baby. First, shout for help and have someone call 911. Left: 5 back blows, the baby face down along your forearm with the head lower, the heel of your hand between the shoulder blades. Right: 5 chest thrusts, the baby face up along your forearm with the head lower, the heel of one hand on the center of the chest."
+    >
+      <Label size={14} weight="800" x={90} y={22}>5 back blows</Label>
+      <Label size={14} weight="800" x={270} y={22}>5 chest thrusts</Label>
+      <Line stroke={c.line} strokeWidth={1.5} x1={180} x2={180} y1={10} y2={200} />
+      <BabyOnForearm x={0} />
+      <HeelOfHand x={70} y={108} />
+      <BabyOnForearm faceUp x={180} />
+      <HeelOfHand x={254} y={108} />
+      <Label x={90} y={180}>Face down, head lower</Label>
+      <Label size={11} weight="400" x={90} y={196}>Between the shoulder blades</Label>
+      <Label x={270} y={180}>Face up, head lower</Label>
+      <Label size={11} weight="400" x={270} y={196}>Center of the chest</Label>
+    </Drawing>
+  );
+}
+
+/** A baby on their back seen from above, for the CPR hand positions. */
+function BabyFromAbove({ x }: { x: number }) {
+  return (
+    <G>
+      <Rect fill={c.lagoonSoft} height={16} rx={8} stroke={c.lagoon} strokeWidth={1.5} transform={`rotate(-50 ${x - 30} 92)`} width={28} x={x - 58} y={84} />
+      <Rect fill={c.lagoonSoft} height={16} rx={8} stroke={c.lagoon} strokeWidth={1.5} transform={`rotate(50 ${x + 30} 92)`} width={28} x={x + 30} y={84} />
+      <Ellipse cx={x} cy={126} fill={c.baby} rx={34} ry={46} stroke={c.babyLine} strokeWidth={2} />
+      <Circle cx={x} cy={52} fill={c.baby} r={24} stroke={c.babyLine} strokeWidth={2} />
+      <Path d={`M${x - 10} 50 q4 3 8 0 M${x + 2} 50 q4 3 8 0`} fill="none" stroke={c.babyLine} strokeLinecap="round" strokeWidth={2} />
+      <Circle cx={x - 14} cy={104} fill={c.babyLine} r={2.5} />
+      <Circle cx={x + 14} cy={104} fill={c.babyLine} r={2.5} />
+      <Line stroke={c.muted} strokeDasharray="4 4" strokeWidth={1.2} x1={x - 30} x2={x + 30} y1={104} y2={104} />
+    </G>
+  );
+}
+
+/** Infant CPR hand positions: two thumbs with hands around the chest, or the heel of one hand. */
+function CprHands() {
+  return (
+    <Drawing
+      alert="First: call 911 on speaker, then start CPR"
+      caption="Push about 1½ inches deep, 100 to 120 times a minute. Give 30 compressions, then 2 gentle breaths."
+      height={210}
+      label="Infant CPR hand positions. First, call 911 on speaker, then start CPR. Looking down on a baby lying on their back. Left: two thumbs side by side on the center of the chest just below the nipple line, with the hands wrapped around the chest. Right: the heel of one hand in the same spot."
+    >
+      <BabyFromAbove x={80} />
+      {/* Hands wrapped around the chest, thumbs side by side on the breastbone */}
+      <Rect fill={c.skin} height={50} rx={14} stroke={c.skinLine} strokeWidth={1.5} width={24} x={34} y={100} />
+      <Rect fill={c.skin} height={50} rx={14} stroke={c.skinLine} strokeWidth={1.5} width={24} x={102} y={100} />
+      <Ellipse cx={74} cy={116} fill={c.skin} rx={6} ry={11} stroke={c.skinLine} strokeWidth={1.5} />
+      <Ellipse cx={86} cy={116} fill={c.skin} rx={6} ry={11} stroke={c.skinLine} strokeWidth={1.5} />
+      <BabyFromAbove x={280} />
+      {/* The heel of one hand, fingers lifted toward the head */}
+      {[-9, -3, 3, 9].map((dx) => (
+        <Rect key={dx} fill={c.skin} height={dx === -9 ? 22 : 28} rx={3.5} stroke={c.skinLine} strokeWidth={1.2} width={7} x={280 + dx - 3.5} y={dx === -9 ? 90 : 84} />
+      ))}
+      <Rect fill={c.skin} height={28} rx={11} stroke={c.skinLine} strokeWidth={1.5} width={30} x={265} y={106} />
+      <Rect fill={c.skin} height={8} rx={4} stroke={c.skinLine} strokeWidth={1.2} transform="rotate(-35 296 116)" width={18} x={290} y={112} />
+      <Label size={11} x={180} y={106}>Just below</Label>
+      <Label size={11} x={180} y={119}>the nipple line</Label>
+      <Label x={80} y={192}>Two thumbs, hands around</Label>
+      <Label x={280} y={192}>Or the heel of one hand</Label>
+    </Drawing>
   );
 }
 
@@ -1134,6 +1369,590 @@ const VISUALS: Record<string, () => React.ReactElement> = {
       ]}
     />
   ),
+  'understanding-labor-pain/why-it-hurts': () => (
+    <IconPanel
+      label="Why labor hurts: the uterus tightens with each contraction, the cervix stretches open, and the baby presses down and stretches the birth canal."
+      items={[
+        { icon: Activity, label: 'Uterus tightens' },
+        { icon: CircleDot, label: 'Cervix opens' },
+        { icon: Baby, label: 'Baby moves down' },
+      ]}
+    />
+  ),
+  'understanding-labor-pain/waves': () => (
+    <Steps
+      label="Each contraction comes in a wave: it builds, it peaks, and then there's a break to rest, often with no pain at all."
+      steps={[
+        { title: 'It builds', detail: 'Breathe and loosen your body', tone: 'lagoon' },
+        { title: 'It peaks', detail: 'The strongest part, then it eases', tone: 'marigold' },
+        { title: 'A break', detail: 'Rest, often with no pain', tone: 'lagoon' },
+      ]}
+    />
+  ),
+  'understanding-labor-pain/options-range': () => (
+    <IconPanel
+      label="Comfort options: breathing, movement, touch and support, and water without medicine; an epidural or IV pain medicine with medicine."
+      items={[
+        { icon: Wind, label: 'Breathing' },
+        { icon: PersonStanding, label: 'Movement' },
+        { icon: HeartHandshake, label: 'Touch and support' },
+        { icon: ShowerHead, label: 'Water' },
+        { icon: Syringe, label: 'Epidural', tone: 'marigold' },
+        { icon: Pill, label: 'IV medicine', tone: 'marigold' },
+      ]}
+    />
+  ),
+  'breathing-and-relaxation/through-a-contraction': () => (
+    <Steps
+      label="Breathing through a contraction: a cleansing breath as it begins, slow breathing through it with a long breath out, and another cleansing breath as it ends."
+      steps={[
+        { title: 'As it begins', detail: 'A cleansing breath, like a big sigh', tone: 'lagoon' },
+        { title: 'Through it', detail: 'Slow breaths: in about 4, out about 6', tone: 'marigold' },
+        { title: 'As it ends', detail: 'Another cleansing breath, then rest', tone: 'lagoon' },
+      ]}
+    />
+  ),
+  'breathing-and-relaxation/relaxing-your-body': () => (
+    <IconPanel
+      label="Relaxing your body: soften your forehead and jaw, drop your shoulders, loosen your hands, and rest fully between contractions."
+      items={[
+        { icon: FaceSlightlySmiling, label: 'Soft forehead and jaw' },
+        { icon: PersonStanding, label: 'Shoulders down' },
+        { icon: Hand, label: 'Loose, open hands' },
+        { icon: Moon, label: 'Rest between' },
+      ]}
+    />
+  ),
+  'positions-and-movement/back-pain': () => (
+    <IconPanel
+      label="Positions for back pain: lean forward standing or sitting, kneel over a ball or get on hands and knees, try a lunge with one foot on a chair, and add counterpressure and heat."
+      items={[
+        { icon: PersonStanding, label: 'Lean forward' },
+        { icon: Volleyball, label: 'Kneel over a ball' },
+        { icon: Footprints, label: 'Lunge, foot on a chair' },
+        { icon: HeartHandshake, label: 'Counterpressure and heat' },
+      ]}
+    />
+  ),
+  'touch-water-and-comfort-tools/hip-squeeze': () => <HipSqueeze />,
+  'touch-water-and-comfort-tools/heat-cold': () => (
+    <IconPanel
+      label="Heat and cold: a warm pack on the lower back or belly, a cool cloth on the face or neck, a cloth between skin and pack, and not too hot, especially with an epidural."
+      items={[
+        { icon: Thermometer, label: 'Warm pack on back or belly' },
+        { icon: Snowflake, label: 'Cool cloth on face or neck' },
+        { icon: Bandage, label: 'Cloth between skin and pack' },
+        { icon: TriangleAlert, label: 'Not too hot, especially with an epidural', tone: 'marigold' },
+      ]}
+    />
+  ),
+  'touch-water-and-comfort-tools/other-tools': () => (
+    <IconPanel
+      label="Other comfort tools: a birth ball, music or a calming playlist, dim lights and familiar things from home, and a focal point."
+      items={[
+        { icon: Volleyball, label: 'Birth ball' },
+        { icon: Music, label: 'Music' },
+        { icon: Lamp, label: 'Dim lights' },
+        { icon: Eye, label: 'A focal point' },
+      ]}
+    />
+  ),
+  'for-support-people/before-labor': () => (
+    <IconPanel
+      label="Before labor: practice the comfort skills together, know their wishes, pack your own bag, and know the route and when to call."
+      items={[
+        { icon: HeartHandshake, label: 'Practice comfort skills' },
+        { icon: CircleCheck, label: 'Know their top wishes' },
+        { icon: Luggage, label: 'Pack your own bag' },
+        { icon: Route, label: 'Know the route, and when to call' },
+      ]}
+    />
+  ),
+  'for-support-people/take-care': () => (
+    <IconPanel
+      label="Take care of yourself: eat, drink, rest when someone else can take over, and have a backup support person."
+      items={[
+        { icon: Utensils, label: 'Eat' },
+        { icon: GlassWater, label: 'Drink' },
+        { icon: Moon, label: 'Rest when covered' },
+        { icon: Users, label: 'A backup support person' },
+      ]}
+    />
+  ),
+  'your-newborns-first-days/skin': () => (
+    <IconPanel
+      label="Normal newborn skin: tiny white bumps called milia, blotchy red spots, pink or bluish-gray birthmarks, and dry, peeling skin. Most fade on their own."
+      items={[
+        { icon: Sparkles, label: 'Tiny white bumps' },
+        { icon: CircleDot, label: 'Blotchy red spots' },
+        { icon: Palette, label: 'Birthmarks' },
+        { icon: Hand, label: 'Peeling hands and feet' },
+      ]}
+    />
+  ),
+  'your-newborns-first-days/normal-surprises': () => (
+    <IconPanel
+      label="Other normal surprises: swollen breasts or genitals from hormones, a little vaginal discharge in baby girls, hiccups, sneezes, and startles, and eyes that sometimes cross."
+      items={[
+        { icon: Heart, label: 'Swelling from hormones' },
+        { icon: Droplet, label: 'A little discharge' },
+        { icon: Wind, label: 'Hiccups and sneezes' },
+        { icon: Eye, label: 'Eyes that sometimes cross' },
+      ]}
+    />
+  ),
+  'your-newborns-first-days/weight': () => (
+    <Steps
+      label="Weight in the first weeks: some weight loss in the first days, steady gains starting around day 5, and back to birth weight by about 2 weeks."
+      steps={[
+        { title: 'First days', detail: 'Some weight loss is expected', tone: 'marigold' },
+        { title: 'Around day 5', detail: 'Steady gains begin', tone: 'lagoon' },
+        { title: 'By about 2 weeks', detail: 'Back to birth weight', tone: 'lagoon' },
+      ]}
+    />
+  ),
+  'your-newborns-first-days/poop': () => (
+    <Steps
+      label="Poop in the first week: black and sticky in the first days, greenish-brown around days 3 to 4, and yellow and seedy by about day 5 for breastfed babies."
+      steps={[
+        { title: 'Days 1 to 2', detail: 'Black and sticky (meconium)', tone: 'marigold' },
+        { title: 'Days 3 to 4', detail: 'Greenish-brown', tone: 'marigold' },
+        { title: 'By about day 5', detail: 'Yellow and seedy if breastfed', tone: 'lagoon' },
+      ]}
+    />
+  ),
+  'newborn-care-in-the-hospital/overview': () => (
+    <IconPanel
+      label="Routine newborn care: a vitamin K shot, antibiotic eye ointment, the hepatitis B vaccine, and screening with a blood test, hearing test, and heart check."
+      items={[
+        { icon: Syringe, label: 'Vitamin K shot' },
+        { icon: Eye, label: 'Eye ointment' },
+        { icon: Shield, label: 'Hepatitis B vaccine' },
+        { icon: ClipboardCheck, label: 'Blood, hearing, and heart screening' },
+      ]}
+    />
+  ),
+  'newborn-care-in-the-hospital/your-say': () => (
+    <IconPanel
+      label="Your questions and preferences: ask before birth, ask for care to wait until after skin-to-skin, hold or feed your baby during care, and your team explains the risks if you decline."
+      items={[
+        { icon: MessageCircleQuestionMark, label: 'Ask before birth' },
+        { icon: Clock, label: 'Wait until after skin-to-skin' },
+        { icon: Heart, label: 'Hold or feed your baby' },
+        { icon: CircleCheck, label: 'Your team explains' },
+      ]}
+    />
+  ),
+  'breastfeeding-basics/why-and-choice': () => (
+    <IconPanel
+      label="Why breastfeeding: it protects against infections, has benefits for you, experts recommend about 6 months of breast milk only, and any amount helps."
+      items={[
+        { icon: Shield, label: 'Protects against infections' },
+        { icon: Heart, label: 'Benefits for you, too' },
+        { icon: Calendar, label: 'About 6 months, then continue' },
+        { icon: CircleCheck, label: 'Any amount helps' },
+      ]}
+    />
+  ),
+  'breastfeeding-basics/cues': () => (
+    <IconPanel
+      label="Hunger cues: hands to mouth and turning the head; crying is a late sign. When full, babies relax, turn away, and often fall asleep."
+      items={[
+        { icon: Hand, label: 'Hands to mouth' },
+        { icon: Baby, label: 'Turning the head' },
+        { icon: TriangleAlert, label: 'Crying is a late sign', tone: 'marigold' },
+        { icon: Moon, label: 'Full: relaxed and sleepy' },
+      ]}
+    />
+  ),
+  'breastfeeding-basics/latch': () => <Latch />,
+  'breastfeeding-basics/get-help': () => (
+    <IconPanel
+      label="Getting help: nurses and your baby's doctor, a lactation consultant, support groups, and asking before taking any medicine."
+      items={[
+        { icon: Stethoscope, label: 'Nurses and doctors' },
+        { icon: HeartHandshake, label: 'A lactation consultant' },
+        { icon: Users, label: 'Support groups and WIC' },
+        { icon: Pill, label: 'Ask about medicines' },
+      ]}
+    />
+  ),
+  'formula-and-combination-feeding/your-choice': () => (
+    <IconPanel
+      label="Choosing formula: babies thrive on breast milk, formula, or both; use infant formula with iron; never homemade formula or other milks before age 1; call for help if formula runs low."
+      items={[
+        { icon: Heart, label: 'Breast milk, formula, or both' },
+        { icon: Milk, label: 'Infant formula with iron' },
+        { icon: Ban, label: 'No homemade formula or other milks', tone: 'alert' },
+        { icon: Phone, label: 'Running low? Call for help' },
+      ]}
+    />
+  ),
+  'formula-and-combination-feeding/making-formula': () => (
+    <Steps
+      label="Making a bottle: wash your hands and use clean bottles; water first, then powder, as the label says; never extra water or extra powder; shake, then test on your wrist."
+      steps={[
+        { title: 'Wash your hands', detail: 'Clean bottles and nipples', tone: 'lagoon' },
+        { title: 'Water first, then powder', detail: 'Exactly as the label says', tone: 'lagoon' },
+        { title: 'Never extra water or powder', detail: 'It can make your baby ill', tone: 'alert' },
+        { title: 'Shake, then test', detail: 'A few drops on your wrist', tone: 'marigold' },
+      ]}
+    />
+  ),
+  'formula-and-combination-feeding/extra-care': () => (
+    <IconPanel
+      label="Extra care for babies under 2 months, born early, or with a weak immune system: boil the water, wait about 5 minutes before mixing, and cool the bottle before feeding."
+      items={[
+        { icon: Calendar, label: 'Under 2 months or born early' },
+        { icon: Flame, label: 'Boil the water' },
+        { icon: Timer, label: 'Wait about 5 minutes' },
+        { icon: Snowflake, label: 'Cool before feeding' },
+      ]}
+    />
+  ),
+  'formula-and-combination-feeding/storing': () => (
+    <IconPanel
+      label="Storing formula: use within 2 hours of mixing, within 1 hour once a feed starts, refrigerate for up to 24 hours, and throw out leftovers."
+      items={[
+        { icon: Clock, label: 'Use within 2 hours' },
+        { icon: Timer, label: '1 hour once a feed starts', tone: 'marigold' },
+        { icon: Refrigerator, label: 'Fridge: up to 24 hours' },
+        { icon: Trash, label: 'Throw out leftovers' },
+      ]}
+    />
+  ),
+  'formula-and-combination-feeding/pumped-milk': () => (
+    <IconPanel
+      label="Storing pumped breast milk: room temperature up to 4 hours, refrigerator up to 4 days, freezer about 6 to 12 months, and never thaw or warm it in the microwave."
+      items={[
+        { icon: Clock, label: 'Room temperature: 4 hours' },
+        { icon: Refrigerator, label: 'Fridge: 4 days' },
+        { icon: Snowflake, label: 'Freezer: 6 to 12 months' },
+        { icon: MicrowaveIcon, label: 'Never the microwave', tone: 'alert' },
+      ]}
+    />
+  ),
+  'diapers-baths-crying-and-soothing/diapering': () => (
+    <Steps
+      label="Changing a diaper: get everything ready; keep a hand on your baby and never step away; wipe front to back and let the skin dry; fold the diaper below the cord stump and wash your hands."
+      steps={[
+        { title: 'Get everything ready', detail: 'Diaper, wipes, and cream', tone: 'lagoon' },
+        { title: 'Keep a hand on your baby', detail: 'Never step away from the table', tone: 'alert' },
+        { title: 'Wipe front to back', detail: 'Let the skin dry', tone: 'lagoon' },
+        { title: 'Fold below the cord', detail: 'Then wash your hands', tone: 'marigold' },
+      ]}
+    />
+  ),
+  'diapers-baths-crying-and-soothing/diaper-rash': () => (
+    <IconPanel
+      label="Diaper rash: change often, let the skin air-dry, use a thick barrier cream, and call if it's not better in 2 to 3 days."
+      items={[
+        { icon: Clock, label: 'Change often' },
+        { icon: Wind, label: 'Let skin air-dry' },
+        { icon: Shield, label: 'Thick barrier cream' },
+        { icon: Phone, label: 'Not better in 2 to 3 days? Call', tone: 'marigold' },
+      ]}
+    />
+  ),
+  'diapers-baths-crying-and-soothing/tub-baths': () => (
+    <Steps
+      label="Tub baths: wait until the belly button heals; about 2 inches of warm water tested with your wrist or elbow; set the water heater to 120°F or lower; about 3 baths a week is plenty."
+      steps={[
+        { title: 'Wait for the belly button to heal', detail: 'Sponge baths until then', tone: 'lagoon' },
+        { title: 'About 2 inches of warm water', detail: 'Test with your wrist or elbow', tone: 'lagoon' },
+        { title: 'Water heater at 120°F or lower', detail: 'Hot tap water burns babies', tone: 'marigold' },
+        { title: 'About 3 baths a week', detail: 'More can dry the skin', tone: 'lagoon' },
+      ]}
+    />
+  ),
+  'diapers-baths-crying-and-soothing/soothing': () => (
+    <IconPanel
+      label="Ways to soothe: swaddle, always on the back; hold skin to skin, rock, or walk; soft white noise; a pacifier, stroller walk, or car ride."
+      items={[
+        { icon: Baby, label: 'Swaddle, on the back' },
+        { icon: Heart, label: 'Skin to skin, rock, or walk' },
+        { icon: AudioLines, label: 'Soft white noise' },
+        { icon: Car, label: 'A pacifier, stroller, or car ride' },
+      ]}
+    />
+  ),
+  'diapers-baths-crying-and-soothing/when-to-call': () => (
+    <IconPanel
+      label="When crying means call: under 3 months with a rectal temperature of 100.4°F or higher; a cry that sounds different; poor feeding, vomiting, or fewer wet diapers; any time you think your baby is sick."
+      items={[
+        { icon: Thermometer, label: 'Under 3 months: 100.4°F or higher', tone: 'alert' },
+        { icon: AudioLines, label: 'A cry that sounds different' },
+        { icon: Droplet, label: 'Poor feeding or fewer diapers' },
+        { icon: Phone, label: 'Worried? Call' },
+      ]}
+    />
+  ),
+  'infant-cpr-and-choking/take-a-class': () => (
+    <IconPanel
+      label="Take a hands-on class: practice on a manikin; ask your hospital, the American Red Cross, or the American Heart Association; take it before your baby arrives; invite grandparents and sitters."
+      items={[
+        { icon: Hand, label: 'Practice on a manikin' },
+        { icon: Hospital, label: 'Your hospital' },
+        { icon: Heart, label: 'Red Cross or Heart Association' },
+        { icon: Users, label: 'Grandparents and sitters, too' },
+      ]}
+    />
+  ),
+  'infant-cpr-and-choking/is-it-choking': () => (
+    <IconPanel
+      label="Is your baby choking? Coughing hard or crying: let them cough. Can't cry, cough, or breathe, or bluish lips: severe choking. Never a blind finger sweep."
+      items={[
+        { icon: MessageCircle, label: 'Coughing hard: let them cough' },
+        { icon: CircleX, label: "Can't cry, cough, or breathe", tone: 'alert' },
+        { icon: Droplet, label: 'Bluish lips', tone: 'alert' },
+        { icon: Hand, label: 'No blind finger sweeps' },
+      ]}
+    />
+  ),
+  'infant-cpr-and-choking/choking-steps': () => <ChokingFirstAid />,
+  'infant-cpr-and-choking/cpr-steps': () => <CprHands />,
+  'infant-cpr-and-choking/prevent-choking': () => (
+    <IconPanel
+      label="Preventing choking: never prop a bottle; keep small objects, magnets, and button batteries out of reach; check toys for small parts; when solids start, soft foods in tiny pieces."
+      items={[
+        { icon: Milk, label: 'Never prop a bottle' },
+        { icon: Ban, label: 'Small objects and batteries out of reach', tone: 'alert' },
+        { icon: Puzzle, label: 'Check toys for small parts' },
+        { icon: Utensils, label: 'Soft foods, tiny pieces' },
+      ]}
+    />
+  ),
+  'physical-recovery-after-birth/recovery-takes-time': () => (
+    <IconPanel
+      label="Recovery takes time: most healing in about 6 weeks, rest when you can, let others help, and your care team checks in."
+      items={[
+        { icon: Calendar, label: 'Most healing in about 6 weeks' },
+        { icon: Bed, label: 'Rest when you can' },
+        { icon: Users, label: 'Let others help' },
+        { icon: Stethoscope, label: 'Your team checks in' },
+      ]}
+    />
+  ),
+  'physical-recovery-after-birth/bleeding': () => (
+    <Steps
+      label="Bleeding after birth: bright red and heavy in the first days, then pink or brown, then yellowish-white over several weeks. Soaking 2 pads an hour for 1 to 2 hours needs care right away."
+      steps={[
+        { title: 'First days', detail: 'Bright red, like a heavy period', tone: 'lagoon' },
+        { title: 'Then lighter', detail: 'Pink or brown', tone: 'lagoon' },
+        { title: 'Over several weeks', detail: 'Yellowish-white, then gone', tone: 'lagoon' },
+        { title: '2 pads an hour, for 1 to 2 hours', detail: 'Get care right away', tone: 'alert' },
+      ]}
+    />
+  ),
+  'physical-recovery-after-birth/cramping-and-pain': () => (
+    <IconPanel
+      label="Cramping and pain relief: cramps as the uterus shrinks, often stronger while breastfeeding; ibuprofen and acetaminophen as directed; ask before taking anything else."
+      items={[
+        { icon: HeartPulse, label: 'Cramps as your uterus shrinks' },
+        { icon: Baby, label: 'Stronger while breastfeeding' },
+        { icon: Pill, label: 'Ibuprofen or acetaminophen' },
+        { icon: Phone, label: 'Ask before anything else' },
+      ]}
+    />
+  ),
+  'physical-recovery-after-birth/vaginal-birth-healing': () => (
+    <IconPanel
+      label="Healing after a vaginal birth: ice packs in the first days, warm sitz baths, a squeeze bottle of warm water when you pee, and a pillow to sit on."
+      items={[
+        { icon: Snowflake, label: 'Ice packs, first 1 to 3 days' },
+        { icon: BathIcon, label: 'Warm sitz baths' },
+        { icon: Droplets, label: 'Squeeze bottle when you pee' },
+        { icon: Armchair, label: 'A pillow to sit on' },
+      ]}
+    />
+  ),
+  'physical-recovery-after-birth/bathroom': () => (
+    <IconPanel
+      label="Bathroom changes: peeing may sting at first; leaking a little often improves; fluids and fiber for constipation; ice packs for hemorrhoids."
+      items={[
+        { icon: Droplets, label: 'Peeing may sting at first' },
+        { icon: CircleDot, label: 'Leaking often improves' },
+        { icon: GlassWater, label: 'Fluids and fiber' },
+        { icon: Snowflake, label: 'Ice for hemorrhoids' },
+      ]}
+    />
+  ),
+  'physical-recovery-after-birth/other-changes': () => (
+    <IconPanel
+      label="Other changes: breasts may fill around days 2 to 5, night sweats in the first weeks, the belly shrinks over months, and some hair loss around 3 to 4 months grows back."
+      items={[
+        { icon: Milk, label: 'Breasts fill, days 2 to 5' },
+        { icon: Moon, label: 'Night sweats' },
+        { icon: Calendar, label: 'Belly shrinks over months' },
+        { icon: Sparkles, label: 'Hair loss that grows back' },
+      ]}
+    />
+  ),
+  'emotional-health-after-birth/baby-blues': () => (
+    <IconPanel
+      label="The baby blues: weepy or moody in the first days, with short sleep; usually passes within about 2 weeks; rest and help from others make a difference."
+      items={[
+        { icon: Droplet, label: 'Weepy or moody' },
+        { icon: Moon, label: 'Short on sleep' },
+        { icon: Calendar, label: 'Usually passes in 2 weeks' },
+        { icon: Users, label: 'Rest and help' },
+      ]}
+    />
+  ),
+  'emotional-health-after-birth/depression-signs': () => (
+    <IconPanel
+      label="Postpartum depression: sad or hopeless most days, feeling distant from your baby, doubting yourself, and it can start any time in the first year."
+      items={[
+        { icon: Cloud, label: 'Sad or hopeless most days' },
+        { icon: Heart, label: 'Feeling distant from your baby' },
+        { icon: MessageCircleQuestionMark, label: 'Doubting yourself' },
+        { icon: Calendar, label: 'Any time in the first year' },
+      ]}
+    />
+  ),
+  'emotional-health-after-birth/anxiety': () => (
+    <IconPanel
+      label="Anxiety and scary thoughts: racing worry or panic, trouble sleeping, unwanted scary thoughts that are common, and telling your care team."
+      items={[
+        { icon: Zap, label: 'Racing worry or panic' },
+        { icon: Moon, label: 'Trouble sleeping' },
+        { icon: MessageCircleMore, label: 'Scary thoughts are common' },
+        { icon: Phone, label: 'Tell your team' },
+      ]}
+    />
+  ),
+  'emotional-health-after-birth/who-is-at-risk': () => (
+    <IconPanel
+      label="Higher risk: past depression or anxiety, bipolar disorder or a family history, big stresses or little support, and a hard birth or NICU stay."
+      items={[
+        { icon: ClipboardCheck, label: 'Past depression or anxiety' },
+        { icon: Users, label: 'Family history' },
+        { icon: House, label: 'Big stresses, little support' },
+        { icon: Hospital, label: 'A hard birth or NICU stay' },
+      ]}
+    />
+  ),
+  'rest-food-and-help-at-home/first-weeks': () => (
+    <IconPanel
+      label="The first weeks: feeds every 2 to 3 hours, your body healing, sleep in short pieces, and rest first."
+      items={[
+        { icon: Clock, label: 'Feeds every 2 to 3 hours' },
+        { icon: HeartPulse, label: 'Your body is healing' },
+        { icon: Moon, label: 'Sleep in short pieces' },
+        { icon: Bed, label: 'Rest comes first' },
+      ]}
+    />
+  ),
+  'rest-food-and-help-at-home/sleep': () => (
+    <IconPanel
+      label="Getting rest: rest when your baby sleeps, take turns at night, put your baby back in their crib when you're drowsy, and never sleep with your baby on a couch or armchair."
+      items={[
+        { icon: Bed, label: 'Rest when your baby sleeps' },
+        { icon: Users, label: 'Take turns at night' },
+        { icon: Baby, label: 'Drowsy? Baby back in the crib' },
+        { icon: Armchair, label: 'Never sleep with baby on a couch', tone: 'alert' },
+      ]}
+    />
+  ),
+  'rest-food-and-help-at-home/food-and-drink': () => (
+    <IconPanel
+      label="Food and drink: regular meals and snacks, drink to your thirst, your prenatal vitamin if your team advises, and caffeine in moderation."
+      items={[
+        { icon: Utensils, label: 'Easy meals and snacks' },
+        { icon: GlassWater, label: 'Drink to your thirst' },
+        { icon: Pill, label: 'Prenatal vitamin, if advised' },
+        { icon: Coffee, label: 'Caffeine in moderation' },
+      ]}
+    />
+  ),
+  'rest-food-and-help-at-home/practical-help': () => (
+    <IconPanel
+      label="Practical help: a list of jobs, give helpers a specific job, a meal schedule, and home visits and other support."
+      items={[
+        { icon: ClipboardCheck, label: 'A list of jobs' },
+        { icon: Hand, label: 'Give helpers a job' },
+        { icon: Soup, label: 'A meal schedule' },
+        { icon: House, label: 'Home visits and support' },
+      ]}
+    />
+  ),
+  'rest-food-and-help-at-home/care-for-you': () => (
+    <IconPanel
+      label="Taking care of you: a shower, a short walk outside, staying in touch with friends, and telling your team if you're struggling."
+      items={[
+        { icon: ShowerHead, label: 'A shower' },
+        { icon: Footprints, label: 'A short walk outside' },
+        { icon: Phone, label: 'Stay in touch' },
+        { icon: Heart, label: 'Struggling? Tell your team' },
+      ]}
+    />
+  ),
+  'your-postpartum-checkups/visit-schedule': () => (
+    <IconPanel
+      label="When your checkups happen: a check-in within 3 weeks, a blood pressure check in 3 to 10 days if you had high blood pressure, a full visit by 12 weeks, then ongoing primary care."
+      items={[
+        { icon: Phone, label: 'Check-in within 3 weeks' },
+        { icon: HeartPulse, label: 'Blood pressure check in 3 to 10 days, if needed', tone: 'marigold' },
+        { icon: Calendar, label: 'Full visit by 12 weeks' },
+        { icon: Stethoscope, label: 'Then ongoing primary care' },
+      ]}
+    />
+  ),
+  'your-postpartum-checkups/what-gets-checked': () => (
+    <IconPanel
+      label="What gets checked: your mood and coping, your healing, feeding and your baby, and birth control and future plans."
+      items={[
+        { icon: Heart, label: 'Mood and coping' },
+        { icon: Bandage, label: 'Your healing' },
+        { icon: Baby, label: 'Feeding and your baby' },
+        { icon: Calendar, label: 'Birth control and plans' },
+      ]}
+    />
+  ),
+  'your-postpartum-checkups/pregnancy-conditions': () => (
+    <IconPanel
+      label="After a pregnancy condition: a glucose test after gestational diabetes, blood pressure checks after high blood pressure, a higher risk later, and telling your primary care clinician."
+      items={[
+        { icon: Droplet, label: 'Glucose test after gestational diabetes' },
+        { icon: HeartPulse, label: 'Blood pressure checks' },
+        { icon: ClipboardCheck, label: 'Higher risk later in life' },
+        { icon: Stethoscope, label: 'Tell your primary care clinician' },
+      ]}
+    />
+  ),
+  'your-postpartum-checkups/sex-after-birth': () => (
+    <IconPanel
+      label="Sex after birth: no set date, when you feel ready, a lubricant can help, and you can get pregnant before your first period."
+      items={[
+        { icon: Calendar, label: 'No set date' },
+        { icon: Heart, label: 'When you feel ready' },
+        { icon: Droplet, label: 'A lubricant can help' },
+        { icon: TriangleAlert, label: 'Pregnancy before your first period', tone: 'marigold' },
+      ]}
+    />
+  ),
+  'your-postpartum-checkups/spacing': () => (
+    <IconPanel
+      label="Spacing your next pregnancy: wait at least 6 months, ideally about 18 months or more; shorter gaps raise risks; talk with your team."
+      items={[
+        { icon: Calendar, label: 'At least 6 months' },
+        { icon: Hourglass, label: 'Ideally about 18 months' },
+        { icon: TriangleAlert, label: 'Shorter gaps raise risks', tone: 'marigold' },
+        { icon: MessageCircle, label: 'Talk with your team' },
+      ]}
+    />
+  ),
+  'your-postpartum-checkups/your-visit': () => (
+    <IconPanel
+      label="Getting the most from your visits: write questions down, use your Brief and ACOG's checklist, bring a support person, and call sooner if something seems wrong."
+      items={[
+        { icon: ClipboardCheck, label: 'Write questions down' },
+        { icon: CircleCheck, label: 'Use a checklist' },
+        { icon: Users, label: 'Bring a support person' },
+        { icon: Phone, label: 'Worried? Call sooner' },
+      ]}
+    />
+  ),
 };
 
 /** The drawn picture for a slide, or null when it has none. */
@@ -1153,6 +1972,18 @@ const s = StyleSheet.create({
     padding: 14,
     gap: 10,
   },
+  alertStep: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+    backgroundColor: c.alertSoft,
+    borderColor: c.alert,
+    borderWidth: 1.5,
+    borderRadius: 12,
+    paddingHorizontal: 14,
+    paddingVertical: 10,
+  },
+  alertStepText: { flex: 1, color: c.alert, fontSize: 15, fontWeight: '700', lineHeight: 20 },
   caption: { color: c.muted, fontSize: 13, lineHeight: 18, textAlign: 'center' },
   drawing: { width: '100%', maxWidth: 520, alignSelf: 'center' },
   iconRow: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 12 },

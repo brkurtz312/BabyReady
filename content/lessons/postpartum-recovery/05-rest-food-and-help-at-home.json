@@ -1,0 +1,327 @@
+{
+  "courseId": "postpartum-recovery",
+  "lessonId": "rest-food-and-help-at-home",
+  "order": 5,
+  "title": "Rest, Food, and Help at Home",
+  "learningGoals": [
+    "Know what the first weeks at home are like",
+    "Plan for rest, including safe night feeds",
+    "Eat and drink well, including while breastfeeding",
+    "Set visitor rules that protect your newborn",
+    "Line up practical help, and know what support people can do"
+  ],
+  "estimatedMinutes": 12,
+  "review": {
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 6.5 of Module 6 (Postpartum Recovery, Mood, and Red Flags). Builds on lesson 5.5 (safe sleep, couches and armchairs), lesson 5.3 (feeding in bed), lesson 6.1 (recovery), and lessons 6.2 and 6.4 (warning signs and mood). Every source was confirmed against its slides by the reviewer on 2026-10-18; the ACOG checklist's old PDF link no longer worked, so the source points to its current web page. For the reviewer: the fourth trimester, fatigue and sleep disruption, involving family and friends, and asking about help with childcare, chores, transportation, and meals follow ACOG Committee Opinion 736 and the ACOG postpartum checklist as described in search results; feeds every 2 to 3 hours matches lessons 5.3 and 5.4; the drowsy-feeding guidance (back to the crib, never a couch or armchair, safer in a bed with pillows and blankets moved away, then back to the baby's own space) matches lessons 5.3 and 5.5 and the AAP safe sleep page, and ACOG's toolkit similarly notes dozing in a bed is less dangerous than a chair or couch; about 450 to 500 extra calories while breastfeeding, a prenatal vitamin if the team advises, drinking more when urine is dark, and waiting at least 2 hours after a drink follow the ACOG breastfeeding FAQ; the CDC alcohol page says wait 2 hours per drink and not drinking is safest; caffeine differs between sources, with ACOG citing about 200 mg and the CDC about 300 mg (2 to 3 cups), so the slide says about two cups of coffee; sick visitors waiting, hand washing, cocooning with whooping cough (Tdap) and flu vaccines at least 2 weeks before visiting follow the AAP cocooning and flu pages; COVID among the vaccines for close contacts follows the AAP cocooning page, which names COVID and RSV; the RSV vaccine for adults 75 and older, and 50 to 74 at increased risk, follows the CDC adult RSV vaccine page; no smoking or vaping around the baby is standard teaching and matches lesson 5.5; postpartum doulas, home visiting, WIC, and work leave as supports are common practice, with ACOG's checklist encouraging parents to ask for help. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the sleep, caffeine (about two cups), alcohol, nutrition, and practical help slides as written; add COVID and RSV to the vaccines for close contacts; keep 12 minutes; no video."
+  },
+  "sources": [
+    {
+      "id": "acog-co736",
+      "organization": "ACOG",
+      "title": "Optimizing Postpartum Care (Committee Opinion No. 736)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2018/05/optimizing-postpartum-care",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "acog-postpartum-checklist",
+      "organization": "ACOG",
+      "title": "My Postpartum Care Checklist",
+      "url": "https://www.acog.org/womens-health/health-tools/my-postpartum-care-checklist",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "acog-breastfeeding-faq",
+      "organization": "ACOG",
+      "title": "Breastfeeding Your Baby (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/breastfeeding-your-baby",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "cdc-maternal-diet",
+      "organization": "CDC",
+      "title": "Maternal Diet and Breastfeeding",
+      "url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/diet-micronutrients/maternal-diet.html",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "cdc-breastfeeding-alcohol",
+      "organization": "CDC",
+      "title": "Alcohol and Breastfeeding",
+      "url": "https://www.cdc.gov/breastfeeding-special-circumstances/hcp/vaccine-medication-drugs/alcohol.html",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "aap-cocoon",
+      "organization": "AAP",
+      "title": "How to Cocoon a Newborn: Family & Friends Can Protect Baby From Germs (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/safety-prevention/immunizations/Pages/How-to-Cocoon-a-Newborn-Only-an-E-Mail-Away.aspx",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "aap-protect-from-flu",
+      "organization": "AAP",
+      "title": "Protecting Babies & Young Children From Flu: What Parents Need to Know (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/health-issues/conditions/flu/Pages/protecting-babies-and-young-children-from-flu-what-parents-should-know.aspx",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "aap-safe-sleep-explained",
+      "organization": "AAP",
+      "title": "How to Keep Your Sleeping Baby Safe: AAP Policy Explained (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/ages-stages/baby/sleep/Pages/a-parents-guide-to-safe-sleep.aspx",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "cdc-rsv-adults",
+      "organization": "CDC",
+      "title": "RSV Vaccines for Adults",
+      "url": "https://www.cdc.gov/rsv/vaccines/adults.html",
+      "verifiedOn": "2026-10-18"
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Rest, Food, and Help at Home",
+      "onScreen": [
+        "Module 6: Postpartum Recovery, Mood, and Red Flags"
+      ],
+      "narration": "The first weeks at home are a time to heal, feed your baby, and rest, and very little else. In this lesson, we'll plan for sleep, food and drink, visitors, and the practical help that makes those weeks easier. A little planning before your baby arrives goes a long way.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "At home in warm daylight, a friend in everyday clothes sets a covered casserole dish on the kitchen counter while a new parent, holding their swaddled newborn, smiles and thanks them; a short list of chores is pinned to the fridge with no readable writing. Both adults in everyday clothes. No pregnant belly. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "first-weeks",
+      "type": "content",
+      "heading": "What the first weeks are like",
+      "onScreen": [
+        "Newborns wake to feed every 2 to 3 hours, day and night",
+        "Your body is healing at the same time",
+        "Sleep comes in short pieces, for you and your baby",
+        "Lower your expectations: rest, feeding, and healing come first"
+      ],
+      "narration": "The weeks after birth are sometimes called the fourth trimester. Newborns wake to feed every two to three hours, day and night, while your body is healing from birth. Sleep comes in short pieces, and many parents feel exhausted. That's normal, and it gets better as your baby grows. For now, lower your expectations for everything else. Housework can wait. Your jobs are resting, feeding your baby, and healing, and other people can help with the rest.",
+      "sourceIds": [
+        "acog-co736"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a clock for feeds every 2 to 3 hours, a heart pulse for your body healing, a moon for sleep in short pieces, and a bed for rest first."
+      }
+    },
+    {
+      "id": "sleep",
+      "type": "content",
+      "heading": "Getting enough rest",
+      "onScreen": [
+        "Rest when your baby sleeps, at least once a day",
+        "Take turns: split the night so each adult gets a longer stretch",
+        "Feeling drowsy while feeding? Put your baby back in their own crib",
+        "Never sleep with your baby on a couch or armchair"
+      ],
+      "narration": "Rest whenever you can, and try to lie down at least once a day while your baby sleeps, instead of catching up on chores. If you have a partner or helper, take turns at night, so each of you gets one longer stretch of sleep. If you're formula feeding or pumping, someone else can do a night feed. If you feel yourself getting drowsy while feeding, put your baby back on their back in their own crib or bassinet. And never sleep with your baby on a couch or armchair, which is the most dangerous place to doze off with a baby. If you might fall asleep, it's safer to feed in your bed with pillows and blankets moved away, then move your baby back to their own space when you wake.",
+      "sourceIds": [
+        "acog-co736",
+        "aap-safe-sleep-explained"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a bed for resting when your baby sleeps, two people for taking turns at night, a baby for back in their own crib when drowsy, and a crossed-out armchair for never sleeping with your baby on a couch or armchair (alert)."
+      }
+    },
+    {
+      "id": "food-and-drink",
+      "type": "content",
+      "heading": "Food and drink",
+      "onScreen": [
+        "Regular meals and snacks you can eat with one hand",
+        "Drink to your thirst; pale yellow pee means you're drinking enough",
+        "Breastfeeding? About 450 to 500 extra calories a day, and keep taking your prenatal vitamin if your team advises",
+        "Caffeine in moderation; after a drink of alcohol, wait about 2 hours to breastfeed"
+      ],
+      "narration": "Eating well helps you heal and keeps your energy up. Keep easy, one-handed meals and snacks on hand, like fruit, yogurt, nuts, and sandwiches, and stock the freezer before your baby comes. Drink to your thirst; if your pee is dark yellow, drink more. If you're breastfeeding, your body needs about 450 to 500 extra calories a day, and your care team may suggest you keep taking your prenatal vitamin. Moderate caffeine, about two cups of coffee a day, is usually fine. Not drinking alcohol is safest while breastfeeding, but if you have a drink, wait about two hours before you breastfeed.",
+      "sourceIds": [
+        "acog-breastfeeding-faq",
+        "cdc-maternal-diet",
+        "cdc-breastfeeding-alcohol"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: utensils for regular meals and snacks, a glass of water for drinking to your thirst, a pill for your prenatal vitamin, and a coffee cup for caffeine in moderation."
+      }
+    },
+    {
+      "id": "visitors",
+      "type": "content",
+      "heading": "Visitors",
+      "onScreen": [
+        "It's okay to limit visits, and to keep them short",
+        "Anyone who's sick should wait until they're well",
+        "Everyone washes their hands before holding your baby",
+        "Ask close contacts to get their whooping cough, flu, and COVID vaccines, and RSV if they're eligible"
+      ],
+      "narration": "Visitors can be a joy, and a lot of work. It's okay to say not yet, to keep visits short, and to ask guests to help with a chore instead of just holding the baby. Newborns catch infections easily, so anyone who's sick should wait until they're well. Everyone should wash their hands before holding your baby. Ask the people who'll be around your baby most, like grandparents and caregivers, to get up to date on their vaccines, including whooping cough, flu, and COVID, ideally at least two weeks before they visit. Grandparents who are 75 or older, or 50 or older with certain health conditions, can also get an RSV vaccine. Babies can't get some of these vaccines until they're older, so the people around them are their protection. And no one should smoke or vape around your baby.",
+      "sourceIds": [
+        "aap-cocoon",
+        "aap-protect-from-flu",
+        "cdc-rsv-adults"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "At home, a grandparent in everyday clothes washes their hands at the kitchen sink with soap, smiling, while a new parent holding their swaddled newborn waits nearby, ready to hand the baby over. No pregnant belly. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "checkin-visitor",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": [
+        "aap-cocoon",
+        "aap-protect-from-flu"
+      ],
+      "question": {
+        "prompt": "Your aunt has a cough and a runny nose, and she wants to visit your 1-week-old today. What's best?",
+        "options": [
+          "Let her visit if she washes her hands",
+          "Ask her to visit once she's well",
+          "Let her visit but not hold the baby for long"
+        ],
+        "correctIndex": 1,
+        "explanation": "Newborns catch infections easily, and some, like flu and whooping cough, can be serious. Anyone who's sick should wait until they're well to visit."
+      }
+    },
+    {
+      "id": "practical-help",
+      "type": "content",
+      "heading": "Line up practical help",
+      "onScreen": [
+        "Make a list of jobs: meals, laundry, dishes, errands, older kids, pets",
+        "When people offer, give them a specific job",
+        "Set up a meal schedule with friends or family",
+        "Ask your team about postpartum doulas, home visits, WIC, and leave from work"
+      ],
+      "narration": "Before your baby arrives, make a list of jobs others can do: meals, laundry, dishes, groceries and errands, rides to appointments, and care for older children and pets. When people ask how they can help, say yes, and give them a specific job from your list. A friend or relative can set up a meal schedule. Ask your care team about other support, like postpartum doulas, home visiting programs, WIC, and your options for paid or unpaid leave from work. Needing help isn't a weakness; it's how new families have always managed.",
+      "sourceIds": [
+        "acog-co736",
+        "acog-postpartum-checklist"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a clipboard for a list of jobs, a hand for giving people a specific job, a soup bowl for a meal schedule, and a house for home visits and other support."
+      }
+    },
+    {
+      "id": "support-person",
+      "type": "content",
+      "heading": "Support people: what helps most",
+      "onScreen": [
+        "Take over diapers, burping, baths, and soothing",
+        "Cover a night feed or the early morning so they can sleep",
+        "Handle visitors, meals, and the house",
+        "Check in on their mood, and know the warning signs"
+      ],
+      "narration": "Support people, here's what helps most. Take over diaper changes, burping, baths, and soothing, so the new parent can rest. Cover a night feed or the early morning shift if you can, so they get a longer stretch of sleep. Handle visitors, meals, and the house. And check in on how they're feeling. Know the warning signs from lesson 6.2 and the mood changes from lesson 6.4, and if something seems wrong, help them get care.",
+      "sourceIds": [
+        "acog-co736"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Early morning at home: a partner in everyday clothes changes the newborn's diaper on a changing pad on a dresser, smiling at the baby, while in the background the new parent sleeps in bed. Both adults fully clothed. No pregnant belly. Exactly one baby. No readable writing."
+      }
+    },
+    {
+      "id": "care-for-you",
+      "type": "content",
+      "heading": "Taking care of you",
+      "onScreen": [
+        "A shower, a short walk outside, or a few minutes of quiet",
+        "Stay in touch with friends, by phone if not in person",
+        "Ask for help, and tell your team if you're struggling",
+        "Rest and help are part of healing, not a luxury"
+      ],
+      "narration": "Small things help you feel like yourself: a shower, a short walk outside, a few quiet minutes. Stay in touch with friends, even by phone or text. If you're not getting enough sleep or support, or you're feeling down or anxious, tell your care team; they can help, and you shouldn't feel embarrassed to ask. Rest and help aren't a luxury. They're part of healing.",
+      "sourceIds": [
+        "acog-postpartum-checklist",
+        "acog-co736"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a shower head for a shower, footprints for a short walk outside, a phone for staying in touch, and a heart for telling your team if you're struggling."
+      }
+    },
+    {
+      "id": "home-plan",
+      "type": "reflection",
+      "heading": "Your plan for home",
+      "onScreen": [
+        "Who will bring meals and help around the house",
+        "How you'll share nights",
+        "Your visitor rules"
+      ],
+      "narration": "Let's make your plan for home. Who will bring meals and help around the house in the first weeks? How will you share nights? And what are your visitor rules, like who can come, when, and what you'll ask of them? Save your answers to your Birth Readiness Brief.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write who will bring meals and help around the house, how you'll share nights, and your visitor rules."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Rest, feeding, and healing come first; housework can wait",
+        "Take turns at night; never sleep with your baby on a couch",
+        "Easy meals, water, and moderate caffeine; wait 2 hours after a drink to breastfeed",
+        "Healthy, vaccinated, hand-washing visitors, and a list of jobs for helpers"
+      ],
+      "narration": "Let's recap. In the first weeks, rest, feeding, and healing come first. Take turns at night, and never sleep with your baby on a couch or armchair. Keep easy meals and water close; caffeine in moderation is fine, and if you have a drink, wait about two hours to breastfeed. Ask visitors to stay away when sick, wash their hands, and get their vaccines, and give helpers specific jobs. Next up, a few review questions.",
+      "sourceIds": [
+        "acog-co736",
+        "aap-safe-sleep-explained",
+        "cdc-breastfeeding-alcohol",
+        "aap-cocoon"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "You feel very drowsy during a 3 a.m. feed on the couch. What should you do?",
+      "options": [
+        "Keep feeding and rest your eyes",
+        "Put your baby back in their crib, on their back",
+        "Lie down on the couch with your baby"
+      ],
+      "correctIndex": 1,
+      "explanation": "Couches and armchairs are the most dangerous places to fall asleep with a baby. If you're drowsy, put your baby back on their back in their own crib or bassinet."
+    },
+    {
+      "prompt": "Who should get whooping cough, flu, and COVID vaccines to help protect your newborn?",
+      "options": [
+        "No one; newborns are protected",
+        "Only the baby's doctor",
+        "Grandparents, caregivers, and others who'll be around your baby"
+      ],
+      "correctIndex": 2,
+      "explanation": "Newborns are too young for some vaccines, so the people around them should be up to date, ideally at least two weeks before visiting."
+    },
+    {
+      "prompt": "A friend asks how they can help. What's the most useful answer?",
+      "options": [
+        "We're fine, thanks",
+        "Could you bring dinner on Tuesday?",
+        "Come hold the baby anytime"
+      ],
+      "correctIndex": 1,
+      "explanation": "Specific jobs, like a meal, laundry, or an errand, help most. Keep a list ready so you can say yes when people offer."
+    }
+  ]
+}

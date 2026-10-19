@@ -19,6 +19,12 @@ import earlyPregnancyFirstSteps from '../../content/lessons/early-pregnancy-basi
 import firstTrimesterCommonChanges from '../../content/lessons/early-pregnancy-basics/02-first-trimester-common-changes.json';
 import firstPrenatalVisit from '../../content/lessons/early-pregnancy-basics/03-first-prenatal-visit.json';
 
+import understandingLaborPain from '../../content/lessons/comfort-and-support-skills/01-understanding-labor-pain.json';
+import breathingAndRelaxation from '../../content/lessons/comfort-and-support-skills/02-breathing-and-relaxation.json';
+import positionsAndMovement from '../../content/lessons/comfort-and-support-skills/03-positions-and-movement.json';
+import touchWaterAndComfortTools from '../../content/lessons/comfort-and-support-skills/04-touch-water-and-comfort-tools.json';
+import forSupportPeople from '../../content/lessons/comfort-and-support-skills/05-for-support-people.json';
+
 import makingDecisions from '../../content/lessons/interventions-and-flexible-decisions/01-making-decisions-with-your-care-team.json';
 import monitoringYourBaby from '../../content/lessons/interventions-and-flexible-decisions/02-monitoring-your-baby-in-labor.json';
 import medicalPainRelief from '../../content/lessons/interventions-and-flexible-decisions/03-medical-pain-relief.json';
@@ -27,11 +33,21 @@ import assistedVaginalBirth from '../../content/lessons/interventions-and-flexib
 import cesareanBirth from '../../content/lessons/interventions-and-flexible-decisions/06-cesarean-birth.json';
 import whenPlansChange from '../../content/lessons/interventions-and-flexible-decisions/07-when-plans-change.json';
 
+import yourNewbornsFirstDays from '../../content/lessons/feeding-and-newborn-care/01-your-newborns-first-days.json';
+import newbornCareInTheHospital from '../../content/lessons/feeding-and-newborn-care/02-newborn-care-in-the-hospital.json';
+import breastfeedingBasics from '../../content/lessons/feeding-and-newborn-care/03-breastfeeding-basics.json';
+import formulaAndCombinationFeeding from '../../content/lessons/feeding-and-newborn-care/04-formula-and-combination-feeding.json';
 import safeSleep from '../../content/lessons/feeding-and-newborn-care/05-safe-sleep.json';
 import carSeatSafety from '../../content/lessons/feeding-and-newborn-care/06-car-seat-safety.json';
+import diapersBathsCryingAndSoothing from '../../content/lessons/feeding-and-newborn-care/07-diapers-baths-crying-and-soothing.json';
+import infantCprAndChoking from '../../content/lessons/feeding-and-newborn-care/08-infant-cpr-and-choking.json';
 
+import physicalRecoveryAfterBirth from '../../content/lessons/postpartum-recovery/01-physical-recovery-after-birth.json';
 import postpartumWarningSigns from '../../content/lessons/postpartum-recovery/02-postpartum-warning-signs.json';
 import whenToCallAboutYourBaby from '../../content/lessons/postpartum-recovery/03-when-to-call-about-your-baby.json';
+import emotionalHealthAfterBirth from '../../content/lessons/postpartum-recovery/04-emotional-health-after-birth.json';
+import restFoodAndHelpAtHome from '../../content/lessons/postpartum-recovery/05-rest-food-and-help-at-home.json';
+import yourPostpartumCheckups from '../../content/lessons/postpartum-recovery/06-your-postpartum-checkups.json';
 
 export type Course = {
   courseId: string;
@@ -77,11 +93,13 @@ const earlyPregnancyLessons = sortedLessons([
   firstPrenatalVisit,
 ]);
 
+const comfortAndSupportLessons = sortedLessons([understandingLaborPain, breathingAndRelaxation, positionsAndMovement, touchWaterAndComfortTools, forSupportPeople]);
+
 const interventionsLessons = sortedLessons([makingDecisions, monitoringYourBaby, medicalPainRelief, inductionOfLabor, assistedVaginalBirth, cesareanBirth, whenPlansChange]);
 
-const feedingAndNewbornCareLessons = sortedLessons([safeSleep, carSeatSafety]);
+const feedingAndNewbornCareLessons = sortedLessons([yourNewbornsFirstDays, newbornCareInTheHospital, breastfeedingBasics, formulaAndCombinationFeeding, safeSleep, carSeatSafety, diapersBathsCryingAndSoothing, infantCprAndChoking]);
 
-const postpartumRecoveryLessons = sortedLessons([postpartumWarningSigns, whenToCallAboutYourBaby]);
+const postpartumRecoveryLessons = sortedLessons([physicalRecoveryAfterBirth, postpartumWarningSigns, whenToCallAboutYourBaby, emotionalHealthAfterBirth, restFoodAndHelpAtHome, yourPostpartumCheckups]);
 
 export const LABOR_BASICS_TITLE = 'Labor Basics and When to Call';
 
@@ -109,6 +127,13 @@ export const courses: Course[] = [
     lessons: laborBasicsLessons,
   },
   {
+    courseId: 'comfort-and-support-skills',
+    title: 'Comfort, Movement, and Support Skills',
+    label: 'CLASS · MODULE 3',
+    description: `Understanding labor pain, and hands-on comfort skills: breathing, positions, touch, water, and how support people can help. About ${minutes(comfortAndSupportLessons)} minutes.`,
+    lessons: comfortAndSupportLessons,
+  },
+  {
     courseId: 'interventions-and-flexible-decisions',
     title: 'Interventions and Flexible Decisions',
     label: 'CLASS · MODULE 4',
@@ -119,14 +144,14 @@ export const courses: Course[] = [
     courseId: 'feeding-and-newborn-care',
     title: 'Feeding and Newborn Care',
     label: 'CLASS · MODULE 5',
-    description: `Keeping your newborn safe: sleep on the back in a bare crib, and car seats used right on every ride. About ${minutes(feedingAndNewbornCareLessons)} minutes.`,
+    description: `Your newborn's first days and hospital care, breastfeeding, formula and bottles, diapers, baths, and soothing, and keeping your newborn safe: sleep on the back in a bare crib, car seats used right on every ride, and infant CPR and choking. About ${minutes(feedingAndNewbornCareLessons)} minutes.`,
     lessons: feedingAndNewbornCareLessons,
   },
   {
     courseId: 'postpartum-recovery',
     title: 'Postpartum Recovery, Mood, and Red Flags',
     label: 'CLASS · MODULE 6',
-    description: `Warning signs to know for the year after birth, for you and your baby: when to call, when to call 911, and getting help. About ${minutes(postpartumRecoveryLessons)} minutes.`,
+    description: `Healing after birth, your emotional health, rest and help at home, your postpartum checkups, and the warning signs to know for the year after, for you and your baby: when to call, when to call 911, and getting help. About ${minutes(postpartumRecoveryLessons)} minutes.`,
     lessons: postpartumRecoveryLessons,
   },
 ];

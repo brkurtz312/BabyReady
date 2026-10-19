@@ -13,7 +13,7 @@ BabyReady in a Claude chat, after moving the project off Perplexity.
 
 ## Lightweight quality model (replaces the governance workflow)
 1. Every teaching slide cites at least one source. No source, no slide.
-2. Approved organizations only: ACOG, AAP, CDC, NICHD, AAFP, ACNM, WHO, Lamaze, ICEA.
+2. Approved organizations only: ACOG, AAP, CDC, NICHD, AAFP, ACNM, WHO, Lamaze, ICEA, and, for CPR and choking, the AHA and the American Red Cross.
 3. A lesson is "draft" or "reviewed". Reviewed lessons record reviewer name and
    credentials, review date, and a re-check date no more than 12 months later.
 4. Lessons are JSON files in the repo. Git history is the audit trail.

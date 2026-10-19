@@ -18,6 +18,8 @@ export const APPROVED_ORGANIZATIONS: readonly ApprovedOrganization[] = [
   'WHO',
   'Lamaze',
   'ICEA',
+  'AHA',
+  'American Red Cross',
 ];
 
 const SLIDE_TYPES = [

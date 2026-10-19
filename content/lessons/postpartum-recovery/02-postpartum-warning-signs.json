@@ -16,7 +16,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Drafted 2026-10-17 as the first lesson of Module 6 (6.2 in the curriculum map; it keeps order 2 so 6.1 can slot in ahead). Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-17): heavy bleeding uses ACOG's threshold of soaking through two pads an hour for more than an hour or two (Labor Basics lesson 6 changed to match); bad-smelling or greenish fluid is cited to Lamaze, and 'can be a sign of infection' and 'bleeding should slowly get lighter' are BabyReady's own guidance; the mental-health safety slide keeps 911 because CDC's depression resources page says to call 911 or go to an emergency department, while other warning slides say 'seek medical care immediately'; a 60-second storyboard video was added before the support-people slide. The National Maternal Mental Health Hotline number (1-833-TLC-MAMA) and the 988 line are quoted from CDC's depression resources page. The 140/90 home blood pressure threshold is from ACOG's '3 Conditions to Watch for After Childbirth'."
+    "notes": "Drafted 2026-10-17 as the first lesson of Module 6 (6.2 in the curriculum map; it keeps order 2 so 6.1 can slot in ahead). Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-17): heavy bleeding uses ACOG's threshold of soaking through two pads an hour for more than an hour or two (Labor Basics lesson 6 changed to match); bad-smelling or greenish fluid is cited to Lamaze, and 'can be a sign of infection' and 'bleeding should slowly get lighter' are BabyReady's own guidance; the mental-health safety slide keeps 911 because CDC's depression resources page says to call 911 or go to an emergency department, while other warning slides say 'seek medical care immediately'; a 60-second storyboard video was added before the support-people slide. The National Maternal Mental Health Hotline number (1-833-TLC-MAMA) and the 988 line are quoted from CDC's depression resources page. The 140/90 home blood pressure threshold is from ACOG's '3 Conditions to Watch for After Childbirth'. Updated 2026-10-18 at the reviewer's direction during lesson 6.4's review: the maternal mental health hotline now says 'call or text', as the CDC lists it, matching lesson 6.4."
   },
   "sources": [
     {
@@ -102,7 +102,7 @@
       "sourceIds": [],
       "visual": {
         "kind": "illustration",
-        "description": "A new parent resting on a couch at home with a sleeping newborn on their chest, a partner nearby bringing a glass of water. Calm, warm light."
+        "description": "A new parent resting on a couch at home, awake and smiling, holding their sleeping newborn, a partner nearby bringing a glass of water. Calm, warm light."
       }
     },
     {
@@ -115,7 +115,10 @@
         "Most people recover well; knowing the signs helps you act fast"
       ],
       "narration": "Most people recover well after birth. But serious complications can happen days, weeks, or even months later, after you've gone home. That's why the warning signs in this lesson matter for up to a year after your baby is born. Knowing them, and acting on them quickly, can save a life. Your care team would much rather hear from you about something that turns out to be fine than have you wait.",
-      "sourceIds": ["cdc-hear-her-warning-signs", "cdc-hear-her-about"],
+      "sourceIds": [
+        "cdc-hear-her-warning-signs",
+        "cdc-hear-her-about"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A simple calendar wall with a year of months, a soft teal line running from the birth month to twelve months later, and a small heart at the start."
@@ -135,7 +138,9 @@
         "Seek medical care immediately"
       ],
       "narration": "These are the urgent maternal warning signs. They can happen at any time in the year after birth. A headache that won't go away or gets worse over time. Changes in your vision. Dizziness or fainting. Trouble breathing, chest pain, or a fast-beating heart. A fever of 100.4 degrees or higher. Severe belly pain that doesn't go away. Severe nausea and throwing up. Heavy vaginal bleeding, or fluid that smells bad. Swelling, redness, or pain in a leg. Extreme swelling of your hands or face. Thoughts of harming yourself or your baby. Or overwhelming tiredness. If you have any of these, seek medical care immediately.",
-      "sourceIds": ["cdc-hear-her-warning-signs"]
+      "sourceIds": [
+        "cdc-hear-her-warning-signs"
+      ]
     },
     {
       "id": "say-you-had-a-baby",
@@ -147,7 +152,10 @@
         "It changes what the team checks for"
       ],
       "narration": "Wherever you get care, start by saying that you recently had a baby, and when. For example: I had a baby three weeks ago, and I have a bad headache that won't go away. That one sentence matters. It tells the team to think about conditions linked to pregnancy, which they might not consider otherwise. This is true at urgent care, an emergency room, or any office, for the whole year after birth. Your support person can say it for you, too.",
-      "sourceIds": ["cdc-hear-her-warning-signs", "cdc-hear-her-about"],
+      "sourceIds": [
+        "cdc-hear-her-warning-signs",
+        "cdc-hear-her-about"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A new parent at a clinic front desk speaking with a calm staff member, a support person beside them holding a baby carrier."
@@ -164,7 +172,11 @@
         "Soaking through two pads an hour for more than an hour or two, or large clots: get care now"
       ],
       "narration": "Bleeding after birth is normal, and it should slowly get lighter over the following weeks. But heavy bleeding is a warning sign, and it can happen up to twelve weeks after birth, long after you've gone home. Get care right away if you're soaking through two pads an hour for more than an hour or two, passing large clots, or feeling dizzy or faint. Fluid that smells bad or looks greenish can be a sign of infection, especially with a fever, so call about that too.",
-      "sourceIds": ["cdc-hear-her-warning-signs", "acog-after-childbirth-conditions", "lamaze-severe-post-birth-complications"],
+      "sourceIds": [
+        "cdc-hear-her-warning-signs",
+        "acog-after-childbirth-conditions",
+        "lamaze-severe-post-birth-complications"
+      ],
       "visual": {
         "kind": "icon-list",
         "description": "Three simple icons in a row: two pads beside a clock, a droplet, and a thermometer. No blood shown."
@@ -181,7 +193,10 @@
         "Home reading of 140/90 or higher: call right away"
       ],
       "narration": "Preeclampsia is a dangerous high blood pressure condition. Many people think it ends when the baby is born, but it can start after birth. It usually shows up within a few days, but it can happen up to six weeks later, even if your blood pressure was normal during pregnancy. Watch for a headache that won't go away, changes in your vision, shortness of breath, swelling of your face or hands, or pain in your upper belly or shoulder. If you check your blood pressure at home and the top number is 140 or higher, or the bottom number is 90 or higher, call your care team right away.",
-      "sourceIds": ["acog-preeclampsia", "acog-after-childbirth-conditions"],
+      "sourceIds": [
+        "acog-preeclampsia",
+        "acog-after-childbirth-conditions"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A new parent sitting at a kitchen table checking their blood pressure with a home arm cuff, baby asleep in a bassinet nearby. The monitor screen is blank."
@@ -193,7 +208,10 @@
       "heading": "Quick check-in",
       "onScreen": [],
       "narration": "Let's check in.",
-      "sourceIds": ["acog-preeclampsia", "acog-after-childbirth-conditions"],
+      "sourceIds": [
+        "acog-preeclampsia",
+        "acog-after-childbirth-conditions"
+      ],
       "question": {
         "prompt": "Ten days after birth, you have a headache that won't go away and blurry vision. Your blood pressure was normal all through pregnancy. What should you do?",
         "options": [
@@ -215,7 +233,9 @@
         "In the lungs: trouble breathing, chest pain, coughing up blood, fast heartbeat. Get care immediately"
       ],
       "narration": "Pregnancy and the weeks after birth raise the risk of blood clots. A clot in a leg or arm can cause swelling, pain or tenderness that isn't from an injury, and skin that feels warm or looks red. If you notice that, call your care team. A clot can also travel to the lungs, which is life-threatening. Signs include trouble breathing, chest pain that gets worse when you breathe deeply or cough, coughing up blood, or a fast or uneven heartbeat. For any of those, get medical care immediately.",
-      "sourceIds": ["cdc-blood-clots-pregnancy"],
+      "sourceIds": [
+        "cdc-blood-clots-pregnancy"
+      ],
       "visual": {
         "kind": "icon-list",
         "description": "Two simple panels: a lower leg with a soft highlighted area of swelling, and a chest outline with gentle lines suggesting breathing. No medical imagery."
@@ -229,13 +249,31 @@
         "Feelings that last more than two weeks, or feel too big, need a call"
       ],
       "narration": "Many new parents feel weepy, worried, or overwhelmed in the first days after birth. This is called the baby blues, and it usually passes on its own within a couple of weeks. Postpartum depression is different. The feelings are stronger and last longer. You may feel very sad, anxious, or hopeless, or have trouble caring for yourself or your baby. It can start any time in the first year. It's common, it's not your fault, and it can be treated. If your feelings last more than two weeks, or feel too big to manage, tell your care team.",
-      "sourceIds": ["cdc-depression", "acog-postpartum-depression"],
-      "columns": ["Baby blues", "Postpartum depression"],
+      "sourceIds": [
+        "cdc-depression",
+        "acog-postpartum-depression"
+      ],
+      "columns": [
+        "Baby blues",
+        "Postpartum depression"
+      ],
       "rows": [
-        ["Sadness, worry, tiredness", "Strong sadness, anxiety, or hopelessness"],
-        ["Starts in the first few days", "Can start any time in the first year"],
-        ["Usually passes within two weeks", "Lasts longer than two weeks"],
-        ["Rest and support help", "Treatment helps; tell your care team"]
+        [
+          "Sadness, worry, tiredness",
+          "Strong sadness, anxiety, or hopelessness"
+        ],
+        [
+          "Starts in the first few days",
+          "Can start any time in the first year"
+        ],
+        [
+          "Usually passes within two weeks",
+          "Lasts longer than two weeks"
+        ],
+        [
+          "Rest and support help",
+          "Treatment helps; tell your care team"
+        ]
       ]
     },
     {
@@ -248,8 +286,11 @@
         "National Maternal Mental Health Hotline: 1-833-TLC-MAMA (1-833-852-6262), free, 24/7",
         "In an emergency, call 911 or go to the nearest emergency department"
       ],
-      "narration": "If you have thoughts of harming yourself or your baby, you are not alone, and you deserve help right away. Call or text 988 to reach the Suicide and Crisis Lifeline. You can also call the National Maternal Mental Health Hotline, at 1-833-TLC-MAMA, which is free, confidential, and open 24 hours a day, in English and Spanish. If you feel you might act on these thoughts, call 911 or go to the nearest emergency department. Support people, if someone you love says something like this, stay with them and help them get care.",
-      "sourceIds": ["cdc-depression-resources", "cdc-hear-her-warning-signs"]
+      "narration": "If you have thoughts of harming yourself or your baby, you are not alone, and you deserve help right away. Call or text 988 to reach the Suicide and Crisis Lifeline. You can also call or text the National Maternal Mental Health Hotline, at 1-833-TLC-MAMA, which is free, confidential, and open 24 hours a day, in English and Spanish. If you feel you might act on these thoughts, call 911 or go to the nearest emergency department. Support people, if someone you love says something like this, stay with them and help them get care.",
+      "sourceIds": [
+        "cdc-depression-resources",
+        "cdc-hear-her-warning-signs"
+      ]
     },
     {
       "id": "early-check-in",
@@ -261,7 +302,10 @@
         "Ask now: who do I call after birth, day or night?"
       ],
       "narration": "Don't wait for a single visit weeks later. ACOG recommends contact with your care team within the first three weeks after birth, in person or by phone, and a full postpartum visit by twelve weeks. Before your baby arrives, ask your team who to call after birth, during the day and at night, and write that number down. If you had high blood pressure in pregnancy, ask when you should have it checked again.",
-      "sourceIds": ["acog-co736", "acog-after-childbirth-conditions"],
+      "sourceIds": [
+        "acog-co736",
+        "acog-after-childbirth-conditions"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A new parent on the phone at home, holding the baby in one arm, with a sticky note of phone numbers on the fridge behind them. The note has no readable writing."
@@ -275,7 +319,10 @@
         "Notice how quickly they act, and the first thing they say"
       ],
       "narration": "Here's a short example of a family noticing a warning sign at home, and getting care.",
-      "sourceIds": ["cdc-hear-her-warning-signs", "cdc-hear-her-about"],
+      "sourceIds": [
+        "cdc-hear-her-warning-signs",
+        "cdc-hear-her-about"
+      ],
       "video": {
         "brief": "Two weeks after birth, at home in the evening. The new parent, holding the baby, mentions a headache that hasn't gone away all day and blurry vision. Their partner takes it seriously, looks at the warning-sign list saved on their phone, and calls the care team while the new parent rests. Cut to an urgent care front desk: the partner says they had a baby two weeks ago. Narration-free with soft music and short captions. No numbers or clinical readings shown.",
         "maxSeconds": 60
@@ -291,7 +338,10 @@
         "Help them get care, and say they recently had a baby"
       ],
       "narration": "Support people, this part is for you. New parents are busy and tired, and they may brush off symptoms or worry about bothering anyone. Learn these warning signs yourself. If your loved one says something doesn't feel right, believe them. Help them get care quickly, go with them if you can, and make sure the team knows they recently had a baby. Speaking up can save a life.",
-      "sourceIds": ["cdc-hear-her-about", "cdc-hear-her-warning-signs"],
+      "sourceIds": [
+        "cdc-hear-her-about",
+        "cdc-hear-her-warning-signs"
+      ],
       "visual": {
         "kind": "illustration",
         "description": "A partner sitting close to a new parent on the edge of a bed, listening with a hand on their shoulder, baby asleep in a bassinet."
@@ -303,7 +353,10 @@
       "heading": "Quick check-in",
       "onScreen": [],
       "narration": "Let's check in.",
-      "sourceIds": ["cdc-depression", "acog-postpartum-depression"],
+      "sourceIds": [
+        "cdc-depression",
+        "acog-postpartum-depression"
+      ],
       "question": {
         "prompt": "Five weeks after birth, you still feel hopeless most days and can't enjoy anything. What's the best next step?",
         "options": [
@@ -342,7 +395,12 @@
         "Postpartum depression is common and treatable; help is available 24/7"
       ],
       "narration": "Let's recap. Your health matters for a full year after birth. If you have any urgent warning sign, seek medical care immediately, and always say that you recently had a baby. Preeclampsia and blood clots can happen after birth, even if pregnancy went smoothly. The baby blues usually pass within two weeks, but postpartum depression is common and treatable, and help is available any time. Next up, a few review questions.",
-      "sourceIds": ["cdc-hear-her-warning-signs", "acog-preeclampsia", "cdc-blood-clots-pregnancy", "cdc-depression"]
+      "sourceIds": [
+        "cdc-hear-her-warning-signs",
+        "acog-preeclampsia",
+        "cdc-blood-clots-pregnancy",
+        "cdc-depression"
+      ]
     }
   ],
   "reviewQuiz": [

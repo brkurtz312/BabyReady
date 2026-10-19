@@ -16,7 +16,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. ACOG clinical documents were checked against their public abstracts only (full text is on the journal site). No approved source was found that says to go to the nearest emergency room instead of the planned birth place, so the safety slide says to get care immediately and to ask your care team in advance when to go to the emergency room or call 911."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. ACOG clinical documents were checked against their public abstracts only (full text is on the journal site). No approved source was found that says to go to the nearest emergency room instead of the planned birth place, so the safety slide says to get care immediately and to ask your care team in advance when to go to the emergency room or call 911. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed."
   },
   "sources": [
     {
@@ -110,8 +110,7 @@
       "type": "title",
       "heading": "Your Care Team and Birth Setting",
       "onScreen": [
-        "Preparing for Birth · Lesson 3",
-        "About 10 minutes"
+        "Module 1: Preparing for Birth"
       ],
       "narration": "Welcome back. In this lesson, we'll meet the people who may care for you during labor and birth, and we'll look at the places where babies are born: hospitals, birth centers, and homes. There's no single right answer here. The best choice depends on your health, your insurance, where you live, and what matters to you. Our goal is to help you ask good questions and feel confident in your plan. Let's begin.",
       "sourceIds": [],

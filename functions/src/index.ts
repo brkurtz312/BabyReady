@@ -1,11 +1,16 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { initializeApp } from 'firebase-admin/app';
+import { getAuth } from 'firebase-admin/auth';
 import { FieldValue, getFirestore } from 'firebase-admin/firestore';
+import { logger } from 'firebase-functions';
 import { defineSecret } from 'firebase-functions/params';
 import { HttpsError, onCall } from 'firebase-functions/v2/https';
+import { onSchedule } from 'firebase-functions/v2/scheduler';
 
 import { MAX_QUESTION_LENGTH, routeQuestion } from '../../src/lib/askSafety';
+import { usageRecord } from './askCost';
 import { findLesson, lessonText } from './lessons';
+import { INACTIVE_DAYS, isInactive } from './retention';
 
 initializeApp();
 
@@ -142,6 +147,13 @@ export const askLessonQuestion = onCall(
       throw new HttpsError('unavailable', 'Something went wrong getting an answer. Try asking again.');
     }
 
+    // Token counts and cost only: never the question, the answer, or who asked.
+    logger.info('ask_usage', {
+      lessonId: lesson.lessonId,
+      stopReason: response.stop_reason,
+      ...usageRecord(response.model, response.usage),
+    });
+
     if (response.stop_reason === 'refusal') {
       return {
         kind: 'answer',
@@ -160,5 +172,77 @@ export const askLessonQuestion = onCall(
       answer: (match ? text.slice(0, match.index) : text).trim(),
       from: match ? match[1].trim() : null,
     };
+  },
+);
+
+/** Deletes every document under users/{uid}: profile, progress, Brief, reflection answers, question counts. */
+async function deleteLearnerData(uid: string): Promise<void> {
+  const firestore = getFirestore();
+  await firestore.recursiveDelete(firestore.doc(`users/${uid}`));
+}
+
+/**
+ * Deletes everything BabyReady keeps for the signed-in learner: every document
+ * under users/{uid} (profile, progress, Brief, reflection answers, question
+ * counts), then the sign-in itself. The app then starts a new, empty session.
+ */
+export const deleteMyAccount = onCall({ maxInstances: 5, timeoutSeconds: 120 }, async (request) => {
+  const uid = request.auth?.uid;
+  if (!uid) {
+    throw new HttpsError('unauthenticated', 'BabyReady is still starting your private session. Try again in a moment.');
+  }
+  try {
+    await deleteLearnerData(uid);
+    await getAuth()
+      .deleteUser(uid)
+      .catch((error: { code?: string }) => {
+        // Already gone (for example, a retry after a dropped connection) is fine.
+        if (error?.code !== 'auth/user-not-found') throw error;
+      });
+  } catch {
+    console.error('Account deletion failed');
+    throw new HttpsError('internal', 'Your data couldn’t be deleted just now. Please try again.');
+  }
+  return { deleted: true };
+});
+
+/**
+ * Once a month, deletes accounts nobody has opened for INACTIVE_DAYS (12
+ * months), with everything stored under them, as the privacy policy says.
+ * An account whose data can't be deleted is kept and tried again next month.
+ */
+export const deleteInactiveAccounts = onSchedule(
+  { schedule: '15 3 1 * *', timeZone: 'America/Los_Angeles', timeoutSeconds: 540, maxInstances: 1 },
+  async () => {
+    const auth = getAuth();
+    const now = Date.now();
+
+    // Collect first, then delete, so deleting doesn't disturb the paging.
+    const inactive: string[] = [];
+    let pageToken: string | undefined;
+    do {
+      const page = await auth.listUsers(1000, pageToken);
+      for (const user of page.users) {
+        if (isInactive(user.metadata, now)) inactive.push(user.uid);
+      }
+      pageToken = page.pageToken;
+    } while (pageToken);
+
+    const dataDeleted: string[] = [];
+    for (const uid of inactive) {
+      try {
+        await deleteLearnerData(uid);
+        dataDeleted.push(uid);
+      } catch {
+        console.error('Inactive account data deletion failed; will retry next month');
+      }
+    }
+
+    let accountsDeleted = 0;
+    for (let k = 0; k < dataDeleted.length; k += 1000) {
+      const result = await auth.deleteUsers(dataDeleted.slice(k, k + 1000));
+      accountsDeleted += result.successCount;
+    }
+    console.log(`Inactive cleanup: ${accountsDeleted} of ${inactive.length} accounts unused for ${INACTIVE_DAYS} days deleted`);
   },
 );

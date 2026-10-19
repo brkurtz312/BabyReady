@@ -15,8 +15,11 @@ import {
 
 import { AskQuestionSheet } from '../components/AskQuestionSheet';
 import { animationFor } from '../components/LessonAnimations';
+import { LessonListSheet } from '../components/LessonListSheet';
 import { LessonVideo } from '../components/LessonVideo';
 import { drawnVisualFor } from '../components/LessonVisuals';
+import { SelfCheckSheet } from '../components/SelfCheckSheet';
+import { epdsEnabled } from '../config/env';
 import { artworkFor } from '../content/artwork';
 import type { Course } from '../content/lessons';
 import { videoFor } from '../content/videos';
@@ -58,6 +61,13 @@ const colors = {
 /** Slides that move on by themselves once narration finishes. */
 const AUTO_ADVANCE_TYPES: Slide['type'][] = ['title', 'content', 'comparison', 'summary'];
 const AUTO_ADVANCE_DELAY_MS = 1400;
+
+/** Slides that offer the EPDS self-check, when it's switched on. They wait for the learner instead of moving on. */
+const SELF_CHECK_SLIDES = ['emotional-health-after-birth/getting-treatment'];
+
+function offersSelfCheck(lessonId: string, slideId: string): boolean {
+  return epdsEnabled && SELF_CHECK_SLIDES.includes(`${lessonId}/${slideId}`);
+}
 
 /** Comparison slides about urgent calls get the alert colors. */
 const ALERT_COMPARISON_SLIDE_IDS = ['two-kinds-of-calls'];
@@ -133,6 +143,12 @@ type ClassPlayerScreenProps = {
   /** Signed-in learner. Without one, reflections are kept on this device only. */
   userId: string | null;
   course: Course;
+  /** The lesson to open first, from the home screen's table of contents. */
+  initialLessonIndex?: number;
+  /** Lessons already finished, for checkmarks in the lesson list. */
+  completedLessonIds: string[];
+  onLessonOpened: (courseId: string, lessonId: string) => void;
+  onLessonCompleted: (lessonId: string) => void;
 };
 
 export function ClassPlayerScreen({
@@ -140,11 +156,19 @@ export function ClassPlayerScreen({
   onOpenBrief,
   userId,
   course,
+  initialLessonIndex = 0,
+  completedLessonIds,
+  onLessonOpened,
+  onLessonCompleted,
 }: ClassPlayerScreenProps) {
   const lessons = course.lessons;
   const courseTitle = course.title;
   const reducer = useMemo(() => makeReducer(lessons), [lessons]);
-  const [state, dispatch] = useReducer(reducer, 0, startOfLesson);
+  const [state, dispatch] = useReducer(
+    reducer,
+    Math.min(Math.max(initialLessonIndex, 0), lessons.length - 1),
+    startOfLesson,
+  );
 
   const [voiceOn, setVoiceOn] = useState(true);
   const [captionsOn, setCaptionsOn] = useState(true);
@@ -152,6 +176,8 @@ export function ClassPlayerScreen({
   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [narrationDone, setNarrationDone] = useState(false);
   const [askOpen, setAskOpen] = useState(false);
+  const [selfCheckOpen, setSelfCheckOpen] = useState(false);
+  const [lessonListOpen, setLessonListOpen] = useState(false);
   const resumeAfterAskRef = useRef(false);
 
   const voiceIdRef = useRef<string | undefined>(undefined);
@@ -164,6 +190,17 @@ export function ClassPlayerScreen({
   const slide = state.mode === 'slides' ? lesson.slides[state.slideIndex] : null;
   const quizQuestion = state.mode === 'quiz' ? lesson.reviewQuiz[state.quizIndex] : null;
   const nextLesson = lessons[state.lessonIndex + 1];
+
+  // Remember the lesson the learner is in, and mark it finished once they reach the end.
+  useEffect(() => {
+    onLessonOpened(lesson.courseId, lesson.lessonId);
+    // Only when the lesson changes; the callback is stable enough for this.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lesson.lessonId]);
+  useEffect(() => {
+    if (state.mode === 'done') onLessonCompleted(lesson.lessonId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [state.mode, lesson.lessonId]);
   const sourcesById = useMemo(
     () => Object.fromEntries(lesson.sources.map((s) => [s.id, s])) as Record<string, Source>,
     [lesson],
@@ -213,7 +250,12 @@ export function ClassPlayerScreen({
 
   function onNarrationFinished() {
     setNarrationDone(true);
-    if (slide && AUTO_ADVANCE_TYPES.includes(slide.type) && state.slideIndex < lesson.slides.length - 1) {
+    if (
+      slide &&
+      AUTO_ADVANCE_TYPES.includes(slide.type) &&
+      !offersSelfCheck(lesson.lessonId, slide.id) &&
+      state.slideIndex < lesson.slides.length - 1
+    ) {
       clearAdvance();
       advanceTimerRef.current = setTimeout(() => dispatch({ type: 'next' }), AUTO_ADVANCE_DELAY_MS);
     }
@@ -345,6 +387,15 @@ export function ClassPlayerScreen({
     resumeAfterAskRef.current = false;
   }
 
+  function openSelfCheck() {
+    clearAdvance();
+    if (playing) {
+      stopSpeech();
+      setPlaying(false);
+    }
+    setSelfCheckOpen(true);
+  }
+
   function toggleVoice() {
     clearAdvance();
     if (voiceOn) {
@@ -365,7 +416,17 @@ export function ClassPlayerScreen({
     else stopSpeech();
   }
 
+  function openLessonList() {
+    clearAdvance();
+    if (playing) {
+      stopSpeech();
+      setPlaying(false);
+    }
+    setLessonListOpen(true);
+  }
+
   function loadLesson(index: number) {
+    setLessonListOpen(false);
     clearAdvance();
     stopSpeech();
     dispatch({ type: 'load', lessonIndex: index });
@@ -415,6 +476,17 @@ export function ClassPlayerScreen({
           >
             <Text style={styles.homeButtonText}>‹ Home</Text>
           </Pressable>
+          <Pressable
+            accessibilityHint="Shows every lesson in this module, so you can switch."
+            accessibilityLabel="Lessons"
+            accessibilityRole="button"
+            hitSlop={8}
+            onPress={openLessonList}
+            style={styles.lessonsButton}
+            testID="button-open-lesson-list"
+          >
+            <Text style={styles.homeButtonText}>☰ Lessons</Text>
+          </Pressable>
           <Text numberOfLines={1} style={styles.agendaTitle}>
             {lesson.title}
           </Text>
@@ -440,13 +512,20 @@ export function ClassPlayerScreen({
 
       <ScrollView ref={stageRef} contentContainerStyle={styles.stage} keyboardShouldPersistTaps="handled">
         {state.mode === 'intro' ? (
-          <IntroSlide courseTitle={courseTitle} lesson={lesson} lessons={lessons} onPickLesson={loadLesson} />
+          <IntroSlide
+            completedLessonIds={completedLessonIds}
+            courseTitle={courseTitle}
+            lesson={lesson}
+            lessons={lessons}
+            onPickLesson={loadLesson}
+          />
         ) : null}
         {slide ? (
           <SlideView
             answer={state.answer}
             lesson={lesson}
             onAnswer={answerQuestion}
+            onOpenSelfCheck={openSelfCheck}
             onVideoPlay={onVideoPlay}
             userId={userId}
             slide={slide}
@@ -539,6 +618,16 @@ export function ClassPlayerScreen({
         visible={askOpen}
         voiceOn={voiceOn}
       />
+      <LessonListSheet
+        completedLessonIds={completedLessonIds}
+        courseTitle={courseTitle}
+        currentLessonId={lesson.lessonId}
+        lessons={lessons}
+        onClose={() => setLessonListOpen(false)}
+        onPick={loadLesson}
+        visible={lessonListOpen}
+      />
+      {epdsEnabled ? <SelfCheckSheet onClose={() => setSelfCheckOpen(false)} visible={selfCheckOpen} /> : null}
     </SafeAreaView>
   );
 }
@@ -574,11 +663,13 @@ function IntroSlide({
   lesson,
   lessons,
   courseTitle,
+  completedLessonIds,
   onPickLesson,
 }: {
   lesson: Lesson;
   lessons: Lesson[];
   courseTitle: string;
+  completedLessonIds: string[];
   onPickLesson: (index: number) => void;
 }) {
   return (
@@ -596,6 +687,7 @@ function IntroSlide({
             >
               <Text style={[styles.lessonChipText, current && styles.lessonChipTextCurrent]}>
                 {l.order}. {l.title}
+                {completedLessonIds.includes(l.lessonId) ? ' ✓' : ''}
               </Text>
             </Pressable>
           );
@@ -622,6 +714,7 @@ function SlideView({
   sourcesById,
   answer,
   onAnswer,
+  onOpenSelfCheck,
   onVideoPlay,
 }: {
   slide: Slide;
@@ -630,6 +723,7 @@ function SlideView({
   sourcesById: Record<string, Source>;
   answer: number | null;
   onAnswer: (question: CheckInQuestion, index: number) => void;
+  onOpenSelfCheck: () => void;
   onVideoPlay: () => void;
 }) {
   const sources = <SourceList sources={slide.sourceIds.map((id) => sourcesById[id]).filter(Boolean)} />;
@@ -738,6 +832,16 @@ function SlideView({
           <Text style={styles.heading}>{slide.heading}</Text>
           <SlideVisual lessonId={lesson.lessonId} slide={slide} />
           <Bullets items={slide.onScreen} />
+          {offersSelfCheck(lesson.lessonId, slide.id) ? (
+            <Pressable
+              accessibilityHint="Opens a private 10-question check for depression and anxiety. Your answers aren't saved."
+              accessibilityRole="button"
+              onPress={onOpenSelfCheck}
+              style={[styles.briefButton, styles.selfCheckButton]}
+            >
+              <Text style={styles.briefButtonText}>Check in with yourself</Text>
+            </Pressable>
+          ) : null}
           {sources}
         </View>
       );
@@ -944,6 +1048,7 @@ const styles = StyleSheet.create({
   agenda: { paddingHorizontal: 16, paddingTop: 10, paddingBottom: 8, gap: 8 },
   agendaTop: { flexDirection: 'row', alignItems: 'center', gap: 12 },
   homeButton: { paddingVertical: 4 },
+  lessonsButton: { paddingVertical: 4 },
   homeButtonText: { color: colors.lagoon, fontSize: 16, fontWeight: '700' },
   agendaTitle: { flex: 1, color: colors.ink, fontSize: 16, fontWeight: '700' },
   askButton: {
@@ -1074,6 +1179,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   briefButtonText: { color: colors.lagoon, fontSize: 15, fontWeight: '700' },
+  selfCheckButton: { alignSelf: 'flex-start' },
   sources: { borderTopWidth: 1, borderTopColor: colors.line, paddingTop: 10, gap: 4 },
   sourcesLabel: { color: colors.muted, fontSize: 12, fontWeight: '700', textTransform: 'uppercase' },
   sourceLink: { color: colors.lagoon, fontSize: 13, textDecorationLine: 'underline' },

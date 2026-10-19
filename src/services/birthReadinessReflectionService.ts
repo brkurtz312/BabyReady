@@ -127,6 +127,12 @@ async function loadDeviceReflections(): Promise<SavedReflection[]> {
   });
 }
 
+/** Removes every device copy of reflection answers. Used when the learner deletes their data. */
+export async function clearDeviceReflections(): Promise<void> {
+  const keys = (await AsyncStorage.getAllKeys()).filter((k) => k.startsWith(LOCAL_PREFIX));
+  if (keys.length) await AsyncStorage.multiRemove(keys);
+}
+
 /** Watches all of a learner's reflection answers for the Birth Readiness Brief. */
 export function subscribeToReflections(
   userId: string | null,

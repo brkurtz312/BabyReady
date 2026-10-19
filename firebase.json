@@ -5,10 +5,18 @@
   },
   "hosting": {
     "public": "dist",
+    "cleanUrls": true,
     "ignore": [
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
+    ],
+    "redirects": [
+      {
+        "source": "/privacy",
+        "destination": "https://brk-services.com/privacy-policy-babyready.html",
+        "type": 301
+      }
     ],
     "rewrites": [
       {

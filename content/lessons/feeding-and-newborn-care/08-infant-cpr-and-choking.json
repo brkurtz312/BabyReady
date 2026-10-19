@@ -1,0 +1,312 @@
+{
+  "courseId": "feeding-and-newborn-care",
+  "lessonId": "infant-cpr-and-choking",
+  "order": 8,
+  "title": "Infant CPR and Choking",
+  "learningGoals": [
+    "Tell the difference between a baby who is coughing and one who is severely choking",
+    "Know the steps to help a choking baby",
+    "Know when to start infant CPR and how to call for help",
+    "Know the steps of infant CPR",
+    "Prevent choking, and plan to take a hands-on class"
+  ],
+  "estimatedMinutes": 12,
+  "review": {
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-18",
+    "nextReviewBy": "2027-10-18",
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 5.8 of Module 5 (Feeding and Newborn Care), added to the curriculum at the reviewer's request. An introduction that points learners to a hands-on class, not a certification. Builds on lesson 5.4 (never propping a bottle) and lesson 6.3 (when to call 911 for your baby). Uses AHA and American Red Cross sources, which the reviewer approved as sources for CPR and choking. Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: compressions follow the 2025 AHA and AAP pediatric BLS guidelines, which removed the two-finger technique and recommend two thumbs with encircling hands or the heel of one hand, about 1.5 inches (a third of chest depth), 100 to 120 a minute, 30 compressions to 2 breaths for a single rescuer; choking care (alternate 5 back blows and 5 chest thrusts, no abdominal thrusts) follows the 2025 AHA guidance and the HealthyChildren summary, with chest thrusts by the heel of one hand per the 2025 AHA interim manual as quoted in search results; the American Red Cross consumer choking page still shows two fingers for chest thrusts, so the two sources differ on this point; calling 911 and starting CPR right away with a phone, and about 2 minutes of CPR first when alone without a phone, follow the AHA 2025 summary and the Red Cross; putting the phone on speaker is common dispatcher-assisted practice not confirmed on these pages; letting a baby who coughs hard keep coughing, no blind finger sweeps, and looking in the mouth when a choking baby goes limp follow the Red Cross choking page; the prevention list (no propped bottles, small objects, balloons, magnets, button batteries, toy parts, soft foods in tiny pieces when solids start) follows the AAP choking prevention page, with magnets and button batteries needing emergency care being standard teaching; taking a class through a hospital, the Red Cross, or the AHA follows the AAP choking prevention page; refreshing every couple of years reflects typical two-year certification, not confirmed on these pages. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): approve the AHA and the American Red Cross as sources for CPR and choking; keep the 2025 compression technique and the check-in about the dropped two-finger method; keep the heel of one hand for choking chest thrusts, noting here that the Red Cross consumer page still shows two fingers; keep the calling steps, the choking signs and cautions, the prevention list, and refreshing the class every couple of years; replace the choking and CPR step lists with simple diagrams drawn in code, each with the call-911 step shown in red above it."
+  },
+  "sources": [
+    {
+      "id": "aha-peds-bls-2025",
+      "organization": "AHA",
+      "title": "Part 6: Pediatric Basic Life Support (2025 AHA and AAP Guidelines for CPR and ECC)",
+      "url": "https://cpr.heart.org/en/resuscitation-science/cpr-and-ecc-guidelines/pediatric-basic-life-support",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "aha-family-friends-2025",
+      "organization": "AHA",
+      "title": "2025 Guidelines Updates: Family & Friends CPR",
+      "url": "https://cpr.heart.org/en/-/media/CPR-Files/Courses-and-Kits/CPR-First-Aid-Anywhere/KJ2004-2025-GL-Update-Family-_-Friends_260407_FINAL.pdf?sc_lang=en",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "aha-hq-cpr-2025",
+      "organization": "AHA",
+      "title": "Summary of High-Quality CPR (2025)",
+      "url": "https://www.heart.org/-/media/6F6AA2073C974E00B84957BBB2E4AECB.pdf",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "aap-cpr-update-2025",
+      "organization": "AAP",
+      "title": "AHA, AAP Update CPR Guidelines To Help Save Young Lives (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/news/Pages/AHA-and-AAP-release-update-CPR-guidelines-to-help-save-young-lives.aspx",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "aap-choking-prevention",
+      "organization": "AAP",
+      "title": "Choking Prevention for Babies & Children (HealthyChildren.org)",
+      "url": "https://www.healthychildren.org/English/health-issues/injuries-emergencies/Pages/Choking-Prevention.aspx",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "redcross-infant-choking",
+      "organization": "American Red Cross",
+      "title": "Infant Choking: How To Help",
+      "url": "https://www.redcross.org/take-a-class/resources/learn-first-aid/infant-choking",
+      "verifiedOn": "2026-10-18"
+    },
+    {
+      "id": "redcross-infant-cardiac-arrest",
+      "organization": "American Red Cross",
+      "title": "Cardiac Arrest in Infants",
+      "url": "https://www.redcross.org/take-a-class/resources/learn-first-aid/infant-cardiac-arrest",
+      "verifiedOn": "2026-10-18"
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Infant CPR and Choking",
+      "onScreen": [
+        "Module 5: Feeding and Newborn Care"
+      ],
+      "narration": "Emergencies with babies are rare, but knowing what to do can save a life. In this lesson, we'll cover how to tell when a baby is choking, the steps to clear a blocked airway, the steps of infant CPR, and how to prevent choking. This lesson is an introduction, not a replacement for a hands-on class, so we'll also talk about where to take one.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A bright community classroom: two expectant parents in everyday clothes kneel at a table practicing chest compressions on an infant-sized training manikin, while an instructor kneels beside them and points to the manikin's chest. The manikin is clearly a plastic training doll, not a real baby. No readable writing."
+      }
+    },
+    {
+      "id": "take-a-class",
+      "type": "content",
+      "heading": "Take a hands-on class",
+      "onScreen": [
+        "Practice on a manikin with an instructor",
+        "Ask your hospital, the American Red Cross, or the American Heart Association",
+        "Take it before your baby arrives",
+        "Invite grandparents, sitters, and anyone who cares for your baby"
+      ],
+      "narration": "Watching a lesson helps, but CPR is a hands-on skill. The best way to learn is to practice on an infant manikin with an instructor who can check your hand position and depth. Many hospitals offer infant CPR and choking classes for expectant parents, and the American Red Cross and the American Heart Association offer them too, in person and blended with online learning. Take a class before your baby arrives, refresh it every couple of years, and invite grandparents, sitters, and anyone else who will care for your baby.",
+      "sourceIds": [
+        "aap-choking-prevention",
+        "aha-family-friends-2025"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a hand for practicing on a manikin, a hospital for your hospital, a heart for the Red Cross or the American Heart Association, and a group of people for grandparents and sitters."
+      }
+    },
+    {
+      "id": "is-it-choking",
+      "type": "content",
+      "heading": "Is your baby choking?",
+      "onScreen": [
+        "Coughing hard or crying: let them cough, and stay close",
+        "Can't cry, cough, or breathe: that's severe choking",
+        "Other signs: a weak, silent cough, high-pitched sounds, or bluish lips",
+        "Never sweep the mouth with your finger unless you can see the object"
+      ],
+      "narration": "Babies often gag or cough while they learn to feed, and that's normal. If your baby is coughing hard or crying, air is getting through, so let them keep coughing, stay close, and watch them carefully. Don't pat their back or reach into their mouth. Severe choking is different: your baby can't cry, cough, or breathe, or has only a weak, silent cough or high-pitched noises, and their lips may turn bluish. That needs help right away. And never sweep a baby's mouth with your finger unless you can see the object, because you could push it farther in.",
+      "sourceIds": [
+        "redcross-infant-choking",
+        "aap-choking-prevention"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a speaking bubble for coughing hard, let them cough; a crossed circle for can't cry, cough, or breathe (alert); a droplet for bluish lips (alert); and a hand for no blind finger sweeps."
+      }
+    },
+    {
+      "id": "choking-steps",
+      "type": "content",
+      "heading": "If your baby is severely choking",
+      "onScreen": [
+        "Shout for help; have someone call 911",
+        "5 back blows: face down along your forearm, head lower, heel of your hand between the shoulder blades",
+        "5 chest thrusts: face up, head lower, heel of one hand on the center of the chest",
+        "Repeat until the object comes out or your baby goes limp"
+      ],
+      "narration": "If your baby can't cry, cough, or breathe, shout for help and have someone call 911. Sit or kneel, and lay your baby face down along your forearm, resting on your thigh, with their head lower than their chest, supporting the jaw with your hand. Give five firm back blows between the shoulder blades with the heel of your other hand. Then turn your baby face up along your other forearm, head still lower, and give five quick chest thrusts with the heel of one hand on the center of the chest, just below the nipple line. Keep alternating five back blows and five chest thrusts until the object comes out or your baby becomes limp. Never use abdominal thrusts on a baby.",
+      "sourceIds": [
+        "aha-peds-bls-2025",
+        "aap-cpr-update-2025",
+        "redcross-infant-choking"
+      ],
+      "visual": {
+        "kind": "diagram",
+        "description": "A red first step, shout for help and have someone call 911, above a simple side-view diagram in two panels: 5 back blows, the baby face down along the adult's forearm with the head lower, the heel of the hand between the shoulder blades; and 5 chest thrusts, the baby face up along the forearm with the head lower, the heel of one hand on the center of the chest."
+      }
+    },
+    {
+      "id": "checkin-choking",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": [
+        "redcross-infant-choking"
+      ],
+      "question": {
+        "prompt": "Your baby gags on milk and is coughing hard and crying. What should you do?",
+        "options": [
+          "Start back blows right away",
+          "Let them keep coughing, stay close, and watch",
+          "Sweep their mouth with your finger"
+        ],
+        "correctIndex": 1,
+        "explanation": "Hard coughing and crying mean air is getting through. Let your baby cough and watch closely. Start back blows and chest thrusts only if they can't cry, cough, or breathe."
+      }
+    },
+    {
+      "id": "not-breathing",
+      "type": "safety",
+      "heading": "If your baby is limp or not breathing",
+      "onScreen": [
+        "Tap the foot and shout; check for normal breathing",
+        "Not responding, and not breathing or only gasping: start CPR",
+        "Shout for help; call 911 on speaker; send someone for an AED",
+        "Alone without a phone? Give 2 minutes of CPR, then call 911"
+      ],
+      "narration": "If your baby goes limp, or you find them not moving, tap the bottom of their foot and shout their name, and look for normal breathing. If your baby doesn't respond and isn't breathing, or is only gasping, start CPR right away. Shout for help. Call 911 and put the phone on speaker so the dispatcher can guide you while you work, and send someone to find an AED if one is nearby. If you're alone and don't have a phone, give about two minutes of CPR first, then call 911, carrying your baby with you if you can. If your baby went limp while choking, look in the mouth before giving breaths, and remove the object only if you can see it.",
+      "sourceIds": [
+        "aha-peds-bls-2025",
+        "aha-hq-cpr-2025",
+        "redcross-infant-cardiac-arrest",
+        "redcross-infant-choking"
+      ]
+    },
+    {
+      "id": "cpr-steps",
+      "type": "content",
+      "heading": "The steps of infant CPR",
+      "onScreen": [
+        "On a firm, flat surface, on their back",
+        "30 compressions: two thumbs or the heel of one hand, center of the chest, about 1½ inches deep, fast",
+        "2 gentle breaths: tilt the head slightly, cover the mouth and nose, watch the chest rise",
+        "Repeat 30 and 2 until help arrives or your baby starts breathing"
+      ],
+      "narration": "Lay your baby on their back on a firm, flat surface. For compressions, either wrap your hands around the chest and press with both thumbs, or use the heel of one hand, on the center of the chest just below the nipple line. Push down about one and a half inches, about a third of the depth of the chest, and let it come all the way back up. Push fast, about 100 to 120 times a minute, and give 30 compressions. Then give 2 breaths: tilt the head back just slightly, cover your baby's mouth and nose with your mouth, and breathe gently for about one second each, just enough to see the chest rise. Breaths matter for babies, because their emergencies usually start with a breathing problem. Keep repeating 30 compressions and 2 breaths until help takes over or your baby starts breathing.",
+      "sourceIds": [
+        "aha-peds-bls-2025",
+        "aha-family-friends-2025",
+        "aha-hq-cpr-2025",
+        "redcross-infant-cardiac-arrest"
+      ],
+      "visual": {
+        "kind": "diagram",
+        "description": "A red first step, call 911 on speaker and then start CPR, above a simple top-down diagram of a baby on their back in two panels: two thumbs side by side on the center of the chest just below the nipple line, with the hands wrapped around the chest; or the heel of one hand in the same spot."
+      }
+    },
+    {
+      "id": "checkin-cpr",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's check in.",
+      "sourceIds": [
+        "aha-peds-bls-2025",
+        "aap-cpr-update-2025"
+      ],
+      "question": {
+        "prompt": "Which is the current way to give chest compressions to a baby?",
+        "options": [
+          "Two fingers on the breastbone",
+          "Two thumbs with your hands around the chest, or the heel of one hand",
+          "Both hands, one on top of the other, like an adult"
+        ],
+        "correctIndex": 1,
+        "explanation": "The 2025 guidelines dropped the two-finger method because it often isn't deep enough. Use two thumbs with your hands wrapped around the chest, or the heel of one hand, about 1½ inches deep."
+      }
+    },
+    {
+      "id": "prevent-choking",
+      "type": "content",
+      "heading": "Preventing choking",
+      "onScreen": [
+        "Never prop a bottle; hold your baby to feed",
+        "Keep small objects, balloons, magnets, and button batteries out of reach",
+        "Check toys for small or loose parts",
+        "When solids start, soft foods in tiny pieces, always watched"
+      ],
+      "narration": "Most choking can be prevented. Always hold your baby for bottle feeds, and never prop a bottle. Babies put everything in their mouths, so get down to their level and look for small things they could reach, like coins, buttons, pen caps, balloons, magnets, and button batteries. Swallowed magnets and button batteries can cause serious injury, so get emergency care right away if you think your baby swallowed one. Check toys for small or loose parts. And when your baby starts solid foods, usually around six months, offer soft foods in tiny pieces, and always watch them while they eat.",
+      "sourceIds": [
+        "aap-choking-prevention"
+      ],
+      "visual": {
+        "kind": "icon-list",
+        "description": "Four simple icons with short labels: a milk bottle for never propping a bottle, a ban sign for small objects and button batteries (alert), a puzzle piece for checking toys, and a utensils icon for soft foods in tiny pieces."
+      }
+    },
+    {
+      "id": "emergency-plan",
+      "type": "reflection",
+      "heading": "Your emergency plan",
+      "onScreen": [
+        "Who will take an infant CPR class, and when",
+        "Where you'll take it",
+        "Your address, ready to give 911"
+      ],
+      "narration": "Let's make a plan. Who in your family will take an infant CPR and choking class, and when? Where will you take it? And post your address somewhere easy to see, so you or a sitter can give it to 911 quickly. Save your answers to your Birth Readiness Brief.",
+      "sourceIds": [],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "Write who will take an infant CPR and choking class and when, where you'll take it, and where you'll post your address for 911."
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Coughing or crying: let them cough. Can't cry, cough, or breathe: act now",
+        "Choking: 5 back blows, then 5 chest thrusts, and repeat",
+        "Not breathing: call 911 on speaker; 30 compressions, then 2 breaths",
+        "Take a hands-on class before your baby arrives"
+      ],
+      "narration": "Let's recap. If your baby is coughing hard or crying, let them cough and stay close. If they can't cry, cough, or breathe, call for help and alternate five back blows and five chest thrusts. If your baby doesn't respond and isn't breathing normally, call 911 on speaker and start CPR: 30 compressions with two thumbs or the heel of one hand, then 2 gentle breaths, again and again. Prevent choking by keeping small objects away and never propping a bottle. And take a hands-on class before your baby arrives. Next up, a few review questions.",
+      "sourceIds": [
+        "aha-peds-bls-2025",
+        "redcross-infant-choking",
+        "aap-choking-prevention"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "Your baby can't cry, cough, or breathe. What do you do first?",
+      "options": [
+        "Give abdominal thrusts",
+        "Have someone call 911, and alternate 5 back blows and 5 chest thrusts",
+        "Turn them upside down and shake gently"
+      ],
+      "correctIndex": 1,
+      "explanation": "Shout for help and have someone call 911, then alternate 5 back blows and 5 chest thrusts until the object comes out or your baby goes limp. Never use abdominal thrusts on a baby."
+    },
+    {
+      "prompt": "In infant CPR, how many compressions come before each pair of breaths?",
+      "options": [
+        "5",
+        "15",
+        "30"
+      ],
+      "correctIndex": 2,
+      "explanation": "Give 30 compressions, then 2 gentle breaths over the mouth and nose, and keep repeating until help takes over or your baby starts breathing."
+    },
+    {
+      "prompt": "You're alone with no phone, and your baby isn't breathing. What should you do?",
+      "options": [
+        "Give about 2 minutes of CPR, then call 911",
+        "Run to a neighbor first",
+        "Wait to see if your baby starts breathing on their own"
+      ],
+      "correctIndex": 0,
+      "explanation": "If you're alone without a phone, give about 2 minutes of CPR first, then call 911. With a phone, call right away on speaker and start CPR."
+    }
+  ]
+}

@@ -16,7 +16,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. No source was found for shortness-of-breath or frequent-urination relief tips, so those tips were left out. No kick-count number is given; the lesson defers to the care team, matching CDC and Lamaze wording."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. No source was found for shortness-of-breath or frequent-urination relief tips, so those tips were left out. No kick-count number is given; the lesson defers to the care team, matching CDC and Lamaze wording. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed."
   },
   "sources": [
     {
@@ -96,8 +96,7 @@
       "type": "title",
       "heading": "Your Body in the Third Trimester",
       "onScreen": [
-        "Preparing for Birth · Lesson 2",
-        "About 12 minutes"
+        "Module 1: Preparing for Birth"
       ],
       "narration": "Welcome back. In this lesson, we'll talk about your body in the third trimester. That's the last stretch of pregnancy. We'll cover common changes you might notice, simple ways to feel more comfortable, how to get to know your baby's movements, and how to tell what can wait for your next visit from what needs a call right now. Get comfy, and let's begin.",
       "sourceIds": [],

@@ -15,7 +15,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. ACOG Committee Opinion 766 was checked against its public abstract only. No approved source was found giving typical hospital limits on the number of support people, so the lesson tells learners to ask their birth place. Pet care appears only in the reflection prompt, since no approved source covers it."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. ACOG Committee Opinion 766 was checked against its public abstract only. No approved source was found giving typical hospital limits on the number of support people, so the lesson tells learners to ask their birth place. Pet care appears only in the reflection prompt, since no approved source covers it. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed."
   },
   "sources": [
     {
@@ -95,8 +95,7 @@
       "type": "title",
       "heading": "Building Your Support Team",
       "onScreen": [
-        "Preparing for Birth · Lesson 4",
-        "About 10 minutes"
+        "Module 1: Preparing for Birth"
       ],
       "narration": "Welcome back. In the last lesson, we met your care team. Now let's talk about your support team: the people who help you feel safe and cared for during labor, and who help out once your baby comes home. We'll cover choosing your support people, what a doula does, and how to plan who helps when. If someone will be supporting you, invite them to watch this one with you.",
       "sourceIds": [],

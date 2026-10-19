@@ -16,7 +16,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. Committee Opinion 766 was checked against its public abstract only (full text is on the Obstetrics & Gynecology site). Eating in labor is framed as a question for the care team because no approved page fetched gave guidance on it."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. Committee Opinion 766 was checked against its public abstract only (full text is on the Obstetrics & Gynecology site). Eating in labor is framed as a question for the care team because no approved page fetched gave guidance on it. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed."
   },
   "sources": [
     {
@@ -68,8 +68,7 @@
       "type": "title",
       "heading": "Birth Preferences, Not a Script",
       "onScreen": [
-        "Preparing for Birth · Lesson 5",
-        "About 12 minutes"
+        "Module 1: Preparing for Birth"
       ],
       "narration": "Welcome back. In this lesson, we'll talk about birth preferences. You'll learn what they are, what topics they can cover, and how to talk them through with your care team. We'll also talk about what to do when plans change, and a few simple questions that help you make choices together with your team. By the end, you'll write down your top three wishes and one question for your next visit. Grab a pen, or your support person, and let's begin.",
       "sourceIds": [],
