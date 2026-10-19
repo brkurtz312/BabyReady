@@ -16,7 +16,10 @@ import {
   useBabyReadyAuth,
 } from './src/auth/AuthProvider';
 import { DeleteDataSheet } from './src/components/DeleteDataSheet';
+import { PaywallSheet } from './src/components/PaywallSheet';
 import { courses, type Course } from './src/content/lessons';
+import { paywallEnabled } from './src/config/env';
+import { useFullClassAccess } from './src/hooks/useFullClassAccess';
 import { firebaseIsConfigured } from './src/lib/firebase';
 import {
   EMPTY_PROGRESS,
@@ -52,6 +55,8 @@ function BabyReadyApp() {
   const [expandedCourseId, setExpandedCourseId] = useState<string | null>(null);
   const [progress, setProgress] = useState<LearnerProgress>(EMPTY_PROGRESS);
   const [deleteSheetOpen, setDeleteSheetOpen] = useState(false);
+  const [paywallOpen, setPaywallOpen] = useState(false);
+  const access = useFullClassAccess();
 
   const userId = authState.status === 'ready' ? authState.user.uid : null;
 
@@ -74,12 +79,34 @@ function BabyReadyApp() {
     [userId],
   );
 
+  const lockedLessonIds = (course: Course) =>
+    course.lessons.filter((l) => access.isLocked(course.courseId, l.lessonId)).map((l) => l.lessonId);
+
   const openCourse = (course: Course, lessonIndex: number) => {
+    if (access.isLocked(course.courseId, course.lessons[lessonIndex].lessonId)) {
+      setPaywallOpen(true);
+      return;
+    }
     setSelectedCourse(course);
     setStartLessonIndex(lessonIndex);
     setOpenCount((n) => n + 1);
     setActiveView('class-player');
   };
+
+  /** Opens a module where the learner left off, skipping lessons they haven't unlocked. */
+  const startCourse = (course: Course) => {
+    const lessonIds = course.lessons.map((l) => l.lessonId);
+    const open = (k: number) => !access.isLocked(course.courseId, lessonIds[k]);
+    let index = nextLessonIndex(lessonIds, progress.completedLessonIds);
+    if (!open(index)) {
+      const unfinished = lessonIds.findIndex((id, k) => open(k) && !progress.completedLessonIds.includes(id));
+      index = unfinished >= 0 ? unfinished : lessonIds.findIndex((_, k) => open(k));
+    }
+    if (index < 0) setPaywallOpen(true);
+    else openCourse(course, index);
+  };
+
+  const paywall = <PaywallSheet access={access} onClose={() => setPaywallOpen(false)} visible={paywallOpen} />;
 
   const lastCourse = progress.lastLesson
     ? courses.find((c) => c.courseId === progress.lastLesson?.courseId)
@@ -106,20 +133,25 @@ function BabyReadyApp() {
 
   if (activeView === 'class-player' && selectedCourse) {
     return (
-      <ClassPlayerScreen
-        // Each open starts the player fresh at the chosen lesson.
-        key={`${selectedCourse.courseId}:${openCount}`}
-        completedLessonIds={progress.completedLessonIds}
-        course={selectedCourse}
-        initialLessonIndex={startLessonIndex}
-        onExit={() => setActiveView('learner')}
-        onLessonCompleted={(lessonId) => updateProgress((p) => withLessonCompleted(p, lessonId))}
-        onLessonOpened={(courseId, lessonId) =>
-          updateProgress((p) => withLessonOpened(p, courseId, lessonId, Date.now()))
-        }
-        onOpenBrief={() => setActiveView('birth-readiness-brief')}
-        userId={userId}
-      />
+      <>
+        <ClassPlayerScreen
+          // Each open starts the player fresh at the chosen lesson.
+          key={`${selectedCourse.courseId}:${openCount}`}
+          completedLessonIds={progress.completedLessonIds}
+          course={selectedCourse}
+          initialLessonIndex={startLessonIndex}
+          lockedLessonIds={lockedLessonIds(selectedCourse)}
+          onExit={() => setActiveView('learner')}
+          onLessonCompleted={(lessonId) => updateProgress((p) => withLessonCompleted(p, lessonId))}
+          onLessonOpened={(courseId, lessonId) =>
+            updateProgress((p) => withLessonOpened(p, courseId, lessonId, Date.now()))
+          }
+          onLockedLesson={() => setPaywallOpen(true)}
+          onOpenBrief={() => setActiveView('birth-readiness-brief')}
+          userId={userId}
+        />
+        {paywall}
+      </>
     );
   }
 
@@ -198,7 +230,7 @@ function BabyReadyApp() {
                   accessibilityHint={`Opens the narrated ${course.title} class.`}
                   accessibilityLabel={`${buttonLabel}: ${course.title}`}
                   accessibilityRole="button"
-                  onPress={() => openCourse(course, nextLessonIndex(lessonIds, progress.completedLessonIds))}
+                  onPress={() => startCourse(course)}
                   style={styles.learningPlanButton}
                   testID={`button-open-class-${course.courseId}`}
                 >
@@ -221,10 +253,11 @@ function BabyReadyApp() {
                 <View style={styles.lessonList}>
                   {course.lessons.map((lesson, k) => {
                     const finished = progress.completedLessonIds.includes(lesson.lessonId);
+                    const locked = access.isLocked(course.courseId, lesson.lessonId);
                     return (
                       <Pressable
-                        accessibilityHint="Opens this lesson."
-                        accessibilityLabel={`Lesson ${lesson.order}, ${lesson.title}, about ${lesson.estimatedMinutes} minutes${finished ? ', finished' : ''}`}
+                        accessibilityHint={locked ? 'Part of the full class. Shows how to unlock it.' : 'Opens this lesson.'}
+                        accessibilityLabel={`Lesson ${lesson.order}, ${lesson.title}, about ${lesson.estimatedMinutes} minutes${finished ? ', finished' : ''}${locked ? ', locked' : ''}`}
                         accessibilityRole="button"
                         key={lesson.lessonId}
                         onPress={() => openCourse(course, k)}
@@ -234,11 +267,17 @@ function BabyReadyApp() {
                         <Text style={styles.lessonNumber}>{lesson.order}</Text>
                         <View style={styles.lessonRowText}>
                           <Text style={styles.lessonTitle}>{lesson.title}</Text>
-                          <Text style={styles.lessonMeta}>About {lesson.estimatedMinutes} minutes</Text>
+                          <Text style={styles.lessonMeta}>
+                            About {lesson.estimatedMinutes} minutes{locked ? ' · Full class' : ''}
+                          </Text>
                         </View>
                         {finished ? (
                           <Text accessibilityElementsHidden importantForAccessibility="no" style={styles.lessonCheck}>
                             ✓
+                          </Text>
+                        ) : locked ? (
+                          <Text accessibilityElementsHidden importantForAccessibility="no" style={styles.lessonLock}>
+                            🔒
                           </Text>
                         ) : null}
                       </Pressable>
@@ -249,6 +288,30 @@ function BabyReadyApp() {
             </View>
           );
         })}
+
+        {paywallEnabled && !access.unlocked ? (
+          <View style={styles.learningPlanCard}>
+            <View style={styles.learningPlanCopy}>
+              <Text style={styles.learningPlanEyebrow}>FULL CLASS</Text>
+              <Text style={styles.learningPlanTitle}>Unlock every lesson</Text>
+              <Text style={styles.learningPlanText}>
+                Early Pregnancy Basics and every lesson on when to get urgent help are free. One purchase opens
+                the rest of the class.
+              </Text>
+            </View>
+            <Pressable
+              accessibilityHint="Shows the full-class purchase and Restore Purchase."
+              accessibilityRole="button"
+              onPress={() => setPaywallOpen(true)}
+              style={styles.learningPlanButton}
+              testID="button-open-paywall"
+            >
+              <Text style={styles.learningPlanButtonText}>
+                {access.canBuy ? 'Unlock or restore' : 'How to unlock'}
+              </Text>
+            </Pressable>
+          </View>
+        ) : null}
 
         <View style={styles.learningPlanCard}>
           <View style={styles.learningPlanCopy}>
@@ -348,6 +411,7 @@ function BabyReadyApp() {
         userId={userId}
         visible={deleteSheetOpen}
       />
+      {paywall}
     </SafeAreaView>
   );
 }
@@ -528,6 +592,9 @@ const styles = StyleSheet.create({
     color: '#01696F',
     fontSize: 19,
     fontWeight: '800',
+  },
+  lessonLock: {
+    fontSize: 17,
   },
   safetyCard: {
     backgroundColor: '#FFF5F8',

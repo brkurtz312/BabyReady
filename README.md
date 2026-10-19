@@ -96,6 +96,17 @@ EXPO_PUBLIC_ENABLE_EPDS=true
 
 Keep it off in production until written permission to use the scale in the app has come from its copyright holder, the Royal College of Psychiatrists. Answers are never saved or sent anywhere.
 
+### Full-class purchase
+
+Early Pregnancy Basics, the class welcome, and every lesson on when to get urgent help are free. The rest of the class is one non-consumable purchase through RevenueCat (`src/services/purchaseService.ts`, `src/components/PaywallSheet.tsx`). The free list is `src/lib/access.ts`, tested in `tests/access.test.mjs`. It's off unless this is set:
+
+```bash
+EXPO_PUBLIC_ENABLE_PAYWALL=true
+EXPO_PUBLIC_REVENUECAT_IOS_KEY=appl_...
+```
+
+The app buys the default offering's first package attached to the `full_class` entitlement and never names the product, so the product and price are changed in App Store Connect and RevenueCat, not in code. The price shown is always the store's own `priceString`; never write an amount into the app. The web build can't buy: it shows the free lessons and points to the app for the rest.
+
 ### What instructor answers cost
 
 Each answer from `askLessonQuestion` writes one `ask_usage` line to Cloud Logging: the lesson, the model, the token counts, and the cost in dollars (`functions/src/askCost.ts`, tested in `tests/askCost.test.mjs`). It never includes the question, the answer, or the account. To see the totals:

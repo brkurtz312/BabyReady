@@ -22,6 +22,8 @@ type LessonListSheetProps = {
   lessons: Lesson[];
   currentLessonId: string;
   completedLessonIds: string[];
+  /** Lessons that need the full-class purchase. */
+  lockedLessonIds?: string[];
   onPick: (index: number) => void;
   onClose: () => void;
 };
@@ -32,10 +34,12 @@ export function LessonListSheet({
   lessons,
   currentLessonId,
   completedLessonIds,
+  lockedLessonIds = [],
   onPick,
   onClose,
 }: LessonListSheetProps) {
   const done = new Set(completedLessonIds);
+  const locked = new Set(lockedLessonIds);
   return (
     <Modal animationType="slide" onRequestClose={onClose} transparent visible={visible}>
       <Pressable accessibilityLabel="Close the lesson list" onPress={onClose} style={styles.backdrop} />
@@ -55,10 +59,17 @@ export function LessonListSheet({
           {lessons.map((lesson, k) => {
             const current = lesson.lessonId === currentLessonId;
             const finished = done.has(lesson.lessonId);
+            const isLocked = locked.has(lesson.lessonId);
             return (
               <Pressable
-                accessibilityHint={current ? 'This is the lesson you’re in.' : 'Opens this lesson.'}
-                accessibilityLabel={`Lesson ${lesson.order}, ${lesson.title}, about ${lesson.estimatedMinutes} minutes${finished ? ', finished' : ''}`}
+                accessibilityHint={
+                  current
+                    ? 'This is the lesson you’re in.'
+                    : isLocked
+                      ? 'Part of the full class. Shows how to unlock it.'
+                      : 'Opens this lesson.'
+                }
+                accessibilityLabel={`Lesson ${lesson.order}, ${lesson.title}, about ${lesson.estimatedMinutes} minutes${finished ? ', finished' : ''}${isLocked ? ', locked' : ''}`}
                 accessibilityRole="button"
                 accessibilityState={{ selected: current }}
                 key={lesson.lessonId}
@@ -71,11 +82,16 @@ export function LessonListSheet({
                   <Text style={[styles.lessonTitle, current && styles.lessonTitleCurrent]}>{lesson.title}</Text>
                   <Text style={styles.meta}>
                     About {lesson.estimatedMinutes} minutes{current ? ' · You’re here' : ''}
+                    {isLocked ? ' · Full class' : ''}
                   </Text>
                 </View>
                 {finished ? (
                   <Text accessibilityElementsHidden importantForAccessibility="no" style={styles.check}>
                     ✓
+                  </Text>
+                ) : isLocked ? (
+                  <Text accessibilityElementsHidden importantForAccessibility="no" style={styles.lock}>
+                    🔒
                   </Text>
                 ) : null}
               </Pressable>
@@ -134,4 +150,5 @@ const styles = StyleSheet.create({
   lessonTitleCurrent: { fontWeight: '800' },
   meta: { color: colors.muted, fontSize: 13, marginTop: 2 },
   check: { color: colors.lagoon, fontSize: 20, fontWeight: '800' },
+  lock: { fontSize: 18 },
 });
