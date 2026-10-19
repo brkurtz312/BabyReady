@@ -3,7 +3,8 @@
  *
  * Free for everyone: all of Early Pregnancy Basics, the class welcome, and the
  * lessons that teach when to get urgent help, for the pregnant person and the
- * baby. Decided by the clinical lead on 2026-10-19: safety guidance is never
+ * baby, including emotional health after birth (crisis lines and the EPDS
+ * self-check). Decided by the clinical lead on 2026-10-19: safety guidance is never
  * behind the purchase.
  *
  * This file has no imports so plain Node can run it in tests.
@@ -15,6 +16,7 @@ export const FREE_LESSON_IDS = [
   'welcome-how-this-class-works',
   'when-to-contact-your-care-team',
   'postpartum-warning-signs',
+  'emotional-health-after-birth',
   'when-to-call-about-your-baby',
   'safe-sleep',
   'infant-cpr-and-choking',

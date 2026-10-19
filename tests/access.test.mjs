@@ -28,6 +28,7 @@ test('every safety lesson is free', () => {
   for (const id of [
     'when-to-contact-your-care-team',
     'postpartum-warning-signs',
+    'emotional-health-after-birth',
     'when-to-call-about-your-baby',
     'safe-sleep',
     'infant-cpr-and-choking',
