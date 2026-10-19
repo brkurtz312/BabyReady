@@ -45,3 +45,14 @@ export const firebaseEmulatorConfig = {
  * confirmed.
  */
 export const epdsEnabled = booleanValue(process.env.EXPO_PUBLIC_ENABLE_EPDS);
+
+/**
+ * The full-class purchase. Off unless EXPO_PUBLIC_ENABLE_PAYWALL is "true";
+ * while off, every lesson is open. The RevenueCat keys are public SDK keys
+ * (appl_… for iOS, goog_… for Android), safe to ship in the app.
+ */
+export const paywallEnabled = booleanValue(process.env.EXPO_PUBLIC_ENABLE_PAYWALL);
+export const revenueCatKeys = {
+  ios: value(process.env.EXPO_PUBLIC_REVENUECAT_IOS_KEY),
+  android: value(process.env.EXPO_PUBLIC_REVENUECAT_ANDROID_KEY),
+};
