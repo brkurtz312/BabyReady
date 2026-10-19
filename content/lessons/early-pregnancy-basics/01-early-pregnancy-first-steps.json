@@ -5,6 +5,7 @@
   "title": "Your First Steps",
   "learningGoals": [
     "Know some common early signs of pregnancy, and that every pregnancy is different",
+    "Know how a home pregnancy test works and to call your care team to confirm a positive result",
     "Know why starting prenatal care early matters and when it is best to start",
     "Know how much folic acid public-health guidance recommends each day, and why",
     "Check with your care team before starting or stopping any medicine",
@@ -12,11 +13,11 @@
   ],
   "estimatedMinutes": 8,
   "review": {
-    "status": "reviewed",
+    "status": "draft",
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course. The old course's dehydration list included 'unable to urinate', which the ACOG page does not list; it now follows ACOG's three signs plus not keeping food or fluids down. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course. The old course's dehydration list included 'unable to urinate', which the ACOG page does not list; it now follows ACOG's three signs plus not keeping food or fluids down. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed. Draft 2026-10-19: added the slide 'Confirming your pregnancy' (home tests, hCG, calling the care team to confirm) with an NICHD source, after a learner asked the instructor how to confirm a pregnancy; awaiting clinical review."
   },
   "sources": [
     {
@@ -53,6 +54,13 @@
       "title": "Morning Sickness: Nausea and Vomiting of Pregnancy (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/morning-sickness-nausea-and-vomiting-of-pregnancy",
       "verifiedOn": "2026-10-17"
+    },
+    {
+      "id": "nichd-know-if-pregnant",
+      "organization": "NICHD",
+      "title": "How do I know if I'm pregnant?",
+      "url": "https://www.nichd.nih.gov/health/topics/pregnancy/conditioninfo/know",
+      "verifiedOn": null
     }
   ],
   "slides": [
@@ -87,6 +95,25 @@
       "visual": {
         "kind": "icon-list",
         "description": "Soft pastel icons in a row: a calendar with a circled date, a sleepy face, a glass of water, a heart with a small wave for mood. Gentle lavender and cream palette."
+      }
+    },
+    {
+      "id": "confirm-pregnancy",
+      "type": "content",
+      "heading": "Confirming your pregnancy",
+      "onScreen": [
+        "A home pregnancy test checks your urine for a pregnancy hormone called hCG",
+        "Home tests are very accurate and need no prescription",
+        "Follow the directions on the package",
+        "Positive test? Call your care team to confirm it and book your first visit"
+      ],
+      "narration": "Many people first find out they're pregnant with a home pregnancy test. These tests check your urine for a hormone called h C G. Your body starts making it soon after pregnancy begins, and the amount goes up as pregnancy goes on. Home tests are very accurate, and you can buy them without a prescription. Follow the directions on the package. If your test is positive, call your care team. They can confirm your pregnancy, sometimes with a blood test, and help you book your first prenatal visit.",
+      "sourceIds": [
+        "nichd-know-if-pregnant"
+      ],
+      "visual": {
+        "kind": "diagram",
+        "description": "Simple, friendly illustration of a home pregnancy test next to a phone, suggesting the next step is calling the care team. No result window or brand shown."
       }
     },
     {
