@@ -2390,5 +2390,1141 @@
       16729,
       20803
     ]
+  },
+  "your-newborns-first-days/weight.m4a": {
+    "fingerprint": "4fc24ef0",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6023,
+      10377,
+      14022,
+      20811
+    ]
+  },
+  "your-newborns-first-days/breathing.m4a": {
+    "fingerprint": "1de869c6",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6113,
+      11714,
+      16217,
+      20129,
+      20795
+    ]
+  },
+  "your-newborns-first-days/poop.m4a": {
+    "fingerprint": "baf1dbf6",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5533,
+      7902,
+      9728,
+      13592,
+      19235,
+      23246,
+      27160
+    ]
+  },
+  "early-pregnancy-first-steps/confirm-pregnancy.m4a": {
+    "fingerprint": "ee4c8ee8",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4098,
+      8011,
+      13592,
+      17693,
+      22394,
+      25586,
+      32187
+    ]
+  },
+  "your-newborns-first-days/quiz-1-right.m4a": {
+    "fingerprint": "0b342a15",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1157
+    ]
+  },
+  "your-newborns-first-days/your-questions.m4a": {
+    "fingerprint": "59a1b272",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4250,
+      6002,
+      9790,
+      13359,
+      15511
+    ]
+  },
+  "your-newborns-first-days/jaundice.m4a": {
+    "fingerprint": "e9552b54",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3381,
+      4908,
+      10819,
+      14649,
+      19710,
+      24746,
+      27060,
+      29278
+    ]
+  },
+  "your-newborns-first-days/summary.m4a": {
+    "fingerprint": "5b0d9154",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1662,
+      7793,
+      13844,
+      18481,
+      24056
+    ]
+  },
+  "your-newborns-first-days/quiz-1-wrong.m4a": {
+    "fingerprint": "5cc5126b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1187
+    ]
+  },
+  "your-newborns-first-days/quiz-2-right.m4a": {
+    "fingerprint": "7d33c0ff",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1163,
+      4849
+    ]
+  },
+  "your-newborns-first-days/quiz-2-wrong.m4a": {
+    "fingerprint": "dbdf2219",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      448,
+      5404
+    ]
+  },
+  "your-newborns-first-days/quiz-3-right.m4a": {
+    "fingerprint": "12b8cf66",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      690,
+      5283,
+      7220,
+      11362
+    ]
+  },
+  "your-newborns-first-days/done.m4a": {
+    "fingerprint": "bbc37957",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1021,
+      2646
+    ]
+  },
+  "your-newborns-first-days/quiz-3-wrong.m4a": {
+    "fingerprint": "7b86a654",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1171,
+      5583,
+      7394,
+      11401
+    ]
+  },
+  "newborn-care-in-the-hospital/welcome.m4a": {
+    "fingerprint": "1f9efbd7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      12085
+    ]
+  },
+  "newborn-care-in-the-hospital/vitamin-k.m4a": {
+    "fingerprint": "30cdd1f8",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5005,
+      11325,
+      15808,
+      18483,
+      21240
+    ]
+  },
+  "newborn-care-in-the-hospital/eye-ointment.m4a": {
+    "fingerprint": "1737b9fe",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5130,
+      10403,
+      12582
+    ]
+  },
+  "newborn-care-in-the-hospital/overview.m4a": {
+    "fingerprint": "b8d7b7a2",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2626,
+      6977,
+      10750,
+      13585,
+      19442
+    ]
+  },
+  "newborn-care-in-the-hospital/checkin-care-right.m4a": {
+    "fingerprint": "98decb7a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1176,
+      5594
+    ]
+  },
+  "newborn-care-in-the-hospital/checkin-care-wrong.m4a": {
+    "fingerprint": "ef5d56c4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1347,
+      5676
+    ]
+  },
+  "newborn-care-in-the-hospital/hep-b.m4a": {
+    "fingerprint": "95a76718",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2879,
+      11096,
+      13672,
+      22541,
+      26901,
+      35742
+    ]
+  },
+  "newborn-care-in-the-hospital/blood-test.m4a": {
+    "fingerprint": "872b9720",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2878,
+      7837,
+      13168,
+      15819,
+      18418
+    ]
+  },
+  "newborn-care-in-the-hospital/your-say.m4a": {
+    "fingerprint": "18a2907b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2515,
+      6675,
+      12283,
+      17991
+    ]
+  },
+  "newborn-care-in-the-hospital/hearing-heart.m4a": {
+    "fingerprint": "68a803f1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4962,
+      6823,
+      15000,
+      22693
+    ]
+  },
+  "newborn-care-in-the-hospital/quiz-1-right.m4a": {
+    "fingerprint": "de807f22",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      915
+    ]
+  },
+  "newborn-care-in-the-hospital/quiz-2-right.m4a": {
+    "fingerprint": "32a082e9",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      786
+    ]
+  },
+  "newborn-care-in-the-hospital/quiz-1-wrong.m4a": {
+    "fingerprint": "7001ab98",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1064
+    ]
+  },
+  "newborn-care-in-the-hospital/quiz-3-right.m4a": {
+    "fingerprint": "a442082b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      977
+    ]
+  },
+  "newborn-care-in-the-hospital/quiz-2-wrong.m4a": {
+    "fingerprint": "d14be737",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1375
+    ]
+  },
+  "newborn-care-in-the-hospital/done.m4a": {
+    "fingerprint": "acccc2f1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1005,
+      2370
+    ]
+  },
+  "newborn-care-in-the-hospital/quiz-3-wrong.m4a": {
+    "fingerprint": "ba027601",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      706
+    ]
+  },
+  "newborn-care-in-the-hospital/your-plan.m4a": {
+    "fingerprint": "40a38fad",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1323,
+      8648,
+      13476,
+      17444
+    ]
+  },
+  "newborn-care-in-the-hospital/summary.m4a": {
+    "fingerprint": "8a305d2a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1509,
+      5166,
+      7907,
+      15451,
+      21382
+    ]
+  },
+  "breastfeeding-basics/welcome.m4a": {
+    "fingerprint": "51c09a6d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      8114,
+      18600
+    ]
+  },
+  "breastfeeding-basics/why-and-choice.m4a": {
+    "fingerprint": "3a3acbbb",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      7521,
+      10572,
+      19862,
+      24631
+    ]
+  },
+  "breastfeeding-basics/positions.m4a": {
+    "fingerprint": "f7ca33b2",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2449,
+      8003,
+      11593,
+      17911,
+      20804,
+      26962,
+      32070
+    ]
+  },
+  "breastfeeding-basics/checkin-latch-right.m4a": {
+    "fingerprint": "8382f4ec",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1120,
+      5606
+    ]
+  },
+  "breastfeeding-basics/checkin-latch-wrong.m4a": {
+    "fingerprint": "37ace7de",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1119,
+      6160
+    ]
+  },
+  "breastfeeding-basics/enough.m4a": {
+    "fingerprint": "d928af28",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4160,
+      9936,
+      12672,
+      15146,
+      20980,
+      27938
+    ]
+  },
+  "breastfeeding-basics/first-days.m4a": {
+    "fingerprint": "7b3b59b9",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5792,
+      14498,
+      19827,
+      26528
+    ]
+  },
+  "breastfeeding-basics/cues.m4a": {
+    "fingerprint": "844b49f4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2266,
+      9522,
+      17160
+    ]
+  },
+  "breastfeeding-basics/latch.m4a": {
+    "fingerprint": "656aab84",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3991,
+      7218,
+      12750,
+      20465,
+      22519
+    ]
+  },
+  "breastfeeding-basics/challenges.m4a": {
+    "fingerprint": "7c9ec425",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3643,
+      13886,
+      17815,
+      22350,
+      28058,
+      30897,
+      36934
+    ]
+  },
+  "breastfeeding-basics/support-person.m4a": {
+    "fingerprint": "f3aaae09",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4124,
+      9000,
+      13472,
+      17800,
+      21347
+    ]
+  },
+  "breastfeeding-basics/get-help.m4a": {
+    "fingerprint": "24b6fb88",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3808,
+      9732,
+      19088,
+      25468
+    ]
+  },
+  "breastfeeding-basics/your-plan.m4a": {
+    "fingerprint": "92a6679c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1312,
+      3586,
+      8364,
+      10925,
+      13641
+    ]
+  },
+  "breastfeeding-basics/summary.m4a": {
+    "fingerprint": "c6ef0920",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3789,
+      6511,
+      10639,
+      17693,
+      22423
+    ]
+  },
+  "breastfeeding-basics/quiz-1-right.m4a": {
+    "fingerprint": "a90ca043",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      956,
+      7163
+    ]
+  },
+  "breastfeeding-basics/quiz-2-right.m4a": {
+    "fingerprint": "6f4b185c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      979
+    ]
+  },
+  "breastfeeding-basics/quiz-1-wrong.m4a": {
+    "fingerprint": "23224ead",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2180,
+      8593
+    ]
+  },
+  "breastfeeding-basics/quiz-3-right.m4a": {
+    "fingerprint": "6417606a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      834,
+      7687
+    ]
+  },
+  "breastfeeding-basics/quiz-2-wrong.m4a": {
+    "fingerprint": "edbf23fe",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1282
+    ]
+  },
+  "breastfeeding-basics/quiz-3-wrong.m4a": {
+    "fingerprint": "50ecd8c4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1191,
+      8260
+    ]
+  },
+  "breastfeeding-basics/done.m4a": {
+    "fingerprint": "7f48716d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1251,
+      3003
+    ]
+  },
+  "formula-and-combination-feeding/welcome.m4a": {
+    "fingerprint": "7a5db3fc",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      9968,
+      17197
+    ]
+  },
+  "formula-and-combination-feeding/your-choice.m4a": {
+    "fingerprint": "58065dbd",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5499,
+      11386,
+      15022,
+      23610,
+      29003
+    ]
+  },
+  "formula-and-combination-feeding/extra-care.m4a": {
+    "fingerprint": "0fa75133",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6112,
+      13103,
+      19591,
+      24975,
+      31616,
+      36591
+    ]
+  },
+  "formula-and-combination-feeding/making-formula.m4a": {
+    "fingerprint": "f3080ce2",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4114,
+      10444,
+      15349,
+      20682,
+      27909,
+      29373,
+      35887,
+      38233
+    ]
+  },
+  "formula-and-combination-feeding/storing.m4a": {
+    "fingerprint": "4d085f80",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2024,
+      7345,
+      13217,
+      19050
+    ]
+  },
+  "formula-and-combination-feeding/checkin-water-right.m4a": {
+    "fingerprint": "cc6f27d4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1125,
+      6105
+    ]
+  },
+  "formula-and-combination-feeding/checkin-water-wrong.m4a": {
+    "fingerprint": "3c3404d6",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1345,
+      6296
+    ]
+  },
+  "formula-and-combination-feeding/how-much.m4a": {
+    "fingerprint": "be045390",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      8794,
+      15947,
+      27151,
+      29058
+    ]
+  },
+  "formula-and-combination-feeding/giving-bottle.m4a": {
+    "fingerprint": "4648e06d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4043,
+      10152,
+      13758,
+      22803,
+      27078,
+      31976
+    ]
+  },
+  "formula-and-combination-feeding/pumped-milk.m4a": {
+    "fingerprint": "e4fafed9",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      12134,
+      19189,
+      24599
+    ]
+  },
+  "formula-and-combination-feeding/combining.m4a": {
+    "fingerprint": "8fed1066",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5272,
+      14710,
+      24021,
+      30286,
+      38389
+    ]
+  },
+  "formula-and-combination-feeding/your-plan.m4a": {
+    "fingerprint": "17582263",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1722,
+      3595,
+      8678,
+      11308,
+      13910
+    ]
+  },
+  "formula-and-combination-feeding/quiz-1-right.m4a": {
+    "fingerprint": "b216bbc6",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      931,
+      6437
+    ]
+  },
+  "formula-and-combination-feeding/quiz-1-wrong.m4a": {
+    "fingerprint": "7b234954",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1561,
+      6657
+    ]
+  },
+  "formula-and-combination-feeding/summary.m4a": {
+    "fingerprint": "9f9a7fe8",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1537,
+      8333,
+      15418,
+      20991,
+      25600
+    ]
+  },
+  "formula-and-combination-feeding/quiz-2-right.m4a": {
+    "fingerprint": "141a98ab",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      884,
+      6004
+    ]
+  },
+  "formula-and-combination-feeding/quiz-2-wrong.m4a": {
+    "fingerprint": "b8d7d15d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4247,
+      5753
+    ]
+  },
+  "formula-and-combination-feeding/done.m4a": {
+    "fingerprint": "ee9e7041",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1235,
+      2839
+    ]
+  },
+  "formula-and-combination-feeding/quiz-3-wrong.m4a": {
+    "fingerprint": "d89e3117",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1143,
+      8458
+    ]
+  },
+  "car-seat-safety/quiz-1-wrong.m4a": {
+    "fingerprint": "24faf86f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1073,
+      7613
+    ]
+  },
+  "car-seat-safety/quiz-2-right.m4a": {
+    "fingerprint": "d2a0722a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1139,
+      5005
+    ]
+  },
+  "car-seat-safety/summary.m4a": {
+    "fingerprint": "3a2c0e0d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1380,
+      6181,
+      13559,
+      19526,
+      24681,
+      31436
+    ]
+  },
+  "car-seat-safety/quiz-2-wrong.m4a": {
+    "fingerprint": "cb4a0e10",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1349,
+      5605
+    ]
+  },
+  "car-seat-safety/quiz-3-right.m4a": {
+    "fingerprint": "6f045742",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1087,
+      4676
+    ]
+  },
+  "car-seat-safety/done.m4a": {
+    "fingerprint": "cd62efc5",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1065,
+      2568
+    ]
+  },
+  "car-seat-safety/quiz-3-wrong.m4a": {
+    "fingerprint": "4fd5a198",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1268,
+      4779
+    ]
+  },
+  "formula-and-combination-feeding/quiz-3-right.m4a": {
+    "fingerprint": "492df799",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      805,
+      7091
+    ]
+  },
+  "diapers-baths-crying-and-soothing/welcome.m4a": {
+    "fingerprint": "d83adbb7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      8893
+    ]
+  },
+  "diapers-baths-crying-and-soothing/tub-baths.m4a": {
+    "fingerprint": "66361400",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4759,
+      9680,
+      18382,
+      24427,
+      28206
+    ]
+  },
+  "diapers-baths-crying-and-soothing/bath-safety.m4a": {
+    "fingerprint": "f35a2c7d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5476,
+      12150,
+      14886,
+      21078
+    ]
+  },
+  "diapers-baths-crying-and-soothing/checkin-bath-right.m4a": {
+    "fingerprint": "7178b053",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1154,
+      4772
+    ]
+  },
+  "diapers-baths-crying-and-soothing/checkin-bath-wrong.m4a": {
+    "fingerprint": "2c39771d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1325,
+      4359
+    ]
+  },
+  "diapers-baths-crying-and-soothing/diapering.m4a": {
+    "fingerprint": "9502a463",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5268,
+      13318,
+      21731,
+      28550,
+      33271
+    ]
+  },
+  "diapers-baths-crying-and-soothing/diaper-rash.m4a": {
+    "fingerprint": "21b317bb",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6341,
+      8498,
+      14856,
+      20390
+    ]
+  },
+  "diapers-baths-crying-and-soothing/why-babies-cry.m4a": {
+    "fingerprint": "86fdb699",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3256,
+      12074,
+      17479,
+      27965,
+      30679
+    ]
+  },
+  "diapers-baths-crying-and-soothing/sponge-baths.m4a": {
+    "fingerprint": "cc8f81cd",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      7505,
+      13300,
+      18154,
+      23736,
+      28527
+    ]
+  },
+  "diapers-baths-crying-and-soothing/checkin-crying-right.m4a": {
+    "fingerprint": "4b1970cc",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1090,
+      2890,
+      11114
+    ]
+  },
+  "diapers-baths-crying-and-soothing/checkin-crying-wrong.m4a": {
+    "fingerprint": "7bcdf49a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1109,
+      2825,
+      10551
+    ]
+  },
+  "diapers-baths-crying-and-soothing/soothing.m4a": {
+    "fingerprint": "d6ce6ad6",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      7063,
+      18263,
+      23042,
+      28214,
+      29577
+    ]
+  },
+  "diapers-baths-crying-and-soothing/never-shake.m4a": {
+    "fingerprint": "757a0d5f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6906,
+      9273,
+      15119,
+      21976,
+      24597,
+      31387
+    ]
+  },
+  "diapers-baths-crying-and-soothing/calm-plan.m4a": {
+    "fingerprint": "3a5cdc33",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2509,
+      5200,
+      8531,
+      10704
+    ]
+  },
+  "diapers-baths-crying-and-soothing/quiz-1-right.m4a": {
+    "fingerprint": "ddaf9f5f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1037,
+      5988
+    ]
+  },
+  "diapers-baths-crying-and-soothing/when-to-call.m4a": {
+    "fingerprint": "2168aa06",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4315,
+      6215,
+      14704,
+      21252,
+      28905,
+      31780
+    ]
+  },
+  "diapers-baths-crying-and-soothing/quiz-1-wrong.m4a": {
+    "fingerprint": "8d5c147d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6785,
+      8484
+    ]
+  },
+  "diapers-baths-crying-and-soothing/summary.m4a": {
+    "fingerprint": "8c28b8e1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1258,
+      7996,
+      16239,
+      20195,
+      25163,
+      32010,
+      34010
+    ]
   }
 }

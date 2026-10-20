@@ -9,6 +9,27 @@ export type NarrationClip = {
 };
 
 export const narrationClips: Record<string, NarrationClip> = {
+  '7c9ec425': { source: require('../../assets/narration/breastfeeding-basics/challenges.m4a'), starts: [150, 3643, 13886, 17815, 22350, 28058, 30897, 36934] }, // breastfeeding-basics/challenges.m4a
+  '8382f4ec': { source: require('../../assets/narration/breastfeeding-basics/checkin-latch-right.m4a'), starts: [150, 1120, 5606] }, // breastfeeding-basics/checkin-latch-right.m4a
+  '37ace7de': { source: require('../../assets/narration/breastfeeding-basics/checkin-latch-wrong.m4a'), starts: [150, 1119, 6160] }, // breastfeeding-basics/checkin-latch-wrong.m4a
+  '844b49f4': { source: require('../../assets/narration/breastfeeding-basics/cues.m4a'), starts: [150, 2266, 9522, 17160] }, // breastfeeding-basics/cues.m4a
+  '7f48716d': { source: require('../../assets/narration/breastfeeding-basics/done.m4a'), starts: [150, 1251, 3003] }, // breastfeeding-basics/done.m4a
+  'd928af28': { source: require('../../assets/narration/breastfeeding-basics/enough.m4a'), starts: [150, 4160, 9936, 12672, 15146, 20980, 27938] }, // breastfeeding-basics/enough.m4a
+  '7b3b59b9': { source: require('../../assets/narration/breastfeeding-basics/first-days.m4a'), starts: [150, 5792, 14498, 19827, 26528] }, // breastfeeding-basics/first-days.m4a
+  '24b6fb88': { source: require('../../assets/narration/breastfeeding-basics/get-help.m4a'), starts: [150, 3808, 9732, 19088, 25468] }, // breastfeeding-basics/get-help.m4a
+  '656aab84': { source: require('../../assets/narration/breastfeeding-basics/latch.m4a'), starts: [150, 3991, 7218, 12750, 20465, 22519] }, // breastfeeding-basics/latch.m4a
+  'f7ca33b2': { source: require('../../assets/narration/breastfeeding-basics/positions.m4a'), starts: [150, 2449, 8003, 11593, 17911, 20804, 26962, 32070] }, // breastfeeding-basics/positions.m4a
+  'a90ca043': { source: require('../../assets/narration/breastfeeding-basics/quiz-1-right.m4a'), starts: [150, 956, 7163] }, // breastfeeding-basics/quiz-1-right.m4a
+  '23224ead': { source: require('../../assets/narration/breastfeeding-basics/quiz-1-wrong.m4a'), starts: [150, 2180, 8593] }, // breastfeeding-basics/quiz-1-wrong.m4a
+  '6f4b185c': { source: require('../../assets/narration/breastfeeding-basics/quiz-2-right.m4a'), starts: [150, 979] }, // breastfeeding-basics/quiz-2-right.m4a
+  'edbf23fe': { source: require('../../assets/narration/breastfeeding-basics/quiz-2-wrong.m4a'), starts: [150, 1282] }, // breastfeeding-basics/quiz-2-wrong.m4a
+  '6417606a': { source: require('../../assets/narration/breastfeeding-basics/quiz-3-right.m4a'), starts: [150, 834, 7687] }, // breastfeeding-basics/quiz-3-right.m4a
+  '50ecd8c4': { source: require('../../assets/narration/breastfeeding-basics/quiz-3-wrong.m4a'), starts: [150, 1191, 8260] }, // breastfeeding-basics/quiz-3-wrong.m4a
+  'c6ef0920': { source: require('../../assets/narration/breastfeeding-basics/summary.m4a'), starts: [150, 3789, 6511, 10639, 17693, 22423] }, // breastfeeding-basics/summary.m4a
+  'f3aaae09': { source: require('../../assets/narration/breastfeeding-basics/support-person.m4a'), starts: [150, 4124, 9000, 13472, 17800, 21347] }, // breastfeeding-basics/support-person.m4a
+  '51c09a6d': { source: require('../../assets/narration/breastfeeding-basics/welcome.m4a'), starts: [150, 8114, 18600] }, // breastfeeding-basics/welcome.m4a
+  '3a3acbbb': { source: require('../../assets/narration/breastfeeding-basics/why-and-choice.m4a'), starts: [150, 7521, 10572, 19862, 24631] }, // breastfeeding-basics/why-and-choice.m4a
+  '92a6679c': { source: require('../../assets/narration/breastfeeding-basics/your-plan.m4a'), starts: [150, 1312, 3586, 8364, 10925, 13641] }, // breastfeeding-basics/your-plan.m4a
   '38578a60': { source: require('../../assets/narration/breathing-and-relaxation/checkin-breathing-right.m4a'), starts: [150, 1170] }, // breathing-and-relaxation/checkin-breathing-right.m4a
   '98328152': { source: require('../../assets/narration/breathing-and-relaxation/checkin-breathing-wrong.m4a'), starts: [150, 1378] }, // breathing-and-relaxation/checkin-breathing-wrong.m4a
   '5c79c7df': { source: require('../../assets/narration/breathing-and-relaxation/done.m4a'), starts: [150, 2166, 2937] }, // breathing-and-relaxation/done.m4a
@@ -33,6 +54,7 @@ export const narrationClips: Record<string, NarrationClip> = {
   'be9a4939': { source: require('../../assets/narration/car-seat-safety/checkin-hot-car-wrong.m4a'), starts: [150, 1283, 6119] }, // car-seat-safety/checkin-hot-car-wrong.m4a
   '5f5cf1f3': { source: require('../../assets/narration/car-seat-safety/checkin-rear-facing-right.m4a'), starts: [150, 4612, 7665] }, // car-seat-safety/checkin-rear-facing-right.m4a
   'b51b92c9': { source: require('../../assets/narration/car-seat-safety/checkin-rear-facing-wrong.m4a'), starts: [150, 1028, 7220] }, // car-seat-safety/checkin-rear-facing-wrong.m4a
+  'cd62efc5': { source: require('../../assets/narration/car-seat-safety/done.m4a'), starts: [150, 1065, 2568] }, // car-seat-safety/done.m4a
   'bc69b15c': { source: require('../../assets/narration/car-seat-safety/every-ride.m4a'), starts: [150, 6781, 9227, 15190, 21289] }, // car-seat-safety/every-ride.m4a
   '2d913638': { source: require('../../assets/narration/car-seat-safety/extra-products.m4a'), starts: [150, 6528, 11012, 16250, 18831] }, // car-seat-safety/extra-products.m4a
   '1362f44e': { source: require('../../assets/narration/car-seat-safety/get-it-checked.m4a'), starts: [150, 7758, 14460, 18028] }, // car-seat-safety/get-it-checked.m4a
@@ -40,13 +62,38 @@ export const narrationClips: Record<string, NarrationClip> = {
   '42e8e61d': { source: require('../../assets/narration/car-seat-safety/hot-cars.m4a'), starts: [150, 4007, 12998, 16356, 29698] }, // car-seat-safety/hot-cars.m4a
   '320a948c': { source: require('../../assets/narration/car-seat-safety/quick-recap.m4a'), starts: [150, 1748, 8350, 15429, 18786] }, // car-seat-safety/quick-recap.m4a
   '1ac41891': { source: require('../../assets/narration/car-seat-safety/quiz-1-right.m4a'), starts: [150, 4170, 7424] }, // car-seat-safety/quiz-1-right.m4a
+  '24faf86f': { source: require('../../assets/narration/car-seat-safety/quiz-1-wrong.m4a'), starts: [150, 1073, 7613] }, // car-seat-safety/quiz-1-wrong.m4a
+  'd2a0722a': { source: require('../../assets/narration/car-seat-safety/quiz-2-right.m4a'), starts: [150, 1139, 5005] }, // car-seat-safety/quiz-2-right.m4a
+  'cb4a0e10': { source: require('../../assets/narration/car-seat-safety/quiz-2-wrong.m4a'), starts: [150, 1349, 5605] }, // car-seat-safety/quiz-2-wrong.m4a
+  '6f045742': { source: require('../../assets/narration/car-seat-safety/quiz-3-right.m4a'), starts: [150, 1087, 4676] }, // car-seat-safety/quiz-3-right.m4a
+  '4fd5a198': { source: require('../../assets/narration/car-seat-safety/quiz-3-wrong.m4a'), starts: [150, 1268, 4779] }, // car-seat-safety/quiz-3-wrong.m4a
   '3a0c9a3c': { source: require('../../assets/narration/car-seat-safety/rear-facing-longer.m4a'), starts: [150, 7985, 14994, 22884] }, // car-seat-safety/rear-facing-longer.m4a
+  '3a2c0e0d': { source: require('../../assets/narration/car-seat-safety/summary.m4a'), starts: [150, 1380, 6181, 13559, 19526, 24681, 31436] }, // car-seat-safety/summary.m4a
   '7e5e397c': { source: require('../../assets/narration/car-seat-safety/used-seats-and-crashes.m4a'), starts: [150, 245, 1964, 11817, 13318, 17292, 24057] }, // car-seat-safety/used-seats-and-crashes.m4a
   '01144b24': { source: require('../../assets/narration/car-seat-safety/welcome.m4a'), starts: [150, 2237, 7979] }, // car-seat-safety/welcome.m4a
   '6fb2173d': { source: require('../../assets/narration/car-seat-safety/winter.m4a'), starts: [150, 5044, 10593, 15810, 21159] }, // car-seat-safety/winter.m4a
+  'f35a2c7d': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/bath-safety.m4a'), starts: [150, 5476, 12150, 14886, 21078] }, // diapers-baths-crying-and-soothing/bath-safety.m4a
+  '3a5cdc33': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/calm-plan.m4a'), starts: [150, 2509, 5200, 8531, 10704] }, // diapers-baths-crying-and-soothing/calm-plan.m4a
+  '7178b053': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/checkin-bath-right.m4a'), starts: [150, 1154, 4772] }, // diapers-baths-crying-and-soothing/checkin-bath-right.m4a
+  '2c39771d': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/checkin-bath-wrong.m4a'), starts: [150, 1325, 4359] }, // diapers-baths-crying-and-soothing/checkin-bath-wrong.m4a
+  '4b1970cc': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/checkin-crying-right.m4a'), starts: [150, 1090, 2890, 11114] }, // diapers-baths-crying-and-soothing/checkin-crying-right.m4a
+  '7bcdf49a': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/checkin-crying-wrong.m4a'), starts: [150, 1109, 2825, 10551] }, // diapers-baths-crying-and-soothing/checkin-crying-wrong.m4a
+  '21b317bb': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/diaper-rash.m4a'), starts: [150, 6341, 8498, 14856, 20390] }, // diapers-baths-crying-and-soothing/diaper-rash.m4a
+  '9502a463': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/diapering.m4a'), starts: [150, 5268, 13318, 21731, 28550, 33271] }, // diapers-baths-crying-and-soothing/diapering.m4a
+  '757a0d5f': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/never-shake.m4a'), starts: [150, 6906, 9273, 15119, 21976, 24597, 31387] }, // diapers-baths-crying-and-soothing/never-shake.m4a
+  'ddaf9f5f': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/quiz-1-right.m4a'), starts: [150, 1037, 5988] }, // diapers-baths-crying-and-soothing/quiz-1-right.m4a
+  '8d5c147d': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/quiz-1-wrong.m4a'), starts: [150, 6785, 8484] }, // diapers-baths-crying-and-soothing/quiz-1-wrong.m4a
+  'd6ce6ad6': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/soothing.m4a'), starts: [150, 7063, 18263, 23042, 28214, 29577] }, // diapers-baths-crying-and-soothing/soothing.m4a
+  'cc8f81cd': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/sponge-baths.m4a'), starts: [150, 7505, 13300, 18154, 23736, 28527] }, // diapers-baths-crying-and-soothing/sponge-baths.m4a
+  '8c28b8e1': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/summary.m4a'), starts: [150, 1258, 7996, 16239, 20195, 25163, 32010, 34010] }, // diapers-baths-crying-and-soothing/summary.m4a
+  '66361400': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/tub-baths.m4a'), starts: [150, 4759, 9680, 18382, 24427, 28206] }, // diapers-baths-crying-and-soothing/tub-baths.m4a
+  'd83adbb7': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/welcome.m4a'), starts: [150, 8893] }, // diapers-baths-crying-and-soothing/welcome.m4a
+  '2168aa06': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/when-to-call.m4a'), starts: [150, 4315, 6215, 14704, 21252, 28905, 31780] }, // diapers-baths-crying-and-soothing/when-to-call.m4a
+  '86fdb699': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/why-babies-cry.m4a'), starts: [150, 3256, 12074, 17479, 27965, 30679] }, // diapers-baths-crying-and-soothing/why-babies-cry.m4a
   '467717c8': { source: require('../../assets/narration/early-pregnancy-first-steps/checkin-folic-acid-right.m4a'), starts: [150, 952, 9192, 12689] }, // early-pregnancy-first-steps/checkin-folic-acid-right.m4a
   'd2f3b13e': { source: require('../../assets/narration/early-pregnancy-first-steps/checkin-folic-acid-wrong.m4a'), starts: [150, 1265, 9595, 13192] }, // early-pregnancy-first-steps/checkin-folic-acid-wrong.m4a
   '47eb3ac7': { source: require('../../assets/narration/early-pregnancy-first-steps/checkin-folic-acid.m4a'), starts: [150] }, // early-pregnancy-first-steps/checkin-folic-acid.m4a
+  'ee4c8ee8': { source: require('../../assets/narration/early-pregnancy-first-steps/confirm-pregnancy.m4a'), starts: [150, 4098, 8011, 13592, 17693, 22394, 25586, 32187] }, // early-pregnancy-first-steps/confirm-pregnancy.m4a
   'e8b3f5d5': { source: require('../../assets/narration/early-pregnancy-first-steps/dehydration-signs.m4a'), starts: [150, 2846, 9306, 12647, 15116, 17530, 22414, 25537] }, // early-pregnancy-first-steps/dehydration-signs.m4a
   '8fbe7201': { source: require('../../assets/narration/early-pregnancy-first-steps/done.m4a'), starts: [150, 1237, 2591] }, // early-pregnancy-first-steps/done.m4a
   'fa5cbe82': { source: require('../../assets/narration/early-pregnancy-first-steps/early-signs.m4a'), starts: [150, 3969, 6410, 9699, 12057, 17494, 23092, 25491, 27437, 31136] }, // early-pregnancy-first-steps/early-signs.m4a
@@ -126,6 +173,45 @@ export const narrationClips: Record<string, NarrationClip> = {
   'c01b80ad': { source: require('../../assets/narration/for-support-people/when-hard.m4a'), starts: [150, 5090, 8775, 10668, 16055, 18547, 25469] }, // for-support-people/when-hard.m4a
   '19c093e9': { source: require('../../assets/narration/for-support-people/your-plan.m4a'), starts: [150, 2710, 6671, 9180, 13218] }, // for-support-people/your-plan.m4a
   'a052e82f': { source: require('../../assets/narration/for-support-people/your-role.m4a'), starts: [150, 5880, 9647, 16599, 17969, 23172, 25247, 27641] }, // for-support-people/your-role.m4a
+  'cc6f27d4': { source: require('../../assets/narration/formula-and-combination-feeding/checkin-water-right.m4a'), starts: [150, 1125, 6105] }, // formula-and-combination-feeding/checkin-water-right.m4a
+  '3c3404d6': { source: require('../../assets/narration/formula-and-combination-feeding/checkin-water-wrong.m4a'), starts: [150, 1345, 6296] }, // formula-and-combination-feeding/checkin-water-wrong.m4a
+  '8fed1066': { source: require('../../assets/narration/formula-and-combination-feeding/combining.m4a'), starts: [150, 5272, 14710, 24021, 30286, 38389] }, // formula-and-combination-feeding/combining.m4a
+  'ee9e7041': { source: require('../../assets/narration/formula-and-combination-feeding/done.m4a'), starts: [150, 1235, 2839] }, // formula-and-combination-feeding/done.m4a
+  '0fa75133': { source: require('../../assets/narration/formula-and-combination-feeding/extra-care.m4a'), starts: [150, 6112, 13103, 19591, 24975, 31616, 36591] }, // formula-and-combination-feeding/extra-care.m4a
+  '4648e06d': { source: require('../../assets/narration/formula-and-combination-feeding/giving-bottle.m4a'), starts: [150, 4043, 10152, 13758, 22803, 27078, 31976] }, // formula-and-combination-feeding/giving-bottle.m4a
+  'be045390': { source: require('../../assets/narration/formula-and-combination-feeding/how-much.m4a'), starts: [150, 8794, 15947, 27151, 29058] }, // formula-and-combination-feeding/how-much.m4a
+  'f3080ce2': { source: require('../../assets/narration/formula-and-combination-feeding/making-formula.m4a'), starts: [150, 4114, 10444, 15349, 20682, 27909, 29373, 35887, 38233] }, // formula-and-combination-feeding/making-formula.m4a
+  'e4fafed9': { source: require('../../assets/narration/formula-and-combination-feeding/pumped-milk.m4a'), starts: [150, 12134, 19189, 24599] }, // formula-and-combination-feeding/pumped-milk.m4a
+  'b216bbc6': { source: require('../../assets/narration/formula-and-combination-feeding/quiz-1-right.m4a'), starts: [150, 931, 6437] }, // formula-and-combination-feeding/quiz-1-right.m4a
+  '7b234954': { source: require('../../assets/narration/formula-and-combination-feeding/quiz-1-wrong.m4a'), starts: [150, 1561, 6657] }, // formula-and-combination-feeding/quiz-1-wrong.m4a
+  '141a98ab': { source: require('../../assets/narration/formula-and-combination-feeding/quiz-2-right.m4a'), starts: [150, 884, 6004] }, // formula-and-combination-feeding/quiz-2-right.m4a
+  'b8d7d15d': { source: require('../../assets/narration/formula-and-combination-feeding/quiz-2-wrong.m4a'), starts: [150, 4247, 5753] }, // formula-and-combination-feeding/quiz-2-wrong.m4a
+  '492df799': { source: require('../../assets/narration/formula-and-combination-feeding/quiz-3-right.m4a'), starts: [150, 805, 7091] }, // formula-and-combination-feeding/quiz-3-right.m4a
+  'd89e3117': { source: require('../../assets/narration/formula-and-combination-feeding/quiz-3-wrong.m4a'), starts: [150, 1143, 8458] }, // formula-and-combination-feeding/quiz-3-wrong.m4a
+  '4d085f80': { source: require('../../assets/narration/formula-and-combination-feeding/storing.m4a'), starts: [150, 2024, 7345, 13217, 19050] }, // formula-and-combination-feeding/storing.m4a
+  '9f9a7fe8': { source: require('../../assets/narration/formula-and-combination-feeding/summary.m4a'), starts: [150, 1537, 8333, 15418, 20991, 25600] }, // formula-and-combination-feeding/summary.m4a
+  '7a5db3fc': { source: require('../../assets/narration/formula-and-combination-feeding/welcome.m4a'), starts: [150, 9968, 17197] }, // formula-and-combination-feeding/welcome.m4a
+  '58065dbd': { source: require('../../assets/narration/formula-and-combination-feeding/your-choice.m4a'), starts: [150, 5499, 11386, 15022, 23610, 29003] }, // formula-and-combination-feeding/your-choice.m4a
+  '17582263': { source: require('../../assets/narration/formula-and-combination-feeding/your-plan.m4a'), starts: [150, 1722, 3595, 8678, 11308, 13910] }, // formula-and-combination-feeding/your-plan.m4a
+  '872b9720': { source: require('../../assets/narration/newborn-care-in-the-hospital/blood-test.m4a'), starts: [150, 2878, 7837, 13168, 15819, 18418] }, // newborn-care-in-the-hospital/blood-test.m4a
+  '98decb7a': { source: require('../../assets/narration/newborn-care-in-the-hospital/checkin-care-right.m4a'), starts: [150, 1176, 5594] }, // newborn-care-in-the-hospital/checkin-care-right.m4a
+  'ef5d56c4': { source: require('../../assets/narration/newborn-care-in-the-hospital/checkin-care-wrong.m4a'), starts: [150, 1347, 5676] }, // newborn-care-in-the-hospital/checkin-care-wrong.m4a
+  'acccc2f1': { source: require('../../assets/narration/newborn-care-in-the-hospital/done.m4a'), starts: [150, 1005, 2370] }, // newborn-care-in-the-hospital/done.m4a
+  '1737b9fe': { source: require('../../assets/narration/newborn-care-in-the-hospital/eye-ointment.m4a'), starts: [150, 5130, 10403, 12582] }, // newborn-care-in-the-hospital/eye-ointment.m4a
+  '68a803f1': { source: require('../../assets/narration/newborn-care-in-the-hospital/hearing-heart.m4a'), starts: [150, 4962, 6823, 15000, 22693] }, // newborn-care-in-the-hospital/hearing-heart.m4a
+  '95a76718': { source: require('../../assets/narration/newborn-care-in-the-hospital/hep-b.m4a'), starts: [150, 2879, 11096, 13672, 22541, 26901, 35742] }, // newborn-care-in-the-hospital/hep-b.m4a
+  'b8d7b7a2': { source: require('../../assets/narration/newborn-care-in-the-hospital/overview.m4a'), starts: [150, 2626, 6977, 10750, 13585, 19442] }, // newborn-care-in-the-hospital/overview.m4a
+  'de807f22': { source: require('../../assets/narration/newborn-care-in-the-hospital/quiz-1-right.m4a'), starts: [150, 915] }, // newborn-care-in-the-hospital/quiz-1-right.m4a
+  '7001ab98': { source: require('../../assets/narration/newborn-care-in-the-hospital/quiz-1-wrong.m4a'), starts: [150, 1064] }, // newborn-care-in-the-hospital/quiz-1-wrong.m4a
+  '32a082e9': { source: require('../../assets/narration/newborn-care-in-the-hospital/quiz-2-right.m4a'), starts: [150, 786] }, // newborn-care-in-the-hospital/quiz-2-right.m4a
+  'd14be737': { source: require('../../assets/narration/newborn-care-in-the-hospital/quiz-2-wrong.m4a'), starts: [150, 1375] }, // newborn-care-in-the-hospital/quiz-2-wrong.m4a
+  'a442082b': { source: require('../../assets/narration/newborn-care-in-the-hospital/quiz-3-right.m4a'), starts: [150, 977] }, // newborn-care-in-the-hospital/quiz-3-right.m4a
+  'ba027601': { source: require('../../assets/narration/newborn-care-in-the-hospital/quiz-3-wrong.m4a'), starts: [150, 706] }, // newborn-care-in-the-hospital/quiz-3-wrong.m4a
+  '8a305d2a': { source: require('../../assets/narration/newborn-care-in-the-hospital/summary.m4a'), starts: [150, 1509, 5166, 7907, 15451, 21382] }, // newborn-care-in-the-hospital/summary.m4a
+  '30cdd1f8': { source: require('../../assets/narration/newborn-care-in-the-hospital/vitamin-k.m4a'), starts: [150, 5005, 11325, 15808, 18483, 21240] }, // newborn-care-in-the-hospital/vitamin-k.m4a
+  '1f9efbd7': { source: require('../../assets/narration/newborn-care-in-the-hospital/welcome.m4a'), starts: [150, 12085] }, // newborn-care-in-the-hospital/welcome.m4a
+  '40a38fad': { source: require('../../assets/narration/newborn-care-in-the-hospital/your-plan.m4a'), starts: [150, 1323, 8648, 13476, 17444] }, // newborn-care-in-the-hospital/your-plan.m4a
+  '18a2907b': { source: require('../../assets/narration/newborn-care-in-the-hospital/your-say.m4a'), starts: [150, 2515, 6675, 12283, 17991] }, // newborn-care-in-the-hospital/your-say.m4a
   'e38a9721': { source: require('../../assets/narration/positions-and-movement/back-pain.m4a'), starts: [150, 5634, 14311, 21853, 23594] }, // positions-and-movement/back-pain.m4a
   'ba3009f3': { source: require('../../assets/narration/positions-and-movement/checkin-positions-right.m4a'), starts: [150, 861, 6742] }, // positions-and-movement/checkin-positions-right.m4a
   'adf4f079': { source: require('../../assets/narration/positions-and-movement/checkin-positions-wrong.m4a'), starts: [150, 1342, 6531] }, // positions-and-movement/checkin-positions-wrong.m4a
@@ -211,11 +297,24 @@ export const narrationClips: Record<string, NarrationClip> = {
   'dd8cc441': { source: require('../../assets/narration/understanding-labor-pain/what-affects.m4a'), starts: [150, 2569, 11439, 17618, 19548, 23410] }, // understanding-labor-pain/what-affects.m4a
   'f2a8808b': { source: require('../../assets/narration/understanding-labor-pain/why-it-hurts.m4a'), starts: [150, 3602, 7391, 9744, 15175, 19399] }, // understanding-labor-pain/why-it-hurts.m4a
   '82e72412': { source: require('../../assets/narration/understanding-labor-pain/your-thoughts.m4a'), starts: [150, 4291, 8948, 10599, 14731] }, // understanding-labor-pain/your-thoughts.m4a
+  '1de869c6': { source: require('../../assets/narration/your-newborns-first-days/breathing.m4a'), starts: [150, 6113, 11714, 16217, 20129, 20795] }, // your-newborns-first-days/breathing.m4a
   '26f9016a': { source: require('../../assets/narration/your-newborns-first-days/checkin-looks-right.m4a'), starts: [150, 1079, 7489] }, // your-newborns-first-days/checkin-looks-right.m4a
   'e23d8674': { source: require('../../assets/narration/your-newborns-first-days/checkin-looks-wrong.m4a'), starts: [150, 4680, 7274] }, // your-newborns-first-days/checkin-looks-wrong.m4a
+  'bbc37957': { source: require('../../assets/narration/your-newborns-first-days/done.m4a'), starts: [150, 1021, 2646] }, // your-newborns-first-days/done.m4a
   'b17d7ab8': { source: require('../../assets/narration/your-newborns-first-days/first-look.m4a'), starts: [150, 4290, 11199, 13573, 17854, 22380] }, // your-newborns-first-days/first-look.m4a
+  'e9552b54': { source: require('../../assets/narration/your-newborns-first-days/jaundice.m4a'), starts: [150, 3381, 4908, 10819, 14649, 19710, 24746, 27060, 29278] }, // your-newborns-first-days/jaundice.m4a
   '38e955a2': { source: require('../../assets/narration/your-newborns-first-days/normal-surprises.m4a'), starts: [150, 2751, 15292, 19412, 24583] }, // your-newborns-first-days/normal-surprises.m4a
+  'baf1dbf6': { source: require('../../assets/narration/your-newborns-first-days/poop.m4a'), starts: [150, 5533, 7902, 9728, 13592, 19235, 23246, 27160] }, // your-newborns-first-days/poop.m4a
+  '0b342a15': { source: require('../../assets/narration/your-newborns-first-days/quiz-1-right.m4a'), starts: [150, 1157] }, // your-newborns-first-days/quiz-1-right.m4a
+  '5cc5126b': { source: require('../../assets/narration/your-newborns-first-days/quiz-1-wrong.m4a'), starts: [150, 1187] }, // your-newborns-first-days/quiz-1-wrong.m4a
+  '7d33c0ff': { source: require('../../assets/narration/your-newborns-first-days/quiz-2-right.m4a'), starts: [150, 1163, 4849] }, // your-newborns-first-days/quiz-2-right.m4a
+  'dbdf2219': { source: require('../../assets/narration/your-newborns-first-days/quiz-2-wrong.m4a'), starts: [150, 448, 5404] }, // your-newborns-first-days/quiz-2-wrong.m4a
+  '12b8cf66': { source: require('../../assets/narration/your-newborns-first-days/quiz-3-right.m4a'), starts: [150, 690, 5283, 7220, 11362] }, // your-newborns-first-days/quiz-3-right.m4a
+  '7b86a654': { source: require('../../assets/narration/your-newborns-first-days/quiz-3-wrong.m4a'), starts: [150, 1171, 5583, 7394, 11401] }, // your-newborns-first-days/quiz-3-wrong.m4a
   '3a5ae1b5': { source: require('../../assets/narration/your-newborns-first-days/skin.m4a'), starts: [150, 2696, 8235, 12046, 19465, 23738] }, // your-newborns-first-days/skin.m4a
   '9d685121': { source: require('../../assets/narration/your-newborns-first-days/sleep.m4a'), starts: [150, 4656, 10785, 16729, 20803] }, // your-newborns-first-days/sleep.m4a
+  '5b0d9154': { source: require('../../assets/narration/your-newborns-first-days/summary.m4a'), starts: [150, 1662, 7793, 13844, 18481, 24056] }, // your-newborns-first-days/summary.m4a
+  '4fc24ef0': { source: require('../../assets/narration/your-newborns-first-days/weight.m4a'), starts: [150, 6023, 10377, 14022, 20811] }, // your-newborns-first-days/weight.m4a
   '6b6c5f82': { source: require('../../assets/narration/your-newborns-first-days/welcome.m4a'), starts: [150, 4032, 8211, 17877] }, // your-newborns-first-days/welcome.m4a
+  '59a1b272': { source: require('../../assets/narration/your-newborns-first-days/your-questions.m4a'), starts: [150, 4250, 6002, 9790, 13359, 15511] }, // your-newborns-first-days/your-questions.m4a
 };
