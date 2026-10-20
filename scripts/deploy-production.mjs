@@ -11,6 +11,9 @@ function run(command, args) {
       NODE_ENV: 'production',
     },
     stdio: 'inherit',
+    // On Windows, npx is npx.cmd, which Node only launches through the shell.
+    // Only npx: node's own path (C:\Program Files\...) would break in the shell.
+    shell: process.platform === 'win32' && command === 'npx',
   });
 
   if (result.error) {

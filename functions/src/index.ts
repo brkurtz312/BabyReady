@@ -8,6 +8,7 @@ import { HttpsError, onCall } from 'firebase-functions/v2/https';
 import { onSchedule } from 'firebase-functions/v2/scheduler';
 
 import { MAX_QUESTION_LENGTH, routeQuestion } from '../../src/lib/askSafety';
+import { cleanFrom } from './answerFrom';
 import { usageRecord } from './askCost';
 import { findLesson, lessonText } from './lessons';
 import { INACTIVE_DAYS, isInactive } from './retention';
@@ -27,7 +28,7 @@ Rules:
 - If the lesson does not cover the question, say so in one sentence and suggest asking their care team. Do not answer from outside knowledge.
 - Never diagnose, never tell someone whether they are in labor, and never give medication or dosing advice.
 - If the question describes a symptom happening right now, tell them to contact their care team, or call 911 if it feels like an emergency.
-- On the final line write "From: " followed by the slide heading(s) you used, or "From: not covered in this lesson".`;
+- On the final line write "From: " followed by the heading of each slide you used, separated by semicolons. Only if you used no slide at all, write "From: not covered in this lesson". Never write both.`;
 
 type AskRequest = { lessonId?: unknown; question?: unknown; history?: unknown };
 
@@ -170,7 +171,7 @@ export const askLessonQuestion = onCall(
     return {
       kind: 'answer',
       answer: (match ? text.slice(0, match.index) : text).trim(),
-      from: match ? match[1].trim() : null,
+      from: match ? cleanFrom(match[1]) : null,
     };
   },
 );

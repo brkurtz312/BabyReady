@@ -149,6 +149,9 @@ type ClassPlayerScreenProps = {
   completedLessonIds: string[];
   onLessonOpened: (courseId: string, lessonId: string) => void;
   onLessonCompleted: (lessonId: string) => void;
+  /** Lessons that need the full-class purchase. Opening one calls onLockedLesson instead. */
+  lockedLessonIds?: string[];
+  onLockedLesson?: () => void;
 };
 
 export function ClassPlayerScreen({
@@ -160,6 +163,8 @@ export function ClassPlayerScreen({
   completedLessonIds,
   onLessonOpened,
   onLessonCompleted,
+  lockedLessonIds = [],
+  onLockedLesson,
 }: ClassPlayerScreenProps) {
   const lessons = course.lessons;
   const courseTitle = course.title;
@@ -342,6 +347,10 @@ export function ClassPlayerScreen({
   function goNext() {
     clearAdvance();
     stopSpeech();
+    if (state.mode === 'done' && nextLesson && lockedLessonIds.includes(nextLesson.lessonId)) {
+      onLockedLesson?.();
+      return;
+    }
     dispatch({ type: 'next' });
   }
 
@@ -429,6 +438,10 @@ export function ClassPlayerScreen({
     setLessonListOpen(false);
     clearAdvance();
     stopSpeech();
+    if (lockedLessonIds.includes(lessons[index].lessonId)) {
+      onLockedLesson?.();
+      return;
+    }
     dispatch({ type: 'load', lessonIndex: index });
   }
 
@@ -437,7 +450,10 @@ export function ClassPlayerScreen({
   let nextLabel = 'Next';
   let nextDisabled = false;
   if (state.mode === 'intro') nextLabel = 'Start';
-  else if (state.mode === 'done') nextLabel = nextLesson ? 'Next lesson' : 'Replay';
+  else if (state.mode === 'done') {
+    if (!nextLesson) nextLabel = 'Replay';
+    else nextLabel = lockedLessonIds.includes(nextLesson.lessonId) ? 'Unlock next lesson' : 'Next lesson';
+  }
   else if (state.mode === 'quiz') {
     nextLabel = state.quizIndex >= lesson.reviewQuiz.length - 1 ? 'Results' : 'Next';
     nextDisabled = state.answer === null;
@@ -517,6 +533,7 @@ export function ClassPlayerScreen({
             courseTitle={courseTitle}
             lesson={lesson}
             lessons={lessons}
+            lockedLessonIds={lockedLessonIds}
             onPickLesson={loadLesson}
           />
         ) : null}
@@ -623,6 +640,7 @@ export function ClassPlayerScreen({
         courseTitle={courseTitle}
         currentLessonId={lesson.lessonId}
         lessons={lessons}
+        lockedLessonIds={lockedLessonIds}
         onClose={() => setLessonListOpen(false)}
         onPick={loadLesson}
         visible={lessonListOpen}
@@ -664,12 +682,14 @@ function IntroSlide({
   lessons,
   courseTitle,
   completedLessonIds,
+  lockedLessonIds,
   onPickLesson,
 }: {
   lesson: Lesson;
   lessons: Lesson[];
   courseTitle: string;
   completedLessonIds: string[];
+  lockedLessonIds: string[];
   onPickLesson: (index: number) => void;
 }) {
   return (
@@ -677,8 +697,10 @@ function IntroSlide({
       <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={styles.lessonPick}>
         {lessons.map((l, k) => {
           const current = l.lessonId === lesson.lessonId;
+          const locked = lockedLessonIds.includes(l.lessonId);
           return (
             <Pressable
+              accessibilityHint={locked ? 'Part of the full class. Shows how to unlock it.' : undefined}
               accessibilityRole="button"
               accessibilityState={{ selected: current }}
               key={l.lessonId}
@@ -688,6 +710,7 @@ function IntroSlide({
               <Text style={[styles.lessonChipText, current && styles.lessonChipTextCurrent]}>
                 {l.order}. {l.title}
                 {completedLessonIds.includes(l.lessonId) ? ' ✓' : ''}
+                {locked ? ' 🔒' : ''}
               </Text>
             </Pressable>
           );

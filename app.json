@@ -29,7 +29,8 @@
         "usesNonExemptEncryption": false
       },
       "infoPlist": {
-        "CFBundleDisplayName": "BabyReady VE"
+        "CFBundleDisplayName": "BabyReady VE",
+        "NSPhotoLibraryUsageDescription": "BabyReady doesn't use your photo library. Apple requires this note because the app's video player can play videos from a photo library, a feature BabyReady never uses."
       }
     },
     "android": {
