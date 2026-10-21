@@ -3526,5 +3526,1086 @@
       32010,
       34010
     ]
+  },
+  "diapers-baths-crying-and-soothing/quiz-2-right.m4a": {
+    "fingerprint": "03b28c75",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1069,
+      9639
+    ]
+  },
+  "diapers-baths-crying-and-soothing/quiz-3-right.m4a": {
+    "fingerprint": "cb3db131",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1011,
+      8121
+    ]
+  },
+  "diapers-baths-crying-and-soothing/quiz-2-wrong.m4a": {
+    "fingerprint": "815dc347",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1445,
+      9935
+    ]
+  },
+  "diapers-baths-crying-and-soothing/quiz-3-wrong.m4a": {
+    "fingerprint": "abda8ff7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1187,
+      8445
+    ]
+  },
+  "diapers-baths-crying-and-soothing/done.m4a": {
+    "fingerprint": "0c1673c0",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1131,
+      2715
+    ]
+  },
+  "infant-cpr-and-choking/welcome.m4a": {
+    "fingerprint": "4a8eeee1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4942,
+      14404
+    ]
+  },
+  "infant-cpr-and-choking/take-a-class.m4a": {
+    "fingerprint": "167c1e8d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4240,
+      11268,
+      20945
+    ]
+  },
+  "infant-cpr-and-choking/is-it-choking.m4a": {
+    "fingerprint": "f9186f77",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4188,
+      12960,
+      15333,
+      25671,
+      28005
+    ]
+  },
+  "infant-cpr-and-choking/checkin-choking-right.m4a": {
+    "fingerprint": "34e2fd94",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      944,
+      4083,
+      6731
+    ]
+  },
+  "infant-cpr-and-choking/choking-steps.m4a": {
+    "fingerprint": "d8a55359",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6139,
+      15000,
+      20277,
+      31926,
+      38810
+    ]
+  },
+  "infant-cpr-and-choking/checkin-choking-wrong.m4a": {
+    "fingerprint": "db1589c2",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1393,
+      7489,
+      11412
+    ]
+  },
+  "infant-cpr-and-choking/checkin-cpr-wrong.m4a": {
+    "fingerprint": "44f7b0c7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1195,
+      6690
+    ]
+  },
+  "infant-cpr-and-choking/prevent-choking.m4a": {
+    "fingerprint": "5436d3ce",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2377,
+      6271,
+      16123,
+      23291,
+      25650
+    ]
+  },
+  "infant-cpr-and-choking/emergency-plan.m4a": {
+    "fingerprint": "c6c129cd",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1359,
+      5728,
+      7047,
+      13457
+    ]
+  },
+  "infant-cpr-and-choking/summary.m4a": {
+    "fingerprint": "492a4bc7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1751,
+      6955,
+      14025,
+      27173,
+      32028,
+      35121
+    ]
+  },
+  "infant-cpr-and-choking/quiz-1-right.m4a": {
+    "fingerprint": "eb2bd955",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1037,
+      10519
+    ]
+  },
+  "infant-cpr-and-choking/checkin-cpr-right.m4a": {
+    "fingerprint": "ffa2a239",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1001,
+      6120
+    ]
+  },
+  "infant-cpr-and-choking/not-breathing.m4a": {
+    "fingerprint": "7ceb7d3b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6901,
+      12621,
+      13631,
+      21416,
+      29469
+    ]
+  },
+  "infant-cpr-and-choking/quiz-2-right.m4a": {
+    "fingerprint": "0f9c8aa1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1070
+    ]
+  },
+  "infant-cpr-and-choking/quiz-1-wrong.m4a": {
+    "fingerprint": "306e3dcf",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1188,
+      10724
+    ]
+  },
+  "infant-cpr-and-choking/cpr-steps.m4a": {
+    "fingerprint": "b96af7bb",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3789,
+      12854,
+      19265,
+      24679,
+      35774,
+      40692
+    ]
+  },
+  "infant-cpr-and-choking/quiz-2-wrong.m4a": {
+    "fingerprint": "5ef82053",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1162
+    ]
+  },
+  "infant-cpr-and-choking/quiz-3-right.m4a": {
+    "fingerprint": "11eb06ba",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      983,
+      7072
+    ]
+  },
+  "infant-cpr-and-choking/quiz-3-wrong.m4a": {
+    "fingerprint": "23406dbc",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1291,
+      7136
+    ]
+  },
+  "making-decisions-with-your-care-team/welcome.m4a": {
+    "fingerprint": "747a36f4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4487,
+      7996,
+      12026
+    ]
+  },
+  "making-decisions-with-your-care-team/shared-decisions.m4a": {
+    "fingerprint": "2b0886da",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2004,
+      6907,
+      8911,
+      11709,
+      20779,
+      22829
+    ]
+  },
+  "making-decisions-with-your-care-team/four-questions.m4a": {
+    "fingerprint": "b0ba58f1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3582,
+      8996,
+      11300,
+      13502,
+      16726,
+      19231
+    ]
+  },
+  "making-decisions-with-your-care-team/checkin-time-right.m4a": {
+    "fingerprint": "d73e47c7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1045
+    ]
+  },
+  "making-decisions-with-your-care-team/how-much-time.m4a": {
+    "fingerprint": "5c6207f9",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2607,
+      9089,
+      15885,
+      19683,
+      23115
+    ]
+  },
+  "making-decisions-with-your-care-team/checkin-time-wrong.m4a": {
+    "fingerprint": "9dd0b869",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1472
+    ]
+  },
+  "making-decisions-with-your-care-team/decision-video.m4a": {
+    "fingerprint": "9c2f61b5",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "making-decisions-with-your-care-team/support-person-role.m4a": {
+    "fingerprint": "0dd3b9f8",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2998,
+      12184,
+      16813,
+      18984
+    ]
+  },
+  "making-decisions-with-your-care-team/understand-it.m4a": {
+    "fingerprint": "aaa277b8",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2951,
+      11067,
+      14395,
+      21612
+    ]
+  },
+  "making-decisions-with-your-care-team/not-yet-or-no.m4a": {
+    "fingerprint": "7c8c0ab1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5201,
+      12751,
+      15910,
+      18307
+    ]
+  },
+  "making-decisions-with-your-care-team/what-matters.m4a": {
+    "fingerprint": "149030da",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2155,
+      6273,
+      8520,
+      15153
+    ]
+  },
+  "making-decisions-with-your-care-team/quiz-1-right.m4a": {
+    "fingerprint": "bfa283d0",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1160
+    ]
+  },
+  "making-decisions-with-your-care-team/quiz-1-wrong.m4a": {
+    "fingerprint": "0d2da576",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1583
+    ]
+  },
+  "making-decisions-with-your-care-team/summary.m4a": {
+    "fingerprint": "48d19266",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1407,
+      7226,
+      15038,
+      19448,
+      24658
+    ]
+  },
+  "making-decisions-with-your-care-team/quiz-2-right.m4a": {
+    "fingerprint": "5e446923",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1070
+    ]
+  },
+  "making-decisions-with-your-care-team/quiz-2-wrong.m4a": {
+    "fingerprint": "f4633b65",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1388
+    ]
+  },
+  "making-decisions-with-your-care-team/quiz-3-right.m4a": {
+    "fingerprint": "b0c7719e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1135
+    ]
+  },
+  "making-decisions-with-your-care-team/quiz-3-wrong.m4a": {
+    "fingerprint": "584a76d4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1150
+    ]
+  },
+  "making-decisions-with-your-care-team/done.m4a": {
+    "fingerprint": "ac95f03d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1103,
+      2596
+    ]
+  },
+  "monitoring-your-baby-in-labor/welcome.m4a": {
+    "fingerprint": "f1db89e6",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5660
+    ]
+  },
+  "monitoring-your-baby-in-labor/why-monitor.m4a": {
+    "fingerprint": "d1509d2a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4629,
+      8499,
+      13739,
+      21882
+    ]
+  },
+  "monitoring-your-baby-in-labor/listening.m4a": {
+    "fingerprint": "aac7d6e6",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6591,
+      15280,
+      21368
+    ]
+  },
+  "monitoring-your-baby-in-labor/two-ways.m4a": {
+    "fingerprint": "e01dd084",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3721,
+      8316,
+      12222,
+      19485,
+      24548
+    ]
+  },
+  "monitoring-your-baby-in-labor/checkin-ways-right.m4a": {
+    "fingerprint": "b920711e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      917
+    ]
+  },
+  "monitoring-your-baby-in-labor/continuous.m4a": {
+    "fingerprint": "1b17eb86",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4268,
+      8468,
+      14401,
+      19318,
+      22847
+    ]
+  },
+  "monitoring-your-baby-in-labor/pattern-changes.m4a": {
+    "fingerprint": "f60e2733",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4956,
+      17655,
+      20623,
+      23295,
+      30074
+    ]
+  },
+  "monitoring-your-baby-in-labor/checkin-ways-wrong.m4a": {
+    "fingerprint": "af453200",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1385
+    ]
+  },
+  "monitoring-your-baby-in-labor/when-continuous.m4a": {
+    "fingerprint": "58f9c974",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4997,
+      11920,
+      19572,
+      26700
+    ]
+  },
+  "monitoring-your-baby-in-labor/quiz-1-right.m4a": {
+    "fingerprint": "a01d426e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1195,
+      4799
+    ]
+  },
+  "monitoring-your-baby-in-labor/summary.m4a": {
+    "fingerprint": "c8f08b5d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1208,
+      12020,
+      16680,
+      18468,
+      24840
+    ]
+  },
+  "monitoring-your-baby-in-labor/quiz-1-wrong.m4a": {
+    "fingerprint": "e62e019c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1512,
+      5460
+    ]
+  },
+  "monitoring-your-baby-in-labor/quiz-2-right.m4a": {
+    "fingerprint": "31d3dace",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3772
+    ]
+  },
+  "monitoring-your-baby-in-labor/your-questions.m4a": {
+    "fingerprint": "52cda751",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3458,
+      16638
+    ]
+  },
+  "monitoring-your-baby-in-labor/quiz-2-wrong.m4a": {
+    "fingerprint": "3bf5cc54",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1549
+    ]
+  },
+  "monitoring-your-baby-in-labor/quiz-3-right.m4a": {
+    "fingerprint": "cba8366f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      836
+    ]
+  },
+  "monitoring-your-baby-in-labor/internal.m4a": {
+    "fingerprint": "ae4ec46f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2956,
+      9114,
+      14811,
+      18184,
+      22784
+    ]
+  },
+  "monitoring-your-baby-in-labor/quiz-3-wrong.m4a": {
+    "fingerprint": "a7029eb1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1013
+    ]
+  },
+  "monitoring-your-baby-in-labor/done.m4a": {
+    "fingerprint": "a4e06173",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      948,
+      2467
+    ]
+  },
+  "medical-pain-relief/epidural-how.m4a": {
+    "fingerprint": "9a640a86",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3523,
+      12334,
+      16453,
+      21296,
+      24452
+    ]
+  },
+  "medical-pain-relief/epidural-tradeoffs.m4a": {
+    "fingerprint": "58387183",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6420,
+      8112,
+      14817,
+      17771,
+      24548,
+      27414,
+      30935
+    ]
+  },
+  "medical-pain-relief/checkin-epidural-right.m4a": {
+    "fingerprint": "beb6be4f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1004,
+      5067
+    ]
+  },
+  "medical-pain-relief/checkin-epidural-wrong.m4a": {
+    "fingerprint": "4d39faed",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1720,
+      5289
+    ]
+  },
+  "medical-pain-relief/welcome.m4a": {
+    "fingerprint": "c959cebc",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4317,
+      12138
+    ]
+  },
+  "medical-pain-relief/your-choice.m4a": {
+    "fingerprint": "bb13afa0",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3752,
+      5043,
+      12096,
+      16449
+    ]
+  },
+  "medical-pain-relief/three-options.m4a": {
+    "fingerprint": "4f07955a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3927,
+      8851,
+      13688,
+      17955
+    ]
+  },
+  "medical-pain-relief/iv-medicine.m4a": {
+    "fingerprint": "8c10b6fd",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5739,
+      10137,
+      14206,
+      17567,
+      25955
+    ]
+  },
+  "medical-pain-relief/nitrous.m4a": {
+    "fingerprint": "588a7129",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6490,
+      12557,
+      18295,
+      22918,
+      26016
+    ]
+  },
+  "medical-pain-relief/your-preferences.m4a": {
+    "fingerprint": "bbd76ad3",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2290,
+      6137,
+      13942,
+      16222,
+      17015
+    ]
+  },
+  "medical-pain-relief/when-to-ask.m4a": {
+    "fingerprint": "a2ec7c01",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2857,
+      8119,
+      16512,
+      22484
+    ]
+  },
+  "medical-pain-relief/summary.m4a": {
+    "fingerprint": "80078320",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1393,
+      7806,
+      13676,
+      18039,
+      22870
+    ]
+  },
+  "medical-pain-relief/quiz-1-right.m4a": {
+    "fingerprint": "51c26518",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1082,
+      5644
+    ]
+  },
+  "medical-pain-relief/quiz-2-right.m4a": {
+    "fingerprint": "5e1dcd31",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1238
+    ]
+  },
+  "medical-pain-relief/quiz-1-wrong.m4a": {
+    "fingerprint": "bdc0df22",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1908,
+      6787
+    ]
+  },
+  "medical-pain-relief/quiz-2-wrong.m4a": {
+    "fingerprint": "6975d957",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1252
+    ]
+  },
+  "medical-pain-relief/quiz-3-right.m4a": {
+    "fingerprint": "573485cc",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      986
+    ]
+  },
+  "medical-pain-relief/done.m4a": {
+    "fingerprint": "f060ea1d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1150,
+      2689
+    ]
+  },
+  "medical-pain-relief/quiz-3-wrong.m4a": {
+    "fingerprint": "9b354c32",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1112
+    ]
+  },
+  "induction-of-labor/welcome.m4a": {
+    "fingerprint": "ff7eaf41",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5220,
+      7206
+    ]
+  },
+  "induction-of-labor/what-is.m4a": {
+    "fingerprint": "02d331ed",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5878,
+      10130,
+      12223,
+      17679,
+      20036
+    ]
+  },
+  "induction-of-labor/checkin-reasons-right.m4a": {
+    "fingerprint": "473b8830",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      974
+    ]
+  },
+  "induction-of-labor/reasons.m4a": {
+    "fingerprint": "ea88b943",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6555,
+      19289,
+      20973
+    ]
+  },
+  "induction-of-labor/at-39-weeks.m4a": {
+    "fingerprint": "52d73f7a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5872,
+      14439,
+      18295,
+      24973
+    ]
+  },
+  "induction-of-labor/checkin-reasons-wrong.m4a": {
+    "fingerprint": "cbd6858a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1408
+    ]
+  },
+  "induction-of-labor/how-it-works.m4a": {
+    "fingerprint": "8a3a66a3",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2839,
+      7865,
+      9877,
+      15299,
+      18945
+    ]
+  },
+  "induction-of-labor/ripening.m4a": {
+    "fingerprint": "5ff09ff3",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6524,
+      14781,
+      16614,
+      23523
+    ]
+  },
+  "induction-of-labor/starting-contractions.m4a": {
+    "fingerprint": "5548d3d6",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      7239,
+      12595,
+      15750,
+      20122,
+      26333
+    ]
+  },
+  "induction-of-labor/what-to-expect.m4a": {
+    "fingerprint": "043428c4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6921,
+      9267,
+      15527,
+      20468
+    ]
+  },
+  "induction-of-labor/quiz-1-right.m4a": {
+    "fingerprint": "02b37a85",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1002
+    ]
+  },
+  "induction-of-labor/your-questions.m4a": {
+    "fingerprint": "fc349a6b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3455,
+      8463,
+      13515,
+      15421,
+      17950
+    ]
+  },
+  "induction-of-labor/risks.m4a": {
+    "fingerprint": "1f9c2968",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4112,
+      12818,
+      16661,
+      20719,
+      25443
+    ]
+  },
+  "induction-of-labor/summary.m4a": {
+    "fingerprint": "afd07bb5",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1164,
+      8414,
+      17079,
+      20876,
+      27123
+    ]
+  },
+  "induction-of-labor/quiz-1-wrong.m4a": {
+    "fingerprint": "a37a2a5f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1308
+    ]
+  },
+  "induction-of-labor/quiz-2-right.m4a": {
+    "fingerprint": "f50d9745",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1046,
+      7868
+    ]
+  },
+  "induction-of-labor/quiz-2-wrong.m4a": {
+    "fingerprint": "144741ff",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1064,
+      8029
+    ]
+  },
+  "induction-of-labor/quiz-3-wrong.m4a": {
+    "fingerprint": "2558c686",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1160
+    ]
   }
 }
