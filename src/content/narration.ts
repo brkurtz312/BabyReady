@@ -9,6 +9,23 @@ export type NarrationClip = {
 };
 
 export const narrationClips: Record<string, NarrationClip> = {
+  'a5b58c7a': { source: require('../../assets/narration/assisted-vaginal-birth/checkin-what-right.m4a'), starts: [150, 1031] }, // assisted-vaginal-birth/checkin-what-right.m4a
+  'd25ef7dc': { source: require('../../assets/narration/assisted-vaginal-birth/checkin-what-wrong.m4a'), starts: [150, 1407] }, // assisted-vaginal-birth/checkin-what-wrong.m4a
+  'ac19b5ba': { source: require('../../assets/narration/assisted-vaginal-birth/done.m4a'), starts: [150, 2434, 3234] }, // assisted-vaginal-birth/done.m4a
+  'ff1880fa': { source: require('../../assets/narration/assisted-vaginal-birth/for-baby.m4a'), starts: [150, 6039, 9074, 11507, 16300, 18187] }, // assisted-vaginal-birth/for-baby.m4a
+  'a9522f7d': { source: require('../../assets/narration/assisted-vaginal-birth/for-you.m4a'), starts: [150, 8762, 11886, 15460, 20287] }, // assisted-vaginal-birth/for-you.m4a
+  '0143e7a9': { source: require('../../assets/narration/assisted-vaginal-birth/how.m4a'), starts: [150, 6186, 13156, 17712, 22125] }, // assisted-vaginal-birth/how.m4a
+  'a68c3b8f': { source: require('../../assets/narration/assisted-vaginal-birth/quiz-1-right.m4a'), starts: [150, 1113] }, // assisted-vaginal-birth/quiz-1-right.m4a
+  '951f0991': { source: require('../../assets/narration/assisted-vaginal-birth/quiz-1-wrong.m4a'), starts: [150, 1190] }, // assisted-vaginal-birth/quiz-1-wrong.m4a
+  '141aebc9': { source: require('../../assets/narration/assisted-vaginal-birth/quiz-2-right.m4a'), starts: [150, 985] }, // assisted-vaginal-birth/quiz-2-right.m4a
+  '70a525e7': { source: require('../../assets/narration/assisted-vaginal-birth/quiz-2-wrong.m4a'), starts: [150, 403] }, // assisted-vaginal-birth/quiz-2-wrong.m4a
+  '40b15691': { source: require('../../assets/narration/assisted-vaginal-birth/quiz-3-right.m4a'), starts: [150, 3939, 6131] }, // assisted-vaginal-birth/quiz-3-right.m4a
+  '833a82cb': { source: require('../../assets/narration/assisted-vaginal-birth/quiz-3-wrong.m4a'), starts: [150, 1326, 6913] }, // assisted-vaginal-birth/quiz-3-wrong.m4a
+  '664b7a8a': { source: require('../../assets/narration/assisted-vaginal-birth/summary.m4a'), starts: [150, 1741, 9797, 12970, 17170, 28009] }, // assisted-vaginal-birth/summary.m4a
+  'cb9637a5': { source: require('../../assets/narration/assisted-vaginal-birth/welcome.m4a'), starts: [150, 4409, 7899] }, // assisted-vaginal-birth/welcome.m4a
+  'e62410bb': { source: require('../../assets/narration/assisted-vaginal-birth/what-is.m4a'), starts: [150, 6674, 14075, 19021] }, // assisted-vaginal-birth/what-is.m4a
+  '1f3e262b': { source: require('../../assets/narration/assisted-vaginal-birth/when.m4a'), starts: [150, 4143, 8539, 11401, 15229, 21878] }, // assisted-vaginal-birth/when.m4a
+  '68fa0cc3': { source: require('../../assets/narration/assisted-vaginal-birth/your-questions.m4a'), starts: [150, 3858, 12571] }, // assisted-vaginal-birth/your-questions.m4a
   '7c9ec425': { source: require('../../assets/narration/breastfeeding-basics/challenges.m4a'), starts: [150, 3643, 13886, 17815, 22350, 28058, 30897, 36934] }, // breastfeeding-basics/challenges.m4a
   '8382f4ec': { source: require('../../assets/narration/breastfeeding-basics/checkin-latch-right.m4a'), starts: [150, 1120, 5606] }, // breastfeeding-basics/checkin-latch-right.m4a
   '37ace7de': { source: require('../../assets/narration/breastfeeding-basics/checkin-latch-wrong.m4a'), starts: [150, 1119, 6160] }, // breastfeeding-basics/checkin-latch-wrong.m4a
@@ -72,6 +89,27 @@ export const narrationClips: Record<string, NarrationClip> = {
   '7e5e397c': { source: require('../../assets/narration/car-seat-safety/used-seats-and-crashes.m4a'), starts: [150, 245, 1964, 11817, 13318, 17292, 24057] }, // car-seat-safety/used-seats-and-crashes.m4a
   '01144b24': { source: require('../../assets/narration/car-seat-safety/welcome.m4a'), starts: [150, 2237, 7979] }, // car-seat-safety/welcome.m4a
   '6fb2173d': { source: require('../../assets/narration/car-seat-safety/winter.m4a'), starts: [150, 5044, 10593, 15810, 21159] }, // car-seat-safety/winter.m4a
+  '1a156ed1': { source: require('../../assets/narration/cesarean-birth/before.m4a'), starts: [150, 6849, 9958, 17015, 21676] }, // cesarean-birth/before.m4a
+  '55419c1c': { source: require('../../assets/narration/cesarean-birth/checkin-reasons-right.m4a'), starts: [150, 845] }, // cesarean-birth/checkin-reasons-right.m4a
+  '3f0a3dca': { source: require('../../assets/narration/cesarean-birth/checkin-reasons-wrong.m4a'), starts: [150, 1168] }, // cesarean-birth/checkin-reasons-wrong.m4a
+  '5e8e7205': { source: require('../../assets/narration/cesarean-birth/done.m4a'), starts: [150, 1093, 2617] }, // cesarean-birth/done.m4a
+  'eec224e6': { source: require('../../assets/narration/cesarean-birth/during.m4a'), starts: [150, 3545, 7245, 10278, 13780, 18669] }, // cesarean-birth/during.m4a
+  'e39e531c': { source: require('../../assets/narration/cesarean-birth/first-moments.m4a'), starts: [150, 3962, 14732, 18984] }, // cesarean-birth/first-moments.m4a
+  'ac5c4e62': { source: require('../../assets/narration/cesarean-birth/next-time.m4a'), starts: [150, 3324, 9872, 17290] }, // cesarean-birth/next-time.m4a
+  '253d254c': { source: require('../../assets/narration/cesarean-birth/planned-unplanned.m4a'), starts: [150, 8488, 12226, 18075, 21063] }, // cesarean-birth/planned-unplanned.m4a
+  '722af7b3': { source: require('../../assets/narration/cesarean-birth/quiz-1-right.m4a'), starts: [150, 1097, 7430] }, // cesarean-birth/quiz-1-right.m4a
+  '667490a9': { source: require('../../assets/narration/cesarean-birth/quiz-1-wrong.m4a'), starts: [150, 937, 7504] }, // cesarean-birth/quiz-1-wrong.m4a
+  '91dafb6a': { source: require('../../assets/narration/cesarean-birth/quiz-2-right.m4a'), starts: [150, 859] }, // cesarean-birth/quiz-2-right.m4a
+  'ebbcdddc': { source: require('../../assets/narration/cesarean-birth/quiz-2-wrong.m4a'), starts: [150, 1059] }, // cesarean-birth/quiz-2-wrong.m4a
+  '2c5c4559': { source: require('../../assets/narration/cesarean-birth/quiz-3-right.m4a'), starts: [150, 1053] }, // cesarean-birth/quiz-3-right.m4a
+  '3f31c5c3': { source: require('../../assets/narration/cesarean-birth/quiz-3-wrong.m4a'), starts: [150, 1716] }, // cesarean-birth/quiz-3-wrong.m4a
+  '8aff6fb1': { source: require('../../assets/narration/cesarean-birth/reasons.m4a'), starts: [150, 8654, 12598, 25326] }, // cesarean-birth/reasons.m4a
+  '2cd8379e': { source: require('../../assets/narration/cesarean-birth/recovery-home.m4a'), starts: [150, 5602, 13267, 16131, 25289, 27568] }, // cesarean-birth/recovery-home.m4a
+  'cfa81673': { source: require('../../assets/narration/cesarean-birth/recovery-hospital.m4a'), starts: [150, 11812, 14975, 18126, 19169] }, // cesarean-birth/recovery-hospital.m4a
+  'b4dd7f5d': { source: require('../../assets/narration/cesarean-birth/summary.m4a'), starts: [150, 1410, 7182, 12321, 15787, 25732, 28778] }, // cesarean-birth/summary.m4a
+  '3deb7291': { source: require('../../assets/narration/cesarean-birth/welcome.m4a'), starts: [150, 5671, 9524] }, // cesarean-birth/welcome.m4a
+  '92bca214': { source: require('../../assets/narration/cesarean-birth/what-is.m4a'), starts: [150, 7916, 12406, 14817, 17101] }, // cesarean-birth/what-is.m4a
+  'a4de8c19': { source: require('../../assets/narration/cesarean-birth/your-preferences.m4a'), starts: [150, 4381, 7015, 13904, 17222] }, // cesarean-birth/your-preferences.m4a
   'f35a2c7d': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/bath-safety.m4a'), starts: [150, 5476, 12150, 14886, 21078] }, // diapers-baths-crying-and-soothing/bath-safety.m4a
   '3a5cdc33': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/calm-plan.m4a'), starts: [150, 2509, 5200, 8531, 10704] }, // diapers-baths-crying-and-soothing/calm-plan.m4a
   '7178b053': { source: require('../../assets/narration/diapers-baths-crying-and-soothing/checkin-bath-right.m4a'), starts: [150, 1154, 4772] }, // diapers-baths-crying-and-soothing/checkin-bath-right.m4a
@@ -198,14 +236,40 @@ export const narrationClips: Record<string, NarrationClip> = {
   '7a5db3fc': { source: require('../../assets/narration/formula-and-combination-feeding/welcome.m4a'), starts: [150, 9968, 17197] }, // formula-and-combination-feeding/welcome.m4a
   '58065dbd': { source: require('../../assets/narration/formula-and-combination-feeding/your-choice.m4a'), starts: [150, 5499, 11386, 15022, 23610, 29003] }, // formula-and-combination-feeding/your-choice.m4a
   '17582263': { source: require('../../assets/narration/formula-and-combination-feeding/your-plan.m4a'), starts: [150, 1722, 3595, 8678, 11308, 13910] }, // formula-and-combination-feeding/your-plan.m4a
+  'd5785074': { source: require('../../assets/narration/how-labor-begins/checkin-bloody-show-right.m4a'), starts: [150, 633, 4731, 6774, 10377] }, // how-labor-begins/checkin-bloody-show-right.m4a
+  '6f062d9a': { source: require('../../assets/narration/how-labor-begins/checkin-bloody-show-wrong.m4a'), starts: [150, 1188, 5302, 7654, 11241] }, // how-labor-begins/checkin-bloody-show-wrong.m4a
+  'bac5b8ed': { source: require('../../assets/narration/how-labor-begins/checkin-timing-right.m4a'), starts: [150, 1264, 8833] }, // how-labor-begins/checkin-timing-right.m4a
+  '36a090d7': { source: require('../../assets/narration/how-labor-begins/checkin-timing-wrong.m4a'), starts: [150, 1073, 8195] }, // how-labor-begins/checkin-timing-wrong.m4a
+  '47f044fe': { source: require('../../assets/narration/how-labor-begins/checkin-timing.m4a'), starts: [150] }, // how-labor-begins/checkin-timing.m4a
+  'd5440355': { source: require('../../assets/narration/how-labor-begins/done.m4a'), starts: [150, 1068, 2682] }, // how-labor-begins/done.m4a
+  'b2ec36a5': { source: require('../../assets/narration/how-labor-begins/every-labor-different.m4a'), starts: [150, 5169, 14495, 18185] }, // how-labor-begins/every-labor-different.m4a
+  '87681675': { source: require('../../assets/narration/how-labor-begins/preterm-signs.m4a'), starts: [150, 5410, 7597, 21822] }, // how-labor-begins/preterm-signs.m4a
+  'ab127fdd': { source: require('../../assets/narration/how-labor-begins/quiz-1-right.m4a'), starts: [150, 1161, 4151] }, // how-labor-begins/quiz-1-right.m4a
+  '3df3f37f': { source: require('../../assets/narration/how-labor-begins/quiz-1-wrong.m4a'), starts: [150, 1524, 4511] }, // how-labor-begins/quiz-1-wrong.m4a
+  'dd9403e8': { source: require('../../assets/narration/how-labor-begins/quiz-2-right.m4a'), starts: [150, 902] }, // how-labor-begins/quiz-2-right.m4a
+  '9e01d21a': { source: require('../../assets/narration/how-labor-begins/quiz-2-wrong.m4a'), starts: [150, 1741] }, // how-labor-begins/quiz-2-wrong.m4a
+  'fcff0831': { source: require('../../assets/narration/how-labor-begins/quiz-3-right.m4a'), starts: [150, 975, 5191] }, // how-labor-begins/quiz-3-right.m4a
+  'c3c66317': { source: require('../../assets/narration/how-labor-begins/quiz-3-wrong.m4a'), starts: [150, 1311, 5242] }, // how-labor-begins/quiz-3-wrong.m4a
+  'eeb41fb4': { source: require('../../assets/narration/how-labor-begins/signs-labor-close.m4a'), starts: [150, 4210, 5708, 8631, 16665, 17177, 19756, 24832, 27711] }, // how-labor-begins/signs-labor-close.m4a
+  '3b258fc3': { source: require('../../assets/narration/how-labor-begins/summary.m4a'), starts: [150, 1061, 1955, 11321, 17330, 20161, 25377, 27385] }, // how-labor-begins/summary.m4a
+  'fbf856f7': { source: require('../../assets/narration/how-labor-begins/timing-contractions-video.m4a'), starts: [150, 4485, 6634, 11881, 17541] }, // how-labor-begins/timing-contractions-video.m4a
+  'e184c13d': { source: require('../../assets/narration/how-labor-begins/true-vs-false.m4a'), starts: [150, 2182, 7015, 11974, 17314, 21392, 24708, 27925, 36227, 39374, 43930] }, // how-labor-begins/true-vs-false.m4a
+  'af1b48d2': { source: require('../../assets/narration/how-labor-begins/urgent-warning-signs.m4a'), starts: [150, 5427, 17618, 27081, 30680, 31817] }, // how-labor-begins/urgent-warning-signs.m4a
+  '9114487c': { source: require('../../assets/narration/how-labor-begins/water-breaking.m4a'), starts: [150, 8159, 18069, 21274, 24086, 30296] }, // how-labor-begins/water-breaking.m4a
+  '902e1c4a': { source: require('../../assets/narration/how-labor-begins/welcome.m4a'), starts: [150, 3812, 7564, 10416, 18749, 22958] }, // how-labor-begins/welcome.m4a
+  '0b442802': { source: require('../../assets/narration/how-labor-begins/what-is-a-contraction.m4a'), starts: [150, 5873, 8984, 10963, 16978, 17471, 22786, 24919] }, // how-labor-begins/what-is-a-contraction.m4a
+  '4d840d16': { source: require('../../assets/narration/how-labor-begins/when-labor-starts.m4a'), starts: [150, 4636, 9559, 16788, 23303] }, // how-labor-begins/when-labor-starts.m4a
+  '33956c2e': { source: require('../../assets/narration/how-labor-begins/your-call-plan.m4a'), starts: [150, 8952, 14603, 22937, 24855] }, // how-labor-begins/your-call-plan.m4a
   '52d73f7a': { source: require('../../assets/narration/induction-of-labor/at-39-weeks.m4a'), starts: [150, 5872, 14439, 18295, 24973] }, // induction-of-labor/at-39-weeks.m4a
   '473b8830': { source: require('../../assets/narration/induction-of-labor/checkin-reasons-right.m4a'), starts: [150, 974] }, // induction-of-labor/checkin-reasons-right.m4a
   'cbd6858a': { source: require('../../assets/narration/induction-of-labor/checkin-reasons-wrong.m4a'), starts: [150, 1408] }, // induction-of-labor/checkin-reasons-wrong.m4a
+  '16fdd6d2': { source: require('../../assets/narration/induction-of-labor/done.m4a'), starts: [150, 2504, 3313] }, // induction-of-labor/done.m4a
   '8a3a66a3': { source: require('../../assets/narration/induction-of-labor/how-it-works.m4a'), starts: [150, 2839, 7865, 9877, 15299, 18945] }, // induction-of-labor/how-it-works.m4a
   '02b37a85': { source: require('../../assets/narration/induction-of-labor/quiz-1-right.m4a'), starts: [150, 1002] }, // induction-of-labor/quiz-1-right.m4a
   'a37a2a5f': { source: require('../../assets/narration/induction-of-labor/quiz-1-wrong.m4a'), starts: [150, 1308] }, // induction-of-labor/quiz-1-wrong.m4a
   'f50d9745': { source: require('../../assets/narration/induction-of-labor/quiz-2-right.m4a'), starts: [150, 1046, 7868] }, // induction-of-labor/quiz-2-right.m4a
   '144741ff': { source: require('../../assets/narration/induction-of-labor/quiz-2-wrong.m4a'), starts: [150, 1064, 8029] }, // induction-of-labor/quiz-2-wrong.m4a
+  '80051bb8': { source: require('../../assets/narration/induction-of-labor/quiz-3-right.m4a'), starts: [150, 768] }, // induction-of-labor/quiz-3-right.m4a
   '2558c686': { source: require('../../assets/narration/induction-of-labor/quiz-3-wrong.m4a'), starts: [150, 1160] }, // induction-of-labor/quiz-3-wrong.m4a
   'ea88b943': { source: require('../../assets/narration/induction-of-labor/reasons.m4a'), starts: [150, 6555, 19289, 20973] }, // induction-of-labor/reasons.m4a
   '5ff09ff3': { source: require('../../assets/narration/induction-of-labor/ripening.m4a'), starts: [150, 6524, 14781, 16614, 23523] }, // induction-of-labor/ripening.m4a
@@ -396,6 +460,40 @@ export const narrationClips: Record<string, NarrationClip> = {
   'dd8cc441': { source: require('../../assets/narration/understanding-labor-pain/what-affects.m4a'), starts: [150, 2569, 11439, 17618, 19548, 23410] }, // understanding-labor-pain/what-affects.m4a
   'f2a8808b': { source: require('../../assets/narration/understanding-labor-pain/why-it-hurts.m4a'), starts: [150, 3602, 7391, 9744, 15175, 19399] }, // understanding-labor-pain/why-it-hurts.m4a
   '82e72412': { source: require('../../assets/narration/understanding-labor-pain/your-thoughts.m4a'), starts: [150, 4291, 8948, 10599, 14731] }, // understanding-labor-pain/your-thoughts.m4a
+  '764470d9': { source: require('../../assets/narration/when-plans-change/afterward-feelings.m4a'), starts: [150, 9042, 10884, 12946, 18105] }, // when-plans-change/afterward-feelings.m4a
+  '3e4b29a6': { source: require('../../assets/narration/when-plans-change/checkin-change-right.m4a'), starts: [150, 1034] }, // when-plans-change/checkin-change-right.m4a
+  '7c7ef694': { source: require('../../assets/narration/when-plans-change/checkin-change-wrong.m4a'), starts: [150, 1245] }, // when-plans-change/checkin-change-wrong.m4a
+  'a8abb7d9': { source: require('../../assets/narration/when-plans-change/in-the-moment.m4a'), starts: [150, 4902, 7408, 16134, 19021] }, // when-plans-change/in-the-moment.m4a
+  '6cd1fa89': { source: require('../../assets/narration/when-plans-change/making-sense.m4a'), starts: [150, 3923, 10191, 11537, 19165] }, // when-plans-change/making-sense.m4a
+  '36a9ab22': { source: require('../../assets/narration/when-plans-change/plans-change.m4a'), starts: [150, 1989, 6562, 9996, 13990] }, // when-plans-change/plans-change.m4a
+  '8c3930e4': { source: require('../../assets/narration/when-plans-change/quiz-1-right.m4a'), starts: [150, 947, 2988] }, // when-plans-change/quiz-1-right.m4a
+  '5c225ade': { source: require('../../assets/narration/when-plans-change/quiz-1-wrong.m4a'), starts: [150, 3000, 7067] }, // when-plans-change/quiz-1-wrong.m4a
+  '1bbee251': { source: require('../../assets/narration/when-plans-change/quiz-2-right.m4a'), starts: [150, 904] }, // when-plans-change/quiz-2-right.m4a
+  '1006e3d3': { source: require('../../assets/narration/when-plans-change/quiz-2-wrong.m4a'), starts: [150, 1438] }, // when-plans-change/quiz-2-wrong.m4a
+  'ff724124': { source: require('../../assets/narration/when-plans-change/quiz-3-right.m4a'), starts: [150, 1000, 8318] }, // when-plans-change/quiz-3-right.m4a
+  '67aee856': { source: require('../../assets/narration/when-plans-change/quiz-3-wrong.m4a'), starts: [150, 1562, 8782] }, // when-plans-change/quiz-3-wrong.m4a
+  'eb52c682': { source: require('../../assets/narration/when-plans-change/summary.m4a'), starts: [150, 1577, 6348, 13040, 18190, 23044, 24695] }, // when-plans-change/summary.m4a
+  'fccee27b': { source: require('../../assets/narration/when-plans-change/welcome.m4a'), starts: [150, 7995] }, // when-plans-change/welcome.m4a
+  '7e10ff93': { source: require('../../assets/narration/when-plans-change/what-matters.m4a'), starts: [150, 2119, 6330, 11703, 15186] }, // when-plans-change/what-matters.m4a
+  '7bf91e63': { source: require('../../assets/narration/when-plans-change/what-you-can-keep.m4a'), starts: [150, 4662, 7302, 11885, 22128, 24486] }, // when-plans-change/what-you-can-keep.m4a
+  'e6d85f8a': { source: require('../../assets/narration/when-plans-change/when-to-get-help.m4a'), starts: [150, 11650, 15338, 19756, 23196] }, // when-plans-change/when-to-get-help.m4a
+  'c3e3cb5f': { source: require('../../assets/narration/when-to-contact-your-care-team/always-ok-to-call.m4a'), starts: [150, 5623, 12982, 14227, 19267] }, // when-to-contact-your-care-team/always-ok-to-call.m4a
+  '4f49a6a1': { source: require('../../assets/narration/when-to-contact-your-care-team/baby-movement.m4a'), starts: [150, 5269, 11865, 19923, 24624] }, // when-to-contact-your-care-team/baby-movement.m4a
+  'f6503515': { source: require('../../assets/narration/when-to-contact-your-care-team/bleeding.m4a'), starts: [150, 7055, 8382, 12937, 19009] }, // when-to-contact-your-care-team/bleeding.m4a
+  'a1d1bda1': { source: require('../../assets/narration/when-to-contact-your-care-team/call-card.m4a'), starts: [150, 2576, 10708, 13710] }, // when-to-contact-your-care-team/call-card.m4a
+  'b1be5a0c': { source: require('../../assets/narration/when-to-contact-your-care-team/checkin-511-right.m4a'), starts: [150, 1078, 4545] }, // when-to-contact-your-care-team/checkin-511-right.m4a
+  '4f33e4e6': { source: require('../../assets/narration/when-to-contact-your-care-team/checkin-511-wrong.m4a'), starts: [150, 1248, 3419] }, // when-to-contact-your-care-team/checkin-511-wrong.m4a
+  'b19da789': { source: require('../../assets/narration/when-to-contact-your-care-team/checkin-water-color-right.m4a'), starts: [150, 991, 3771] }, // when-to-contact-your-care-team/checkin-water-color-right.m4a
+  '1d7e9f0f': { source: require('../../assets/narration/when-to-contact-your-care-team/checkin-water-color-wrong.m4a'), starts: [150, 1417, 4227] }, // when-to-contact-your-care-team/checkin-water-color-wrong.m4a
+  '12d8fdc6': { source: require('../../assets/narration/when-to-contact-your-care-team/checkin-water-color.m4a'), starts: [150] }, // when-to-contact-your-care-team/checkin-water-color.m4a
+  'af5f903d': { source: require('../../assets/narration/when-to-contact-your-care-team/five-one-one.m4a'), starts: [150, 4717, 11916, 17091, 20979, 29773] }, // when-to-contact-your-care-team/five-one-one.m4a
+  '2c8cd18d': { source: require('../../assets/narration/when-to-contact-your-care-team/practice-call-video.m4a'), starts: [150] }, // when-to-contact-your-care-team/practice-call-video.m4a
+  '8e0d2809': { source: require('../../assets/narration/when-to-contact-your-care-team/quiz-1-right.m4a'), starts: [150, 1140, 5009] }, // when-to-contact-your-care-team/quiz-1-right.m4a
+  '032b81ef': { source: require('../../assets/narration/when-to-contact-your-care-team/two-kinds-of-calls.m4a'), starts: [150, 2958, 4734, 9427, 12142, 20126] }, // when-to-contact-your-care-team/two-kinds-of-calls.m4a
+  '68af31af': { source: require('../../assets/narration/when-to-contact-your-care-team/urgent-warning-signs.m4a'), starts: [150, 2830, 16540, 25985] }, // when-to-contact-your-care-team/urgent-warning-signs.m4a
+  'd91796b6': { source: require('../../assets/narration/when-to-contact-your-care-team/water-breaks.m4a'), starts: [150, 6201, 9168, 15131, 21530] }, // when-to-contact-your-care-team/water-breaks.m4a
+  'c56da98d': { source: require('../../assets/narration/when-to-contact-your-care-team/welcome.m4a'), starts: [150, 1166, 4877, 9943] }, // when-to-contact-your-care-team/welcome.m4a
+  '231be9a3': { source: require('../../assets/narration/when-to-contact-your-care-team/what-to-say.m4a'), starts: [150, 3958, 6152, 22894] }, // when-to-contact-your-care-team/what-to-say.m4a
   '1de869c6': { source: require('../../assets/narration/your-newborns-first-days/breathing.m4a'), starts: [150, 6113, 11714, 16217, 20129, 20795] }, // your-newborns-first-days/breathing.m4a
   '26f9016a': { source: require('../../assets/narration/your-newborns-first-days/checkin-looks-right.m4a'), starts: [150, 1079, 7489] }, // your-newborns-first-days/checkin-looks-right.m4a
   'e23d8674': { source: require('../../assets/narration/your-newborns-first-days/checkin-looks-wrong.m4a'), starts: [150, 4680, 7274] }, // your-newborns-first-days/checkin-looks-wrong.m4a
