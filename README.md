@@ -86,16 +86,6 @@ EXPO_PUBLIC_FIREBASE_FIRESTORE_EMULATOR_PORT=8080
 
 Use a reachable LAN IP instead of `127.0.0.1` for a physical device. `npm run test:emulators` starts isolated emulators automatically (it needs Java).
 
-### EPDS self-check
-
-Lesson 6.4 can offer a private Edinburgh Postnatal Depression Scale check (`src/components/SelfCheckSheet.tsx`, scoring in `src/lib/epds.ts`). It's off unless this is set:
-
-```bash
-EXPO_PUBLIC_ENABLE_EPDS=true
-```
-
-Keep it off in production until written permission to use the scale in the app has come from its copyright holder, the Royal College of Psychiatrists. Answers are never saved or sent anywhere.
-
 ### Full-class purchase
 
 Early Pregnancy Basics, the class welcome, and every lesson on when to get urgent help are free. The rest of the class is one non-consumable purchase through RevenueCat (`src/services/purchaseService.ts`, `src/components/PaywallSheet.tsx`). The free list is `src/lib/access.ts`, tested in `tests/access.test.mjs`. It's off unless this is set:
