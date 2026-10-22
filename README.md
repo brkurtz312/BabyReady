@@ -95,6 +95,12 @@ EXPO_PUBLIC_ENABLE_PAYWALL=true
 EXPO_PUBLIC_REVENUECAT_IOS_KEY=appl_...
 ```
 
+For store builds, the key is in `eas.json`'s `production` profile with the switch off. The `testflight-purchase` profile turns it on, for testing a sandbox purchase on TestFlight:
+
+```bash
+npx eas-cli build --platform ios --profile testflight-purchase --auto-submit
+```
+
 The app buys the default offering's first package attached to the `full_class` entitlement and never names the product, so the product and price are changed in App Store Connect and RevenueCat, not in code. The price shown is always the store's own `priceString`; never write an amount into the app. The web build can't buy: it shows the free lessons and points to the app for the rest.
 
 ### What instructor answers cost

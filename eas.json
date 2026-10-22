@@ -13,7 +13,17 @@
     },
     "production": {
       "environment": "production",
-      "autoIncrement": true
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_REVENUECAT_IOS_KEY": "appl_sZYWnfalWwVBmbmiKwHHtYasoZJ"
+      }
+    },
+    "testflight-purchase": {
+      "extends": "production",
+      "env": {
+        "EXPO_PUBLIC_REVENUECAT_IOS_KEY": "appl_sZYWnfalWwVBmbmiKwHHtYasoZJ",
+        "EXPO_PUBLIC_ENABLE_PAYWALL": "true"
+      }
     }
   },
   "submit": {
@@ -21,6 +31,9 @@
       "ios": {
         "ascAppId": "6799197372"
       }
+    },
+    "testflight-purchase": {
+      "extends": "production"
     }
   }
 }
