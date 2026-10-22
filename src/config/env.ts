@@ -39,14 +39,6 @@ export const firebaseEmulatorConfig = {
 };
 
 /**
- * The Edinburgh Postnatal Depression Scale self-check. Off unless
- * EXPO_PUBLIC_ENABLE_EPDS is "true": the scale is copyright of the Royal College
- * of Psychiatrists, and it stays off until permission to use it in the app is
- * confirmed.
- */
-export const epdsEnabled = booleanValue(process.env.EXPO_PUBLIC_ENABLE_EPDS);
-
-/**
  * The full-class purchase. Off unless EXPO_PUBLIC_ENABLE_PAYWALL is "true";
  * while off, every lesson is open. The RevenueCat keys are public SDK keys
  * (appl_… for iOS, goog_… for Android), safe to ship in the app.
