@@ -113,8 +113,8 @@
         "nichd-know-if-pregnant"
       ],
       "visual": {
-        "kind": "diagram",
-        "description": "Simple, friendly illustration of a home pregnancy test next to a phone, suggesting the next step is calling the care team. No result window or brand shown."
+        "kind": "illustration",
+        "description": "A hand holding a phone beside a bedside table with a home pregnancy test on it, suggesting the next step is calling the care team. No brand shown."
       }
     },
     {
