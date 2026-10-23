@@ -18,6 +18,7 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'getting-ready-bags-routes-car-seat/your-labor-bag': require('../../assets/lessons/getting-ready-bags-routes-car-seat/your-labor-bag.jpg'),
   'stages-of-labor/early-labor': require('../../assets/lessons/stages-of-labor/early-labor.jpg'),
   // Early Pregnancy Basics, made with scripts/make-artwork.mjs and approved in review.
+  'early-pregnancy-first-steps/confirm-pregnancy': require('../../assets/lessons/early-pregnancy-first-steps/confirm-pregnancy.jpg'),
   'early-pregnancy-first-steps/folic-acid': require('../../assets/lessons/early-pregnancy-first-steps/folic-acid.jpg'),
   'early-pregnancy-first-steps/nausea-basics': require('../../assets/lessons/early-pregnancy-first-steps/nausea-basics.jpg'),
   'early-pregnancy-first-steps/your-next-steps': require('../../assets/lessons/early-pregnancy-first-steps/your-next-steps.jpg'),

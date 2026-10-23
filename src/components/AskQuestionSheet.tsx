@@ -3,6 +3,7 @@ import * as Speech from 'expo-speech';
 import {
   AVAudioSessionCategory,
   AVAudioSessionCategoryOptions,
+  AVAudioSessionMode,
   ExpoSpeechRecognitionModule,
   useSpeechRecognitionEvent,
 } from 'expo-speech-recognition';
@@ -236,6 +237,25 @@ export function AskQuestionSheet({ visible, lessonId, lessonTitle, voiceOn, onCl
     }
   }
 
+  /**
+   * Listening puts the iPhone's audio in a recording mode that makes spoken
+   * output very quiet, and it stays that way afterward. Switch back to normal
+   * playback so the instructor and the lesson narration can be heard again.
+   */
+  function restorePlaybackAudio() {
+    if (Platform.OS !== 'ios') return;
+    try {
+      ExpoSpeechRecognitionModule.setCategoryIOS({
+        category: AVAudioSessionCategory.playback,
+        categoryOptions: [],
+        mode: AVAudioSessionMode.spokenAudio,
+      });
+      ExpoSpeechRecognitionModule.setAudioSessionActiveIOS(true);
+    } catch {
+      // Leave the audio as it is rather than interrupt the lesson.
+    }
+  }
+
   function stopListening() {
     try {
       ExpoSpeechRecognitionModule.stop();
@@ -252,6 +272,7 @@ export function AskQuestionSheet({ visible, lessonId, lessonTitle, voiceOn, onCl
   });
   useSpeechRecognitionEvent('end', () => {
     setListening(false);
+    restorePlaybackAudio();
     const spoken = finalTranscriptRef.current.trim();
     finalTranscriptRef.current = '';
     setHeard('');
@@ -259,6 +280,7 @@ export function AskQuestionSheet({ visible, lessonId, lessonTitle, voiceOn, onCl
   });
   useSpeechRecognitionEvent('error', (event) => {
     setListening(false);
+    restorePlaybackAudio();
     setHeard('');
     if (event.error === 'aborted') return;
     voiceModeRef.current = false;
@@ -279,6 +301,7 @@ export function AskQuestionSheet({ visible, lessonId, lessonTitle, voiceOn, onCl
     } catch {
       // Nothing was listening.
     }
+    restorePlaybackAudio();
     setBusy(false);
     onClose();
   }

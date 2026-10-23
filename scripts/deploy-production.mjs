@@ -27,7 +27,9 @@ function run(command, args) {
 }
 
 run(process.execPath, ['scripts/check-production-env.mjs']);
-run('npx', ['expo', 'export', '--platform', 'web']);
+// --clear: Expo's build cache can keep EXPO_PUBLIC_ values from an earlier
+// local build, such as a test build with the purchase switched on.
+run('npx', ['expo', 'export', '--platform', 'web', '--clear']);
 run('npx', [
   'firebase',
   'deploy',

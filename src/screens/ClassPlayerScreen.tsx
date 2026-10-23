@@ -18,8 +18,6 @@ import { animationFor } from '../components/LessonAnimations';
 import { LessonListSheet } from '../components/LessonListSheet';
 import { LessonVideo } from '../components/LessonVideo';
 import { drawnVisualFor } from '../components/LessonVisuals';
-import { SelfCheckSheet } from '../components/SelfCheckSheet';
-import { epdsEnabled } from '../config/env';
 import { artworkFor } from '../content/artwork';
 import type { Course } from '../content/lessons';
 import { videoFor } from '../content/videos';
@@ -61,13 +59,6 @@ const colors = {
 /** Slides that move on by themselves once narration finishes. */
 const AUTO_ADVANCE_TYPES: Slide['type'][] = ['title', 'content', 'comparison', 'summary'];
 const AUTO_ADVANCE_DELAY_MS = 1400;
-
-/** Slides that offer the EPDS self-check, when it's switched on. They wait for the learner instead of moving on. */
-const SELF_CHECK_SLIDES = ['emotional-health-after-birth/getting-treatment'];
-
-function offersSelfCheck(lessonId: string, slideId: string): boolean {
-  return epdsEnabled && SELF_CHECK_SLIDES.includes(`${lessonId}/${slideId}`);
-}
 
 /** Comparison slides about urgent calls get the alert colors. */
 const ALERT_COMPARISON_SLIDE_IDS = ['two-kinds-of-calls'];
@@ -181,7 +172,6 @@ export function ClassPlayerScreen({
   const [sentenceIndex, setSentenceIndex] = useState(0);
   const [narrationDone, setNarrationDone] = useState(false);
   const [askOpen, setAskOpen] = useState(false);
-  const [selfCheckOpen, setSelfCheckOpen] = useState(false);
   const [lessonListOpen, setLessonListOpen] = useState(false);
   const resumeAfterAskRef = useRef(false);
 
@@ -258,7 +248,6 @@ export function ClassPlayerScreen({
     if (
       slide &&
       AUTO_ADVANCE_TYPES.includes(slide.type) &&
-      !offersSelfCheck(lesson.lessonId, slide.id) &&
       state.slideIndex < lesson.slides.length - 1
     ) {
       clearAdvance();
@@ -394,15 +383,6 @@ export function ClassPlayerScreen({
       speakFrom(sentenceIndex);
     }
     resumeAfterAskRef.current = false;
-  }
-
-  function openSelfCheck() {
-    clearAdvance();
-    if (playing) {
-      stopSpeech();
-      setPlaying(false);
-    }
-    setSelfCheckOpen(true);
   }
 
   function toggleVoice() {
@@ -542,7 +522,6 @@ export function ClassPlayerScreen({
             answer={state.answer}
             lesson={lesson}
             onAnswer={answerQuestion}
-            onOpenSelfCheck={openSelfCheck}
             onVideoPlay={onVideoPlay}
             userId={userId}
             slide={slide}
@@ -645,7 +624,6 @@ export function ClassPlayerScreen({
         onPick={loadLesson}
         visible={lessonListOpen}
       />
-      {epdsEnabled ? <SelfCheckSheet onClose={() => setSelfCheckOpen(false)} visible={selfCheckOpen} /> : null}
     </SafeAreaView>
   );
 }
@@ -737,7 +715,6 @@ function SlideView({
   sourcesById,
   answer,
   onAnswer,
-  onOpenSelfCheck,
   onVideoPlay,
 }: {
   slide: Slide;
@@ -746,7 +723,6 @@ function SlideView({
   sourcesById: Record<string, Source>;
   answer: number | null;
   onAnswer: (question: CheckInQuestion, index: number) => void;
-  onOpenSelfCheck: () => void;
   onVideoPlay: () => void;
 }) {
   const sources = <SourceList sources={slide.sourceIds.map((id) => sourcesById[id]).filter(Boolean)} />;
@@ -855,16 +831,6 @@ function SlideView({
           <Text style={styles.heading}>{slide.heading}</Text>
           <SlideVisual lessonId={lesson.lessonId} slide={slide} />
           <Bullets items={slide.onScreen} />
-          {offersSelfCheck(lesson.lessonId, slide.id) ? (
-            <Pressable
-              accessibilityHint="Opens a private 10-question check for depression and anxiety. Your answers aren't saved."
-              accessibilityRole="button"
-              onPress={onOpenSelfCheck}
-              style={[styles.briefButton, styles.selfCheckButton]}
-            >
-              <Text style={styles.briefButtonText}>Check in with yourself</Text>
-            </Pressable>
-          ) : null}
           {sources}
         </View>
       );
@@ -1202,7 +1168,6 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   briefButtonText: { color: colors.lagoon, fontSize: 15, fontWeight: '700' },
-  selfCheckButton: { alignSelf: 'flex-start' },
   sources: { borderTopWidth: 1, borderTopColor: colors.line, paddingTop: 10, gap: 4 },
   sourcesLabel: { color: colors.muted, fontSize: 12, fontWeight: '700', textTransform: 'uppercase' },
   sourceLink: { color: colors.lagoon, fontSize: 13, textDecorationLine: 'underline' },
