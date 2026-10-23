@@ -5680,5 +5680,1142 @@
       1140,
       5009
     ]
+  },
+  "when-to-contact-your-care-team/quiz-2-right.m4a": {
+    "fingerprint": "76dad828",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1055
+    ]
+  },
+  "when-to-contact-your-care-team/quiz-1-wrong.m4a": {
+    "fingerprint": "8f5d16fb",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1833,
+      6086
+    ]
+  },
+  "when-to-contact-your-care-team/quiz-2-wrong.m4a": {
+    "fingerprint": "dc90ea2a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1030
+    ]
+  },
+  "when-to-contact-your-care-team/quiz-3-right.m4a": {
+    "fingerprint": "5423a553",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      969,
+      3405,
+      4357
+    ]
+  },
+  "when-to-contact-your-care-team/done.m4a": {
+    "fingerprint": "38a989e6",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      970,
+      2495
+    ]
+  },
+  "when-to-contact-your-care-team/summary.m4a": {
+    "fingerprint": "1766ef80",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1211,
+      3759,
+      7570,
+      15032,
+      19216,
+      22443
+    ]
+  },
+  "when-to-contact-your-care-team/quiz-3-wrong.m4a": {
+    "fingerprint": "4c2f0e19",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1091,
+      5463,
+      5685
+    ]
+  },
+  "stages-of-labor/welcome.m4a": {
+    "fingerprint": "2c938d00",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1195,
+      5636,
+      11499
+    ]
+  },
+  "stages-of-labor/three-stages.m4a": {
+    "fingerprint": "323d437a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2370,
+      6716,
+      9146,
+      13866,
+      19133
+    ]
+  },
+  "stages-of-labor/cervix.m4a": {
+    "fingerprint": "716d5c5a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3547,
+      8852,
+      12090,
+      14869,
+      18076,
+      22109
+    ]
+  },
+  "stages-of-labor/checkin-early-labor-right.m4a": {
+    "fingerprint": "f5c33423",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1158,
+      5172,
+      9862
+    ]
+  },
+  "stages-of-labor/early-labor.m4a": {
+    "fingerprint": "657b1ff4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3143,
+      7777,
+      13335,
+      18140,
+      21776,
+      24931,
+      30761
+    ]
+  },
+  "stages-of-labor/checkin-early-labor-wrong.m4a": {
+    "fingerprint": "4e10dfd1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      894,
+      4878,
+      9851
+    ]
+  },
+  "stages-of-labor/dilation-video.m4a": {
+    "fingerprint": "fbda52b7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "stages-of-labor/transition.m4a": {
+    "fingerprint": "b7153bf8",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4147,
+      8370,
+      12009,
+      16011,
+      21745,
+      24695
+    ]
+  },
+  "stages-of-labor/active-labor.m4a": {
+    "fingerprint": "992e6c2e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5879,
+      14801,
+      21149,
+      23596
+    ]
+  },
+  "stages-of-labor/placenta.m4a": {
+    "fingerprint": "b86c9abe",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3439,
+      9662,
+      14075,
+      18946
+    ]
+  },
+  "stages-of-labor/pushing.m4a": {
+    "fingerprint": "8836a81d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3438,
+      7635,
+      10798,
+      13714,
+      19968,
+      25926
+    ]
+  },
+  "stages-of-labor/checkin-stage-two.m4a": {
+    "fingerprint": "f475fa46",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "stages-of-labor/call-any-stage.m4a": {
+    "fingerprint": "dec8d9c7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6728,
+      20230
+    ]
+  },
+  "stages-of-labor/checkin-stage-two-right.m4a": {
+    "fingerprint": "1a1a121e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1113,
+      5941
+    ]
+  },
+  "stages-of-labor/checkin-stage-two-wrong.m4a": {
+    "fingerprint": "0594d248",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1189,
+      6379
+    ]
+  },
+  "stages-of-labor/support-by-stage.m4a": {
+    "fingerprint": "ee3202ad",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3408,
+      9854,
+      18848,
+      21104,
+      26032
+    ]
+  },
+  "stages-of-labor/quiz-1-wrong.m4a": {
+    "fingerprint": "ecb0c47e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1487,
+      5402
+    ]
+  },
+  "stages-of-labor/support-plan.m4a": {
+    "fingerprint": "041c2c2d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2589,
+      13258,
+      16377
+    ]
+  },
+  "stages-of-labor/summary.m4a": {
+    "fingerprint": "d0e6049f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1269,
+      10545,
+      14528,
+      17670,
+      20255,
+      22751
+    ]
+  },
+  "stages-of-labor/quiz-2-wrong.m4a": {
+    "fingerprint": "4bc61237",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1279,
+      7978
+    ]
+  },
+  "stages-of-labor/quiz-3-right.m4a": {
+    "fingerprint": "92ca5c3d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1102,
+      4216
+    ]
+  },
+  "stages-of-labor/quiz-2-right.m4a": {
+    "fingerprint": "9e3ffdf1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1028,
+      7556
+    ]
+  },
+  "stages-of-labor/quiz-3-wrong.m4a": {
+    "fingerprint": "76a011ab",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      959,
+      4102
+    ]
+  },
+  "stages-of-labor/done.m4a": {
+    "fingerprint": "f1a7682a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1156,
+      2774
+    ]
+  },
+  "early-labor-at-home/welcome.m4a": {
+    "fingerprint": "0b2ab368",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1424,
+      6343,
+      11721
+    ]
+  },
+  "early-labor-at-home/rest-and-move.m4a": {
+    "fingerprint": "a18f01a4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4355,
+      11455,
+      15992,
+      20201,
+      21712,
+      27526
+    ]
+  },
+  "early-labor-at-home/why-home.m4a": {
+    "fingerprint": "88221b1c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5769,
+      14118,
+      20758,
+      23528
+    ]
+  },
+  "early-labor-at-home/checkin-night-right.m4a": {
+    "fingerprint": "60cabc12",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      881,
+      3906,
+      6018
+    ]
+  },
+  "early-labor-at-home/eat-drink.m4a": {
+    "fingerprint": "2a495b58",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1860,
+      8059,
+      13765,
+      16347,
+      21946,
+      26629
+    ]
+  },
+  "early-labor-at-home/checkin-night-wrong.m4a": {
+    "fingerprint": "1f002dd4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1601,
+      4620,
+      6475
+    ]
+  },
+  "early-labor-at-home/early-labor-video.m4a": {
+    "fingerprint": "f2b997e3",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "early-labor-at-home/comfort-tools.m4a": {
+    "fingerprint": "ad2929a8",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2118,
+      10827,
+      15016,
+      19103,
+      22330,
+      23342,
+      26865
+    ]
+  },
+  "early-labor-at-home/tracking.m4a": {
+    "fingerprint": "2610352f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      7880,
+      12097,
+      16596,
+      19550
+    ]
+  },
+  "early-labor-at-home/support-at-home.m4a": {
+    "fingerprint": "8a7de697",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3350,
+      4311,
+      10291,
+      14158,
+      16842,
+      19039
+    ]
+  },
+  "stages-of-labor/quiz-1-right.m4a": {
+    "fingerprint": "44ea59fc",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      948,
+      5096
+    ]
+  },
+  "early-labor-at-home/when-to-leave.m4a": {
+    "fingerprint": "035f5844",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2245,
+      7771,
+      11051,
+      12744,
+      14191,
+      19145
+    ]
+  },
+  "early-labor-at-home/call-now.m4a": {
+    "fingerprint": "51722dbc",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3766,
+      20698
+    ]
+  },
+  "early-labor-at-home/checkin-trip-right.m4a": {
+    "fingerprint": "784bdaed",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1267,
+      2686
+    ]
+  },
+  "early-labor-at-home/early-labor-plan.m4a": {
+    "fingerprint": "7c3c768e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3222,
+      17372
+    ]
+  },
+  "early-labor-at-home/checkin-trip-wrong.m4a": {
+    "fingerprint": "5e04bc6b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1213,
+      2748
+    ]
+  },
+  "early-labor-at-home/quiz-1-right.m4a": {
+    "fingerprint": "cd906106",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1019,
+      3804,
+      7327
+    ]
+  },
+  "early-labor-at-home/quiz-1-wrong.m4a": {
+    "fingerprint": "6630f18c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      892,
+      3742,
+      7255
+    ]
+  },
+  "early-labor-at-home/quiz-2-wrong.m4a": {
+    "fingerprint": "534e7f3a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1040
+    ]
+  },
+  "early-labor-at-home/quiz-3-right.m4a": {
+    "fingerprint": "7fbd199d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1119
+    ]
+  },
+  "early-labor-at-home/quiz-3-wrong.m4a": {
+    "fingerprint": "120a49a3",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1079
+    ]
+  },
+  "early-labor-at-home/done.m4a": {
+    "fingerprint": "eeac35e9",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1256,
+      2798
+    ]
+  },
+  "pushing-and-birth/welcome.m4a": {
+    "fingerprint": "e3c454a4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1467,
+      5851,
+      12355
+    ]
+  },
+  "early-labor-at-home/quiz-2-right.m4a": {
+    "fingerprint": "119d8b5c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      737
+    ]
+  },
+  "pushing-and-birth/what-it-feels-like.m4a": {
+    "fingerprint": "0c3ca27a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5531,
+      11681,
+      16096,
+      20032,
+      24707,
+      28119,
+      31156
+    ]
+  },
+  "pushing-and-birth/checkin-pressure-right.m4a": {
+    "fingerprint": "390666b9",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1104,
+      4594,
+      7525,
+      12424
+    ]
+  },
+  "early-labor-at-home/summary.m4a": {
+    "fingerprint": "54de1b99",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1316,
+      8058,
+      15347,
+      19112,
+      22148
+    ]
+  },
+  "pushing-and-birth/checkin-pressure-wrong.m4a": {
+    "fingerprint": "5a0e4cf3",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1097,
+      4763,
+      7702,
+      12308
+    ]
+  },
+  "pushing-and-birth/how-long.m4a": {
+    "fingerprint": "d4e1771b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3879,
+      8088,
+      12326,
+      16014
+    ]
+  },
+  "pushing-and-birth/how-to-push.m4a": {
+    "fingerprint": "80e520dd",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2509,
+      4753,
+      6942,
+      8858,
+      14162,
+      15978,
+      23954,
+      25237
+    ]
+  },
+  "pushing-and-birth/positions.m4a": {
+    "fingerprint": "f9e5e5ca",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3077,
+      6667,
+      14892,
+      21786
+    ]
+  },
+  "pushing-and-birth/pushing-video.m4a": {
+    "fingerprint": "0cbedaa7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "pushing-and-birth/crowning.m4a": {
+    "fingerprint": "9164f2f8",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      7145,
+      12136,
+      15203,
+      24987
+    ]
+  },
+  "pushing-and-birth/baby-is-born.m4a": {
+    "fingerprint": "4051c303",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6741,
+      13938,
+      16824,
+      21016
+    ]
+  },
+  "pushing-and-birth/support-while-pushing.m4a": {
+    "fingerprint": "adeb3026",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6111,
+      8726,
+      15379,
+      16925,
+      18499,
+      19534
+    ]
+  },
+  "pushing-and-birth/tears.m4a": {
+    "fingerprint": "27cd1d4a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3833,
+      8219,
+      9658,
+      15193,
+      18075,
+      24272,
+      27415
+    ]
+  },
+  "pushing-and-birth/fast-birth.m4a": {
+    "fingerprint": "c3b2e7ef",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3087,
+      10026,
+      11798,
+      14499,
+      16361,
+      24368,
+      26879
+    ]
+  },
+  "pushing-and-birth/pushing-preferences.m4a": {
+    "fingerprint": "aa955ccb",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3582
+    ]
+  },
+  "pushing-and-birth/summary.m4a": {
+    "fingerprint": "c75080c1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1394,
+      6277,
+      12051,
+      15811,
+      18265,
+      25694
+    ]
+  },
+  "pushing-and-birth/quiz-2-wrong.m4a": {
+    "fingerprint": "a11ef1ac",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1628
+    ]
+  },
+  "pushing-and-birth/quiz-3-right.m4a": {
+    "fingerprint": "c66e4c4a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1017,
+      3827
+    ]
+  },
+  "pushing-and-birth/quiz-3-wrong.m4a": {
+    "fingerprint": "71c46158",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      985,
+      3875
+    ]
+  },
+  "pushing-and-birth/quiz-1-right.m4a": {
+    "fingerprint": "7b7952d1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      856,
+      5646
+    ]
+  },
+  "pushing-and-birth/done.m4a": {
+    "fingerprint": "faf5a466",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2291,
+      3077
+    ]
+  },
+  "pushing-and-birth/quiz-1-wrong.m4a": {
+    "fingerprint": "4e6acb3b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1074,
+      6365
+    ]
+  },
+  "pushing-and-birth/quiz-2-right.m4a": {
+    "fingerprint": "11f8bc86",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1139
+    ]
+  },
+  "placenta-and-first-hour/welcome.m4a": {
+    "fingerprint": "0d3fdbe1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2828,
+      4590,
+      15687,
+      18140
+    ]
+  },
+  "placenta-and-first-hour/third-stage.m4a": {
+    "fingerprint": "7089ed20",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5321,
+      9723,
+      14733,
+      19581,
+      25219
+    ]
+  },
+  "placenta-and-first-hour/checkin-cord-right.m4a": {
+    "fingerprint": "796e865f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1020
+    ]
+  },
+  "placenta-and-first-hour/preventing-bleeding.m4a": {
+    "fingerprint": "4afe59c0",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6583,
+      12842,
+      17562,
+      24439
+    ]
+  },
+  "placenta-and-first-hour/cord-clamping.m4a": {
+    "fingerprint": "ff6f6390",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4996,
+      10512,
+      15478,
+      18868,
+      25288,
+      27555
+    ]
+  },
+  "placenta-and-first-hour/checkin-cord-wrong.m4a": {
+    "fingerprint": "8ad85efd",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1350
+    ]
+  },
+  "placenta-and-first-hour/your-recovery.m4a": {
+    "fingerprint": "add609b0",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      7323,
+      10552,
+      15576,
+      20501,
+      24144,
+      27597
+    ]
+  },
+  "placenta-and-first-hour/golden-hour-video.m4a": {
+    "fingerprint": "0cd1f778",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "placenta-and-first-hour/heavy-bleeding.m4a": {
+    "fingerprint": "9298ad95",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2852,
+      8805,
+      19895,
+      26621,
+      31057,
+      31917
+    ]
+  },
+  "placenta-and-first-hour/checkin-bleeding-right.m4a": {
+    "fingerprint": "cef79b27",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1664,
+      6793
+    ]
+  },
+  "placenta-and-first-hour/checkin-bleeding-wrong.m4a": {
+    "fingerprint": "04abd2ed",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1287,
+      7348
+    ]
+  },
+  "placenta-and-first-hour/first-feeding.m4a": {
+    "fingerprint": "4212c04b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5203,
+      9147,
+      15710,
+      18475,
+      20730
+    ]
+  },
+  "placenta-and-first-hour/skin-to-skin.m4a": {
+    "fingerprint": "e537ca7a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      8701,
+      11605,
+      14002,
+      17348,
+      19462,
+      23627
+    ]
+  },
+  "placenta-and-first-hour/first-hour-wishes.m4a": {
+    "fingerprint": "fe2a776b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2868,
+      6291,
+      9941,
+      11762,
+      16033
+    ]
+  },
+  "placenta-and-first-hour/baby-checks.m4a": {
+    "fingerprint": "7ede3617",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4674,
+      6531,
+      9530,
+      15414,
+      19007
+    ]
+  },
+  "placenta-and-first-hour/quiz-1-right.m4a": {
+    "fingerprint": "fdb5d834",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      697
+    ]
+  },
+  "placenta-and-first-hour/quiz-1-wrong.m4a": {
+    "fingerprint": "f8048422",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1095
+    ]
+  },
+  "placenta-and-first-hour/summary.m4a": {
+    "fingerprint": "a4ec8116",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1334,
+      8566,
+      12692,
+      17667,
+      21400,
+      23489
+    ]
+  },
+  "placenta-and-first-hour/quiz-2-right.m4a": {
+    "fingerprint": "0904ac33",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1052
+    ]
+  },
+  "placenta-and-first-hour/quiz-2-wrong.m4a": {
+    "fingerprint": "d8c6894d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1464
+    ]
+  },
+  "placenta-and-first-hour/quiz-3-right.m4a": {
+    "fingerprint": "91c006d2",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1191
+    ]
+  },
+  "placenta-and-first-hour/quiz-3-wrong.m4a": {
+    "fingerprint": "b9be9fdc",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1316
+    ]
+  },
+  "physical-recovery-after-birth/welcome.m4a": {
+    "fingerprint": "e1a62b59",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4368,
+      18445
+    ]
+  },
+  "physical-recovery-after-birth/recovery-takes-time.m4a": {
+    "fingerprint": "33d8b1fd",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2259,
+      11587,
+      19017,
+      25190
+    ]
   }
 }
