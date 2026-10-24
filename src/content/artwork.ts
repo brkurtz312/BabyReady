@@ -156,6 +156,8 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'induction-of-labor/risks': require('../../assets/lessons/induction-of-labor/risks.jpg'),
   'assisted-vaginal-birth/welcome': require('../../assets/lessons/assisted-vaginal-birth/welcome.jpg'),
   'assisted-vaginal-birth/how': require('../../assets/lessons/assisted-vaginal-birth/how.jpg'),
+  'assisted-vaginal-birth/vacuum': require('../../assets/lessons/assisted-vaginal-birth/vacuum.jpg'),
+  'assisted-vaginal-birth/forceps': require('../../assets/lessons/assisted-vaginal-birth/forceps.jpg'),
   'assisted-vaginal-birth/for-baby': require('../../assets/lessons/assisted-vaginal-birth/for-baby.jpg'),
   'assisted-vaginal-birth/for-you': require('../../assets/lessons/assisted-vaginal-birth/for-you.jpg'),
   'cesarean-birth/welcome': require('../../assets/lessons/cesarean-birth/welcome.jpg'),

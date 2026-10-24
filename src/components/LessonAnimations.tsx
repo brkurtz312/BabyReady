@@ -284,12 +284,38 @@ function birthAt(t: number): { head: number; shoulders: number; body: number } {
   return { head: part(0, 1.4), shoulders: part(1.5, 3.2), body: part(3.3, 5.0) };
 }
 
+type Birth = { head: number; shoulders: number; body: number };
+const NOT_BORN: Birth = { head: 0, shoulders: 0, body: 0 };
+
 function PushingDrawing({ t }: { t: number }) {
+  const { d, push } = descentAt(t);
+  return <BirthScene birth={t >= PUSH_STARTS[3] ? birthAt(t) : NOT_BORN} d={d} push={push} />;
+}
+
+/** Where the baby's head is in the scene, for drawing a vacuum cup or forceps on it. */
+type HeadSpot = { cx: number; hy: number; r: number; openY: number };
+
+/**
+ * The side view of the second stage: uterus, birth canal and baby, with the head `d`
+ * of the way from the open cervix (0) to crowning (1), then born per `birth`. `behind`
+ * draws behind the baby and `front` over the canal walls.
+ */
+function BirthScene({
+  d,
+  push,
+  birth,
+  behind,
+  front,
+}: {
+  d: number;
+  push: number;
+  birth: Birth;
+  behind?: (head: HeadSpot) => React.ReactNode;
+  front?: (head: HeadSpot) => React.ReactNode;
+}) {
   const cx = 180;
   const neckY = 130;
   const openY = 224;
-  const { d, push } = descentAt(t);
-  const birth = t >= PUSH_STARTS[3] ? birthAt(t) : { head: 0, shoulders: 0, body: 0 };
 
   // The head runs from the cervix down to crowning at the opening; once born, it
   // comes clear of the opening, waits while the shoulders turn, then the body follows
@@ -339,6 +365,7 @@ function PushingDrawing({ t }: { t: number }) {
   return (
     <G>
       <Path d={uterus} fill="none" stroke={push > 0.05 ? c.lagoon : '#3E8A84'} strokeLinecap="round" strokeWidth={wall} />
+      {behind ? behind({ cx, hy, r, openY }) : null}
       {/* The baby, head down: body, shoulders, head; outlined first, then filled as one shape. */}
       <G origin={`${cx}, ${hy}`} rotation={lying}>
         <Ellipse cx={cx} cy={ty} rx={25} ry={30} stroke={c.babyLine} strokeWidth={3} />
@@ -351,6 +378,7 @@ function PushingDrawing({ t }: { t: number }) {
       </G>
       <Path d={wallPath(-1)} fill="none" stroke="#3E8A84" strokeLinecap="round" strokeLinejoin="round" strokeWidth={6} />
       <Path d={wallPath(1)} fill="none" stroke="#3E8A84" strokeLinecap="round" strokeLinejoin="round" strokeWidth={6} />
+      {front ? front({ cx, hy, r, openY }) : null}
       {turning ? (
         <G opacity={Math.min(1, Math.sin(birth.shoulders * Math.PI) * 2)}>
           <Path d={`M ${cx + 40} ${sy + 18} A 34 14 0 0 0 ${cx - 40} ${sy + 18}`} fill="none" stroke={c.marigold} strokeLinecap="round" strokeWidth={3} />
@@ -375,6 +403,207 @@ function PushingDrawing({ t }: { t: number }) {
         Vaginal opening
       </SvgText>
     </G>
+  );
+}
+
+// ---------- Assisted vaginal birth: vacuum and forceps ----------
+
+type Step = { seconds: number; title: string; detail: string };
+
+const startsOf = (steps: Step[]) => steps.map((_, i) => steps.slice(0, i).reduce((sum, step) => sum + step.seconds, 0));
+const totalOf = (steps: Step[]) => steps.reduce((sum, step) => sum + step.seconds, 0);
+/** How far through step `i` the time `t` is, 0 to 1. */
+const progress = (t: number, starts: number[], steps: Step[], i: number) => Math.min(1, Math.max(0, (t - starts[i]) / steps[i].seconds));
+
+const LOW = 0.6;
+const instrument = '#3B4D66';
+
+function assistSteps(tool: 'vacuum' | 'forceps'): Step[] {
+  const low = { seconds: 4, title: 'Baby low in the pelvis', detail: 'The cervix is fully open and your baby’s head is low, close to the opening.' };
+  const pull = { seconds: 9, title: 'Pull with your push', detail: 'With each contraction, you push and your provider gently pulls. Your baby comes down faster.' };
+  const rest = { seconds: 4, title: 'The rest of the birth', detail: 'The shoulders turn and the body is born, as in any vaginal birth.' };
+  return tool === 'vacuum'
+    ? [
+        low,
+        { seconds: 4, title: 'The cup goes on', detail: 'Your provider places the soft cup on the top of your baby’s head.' },
+        { seconds: 3, title: 'Gentle suction', detail: 'A hand pump makes gentle suction, so the cup holds on.' },
+        pull,
+        { seconds: 4, title: 'The head is born', detail: 'The suction is released and the cup comes off.' },
+        rest,
+      ]
+    : [
+        low,
+        { seconds: 5, title: 'One blade at a time', detail: 'Your provider slides one smooth blade along each side of your baby’s head.' },
+        { seconds: 3, title: 'The handles lock', detail: 'The handles lock together, so the blades cradle the head like cupped hands.' },
+        pull,
+        { seconds: 4, title: 'The head is born', detail: 'The blades are taken off.' },
+        rest,
+      ];
+}
+
+/** The baby's descent with help: two pulled contractions take the head from low to crowning, then the birth. */
+function assistedAt(t: number, steps: Step[]): { d: number; push: number; birth: Birth } {
+  const starts = startsOf(steps);
+  if (t < starts[3]) return { d: LOW, push: 0, birth: NOT_BORN };
+  if (t < starts[4]) {
+    const cycle = steps[3].seconds / 2;
+    const n = Math.floor((t - starts[3]) / cycle);
+    const phase = ((t - starts[3]) % cycle) / cycle;
+    const before = LOW + n * 0.2;
+    if (phase < 0.6) return { d: before + 0.22 * ease(phase / 0.6), push: Math.sin((phase / 0.6) * Math.PI), birth: NOT_BORN };
+    return { d: before + 0.22 - 0.02 * ease((phase - 0.6) / 0.4), push: 0, birth: NOT_BORN };
+  }
+  const head = progress(t, starts, steps, 4);
+  const after = progress(t, starts, steps, 5);
+  return {
+    d: 1,
+    push: 0,
+    birth: { head: ease(Math.min(1, head * 1.6)), shoulders: ease(Math.min(1, after * 1.8)), body: ease(Math.max(0, after * 1.8 - 0.8)) },
+  };
+}
+
+/** A small "gentle pull" arrow beside the handle while the provider pulls. */
+function PullArrow({ x, y, push }: { x: number; y: number; push: number }) {
+  if (push < 0.05) return null;
+  return (
+    <G opacity={Math.min(1, push * 2)}>
+      <Path d={`M ${x} ${y} l 0 22 M ${x - 6} ${y + 15} l 6 7 l 6 -7`} fill="none" stroke={c.marigold} strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} />
+      <SvgText fill={c.ink} fontFamily={FONT} fontSize={12} fontWeight="700" textAnchor="start" x={x + 10} y={y + 16}>
+        Gentle pull
+      </SvgText>
+    </G>
+  );
+}
+
+function VacuumDrawing({ t }: { t: number }) {
+  const steps = assistSteps('vacuum');
+  const starts = startsOf(steps);
+  const { d, push, birth } = assistedAt(t, steps);
+  const on = ease(progress(t, starts, steps, 1));
+  const suction = progress(t, starts, steps, 2);
+  const off = ease(Math.max(0, progress(t, starts, steps, 4) * 2 - 0.9));
+  const front = ({ cx, hy, r }: HeadSpot) => {
+    if (on <= 0 || off >= 1) return null;
+    // The cup slides in from below, sits on the top of the head (the lowest point,
+    // as the baby is head-down), and drops away once the head is born.
+    const dy = (1 - on) * 70 + off * 40;
+    const opacity = Math.min(on * 1.5, 1 - off);
+    const cupR = r + 3;
+    const a = (40 * Math.PI) / 180;
+    const left = `${cx - Math.sin(a) * cupR} ${hy + dy + Math.cos(a) * cupR}`;
+    const right = `${cx + Math.sin(a) * cupR} ${hy + dy + Math.cos(a) * cupR}`;
+    const bottom = hy + dy + cupR;
+    const handleY = bottom + 46;
+    const pulsing = suction > 0 && suction < 1 ? 0.5 + 0.5 * Math.sin(suction * Math.PI * 6) : suction >= 1 ? 1 : 0;
+    return (
+      <G opacity={opacity}>
+        {/* A soft bell-shaped cup over the top of the head; it darkens as the suction builds. */}
+        <Path
+          d={`M ${left} A ${cupR} ${cupR} 0 0 0 ${right} L ${cx + Math.sin(a) * (cupR + 7)} ${hy + dy + Math.cos(a) * (cupR + 7)} A ${cupR + 7} ${cupR + 7} 0 0 1 ${cx - Math.sin(a) * (cupR + 7)} ${hy + dy + Math.cos(a) * (cupR + 7)} Z`}
+          fill={pulsing > 0.5 ? c.lagoon : '#7FB5AE'}
+          stroke={instrument}
+          strokeLinejoin="round"
+          strokeWidth={2.5}
+        />
+        <Line stroke={instrument} strokeLinecap="round" strokeWidth={3} x1={cx} x2={cx} y1={bottom + 7} y2={handleY - 6} />
+        <Rect fill={instrument} height={12} rx={6} width={34} x={cx - 17} y={handleY - 6} />
+        {suction > 0 && off === 0 ? (
+          <SvgText fill={c.lagoon} fontFamily={FONT} fontSize={12} fontWeight="700" opacity={Math.min(1, suction * 3)} textAnchor="start" x={cx + 40} y={hy + dy + 30}>
+            Suction
+          </SvgText>
+        ) : null}
+        {on > 0.5 && suction === 0 ? (
+          <SvgText fill={c.ink} fontFamily={FONT} fontSize={12} fontWeight="700" opacity={(on - 0.5) * 2} textAnchor="start" x={cx + 40} y={hy + dy + 30}>
+            Soft cup
+          </SvgText>
+        ) : null}
+        <PullArrow push={push} x={cx + 30} y={handleY - 14} />
+      </G>
+    );
+  };
+  return <BirthScene birth={birth} d={d} front={front} push={push} />;
+}
+
+function ForcepsDrawing({ t }: { t: number }) {
+  const steps = assistSteps('forceps');
+  const starts = startsOf(steps);
+  const { d, push, birth } = assistedAt(t, steps);
+  const placing = progress(t, starts, steps, 1);
+  const first = ease(Math.min(1, placing * 2));
+  const second = ease(Math.max(0, placing * 2 - 1));
+  const lock = progress(t, starts, steps, 2);
+  const off = ease(Math.max(0, progress(t, starts, steps, 4) * 2 - 0.9));
+  // In this side view one blade lies along the near side of the head, the other along
+  // the far side; each has an open window, and their shanks meet at the lock.
+  const blade = (x: number, hy: number, r: number, k: number, near: boolean) => {
+    if (k <= 0 || off >= 1) return null;
+    const dy = (1 - k) * 80 + off * 50;
+    const opacity = Math.min(k * 1.5, 1 - off);
+    const y = hy + dy;
+    const lockY = y + r + 30;
+    return (
+      <G opacity={opacity * (near ? 1 : 0.55)}>
+        <Ellipse cx={x} cy={y - 2} fill={near ? c.lagoonSoft : 'none'} fillOpacity={0.35} rx={11} ry={r + 2} stroke={instrument} strokeWidth={near ? 4 : 3.5} />
+        <Path d={`M ${x} ${y + r} Q ${x} ${lockY - 12} 180 ${lockY}`} fill="none" stroke={instrument} strokeLinecap="round" strokeWidth={near ? 4 : 3.5} />
+        <Line stroke={instrument} strokeLinecap="round" strokeWidth={near ? 5 : 4} x1={180} x2={180 + (near ? -7 : 7)} y1={lockY} y2={lockY + 34} />
+      </G>
+    );
+  };
+  const behind = ({ cx, hy, r }: HeadSpot) => blade(cx + 6, hy, r, first, false);
+  const front = ({ cx, hy, r }: HeadSpot) => {
+    const lockY = hy + r + 30;
+    return (
+      <G>
+        {blade(cx - 3, hy, r, second, true)}
+        {lock > 0 && off < 1 ? (
+          <G opacity={Math.min(lock * 3, 1 - off)}>
+            <Circle cx={cx} cy={lockY} fill={c.marigold} r={4.5} />
+            {lock < 1 ? (
+              <SvgText fill={c.ink} fontFamily={FONT} fontSize={12} fontWeight="700" textAnchor="start" x={cx + 14} y={lockY + 4}>
+                Handles lock
+              </SvgText>
+            ) : null}
+          </G>
+        ) : null}
+        {placing > 0.15 && lock === 0 ? (
+          <SvgText fill={c.ink} fontFamily={FONT} fontSize={12} fontWeight="700" textAnchor="start" x={cx + 28} y={hy + 4}>
+            {placing < 0.5 ? 'First blade' : 'Second blade'}
+          </SvgText>
+        ) : null}
+        {off < 1 ? <PullArrow push={push} x={cx + 26} y={lockY + 6} /> : null}
+      </G>
+    );
+  };
+  return <BirthScene behind={behind} birth={birth} d={d} front={front} push={push} />;
+}
+
+/** A vacuum or forceps birth, for the assisted-birth lesson's video slides. */
+function AssistedAnimation({ tool, onPlay }: { tool: 'vacuum' | 'forceps'; onPlay: () => void }) {
+  const steps = assistSteps(tool);
+  const starts = startsOf(steps);
+  const { t, playing, finished, toggle } = usePlayback(totalOf(steps), onPlay);
+  let step = steps[0];
+  steps.forEach((candidate, i) => {
+    if (t >= starts[i]) step = candidate;
+  });
+  const label =
+    tool === 'vacuum'
+      ? 'Animation of a vacuum-assisted birth, in side view. With the cervix fully open and the baby’s head low, a soft cup is placed on the top of the head and held on with gentle suction. With each contraction, the parent pushes while the provider gently pulls on the handle, and the head comes down faster. Once the head is born, the cup comes off, and the shoulders and body are born.'
+      : 'Animation of a forceps-assisted birth, in side view. With the cervix fully open and the baby’s head low, two smooth curved blades are slid in one at a time, one on each side of the head, and the handles lock together. With each contraction, the parent pushes while the provider gently pulls, and the head comes down faster. Once the head is born, the blades are taken off, and the shoulders and body are born.';
+  return (
+    <View accessibilityLabel={label} style={s.frame}>
+      <View accessibilityLiveRegion="polite" style={[s.copy, s.copyTall]}>
+        <Text style={s.title}>{step.title}</Text>
+        <Text style={s.detail}>{step.detail}</Text>
+      </View>
+      <Svg style={s.pushing} viewBox="0 0 360 300">
+        {tool === 'vacuum' ? <VacuumDrawing t={t} /> : <ForcepsDrawing t={t} />}
+      </Svg>
+      <View style={s.footer}>
+        <PlayButton finished={finished} onPress={toggle} playing={playing} />
+        <Text style={s.note}>Not to scale in time, and drawn simply.</Text>
+      </View>
+    </View>
   );
 }
 
@@ -666,6 +895,8 @@ function BreathingGuide({ kind, onPlay }: { kind: 'slow' | 'lighter'; onPlay: ()
 const ANIMATIONS: Record<string, (onPlay: () => void) => React.ReactElement> = {
   'stages-of-labor/dilation-video': (onPlay) => <DilationAnimation onPlay={onPlay} />,
   'stages-of-labor/pushing-video': (onPlay) => <PushingAnimation onPlay={onPlay} />,
+  'assisted-vaginal-birth/vacuum-video': (onPlay) => <AssistedAnimation onPlay={onPlay} tool="vacuum" />,
+  'assisted-vaginal-birth/forceps-video': (onPlay) => <AssistedAnimation onPlay={onPlay} tool="forceps" />,
   'breathing-and-relaxation/practice-slow': (onPlay) => <BreathingGuide kind="slow" onPlay={onPlay} />,
   'breathing-and-relaxation/practice-lighter': (onPlay) => <BreathingGuide kind="lighter" onPlay={onPlay} />,
 };
@@ -679,6 +910,8 @@ export function animationFor(lessonId: string, slideId: string, onPlay: () => vo
 const s = StyleSheet.create({
   frame: { alignSelf: 'stretch', backgroundColor: c.bg, borderRadius: 14, padding: 14, gap: 8 },
   copy: { gap: 2, minHeight: 62 },
+  // Room for three lines of detail, so the drawing doesn't jump between steps.
+  copyTall: { minHeight: 82 },
   title: { color: c.lagoon, fontSize: 17, fontWeight: '800' },
   detail: { color: c.ink, fontSize: 14, lineHeight: 19 },
   drawing: { width: '100%', maxWidth: 520, alignSelf: 'center', aspectRatio: 360 / 205 },
