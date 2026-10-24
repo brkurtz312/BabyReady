@@ -10,9 +10,11 @@ import {
 type ClassReflectionsSectionProps = {
   userId: string | null;
   courses?: Course[];
+  /** Hears the reflections shown, so the brief can print them too. */
+  onRowsChange?: (rows: ReflectionRow[]) => void;
 };
 
-type ReflectionRow = {
+export type ReflectionRow = {
   key: string;
   lessonTitle: string;
   prompt: string;
@@ -27,6 +29,7 @@ type ReflectionRow = {
 export function ClassReflectionsSection({
   userId,
   courses = allCourses,
+  onRowsChange,
 }: ClassReflectionsSectionProps) {
   const [state, setState] = useState<ReflectionsState>({
     status: 'loading',
@@ -56,6 +59,8 @@ export function ClassReflectionsSection({
     }
     return result.sort((a, b) => a.order - b.order);
   }, [courses, state.reflections]);
+
+  useEffect(() => onRowsChange?.(rows), [onRowsChange, rows]);
 
   return (
     <View testID="birth-readiness-brief-class-reflections">
