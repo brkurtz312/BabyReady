@@ -206,6 +206,18 @@
       }
     },
     {
+      "id": "pushing-video",
+      "type": "video",
+      "heading": "See the second stage in motion",
+      "onScreen": ["Watch your baby move down and out as you push"],
+      "narration": "This short animation shows what happens during the second stage, from pushing to birth.",
+      "sourceIds": ["acog-cpg8-labor"],
+      "video": {
+        "brief": "Simple, non-graphic medical animation: side view, cervix fully open, baby head-down moving down the birth canal a little with each push and slipping back slightly between contractions, then crowning, then the head, shoulders and body born. Labels for the cervix and vaginal opening.",
+        "maxSeconds": 75
+      }
+    },
+    {
       "id": "placenta",
       "type": "content",
       "heading": "Stage 3: the placenta",

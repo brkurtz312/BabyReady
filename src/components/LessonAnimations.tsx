@@ -242,6 +242,134 @@ function DilationAnimation({ onPlay }: { onPlay: () => void }) {
   );
 }
 
+// ---------- Stage 2: pushing and birth ----------
+
+const PUSH_STEPS = [
+  { seconds: 4, title: 'Fully open', detail: 'The cervix is fully open. Your baby begins moving down through your pelvis.' },
+  { seconds: 12, title: 'Pushing', detail: 'Push with your contractions, rest between them. Each push moves your baby a little, even when it doesn’t feel like it.' },
+  { seconds: 5, title: 'Crowning', detail: 'Your baby’s head reaches the vaginal opening and stays visible between contractions. This is called crowning.' },
+  { seconds: 6, title: 'Birth', detail: 'First the head, then the shoulders turn and slip out, and the rest of the body follows quickly.' },
+];
+const PUSH_TOTAL = PUSH_STEPS.reduce((sum, step) => sum + step.seconds, 0);
+const PUSH_STARTS = PUSH_STEPS.map((_, i) => PUSH_STEPS.slice(0, i).reduce((sum, step) => sum + step.seconds, 0));
+
+/**
+ * How far down the baby's head has come (0 at the open cervix, 1 at crowning,
+ * past 1 as the baby is born), and whether a push is happening. Each of four
+ * contractions brings the head lower, and it slips back a little in the rest
+ * after, as the lesson describes.
+ */
+function descentAt(t: number): { d: number; push: number } {
+  const [, pushing, crowning, birth] = PUSH_STARTS;
+  if (t < pushing) return { d: 0, push: 0 };
+  if (t < crowning) {
+    const cycle = PUSH_STEPS[1].seconds / 4;
+    const n = Math.floor((t - pushing) / cycle);
+    const phase = ((t - pushing) % cycle) / cycle;
+    const before = n * 0.2;
+    const pushPart = 0.55;
+    if (phase < pushPart) {
+      const k = ease(phase / pushPart);
+      return { d: before + 0.28 * k, push: Math.sin((phase / pushPart) * Math.PI) };
+    }
+    const k = ease((phase - pushPart) / (1 - pushPart));
+    return { d: before + 0.28 - 0.08 * k, push: 0 };
+  }
+  if (t < birth) return { d: 0.8 + 0.2 * ease(Math.min(1, (t - crowning) / 2.5)), push: 0 };
+  return { d: 1 + 1.6 * ease(Math.min(1, (t - birth) / (PUSH_STEPS[3].seconds - 1.5))), push: 0 };
+}
+
+function PushingDrawing({ t }: { t: number }) {
+  const cx = 180;
+  const neckY = 130;
+  const openY = 224;
+  const { d, push } = descentAt(t);
+  // The head runs from the cervix down to crowning at the opening, then out, ending
+  // with the baby turned on its side just below the opening.
+  const hy = d <= 1 ? neckY - 12 + d * (openY - neckY + 12) : openY + (d - 1) * 21;
+  const born = Math.max(0, Math.min(1, (d - 1.2) / 1.2));
+  const turn = 90 * ease(born);
+  const by = hy - 44;
+  const s = 1 - 0.035 * push - 0.18 * Math.max(0, d - 1) / 1.6;
+
+  // Canal walls stretch around the baby where it passes.
+  const half = (y: number) => {
+    const base = 25 + ((y - neckY) / (openY - neckY)) * 2;
+    const headBulge = Math.max(0, 27 - base) * Math.exp(-(((y - hy) / 20) ** 2));
+    const bodyBulge = Math.max(0, 34 - base) * Math.exp(-(((y - by) / 26) ** 2)) * (born > 0.4 ? 0 : 1);
+    return base + Math.max(headBulge, bodyBulge);
+  };
+  const points = (sign: number) =>
+    Array.from({ length: 17 }, (_, i) => {
+      const y = neckY + ((openY - neckY) * i) / 16;
+      return `${cx + sign * half(y)},${y}`;
+    }).join(' ');
+
+  const wall = 10;
+  const uh = 31;
+  const top = (y: number) => neckY + (y - neckY) * s;
+  const uterus = `M ${cx - uh} ${neckY}
+    C ${cx - uh - 18} ${top(116)}, ${cx - 72} ${top(102)}, ${cx - 72} ${top(74)}
+    C ${cx - 72} ${top(10)}, ${cx + 72} ${top(10)}, ${cx + 72} ${top(74)}
+    C ${cx + 72} ${top(102)}, ${cx + uh + 18} ${top(116)}, ${cx + uh} ${neckY}`;
+
+  return (
+    <G>
+      <Path d={uterus} fill="none" stroke={push > 0.05 ? c.lagoon : '#3E8A84'} strokeLinecap="round" strokeWidth={wall} />
+      {/* The baby: head down, then turned to lie on its side once born. */}
+      <G origin={`${cx}, ${hy}`} rotation={turn}>
+        <Ellipse cx={cx + 6} cy={by} rx={34} ry={30} stroke={c.babyLine} strokeWidth={3} />
+        <Circle cx={cx} cy={hy} r={24} stroke={c.babyLine} strokeWidth={3} />
+        <Ellipse cx={cx + 6} cy={by} fill={c.baby} rx={34} ry={30} />
+        <Circle cx={cx} cy={hy} fill={c.baby} r={24} />
+      </G>
+      <Path d={`M ${points(-1).split(' ').join(' L ')}`.replace('M ', 'M ')} fill="none" stroke="#3E8A84" strokeLinecap="round" strokeLinejoin="round" strokeWidth={6} />
+      <Path d={`M ${points(1).split(' ').join(' L ')}`} fill="none" stroke="#3E8A84" strokeLinecap="round" strokeLinejoin="round" strokeWidth={6} />
+      {push > 0.05 ? (
+        <SvgText fill={c.lagoon} fontFamily={FONT} fontSize={14} fontWeight="700" opacity={Math.min(1, push * 2)} textAnchor="middle" x={cx} y={14}>
+          Contraction: push
+        </SvgText>
+      ) : null}
+      <SvgText fill={c.muted} fontFamily={FONT} fontSize={12} textAnchor="start" x={262} y={66}>
+        Uterus
+      </SvgText>
+      <SvgText fill={c.muted} fontFamily={FONT} fontSize={12} textAnchor="start" x={226} y={neckY + 4}>
+        Cervix, fully open
+      </SvgText>
+      <SvgText fill={c.muted} fontFamily={FONT} fontSize={12} textAnchor="end" x={140} y={openY + 4}>
+        Vaginal opening
+      </SvgText>
+    </G>
+  );
+}
+
+/** Stage 2 of labor, for its video slide: plays on demand, like the dilation animation. */
+function PushingAnimation({ onPlay }: { onPlay: () => void }) {
+  const { t, playing, finished, toggle } = usePlayback(PUSH_TOTAL, onPlay);
+  let step = PUSH_STEPS[0];
+  PUSH_STEPS.forEach((candidate, i) => {
+    if (t >= PUSH_STARTS[i]) step = candidate;
+  });
+  return (
+    <View
+      accessibilityLabel="Animation of the second stage of labor, in side view. With the cervix fully open, the baby moves down through the birth canal a little with each push, slipping back slightly between contractions. The head reaches the vaginal opening and stays visible, which is crowning. Then the head is born, the shoulders turn, and the rest of the body follows."
+      style={s.frame}
+    >
+      <View accessibilityLiveRegion="polite" style={s.copy}>
+        <Text style={s.title}>{step.title}</Text>
+        <Text style={s.detail}>{step.detail}</Text>
+      </View>
+      <Svg style={s.pushing} viewBox="0 0 360 300">
+        <PushingDrawing t={t} />
+      </Svg>
+      <View style={s.footer}>
+        <PlayButton finished={finished} onPress={toggle} playing={playing} />
+        <Text style={s.note}>Not to scale in time. Pushing can take minutes or a few hours.</Text>
+      </View>
+    </View>
+  );
+}
+
 // ---------- Breathing along with a practice contraction ----------
 
 /** One step of a breathing pattern: the circle grows on a breath in and shrinks on a breath out. */
@@ -338,6 +466,7 @@ function BreathingGuide({ kind, onPlay }: { kind: 'slow' | 'lighter'; onPlay: ()
 
 const ANIMATIONS: Record<string, (onPlay: () => void) => React.ReactElement> = {
   'stages-of-labor/dilation-video': (onPlay) => <DilationAnimation onPlay={onPlay} />,
+  'stages-of-labor/pushing-video': (onPlay) => <PushingAnimation onPlay={onPlay} />,
   'breathing-and-relaxation/practice-slow': (onPlay) => <BreathingGuide kind="slow" onPlay={onPlay} />,
   'breathing-and-relaxation/practice-lighter': (onPlay) => <BreathingGuide kind="lighter" onPlay={onPlay} />,
 };
@@ -356,6 +485,7 @@ const s = StyleSheet.create({
   drawing: { width: '100%', maxWidth: 520, alignSelf: 'center', aspectRatio: 360 / 205 },
   scale: { width: '100%', maxWidth: 520, alignSelf: 'center', aspectRatio: 360 / 50 },
   breathing: { width: '100%', maxWidth: 520, alignSelf: 'center', aspectRatio: 360 / 215 },
+  pushing: { width: '100%', maxWidth: 520, alignSelf: 'center', aspectRatio: 360 / 300 },
   footer: { flexDirection: 'row', alignItems: 'center', gap: 12, flexWrap: 'wrap' },
   button: { backgroundColor: c.lagoon, borderRadius: 999, paddingHorizontal: 18, paddingVertical: 9 },
   buttonText: { color: c.surface, fontSize: 15, fontWeight: '800' },
