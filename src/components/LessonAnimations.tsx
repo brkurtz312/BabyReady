@@ -242,6 +242,170 @@ function DilationAnimation({ onPlay }: { onPlay: () => void }) {
   );
 }
 
+// ---------- Stage 3: the placenta ----------
+
+/** The three steps, then a pause before it loops. Seconds are for pacing only. */
+const PLACENTA_STEPS = [
+  {
+    seconds: 4,
+    title: 'Still attached',
+    detail: 'After your baby is born, the placenta is still attached inside the uterus. The umbilical cord runs from it through the open cervix.',
+  },
+  {
+    seconds: 5,
+    title: 'Separating',
+    detail: 'The uterus keeps contracting, more gently now, and the placenta separates from its wall.',
+  },
+  {
+    seconds: 6,
+    title: 'Delivered',
+    detail: 'The placenta is delivered through the cervix and birth canal. Your care team checks that it’s complete and that your bleeding is under control.',
+  },
+];
+const PLACENTA_TOTAL = PLACENTA_STEPS.reduce((sum, step) => sum + step.seconds, 0);
+
+/** Loops a clock from 0 to `total` seconds while the slide is on screen. */
+function useLoop(total: number) {
+  const [t, setT] = useState(0);
+  useEffect(() => {
+    const start = Date.now();
+    let frame: number;
+    let last = -1;
+    const tick = () => {
+      const now = ((Date.now() - start) / 1000) % total;
+      if (Math.abs(now - last) > 0.033) {
+        last = now;
+        setT(now);
+      }
+      frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [total]);
+  return t;
+}
+
+const placentaColors = { tissue: '#D9A39B', tissueLine: '#B9786F', cord: '#9DB6C8', cordLine: '#6F8FA6' };
+
+/**
+ * A side view after birth: the uterus, the open cervix and the birth canal below it.
+ * The placenta sits on the top wall with the cord running down and out; it separates
+ * as the uterus contracts, then slides down through the cervix and out.
+ */
+function PlacentaDrawing({ t }: { t: number }) {
+  const cx = 180;
+  const neckY = 150;
+  const [a, b] = [PLACENTA_STEPS[0].seconds, PLACENTA_STEPS[0].seconds + PLACENTA_STEPS[1].seconds];
+  const pulse = t > a && t < b ? Math.max(0, Math.sin(((t - a) / (b - a)) * Math.PI * 2)) : 0;
+  const separate = t <= a ? 0 : ease(Math.min(1, (t - a) / (b - a)));
+  const travel = t <= b ? 0 : ease(Math.min(1, (t - b) / (PLACENTA_STEPS[2].seconds - 1.5)));
+  // After the placenta leaves, the uterus keeps getting smaller.
+  const shrink = 1 - 0.04 * pulse - 0.1 * travel;
+  const at = (y: number) => neckY + (y - neckY) * shrink;
+  const atX = (x: number) => cx + (x - cx) * shrink;
+
+  // The placenta's centre: on the top wall, a little lower once it separates, then
+  // down the middle, through the cervix (y 150) and out past the canal (y 210).
+  const restY = at(63) + 12 * separate;
+  const py = restY + (238 - restY) * travel;
+  const px = cx;
+  // It narrows as it passes through the cervix.
+  const narrow = travel > 0.3 && travel < 0.75 ? 0.6 : travel >= 0.75 ? 0.85 : 1;
+  const rx = 36 * narrow;
+  const ry = 11 / Math.max(0.7, narrow);
+  const tilt = -14 * separate * (1 - travel);
+
+  const half = 13;
+  const wall = 10;
+  const uterus = `M ${cx - half} ${neckY + 6} L ${cx - half} ${neckY}
+    C ${cx - half - 16} ${at(136)}, ${atX(cx - 66)} ${at(124)}, ${atX(cx - 66)} ${at(90)}
+    C ${atX(cx - 66)} ${at(26)}, ${atX(cx + 66)} ${at(26)}, ${atX(cx + 66)} ${at(90)}
+    C ${atX(cx + 66)} ${at(124)}, ${cx + half + 16} ${at(136)}, ${cx + half} ${neckY}
+    L ${cx + half} ${neckY + 6}`;
+  // The cord from the placenta down to just outside the birth canal; once the
+  // placenta is out, it hangs below it.
+  const endY = 228 + 26 * travel;
+  const cord =
+    py < neckY
+      ? `M ${px} ${py + ry - 2} C ${px + 26} ${(py + neckY) / 2}, ${cx - 20} ${neckY - 30}, ${cx} ${neckY} S ${cx + 6} ${endY - 20}, ${cx + 2} ${endY}`
+      : `M ${px} ${py + ry - 2} Q ${cx + 6} ${py + ry + 10}, ${cx + 40} ${Math.min(endY, py + ry + 12)}`;
+  const gapOpacity = separate * (1 - travel);
+
+  return (
+    <G>
+      {/* Birth canal below the cervix. */}
+      <Line stroke="#3E8A84" strokeLinecap="round" strokeWidth={6} x1={cx - half} x2={cx - 17} y1={neckY + 6} y2={212} />
+      <Line stroke="#3E8A84" strokeLinecap="round" strokeWidth={6} x1={cx + half} x2={cx + 17} y1={neckY + 6} y2={212} />
+      <Path d={uterus} fill="none" stroke={pulse > 0.05 ? c.lagoon : '#3E8A84'} strokeLinecap="round" strokeWidth={wall} />
+      {/* A thin dark crescent where the placenta has come away from the wall. */}
+      {gapOpacity > 0.02 ? (
+        <Path
+          d={`M ${atX(cx - 34)} ${at(52)} Q ${cx} ${at(40)} ${atX(cx + 34)} ${at(52)}`}
+          fill="none"
+          opacity={gapOpacity * 0.5}
+          stroke={c.ink}
+          strokeDasharray="3 4"
+          strokeWidth={2}
+        />
+      ) : null}
+      <Path d={cord} fill="none" stroke={placentaColors.cordLine} strokeLinecap="round" strokeWidth={6} />
+      <Path d={cord} fill="none" stroke={placentaColors.cord} strokeLinecap="round" strokeWidth={3.5} />
+      <G origin={`${px}, ${py}`} rotation={tilt}>
+        <Ellipse cx={px} cy={py} fill={placentaColors.tissue} rx={rx} ry={ry} stroke={placentaColors.tissueLine} strokeWidth={2.5} />
+      </G>
+      {pulse > 0.05 ? (
+        <SvgText fill={c.lagoon} fontFamily={FONT} fontSize={14} fontWeight="700" opacity={Math.min(1, pulse * 2)} textAnchor="middle" x={cx} y={14}>
+          Contraction
+        </SvgText>
+      ) : null}
+      <SvgText fill={c.muted} fontFamily={FONT} fontSize={12} textAnchor="start" x={270} y={70}>
+        Uterus
+      </SvgText>
+      <SvgText fill={c.muted} fontFamily={FONT} fontSize={12} textAnchor="start" x={208} y={154}>
+        Cervix
+      </SvgText>
+      <SvgText fill={c.muted} fontFamily={FONT} fontSize={12} textAnchor="end" x={py < neckY + 10 ? 96 : px - rx - 10} y={py + 4}>
+        Placenta
+      </SvgText>
+      {travel < 0.5 ? (
+        <SvgText fill={c.muted} fontFamily={FONT} fontSize={12} textAnchor="end" x={cx - 26} y={232}>
+          Cord
+        </SvgText>
+      ) : null}
+    </G>
+  );
+}
+
+/** Stage 3 of labor, drawn on the slide: it plays by itself and loops. */
+export function PlacentaAnimation() {
+  const t = useLoop(PLACENTA_TOTAL + 2);
+  let start = 0;
+  let step = PLACENTA_STEPS[PLACENTA_STEPS.length - 1];
+  let number = PLACENTA_STEPS.length;
+  for (const [i, s2] of PLACENTA_STEPS.entries()) {
+    if (t < start + s2.seconds) {
+      step = s2;
+      number = i + 1;
+      break;
+    }
+    start += s2.seconds;
+  }
+  return (
+    <View
+      accessibilityLabel="Animation of the third stage of labor, in side view. After birth, the placenta is attached to the top of the uterus, with the umbilical cord running down through the open cervix. The uterus contracts and the placenta separates from the wall, then it moves down through the cervix and birth canal and is delivered, and the uterus gets smaller."
+      style={s.frame}
+    >
+      <View accessibilityLiveRegion="polite" style={s.copy}>
+        <Text style={s.title}>{`${number}. ${step.title}`}</Text>
+        <Text style={s.detail}>{step.detail}</Text>
+      </View>
+      <Svg style={s.placenta} viewBox="0 0 360 258">
+        <PlacentaDrawing t={Math.min(t, PLACENTA_TOTAL)} />
+      </Svg>
+    </View>
+  );
+}
+
 // ---------- Breathing along with a practice contraction ----------
 
 /** One step of a breathing pattern: the circle grows on a breath in and shrinks on a breath out. */
@@ -356,6 +520,7 @@ const s = StyleSheet.create({
   drawing: { width: '100%', maxWidth: 520, alignSelf: 'center', aspectRatio: 360 / 205 },
   scale: { width: '100%', maxWidth: 520, alignSelf: 'center', aspectRatio: 360 / 50 },
   breathing: { width: '100%', maxWidth: 520, alignSelf: 'center', aspectRatio: 360 / 215 },
+  placenta: { width: '100%', maxWidth: 520, alignSelf: 'center', aspectRatio: 360 / 258 },
   footer: { flexDirection: 'row', alignItems: 'center', gap: 12, flexWrap: 'wrap' },
   button: { backgroundColor: c.lagoon, borderRadius: 999, paddingHorizontal: 18, paddingVertical: 9 },
   buttonText: { color: c.surface, fontSize: 15, fontWeight: '800' },
