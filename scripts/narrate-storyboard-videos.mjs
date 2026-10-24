@@ -7,11 +7,13 @@
 //   node scripts/narrate-storyboard-videos.mjs --dry-run      show each line and its time budget
 //   node scripts/narrate-storyboard-videos.mjs                narrate every storyboard video
 //   node scripts/narrate-storyboard-videos.mjs --only safe-sleep/safe-sleep-video
+//   node scripts/narrate-storyboard-videos.mjs --only <key> --one-by-one   record each line separately
 // Options: --voice <name> (default Sulafat), --model <name> (default gemini-3.8-flash-tts),
 //          the same voice and model as scripts/make-narration.mjs.
 //
 // Each video is read in one request (the free tier allows about 100 a day), cached in
-// narration-drafts/videos/ (not committed), then cut into lines at its longest pauses.
+// narration-drafts/videos/ (not committed), then cut into lines at the pauses between them.
+// If the pauses can't be trusted, its lines are recorded one by one instead.
 // The narrated videos replace the files in assets/lessons, which still need clinical review.
 
 import { execFileSync, spawnSync } from 'node:child_process';
@@ -29,6 +31,7 @@ const option = (name, fallback) => {
   return i >= 0 && args[i + 1] ? args[i + 1] : fallback;
 };
 const dryRun = flag('dry-run');
+const oneByOne = flag('one-by-one');
 const only = option('only', '').split(',').filter(Boolean);
 const voice = option('voice', 'Sulafat');
 const model = option('model', 'gemini-3.8-flash-tts');
@@ -51,14 +54,21 @@ const keys = Object.keys(boards).filter((k) => !k.startsWith('_') && (!only.leng
 /** The words a scene shows, as one line to read. */
 function lineFor(scene) {
   const parts = scene.type === 'image' || scene.type === 'graphic' ? [scene.caption, scene.sub] : [scene.text, scene.sub];
-  return parts
-    .filter(Boolean)
-    .map((p) => p.trim())
-    .join(' ')
-    .replace(/,\s*$/, '.');
+  const [first, sub] = parts.filter(Boolean).map((p) => p.trim());
+  if (!sub) return first.replace(/,\s*$/, '.');
+  // A subtitle that starts a new sentence needs a full stop before it, or it's read
+  // as one run-on line; one that carries on the caption ("right on your chest.") doesn't.
+  const joined = /^[a-z]/.test(sub) || /[.!?:;,”"]$/.test(first) ? `${first} ${sub}` : `${first}. ${sub}`;
+  return joined.replace(/,\s*$/, '.');
 }
 
-/** Each scene's start time in the finished video, and the latest its line may end. */
+/** How far a long line may run into the next scene, pushing that scene's line later. */
+const SPILL = 1.5;
+
+/**
+ * Each scene's line: when it should start (as the caption appears), the earliest it may
+ * start, and the latest it may end (a little into the next scene, if it must).
+ */
 function schedule(scenes) {
   const starts = [];
   let t = 0;
@@ -67,10 +77,11 @@ function schedule(scenes) {
     t += secondsOf(scene) - FADE;
   }
   const total = t + FADE;
-  return scenes.map((scene, i) => {
-    const next = i + 1 < scenes.length ? starts[i + 1] + LINE_DELAY - GAP : total - 0.3;
-    return { start: starts[i] + LINE_DELAY, latest: next, earliest: starts[i] + 0.1 };
-  });
+  return scenes.map((scene, i) => ({
+    start: starts[i] + LINE_DELAY,
+    earliest: starts[i] + 0.1,
+    latest: i + 1 < scenes.length ? starts[i + 1] + SPILL : total - 0.3,
+  }));
 }
 
 // ---------- Gemini ----------
@@ -144,7 +155,44 @@ function silences(file) {
 }
 
 /**
- * Splits a take into one segment per line, at the longest pauses inside it.
+ * Chooses one pause after each line but the last. The reader sometimes pauses as long
+ * inside a line (between two sentences) as between lines, so each cut is the pause that
+ * best balances being long against sitting where that line should end, judged by how
+ * much of the script has been read. Pauses are chosen in order, one per line break.
+ */
+function pickCuts(pauses, lines, speechStart, speechEnd) {
+  const total = lines.reduce((n, l) => n + l.length, 0);
+  const span = speechEnd - speechStart;
+  let read = 0;
+  const expected = lines.slice(0, -1).map((line) => speechStart + (span * (read += line.length)) / total);
+  const cost = (k, p) => Math.abs((pauses[p][0] + pauses[p][1]) / 2 - expected[k]) - 1.5 * (pauses[p][1] - pauses[p][0]);
+  // best[k][p]: lowest total cost with line break k at pause p.
+  const best = expected.map(() => pauses.map(() => Infinity));
+  const from = expected.map(() => pauses.map(() => -1));
+  pauses.forEach((_, p) => (best[0][p] = cost(0, p)));
+  for (let k = 1; k < expected.length; k++) {
+    for (let p = k; p < pauses.length; p++) {
+      for (let q = k - 1; q < p; q++) {
+        const c = best[k - 1][q] + cost(k, p);
+        if (c < best[k][p]) {
+          best[k][p] = c;
+          from[k][p] = q;
+        }
+      }
+    }
+  }
+  const lastRow = best.at(-1);
+  let p = lastRow.indexOf(Math.min(...lastRow));
+  const picked = [];
+  for (let k = expected.length - 1; k >= 0; k--) {
+    picked.unshift(pauses[p]);
+    p = from[k][p];
+  }
+  return picked;
+}
+
+/**
+ * Splits a take into one segment per line, at the pauses between lines.
  * Returns [start, end] of the speech in each segment.
  */
 function cutLines(wav, lines) {
@@ -155,10 +203,7 @@ function cutLines(wav, lines) {
   const speechEnd = last && last[1] > length - 0.05 ? last[0] : length;
   const inner = quiet.filter(([s, e]) => s > speechStart + 0.05 && e < speechEnd - 0.05);
   if (inner.length < lines.length - 1) throw new Error(`found ${inner.length} pauses for ${lines.length} lines`);
-  const cuts = [...inner]
-    .sort((a, b) => b[1] - b[0] - (a[1] - a[0]))
-    .slice(0, lines.length - 1)
-    .sort((a, b) => a[0] - b[0]);
+  const cuts = pickCuts(inner, lines, speechStart, speechEnd);
   const segments = [];
   let from = speechStart;
   for (const [s, e] of cuts) {
@@ -177,34 +222,54 @@ function cutLines(wav, lines) {
 }
 
 // ---------- Building the sound track ----------
-function narrate(key, lines, wav, segments, slots) {
+/** Records each line on its own, for a take whose pauses can't be trusted. Returns clips. */
+async function linesOneByOne(lines) {
+  const clips = [];
+  for (const line of lines) {
+    const wav = await takeFor([line]);
+    const length = durationOf(wav);
+    const quiet = silences(wav);
+    const s = quiet[0] && quiet[0][0] < 0.05 ? quiet[0][1] : 0;
+    const last = quiet.at(-1);
+    const e = last && last[1] > length - 0.05 ? last[0] : length;
+    clips.push({ wav, s, e });
+  }
+  return clips;
+}
+
+/** clips: one { wav, s, e } per line: the file and the stretch of it to use. */
+function narrate(key, lines, clips, slots) {
   const [lessonId, slideId] = key.split('/');
   const video = path.join(root, 'assets/lessons', lessonId, `${slideId}.mp4`);
   if (!existsSync(video)) throw new Error(`no video at ${path.relative(root, video)}`);
   const total = durationOf(video);
 
+  const files = [...new Set(clips.map((c) => c.wav))];
   const filters = [];
   const labels = [];
-  segments.forEach(([s, e], i) => {
+  let previousEnd = -GAP;
+  clips.forEach(({ wav, s, e }, i) => {
     let length = e - s;
     const slot = slots[i];
-    let start = slot.start;
+    const notBefore = Math.max(slot.earliest, previousEnd + GAP);
+    let start = Math.max(slot.start, previousEnd + GAP);
     let tempo = 1;
-    if (start + length > slot.latest) start = Math.max(slot.earliest, slot.latest - length);
+    if (start + length > slot.latest) start = Math.max(notBefore, slot.latest - length);
     if (start + length > slot.latest) {
       tempo = length / (slot.latest - start);
-      if (tempo > MAX_SPEEDUP) throw new Error(`line ${i + 1} ("${lines[i]}") needs ${length.toFixed(1)} s but its scene has ${(slot.latest - slot.earliest).toFixed(1)} s`);
+      if (tempo > MAX_SPEEDUP) throw new Error(`line ${i + 1} ("${lines[i]}") needs ${length.toFixed(1)} s but has ${(slot.latest - start).toFixed(1)} s`);
       length /= tempo;
     }
+    previousEnd = start + length;
     const delay = Math.round(start * 1000);
-    filters.push(`[0]atrim=${s.toFixed(3)}:${e.toFixed(3)},asetpts=PTS-STARTPTS${tempo > 1 ? `,atempo=${tempo.toFixed(3)}` : ''},adelay=${delay}|${delay}[l${i}]`);
+    filters.push(`[${files.indexOf(wav)}]atrim=${s.toFixed(3)}:${e.toFixed(3)},asetpts=PTS-STARTPTS${tempo > 1 ? `,atempo=${tempo.toFixed(3)}` : ''},adelay=${delay}|${delay}[l${i}]`);
     labels.push(`[l${i}]`);
   });
   filters.push(`${labels.join('')}amix=inputs=${labels.length}:normalize=0,apad,atrim=0:${total.toFixed(3)},loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000[a]`);
 
   const out = path.join(cacheDir, `${lessonId}-${slideId}.mp4`);
-  execFileSync('ffmpeg', ['-loglevel', 'error', '-y', '-i', wav, '-i', video, '-filter_complex', filters.join(';'),
-    '-map', '1:v', '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '96k', '-ac', '2', '-t', total.toFixed(3),
+  execFileSync('ffmpeg', ['-loglevel', 'error', '-y', ...files.flatMap((f) => ['-i', f]), '-i', video, '-filter_complex', filters.join(';'),
+    '-map', `${files.length}:v`, '-map', '[a]', '-c:v', 'copy', '-c:a', 'aac', '-b:a', '96k', '-ac', '2', '-t', total.toFixed(3),
     '-movflags', '+faststart', out]);
   renameSync(out, video);
   return path.relative(root, video);
@@ -228,9 +293,19 @@ for (const key of keys) {
     continue;
   }
   try {
-    const wav = await takeFor(lines);
-    const segments = cutLines(wav, lines);
-    console.log(`Narrated ${narrate(key, lines, wav, segments, slots)}`);
+    let clips;
+    if (oneByOne) {
+      clips = await linesOneByOne(lines);
+    } else {
+      const wav = await takeFor(lines);
+      try {
+        clips = cutLines(wav, lines).map(([s, e]) => ({ wav, s, e }));
+      } catch (error) {
+        console.log(`  ${key}: ${error.message}; recording its lines one by one`);
+        clips = await linesOneByOne(lines);
+      }
+    }
+    console.log(`Narrated ${narrate(key, lines, clips, slots)}`);
   } catch (error) {
     failed.push(`${key}: ${error.message}`);
     if (/daily quota/.test(error.message)) break;
