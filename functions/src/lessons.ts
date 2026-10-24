@@ -4,6 +4,10 @@ import earlyPregnancyFirstSteps from '../../content/lessons/early-pregnancy-basi
 import firstTrimesterCommonChanges from '../../content/lessons/early-pregnancy-basics/02-first-trimester-common-changes.json';
 import firstPrenatalVisit from '../../content/lessons/early-pregnancy-basics/03-first-prenatal-visit.json';
 
+import babyMonths1To3 from '../../content/lessons/how-your-baby-grows/01-baby-months-1-to-3.json';
+import babyMonths4To6 from '../../content/lessons/how-your-baby-grows/02-baby-months-4-to-6.json';
+import babyMonths7To9 from '../../content/lessons/how-your-baby-grows/03-baby-months-7-to-9.json';
+
 import welcomeHowThisClassWorks from '../../content/lessons/preparing-for-birth/01-welcome-how-this-class-works.json';
 import thirdTrimesterBody from '../../content/lessons/preparing-for-birth/02-third-trimester-body.json';
 import careTeamAndBirthSetting from '../../content/lessons/preparing-for-birth/03-care-team-and-birth-setting.json';
@@ -18,12 +22,45 @@ import earlyLaborAtHome from '../../content/lessons/labor-basics/04-early-labor-
 import pushingAndBirth from '../../content/lessons/labor-basics/05-pushing-and-birth.json';
 import placentaAndFirstHour from '../../content/lessons/labor-basics/06-placenta-and-first-hour.json';
 
+import understandingLaborPain from '../../content/lessons/comfort-and-support-skills/01-understanding-labor-pain.json';
+import breathingAndRelaxation from '../../content/lessons/comfort-and-support-skills/02-breathing-and-relaxation.json';
+import positionsAndMovement from '../../content/lessons/comfort-and-support-skills/03-positions-and-movement.json';
+import touchWaterAndComfortTools from '../../content/lessons/comfort-and-support-skills/04-touch-water-and-comfort-tools.json';
+import forSupportPeople from '../../content/lessons/comfort-and-support-skills/05-for-support-people.json';
+
+import makingDecisionsWithYourCareTeam from '../../content/lessons/interventions-and-flexible-decisions/01-making-decisions-with-your-care-team.json';
+import monitoringYourBabyInLabor from '../../content/lessons/interventions-and-flexible-decisions/02-monitoring-your-baby-in-labor.json';
+import medicalPainRelief from '../../content/lessons/interventions-and-flexible-decisions/03-medical-pain-relief.json';
+import inductionOfLabor from '../../content/lessons/interventions-and-flexible-decisions/04-induction-of-labor.json';
+import assistedVaginalBirth from '../../content/lessons/interventions-and-flexible-decisions/05-assisted-vaginal-birth.json';
+import cesareanBirth from '../../content/lessons/interventions-and-flexible-decisions/06-cesarean-birth.json';
+import whenPlansChange from '../../content/lessons/interventions-and-flexible-decisions/07-when-plans-change.json';
+
+import yourNewbornsFirstDays from '../../content/lessons/feeding-and-newborn-care/01-your-newborns-first-days.json';
+import newbornCareInTheHospital from '../../content/lessons/feeding-and-newborn-care/02-newborn-care-in-the-hospital.json';
+import breastfeedingBasics from '../../content/lessons/feeding-and-newborn-care/03-breastfeeding-basics.json';
+import formulaAndCombinationFeeding from '../../content/lessons/feeding-and-newborn-care/04-formula-and-combination-feeding.json';
+import safeSleep from '../../content/lessons/feeding-and-newborn-care/05-safe-sleep.json';
+import carSeatSafety from '../../content/lessons/feeding-and-newborn-care/06-car-seat-safety.json';
+import diapersBathsCryingAndSoothing from '../../content/lessons/feeding-and-newborn-care/07-diapers-baths-crying-and-soothing.json';
+import infantCprAndChoking from '../../content/lessons/feeding-and-newborn-care/08-infant-cpr-and-choking.json';
+
+import physicalRecoveryAfterBirth from '../../content/lessons/postpartum-recovery/01-physical-recovery-after-birth.json';
+import postpartumWarningSigns from '../../content/lessons/postpartum-recovery/02-postpartum-warning-signs.json';
+import whenToCallAboutYourBaby from '../../content/lessons/postpartum-recovery/03-when-to-call-about-your-baby.json';
+import emotionalHealthAfterBirth from '../../content/lessons/postpartum-recovery/04-emotional-health-after-birth.json';
+import restFoodAndHelpAtHome from '../../content/lessons/postpartum-recovery/05-rest-food-and-help-at-home.json';
+import yourPostpartumCheckups from '../../content/lessons/postpartum-recovery/06-your-postpartum-checkups.json';
+
 // The server answers only from lesson content shipped with the function, never
 // from lesson text sent by the app. Every course's lessons are listed here.
 const lessons = [
   earlyPregnancyFirstSteps,
   firstTrimesterCommonChanges,
   firstPrenatalVisit,
+  babyMonths1To3,
+  babyMonths4To6,
+  babyMonths7To9,
   welcomeHowThisClassWorks,
   thirdTrimesterBody,
   careTeamAndBirthSetting,
@@ -36,6 +73,32 @@ const lessons = [
   earlyLaborAtHome,
   pushingAndBirth,
   placentaAndFirstHour,
+  understandingLaborPain,
+  breathingAndRelaxation,
+  positionsAndMovement,
+  touchWaterAndComfortTools,
+  forSupportPeople,
+  makingDecisionsWithYourCareTeam,
+  monitoringYourBabyInLabor,
+  medicalPainRelief,
+  inductionOfLabor,
+  assistedVaginalBirth,
+  cesareanBirth,
+  whenPlansChange,
+  yourNewbornsFirstDays,
+  newbornCareInTheHospital,
+  breastfeedingBasics,
+  formulaAndCombinationFeeding,
+  safeSleep,
+  carSeatSafety,
+  diapersBathsCryingAndSoothing,
+  infantCprAndChoking,
+  physicalRecoveryAfterBirth,
+  postpartumWarningSigns,
+  whenToCallAboutYourBaby,
+  emotionalHealthAfterBirth,
+  restFoodAndHelpAtHome,
+  yourPostpartumCheckups,
 ] as unknown as Lesson[];
 
 const lessonsById = new Map(lessons.map((l) => [l.lessonId, l]));
