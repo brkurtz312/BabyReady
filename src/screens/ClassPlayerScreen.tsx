@@ -20,6 +20,7 @@ import { LessonVideo } from '../components/LessonVideo';
 import { drawnVisualFor } from '../components/LessonVisuals';
 import { artworkFor } from '../content/artwork';
 import type { Course } from '../content/lessons';
+import { recommendedVideosFor, type LibraryVideo } from '../content/videoLibrary';
 import { videoFor } from '../content/videos';
 import { NARRATION_RATE, pickNarrationVoice, splitSentences } from '../lib/narration';
 import { BIRTH_READINESS_REFLECTION_MAX_LENGTH } from '../models/birthReadinessReflection';
@@ -528,6 +529,7 @@ export function ClassPlayerScreen({
                 <Text style={styles.briefButtonText}>See your Birth Readiness Brief</Text>
               </Pressable>
             ) : null}
+            <WatchMore videos={recommendedVideosFor(lesson.lessonId)} />
           </View>
         ) : null}
       </ScrollView>
@@ -596,6 +598,36 @@ export function ClassPlayerScreen({
         visible={lessonListOpen}
       />
     </SafeAreaView>
+  );
+}
+
+/** Videos from trusted organizations to watch after a lesson. They open on YouTube, outside the app. */
+function WatchMore({ videos }: { videos: LibraryVideo[] }) {
+  if (!videos.length) return null;
+  return (
+    <View style={styles.watchMore}>
+      <Text style={styles.sourcesLabel}>Watch more</Text>
+      {videos.map((video) => (
+        <Pressable
+          accessibilityHint={video.kind === 'search' ? 'Opens a YouTube search for this video.' : 'Opens the video on YouTube.'}
+          accessibilityRole="link"
+          key={video.key}
+          onPress={() => void Linking.openURL(video.url).catch(() => undefined)}
+          style={styles.watchRow}
+          testID={`link-watch-${video.key}`}
+        >
+          <Text style={styles.watchIcon}>▶</Text>
+          <View style={styles.watchText}>
+            <Text style={styles.watchTitle}>{video.title}</Text>
+            <Text style={styles.watchSource}>
+              {video.source}
+              {video.kind === 'search' ? ' · YouTube search' : ' · YouTube'}
+            </Text>
+          </View>
+        </Pressable>
+      ))}
+      <Text style={styles.watchNote}>Videos open on YouTube, outside BabyReady. They’re made by the organizations named, not BabyReady.</Text>
+    </View>
   );
 }
 
@@ -1139,6 +1171,13 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   briefButtonText: { color: colors.lagoon, fontSize: 15, fontWeight: '700' },
+  watchMore: { alignSelf: 'stretch', borderTopWidth: 1, borderTopColor: colors.line, gap: 8, marginTop: 14, paddingTop: 12 },
+  watchRow: { alignItems: 'center', flexDirection: 'row', gap: 12, minHeight: 44 },
+  watchIcon: { color: colors.lagoon, fontSize: 18, textAlign: 'center', width: 24 },
+  watchText: { flex: 1 },
+  watchTitle: { color: colors.ink, fontSize: 15, fontWeight: '700', lineHeight: 20 },
+  watchSource: { color: colors.muted, fontSize: 13, marginTop: 1 },
+  watchNote: { color: colors.muted, fontSize: 12, lineHeight: 17 },
   sources: { borderTopWidth: 1, borderTopColor: colors.line, paddingTop: 10, gap: 4 },
   sourcesLabel: { color: colors.muted, fontSize: 12, fontWeight: '700', textTransform: 'uppercase' },
   sourceLink: { color: colors.lagoon, fontSize: 13, textDecorationLine: 'underline' },
