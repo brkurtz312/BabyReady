@@ -6817,5 +6817,625 @@
       19017,
       25190
     ]
+  },
+  "physical-recovery-after-birth/cramping-and-pain.m4a": {
+    "fingerprint": "7a28562c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6010,
+      12726,
+      19813,
+      25588
+    ]
+  },
+  "physical-recovery-after-birth/vaginal-birth-healing.m4a": {
+    "fingerprint": "59f64268",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      8349,
+      14594,
+      19581,
+      24864,
+      27985
+    ]
+  },
+  "physical-recovery-after-birth/cesarean-healing.m4a": {
+    "fingerprint": "7dbff739",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5017,
+      9381,
+      14468,
+      20435,
+      26695,
+      32415
+    ]
+  },
+  "physical-recovery-after-birth/bleeding.m4a": {
+    "fingerprint": "61fabf33",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5496,
+      12839,
+      20830,
+      25413,
+      31562
+    ]
+  },
+  "physical-recovery-after-birth/checkin-bleeding-right.m4a": {
+    "fingerprint": "5ce40467",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5531,
+      7451
+    ]
+  },
+  "physical-recovery-after-birth/checkin-bleeding-wrong.m4a": {
+    "fingerprint": "3cf5ac09",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1340,
+      8654
+    ]
+  },
+  "physical-recovery-after-birth/checkin-leaking-right.m4a": {
+    "fingerprint": "5a57f8c2",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1006,
+      6120
+    ]
+  },
+  "physical-recovery-after-birth/other-changes.m4a": {
+    "fingerprint": "771e2014",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2748,
+      9928,
+      16609,
+      23578,
+      27018
+    ]
+  },
+  "physical-recovery-after-birth/bathroom.m4a": {
+    "fingerprint": "2b3ebcb2",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3561,
+      9046,
+      12956,
+      21603,
+      25650,
+      31649
+    ]
+  },
+  "physical-recovery-after-birth/checkin-leaking-wrong.m4a": {
+    "fingerprint": "74b30634",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1181,
+      6578
+    ]
+  },
+  "physical-recovery-after-birth/moving-again.m4a": {
+    "fingerprint": "d56ee522",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5380,
+      13784,
+      18620,
+      32636,
+      35363
+    ]
+  },
+  "physical-recovery-after-birth/recovery-plan.m4a": {
+    "fingerprint": "d33ad1e4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      399,
+      8736,
+      13667,
+      17614
+    ]
+  },
+  "physical-recovery-after-birth/quiz-1-right.m4a": {
+    "fingerprint": "40a8dea8",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1033,
+      7880
+    ]
+  },
+  "physical-recovery-after-birth/quiz-1-wrong.m4a": {
+    "fingerprint": "5c91bca2",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1437,
+      8296
+    ]
+  },
+  "physical-recovery-after-birth/summary.m4a": {
+    "fingerprint": "1d2b1796",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1417,
+      10342,
+      14529,
+      23603
+    ]
+  },
+  "physical-recovery-after-birth/quiz-2-wrong.m4a": {
+    "fingerprint": "98557460",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1228,
+      6699
+    ]
+  },
+  "physical-recovery-after-birth/done.m4a": {
+    "fingerprint": "4d3eed32",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      994,
+      2520
+    ]
+  },
+  "postpartum-warning-signs/welcome.m4a": {
+    "fingerprint": "dbb6f4b8",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3034,
+      6258,
+      7435,
+      11759
+    ]
+  },
+  "postpartum-warning-signs/the-year-after.m4a": {
+    "fingerprint": "01387fc4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2756,
+      8491,
+      13883,
+      17604
+    ]
+  },
+  "physical-recovery-after-birth/quiz-2-right.m4a": {
+    "fingerprint": "b7eca89e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1248,
+      6451
+    ]
+  },
+  "physical-recovery-after-birth/quiz-3-right.m4a": {
+    "fingerprint": "3d184d2a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1153,
+      4998
+    ]
+  },
+  "physical-recovery-after-birth/quiz-3-wrong.m4a": {
+    "fingerprint": "438a1970",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4381,
+      4759
+    ]
+  },
+  "postpartum-warning-signs/say-you-had-a-baby.m4a": {
+    "fingerprint": "0fe8b2a6",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6756,
+      11070,
+      13244,
+      19560,
+      25891
+    ]
+  },
+  "postpartum-warning-signs/urgent-warning-signs.m4a": {
+    "fingerprint": "88e5c9c3",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3098,
+      6425,
+      9676,
+      11233,
+      12904,
+      16563,
+      19855,
+      22287,
+      24467,
+      27727,
+      30560,
+      33248,
+      35794,
+      37942,
+      39427
+    ]
+  },
+  "postpartum-warning-signs/heavy-bleeding.m4a": {
+    "fingerprint": "4c3ddc3c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      7250,
+      11778,
+      20414
+    ]
+  },
+  "postpartum-warning-signs/blood-pressure.m4a": {
+    "fingerprint": "0c71cd23",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4128,
+      8702,
+      16168,
+      25304
+    ]
+  },
+  "postpartum-warning-signs/checkin-blood-pressure-right.m4a": {
+    "fingerprint": "bedd9344",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3719,
+      10120
+    ]
+  },
+  "postpartum-warning-signs/checkin-blood-pressure-wrong.m4a": {
+    "fingerprint": "4c04b066",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1247,
+      9713
+    ]
+  },
+  "postpartum-warning-signs/early-check-in.m4a": {
+    "fingerprint": "7d46668a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3561,
+      13116,
+      20442
+    ]
+  },
+  "postpartum-warning-signs/blood-clots.m4a": {
+    "fingerprint": "1b0ea785",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4423,
+      12605,
+      15016,
+      18601,
+      27318
+    ]
+  },
+  "postpartum-warning-signs/speaking-up-video.m4a": {
+    "fingerprint": "762cbfaf",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "postpartum-warning-signs/blues-or-depression.m4a": {
+    "fingerprint": "1517f7a2",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6038,
+      11396,
+      13756,
+      16409,
+      22340,
+      24763,
+      28604
+    ]
+  },
+  "postpartum-warning-signs/get-help-now.m4a": {
+    "fingerprint": "3583f866",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6710,
+      11071,
+      23985,
+      29770
+    ]
+  },
+  "postpartum-warning-signs/checkin-mood-right.m4a": {
+    "fingerprint": "55265363",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1008,
+      4233,
+      10294
+    ]
+  },
+  "postpartum-warning-signs/support-people.m4a": {
+    "fingerprint": "20467300",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3016,
+      9790,
+      12148,
+      16173,
+      22790
+    ]
+  },
+  "postpartum-warning-signs/checkin-mood-wrong.m4a": {
+    "fingerprint": "7920395d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1286,
+      4712,
+      11082
+    ]
+  },
+  "postpartum-warning-signs/after-birth-plan.m4a": {
+    "fingerprint": "e7ce0ee2",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3343,
+      6359,
+      9875,
+      11821,
+      16885
+    ]
+  },
+  "postpartum-warning-signs/quiz-1-right.m4a": {
+    "fingerprint": "074be70b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1548
+    ]
+  },
+  "postpartum-warning-signs/summary.m4a": {
+    "fingerprint": "34f2c3f2",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1788,
+      4640,
+      11479,
+      16927,
+      24999
+    ]
+  },
+  "postpartum-warning-signs/quiz-2-wrong.m4a": {
+    "fingerprint": "4c3d9058",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1831,
+      10977
+    ]
+  },
+  "postpartum-warning-signs/quiz-3-wrong.m4a": {
+    "fingerprint": "807980b6",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1242
+    ]
+  },
+  "postpartum-warning-signs/done.m4a": {
+    "fingerprint": "4a787066",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1055,
+      2312
+    ]
+  },
+  "when-to-call-about-your-baby/welcome.m4a": {
+    "fingerprint": "163bf769",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2720,
+      9357,
+      18808,
+      20476
+    ]
+  },
+  "postpartum-warning-signs/quiz-1-wrong.m4a": {
+    "fingerprint": "a30de971",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1231
+    ]
+  },
+  "postpartum-warning-signs/quiz-2-right.m4a": {
+    "fingerprint": "02ba282e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1284,
+      9543
+    ]
+  },
+  "postpartum-warning-signs/quiz-3-right.m4a": {
+    "fingerprint": "74327134",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      953
+    ]
+  },
+  "when-to-call-about-your-baby/first-checkup.m4a": {
+    "fingerprint": "8fdb769b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      7959,
+      16183,
+      22813
+    ]
+  },
+  "when-to-call-about-your-baby/trust-yourself.m4a": {
+    "fingerprint": "2bbab899",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      8905,
+      16250,
+      18444
+    ]
+  },
+  "when-to-call-about-your-baby/call-911.m4a": {
+    "fingerprint": "0f2db8b5",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3363,
+      8691,
+      14734,
+      19829,
+      21902,
+      24003
+    ]
+  },
+  "when-to-call-about-your-baby/checkin-fever-right.m4a": {
+    "fingerprint": "ed2a694a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      801,
+      1054,
+      11662
+    ]
+  },
+  "when-to-call-about-your-baby/fever.m4a": {
+    "fingerprint": "c587e4f2",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6157,
+      10401,
+      15188,
+      18121,
+      23253
+    ]
+  },
+  "when-to-call-about-your-baby/jaundice.m4a": {
+    "fingerprint": "875f1056",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2868,
+      8568,
+      20673
+    ]
+  },
+  "when-to-call-about-your-baby/breathing-and-color.m4a": {
+    "fingerprint": "7aeb183c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6702,
+      14979,
+      27989
+    ]
+  },
+  "when-to-call-about-your-baby/checkin-fever-wrong.m4a": {
+    "fingerprint": "7584ded4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1273,
+      10153,
+      12180
+    ]
   }
 }

@@ -398,7 +398,27 @@ export const narrationClips: Record<string, NarrationClip> = {
   '1f9efbd7': { source: require('../../assets/narration/newborn-care-in-the-hospital/welcome.m4a'), starts: [150, 12085] }, // newborn-care-in-the-hospital/welcome.m4a
   '40a38fad': { source: require('../../assets/narration/newborn-care-in-the-hospital/your-plan.m4a'), starts: [150, 1323, 8648, 13476, 17444] }, // newborn-care-in-the-hospital/your-plan.m4a
   '18a2907b': { source: require('../../assets/narration/newborn-care-in-the-hospital/your-say.m4a'), starts: [150, 2515, 6675, 12283, 17991] }, // newborn-care-in-the-hospital/your-say.m4a
+  '2b3ebcb2': { source: require('../../assets/narration/physical-recovery-after-birth/bathroom.m4a'), starts: [150, 3561, 9046, 12956, 21603, 25650, 31649] }, // physical-recovery-after-birth/bathroom.m4a
+  '61fabf33': { source: require('../../assets/narration/physical-recovery-after-birth/bleeding.m4a'), starts: [150, 5496, 12839, 20830, 25413, 31562] }, // physical-recovery-after-birth/bleeding.m4a
+  '7dbff739': { source: require('../../assets/narration/physical-recovery-after-birth/cesarean-healing.m4a'), starts: [150, 5017, 9381, 14468, 20435, 26695, 32415] }, // physical-recovery-after-birth/cesarean-healing.m4a
+  '5ce40467': { source: require('../../assets/narration/physical-recovery-after-birth/checkin-bleeding-right.m4a'), starts: [150, 5531, 7451] }, // physical-recovery-after-birth/checkin-bleeding-right.m4a
+  '3cf5ac09': { source: require('../../assets/narration/physical-recovery-after-birth/checkin-bleeding-wrong.m4a'), starts: [150, 1340, 8654] }, // physical-recovery-after-birth/checkin-bleeding-wrong.m4a
+  '5a57f8c2': { source: require('../../assets/narration/physical-recovery-after-birth/checkin-leaking-right.m4a'), starts: [150, 1006, 6120] }, // physical-recovery-after-birth/checkin-leaking-right.m4a
+  '74b30634': { source: require('../../assets/narration/physical-recovery-after-birth/checkin-leaking-wrong.m4a'), starts: [150, 1181, 6578] }, // physical-recovery-after-birth/checkin-leaking-wrong.m4a
+  '7a28562c': { source: require('../../assets/narration/physical-recovery-after-birth/cramping-and-pain.m4a'), starts: [150, 6010, 12726, 19813, 25588] }, // physical-recovery-after-birth/cramping-and-pain.m4a
+  '4d3eed32': { source: require('../../assets/narration/physical-recovery-after-birth/done.m4a'), starts: [150, 994, 2520] }, // physical-recovery-after-birth/done.m4a
+  'd56ee522': { source: require('../../assets/narration/physical-recovery-after-birth/moving-again.m4a'), starts: [150, 5380, 13784, 18620, 32636, 35363] }, // physical-recovery-after-birth/moving-again.m4a
+  '771e2014': { source: require('../../assets/narration/physical-recovery-after-birth/other-changes.m4a'), starts: [150, 2748, 9928, 16609, 23578, 27018] }, // physical-recovery-after-birth/other-changes.m4a
+  '40a8dea8': { source: require('../../assets/narration/physical-recovery-after-birth/quiz-1-right.m4a'), starts: [150, 1033, 7880] }, // physical-recovery-after-birth/quiz-1-right.m4a
+  '5c91bca2': { source: require('../../assets/narration/physical-recovery-after-birth/quiz-1-wrong.m4a'), starts: [150, 1437, 8296] }, // physical-recovery-after-birth/quiz-1-wrong.m4a
+  'b7eca89e': { source: require('../../assets/narration/physical-recovery-after-birth/quiz-2-right.m4a'), starts: [150, 1248, 6451] }, // physical-recovery-after-birth/quiz-2-right.m4a
+  '98557460': { source: require('../../assets/narration/physical-recovery-after-birth/quiz-2-wrong.m4a'), starts: [150, 1228, 6699] }, // physical-recovery-after-birth/quiz-2-wrong.m4a
+  '3d184d2a': { source: require('../../assets/narration/physical-recovery-after-birth/quiz-3-right.m4a'), starts: [150, 1153, 4998] }, // physical-recovery-after-birth/quiz-3-right.m4a
+  '438a1970': { source: require('../../assets/narration/physical-recovery-after-birth/quiz-3-wrong.m4a'), starts: [150, 4381, 4759] }, // physical-recovery-after-birth/quiz-3-wrong.m4a
+  'd33ad1e4': { source: require('../../assets/narration/physical-recovery-after-birth/recovery-plan.m4a'), starts: [150, 399, 8736, 13667, 17614] }, // physical-recovery-after-birth/recovery-plan.m4a
   '33d8b1fd': { source: require('../../assets/narration/physical-recovery-after-birth/recovery-takes-time.m4a'), starts: [150, 2259, 11587, 19017, 25190] }, // physical-recovery-after-birth/recovery-takes-time.m4a
+  '1d2b1796': { source: require('../../assets/narration/physical-recovery-after-birth/summary.m4a'), starts: [150, 1417, 10342, 14529, 23603] }, // physical-recovery-after-birth/summary.m4a
+  '59f64268': { source: require('../../assets/narration/physical-recovery-after-birth/vaginal-birth-healing.m4a'), starts: [150, 8349, 14594, 19581, 24864, 27985] }, // physical-recovery-after-birth/vaginal-birth-healing.m4a
   'e1a62b59': { source: require('../../assets/narration/physical-recovery-after-birth/welcome.m4a'), starts: [150, 4368, 18445] }, // physical-recovery-after-birth/welcome.m4a
   '7ede3617': { source: require('../../assets/narration/placenta-and-first-hour/baby-checks.m4a'), starts: [150, 4674, 6531, 9530, 15414, 19007] }, // placenta-and-first-hour/baby-checks.m4a
   'cef79b27': { source: require('../../assets/narration/placenta-and-first-hour/checkin-bleeding-right.m4a'), starts: [150, 1664, 6793] }, // placenta-and-first-hour/checkin-bleeding-right.m4a
@@ -441,6 +461,31 @@ export const narrationClips: Record<string, NarrationClip> = {
   '00d2a433': { source: require('../../assets/narration/positions-and-movement/welcome.m4a'), starts: [150, 2478, 10030, 12497] }, // positions-and-movement/welcome.m4a
   'd144c769': { source: require('../../assets/narration/positions-and-movement/why-move.m4a'), starts: [150, 2503, 12170, 17417, 25573] }, // positions-and-movement/why-move.m4a
   'c6a2c8b2': { source: require('../../assets/narration/positions-and-movement/your-positions.m4a'), starts: [150, 4581, 9496, 13431] }, // positions-and-movement/your-positions.m4a
+  'e7ce0ee2': { source: require('../../assets/narration/postpartum-warning-signs/after-birth-plan.m4a'), starts: [150, 3343, 6359, 9875, 11821, 16885] }, // postpartum-warning-signs/after-birth-plan.m4a
+  '1b0ea785': { source: require('../../assets/narration/postpartum-warning-signs/blood-clots.m4a'), starts: [150, 4423, 12605, 15016, 18601, 27318] }, // postpartum-warning-signs/blood-clots.m4a
+  '0c71cd23': { source: require('../../assets/narration/postpartum-warning-signs/blood-pressure.m4a'), starts: [150, 4128, 8702, 16168, 25304] }, // postpartum-warning-signs/blood-pressure.m4a
+  '1517f7a2': { source: require('../../assets/narration/postpartum-warning-signs/blues-or-depression.m4a'), starts: [150, 6038, 11396, 13756, 16409, 22340, 24763, 28604] }, // postpartum-warning-signs/blues-or-depression.m4a
+  'bedd9344': { source: require('../../assets/narration/postpartum-warning-signs/checkin-blood-pressure-right.m4a'), starts: [150, 3719, 10120] }, // postpartum-warning-signs/checkin-blood-pressure-right.m4a
+  '4c04b066': { source: require('../../assets/narration/postpartum-warning-signs/checkin-blood-pressure-wrong.m4a'), starts: [150, 1247, 9713] }, // postpartum-warning-signs/checkin-blood-pressure-wrong.m4a
+  '55265363': { source: require('../../assets/narration/postpartum-warning-signs/checkin-mood-right.m4a'), starts: [150, 1008, 4233, 10294] }, // postpartum-warning-signs/checkin-mood-right.m4a
+  '7920395d': { source: require('../../assets/narration/postpartum-warning-signs/checkin-mood-wrong.m4a'), starts: [150, 1286, 4712, 11082] }, // postpartum-warning-signs/checkin-mood-wrong.m4a
+  '4a787066': { source: require('../../assets/narration/postpartum-warning-signs/done.m4a'), starts: [150, 1055, 2312] }, // postpartum-warning-signs/done.m4a
+  '7d46668a': { source: require('../../assets/narration/postpartum-warning-signs/early-check-in.m4a'), starts: [150, 3561, 13116, 20442] }, // postpartum-warning-signs/early-check-in.m4a
+  '3583f866': { source: require('../../assets/narration/postpartum-warning-signs/get-help-now.m4a'), starts: [150, 6710, 11071, 23985, 29770] }, // postpartum-warning-signs/get-help-now.m4a
+  '4c3ddc3c': { source: require('../../assets/narration/postpartum-warning-signs/heavy-bleeding.m4a'), starts: [150, 7250, 11778, 20414] }, // postpartum-warning-signs/heavy-bleeding.m4a
+  '074be70b': { source: require('../../assets/narration/postpartum-warning-signs/quiz-1-right.m4a'), starts: [150, 1548] }, // postpartum-warning-signs/quiz-1-right.m4a
+  'a30de971': { source: require('../../assets/narration/postpartum-warning-signs/quiz-1-wrong.m4a'), starts: [150, 1231] }, // postpartum-warning-signs/quiz-1-wrong.m4a
+  '02ba282e': { source: require('../../assets/narration/postpartum-warning-signs/quiz-2-right.m4a'), starts: [150, 1284, 9543] }, // postpartum-warning-signs/quiz-2-right.m4a
+  '4c3d9058': { source: require('../../assets/narration/postpartum-warning-signs/quiz-2-wrong.m4a'), starts: [150, 1831, 10977] }, // postpartum-warning-signs/quiz-2-wrong.m4a
+  '74327134': { source: require('../../assets/narration/postpartum-warning-signs/quiz-3-right.m4a'), starts: [150, 953] }, // postpartum-warning-signs/quiz-3-right.m4a
+  '807980b6': { source: require('../../assets/narration/postpartum-warning-signs/quiz-3-wrong.m4a'), starts: [150, 1242] }, // postpartum-warning-signs/quiz-3-wrong.m4a
+  '0fe8b2a6': { source: require('../../assets/narration/postpartum-warning-signs/say-you-had-a-baby.m4a'), starts: [150, 6756, 11070, 13244, 19560, 25891] }, // postpartum-warning-signs/say-you-had-a-baby.m4a
+  '762cbfaf': { source: require('../../assets/narration/postpartum-warning-signs/speaking-up-video.m4a'), starts: [150] }, // postpartum-warning-signs/speaking-up-video.m4a
+  '34f2c3f2': { source: require('../../assets/narration/postpartum-warning-signs/summary.m4a'), starts: [150, 1788, 4640, 11479, 16927, 24999] }, // postpartum-warning-signs/summary.m4a
+  '20467300': { source: require('../../assets/narration/postpartum-warning-signs/support-people.m4a'), starts: [150, 3016, 9790, 12148, 16173, 22790] }, // postpartum-warning-signs/support-people.m4a
+  '01387fc4': { source: require('../../assets/narration/postpartum-warning-signs/the-year-after.m4a'), starts: [150, 2756, 8491, 13883, 17604] }, // postpartum-warning-signs/the-year-after.m4a
+  '88e5c9c3': { source: require('../../assets/narration/postpartum-warning-signs/urgent-warning-signs.m4a'), starts: [150, 3098, 6425, 9676, 11233, 12904, 16563, 19855, 22287, 24467, 27727, 30560, 33248, 35794, 37942, 39427] }, // postpartum-warning-signs/urgent-warning-signs.m4a
+  'dbb6f4b8': { source: require('../../assets/narration/postpartum-warning-signs/welcome.m4a'), starts: [150, 3034, 6258, 7435, 11759] }, // postpartum-warning-signs/welcome.m4a
   '4051c303': { source: require('../../assets/narration/pushing-and-birth/baby-is-born.m4a'), starts: [150, 6741, 13938, 16824, 21016] }, // pushing-and-birth/baby-is-born.m4a
   '390666b9': { source: require('../../assets/narration/pushing-and-birth/checkin-pressure-right.m4a'), starts: [150, 1104, 4594, 7525, 12424] }, // pushing-and-birth/checkin-pressure-right.m4a
   '5a0e4cf3': { source: require('../../assets/narration/pushing-and-birth/checkin-pressure-wrong.m4a'), starts: [150, 1097, 4763, 7702, 12308] }, // pushing-and-birth/checkin-pressure-wrong.m4a
@@ -571,6 +616,15 @@ export const narrationClips: Record<string, NarrationClip> = {
   '7e10ff93': { source: require('../../assets/narration/when-plans-change/what-matters.m4a'), starts: [150, 2119, 6330, 11703, 15186] }, // when-plans-change/what-matters.m4a
   '7bf91e63': { source: require('../../assets/narration/when-plans-change/what-you-can-keep.m4a'), starts: [150, 4662, 7302, 11885, 22128, 24486] }, // when-plans-change/what-you-can-keep.m4a
   'e6d85f8a': { source: require('../../assets/narration/when-plans-change/when-to-get-help.m4a'), starts: [150, 11650, 15338, 19756, 23196] }, // when-plans-change/when-to-get-help.m4a
+  '7aeb183c': { source: require('../../assets/narration/when-to-call-about-your-baby/breathing-and-color.m4a'), starts: [150, 6702, 14979, 27989] }, // when-to-call-about-your-baby/breathing-and-color.m4a
+  '0f2db8b5': { source: require('../../assets/narration/when-to-call-about-your-baby/call-911.m4a'), starts: [150, 3363, 8691, 14734, 19829, 21902, 24003] }, // when-to-call-about-your-baby/call-911.m4a
+  'ed2a694a': { source: require('../../assets/narration/when-to-call-about-your-baby/checkin-fever-right.m4a'), starts: [150, 801, 1054, 11662] }, // when-to-call-about-your-baby/checkin-fever-right.m4a
+  '7584ded4': { source: require('../../assets/narration/when-to-call-about-your-baby/checkin-fever-wrong.m4a'), starts: [150, 1273, 10153, 12180] }, // when-to-call-about-your-baby/checkin-fever-wrong.m4a
+  'c587e4f2': { source: require('../../assets/narration/when-to-call-about-your-baby/fever.m4a'), starts: [150, 6157, 10401, 15188, 18121, 23253] }, // when-to-call-about-your-baby/fever.m4a
+  '8fdb769b': { source: require('../../assets/narration/when-to-call-about-your-baby/first-checkup.m4a'), starts: [150, 7959, 16183, 22813] }, // when-to-call-about-your-baby/first-checkup.m4a
+  '875f1056': { source: require('../../assets/narration/when-to-call-about-your-baby/jaundice.m4a'), starts: [150, 2868, 8568, 20673] }, // when-to-call-about-your-baby/jaundice.m4a
+  '2bbab899': { source: require('../../assets/narration/when-to-call-about-your-baby/trust-yourself.m4a'), starts: [150, 8905, 16250, 18444] }, // when-to-call-about-your-baby/trust-yourself.m4a
+  '163bf769': { source: require('../../assets/narration/when-to-call-about-your-baby/welcome.m4a'), starts: [150, 2720, 9357, 18808, 20476] }, // when-to-call-about-your-baby/welcome.m4a
   'c3e3cb5f': { source: require('../../assets/narration/when-to-contact-your-care-team/always-ok-to-call.m4a'), starts: [150, 5623, 12982, 14227, 19267] }, // when-to-contact-your-care-team/always-ok-to-call.m4a
   '4f49a6a1': { source: require('../../assets/narration/when-to-contact-your-care-team/baby-movement.m4a'), starts: [150, 5269, 11865, 19923, 24624] }, // when-to-contact-your-care-team/baby-movement.m4a
   'f6503515': { source: require('../../assets/narration/when-to-contact-your-care-team/bleeding.m4a'), starts: [150, 7055, 8382, 12937, 19009] }, // when-to-contact-your-care-team/bleeding.m4a
