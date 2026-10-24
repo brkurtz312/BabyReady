@@ -81,6 +81,8 @@ import MessageCircleMore from 'lucide-react-native/icons/message-circle-more';
 import Coffee from 'lucide-react-native/icons/coffee';
 import Soup from 'lucide-react-native/icons/soup';
 
+import { PlacentaAnimation } from './LessonAnimations';
+
 /**
  * Pictures drawn in code for lesson slides: icon panels and simple diagrams.
  * Each one is built only from what its slide already says, so it adds no new
@@ -1137,6 +1139,7 @@ const VISUALS: Record<string, () => React.ReactElement> = {
   ),
   'stages-of-labor/three-stages': () => <ThreeStages />,
   'stages-of-labor/cervix': () => <CervixCircles />,
+  'stages-of-labor/placenta': () => <PlacentaAnimation />,
   'early-labor-at-home/rest-and-move': () => (
     <IconPanel
       label="In early labor, alternate rest with gentle activity like walking or a shower."

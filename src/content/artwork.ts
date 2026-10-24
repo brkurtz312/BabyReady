@@ -80,7 +80,6 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'stages-of-labor/active-labor': require('../../assets/lessons/stages-of-labor/active-labor.jpg'),
   'stages-of-labor/transition': require('../../assets/lessons/stages-of-labor/transition.jpg'),
   'stages-of-labor/pushing': require('../../assets/lessons/stages-of-labor/pushing.jpg'),
-  'stages-of-labor/placenta': require('../../assets/lessons/stages-of-labor/placenta.jpg'),
   'early-labor-at-home/welcome': require('../../assets/lessons/early-labor-at-home/welcome.jpg'),
   'early-labor-at-home/why-home': require('../../assets/lessons/early-labor-at-home/why-home.jpg'),
   // Batch 7: early labor at home, pushing and birth, the placenta and the first hour.
