@@ -2,14 +2,16 @@
  * Videos from ACOG, CDC, NICHD, AAP and other organizations, copied from the
  * Pregnancy AI Assistant's video vault, and the ones recommended after each lesson.
  *
- * Every link opens YouTube, outside BabyReady. Most are YouTube searches for the
- * named video (kind "search"), so what they show can change; only kind "video"
- * links point at one specific video. The recommendations need clinical review.
+ * Every link opens outside BabyReady, on YouTube unless `site` names another
+ * website. Many are YouTube searches for the named video (kind "search"), so what
+ * they show can change; kind "video" links point at one specific video, and kind
+ * "page" at an organization's page that has the video or videos on it. The
+ * recommendations need clinical review.
  *
  * This file has no imports so plain Node can run it in tests.
  */
 
-export type VideoLinkKind = 'video' | 'search' | 'channel' | 'playlist';
+export type VideoLinkKind = 'video' | 'search' | 'channel' | 'playlist' | 'page';
 
 export type LibraryVideo = {
   key: string;
@@ -19,6 +21,8 @@ export type LibraryVideo = {
   url: string;
   kind: VideoLinkKind;
   language?: string;
+  /** The website the link opens, shown beside the source, when it isn't YouTube. */
+  site?: string;
 };
 
 export const VIDEO_LIBRARY: LibraryVideo[] = [
@@ -36,7 +40,7 @@ export const VIDEO_LIBRARY: LibraryVideo[] = [
   { key: "march-of-dimes-ovulation-and-pregnancy", topic: "Preconception & Early Pregnancy", title: "Ovulation and Pregnancy", source: "March of Dimes", url: "https://www.youtube.com/results?search_query=March%20of%20Dimes%20Ovulation%20and%20Pregnancy", kind: "search" },
   { key: "march-of-dimes-la-ovulacion-spanish", topic: "Preconception & Early Pregnancy", title: "La Ovulación (Spanish)", source: "March of Dimes", url: "https://www.youtube.com/results?search_query=March%20of%20Dimes%20La%20Ovulaci%C3%B3n%20embarazo", kind: "search", language: "Spanish" },
   { key: "aap-your-first-trimester", topic: "Preconception & Early Pregnancy", title: "Your First Trimester", source: "AAP", url: "https://www.youtube.com/results?search_query=AAP%20Your%20First%20Trimester%20pregnancy", kind: "search" },
-  { key: "nichd-the-road-to-babyville", topic: "Preconception & Early Pregnancy", title: "The Road to Babyville", source: "NICHD", url: "https://www.youtube.com/results?search_query=NICHD%20Road%20to%20Babyville%20pregnancy", kind: "search" },
+  { key: "nichd-the-road-to-babyville", topic: "Mental Health", title: "The Road to Babyville", source: "NICHD", url: "https://www.youtube.com/results?search_query=NICHD%20Road%20to%20Babyville%20mental%20health", kind: "search" },
   { key: "acog-acog-explains-infertility-tests-and-treatment", topic: "Preconception & Early Pregnancy", title: "ACOG Explains: Infertility Tests and Treatment", source: "ACOG", url: "https://www.youtube.com/results?search_query=ACOG%20Explains%20Infertility%20Tests%20Treatment", kind: "search" },
   { key: "cdc-healthy-pregnancy-tips", topic: "Prenatal Care & Healthy Pregnancy", title: "Healthy Pregnancy Tips", source: "CDC", url: "https://www.youtube.com/results?search_query=CDC%20Healthy%20Pregnancy%20Tips", kind: "search" },
   { key: "cdc-folic-acid-and-you-your-healthy-pregnancy", topic: "Prenatal Care & Healthy Pregnancy", title: "Folic Acid and You — Your Healthy Pregnancy", source: "CDC", url: "https://www.youtube.com/results?search_query=CDC%20Folic%20Acid%20Your%20Healthy%20Pregnancy", kind: "search" },
@@ -125,6 +129,12 @@ export const VIDEO_LIBRARY: LibraryVideo[] = [
   { key: "aap-maintaining-safe-sleep-when-baby-is-congested", topic: "Safe Sleep / SIDS Prevention", title: "Maintaining Safe Sleep When Baby is Congested", source: "AAP", url: "https://www.youtube.com/watch?v=44PYQ6iFoGg", kind: "video" },
   { key: "aap-nursing-pillows-why-they-re-unsafe-for-sleeping-babies", topic: "Safe Sleep / SIDS Prevention", title: "Nursing Pillows — Why They're Unsafe for Sleeping Babies", source: "AAP", url: "https://www.youtube.com/watch?v=V17Vm1YRrbw", kind: "video" },
   { key: "aap-talking-with-families-about-bed-sharing", topic: "Safe Sleep / SIDS Prevention", title: "Talking With Families About Bed Sharing", source: "AAP", url: "https://www.youtube.com/results?search_query=AAP%20Talking%20With%20Families%20About%20Bed%20Sharing", kind: "search" },
+  { key: "dona-the-essential-ingredient-doula", topic: "Labor Support", title: "The Essential Ingredient: Doula", source: "Documentary shared by DONA International", url: "https://www.youtube.com/results?search_query=The%20Essential%20Ingredient%20Doula%20documentary", kind: "search" },
+  { key: "eastern-health-comfort-techniques", topic: "Labor Comfort", title: "Comfort Techniques for Labour", source: "Eastern Health", url: "https://hi.easternhealth.ca/healthy-living/pregnancy-birth-and-early-parenting/labour-and-birth/comfort-techniques/", kind: "page", site: "easternhealth.ca" },
+  { key: "altru-the-epidural-block", topic: "Labor Pain Relief", title: "The Epidural Block", source: "Altru Health System", url: "https://www.altru.org/health-library/videos/video-the-epidural-block", kind: "video", site: "altru.org" },
+  { key: "nhtsa-install-rear-facing-car-seats", topic: "Car Seat Safety", title: "How to Install Rear-Facing Car Seats", source: "NHTSA", url: "https://www.nhtsa.gov/car-seats-and-booster-seats/how-install-rear-facing-car-seats", kind: "page", site: "nhtsa.gov" },
+  { key: "kidshealth-using-car-seats-safely", topic: "Car Seat Safety", title: "Using Car Seats Safely", source: "Nemours KidsHealth", url: "https://kidshealth.org/CookChildrens/en/parents/carseat-video.html", kind: "video", site: "kidshealth.org" },
+  { key: "nicklaus-how-to-provide-infant-cpr", topic: "Infant CPR and Choking", title: "How to Provide Infant CPR", source: "Nicklaus Children's Hospital", url: "https://nicklauschildrens.org/news-events/video-center/how-to-provide-infant-cpr", kind: "video", site: "nicklauschildrens.org" },
 ];
 
 /** Up to three videos to suggest when a learner finishes each lesson, by lesson ID. */
@@ -152,10 +162,17 @@ export const RECOMMENDED_VIDEOS: Record<string, string[]> = {
   "diapers-baths-crying-and-soothing": ["aap-5-baby-massage-strokes-to-soothe-colic"],
   "physical-recovery-after-birth": ["acog-acog-explains-postpartum-recovery"],
   "postpartum-warning-signs": ["awhonn-what-are-post-birth-warning-signs-english", "cdc-cdc-hear-her-dr-wanda-barfield-psa", "cdc-hear-allyson-felix-s-story", "smfm-taking-accurate-blood-pressure-readings-english", "awhonn-sarah-s-story-post-birth-warning-signs", "cdc-hear-sanari-s-story"],
-  "emotional-health-after-birth": ["acog-acog-explains-mental-health-and-pregnancy", "aap-what-if-it-s-not-love-at-first-sight-with-your-baby", "aap-the-first-year-is-hard-surviving-baby-s-early-months"],
+  "emotional-health-after-birth": ["acog-acog-explains-mental-health-and-pregnancy", "nichd-the-road-to-babyville", "aap-what-if-it-s-not-love-at-first-sight-with-your-baby", "aap-the-first-year-is-hard-surviving-baby-s-early-months"],
   "rest-food-and-help-at-home": ["nichd-safe-sleep-for-grandparents-and-caregivers", "aap-help-your-baby-sleep-safely-so-you-can-sleep-soundly"],
   "your-postpartum-checkups": ["acog-acog-explains-postpartum-recovery"],
   "when-to-call-about-your-baby": ["aap-maintaining-safe-sleep-when-baby-is-congested"],
+  "building-your-support-team": ["dona-the-essential-ingredient-doula"],
+  "breathing-and-relaxation": ["eastern-health-comfort-techniques"],
+  "positions-and-movement": ["eastern-health-comfort-techniques"],
+  "touch-water-and-comfort-tools": ["eastern-health-comfort-techniques"],
+  "medical-pain-relief": ["altru-the-epidural-block"],
+  "car-seat-safety": ["nhtsa-install-rear-facing-car-seats", "kidshealth-using-car-seats-safely"],
+  "infant-cpr-and-choking": ["nicklaus-how-to-provide-infant-cpr"],
 };
 
 const byKey = new Map(VIDEO_LIBRARY.map((v) => [v.key, v]));

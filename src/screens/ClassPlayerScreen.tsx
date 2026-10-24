@@ -644,8 +644,19 @@ export function ClassPlayerScreen({
   );
 }
 
-/** Videos from trusted organizations to watch after a lesson. They open on YouTube, outside the app. */
+/** Videos from trusted organizations to watch after a lesson. They open on YouTube or the organization's site, outside the app. */
 const WATCH_MORE_SHOWN = 3;
+
+/** Where a Watch more link opens, as shown under its title. */
+function watchWhere(video: LibraryVideo): string {
+  if (video.site) return video.site;
+  return video.kind === 'search' ? 'YouTube search' : 'YouTube';
+}
+
+function watchHint(video: LibraryVideo): string {
+  if (video.site) return video.kind === 'page' ? `Opens a page with videos on ${video.site}.` : `Opens the video on ${video.site}.`;
+  return video.kind === 'search' ? 'Opens a YouTube search for this video.' : 'Opens the video on YouTube.';
+}
 
 function WatchMore({ videos }: { videos: LibraryVideo[] }) {
   const [showAll, setShowAll] = useState(false);
@@ -657,7 +668,7 @@ function WatchMore({ videos }: { videos: LibraryVideo[] }) {
       <Text style={styles.sourcesLabel}>Watch more</Text>
       {shown.map((video) => (
         <Pressable
-          accessibilityHint={video.kind === 'search' ? 'Opens a YouTube search for this video.' : 'Opens the video on YouTube.'}
+          accessibilityHint={watchHint(video)}
           accessibilityRole="link"
           key={video.key}
           onPress={() => void Linking.openURL(video.url).catch(() => undefined)}
@@ -669,7 +680,7 @@ function WatchMore({ videos }: { videos: LibraryVideo[] }) {
             <Text style={styles.watchTitle}>{video.title}</Text>
             <Text style={styles.watchSource}>
               {video.source}
-              {video.kind === 'search' ? ' · YouTube search' : ' · YouTube'}
+              {` · ${watchWhere(video)}`}
             </Text>
           </View>
         </Pressable>
@@ -684,7 +695,7 @@ function WatchMore({ videos }: { videos: LibraryVideo[] }) {
           <Text style={styles.sourceLink}>Show all {videos.length} videos</Text>
         </Pressable>
       )}
-      <Text style={styles.watchNote}>Videos open on YouTube, outside BabyReady. They’re made by the organizations named, not BabyReady.</Text>
+      <Text style={styles.watchNote}>Videos open on YouTube or the organization’s website, outside BabyReady. They’re made by the organizations named, not BabyReady.</Text>
     </View>
   );
 }
