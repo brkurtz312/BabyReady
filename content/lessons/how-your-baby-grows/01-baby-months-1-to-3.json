@@ -1,0 +1,283 @@
+{
+  "courseId": "how-your-baby-grows",
+  "lessonId": "baby-months-1-to-3",
+  "order": 1,
+  "title": "Months 1 to 3: The First Trimester",
+  "learningGoals": [
+    "Know how pregnancy weeks and trimesters are counted",
+    "Know that the brain, spine, heart and other organs start forming in the first weeks",
+    "Know why folic acid and avoiding alcohol matter so early",
+    "Know when the embryo becomes a fetus, and about how big your baby is at 12 weeks"
+  ],
+  "estimatedMinutes": 8,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Draft 2026-10-24 for the new How Your Baby Grows module, built around the March of Dimes month-by-month videos. Needs clinical review and every source confirmed against its slides. Sizes are rounded averages from ACOG's Changes During Pregnancy infographic. Embryonic milestones are kept general (neural tube, heart, limb buds, organs beginning to form) rather than tied to exact days; reviewer to confirm the timing words. The embryo-to-fetus switch at week 9 follows ACOG's patient FAQ, which counts weeks of pregnancy; embryology texts put it at 8 weeks after fertilization, about 10 weeks of pregnancy. Pictures are the reviewer's fetal and maternal development illustrations from the Pregnancy AI Assistant, padded to the class's 16:10 frame; that draft labeled the earliest stages in weeks after conception, while this class counts from the last period, so the pictures are placed by what they show."
+  },
+  "sources": [
+    {
+      "id": "acog-fetus-grows",
+      "organization": "ACOG",
+      "title": "How Your Fetus Grows During Pregnancy (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/how-your-fetus-grows-during-pregnancy",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-changes-during-pregnancy",
+      "organization": "ACOG",
+      "title": "Changes During Pregnancy (Infographic)",
+      "url": "https://www.acog.org/womens-health/infographics/changes-during-pregnancy",
+      "verifiedOn": null
+    },
+    {
+      "id": "nichd-know-if-pregnant",
+      "organization": "NICHD",
+      "title": "How do I know if I'm pregnant?",
+      "url": "https://www.nichd.nih.gov/health/topics/pregnancy/conditioninfo/know",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-folic-acid",
+      "organization": "CDC",
+      "title": "About Folic Acid",
+      "url": "https://www.cdc.gov/folic-acid/about/index.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-alcohol-pregnancy",
+      "organization": "CDC",
+      "title": "About Alcohol Use During Pregnancy",
+      "url": "https://www.cdc.gov/alcohol-pregnancy/about/index.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-medicine-pregnancy",
+      "organization": "CDC",
+      "title": "About Medicine and Pregnancy",
+      "url": "https://www.cdc.gov/medicine-and-pregnancy/about/index.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-morning-sickness",
+      "organization": "ACOG",
+      "title": "Morning Sickness: Nausea and Vomiting of Pregnancy (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/morning-sickness-nausea-and-vomiting-of-pregnancy",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Months 1 to 3: The First Trimester",
+      "onScreen": [
+        "How Your Baby Grows"
+      ],
+      "narration": "Welcome to How Your Baby Grows. In these three short lessons, we'll follow your baby month by month, from a few cells to a newborn ready for the world. This first lesson covers the first trimester, months one to three. We'll talk about how pregnancy weeks are counted, what forms in the first weeks, and why those early weeks matter so much. Every baby grows at their own pace, so think of these as averages, not a test. Let's begin.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "Side view of a woman's body showing the pelvis in cross-section, with a close-up of the uterus where a tiny early pregnancy has attached to the lining."
+      }
+    },
+    {
+      "id": "counting-weeks",
+      "type": "content",
+      "heading": "How pregnancy weeks are counted",
+      "onScreen": [
+        "Counted from the first day of your last period",
+        "About 40 weeks in all",
+        "First trimester: weeks 1 to 13",
+        "Second: weeks 14 to 27",
+        "Third: week 28 to birth"
+      ],
+      "narration": "Pregnancy is counted from the first day of your last period, not from the day you conceived. That means in the first two weeks or so, you aren't actually pregnant yet. A full pregnancy is about forty weeks. Those weeks are split into three parts called trimesters. The first trimester runs through week thirteen. The second runs from week fourteen through week twenty-seven. And the third runs from week twenty-eight until your baby is born.",
+      "sourceIds": [
+        "acog-fetus-grows"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Cross-section of the pelvis before pregnancy: the small, pear-shaped uterus sits low between the bladder and the spine."
+      }
+    },
+    {
+      "id": "conception",
+      "type": "content",
+      "heading": "Fertilization",
+      "onScreen": [
+        "About 2 weeks after your last period, an egg is released",
+        "A sperm joins the egg in the fallopian tube",
+        "Genes from both parents come together",
+        "The fertilized egg starts dividing"
+      ],
+      "narration": "About two weeks after the start of your last period, one of your ovaries releases an egg. If a sperm joins the egg in the fallopian tube, that's fertilization. The fertilized egg carries genes from both parents. Right away, it starts dividing, from one cell to two, then four, then more, as it travels down the tube toward the uterus.",
+      "sourceIds": [
+        "acog-fetus-grows"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Illustration of a fertilized egg: a round cell with a clear outer shell, two small bodies at the edge, and the joined genetic material from both parents in the center."
+      }
+    },
+    {
+      "id": "implantation",
+      "type": "content",
+      "heading": "Implantation",
+      "onScreen": [
+        "The ball of cells reaches the uterus",
+        "It attaches to the lining of the uterus",
+        "Some cells become the baby, others the placenta",
+        "Your body starts making hCG, the hormone a pregnancy test finds"
+      ],
+      "narration": "After about a week, the growing ball of cells reaches the uterus and attaches to its lining. This is called implantation. Some of the cells will become your baby. Others will become the placenta. Once it attaches, your body starts making a hormone called h C G. That's the hormone a pregnancy test looks for.",
+      "sourceIds": [
+        "acog-fetus-grows",
+        "nichd-know-if-pregnant"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Illustration of an early ball of cells, hollow with a cluster of cells on one side, next to the soft lining of the uterus."
+      }
+    },
+    {
+      "id": "embryo",
+      "type": "content",
+      "heading": "Weeks 3 to 8: the embryo",
+      "onScreen": [
+        "The neural tube forms: the start of the brain and spine",
+        "The heart starts to form and beat",
+        "Buds for arms and legs appear",
+        "The placenta and umbilical cord begin to grow"
+      ],
+      "narration": "Through week eight, your growing baby is called an embryo. A lot happens fast. The neural tube forms. That's the start of your baby's brain and spinal cord. The heart starts to form and begins to beat. Small buds appear that will become arms and legs. And the placenta and umbilical cord begin to grow. They'll carry food and oxygen to your baby for the rest of pregnancy.",
+      "sourceIds": [
+        "acog-fetus-grows"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Illustration of a six-week embryo, curled in its sac, with the yolk sac beside it."
+      }
+    },
+    {
+      "id": "early-weeks-matter",
+      "type": "content",
+      "heading": "Why the early weeks matter",
+      "onScreen": [
+        "Organs form early, often before you know you're pregnant",
+        "Folic acid: 400 micrograms a day",
+        "No amount of alcohol is known to be safe",
+        "Ask your care team before starting or stopping any medicine"
+      ],
+      "narration": "Because so much forms in the first weeks, what reaches your baby early on matters. Folic acid helps the brain and spine form, and the CDC recommends four hundred micrograms every day. No amount of alcohol is known to be safe during pregnancy, so the safest choice is none. And check with your care team before you start or stop any medicine, including ones you buy without a prescription. If you had a drink or took something before you knew you were pregnant, don't panic. Talk with your care team. They can help.",
+      "sourceIds": [
+        "cdc-folic-acid",
+        "cdc-alcohol-pregnancy",
+        "cdc-medicine-pregnancy"
+      ]
+    },
+    {
+      "id": "fetus",
+      "type": "content",
+      "heading": "Weeks 9 to 13: the fetus",
+      "onScreen": [
+        "From week 9, your baby is called a fetus",
+        "Fingers and toes form",
+        "Your baby starts to move, too small to feel yet",
+        "At 12 weeks: about 2 inches long, about half an ounce"
+      ],
+      "narration": "From week nine until birth, your baby is called a fetus. The body keeps taking shape. Fingers and toes form, and the face becomes more defined. Your baby starts to move, but is still far too small for you to feel it. By about twelve weeks, your baby is around two inches long and weighs about half an ounce.",
+      "sourceIds": [
+        "acog-fetus-grows",
+        "acog-changes-during-pregnancy"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Illustration of a fetus at about ten weeks, curled inside the sac, with tiny hands and the umbilical cord."
+      }
+    },
+    {
+      "id": "your-body",
+      "type": "content",
+      "heading": "Your body: months 1 to 3",
+      "onScreen": [
+        "Your uterus starts to grow, low in your pelvis",
+        "By about 12 weeks, it rises just above your pubic bone",
+        "It presses on your bladder, so you pee more often",
+        "Nausea and tiredness are common; for most, nausea eases by the second trimester"
+      ],
+      "narration": "Your body is changing too. Your uterus starts to grow, but for now it stays low in your pelvis, so you probably won't show yet. By about twelve weeks, it rises just above your pubic bone. As it grows, it presses on your bladder, so you may need to pee more often. Hormones can make you feel tired and queasy. For most people, nausea eases by the second trimester. If you can't keep food or fluids down, call your care team.",
+      "sourceIds": [
+        "acog-changes-during-pregnancy",
+        "acog-morning-sickness"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Side view cross-section of the pelvis early in pregnancy: the uterus, slightly larger, holds a tiny embryo in its sac, still low behind the pubic bone."
+      }
+    },
+    {
+      "id": "checkin-embryo",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's pause for a quick check-in.",
+      "sourceIds": [
+        "acog-fetus-grows"
+      ],
+      "question": {
+        "prompt": "When does an embryo start to be called a fetus?",
+        "options": [
+          "From the very first week",
+          "From week 9 until birth",
+          "Only after the baby starts to kick"
+        ],
+        "correctIndex": 1,
+        "explanation": "Your growing baby is called an embryo through week eight. From week nine until birth, the word is fetus."
+      }
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Weeks are counted from your last period",
+        "The brain, spine, heart and organs start forming early",
+        "Folic acid every day; no alcohol",
+        "Embryo through week 8, fetus from week 9",
+        "About 2 inches at 12 weeks"
+      ],
+      "narration": "Let's recap. Pregnancy weeks are counted from the first day of your last period, and a full pregnancy is about forty weeks. In the first eight weeks, the embryo's brain, spine, heart, and other organs start to form. That's why folic acid every day, and no alcohol, matter so much early on. From week nine, your baby is called a fetus, and by twelve weeks is about two inches long. Next, a few review questions. Then we'll move on to months four to six.",
+      "sourceIds": [
+        "acog-fetus-grows",
+        "cdc-folic-acid",
+        "cdc-alcohol-pregnancy"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "Pregnancy weeks are counted from:",
+      "options": [
+        "The first day of your last period",
+        "The day of your first prenatal visit",
+        "The day of your first positive test"
+      ],
+      "correctIndex": 0,
+      "explanation": "Weeks are counted from the first day of your last period. That's why a full pregnancy is about forty weeks."
+    },
+    {
+      "prompt": "Why does folic acid matter so early?",
+      "options": [
+        "It helps the brain and spine form in the first weeks",
+        "It makes the baby grow bigger in the last month",
+        "It's only needed after birth"
+      ],
+      "correctIndex": 0,
+      "explanation": "The brain and spine start forming in the first weeks, often before people know they're pregnant. The CDC recommends four hundred micrograms of folic acid a day."
+    }
+  ],
+  "nextLessonId": "baby-months-4-to-6"
+}

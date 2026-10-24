@@ -1,0 +1,285 @@
+{
+  "courseId": "how-your-baby-grows",
+  "lessonId": "baby-months-7-to-9",
+  "order": 3,
+  "title": "Months 7 to 9: The Third Trimester",
+  "learningGoals": [
+    "Know that your baby gains weight quickly and the brain and lungs mature in the last months",
+    "Know what early term, full term, late term and postterm mean, and why the last weeks matter",
+    "Know that most babies turn head-down before birth, and your care team checks position",
+    "Call your care team right away if your baby is moving less than usual"
+  ],
+  "estimatedMinutes": 8,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Draft 2026-10-24 for the new How Your Baby Grows module, built around the March of Dimes month-by-month videos. Needs clinical review and every source confirmed against its slides. Sizes are rounded averages from ACOG's Changes During Pregnancy infographic. The movement slide reuses the reviewed wording from When to Contact Your Care Team. Head-down \"by about 36 weeks\" and the ACOG infographic's \"major development finished by about 31 weeks\" need the reviewer's check. Pictures are the reviewer's fetal and maternal development illustrations from the Pregnancy AI Assistant, padded to the class's 16:10 frame; that draft labeled the earliest stages in weeks after conception, while this class counts from the last period, so the pictures are placed by what they show."
+  },
+  "sources": [
+    {
+      "id": "acog-fetus-grows",
+      "organization": "ACOG",
+      "title": "How Your Fetus Grows During Pregnancy (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/how-your-fetus-grows-during-pregnancy",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-changes-during-pregnancy",
+      "organization": "ACOG",
+      "title": "Changes During Pregnancy (Infographic)",
+      "url": "https://www.acog.org/womens-health/infographics/changes-during-pregnancy",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-co579-term",
+      "organization": "ACOG",
+      "title": "Definition of Term Pregnancy (Committee Opinion No. 579)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2013/11/definition-of-term-pregnancy",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-breech",
+      "organization": "ACOG",
+      "title": "If Your Baby Is Breech (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/if-your-baby-is-breech",
+      "verifiedOn": null
+    },
+    {
+      "id": "acnm-am-i-in-labor",
+      "organization": "ACNM",
+      "title": "Am I in Labor? (Discover Midwives)",
+      "url": "https://discovermidwives.midwife.org/am-i-in-labor/",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-hear-her-warning-signs",
+      "organization": "CDC",
+      "title": "Hear Her: Urgent Maternal Warning Signs",
+      "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-digestive",
+      "organization": "ACOG",
+      "title": "Problems of the Digestive System (FAQ120)",
+      "url": "https://www.acog.org/womens-health/faqs/problems-of-the-digestive-system",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-back-pain",
+      "organization": "ACOG",
+      "title": "Back Pain During Pregnancy (FAQ115)",
+      "url": "https://www.acog.org/womens-health/faqs/back-pain-during-pregnancy",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-labor-begins",
+      "organization": "ACOG",
+      "title": "How to Tell When Labor Begins (FAQ004)",
+      "url": "https://www.acog.org/womens-health/faqs/how-to-tell-when-labor-begins",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Months 7 to 9: The Third Trimester",
+      "onScreen": [
+        "How Your Baby Grows"
+      ],
+      "narration": "Welcome to the last lesson in How Your Baby Grows. This one covers the third trimester, months seven to nine. Your baby is now putting on weight and getting ready for life outside the womb. We'll talk about what's still developing, why the last few weeks matter, how your baby gets into position for birth, and why your baby's movements are worth paying attention to.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "Side view cross-section of a pregnant body in the third trimester, the uterus filling the belly and pressing up toward the stomach and lungs."
+      }
+    },
+    {
+      "id": "gaining-weight",
+      "type": "content",
+      "heading": "Gaining weight, getting ready",
+      "onScreen": [
+        "Major development is mostly done by about 31 weeks",
+        "Now your baby gains weight quickly",
+        "Fat under the skin helps keep your baby warm after birth",
+        "The brain and lungs keep maturing"
+      ],
+      "narration": "By about thirty-one weeks, most of your baby's major development is done. Now your baby gains weight quickly. A layer of fat builds up under the skin, which will help keep your baby warm after birth. Your baby opens and closes their eyes, and the brain keeps growing fast. The lungs are among the last organs to be ready. They keep maturing right up to the end of pregnancy.",
+      "sourceIds": [
+        "acog-fetus-grows",
+        "acog-changes-during-pregnancy"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Illustration of a fetus at about twenty-eight weeks, rounder now, eyes open, holding a foot."
+      }
+    },
+    {
+      "id": "term",
+      "type": "comparison",
+      "heading": "Why the last weeks matter",
+      "onScreen": [
+        "Your baby's brain, lungs and liver keep developing until 39 weeks and beyond"
+      ],
+      "narration": "You may hear your care team use a few words for when a baby is born. Early term means thirty-seven weeks through thirty-eight weeks and six days. Full term means thirty-nine weeks through forty weeks and six days. Late term is forty-one weeks, and postterm is forty-two weeks or later. Babies born at thirty-nine weeks or later tend to do better than babies born earlier, because the brain, lungs, and liver are still developing in those last weeks. So unless there's a medical reason, a planned birth is best at thirty-nine weeks or later.",
+      "sourceIds": [
+        "acog-co579-term"
+      ],
+      "columns": [
+        "Term",
+        "Weeks"
+      ],
+      "rows": [
+        [
+          "Early term",
+          "37 weeks to 38 weeks 6 days"
+        ],
+        [
+          "Full term",
+          "39 weeks to 40 weeks 6 days"
+        ],
+        [
+          "Late term",
+          "41 weeks to 41 weeks 6 days"
+        ],
+        [
+          "Postterm",
+          "42 weeks or later"
+        ]
+      ]
+    },
+    {
+      "id": "your-body",
+      "type": "content",
+      "heading": "Your body: months 7 to 9",
+      "onScreen": [
+        "Your uterus reaches up under your ribs",
+        "Less room for your stomach: heartburn is common",
+        "Less room for your lungs: you may feel short of breath",
+        "Your posture shifts, and your back may ache"
+      ],
+      "narration": "In the last months, your uterus grows up toward your ribs. That leaves less room for everything else. Your stomach gets crowded, so heartburn is common. Smaller meals, and not lying down right after eating, can help. Your lungs have less room too, so you may feel short of breath. Your center of balance shifts forward, which can make your back ache. Trouble breathing that's sudden or severe, or chest pain, is different. Get medical care right away.",
+      "sourceIds": [
+        "acog-changes-during-pregnancy",
+        "acog-digestive",
+        "acog-back-pain",
+        "cdc-hear-her-warning-signs"
+      ]
+    },
+    {
+      "id": "position",
+      "type": "content",
+      "heading": "Getting into position",
+      "onScreen": [
+        "Most babies turn head-down before birth",
+        "Your care team checks your baby's position",
+        "If your baby is bottom or feet first, you'll talk about options"
+      ],
+      "narration": "Most babies turn head-down in the last weeks of pregnancy, usually by about thirty-six weeks. That's the best position for a vaginal birth. Your care team will check your baby's position at your visits. If your baby is bottom first or feet first, called breech, your care team will talk with you about your options.",
+      "sourceIds": [
+        "acog-breech"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Illustration of a full-term baby curled head-down in the uterus, ready for birth."
+      }
+    },
+    {
+      "id": "baby-drops",
+      "type": "content",
+      "heading": "When your baby drops",
+      "onScreen": [
+        "In the last weeks, your baby may settle lower into your pelvis",
+        "Breathing gets easier",
+        "More pressure low down, and more trips to pee",
+        "In a first pregnancy, this can happen weeks before labor"
+      ],
+      "narration": "Near the end, your baby may settle lower into your pelvis. This is called lightening, or your baby dropping. You may find it easier to breathe, because there's more room under your ribs. But you'll likely feel more pressure low in your pelvis, and need to pee even more often. In a first pregnancy, this can happen a few weeks before labor. In later pregnancies, it may not happen until labor starts.",
+      "sourceIds": [
+        "acog-labor-begins"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Side view cross-section at full term: the baby is head-down low in the pelvis, with small silhouettes showing the belly before and after the baby drops."
+      }
+    },
+    {
+      "id": "baby-movement",
+      "type": "content",
+      "heading": "Call right away: baby moving less",
+      "onScreen": [
+        "Get to know your baby's normal pattern",
+        "If movement slows, changes, or stops, call",
+        "Babies should still move during labor",
+        "Don't wait to see if it improves"
+      ],
+      "narration": "By the third trimester, you'll start to learn your baby's usual pattern of movement. Babies don't run out of room to move near the end of pregnancy, and they should keep moving even during labor. If your baby is moving less than usual, the pattern changes, or you can't feel movement, call your care team right away. Don't wait to see if it gets better, and don't try to reassure yourself at home first. Your team can check on your baby quickly.",
+      "sourceIds": [
+        "acnm-am-i-in-labor",
+        "cdc-hear-her-warning-signs"
+      ]
+    },
+    {
+      "id": "checkin-movement",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's pause for a quick check-in.",
+      "sourceIds": [
+        "acnm-am-i-in-labor",
+        "cdc-hear-her-warning-signs"
+      ],
+      "question": {
+        "prompt": "You're 36 weeks pregnant and your baby has been much quieter than usual today. What should you do?",
+        "options": [
+          "Wait until tomorrow; babies run out of room at the end",
+          "Call your care team right away",
+          "Mention it at your next visit"
+        ],
+        "correctIndex": 1,
+        "explanation": "Babies don't run out of room to move. If your baby is moving less than usual, call your care team right away. They can check on your baby quickly."
+      }
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Your baby gains weight; the brain and lungs mature",
+        "Full term is 39 to 40 weeks",
+        "Most babies turn head-down",
+        "Baby moving less? Call right away"
+      ],
+      "narration": "Let's recap. In the third trimester, your baby gains weight quickly while the brain and lungs finish maturing. Full term is thirty-nine weeks through forty weeks and six days, and those last weeks matter. Most babies turn head-down before birth, and your care team will check. And if your baby is ever moving less than usual, call your care team right away. Next, a few review questions. Congratulations on finishing How Your Baby Grows.",
+      "sourceIds": [
+        "acog-fetus-grows",
+        "acog-co579-term",
+        "acnm-am-i-in-labor"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "What does full term mean?",
+      "options": [
+        "37 weeks to 38 weeks 6 days",
+        "39 weeks to 40 weeks 6 days",
+        "Any time after 36 weeks"
+      ],
+      "correctIndex": 1,
+      "explanation": "Full term is thirty-nine weeks through forty weeks and six days. Thirty-seven to thirty-eight weeks is early term."
+    },
+    {
+      "prompt": "Near the end of pregnancy, babies move less because they run out of room.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctIndex": 1,
+      "explanation": "False. Babies should keep moving right up to and during labor. If your baby is moving less than usual, call your care team right away."
+    }
+  ]
+}
