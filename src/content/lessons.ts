@@ -19,6 +19,10 @@ import earlyPregnancyFirstSteps from '../../content/lessons/early-pregnancy-basi
 import firstTrimesterCommonChanges from '../../content/lessons/early-pregnancy-basics/02-first-trimester-common-changes.json';
 import firstPrenatalVisit from '../../content/lessons/early-pregnancy-basics/03-first-prenatal-visit.json';
 
+import babyMonths1To3 from '../../content/lessons/how-your-baby-grows/01-baby-months-1-to-3.json';
+import babyMonths4To6 from '../../content/lessons/how-your-baby-grows/02-baby-months-4-to-6.json';
+import babyMonths7To9 from '../../content/lessons/how-your-baby-grows/03-baby-months-7-to-9.json';
+
 import understandingLaborPain from '../../content/lessons/comfort-and-support-skills/01-understanding-labor-pain.json';
 import breathingAndRelaxation from '../../content/lessons/comfort-and-support-skills/02-breathing-and-relaxation.json';
 import positionsAndMovement from '../../content/lessons/comfort-and-support-skills/03-positions-and-movement.json';
@@ -93,6 +97,8 @@ const earlyPregnancyLessons = sortedLessons([
   firstPrenatalVisit,
 ]);
 
+const howYourBabyGrowsLessons = sortedLessons([babyMonths1To3, babyMonths4To6, babyMonths7To9]);
+
 const comfortAndSupportLessons = sortedLessons([understandingLaborPain, breathingAndRelaxation, positionsAndMovement, touchWaterAndComfortTools, forSupportPeople]);
 
 const interventionsLessons = sortedLessons([makingDecisions, monitoringYourBaby, medicalPainRelief, inductionOfLabor, assistedVaginalBirth, cesareanBirth, whenPlansChange]);
@@ -111,6 +117,13 @@ export const courses: Course[] = [
     label: 'FIRST TRIMESTER',
     description: `Three short lessons for the early weeks: first steps, common changes and when to reach out, and your first prenatal visit. About ${minutes(earlyPregnancyLessons)} minutes.`,
     lessons: earlyPregnancyLessons,
+  },
+  {
+    courseId: 'how-your-baby-grows',
+    title: 'How Your Baby Grows',
+    label: 'MONTH BY MONTH',
+    description: `Three short lessons following your baby from the first weeks to birth, one trimester at a time. About ${minutes(howYourBabyGrowsLessons)} minutes.`,
+    lessons: howYourBabyGrowsLessons,
   },
   {
     courseId: 'preparing-for-birth',

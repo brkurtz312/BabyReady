@@ -230,6 +230,22 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'rest-food-and-help-at-home/support-person': require('../../assets/lessons/rest-food-and-help-at-home/support-person.jpg'),
   'your-postpartum-checkups/welcome': require('../../assets/lessons/your-postpartum-checkups/welcome.jpg'),
   'your-postpartum-checkups/birth-control': require('../../assets/lessons/your-postpartum-checkups/birth-control.jpg'),
+  // How Your Baby Grows: fetal and maternal development illustrations from the Pregnancy AI Assistant.
+  'baby-months-1-to-3/conception': require('../../assets/lessons/baby-months-1-to-3/conception.jpg'),
+  'baby-months-1-to-3/counting-weeks': require('../../assets/lessons/baby-months-1-to-3/counting-weeks.jpg'),
+  'baby-months-1-to-3/embryo': require('../../assets/lessons/baby-months-1-to-3/embryo.jpg'),
+  'baby-months-1-to-3/fetus': require('../../assets/lessons/baby-months-1-to-3/fetus.jpg'),
+  'baby-months-1-to-3/implantation': require('../../assets/lessons/baby-months-1-to-3/implantation.jpg'),
+  'baby-months-1-to-3/welcome': require('../../assets/lessons/baby-months-1-to-3/welcome.jpg'),
+  'baby-months-1-to-3/your-body': require('../../assets/lessons/baby-months-1-to-3/your-body.jpg'),
+  'baby-months-4-to-6/first-movements': require('../../assets/lessons/baby-months-4-to-6/first-movements.jpg'),
+  'baby-months-4-to-6/growing-fast': require('../../assets/lessons/baby-months-4-to-6/growing-fast.jpg'),
+  'baby-months-4-to-6/welcome': require('../../assets/lessons/baby-months-4-to-6/welcome.jpg'),
+  'baby-months-4-to-6/your-body': require('../../assets/lessons/baby-months-4-to-6/your-body.jpg'),
+  'baby-months-7-to-9/baby-drops': require('../../assets/lessons/baby-months-7-to-9/baby-drops.jpg'),
+  'baby-months-7-to-9/gaining-weight': require('../../assets/lessons/baby-months-7-to-9/gaining-weight.jpg'),
+  'baby-months-7-to-9/position': require('../../assets/lessons/baby-months-7-to-9/position.jpg'),
+  'baby-months-7-to-9/welcome': require('../../assets/lessons/baby-months-7-to-9/welcome.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {
