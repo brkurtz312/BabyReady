@@ -1,0 +1,48 @@
+name: Deploy functions
+
+# Deploys the Cloud Functions (Ask, Delete my data, and the inactive-account cleanup)
+# to production. It never runs on its own: start it from GitHub, Actions tab,
+# "Deploy functions", "Run workflow". Setup: docs/deploy-functions.md.
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: Type DEPLOY to deploy the functions on main to production
+        required: true
+
+concurrency:
+  group: deploy-functions
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy to babyready-8bfd6
+    if: github.ref == 'refs/heads/main' && inputs.confirm == 'DEPLOY'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: functions/package-lock.json
+
+      - name: Install the functions' packages
+        run: npm ci --prefix functions
+
+      - name: Typecheck the functions
+        run: npm run typecheck --prefix functions
+
+      - name: Sign in to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: ${{ secrets.FIREBASE_DEPLOY_KEY }}
+
+      - name: Deploy
+        run: npx --yes firebase-tools@15 deploy --only functions --project babyready-8bfd6 --non-interactive --force
