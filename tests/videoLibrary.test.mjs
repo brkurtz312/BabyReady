@@ -27,10 +27,11 @@ test('every video has a unique key and a YouTube link over https', () => {
   }
 });
 
-test('recommendations point at real lessons and real videos, at most three each', () => {
+test('recommendations point at real lessons and real videos, with no repeats', () => {
   for (const [lessonId, keys] of Object.entries(RECOMMENDED_VIDEOS)) {
     assert.ok(lessonIds.has(lessonId), `no lesson ${lessonId}`);
-    assert.ok(keys.length >= 1 && keys.length <= 3, `${lessonId} has ${keys.length}`);
+    assert.ok(keys.length >= 1, `${lessonId} has none`);
+    assert.equal(new Set(keys).size, keys.length, `${lessonId} repeats a video`);
     assert.equal(recommendedVideosFor(lessonId).length, keys.length, `${lessonId} names a video that isn't in the library`);
   }
 });

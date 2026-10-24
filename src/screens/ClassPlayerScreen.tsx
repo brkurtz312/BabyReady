@@ -572,7 +572,7 @@ export function ClassPlayerScreen({
                 <Text style={styles.briefButtonText}>See your Birth Readiness Brief</Text>
               </Pressable>
             ) : null}
-            <WatchMore videos={recommendedVideosFor(lesson.lessonId)} />
+            <WatchMore key={lesson.lessonId} videos={recommendedVideosFor(lesson.lessonId)} />
           </View>
         ) : null}
       </ScrollView>
@@ -645,12 +645,17 @@ export function ClassPlayerScreen({
 }
 
 /** Videos from trusted organizations to watch after a lesson. They open on YouTube, outside the app. */
+const WATCH_MORE_SHOWN = 3;
+
 function WatchMore({ videos }: { videos: LibraryVideo[] }) {
+  const [showAll, setShowAll] = useState(false);
   if (!videos.length) return null;
+  const shown = showAll ? videos : videos.slice(0, WATCH_MORE_SHOWN);
+  const hidden = videos.length - shown.length;
   return (
     <View style={styles.watchMore}>
       <Text style={styles.sourcesLabel}>Watch more</Text>
-      {videos.map((video) => (
+      {shown.map((video) => (
         <Pressable
           accessibilityHint={video.kind === 'search' ? 'Opens a YouTube search for this video.' : 'Opens the video on YouTube.'}
           accessibilityRole="link"
@@ -669,6 +674,16 @@ function WatchMore({ videos }: { videos: LibraryVideo[] }) {
           </View>
         </Pressable>
       ))}
+      {hidden > 0 && (
+        <Pressable
+          accessibilityRole="button"
+          onPress={() => setShowAll(true)}
+          style={styles.watchAll}
+          testID="button-watch-show-all"
+        >
+          <Text style={styles.sourceLink}>Show all {videos.length} videos</Text>
+        </Pressable>
+      )}
       <Text style={styles.watchNote}>Videos open on YouTube, outside BabyReady. They’re made by the organizations named, not BabyReady.</Text>
     </View>
   );
@@ -1244,6 +1259,7 @@ const styles = StyleSheet.create({
   watchText: { flex: 1 },
   watchTitle: { color: colors.ink, fontSize: 15, fontWeight: '700', lineHeight: 20 },
   watchSource: { color: colors.muted, fontSize: 13, marginTop: 1 },
+  watchAll: { justifyContent: 'center', minHeight: 44 },
   watchNote: { color: colors.muted, fontSize: 12, lineHeight: 17 },
   sources: { borderTopWidth: 1, borderTopColor: colors.line, paddingTop: 10, gap: 4 },
   sourcesLabel: { color: colors.muted, fontSize: 12, fontWeight: '700', textTransform: 'uppercase' },
