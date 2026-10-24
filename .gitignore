@@ -3,6 +3,11 @@
 # dependencies
 node_modules/
 
+# Local copies made by Claude Code sessions, and Firebase's deploy cache.
+# Listed here so EAS Build doesn't upload them.
+.claude/worktrees/
+.firebase/
+
 # Expo
 .expo/
 dist/
