@@ -17,12 +17,19 @@ const lessonIds = new Set(
     ),
 );
 
-test('every video has a unique key and a YouTube link over https', () => {
+test('every video has a unique key and an https link that says where it opens', () => {
   const keys = new Set();
   for (const video of VIDEO_LIBRARY) {
     assert.ok(!keys.has(video.key), `duplicate key ${video.key}`);
     keys.add(video.key);
-    assert.match(video.url, /^https:\/\/www\.youtube\.com\//, video.key);
+    assert.match(video.url, /^https:\/\//, video.key);
+    if (video.site) {
+      // A link off YouTube names its site, and the site matches the link.
+      assert.ok(new URL(video.url).hostname.endsWith(video.site), `${video.key} opens ${new URL(video.url).hostname}, not ${video.site}`);
+    } else {
+      assert.match(video.url, /^https:\/\/www\.youtube\.com\//, `${video.key} isn't on YouTube, so it needs a site`);
+      assert.notEqual(video.kind, 'page', video.key);
+    }
     assert.ok(video.title && video.source, video.key);
   }
 });
