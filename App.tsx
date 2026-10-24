@@ -29,6 +29,7 @@ import {
   type LearnerProgress,
 } from './src/models/learnerProgress';
 import { BirthReadinessBriefScreen } from './src/screens/BirthReadinessBriefScreen';
+import { VideoVaultScreen } from './src/screens/VideoVaultScreen';
 import { ClassPlayerScreen } from './src/screens/ClassPlayerScreen';
 import { loadProgress, saveProgress } from './src/services/learnerProgressService';
 
@@ -46,7 +47,7 @@ export default function App() {
 function BabyReadyApp() {
   const authState = useBabyReadyAuth();
   const [activeView, setActiveView] = useState<
-    'learner' | 'class-player' | 'birth-readiness-brief'
+    'learner' | 'class-player' | 'birth-readiness-brief' | 'video-vault'
   >('learner');
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
   const [startLessonIndex, setStartLessonIndex] = useState(0);
@@ -166,6 +167,10 @@ function BabyReadyApp() {
         userId={userId}
       />
     );
+  }
+
+  if (activeView === 'video-vault') {
+    return <VideoVaultScreen onExit={() => setActiveView('learner')} />;
   }
 
   return (
@@ -334,6 +339,26 @@ function BabyReadyApp() {
             testID="button-open-birth-readiness-brief"
           >
             <Text style={styles.learningPlanButtonText}>Open brief</Text>
+          </Pressable>
+        </View>
+
+        <View style={styles.learningPlanCard}>
+          <View style={styles.learningPlanCopy}>
+            <Text style={styles.learningPlanEyebrow}>VIDEO VAULT</Text>
+            <Text style={styles.learningPlanTitle}>Every video from the class</Text>
+            <Text style={styles.learningPlanText}>
+              Videos from ACOG, AAP, CDC, March of Dimes and more, by module, with search.
+            </Text>
+          </View>
+          <Pressable
+            accessibilityHint="Opens every video recommended in the class."
+            accessibilityLabel="Open the Video Vault"
+            accessibilityRole="button"
+            onPress={() => setActiveView('video-vault')}
+            style={styles.learningPlanButton}
+            testID="button-open-video-vault"
+          >
+            <Text style={styles.learningPlanButtonText}>Open vault</Text>
           </Pressable>
         </View>
 

@@ -20,7 +20,7 @@ import { LessonVideo } from '../components/LessonVideo';
 import { drawnVisualFor } from '../components/LessonVisuals';
 import { artworkFor } from '../content/artwork';
 import type { Course } from '../content/lessons';
-import { recommendedVideosFor, type LibraryVideo } from '../content/videoLibrary';
+import { recommendedVideosFor, videoLinkHint, videoLinkWhere, type LibraryVideo } from '../content/videoLibrary';
 import { videoFor } from '../content/videos';
 import { NARRATION_RATE, pickNarrationVoice, splitSentences } from '../lib/narration';
 import { BIRTH_READINESS_REFLECTION_MAX_LENGTH } from '../models/birthReadinessReflection';
@@ -647,17 +647,6 @@ export function ClassPlayerScreen({
 /** Videos from trusted organizations to watch after a lesson. They open on YouTube or the organization's site, outside the app. */
 const WATCH_MORE_SHOWN = 3;
 
-/** Where a Watch more link opens, as shown under its title. */
-function watchWhere(video: LibraryVideo): string {
-  if (video.site) return video.site;
-  return video.kind === 'search' ? 'YouTube search' : 'YouTube';
-}
-
-function watchHint(video: LibraryVideo): string {
-  if (video.site) return video.kind === 'page' ? `Opens a page with videos on ${video.site}.` : `Opens the video on ${video.site}.`;
-  return video.kind === 'search' ? 'Opens a YouTube search for this video.' : 'Opens the video on YouTube.';
-}
-
 function WatchMore({ videos }: { videos: LibraryVideo[] }) {
   const [showAll, setShowAll] = useState(false);
   if (!videos.length) return null;
@@ -668,7 +657,7 @@ function WatchMore({ videos }: { videos: LibraryVideo[] }) {
       <Text style={styles.sourcesLabel}>Watch more</Text>
       {shown.map((video) => (
         <Pressable
-          accessibilityHint={watchHint(video)}
+          accessibilityHint={videoLinkHint(video)}
           accessibilityRole="link"
           key={video.key}
           onPress={() => void Linking.openURL(video.url).catch(() => undefined)}
@@ -680,7 +669,7 @@ function WatchMore({ videos }: { videos: LibraryVideo[] }) {
             <Text style={styles.watchTitle}>{video.title}</Text>
             <Text style={styles.watchSource}>
               {video.source}
-              {` · ${watchWhere(video)}`}
+              {` · ${videoLinkWhere(video)}`}
             </Text>
           </View>
         </Pressable>
