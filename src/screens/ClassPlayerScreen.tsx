@@ -143,6 +143,9 @@ type ClassPlayerScreenProps = {
   /** Lessons that need the full-class purchase. Opening one calls onLockedLesson instead. */
   lockedLessonIds?: string[];
   onLockedLesson?: () => void;
+  /** The module after this one, offered when its last lesson is finished. */
+  nextCourseTitle?: string;
+  onStartNextCourse?: () => void;
 };
 
 export function ClassPlayerScreen({
@@ -156,6 +159,8 @@ export function ClassPlayerScreen({
   onLessonCompleted,
   lockedLessonIds = [],
   onLockedLesson,
+  nextCourseTitle,
+  onStartNextCourse,
 }: ClassPlayerScreenProps) {
   const lessons = course.lessons;
   const courseTitle = course.title;
@@ -312,7 +317,29 @@ export function ClassPlayerScreen({
       onLockedLesson?.();
       return;
     }
+    if (state.mode === 'done' && !nextLesson) {
+      onExit();
+      return;
+    }
     dispatch({ type: 'next' });
+  }
+
+  function replayLesson() {
+    clearAdvance();
+    stopSpeech();
+    dispatch({ type: 'load', lessonIndex: state.lessonIndex });
+  }
+
+  function goHome() {
+    clearAdvance();
+    stopSpeech();
+    onExit();
+  }
+
+  function startNextCourse() {
+    clearAdvance();
+    stopSpeech();
+    onStartNextCourse?.();
   }
 
   function goBack() {
@@ -403,7 +430,7 @@ export function ClassPlayerScreen({
   let nextDisabled = false;
   if (state.mode === 'intro') nextLabel = 'Start';
   else if (state.mode === 'done') {
-    if (!nextLesson) nextLabel = 'Replay';
+    if (!nextLesson) nextLabel = 'Home';
     else nextLabel = lockedLessonIds.includes(nextLesson.lessonId) ? 'Unlock next lesson' : 'Next lesson';
   }
   else if (state.mode === 'quiz') {
@@ -515,10 +542,26 @@ export function ClassPlayerScreen({
               {state.score}/{lesson.reviewQuiz.length}
             </Text>
             <Text style={[styles.heading, styles.centerText]}>Nice work finishing {lesson.title}</Text>
-            <Text style={[styles.body, styles.centerText]}>
-              {nextLesson ? `Next up: ${nextLesson.title}. ` : 'You’ve finished every lesson in this module. '}
-              You can replay this lesson anytime.
-            </Text>
+            {nextLesson ? null : (
+              <Text style={[styles.body, styles.centerText]}>You’ve finished every lesson in this module.</Text>
+            )}
+            <View style={styles.finishButtons}>
+              {nextLesson ? (
+                <Pressable accessibilityRole="button" onPress={goNext} style={styles.finishPrimary} testID="button-finish-next-lesson">
+                  <Text style={styles.finishPrimaryText}>Next lesson: {nextLesson.title}</Text>
+                </Pressable>
+              ) : nextCourseTitle && onStartNextCourse ? (
+                <Pressable accessibilityRole="button" onPress={startNextCourse} style={styles.finishPrimary} testID="button-finish-next-module">
+                  <Text style={styles.finishPrimaryText}>Start the next module: {nextCourseTitle}</Text>
+                </Pressable>
+              ) : null}
+              <Pressable accessibilityRole="button" onPress={goHome} style={styles.finishSecondary} testID="button-finish-home">
+                <Text style={styles.finishSecondaryText}>Back to home</Text>
+              </Pressable>
+              <Pressable accessibilityRole="button" hitSlop={6} onPress={replayLesson} testID="button-finish-replay">
+                <Text style={styles.finishLink}>Replay this lesson</Text>
+              </Pressable>
+            </View>
             {lesson.slides.some((s) => s.type === 'reflection') ? (
               <Pressable
                 accessibilityHint="Shows your saved reflection answers and care-team questions."
@@ -1171,6 +1214,30 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   },
   briefButtonText: { color: colors.lagoon, fontSize: 15, fontWeight: '700' },
+  finishButtons: { alignItems: 'center', alignSelf: 'stretch', gap: 10, marginTop: 6 },
+  finishPrimary: {
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    backgroundColor: colors.lagoon,
+    borderRadius: 999,
+    justifyContent: 'center',
+    minHeight: 48,
+    paddingHorizontal: 18,
+    paddingVertical: 10,
+  },
+  finishPrimaryText: { color: '#FFFFFF', fontSize: 16, fontWeight: '800', textAlign: 'center' },
+  finishSecondary: {
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    borderColor: colors.lagoon,
+    borderRadius: 999,
+    borderWidth: 1.5,
+    justifyContent: 'center',
+    minHeight: 46,
+    paddingHorizontal: 18,
+  },
+  finishSecondaryText: { color: colors.lagoon, fontSize: 16, fontWeight: '800' },
+  finishLink: { color: colors.lagoon, fontSize: 15, fontWeight: '700', paddingVertical: 6, textDecorationLine: 'underline' },
   watchMore: { alignSelf: 'stretch', borderTopWidth: 1, borderTopColor: colors.line, gap: 8, marginTop: 14, paddingTop: 12 },
   watchRow: { alignItems: 'center', flexDirection: 'row', gap: 12, minHeight: 44 },
   watchIcon: { color: colors.lagoon, fontSize: 18, textAlign: 'center', width: 24 },
