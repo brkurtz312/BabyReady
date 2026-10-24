@@ -132,6 +132,7 @@ function BabyReadyApp() {
   };
 
   if (activeView === 'class-player' && selectedCourse) {
+    const nextCourse = courses[courses.findIndex((c) => c.courseId === selectedCourse.courseId) + 1];
     return (
       <>
         <ClassPlayerScreen
@@ -141,6 +142,7 @@ function BabyReadyApp() {
           course={selectedCourse}
           initialLessonIndex={startLessonIndex}
           lockedLessonIds={lockedLessonIds(selectedCourse)}
+          nextCourseTitle={nextCourse?.title}
           onExit={() => setActiveView('learner')}
           onLessonCompleted={(lessonId) => updateProgress((p) => withLessonCompleted(p, lessonId))}
           onLessonOpened={(courseId, lessonId) =>
@@ -148,6 +150,7 @@ function BabyReadyApp() {
           }
           onLockedLesson={() => setPaywallOpen(true)}
           onOpenBrief={() => setActiveView('birth-readiness-brief')}
+          onStartNextCourse={nextCourse ? () => startCourse(nextCourse) : undefined}
           userId={userId}
         />
         {paywall}
