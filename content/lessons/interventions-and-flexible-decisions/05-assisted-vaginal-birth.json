@@ -9,13 +9,13 @@
     "Describe what happens during a vacuum- or forceps-assisted birth",
     "Know the common effects on your baby and on you, and what recovery involves"
   ],
-  "estimatedMinutes": 8,
+  "estimatedMinutes": 10,
   "review": {
     "status": "reviewed",
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-18",
     "nextReviewBy": "2027-10-18",
-    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 4.5 of Module 4 (Interventions and Flexible Decisions). Builds on Labor Basics lesson 5 (pushing) and lesson 4.2 (heart rate pattern changes). Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: the reasons (long pushing without progress, exhaustion, a heart rate pattern that means the baby should be born soon, a health condition that makes pushing unsafe) need confirming against the FAQ and Practice Bulletin 219; the conditions for use (cervix fully open, baby low in the pelvis) and that forceps are more likely to succeed but more likely to cause larger tears are from secondary summaries of Practice Bulletin 219; the effects on the baby (swelling or a mark on the head, marks on the face, more jaundice, rare serious injury) and on you (tears, soreness, trouble controlling urine or gas for a while) need confirming. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the conditions for use and 'a way to avoid a cesarean'; keep all four reasons, including the heart condition example; the description of the vacuum, forceps and numbing is accurate as written; keep the baby slide, including jaundice and 'serious injuries are rare'; keep the recovery slide, including the forceps comparison and call-back signs; no video for this lesson."
+    "notes": "Clinically reviewed 2026-10-18 by Bryan Kurtz MD, FACOG. Drafted 2026-10-18 as lesson 4.5 of Module 4 (Interventions and Flexible Decisions). Builds on Labor Basics lesson 5 (pushing) and lesson 4.2 (heart rate pattern changes). Every source was confirmed against its slides by the reviewer on 2026-10-18. For the reviewer: the reasons (long pushing without progress, exhaustion, a heart rate pattern that means the baby should be born soon, a health condition that makes pushing unsafe) need confirming against the FAQ and Practice Bulletin 219; the conditions for use (cervix fully open, baby low in the pelvis) and that forceps are more likely to succeed but more likely to cause larger tears are from secondary summaries of Practice Bulletin 219; the effects on the baby (swelling or a mark on the head, marks on the face, more jaundice, rare serious injury) and on you (tears, soreness, trouble controlling urine or gas for a while) need confirming. Reviewer decisions (Bryan Kurtz MD, FACOG, 2026-10-18): keep the conditions for use and 'a way to avoid a cesarean'; keep all four reasons, including the heart condition example; the description of the vacuum, forceps and numbing is accurate as written; keep the baby slide, including jaundice and 'serious injuries are rare'; keep the recovery slide, including the forceps comparison and call-back signs; no video for this lesson. Added 2026-10-24 at the reviewer's request, awaiting the reviewer's check: slides 'The vacuum' and 'Forceps' with drawn device pictures (Gemini, from the style reference), and an animation of each (vacuum-video, forceps-video). The new narration only restates what the 'What happens' slide and its sources already say, plus the cup or blades coming off once the head is born. Forceps picture redrawn 2026-10-24 at the reviewer's request: chrome steel, with a slide lock instead of a bolted joint."
   },
   "sources": [
     {
@@ -106,6 +106,80 @@
       "visual": {
         "kind": "illustration",
         "description": "A calm birth room seen from the head of the bed: the laboring person's support partner holding their hand and leaning close, a nurse beside them, and a small newborn warmer with a second nurse waiting in the background. The lower body is covered by a sheet. No procedure or instruments shown. No readable writing."
+      }
+    },
+    {
+      "id": "vacuum",
+      "type": "content",
+      "heading": "The vacuum",
+      "onScreen": [
+        "A soft, round cup on a handle",
+        "Placed on the top of your baby's head",
+        "A hand pump makes gentle suction",
+        "Your provider pulls gently while you push"
+      ],
+      "narration": "Here's what a vacuum looks like. It has a soft, round cup on a handle. Your provider places the cup on the top of your baby's head, and a hand pump creates gentle suction so the cup holds on. Then, with each contraction, you push while your provider gently pulls. Once your baby's head is born, the suction is released and the cup comes off.",
+      "sourceIds": [
+        "acog-assisted-faq",
+        "acog-pb219"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A handheld vacuum device for birth: a soft, round, bell-shaped cup joined by a short tube to a hand grip with a small pump and a round pressure gauge. No people. No readable writing."
+      }
+    },
+    {
+      "id": "vacuum-video",
+      "type": "video",
+      "heading": "See how a vacuum helps",
+      "onScreen": [
+        "Watch the cup go on, then a gentle pull with each push"
+      ],
+      "narration": "This short animation shows how a vacuum helps during pushing.",
+      "sourceIds": [
+        "acog-assisted-faq",
+        "acog-pb219"
+      ],
+      "video": {
+        "brief": "Simple, non-graphic side-view animation: cervix fully open and the baby's head low; a soft cup is placed on the top of the head and held with gentle suction; with each contraction the parent pushes while the provider gently pulls the handle and the head comes down; the head is born, the cup comes off, then the shoulders and body are born.",
+        "maxSeconds": 30
+      }
+    },
+    {
+      "id": "forceps",
+      "type": "content",
+      "heading": "Forceps",
+      "onScreen": [
+        "Two smooth, curved blades, like cupped hands",
+        "Placed one at a time, one on each side of your baby's head",
+        "The handles lock together",
+        "Your provider pulls gently while you push"
+      ],
+      "narration": "And here's what forceps look like. They're two smooth, curved metal blades, shaped to fit around a baby's head like cupped hands. Your provider slides them in one at a time, one on each side of your baby's head, and locks the handles together. Then, with each contraction, you push while your provider gently pulls. Once your baby's head is born, the forceps are taken off.",
+      "sourceIds": [
+        "acog-assisted-faq",
+        "acog-pb219"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pair of forceps for birth lying flat: two long, polished steel halves with curved, open blades at one end and handles at the other, crossing near the middle where one fits into a notch in the other, with no screw or pin. No people. No readable writing."
+      }
+    },
+    {
+      "id": "forceps-video",
+      "type": "video",
+      "heading": "See how forceps help",
+      "onScreen": [
+        "Watch the blades go on, then a gentle pull with each push"
+      ],
+      "narration": "This short animation shows how forceps help during pushing.",
+      "sourceIds": [
+        "acog-assisted-faq",
+        "acog-pb219"
+      ],
+      "video": {
+        "brief": "Simple, non-graphic side-view animation: cervix fully open and the baby's head low; two smooth curved blades are slid in one at a time, one on each side of the head, and the handles lock; with each contraction the parent pushes while the provider gently pulls and the head comes down; the head is born, the blades are taken off, then the shoulders and body are born.",
+        "maxSeconds": 30
       }
     },
     {

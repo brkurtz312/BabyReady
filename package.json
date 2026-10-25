@@ -6,6 +6,8 @@
     "@react-native-async-storage/async-storage": "2.2.0",
     "expo": "~57.0.10",
     "expo-audio": "^57.0.5",
+    "expo-print": "~57.0.1",
+    "expo-sharing": "~57.0.8",
     "expo-speech": "~57.0.3",
     "expo-speech-recognition": "^57.1.1",
     "expo-status-bar": "~57.0.1",
@@ -37,7 +39,7 @@
     "test:emulators": "firebase emulators:exec --project babyready-rules-test --only auth,firestore \"npm run test:rules\"",
     "check:production-env": "node scripts/check-production-env.mjs",
     "deploy:production": "node scripts/deploy-production.mjs",
-    "test:lessons": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/lessons.test.mjs tests/askSafety.test.mjs tests/learnerProgress.test.mjs tests/retention.test.mjs tests/askCost.test.mjs tests/answerFrom.test.mjs tests/access.test.mjs"
+    "test:lessons": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/lessons.test.mjs tests/askSafety.test.mjs tests/learnerProgress.test.mjs tests/retention.test.mjs tests/askCost.test.mjs tests/answerFrom.test.mjs tests/access.test.mjs tests/videoLibrary.test.mjs tests/briefDocument.test.mjs tests/videoVault.test.mjs"
   },
   "private": true
 }

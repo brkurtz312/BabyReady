@@ -16,7 +16,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Active labor at about 6 cm and the stage descriptions are confirmed against ACOG Clinical Practice Guideline No. 8, which also backs the cervix and transition slides (WHO uses 5 cm; the lesson says 'around 6'). BabyReady's own guidance: support tips for active labor, transition and pushing (slide 11; the Lamaze source covers early labor only). Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Active labor at about 6 cm and the stage descriptions are confirmed against ACOG Clinical Practice Guideline No. 8, which also backs the cervix and transition slides (WHO uses 5 cm; the lesson says 'around 6'). BabyReady's own guidance: support tips for active labor, transition and pushing (slide 11; the Lamaze source covers early labor only). Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed. Updated 2026-10-24: added the slide 'See the second stage in motion' with a drawn animation of pushing, crowning and birth; wording and animation approved by the clinical lead."
   },
   "sources": [
     {
@@ -206,6 +206,18 @@
       }
     },
     {
+      "id": "pushing-video",
+      "type": "video",
+      "heading": "See the second stage in motion",
+      "onScreen": ["Watch your baby move down and out as you push"],
+      "narration": "This short animation shows what happens during the second stage, from pushing to birth.",
+      "sourceIds": ["acog-cpg8-labor"],
+      "video": {
+        "brief": "Simple, non-graphic medical animation: side view, cervix fully open, baby head-down moving down the birth canal a little with each push and slipping back slightly between contractions, then crowning, then the head, shoulders and body born. Labels for the cervix and vaginal opening.",
+        "maxSeconds": 75
+      }
+    },
+    {
       "id": "placenta",
       "type": "content",
       "heading": "Stage 3: the placenta",
@@ -217,8 +229,8 @@
       "narration": "After your baby is born, there's one more stage. Your uterus keeps contracting, more gently now, so the placenta separates and is delivered. Your care team will check that it's complete and that your bleeding is under control. Many people barely notice this stage, because they're holding their baby skin to skin. We'll talk about the placenta and that first precious hour in lesson six.",
       "sourceIds": ["acog-cpg8-labor"],
       "visual": {
-        "kind": "illustration",
-        "description": "Parent in a hospital bed holding a newborn on their chest, skin to skin, under a warm blanket."
+        "kind": "diagram",
+        "description": "Animated side view of the third stage: the placenta attached to the top of the uterus with the cord running through the open cervix, then separating as the uterus contracts, then delivered through the cervix and birth canal."
       }
     },
     {

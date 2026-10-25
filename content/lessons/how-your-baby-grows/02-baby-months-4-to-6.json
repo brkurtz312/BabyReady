@@ -1,0 +1,213 @@
+{
+  "courseId": "how-your-baby-grows",
+  "lessonId": "baby-months-4-to-6",
+  "order": 2,
+  "title": "Months 4 to 6: The Second Trimester",
+  "learningGoals": [
+    "Know how fast your baby grows in the second trimester",
+    "Know when many people first feel their baby move, and what it feels like",
+    "Know what the anatomy ultrasound checks and when it usually happens"
+  ],
+  "estimatedMinutes": 6,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Draft 2026-10-24 for the new How Your Baby Grows module, built around the March of Dimes month-by-month videos. Needs clinical review and every source confirmed against its slides. Sizes are rounded averages from ACOG's Changes During Pregnancy infographic. First movements are given as roughly 16 to 22 weeks, earlier in a later pregnancy; the anatomy ultrasound as about 18 to 22 weeks; hearing as \"by the end of this trimester\". Reviewer to confirm these ranges, and that ACOG supports the round ligament pain and fundal height lines on the body slide. Pictures are the reviewer's fetal and maternal development illustrations from the Pregnancy AI Assistant, padded to the class's 16:10 frame; that draft labeled the earliest stages in weeks after conception, while this class counts from the last period, so the pictures are placed by what they show."
+  },
+  "sources": [
+    {
+      "id": "acog-fetus-grows",
+      "organization": "ACOG",
+      "title": "How Your Fetus Grows During Pregnancy (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/how-your-fetus-grows-during-pregnancy",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-changes-during-pregnancy",
+      "organization": "ACOG",
+      "title": "Changes During Pregnancy (Infographic)",
+      "url": "https://www.acog.org/womens-health/infographics/changes-during-pregnancy",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-ultrasound-exams",
+      "organization": "ACOG",
+      "title": "Ultrasound Exams (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/ultrasound-exams",
+      "verifiedOn": null
+    },
+    {
+      "id": "lamaze-braxton-hicks",
+      "organization": "Lamaze",
+      "title": "Braxton-Hicks Contractions (Giving Birth with Confidence)",
+      "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/braxton-hicks-contractions",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Months 4 to 6: The Second Trimester",
+      "onScreen": [
+        "How Your Baby Grows"
+      ],
+      "narration": "Welcome back. This lesson covers the second trimester, months four to six. For many people, this is when pregnancy starts to feel real. Your baby grows fast, and somewhere in these months you'll likely feel the first little movements. We'll also talk about the anatomy ultrasound, a closer look at how your baby is growing.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "Side view cross-section of a pregnant body early in the second trimester, the uterus rising above the pubic bone with the baby curled inside."
+      }
+    },
+    {
+      "id": "growing-fast",
+      "type": "content",
+      "heading": "Growing fast",
+      "onScreen": [
+        "At 16 weeks: more than 4 inches, more than 3 ounces",
+        "At 20 weeks: more than 6 inches, under 11 ounces",
+        "Fine hair and a waxy coating protect the skin",
+        "Eyebrows and eyelashes grow"
+      ],
+      "narration": "In the second trimester, your baby grows quickly. At sixteen weeks, your baby is more than four inches long and weighs a little over three ounces. By twenty weeks, your baby is more than six inches long. Fine, soft hair and a waxy, creamy coating cover and protect the skin. Eyebrows and eyelashes grow in. And your baby practices sucking and swallowing.",
+      "sourceIds": [
+        "acog-fetus-grows",
+        "acog-changes-during-pregnancy"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Illustration of a fetus at about fourteen weeks, floating in the amniotic sac with the umbilical cord."
+      }
+    },
+    {
+      "id": "first-movements",
+      "type": "content",
+      "heading": "Feeling your baby move",
+      "onScreen": [
+        "Often between about 16 and 22 weeks",
+        "Earlier if you've been pregnant before",
+        "Flutters, bubbles, or a gentle tap",
+        "Not every day at first, and that's normal"
+      ],
+      "narration": "Many people first feel their baby move somewhere between about sixteen and twenty-two weeks. If you've been pregnant before, you may notice it sooner. Early movements are gentle. People describe them as flutters, bubbles, or a light tap. At first, you won't feel them every day, and that's normal. The kicks get stronger and more regular as your baby grows.",
+      "sourceIds": [
+        "acog-fetus-grows"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Illustration of a fetus at about twenty weeks, arms and legs bent, moving inside the uterus."
+      }
+    },
+    {
+      "id": "anatomy-ultrasound",
+      "type": "content",
+      "heading": "The anatomy ultrasound",
+      "onScreen": [
+        "Usually around 18 to 22 weeks",
+        "Checks your baby's body and organs",
+        "Checks the placenta and amniotic fluid",
+        "You can often learn the sex, if you want to"
+      ],
+      "narration": "Many people have an ultrasound around eighteen to twenty-two weeks. It's often called the anatomy scan. Your care team uses it to look at your baby's body and organs, check how your baby is growing, and see where the placenta is and how much fluid surrounds your baby. You can often learn your baby's sex at this scan, if you'd like to know. If something needs a closer look, your care team will talk with you about next steps.",
+      "sourceIds": [
+        "acog-ultrasound-exams"
+      ]
+    },
+    {
+      "id": "hearing",
+      "type": "content",
+      "heading": "Your baby is listening",
+      "onScreen": [
+        "Hearing develops in this trimester",
+        "Your baby can hear your heartbeat and your voice",
+        "Sleep and wake times begin"
+      ],
+      "narration": "By the end of the second trimester, your baby can hear. Your heartbeat, your digestion, and your voice are part of your baby's world. Some parents like to talk, read, or sing to their baby. Your baby also starts to have times of sleep and times of being awake and active.",
+      "sourceIds": [
+        "acog-fetus-grows"
+      ]
+    },
+    {
+      "id": "your-body",
+      "type": "content",
+      "heading": "Your body: months 4 to 6",
+      "onScreen": [
+        "Your belly starts to show",
+        "By about 20 weeks, the top of your uterus reaches your belly button",
+        "Your care team may measure your belly to check growth",
+        "Brief, sharp pains low on the sides are common as it stretches",
+        "Practice contractions may start"
+      ],
+      "narration": "In the second trimester, your belly starts to show. Your uterus rises out of your pelvis, and by about twenty weeks, the top of it reaches your belly button. At your visits, your care team may measure from your pubic bone to the top of your uterus to check that your baby is growing. As the uterus stretches, you may feel brief, sharp pains low on one or both sides when you move quickly. You may also notice your belly tightening now and then. These practice contractions, called Braxton Hicks, are usually irregular and go away. If they become regular or painful before thirty-seven weeks, call your care team.",
+      "sourceIds": [
+        "acog-changes-during-pregnancy",
+        "lamaze-braxton-hicks"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Side view cross-section of a pregnant body at about twenty weeks: the top of the uterus is level with the belly button, and the intestines are pushed up and to the sides."
+      }
+    },
+    {
+      "id": "checkin-movement",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's pause for a quick check-in.",
+      "sourceIds": [
+        "acog-fetus-grows"
+      ],
+      "question": {
+        "prompt": "You're 17 weeks into your first pregnancy and haven't felt your baby move yet. What's true?",
+        "options": [
+          "Something must be wrong",
+          "That's common. Many people first feel movement between about 16 and 22 weeks",
+          "Babies don't move until the third trimester"
+        ],
+        "correctIndex": 1,
+        "explanation": "First movements often come between about sixteen and twenty-two weeks, and later in a first pregnancy. If you have questions, ask at your next visit."
+      }
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Your baby grows fast: more than 6 inches by 20 weeks",
+        "First movements: often 16 to 22 weeks",
+        "The anatomy ultrasound: around 18 to 22 weeks",
+        "Your baby can hear your voice"
+      ],
+      "narration": "Let's recap. In the second trimester, your baby grows quickly, to more than six inches long by twenty weeks. Many people feel their baby's first flutters between about sixteen and twenty-two weeks. The anatomy ultrasound, around eighteen to twenty-two weeks, checks how your baby is growing. And by the end of these months, your baby can hear your voice. Next, a few review questions. Then on to the final stretch, months seven to nine.",
+      "sourceIds": [
+        "acog-fetus-grows",
+        "acog-ultrasound-exams"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "What does the anatomy ultrasound check?",
+      "options": [
+        "Your baby's body, growth, the placenta and the fluid",
+        "Only whether it's a boy or a girl",
+        "Whether labor will start soon"
+      ],
+      "correctIndex": 0,
+      "explanation": "Around eighteen to twenty-two weeks, the anatomy ultrasound checks your baby's body and organs, growth, the placenta and the amniotic fluid. Learning the sex is optional."
+    },
+    {
+      "prompt": "What do early movements often feel like?",
+      "options": [
+        "Strong kicks you can see from outside",
+        "Flutters, bubbles, or a light tap",
+        "Cramps that come and go"
+      ],
+      "correctIndex": 1,
+      "explanation": "Early movements are gentle, like flutters or bubbles. They get stronger as your baby grows."
+    }
+  ],
+  "nextLessonId": "baby-months-7-to-9"
+}

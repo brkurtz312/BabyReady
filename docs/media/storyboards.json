@@ -175,25 +175,25 @@
       {
         "type": "image",
         "seconds": 7,
-        "prompt": "Her partner hands a pillow to the instructor, who places it between the pregnant woman's bent knees as she lies on her side. She lies fully on her left side along the bed, head on a pillow, not leaning on anyone.",
+        "prompt": "A closer view of the bed from beside it, showing the pregnant woman from head to feet as she lies on her left side with both knees bent forward and stacked: the instructor's hands slide a plump white pillow between her knees, so her top knee rests on the pillow and her bottom knee is under it. The partner stands behind, holding a second pillow. She lies fully on her left side along the bed, head on a pillow, not leaning on anyone.",
         "caption": "Put a pillow between your knees."
       },
       {
         "type": "image",
         "seconds": 7,
-        "prompt": "The instructor tucks a second pillow under the pregnant woman's belly as she lies on her side with a pillow between her knees. She lies fully on her left side along the bed, head on a pillow, not leaning on anyone.",
+        "prompt": "A closer view of the bed: the pregnant woman lies on her left side with knees bent and stacked, a plump white pillow clearly between her knees, while the instructor tucks a second, smaller pillow under her rounded belly. She lies fully on her left side along the bed, head on a pillow, not leaning on anyone.",
         "caption": "Tuck another pillow under your belly."
       },
       {
         "type": "image",
         "seconds": 7,
-        "prompt": "The pregnant woman lies on her side hugging a long full-length body pillow that runs from her head to between her knees. She lies fully on her left side along the bed, head on a pillow, not leaning on anyone.",
+        "prompt": "A closer view of the bed: the pregnant woman lies on her left side hugging a long full-length body pillow; its top end is under her head and arms, and its lower end runs between her bent, stacked knees, clearly visible between them. She lies fully on her left side along the bed, head on a pillow, not leaning on anyone.",
         "caption": "A full-length body pillow is another option."
       },
       {
         "type": "image",
         "seconds": 6,
-        "prompt": "The pregnant woman rests comfortably on her side with her pillows, eyes closed, a small smile, a blanket over her legs. She lies fully on her left side along the bed, head on a pillow, not leaning on anyone.",
+        "prompt": "The pregnant woman rests comfortably on her left side, eyes closed, a small smile, knees bent with a plump white pillow clearly between them and a small pillow under her belly; a light blanket covers only her feet. She lies fully on her left side along the bed, head on a pillow, not leaning on anyone.",
         "caption": "Settle in and rest."
       },
       {
@@ -664,7 +664,7 @@
     ]
   },
   "placenta-and-first-hour/golden-hour-video": {
-    "cast": "a new parent, a woman with medium-brown skin and short black curls in a hospital gown, reclining in a hospital bed and covered by a warm blanket; her partner, a man with a beard in a grey sweater; a nurse, a woman in teal scrubs; their newborn baby. Gentle and non-graphic: no blood, the parent always modestly covered.",
+    "cast": "a new parent, a woman with medium-brown skin and short black curls, reclining in a hospital bed, her hospital gown lowered off her shoulders so the newborn can lie on her bare upper chest; a warm blanket covers her body, and the baby covers her chest, so she stays modest; her partner, a man with a beard in a grey sweater; a nurse, a woman in teal scrubs; their newborn baby, wearing only a diaper. Skin to skin always means the baby lies tummy-down directly on the parent's bare chest, between her breasts, head turned to one side, never held up in the air. Gentle and non-graphic: no blood, no nipples or breasts shown.",
     "scenes": [
       {
         "type": "title",
@@ -673,53 +673,53 @@
       {
         "type": "image",
         "seconds": 8,
-        "prompt": "The nurse gently places the newborn, wearing only a diaper, on the parent's chest as she reclines in the hospital bed; a warm blanket covers the parent.",
+        "prompt": "The nurse gently lays the newborn, wearing only a diaper, tummy-down directly on the parent's bare upper chest as she reclines in the hospital bed; her gown is lowered off her shoulders and a warm blanket covers her from the chest down.",
         "caption": "Baby is placed skin to skin on your chest."
       },
       {
         "type": "image",
         "seconds": 8,
-        "prompt": "The nurse dries the newborn with a soft towel and covers the baby's back with a warm blanket while the baby lies on the parent's chest.",
+        "prompt": "The baby lies tummy-down directly on the parent's bare upper chest, head turned to the side. The nurse dries the baby's back with a soft towel and lays a warm blanket over the baby's back and the parent's chest, up to the baby's shoulders.",
         "caption": "Dried off and covered with a warm blanket."
       },
       {
         "type": "image",
         "seconds": 9,
-        "prompt": "The nurse listens to the newborn with a small stethoscope while the baby stays on the parent's chest under the blanket.",
+        "prompt": "The baby lies tummy-down directly on the parent's bare upper chest, head turned to the side, a warm blanket over the baby's back up to its shoulders. The nurse listens to the baby's back with a small stethoscope, the baby staying on the parent's chest.",
         "caption": "The Apgar check can often be done",
         "sub": "right on your chest."
       },
       {
         "type": "image",
         "seconds": 9,
-        "prompt": "With the nurse guiding him, the partner holds a pair of small blunt scissors near a thin, soft, pale cord with a small clip, close to the blanket. The baby rests on the parent's chest. Clean and non-graphic.",
+        "prompt": "The baby lies tummy-down directly on the parent's bare upper chest, head turned to the side, a warm blanket over the baby's back. With the nurse guiding him, the partner holds a pair of small blunt scissors near a thin, soft, pale cord with a small clip, close to the blanket. Clean and non-graphic.",
         "caption": "After a short wait to clamp the cord,",
         "sub": "your partner may get to cut it."
       },
       {
         "type": "image",
         "seconds": 8,
-        "prompt": "Close-up: the newborn on the parent's chest turns its head toward her with its mouth open, rooting. The parent is covered by her gown and a blanket.",
+        "prompt": "Close-up: the newborn lies tummy-down on the parent's bare chest under a warm blanket and turns its head toward her breast with its mouth open, rooting. The blanket and the baby keep her covered.",
         "caption": "Watch for rooting:",
         "sub": "turning toward your chest with an open mouth."
       },
       {
         "type": "image",
         "seconds": 9,
-        "prompt": "The nurse helps gently position the baby for a first feeding while the parent stays covered by her gown and a blanket; no breast is shown.",
+        "prompt": "The nurse helps the parent hold the baby, still skin to skin and under a warm blanket, for a first feeding try; the baby and blanket keep her covered, and no breast is shown.",
         "caption": "A first feeding try.",
         "sub": "There's no need for a perfect first latch."
       },
       {
         "type": "image",
         "seconds": 8,
-        "prompt": "The nurse presses gently on the parent's lower belly over the blanket to check it, while the parent holds the baby on her chest and the partner sits close.",
+        "prompt": "The baby lies tummy-down directly on the parent's bare upper chest, head turned to the side, under a warm blanket. The nurse presses gently on the parent's lower belly over the blanket to check it, while the parent holds the baby and the partner sits close.",
         "caption": "Your nurse checks that your uterus is staying firm."
       },
       {
         "type": "image",
         "seconds": 8,
-        "prompt": "A quiet, dim moment: the parent and partner gaze at the baby resting skin to skin on her chest under the blanket.",
+        "prompt": "A quiet, dim moment: the parent and partner gaze at the baby resting tummy-down skin to skin on her bare chest, a warm blanket over the baby's back.",
         "caption": "Ask for the first hour together without interruption,",
         "sub": "if possible."
       },

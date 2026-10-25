@@ -80,7 +80,6 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'stages-of-labor/active-labor': require('../../assets/lessons/stages-of-labor/active-labor.jpg'),
   'stages-of-labor/transition': require('../../assets/lessons/stages-of-labor/transition.jpg'),
   'stages-of-labor/pushing': require('../../assets/lessons/stages-of-labor/pushing.jpg'),
-  'stages-of-labor/placenta': require('../../assets/lessons/stages-of-labor/placenta.jpg'),
   'early-labor-at-home/welcome': require('../../assets/lessons/early-labor-at-home/welcome.jpg'),
   'early-labor-at-home/why-home': require('../../assets/lessons/early-labor-at-home/why-home.jpg'),
   // Batch 7: early labor at home, pushing and birth, the placenta and the first hour.
@@ -157,6 +156,8 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'induction-of-labor/risks': require('../../assets/lessons/induction-of-labor/risks.jpg'),
   'assisted-vaginal-birth/welcome': require('../../assets/lessons/assisted-vaginal-birth/welcome.jpg'),
   'assisted-vaginal-birth/how': require('../../assets/lessons/assisted-vaginal-birth/how.jpg'),
+  'assisted-vaginal-birth/vacuum': require('../../assets/lessons/assisted-vaginal-birth/vacuum.jpg'),
+  'assisted-vaginal-birth/forceps': require('../../assets/lessons/assisted-vaginal-birth/forceps.jpg'),
   'assisted-vaginal-birth/for-baby': require('../../assets/lessons/assisted-vaginal-birth/for-baby.jpg'),
   'assisted-vaginal-birth/for-you': require('../../assets/lessons/assisted-vaginal-birth/for-you.jpg'),
   'cesarean-birth/welcome': require('../../assets/lessons/cesarean-birth/welcome.jpg'),
@@ -231,6 +232,22 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'rest-food-and-help-at-home/support-person': require('../../assets/lessons/rest-food-and-help-at-home/support-person.jpg'),
   'your-postpartum-checkups/welcome': require('../../assets/lessons/your-postpartum-checkups/welcome.jpg'),
   'your-postpartum-checkups/birth-control': require('../../assets/lessons/your-postpartum-checkups/birth-control.jpg'),
+  // How Your Baby Grows: fetal and maternal development illustrations from the Pregnancy AI Assistant.
+  'baby-months-1-to-3/conception': require('../../assets/lessons/baby-months-1-to-3/conception.jpg'),
+  'baby-months-1-to-3/counting-weeks': require('../../assets/lessons/baby-months-1-to-3/counting-weeks.jpg'),
+  'baby-months-1-to-3/embryo': require('../../assets/lessons/baby-months-1-to-3/embryo.jpg'),
+  'baby-months-1-to-3/fetus': require('../../assets/lessons/baby-months-1-to-3/fetus.jpg'),
+  'baby-months-1-to-3/implantation': require('../../assets/lessons/baby-months-1-to-3/implantation.jpg'),
+  'baby-months-1-to-3/welcome': require('../../assets/lessons/baby-months-1-to-3/welcome.jpg'),
+  'baby-months-1-to-3/your-body': require('../../assets/lessons/baby-months-1-to-3/your-body.jpg'),
+  'baby-months-4-to-6/first-movements': require('../../assets/lessons/baby-months-4-to-6/first-movements.jpg'),
+  'baby-months-4-to-6/growing-fast': require('../../assets/lessons/baby-months-4-to-6/growing-fast.jpg'),
+  'baby-months-4-to-6/welcome': require('../../assets/lessons/baby-months-4-to-6/welcome.jpg'),
+  'baby-months-4-to-6/your-body': require('../../assets/lessons/baby-months-4-to-6/your-body.jpg'),
+  'baby-months-7-to-9/baby-drops': require('../../assets/lessons/baby-months-7-to-9/baby-drops.jpg'),
+  'baby-months-7-to-9/gaining-weight': require('../../assets/lessons/baby-months-7-to-9/gaining-weight.jpg'),
+  'baby-months-7-to-9/position': require('../../assets/lessons/baby-months-7-to-9/position.jpg'),
+  'baby-months-7-to-9/welcome': require('../../assets/lessons/baby-months-7-to-9/welcome.jpg'),
 };
 
 export function artworkFor(lessonId: string, slideId: string): ImageSourcePropType | null {

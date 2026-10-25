@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import {
   ActivityIndicator,
   Pressable,
@@ -10,7 +10,8 @@ import {
   View,
 } from 'react-native';
 
-import { ClassReflectionsSection } from '../components/ClassReflectionsSection';
+import { ClassReflectionsSection, type ReflectionRow } from '../components/ClassReflectionsSection';
+import { briefDocumentHtml } from '../lib/briefDocument';
 import { useLearnerLayout } from '../lib/learnerLayout';
 import {
   BIRTH_READINESS_BRIEF_MAX_DISCUSSION_QUESTIONS,
@@ -24,6 +25,7 @@ import {
   subscribeToBirthReadinessBrief,
   type BirthReadinessBriefState,
 } from '../services/birthReadinessBriefService';
+import { printBrief, saveBriefAsPdf } from '../services/briefExport';
 
 export type BirthReadinessBriefAuthStatus =
   'ready' | 'loading' | 'unconfigured' | 'error';
@@ -115,6 +117,9 @@ export function BirthReadinessBriefScreen({
   const [saveError, setSaveError] = useState<string | null>(null);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
+  const [reflectionRows, setReflectionRows] = useState<ReflectionRow[]>([]);
+  const [exporting, setExporting] = useState<'print' | 'pdf' | null>(null);
+  const [exportError, setExportError] = useState<string | null>(null);
 
   useEffect(() => {
     setReadinessItems(emptyBirthReadinessItems());
@@ -229,6 +234,33 @@ export function BirthReadinessBriefScreen({
       .finally(() => setIsSaving(false));
   };
 
+  // Print and Save as PDF use the saved brief, so they wait until edits are saved.
+  const savedBrief = briefState.status === 'ready' ? briefState.brief : null;
+  const hasUnsavedChanges =
+    savedBrief !== null &&
+    (JSON.stringify(readinessItems) !== JSON.stringify(savedBrief.readinessItems) ||
+      JSON.stringify(discussionQuestions) !== JSON.stringify(savedBrief.discussionQuestions));
+  const canExport = savedBrief !== null && !hasUnsavedChanges && !isSaving && exporting === null;
+
+  const onReflectionRows = useCallback((rows: ReflectionRow[]) => setReflectionRows(rows), []);
+
+  const exportBrief = (kind: 'print' | 'pdf') => {
+    if (!savedBrief) return;
+    const html = briefDocumentHtml({
+      readiness: readinessPrompts.map((prompt) => ({ label: prompt.label, checked: savedBrief.readinessItems[prompt.key] })),
+      discussionQuestions: savedBrief.discussionQuestions,
+      reflections: reflectionRows,
+      printedOn: new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }),
+    });
+    setExporting(kind);
+    setExportError(null);
+    void (kind === 'print' ? printBrief(html) : saveBriefAsPdf(html))
+      .catch((error: unknown) => {
+        setExportError(error instanceof Error ? error.message : 'Your brief could not be printed. Please try again.');
+      })
+      .finally(() => setExporting(null));
+  };
+
   const readUnavailable =
     authStatus !== 'ready' ||
     !userId ||
@@ -324,7 +356,7 @@ export function BirthReadinessBriefScreen({
           </View>
         ) : null}
 
-        <ClassReflectionsSection userId={userId} />
+        <ClassReflectionsSection onRowsChange={onReflectionRows} userId={userId} />
 
         <View style={styles.sectionHeader}>
           <Text accessibilityRole="header" style={styles.sectionTitle}>
@@ -527,12 +559,75 @@ export function BirthReadinessBriefScreen({
             <Text style={styles.saveButtonText}>Save private brief</Text>
           )}
         </Pressable>
+
+        {savedBrief ? (
+          <View style={styles.exportCard} testID="birth-readiness-brief-export">
+            <Text style={styles.exportTitle}>Print or save a copy</Text>
+            <Text style={styles.exportText}>
+              {hasUnsavedChanges
+                ? 'Save your changes first, so your copy matches your brief.'
+                : 'Make a copy to bring to your visit. It is made on your device; nothing is sent anywhere until you choose where to save or share it.'}
+            </Text>
+            <View style={styles.exportButtons}>
+              <Pressable
+                accessibilityLabel="Print your Birth Readiness Brief"
+                accessibilityRole="button"
+                accessibilityState={{ disabled: !canExport, busy: exporting === 'print' }}
+                disabled={!canExport}
+                onPress={() => exportBrief('print')}
+                style={[styles.exportButton, !canExport && styles.controlDisabled]}
+                testID="button-print-birth-readiness-brief"
+              >
+                {exporting === 'print' ? <ActivityIndicator color="#01696F" /> : <Text style={styles.exportButtonText}>Print</Text>}
+              </Pressable>
+              <Pressable
+                accessibilityLabel="Save your Birth Readiness Brief as a PDF"
+                accessibilityRole="button"
+                accessibilityState={{ disabled: !canExport, busy: exporting === 'pdf' }}
+                disabled={!canExport}
+                onPress={() => exportBrief('pdf')}
+                style={[styles.exportButton, !canExport && styles.controlDisabled]}
+                testID="button-pdf-birth-readiness-brief"
+              >
+                {exporting === 'pdf' ? <ActivityIndicator color="#01696F" /> : <Text style={styles.exportButtonText}>Save as PDF</Text>}
+              </Pressable>
+            </View>
+            {exportError ? (
+              <Text accessibilityRole="alert" style={styles.saveError} testID="birth-readiness-brief-export-error">
+                {exportError}
+              </Text>
+            ) : null}
+          </View>
+        ) : null}
       </ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
+  exportCard: {
+    backgroundColor: '#FBFBF9',
+    borderColor: '#D4D1CA',
+    borderRadius: 14,
+    borderWidth: 1,
+    gap: 8,
+    marginTop: 16,
+    padding: 16,
+  },
+  exportTitle: { color: '#28251D', fontSize: 17, fontWeight: '700' },
+  exportText: { color: '#605D56', fontSize: 14, lineHeight: 20 },
+  exportButtons: { flexDirection: 'row', flexWrap: 'wrap', gap: 10, marginTop: 4 },
+  exportButton: {
+    alignItems: 'center',
+    borderColor: '#01696F',
+    borderRadius: 999,
+    borderWidth: 1.5,
+    justifyContent: 'center',
+    minHeight: 44,
+    minWidth: 120,
+    paddingHorizontal: 18,
+  },
+  exportButtonText: { color: '#01696F', fontSize: 15, fontWeight: '700' },
   safeArea: {
     backgroundColor: '#F7F6F2',
     flex: 1,
