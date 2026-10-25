@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import { ActivityIndicator, Modal, Pressable, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, Linking, Modal, Pressable, StyleSheet, Text, View } from 'react-native';
+
+import { appStoreUrl } from '../config/env';
 
 import type { FullClassAccess } from '../hooks/useFullClassAccess';
 
@@ -61,12 +63,30 @@ export function PaywallSheet({ visible, access, onClose }: PaywallSheetProps) {
                 Unlock the full class in the BabyReady app
               </Text>
               <Text style={styles.body}>
-                This lesson is part of the full class. You can unlock it in the BabyReady app on your phone. The
-                free lessons, including every lesson on when to get urgent help, stay open here.
+                This lesson is part of the full class, a one-time purchase in the BabyReady iPhone app
+                {appStoreUrl ? '.' : ', coming soon to the App Store.'} The free lessons, including every lesson on
+                when to get urgent help, stay open here.
               </Text>
               <View style={styles.buttons}>
-                <Pressable accessibilityRole="button" onPress={close} style={styles.primaryButton} testID="button-close-paywall">
-                  <Text style={styles.primaryButtonText}>OK</Text>
+                {appStoreUrl ? (
+                  <Pressable
+                    accessibilityRole="link"
+                    onPress={() => void Linking.openURL(appStoreUrl).catch(() => undefined)}
+                    style={styles.primaryButton}
+                    testID="button-get-app"
+                  >
+                    <Text style={styles.primaryButtonText}>Get the iPhone app</Text>
+                  </Pressable>
+                ) : null}
+                <Pressable
+                  accessibilityRole="button"
+                  onPress={close}
+                  style={appStoreUrl ? styles.secondaryButton : styles.primaryButton}
+                  testID="button-close-paywall"
+                >
+                  <Text style={appStoreUrl ? styles.secondaryButtonText : styles.primaryButtonText}>
+                    {appStoreUrl ? 'Not now' : 'OK'}
+                  </Text>
                 </Pressable>
               </View>
             </>
