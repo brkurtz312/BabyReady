@@ -26,6 +26,7 @@ export const narrationClips: Record<string, NarrationClip> = {
   'e62410bb': { source: require('../../assets/narration/assisted-vaginal-birth/what-is.m4a'), starts: [150, 6674, 14075, 19021] }, // assisted-vaginal-birth/what-is.m4a
   '1f3e262b': { source: require('../../assets/narration/assisted-vaginal-birth/when.m4a'), starts: [150, 4143, 8539, 11401, 15229, 21878] }, // assisted-vaginal-birth/when.m4a
   '68fa0cc3': { source: require('../../assets/narration/assisted-vaginal-birth/your-questions.m4a'), starts: [150, 3858, 12571] }, // assisted-vaginal-birth/your-questions.m4a
+  '4f49a6a1': { source: require('../../assets/narration/baby-months-7-to-9/baby-movement.m4a'), starts: [150, 5269, 11865, 19923, 24624] }, // baby-months-7-to-9/baby-movement.m4a
   '7c9ec425': { source: require('../../assets/narration/breastfeeding-basics/challenges.m4a'), starts: [150, 3643, 13886, 17815, 22350, 28058, 30897, 36934] }, // breastfeeding-basics/challenges.m4a
   '8382f4ec': { source: require('../../assets/narration/breastfeeding-basics/checkin-latch-right.m4a'), starts: [150, 1120, 5606] }, // breastfeeding-basics/checkin-latch-right.m4a
   '37ace7de': { source: require('../../assets/narration/breastfeeding-basics/checkin-latch-wrong.m4a'), starts: [150, 1119, 6160] }, // breastfeeding-basics/checkin-latch-wrong.m4a
@@ -626,7 +627,6 @@ export const narrationClips: Record<string, NarrationClip> = {
   '2bbab899': { source: require('../../assets/narration/when-to-call-about-your-baby/trust-yourself.m4a'), starts: [150, 8905, 16250, 18444] }, // when-to-call-about-your-baby/trust-yourself.m4a
   '163bf769': { source: require('../../assets/narration/when-to-call-about-your-baby/welcome.m4a'), starts: [150, 2720, 9357, 18808, 20476] }, // when-to-call-about-your-baby/welcome.m4a
   'c3e3cb5f': { source: require('../../assets/narration/when-to-contact-your-care-team/always-ok-to-call.m4a'), starts: [150, 5623, 12982, 14227, 19267] }, // when-to-contact-your-care-team/always-ok-to-call.m4a
-  '4f49a6a1': { source: require('../../assets/narration/when-to-contact-your-care-team/baby-movement.m4a'), starts: [150, 5269, 11865, 19923, 24624] }, // when-to-contact-your-care-team/baby-movement.m4a
   'f6503515': { source: require('../../assets/narration/when-to-contact-your-care-team/bleeding.m4a'), starts: [150, 7055, 8382, 12937, 19009] }, // when-to-contact-your-care-team/bleeding.m4a
   'a1d1bda1': { source: require('../../assets/narration/when-to-contact-your-care-team/call-card.m4a'), starts: [150, 2576, 10708, 13710] }, // when-to-contact-your-care-team/call-card.m4a
   'b1be5a0c': { source: require('../../assets/narration/when-to-contact-your-care-team/checkin-511-right.m4a'), starts: [150, 1078, 4545] }, // when-to-contact-your-care-team/checkin-511-right.m4a

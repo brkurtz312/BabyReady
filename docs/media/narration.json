@@ -5590,18 +5590,6 @@
       19009
     ]
   },
-  "when-to-contact-your-care-team/baby-movement.m4a": {
-    "fingerprint": "4f49a6a1",
-    "voice": "Sulafat",
-    "model": "gemini-3.8-flash-tts",
-    "starts": [
-      150,
-      5269,
-      11865,
-      19923,
-      24624
-    ]
-  },
   "when-to-contact-your-care-team/practice-call-video.m4a": {
     "fingerprint": "2c8cd18d",
     "voice": "Sulafat",
@@ -7436,6 +7424,18 @@
       1273,
       10153,
       12180
+    ]
+  },
+  "baby-months-7-to-9/baby-movement.m4a": {
+    "fingerprint": "4f49a6a1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5269,
+      11865,
+      19923,
+      24624
     ]
   }
 }
