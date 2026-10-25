@@ -11,11 +11,11 @@
   ],
   "estimatedMinutes": 8,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Draft 2026-10-24 for the new How Your Baby Grows module, built around the March of Dimes month-by-month videos. Needs clinical review and every source confirmed against its slides. Sizes are rounded averages from ACOG's Changes During Pregnancy infographic. Embryonic milestones are kept general (neural tube, heart, limb buds, organs beginning to form) rather than tied to exact days; reviewer to confirm the timing words. The embryo-to-fetus switch at week 9 follows ACOG's patient FAQ, which counts weeks of pregnancy; embryology texts put it at 8 weeks after fertilization, about 10 weeks of pregnancy. Pictures are the reviewer's fetal and maternal development illustrations from the Pregnancy AI Assistant, padded to the class's 16:10 frame; that draft labeled the earliest stages in weeks after conception, while this class counts from the last period, so the pictures are placed by what they show."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-25",
+    "nextReviewBy": "2027-10-25",
+    "notes": "Clinically reviewed 2026-10-25 by Bryan Kurtz MD, FACOG, who confirmed every source against its slides. Draft 2026-10-24 for the new How Your Baby Grows module, built around the March of Dimes month-by-month videos. Needs clinical review and every source confirmed against its slides. Sizes are rounded averages from ACOG's Changes During Pregnancy infographic. Embryonic milestones are kept general (neural tube, heart, limb buds, organs beginning to form) rather than tied to exact days; reviewer to confirm the timing words. The embryo-to-fetus switch at week 9 follows ACOG's patient FAQ, which counts weeks of pregnancy; embryology texts put it at 8 weeks after fertilization, about 10 weeks of pregnancy. Pictures are the reviewer's fetal and maternal development illustrations from the Pregnancy AI Assistant, padded to the class's 16:10 frame; that draft labeled the earliest stages in weeks after conception, while this class counts from the last period, so the pictures are placed by what they show."
   },
   "sources": [
     {
@@ -23,49 +23,49 @@
       "organization": "ACOG",
       "title": "How Your Fetus Grows During Pregnancy (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/how-your-fetus-grows-during-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     },
     {
       "id": "acog-changes-during-pregnancy",
       "organization": "ACOG",
       "title": "Changes During Pregnancy (Infographic)",
       "url": "https://www.acog.org/womens-health/infographics/changes-during-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     },
     {
       "id": "nichd-know-if-pregnant",
       "organization": "NICHD",
       "title": "How do I know if I'm pregnant?",
       "url": "https://www.nichd.nih.gov/health/topics/pregnancy/conditioninfo/know",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     },
     {
       "id": "cdc-folic-acid",
       "organization": "CDC",
       "title": "About Folic Acid",
       "url": "https://www.cdc.gov/folic-acid/about/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     },
     {
       "id": "cdc-alcohol-pregnancy",
       "organization": "CDC",
       "title": "About Alcohol Use During Pregnancy",
       "url": "https://www.cdc.gov/alcohol-pregnancy/about/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     },
     {
       "id": "cdc-medicine-pregnancy",
       "organization": "CDC",
       "title": "About Medicine and Pregnancy",
       "url": "https://www.cdc.gov/medicine-and-pregnancy/about/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     },
     {
       "id": "acog-morning-sickness",
       "organization": "ACOG",
       "title": "Morning Sickness: Nausea and Vomiting of Pregnancy (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/morning-sickness-nausea-and-vomiting-of-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     }
   ],
   "slides": [
