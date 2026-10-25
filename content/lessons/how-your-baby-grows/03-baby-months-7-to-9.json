@@ -11,11 +11,11 @@
   ],
   "estimatedMinutes": 8,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Draft 2026-10-24 for the new How Your Baby Grows module, built around the March of Dimes month-by-month videos. Needs clinical review and every source confirmed against its slides. Sizes are rounded averages from ACOG's Changes During Pregnancy infographic. The movement slide reuses the reviewed wording from When to Contact Your Care Team. Head-down \"by about 36 weeks\" and the ACOG infographic's \"major development finished by about 31 weeks\" need the reviewer's check. Pictures are the reviewer's fetal and maternal development illustrations from the Pregnancy AI Assistant, padded to the class's 16:10 frame; that draft labeled the earliest stages in weeks after conception, while this class counts from the last period, so the pictures are placed by what they show."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-25",
+    "nextReviewBy": "2027-10-25",
+    "notes": "Clinically reviewed 2026-10-25 by Bryan Kurtz MD, FACOG, who confirmed every source against its slides. Draft 2026-10-24 for the new How Your Baby Grows module, built around the March of Dimes month-by-month videos. Needs clinical review and every source confirmed against its slides. Sizes are rounded averages from ACOG's Changes During Pregnancy infographic. The movement slide reuses the reviewed wording from When to Contact Your Care Team. Head-down \"by about 36 weeks\" and the ACOG infographic's \"major development finished by about 31 weeks\" need the reviewer's check. Pictures are the reviewer's fetal and maternal development illustrations from the Pregnancy AI Assistant, padded to the class's 16:10 frame; that draft labeled the earliest stages in weeks after conception, while this class counts from the last period, so the pictures are placed by what they show."
   },
   "sources": [
     {
@@ -23,63 +23,63 @@
       "organization": "ACOG",
       "title": "How Your Fetus Grows During Pregnancy (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/how-your-fetus-grows-during-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     },
     {
       "id": "acog-changes-during-pregnancy",
       "organization": "ACOG",
       "title": "Changes During Pregnancy (Infographic)",
       "url": "https://www.acog.org/womens-health/infographics/changes-during-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     },
     {
       "id": "acog-co579-term",
       "organization": "ACOG",
       "title": "Definition of Term Pregnancy (Committee Opinion No. 579)",
       "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2013/11/definition-of-term-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     },
     {
       "id": "acog-breech",
       "organization": "ACOG",
       "title": "If Your Baby Is Breech (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/if-your-baby-is-breech",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     },
     {
       "id": "acnm-am-i-in-labor",
       "organization": "ACNM",
       "title": "Am I in Labor? (Discover Midwives)",
       "url": "https://discovermidwives.midwife.org/am-i-in-labor/",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     },
     {
       "id": "cdc-hear-her-warning-signs",
       "organization": "CDC",
       "title": "Hear Her: Urgent Maternal Warning Signs",
       "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     },
     {
       "id": "acog-digestive",
       "organization": "ACOG",
       "title": "Problems of the Digestive System (FAQ120)",
       "url": "https://www.acog.org/womens-health/faqs/problems-of-the-digestive-system",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     },
     {
       "id": "acog-back-pain",
       "organization": "ACOG",
       "title": "Back Pain During Pregnancy (FAQ115)",
       "url": "https://www.acog.org/womens-health/faqs/back-pain-during-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     },
     {
       "id": "acog-labor-begins",
       "organization": "ACOG",
       "title": "How to Tell When Labor Begins (FAQ004)",
       "url": "https://www.acog.org/womens-health/faqs/how-to-tell-when-labor-begins",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     }
   ],
   "slides": [
