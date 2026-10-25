@@ -21,7 +21,7 @@ It signs in with the same `FIREBASE_DEPLOY_KEY` secret as **Deploy functions** (
    - `EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID`
    - `EXPO_PUBLIC_FIREBASE_APP_ID`
 
-The project ID is already in the workflow. If one is missing, the run stops at "Build and deploy" and names it.
+Saving them as repository secrets with the same names works too. The project ID is already in the workflow. If one is missing, the run stops at "Build and deploy" and names it.
 
 ### If a deploy fails with a permission error
 
