@@ -7437,5 +7437,1134 @@
       19923,
       24624
     ]
+  },
+  "baby-months-1-to-3/implantation.m4a": {
+    "fingerprint": "8ed8db5c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6112,
+      8586,
+      10800,
+      12811,
+      17771
+    ]
+  },
+  "baby-months-1-to-3/conception.m4a": {
+    "fingerprint": "1ef80fbb",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5872,
+      10297,
+      13543
+    ]
+  },
+  "baby-months-1-to-3/counting-weeks.m4a": {
+    "fingerprint": "e0098ac9",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5855,
+      10461,
+      13356,
+      16798,
+      19706,
+      23383
+    ]
+  },
+  "baby-months-1-to-3/welcome.m4a": {
+    "fingerprint": "aaaf25bd",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2137,
+      9580,
+      13950,
+      21241,
+      26596
+    ]
+  },
+  "baby-months-1-to-3/embryo.m4a": {
+    "fingerprint": "efbc92b2",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3852,
+      5950,
+      7635,
+      10566,
+      13490,
+      16996,
+      20147
+    ]
+  },
+  "baby-months-1-to-3/fetus.m4a": {
+    "fingerprint": "b9ed02cb",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4026,
+      5929,
+      10136,
+      14633
+    ]
+  },
+  "baby-months-1-to-3/early-weeks-matter.m4a": {
+    "fingerprint": "6966ad2b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5481,
+      11968,
+      17196,
+      22899,
+      26879,
+      28123
+    ]
+  },
+  "baby-months-1-to-3/checkin-embryo-right.m4a": {
+    "fingerprint": "c3d55e09",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1052,
+      4254
+    ]
+  },
+  "baby-months-1-to-3/your-body.m4a": {
+    "fingerprint": "4d958e8c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1906,
+      8468,
+      12219,
+      17291,
+      20328,
+      23895
+    ]
+  },
+  "baby-months-1-to-3/checkin-embryo-wrong.m4a": {
+    "fingerprint": "f26c1107",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1285,
+      4545
+    ]
+  },
+  "baby-months-1-to-3/quiz-1-right.m4a": {
+    "fingerprint": "6276c537",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      898,
+      4580
+    ]
+  },
+  "baby-months-1-to-3/summary.m4a": {
+    "fingerprint": "5eba6bce",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1506,
+      8188,
+      11461,
+      14152,
+      19213,
+      24589
+    ]
+  },
+  "baby-months-1-to-3/quiz-2-right.m4a": {
+    "fingerprint": "4a9acaf0",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1149,
+      6284
+    ]
+  },
+  "baby-months-1-to-3/quiz-2-wrong.m4a": {
+    "fingerprint": "814901ee",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1240,
+      7149
+    ]
+  },
+  "baby-months-1-to-3/done.m4a": {
+    "fingerprint": "b98b8c3f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2837,
+      3691
+    ]
+  },
+  "baby-months-4-to-6/welcome.m4a": {
+    "fingerprint": "96f36c16",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1333,
+      4904,
+      8142,
+      13213
+    ]
+  },
+  "baby-months-1-to-3/quiz-1.m4a": {
+    "fingerprint": "edd3af3b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "baby-months-1-to-3/quiz-1-wrong.m4a": {
+    "fingerprint": "6f1d1921",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1519,
+      4640
+    ]
+  },
+  "baby-months-4-to-6/growing-fast.m4a": {
+    "fingerprint": "2676176c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3233,
+      9044,
+      12593,
+      17850,
+      20042
+    ]
+  },
+  "baby-months-1-to-3/quiz-2.m4a": {
+    "fingerprint": "e3061a06",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "baby-months-4-to-6/first-movements.m4a": {
+    "fingerprint": "4382aaaa",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6215,
+      9241,
+      11109,
+      15387,
+      18553
+    ]
+  },
+  "baby-months-4-to-6/anatomy-ultrasound.m4a": {
+    "fingerprint": "0971384e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6600,
+      15817,
+      19637,
+      21440
+    ]
+  },
+  "baby-months-4-to-6/hearing.m4a": {
+    "fingerprint": "93153a20",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3929,
+      9372,
+      13563
+    ]
+  },
+  "baby-months-4-to-6/checkin-movement-right.m4a": {
+    "fingerprint": "fa4a4611",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1038,
+      7508
+    ]
+  },
+  "baby-months-4-to-6/your-body.m4a": {
+    "fingerprint": "08e368cb",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2994,
+      8539,
+      15553,
+      21682,
+      24818,
+      30052
+    ]
+  },
+  "baby-months-4-to-6/checkin-movement-wrong.m4a": {
+    "fingerprint": "850a8833",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1514,
+      8142
+    ]
+  },
+  "baby-months-4-to-6/quiz-1-right.m4a": {
+    "fingerprint": "579271c7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1057,
+      11292
+    ]
+  },
+  "baby-months-4-to-6/quiz-2-right.m4a": {
+    "fingerprint": "e305c915",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1102,
+      5119
+    ]
+  },
+  "baby-months-4-to-6/quiz-2-wrong.m4a": {
+    "fingerprint": "d6f5501b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1329,
+      5241
+    ]
+  },
+  "baby-months-4-to-6/done.m4a": {
+    "fingerprint": "40649366",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2402,
+      3181
+    ]
+  },
+  "baby-months-4-to-6/quiz-1-wrong.m4a": {
+    "fingerprint": "fd1ef409",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1533,
+      11318
+    ]
+  },
+  "baby-months-7-to-9/welcome.m4a": {
+    "fingerprint": "c71ac386",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3980,
+      8060,
+      12574
+    ]
+  },
+  "baby-months-7-to-9/gaining-weight.m4a": {
+    "fingerprint": "8feb6a38",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5131,
+      7369,
+      12418,
+      17265,
+      22524
+    ]
+  },
+  "baby-months-7-to-9/term.m4a": {
+    "fingerprint": "1cedc96a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4416,
+      9137,
+      13512,
+      18458,
+      27790
+    ]
+  },
+  "baby-months-7-to-9/your-body.m4a": {
+    "fingerprint": "3cc59c4a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3593,
+      5815,
+      8612,
+      12317,
+      15907,
+      20232,
+      24443
+    ]
+  },
+  "baby-months-7-to-9/position.m4a": {
+    "fingerprint": "2b47593f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3724,
+      8680,
+      11745
+    ]
+  },
+  "baby-months-7-to-9/checkin-movement-right.m4a": {
+    "fingerprint": "a3dd33c2",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1084,
+      3481,
+      7892
+    ]
+  },
+  "baby-months-7-to-9/baby-drops.m4a": {
+    "fingerprint": "9eaafaf3",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4449,
+      7578,
+      12436,
+      18425,
+      22412
+    ]
+  },
+  "baby-months-7-to-9/quiz-1-right.m4a": {
+    "fingerprint": "701d51e4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      964,
+      5234
+    ]
+  },
+  "baby-months-7-to-9/summary.m4a": {
+    "fingerprint": "12eb5901",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1323,
+      6830,
+      13279,
+      17190,
+      22459,
+      24440
+    ]
+  },
+  "baby-months-7-to-9/quiz-1-wrong.m4a": {
+    "fingerprint": "d8c02cca",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      517,
+      5611
+    ]
+  },
+  "baby-months-7-to-9/quiz-2-right.m4a": {
+    "fingerprint": "cbe5f856",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1085,
+      1833,
+      5370
+    ]
+  },
+  "baby-months-7-to-9/quiz-2-wrong.m4a": {
+    "fingerprint": "b0941358",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2427,
+      6674,
+      8850
+    ]
+  },
+  "assisted-vaginal-birth/vacuum-video.m4a": {
+    "fingerprint": "eed934f4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "assisted-vaginal-birth/vacuum.m4a": {
+    "fingerprint": "545ed0ab",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2193,
+      4898,
+      13139,
+      18028
+    ]
+  },
+  "assisted-vaginal-birth/forceps-video.m4a": {
+    "fingerprint": "f51cb537",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "assisted-vaginal-birth/forceps.m4a": {
+    "fingerprint": "ac42f72b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2193,
+      8506,
+      14905,
+      19409
+    ]
+  },
+  "stages-of-labor/pushing-video.m4a": {
+    "fingerprint": "f137fb94",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "when-to-call-about-your-baby/feeding-and-diapers.m4a": {
+    "fingerprint": "ba2e2c64",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3996,
+      8008,
+      17282
+    ]
+  },
+  "when-to-call-about-your-baby/checkin-diapers-right.m4a": {
+    "fingerprint": "7f4c2cc3",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1044,
+      5470,
+      10695
+    ]
+  },
+  "when-to-call-about-your-baby/checkin-diapers-wrong.m4a": {
+    "fingerprint": "7ba11b15",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1549,
+      6580,
+      12068
+    ]
+  },
+  "when-to-call-about-your-baby/calming-video.m4a": {
+    "fingerprint": "c46f1799",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ]
+  },
+  "when-to-call-about-your-baby/crying.m4a": {
+    "fingerprint": "ce71ce4d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6195,
+      7181,
+      19150,
+      22540
+    ]
+  },
+  "when-to-call-about-your-baby/never-shake.m4a": {
+    "fingerprint": "84ee268f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6496,
+      12634,
+      13187,
+      20192,
+      22635,
+      26394
+    ]
+  },
+  "when-to-call-about-your-baby/baby-call-plan.m4a": {
+    "fingerprint": "6d1699e2",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2500,
+      7291,
+      9449,
+      13009,
+      16289
+    ]
+  },
+  "when-to-call-about-your-baby/quiz-1-right.m4a": {
+    "fingerprint": "99fcb43c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      994,
+      5050
+    ]
+  },
+  "when-to-call-about-your-baby/cord-stump.m4a": {
+    "fingerprint": "c2775118",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5331,
+      9608,
+      12650,
+      21012
+    ]
+  },
+  "when-to-call-about-your-baby/quiz-1-wrong.m4a": {
+    "fingerprint": "bd827a06",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1365,
+      5299
+    ]
+  },
+  "baby-months-7-to-9/checkin-movement-wrong.m4a": {
+    "fingerprint": "b27c2ce4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1380,
+      4067,
+      8307
+    ]
+  },
+  "when-to-call-about-your-baby/summary.m4a": {
+    "fingerprint": "452a0d58",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1236,
+      5422,
+      12303,
+      12748,
+      20049,
+      24781,
+      27591,
+      31330,
+      34519
+    ]
+  },
+  "when-to-call-about-your-baby/quiz-2-right.m4a": {
+    "fingerprint": "d8a35abb",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1125
+    ]
+  },
+  "when-to-call-about-your-baby/quiz-3-wrong.m4a": {
+    "fingerprint": "9466b258",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1458,
+      5418,
+      9488
+    ]
+  },
+  "when-to-call-about-your-baby/quiz-2-wrong.m4a": {
+    "fingerprint": "27daf2b5",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1391
+    ]
+  },
+  "when-to-call-about-your-baby/quiz-3-right.m4a": {
+    "fingerprint": "e33f29f6",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1135,
+      4884,
+      8600
+    ]
+  },
+  "when-to-call-about-your-baby/done.m4a": {
+    "fingerprint": "bda62a0c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2834,
+      3623
+    ]
+  },
+  "emotional-health-after-birth/baby-blues.m4a": {
+    "fingerprint": "7cedf1cf",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      8521,
+      10354,
+      15093,
+      18851,
+      23022,
+      25303
+    ]
+  },
+  "emotional-health-after-birth/welcome.m4a": {
+    "fingerprint": "2b5634e4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      10129,
+      23244
+    ]
+  },
+  "emotional-health-after-birth/anxiety.m4a": {
+    "fingerprint": "6cec515e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5750,
+      14734,
+      22363,
+      29260
+    ]
+  },
+  "emotional-health-after-birth/depression-signs.m4a": {
+    "fingerprint": "80f24168",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4205,
+      11125,
+      18087,
+      23129,
+      25108,
+      33367
+    ]
+  },
+  "emotional-health-after-birth/checkin-blues-right.m4a": {
+    "fingerprint": "8cc0f931",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1160,
+      8042
+    ]
+  },
+  "emotional-health-after-birth/checkin-blues-wrong.m4a": {
+    "fingerprint": "6212f70f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      7201,
+      10058
+    ]
+  },
+  "emotional-health-after-birth/psychosis.m4a": {
+    "fingerprint": "0faa5da6",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3975,
+      7333,
+      18648,
+      23430,
+      29705,
+      31907
+    ]
+  },
+  "emotional-health-after-birth/who-is-at-risk.m4a": {
+    "fingerprint": "da7fe320",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5573,
+      15082,
+      24726,
+      29485
+    ]
+  },
+  "emotional-health-after-birth/getting-treatment.m4a": {
+    "fingerprint": "b638e364",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      8072,
+      9375,
+      12522,
+      19955,
+      28716
+    ]
+  },
+  "emotional-health-after-birth/partners.m4a": {
+    "fingerprint": "fd69b4f0",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      8627,
+      11806,
+      15659,
+      20943,
+      27702
+    ]
+  },
+  "emotional-health-after-birth/checkin-thoughts-right.m4a": {
+    "fingerprint": "bb70d6e4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      969,
+      8861
+    ]
+  },
+  "emotional-health-after-birth/checkin-thoughts-wrong.m4a": {
+    "fingerprint": "67ea5066",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1679,
+      9144
+    ]
+  },
+  "emotional-health-after-birth/emotional-health-plan.m4a": {
+    "fingerprint": "a37cb1f0",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1470,
+      9720,
+      12149,
+      14838
+    ]
+  },
+  "emotional-health-after-birth/quiz-1-right.m4a": {
+    "fingerprint": "5eb782d8",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1087,
+      4899
+    ]
+  },
+  "emotional-health-after-birth/quiz-1-wrong.m4a": {
+    "fingerprint": "282b9fca",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      984,
+      5060
+    ]
+  },
+  "emotional-health-after-birth/summary.m4a": {
+    "fingerprint": "133ac9a4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1373,
+      6069,
+      17406,
+      22182,
+      31785,
+      33662
+    ]
+  },
+  "emotional-health-after-birth/quiz-2-right.m4a": {
+    "fingerprint": "e104034d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1048,
+      6988
+    ]
+  },
+  "emotional-health-after-birth/quiz-2-wrong.m4a": {
+    "fingerprint": "f66de567",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1583,
+      7993
+    ]
+  },
+  "emotional-health-after-birth/quiz-3-right.m4a": {
+    "fingerprint": "72097b10",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      883,
+      6426
+    ]
+  },
+  "emotional-health-after-birth/quiz-3-wrong.m4a": {
+    "fingerprint": "ca1c562a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1292,
+      6563
+    ]
+  },
+  "rest-food-and-help-at-home/first-weeks.m4a": {
+    "fingerprint": "dd528ed9",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3839,
+      9655,
+      14103,
+      17350,
+      20709,
+      22155
+    ]
+  },
+  "emotional-health-after-birth/done.m4a": {
+    "fingerprint": "e9d207f1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2430,
+      3105
+    ]
+  },
+  "rest-food-and-help-at-home/visitors.m4a": {
+    "fingerprint": "aebe1bb9",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2353,
+      11647,
+      16783,
+      19934,
+      32323,
+      39452,
+      44839
+    ]
+  },
+  "rest-food-and-help-at-home/checkin-visitor-right.m4a": {
+    "fingerprint": "09c113ba",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1167,
+      7364
+    ]
+  },
+  "rest-food-and-help-at-home/checkin-visitor-wrong.m4a": {
+    "fingerprint": "125949f0",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1275,
+      7257
+    ]
+  },
+  "rest-food-and-help-at-home/welcome.m4a": {
+    "fingerprint": "c230d644",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6784,
+      14607
+    ]
+  },
+  "rest-food-and-help-at-home/sleep.m4a": {
+    "fingerprint": "e00b5165",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      7146,
+      13109,
+      17086,
+      23381,
+      29468
+    ]
+  },
+  "rest-food-and-help-at-home/support-person.m4a": {
+    "fingerprint": "b998378b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3101,
+      4665,
+      8528,
+      14104,
+      17010,
+      19302,
+      26112
+    ]
+  },
+  "rest-food-and-help-at-home/practical-help.m4a": {
+    "fingerprint": "bf8964c1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4280,
+      17770,
+      20651,
+      30627
+    ]
+  },
+  "rest-food-and-help-at-home/food-and-drink.m4a": {
+    "fingerprint": "3e103827",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3537,
+      12759,
+      16932,
+      26043,
+      30173
+    ]
+  },
+  "rest-food-and-help-at-home/care-for-you.m4a": {
+    "fingerprint": "77c5e18e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      7149,
+      10736,
+      20141,
+      22396
+    ]
+  },
+  "rest-food-and-help-at-home/home-plan.m4a": {
+    "fingerprint": "da99d32a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1967,
+      5206,
+      7232,
+      12495
+    ]
+  },
+  "rest-food-and-help-at-home/quiz-1-wrong.m4a": {
+    "fingerprint": "2d63c484",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1317,
+      5998
+    ]
+  },
+  "rest-food-and-help-at-home/summary.m4a": {
+    "fingerprint": "a7b3a70e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1197,
+      5133,
+      11658,
+      17130,
+      24517
+    ]
   }
 }
