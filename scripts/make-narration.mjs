@@ -219,7 +219,35 @@ async function recordClip(clip) {
 }
 
 // ---------- Checking ----------
-const words = (s) => s.toLowerCase().replace(/[’']/g, '').replace(/(\d+)\.(\d+)/g, '$1 point $2').match(/[a-z0-9]+/g) ?? [];
+// Script and transcript can write the same thing differently ("400 mcg" or "four hundred m c g",
+// "9 to 14" or "nine to fourteen"), so both are normalized: numbers spelled out, and runs of
+// single letters joined into one word.
+const ONES = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen'];
+const TENS = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety'];
+function spell(n) {
+  if (n < 20) return ONES.at(n);
+  if (n < 100) return TENS.at(Math.floor(n / 10)) + (n % 10 ? ` ${ONES.at(n % 10)}` : '');
+  if (n < 1000) return `${ONES.at(Math.floor(n / 100))} hundred${n % 100 ? ` ${spell(n % 100)}` : ''}`;
+  if (n < 1000000) return `${spell(Math.floor(n / 1000))} thousand${n % 1000 ? ` ${spell(n % 1000)}` : ''}`;
+  return String(n);
+}
+function words(s) {
+  const raw =
+    s
+      .toLowerCase()
+      .replace(/[’']/g, '')
+      .replace(/(\d),(\d{3})/g, '$1$2')
+      .replace(/(\d+)\.(\d+)/g, (_, a, b) => `${a} point ${b.split('').join(' ')}`)
+      .replace(/\d+/g, (d) => ` ${spell(Number(d))} `)
+      .replace(/-/g, ' ')
+      .match(/[a-z]+/g) ?? [];
+  const out = [];
+  for (const w of raw) {
+    if (w.length === 1 && w !== 'a' && w !== 'i' && out.length && /^[b-hj-z]+$/.test(out.at(-1)) && out.at(-1).length <= 3) out.push(out.pop() + w);
+    else out.push(w);
+  }
+  return out;
+}
 
 /** Share of the script's words that appear, in order, in the transcript. */
 function overlap(script, heard) {
@@ -306,7 +334,10 @@ if (check) {
     if (!entry || entry.fingerprint !== textFingerprint(clip.text) || !existsSync(file)) return flagged.push(`${clip.file}: not recorded yet`);
     if (entry.checked) return;
     try {
-      const { score, extra } = overlap(clip.text, await transcribe(file));
+      // Transcription varies a little run to run, so a clip that falls short gets a second listen.
+      let result = overlap(clip.text, await transcribe(file));
+      if (result.score < 0.97 || result.extra > 2) result = overlap(clip.text, await transcribe(file));
+      const { score, extra } = result;
       if (score < 0.97 || extra > 2) flagged.push(`${clip.file}: ${Math.round(score * 100)}% of words heard, ${extra} extra`);
       else entry.checked = true;
       writeFileSync(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`);

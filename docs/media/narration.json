@@ -12,7 +12,8 @@
       20530,
       24633,
       27232
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/who-gives-care.m4a": {
     "fingerprint": "f73502b2",
@@ -27,7 +28,8 @@
       20170,
       24355,
       30460
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/early-signs.m4a": {
     "fingerprint": "fa5cbe82",
@@ -44,7 +46,8 @@
       25491,
       27437,
       31136
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/folic-acid.m4a": {
     "fingerprint": "241cfd78",
@@ -60,7 +63,8 @@
       25104,
       29457,
       32698
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/checkin-folic-acid.m4a": {
     "fingerprint": "47eb3ac7",
@@ -68,7 +72,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/checkin-folic-acid-right.m4a": {
     "fingerprint": "467717c8",
@@ -79,7 +84,8 @@
       952,
       9192,
       12689
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/checkin-folic-acid-wrong.m4a": {
     "fingerprint": "d2f3b13e",
@@ -90,7 +96,8 @@
       1265,
       9595,
       13192
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/nausea-tips-video.m4a": {
     "fingerprint": "0eb82cf3",
@@ -99,7 +106,8 @@
     "starts": [
       150,
       2794
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/welcome.m4a": {
     "fingerprint": "7735ef23",
@@ -115,7 +123,8 @@
       23429,
       25702,
       28669
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/medicines.m4a": {
     "fingerprint": "ba9ef718",
@@ -129,7 +138,8 @@
       17375,
       19417,
       26489
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/nausea-basics.m4a": {
     "fingerprint": "61a01208",
@@ -144,7 +154,8 @@
       22353,
       25457,
       29641
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/your-next-steps.m4a": {
     "fingerprint": "519bb5ee",
@@ -157,7 +168,8 @@
       10107,
       13859,
       15486
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/dehydration-signs.m4a": {
     "fingerprint": "e8b3f5d5",
@@ -172,7 +184,8 @@
       17530,
       22414,
       25537
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/summary.m4a": {
     "fingerprint": "a229cc9c",
@@ -190,7 +203,8 @@
       20424,
       25327,
       27343
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/quiz-1-wrong.m4a": {
     "fingerprint": "b73a4598",
@@ -201,7 +215,8 @@
       1360,
       8124,
       10476
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/quiz-1-right.m4a": {
     "fingerprint": "f7a3f81e",
@@ -212,7 +227,8 @@
       938,
       3255,
       9045
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/quiz-3-right.m4a": {
     "fingerprint": "5d75ec2b",
@@ -222,7 +238,8 @@
       150,
       1057,
       8540
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/quiz-3-wrong.m4a": {
     "fingerprint": "97f927a5",
@@ -232,7 +249,8 @@
       150,
       1654,
       9616
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/done.m4a": {
     "fingerprint": "8fbe7201",
@@ -242,7 +260,8 @@
       150,
       1237,
       2591
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/welcome.m4a": {
     "fingerprint": "e4bf8de7",
@@ -255,7 +274,8 @@
       14247,
       16864,
       22847
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/quiz-2-right.m4a": {
     "fingerprint": "b286edca",
@@ -265,7 +285,8 @@
       150,
       920,
       4059
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/common-changes.m4a": {
     "fingerprint": "5009ae7b",
@@ -282,7 +303,8 @@
       22693,
       25076,
       28316
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/nausea-more-help.m4a": {
     "fingerprint": "dd1ea75c",
@@ -297,7 +319,8 @@
       20905,
       23471,
       28186
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/checkin-nausea-right.m4a": {
     "fingerprint": "44de3f50",
@@ -308,7 +331,8 @@
       889,
       3832,
       8245
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/nausea-support.m4a": {
     "fingerprint": "c956c528",
@@ -324,7 +348,8 @@
       28433,
       31936,
       37841
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/quiz-2-wrong.m4a": {
     "fingerprint": "d1862284",
@@ -334,7 +359,8 @@
       150,
       1674,
       4956
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/checkin-nausea-wrong.m4a": {
     "fingerprint": "705ab68a",
@@ -345,7 +371,8 @@
       1302,
       4131,
       8528
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/bleeding-call-now.m4a": {
     "fingerprint": "e4cdd90c",
@@ -358,7 +385,8 @@
       15150,
       20140,
       24001
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/early-bleeding.m4a": {
     "fingerprint": "a9d3c34d",
@@ -375,7 +403,8 @@
       24821,
       29382,
       34404
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/checkin-bleeding-pain.m4a": {
     "fingerprint": "2f170ca9",
@@ -383,7 +412,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/common-vs-call.m4a": {
     "fingerprint": "6d4940e7",
@@ -405,7 +435,8 @@
       37501,
       39857,
       43912
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/checkin-bleeding-pain-right.m4a": {
     "fingerprint": "e631cdcf",
@@ -416,7 +447,8 @@
       1300,
       6004,
       10935
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/checkin-bleeding-pain-wrong.m4a": {
     "fingerprint": "6b5ed3a5",
@@ -427,7 +459,8 @@
       1393,
       5940,
       10405
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/urgent-warning-signs.m4a": {
     "fingerprint": "57799764",
@@ -443,7 +476,8 @@
       32710,
       36129,
       40517
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/calling-video.m4a": {
     "fingerprint": "32d47e4e",
@@ -452,7 +486,8 @@
     "starts": [
       150,
       2851
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/your-contact-plan.m4a": {
     "fingerprint": "8c893354",
@@ -463,7 +498,8 @@
       2724,
       7262,
       13959
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/quiz-1-right.m4a": {
     "fingerprint": "7fe8c795",
@@ -474,7 +510,9 @@
       825,
       4005,
       5272
-    ]
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches, transcript differs only in spelling or number format"
   },
   "first-trimester-common-changes/healthy-habits.m4a": {
     "fingerprint": "5b71dfdc",
@@ -490,7 +528,8 @@
       20972,
       22690,
       28489
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/summary.m4a": {
     "fingerprint": "65c0473f",
@@ -506,7 +545,8 @@
       22977,
       28316,
       31605
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/quiz-3-right.m4a": {
     "fingerprint": "55c8f275",
@@ -517,7 +557,8 @@
       1081,
       7246,
       10718
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/quiz-3-wrong.m4a": {
     "fingerprint": "ea4be5e7",
@@ -528,7 +569,8 @@
       1445,
       8030,
       11474
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/done.m4a": {
     "fingerprint": "12955bab",
@@ -538,7 +580,8 @@
       150,
       1099,
       2789
-    ]
+    ],
+    "checked": true
   },
   "first-prenatal-visit/welcome.m4a": {
     "fingerprint": "0d51f924",
@@ -550,7 +593,8 @@
       6718,
       12560,
       17035
-    ]
+    ],
+    "checked": true
   },
   "first-prenatal-visit/what-is-prenatal-care.m4a": {
     "fingerprint": "8010d9bf",
@@ -563,7 +607,8 @@
       14413,
       19176,
       24864
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/quiz-1-wrong.m4a": {
     "fingerprint": "479b2c6b",
@@ -574,7 +619,9 @@
       1725,
       4859,
       7416
-    ]
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches, transcript differs only in spelling or number format"
   },
   "first-trimester-common-changes/quiz-2-right.m4a": {
     "fingerprint": "d174e02b",
@@ -585,7 +632,8 @@
       1051,
       6568,
       9742
-    ]
+    ],
+    "checked": true
   },
   "first-trimester-common-changes/quiz-2-wrong.m4a": {
     "fingerprint": "b112ae65",
@@ -596,7 +644,8 @@
       1130,
       6026,
       8670
-    ]
+    ],
+    "checked": true
   },
   "first-prenatal-visit/first-visit-talk.m4a": {
     "fingerprint": "081591cf",
@@ -611,7 +660,8 @@
       20516,
       24077,
       26725
-    ]
+    ],
+    "checked": true
   },
   "first-prenatal-visit/in-person-checks.m4a": {
     "fingerprint": "55002177",
@@ -624,7 +674,8 @@
       11358,
       18439,
       24000
-    ]
+    ],
+    "checked": true
   },
   "first-prenatal-visit/honest-answers.m4a": {
     "fingerprint": "6e579088",
@@ -636,7 +687,8 @@
       6726,
       12897,
       18605
-    ]
+    ],
+    "checked": true
   },
   "first-prenatal-visit/visit-prep-video.m4a": {
     "fingerprint": "9b654946",
@@ -644,7 +696,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "first-prenatal-visit/checkin-last-period-right.m4a": {
     "fingerprint": "022609c9",
@@ -655,7 +708,8 @@
       938,
       5045,
       6938
-    ]
+    ],
+    "checked": true
   },
   "first-prenatal-visit/make-a-plan.m4a": {
     "fingerprint": "1af9254a",
@@ -670,7 +724,8 @@
       18340,
       23225,
       26650
-    ]
+    ],
+    "checked": true
   },
   "first-prenatal-visit/what-to-bring.m4a": {
     "fingerprint": "1b95bfb7",
@@ -687,7 +742,8 @@
       28454,
       39192,
       40779
-    ]
+    ],
+    "checked": true
   },
   "first-prenatal-visit/checkin-last-period-wrong.m4a": {
     "fingerprint": "eac6fc83",
@@ -698,7 +754,8 @@
       1139,
       5004,
       7148
-    ]
+    ],
+    "checked": true
   },
   "first-prenatal-visit/your-questions.m4a": {
     "fingerprint": "cf93edf7",
@@ -714,7 +771,8 @@
       16397,
       19728,
       21428
-    ]
+    ],
+    "checked": true
   },
   "first-prenatal-visit/quiz-1-wrong.m4a": {
     "fingerprint": "07a07270",
@@ -724,7 +782,8 @@
       150,
       1365,
       8292
-    ]
+    ],
+    "checked": true
   },
   "first-prenatal-visit/quiz-1-right.m4a": {
     "fingerprint": "1ba25f7e",
@@ -734,7 +793,8 @@
       150,
       1033,
       8645
-    ]
+    ],
+    "checked": true
   },
   "first-prenatal-visit/quiz-2-right.m4a": {
     "fingerprint": "567bfb02",
@@ -744,7 +804,8 @@
       150,
       1151,
       3491
-    ]
+    ],
+    "checked": true
   },
   "first-prenatal-visit/summary.m4a": {
     "fingerprint": "1790908a",
@@ -761,7 +822,8 @@
       25654,
       27715,
       30050
-    ]
+    ],
+    "checked": true
   },
   "first-prenatal-visit/quiz-2-wrong.m4a": {
     "fingerprint": "8a207c64",
@@ -771,7 +833,8 @@
       150,
       1458,
       5760
-    ]
+    ],
+    "checked": true
   },
   "first-prenatal-visit/quiz-3-right.m4a": {
     "fingerprint": "508be374",
@@ -782,7 +845,8 @@
       1091,
       3918,
       8410
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/back-to-sleep.m4a": {
     "fingerprint": "5bc7d6c5",
@@ -795,7 +859,8 @@
       14153,
       15992,
       22911
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/firm-flat-bare.m4a": {
     "fingerprint": "1565a615",
@@ -808,7 +873,9 @@
       13431,
       13746,
       17997
-    ]
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches, transcript differs only in spelling or number format"
   },
   "first-prenatal-visit/quiz-3-wrong.m4a": {
     "fingerprint": "634c1e4e",
@@ -819,7 +886,8 @@
       1466,
       4457,
       9194
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/checkin-crib-right.m4a": {
     "fingerprint": "c67b7092",
@@ -829,7 +897,8 @@
       150,
       1072,
       5412
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/checkin-crib-wrong.m4a": {
     "fingerprint": "6100d23c",
@@ -839,7 +908,8 @@
       150,
       1488,
       5689
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/welcome.m4a": {
     "fingerprint": "86a6f433",
@@ -849,7 +919,8 @@
       150,
       1983,
       9477
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/why-it-matters.m4a": {
     "fingerprint": "8836160f",
@@ -859,7 +930,8 @@
       150,
       9203,
       15668
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/room-share.m4a": {
     "fingerprint": "0f52c146",
@@ -870,7 +942,8 @@
       6061,
       11874,
       14773
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/sitting-devices.m4a": {
     "fingerprint": "2dae6ac2",
@@ -882,7 +955,8 @@
       11877,
       19143,
       23257
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/couches-armchairs.m4a": {
     "fingerprint": "2975b7e4",
@@ -893,7 +967,8 @@
       6371,
       15724,
       21863
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/products-and-swaddling.m4a": {
     "fingerprint": "97e5ebee",
@@ -904,7 +979,8 @@
       9885,
       13467,
       20070
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/more-ways.m4a": {
     "fingerprint": "4f9c03cb",
@@ -918,7 +994,8 @@
       13419,
       19045,
       21572
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/checkin-car-seat-right.m4a": {
     "fingerprint": "8b03bda7",
@@ -929,7 +1006,8 @@
       830,
       4164,
       7446
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/checkin-car-seat-wrong.m4a": {
     "fingerprint": "f189ac6d",
@@ -940,7 +1018,8 @@
       1401,
       5251,
       8959
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/safe-sleep-video.m4a": {
     "fingerprint": "b94c2b95",
@@ -948,7 +1027,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/tummy-time.m4a": {
     "fingerprint": "c4f94c9b",
@@ -960,7 +1040,8 @@
       7639,
       12307,
       17573
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/sleep-plan.m4a": {
     "fingerprint": "81bc3080",
@@ -973,7 +1054,8 @@
       8395,
       11743,
       16464
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/every-caregiver.m4a": {
     "fingerprint": "b3fa1ba7",
@@ -983,7 +1065,8 @@
       150,
       8271,
       16058
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/quiz-1-right.m4a": {
     "fingerprint": "4b26fbea",
@@ -993,7 +1076,8 @@
       150,
       883,
       5092
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/summary.m4a": {
     "fingerprint": "596df313",
@@ -1007,7 +1091,8 @@
       13501,
       18959,
       24522
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/quiz-1-wrong.m4a": {
     "fingerprint": "a66d20ec",
@@ -1017,7 +1102,8 @@
       150,
       1367,
       4835
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/quiz-2-right.m4a": {
     "fingerprint": "4070eac8",
@@ -1027,7 +1113,8 @@
       150,
       1108,
       6622
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/quiz-3-right.m4a": {
     "fingerprint": "87f1186f",
@@ -1036,7 +1123,8 @@
     "starts": [
       150,
       812
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/quiz-2-wrong.m4a": {
     "fingerprint": "9f8d8ff6",
@@ -1046,7 +1134,8 @@
       150,
       1457,
       6816
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/done.m4a": {
     "fingerprint": "f4e2a68c",
@@ -1056,7 +1145,8 @@
       150,
       2349,
       3217
-    ]
+    ],
+    "checked": true
   },
   "safe-sleep/quiz-3-wrong.m4a": {
     "fingerprint": "93158be5",
@@ -1065,7 +1155,8 @@
     "starts": [
       150,
       1171
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/checkin-rear-facing-right.m4a": {
     "fingerprint": "5f5cf1f3",
@@ -1075,7 +1166,8 @@
       150,
       4612,
       7665
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/quick-recap.m4a": {
     "fingerprint": "320a948c",
@@ -1087,7 +1179,8 @@
       8350,
       15429,
       18786
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/welcome.m4a": {
     "fingerprint": "01144b24",
@@ -1097,7 +1190,8 @@
       150,
       2237,
       7979
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/checkin-rear-facing-wrong.m4a": {
     "fingerprint": "b51b92c9",
@@ -1107,7 +1201,8 @@
       150,
       1028,
       7220
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/rear-facing-longer.m4a": {
     "fingerprint": "3a0c9a3c",
@@ -1118,7 +1213,8 @@
       7985,
       14994,
       22884
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/harness-refresher.m4a": {
     "fingerprint": "e9c6aa7a",
@@ -1127,7 +1223,8 @@
     "starts": [
       150,
       4805
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/every-ride.m4a": {
     "fingerprint": "bc69b15c",
@@ -1139,7 +1236,8 @@
       9227,
       15190,
       21289
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/winter.m4a": {
     "fingerprint": "6fb2173d",
@@ -1151,7 +1249,8 @@
       10593,
       15810,
       21159
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/extra-products.m4a": {
     "fingerprint": "2d913638",
@@ -1163,7 +1262,8 @@
       11012,
       16250,
       18831
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/hot-cars.m4a": {
     "fingerprint": "42e8e61d",
@@ -1175,7 +1275,8 @@
       12998,
       16356,
       29698
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/get-it-checked.m4a": {
     "fingerprint": "1362f44e",
@@ -1186,7 +1287,8 @@
       7758,
       14460,
       18028
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/checkin-hot-car-right.m4a": {
     "fingerprint": "5160b923",
@@ -1196,7 +1298,8 @@
       150,
       1005,
       6235
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/car-seat-plan.m4a": {
     "fingerprint": "da32dc35",
@@ -1210,7 +1313,8 @@
       13827,
       18570,
       20847
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/quiz-1-right.m4a": {
     "fingerprint": "1ac41891",
@@ -1220,7 +1324,8 @@
       150,
       4170,
       7424
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/checkin-hot-car-wrong.m4a": {
     "fingerprint": "be9a4939",
@@ -1230,7 +1335,8 @@
       150,
       1283,
       6119
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/used-seats-and-crashes.m4a": {
     "fingerprint": "7e5e397c",
@@ -1244,7 +1350,8 @@
       13318,
       17292,
       24057
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/welcome.m4a": {
     "fingerprint": "4cd9895d",
@@ -1255,7 +1362,8 @@
       4367,
       10210,
       17764
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/checkin-tension.m4a": {
     "fingerprint": "5b54209f",
@@ -1263,7 +1371,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/fear-tension.m4a": {
     "fingerprint": "e3f21023",
@@ -1275,7 +1384,8 @@
       9104,
       14516,
       19864
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/why-it-hurts.m4a": {
     "fingerprint": "f2a8808b",
@@ -1288,7 +1398,8 @@
       9744,
       15175,
       19399
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/waves.m4a": {
     "fingerprint": "386f0529",
@@ -1300,7 +1411,8 @@
       5880,
       11193,
       18259
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/checkin-tension-right.m4a": {
     "fingerprint": "c2815141",
@@ -1310,7 +1422,8 @@
       150,
       471,
       3982
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/checkin-tension-wrong.m4a": {
     "fingerprint": "cf49a19f",
@@ -1320,7 +1433,8 @@
       150,
       1611,
       4055
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/what-affects.m4a": {
     "fingerprint": "dd8cc441",
@@ -1333,7 +1447,8 @@
       17618,
       19548,
       23410
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/your-thoughts.m4a": {
     "fingerprint": "82e72412",
@@ -1345,7 +1460,8 @@
       8948,
       10599,
       14731
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/quiz-1.m4a": {
     "fingerprint": "cbd13b1e",
@@ -1353,7 +1469,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/options-range.m4a": {
     "fingerprint": "547831b5",
@@ -1366,7 +1483,8 @@
       13317,
       20503,
       26800
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/coping.m4a": {
     "fingerprint": "560a88a6",
@@ -1379,7 +1497,8 @@
       12156,
       19180,
       25702
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/quiz-2.m4a": {
     "fingerprint": "05088e23",
@@ -1387,7 +1506,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/quiz-1-right.m4a": {
     "fingerprint": "7c8e940f",
@@ -1396,7 +1516,8 @@
     "starts": [
       150,
       1185
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/summary.m4a": {
     "fingerprint": "baf29673",
@@ -1409,7 +1530,8 @@
       15475,
       19782,
       23928
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/quiz-3.m4a": {
     "fingerprint": "d8b68d34",
@@ -1417,7 +1539,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/quiz-3-right.m4a": {
     "fingerprint": "109704d5",
@@ -1427,7 +1550,8 @@
       150,
       1431,
       5756
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/quiz-1-wrong.m4a": {
     "fingerprint": "e3a8daed",
@@ -1436,7 +1560,8 @@
     "starts": [
       150,
       1317
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/quiz-2-right.m4a": {
     "fingerprint": "adff0998",
@@ -1446,7 +1571,8 @@
       150,
       1131,
       5136
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/done.m4a": {
     "fingerprint": "2322875f",
@@ -1456,7 +1582,8 @@
       150,
       2265,
       3106
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/quiz-2-wrong.m4a": {
     "fingerprint": "f4bee936",
@@ -1466,7 +1593,8 @@
       150,
       1384,
       5835
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/welcome.m4a": {
     "fingerprint": "8e81fa5f",
@@ -1475,7 +1603,8 @@
     "starts": [
       150,
       7317
-    ]
+    ],
+    "checked": true
   },
   "understanding-labor-pain/quiz-3-wrong.m4a": {
     "fingerprint": "6d6611f3",
@@ -1485,7 +1614,8 @@
       150,
       1478,
       5394
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/why-breathing.m4a": {
     "fingerprint": "ca99500d",
@@ -1499,7 +1629,8 @@
       20084,
       23037,
       25628
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/practice-slow.m4a": {
     "fingerprint": "10ac742e",
@@ -1511,7 +1642,8 @@
       4086,
       7456,
       12066
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/through-a-contraction.m4a": {
     "fingerprint": "53133af8",
@@ -1524,7 +1656,8 @@
       13964,
       21758,
       24908
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/checkin-breathing-right.m4a": {
     "fingerprint": "38578a60",
@@ -1533,7 +1666,8 @@
     "starts": [
       150,
       1170
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/checkin-breathing-wrong.m4a": {
     "fingerprint": "98328152",
@@ -1542,7 +1676,8 @@
     "starts": [
       150,
       1378
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/practice-lighter.m4a": {
     "fingerprint": "5402920e",
@@ -1552,7 +1687,8 @@
       150,
       2111,
       8573
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/lighter-breathing.m4a": {
     "fingerprint": "a11daffc",
@@ -1564,7 +1700,8 @@
       14673,
       17153,
       22609
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/your-practice.m4a": {
     "fingerprint": "67f0bfad",
@@ -1575,7 +1712,8 @@
       4074,
       5708,
       10170
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/relaxing-your-body.m4a": {
     "fingerprint": "712aff04",
@@ -1591,7 +1729,8 @@
       12394,
       14327,
       22837
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/practice-together.m4a": {
     "fingerprint": "3f7cc716",
@@ -1604,7 +1743,8 @@
       15202,
       17481,
       22300
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/quiz-1-right.m4a": {
     "fingerprint": "7028daf9",
@@ -1614,7 +1754,8 @@
       150,
       1076,
       6532
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/quiz-1-wrong.m4a": {
     "fingerprint": "be1cb35b",
@@ -1624,7 +1765,8 @@
       150,
       1334,
       7037
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/quiz-2-right.m4a": {
     "fingerprint": "1e38036b",
@@ -1634,7 +1776,8 @@
       150,
       1737,
       4900
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/summary.m4a": {
     "fingerprint": "c4bd5634",
@@ -1647,7 +1790,8 @@
       14451,
       19960,
       26129
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/quiz-2-wrong.m4a": {
     "fingerprint": "f5811c65",
@@ -1657,7 +1801,8 @@
       150,
       1134,
       4617
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/quiz-3-right.m4a": {
     "fingerprint": "afa50d19",
@@ -1666,7 +1811,8 @@
     "starts": [
       150,
       1253
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/quiz-3-wrong.m4a": {
     "fingerprint": "ac58564b",
@@ -1675,7 +1821,8 @@
     "starts": [
       150,
       3746
-    ]
+    ],
+    "checked": true
   },
   "breathing-and-relaxation/done.m4a": {
     "fingerprint": "5c79c7df",
@@ -1685,7 +1832,8 @@
       150,
       2166,
       2937
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/welcome.m4a": {
     "fingerprint": "00d2a433",
@@ -1696,7 +1844,8 @@
       2478,
       10030,
       12497
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/upright.m4a": {
     "fingerprint": "87326694",
@@ -1709,7 +1858,8 @@
       11987,
       20326,
       21324
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/checkin-positions-right.m4a": {
     "fingerprint": "ba3009f3",
@@ -1719,7 +1869,8 @@
       150,
       861,
       6742
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/why-move.m4a": {
     "fingerprint": "d144c769",
@@ -1731,7 +1882,8 @@
       12170,
       17417,
       25573
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/sitting.m4a": {
     "fingerprint": "5b15aa1c",
@@ -1743,7 +1895,8 @@
       12425,
       17261,
       23722
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/checkin-positions-wrong.m4a": {
     "fingerprint": "adf4f079",
@@ -1753,7 +1906,8 @@
       150,
       1342,
       6531
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/practice-positions.m4a": {
     "fingerprint": "4cf992d5",
@@ -1763,7 +1917,8 @@
       150,
       1481,
       7250
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/hands-and-knees.m4a": {
     "fingerprint": "05334251",
@@ -1774,7 +1929,8 @@
       15745,
       18698,
       19817
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/resting.m4a": {
     "fingerprint": "85047fd5",
@@ -1787,7 +1943,8 @@
       17042,
       24475,
       27985
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/your-positions.m4a": {
     "fingerprint": "c6a2c8b2",
@@ -1798,7 +1955,8 @@
       4581,
       9496,
       13431
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/back-pain.m4a": {
     "fingerprint": "e38a9721",
@@ -1810,7 +1968,8 @@
       14311,
       21853,
       23594
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/quiz-1-right.m4a": {
     "fingerprint": "8053de37",
@@ -1819,7 +1978,8 @@
     "starts": [
       150,
       1075
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/quiz-1-wrong.m4a": {
     "fingerprint": "560fa571",
@@ -1828,7 +1988,8 @@
     "starts": [
       150,
       1727
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/summary.m4a": {
     "fingerprint": "689cd35f",
@@ -1842,7 +2003,8 @@
       18928,
       22597,
       24179
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/quiz-2-wrong.m4a": {
     "fingerprint": "7d07d690",
@@ -1851,7 +2013,8 @@
     "starts": [
       150,
       1153
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/quiz-2-right.m4a": {
     "fingerprint": "7438d8e6",
@@ -1860,7 +2023,8 @@
     "starts": [
       150,
       1036
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/quiz-3-right.m4a": {
     "fingerprint": "b58580c2",
@@ -1869,7 +2033,8 @@
     "starts": [
       150,
       776
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/done.m4a": {
     "fingerprint": "a6b936fb",
@@ -1879,7 +2044,8 @@
       150,
       931,
       2351
-    ]
+    ],
+    "checked": true
   },
   "positions-and-movement/quiz-3-wrong.m4a": {
     "fingerprint": "faa51f60",
@@ -1888,7 +2054,8 @@
     "starts": [
       150,
       1201
-    ]
+    ],
+    "checked": true
   },
   "touch-water-and-comfort-tools/welcome.m4a": {
     "fingerprint": "f7b54b5e",
@@ -1898,7 +2065,8 @@
       150,
       2585,
       12631
-    ]
+    ],
+    "checked": true
   },
   "touch-water-and-comfort-tools/counterpressure.m4a": {
     "fingerprint": "0540b808",
@@ -1910,7 +2078,8 @@
       11484,
       18437,
       23176
-    ]
+    ],
+    "checked": true
   },
   "touch-water-and-comfort-tools/massage.m4a": {
     "fingerprint": "b400d3af",
@@ -1924,7 +2093,8 @@
       14464,
       21051,
       25069
-    ]
+    ],
+    "checked": true
   },
   "touch-water-and-comfort-tools/checkin-touch-wrong.m4a": {
     "fingerprint": "af00135a",
@@ -1934,7 +2104,9 @@
       150,
       1059,
       6909
-    ]
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches, transcript differs only in spelling or number format"
   },
   "touch-water-and-comfort-tools/water.m4a": {
     "fingerprint": "3df12062",
@@ -1946,7 +2118,8 @@
       9801,
       19151,
       25924
-    ]
+    ],
+    "checked": true
   },
   "touch-water-and-comfort-tools/heat-cold.m4a": {
     "fingerprint": "1672b661",
@@ -1958,7 +2131,8 @@
       7388,
       12891,
       18076
-    ]
+    ],
+    "checked": true
   },
   "touch-water-and-comfort-tools/other-tools.m4a": {
     "fingerprint": "b5ca8b5d",
@@ -1971,7 +2145,8 @@
       11186,
       15941,
       21762
-    ]
+    ],
+    "checked": true
   },
   "touch-water-and-comfort-tools/practice-touch.m4a": {
     "fingerprint": "5b8fb7af",
@@ -1980,7 +2155,8 @@
     "starts": [
       150,
       4179
-    ]
+    ],
+    "checked": true
   },
   "touch-water-and-comfort-tools/hip-squeeze.m4a": {
     "fingerprint": "b6c36409",
@@ -1992,7 +2168,8 @@
       7948,
       18301,
       20855
-    ]
+    ],
+    "checked": true
   },
   "touch-water-and-comfort-tools/your-tools.m4a": {
     "fingerprint": "eedf22ea",
@@ -2004,7 +2181,8 @@
       6162,
       9510,
       15651
-    ]
+    ],
+    "checked": true
   },
   "touch-water-and-comfort-tools/quiz-1-right.m4a": {
     "fingerprint": "7742e44c",
@@ -2013,7 +2191,9 @@
     "starts": [
       150,
       983
-    ]
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches, transcript differs only in spelling or number format"
   },
   "touch-water-and-comfort-tools/checkin-touch-right.m4a": {
     "fingerprint": "603a27b0",
@@ -2023,7 +2203,9 @@
       150,
       907,
       6373
-    ]
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches, transcript differs only in spelling or number format"
   },
   "touch-water-and-comfort-tools/summary.m4a": {
     "fingerprint": "ad4d02b3",
@@ -2036,7 +2218,8 @@
       10449,
       17934,
       22411
-    ]
+    ],
+    "checked": true
   },
   "touch-water-and-comfort-tools/quiz-1-wrong.m4a": {
     "fingerprint": "d2bd0d4e",
@@ -2045,7 +2228,8 @@
     "starts": [
       150,
       1065
-    ]
+    ],
+    "checked": true
   },
   "touch-water-and-comfort-tools/quiz-2-right.m4a": {
     "fingerprint": "0d932867",
@@ -2054,7 +2238,8 @@
     "starts": [
       150,
       1013
-    ]
+    ],
+    "checked": true
   },
   "touch-water-and-comfort-tools/quiz-2-wrong.m4a": {
     "fingerprint": "9474429d",
@@ -2063,7 +2248,8 @@
     "starts": [
       150,
       1564
-    ]
+    ],
+    "checked": true
   },
   "touch-water-and-comfort-tools/done.m4a": {
     "fingerprint": "11df6666",
@@ -2073,7 +2259,8 @@
       150,
       1134,
       2836
-    ]
+    ],
+    "checked": true
   },
   "touch-water-and-comfort-tools/quiz-3-right.m4a": {
     "fingerprint": "806c6690",
@@ -2082,7 +2269,8 @@
     "starts": [
       150,
       953
-    ]
+    ],
+    "checked": true
   },
   "touch-water-and-comfort-tools/quiz-3-wrong.m4a": {
     "fingerprint": "ce7f045a",
@@ -2091,7 +2279,8 @@
     "starts": [
       150,
       1213
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/welcome.m4a": {
     "fingerprint": "127ca52f",
@@ -2101,7 +2290,8 @@
       150,
       3397,
       10042
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/checkin-support-right.m4a": {
     "fingerprint": "11d8a716",
@@ -2111,7 +2301,8 @@
       150,
       1227,
       4962
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/your-role.m4a": {
     "fingerprint": "a052e82f",
@@ -2126,7 +2317,8 @@
       23172,
       25247,
       27641
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/before-labor.m4a": {
     "fingerprint": "24a01a60",
@@ -2138,7 +2330,8 @@
       7943,
       11642,
       16155
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/early-labor.m4a": {
     "fingerprint": "418da5df",
@@ -2151,7 +2344,8 @@
       12917,
       16915,
       20212
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/checkin-support-wrong.m4a": {
     "fingerprint": "1119f734",
@@ -2161,7 +2355,8 @@
       150,
       3967,
       6511
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/active-labor.m4a": {
     "fingerprint": "5dc057a3",
@@ -2173,7 +2368,8 @@
       7822,
       13551,
       19951
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/take-care.m4a": {
     "fingerprint": "57763be0",
@@ -2186,7 +2382,8 @@
       14075,
       16658,
       20785
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/when-hard.m4a": {
     "fingerprint": "c01b80ad",
@@ -2200,7 +2397,8 @@
       16055,
       18547,
       25469
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/quiz-1-right.m4a": {
     "fingerprint": "e11989bb",
@@ -2210,7 +2408,8 @@
       150,
       690,
       5788
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/quiz-1-wrong.m4a": {
     "fingerprint": "e01b3c09",
@@ -2220,7 +2419,8 @@
       150,
       1197,
       5925
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/quiz-2-right.m4a": {
     "fingerprint": "579abc2c",
@@ -2230,7 +2430,8 @@
       150,
       1025,
       5022
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/quiz-2-wrong.m4a": {
     "fingerprint": "52994dca",
@@ -2240,7 +2441,8 @@
       150,
       1262,
       5039
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/quiz-3-right.m4a": {
     "fingerprint": "6e63e47b",
@@ -2249,7 +2451,8 @@
     "starts": [
       150,
       957
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/advocate.m4a": {
     "fingerprint": "04488d6c",
@@ -2263,7 +2466,8 @@
       18990,
       22579,
       24561
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/done.m4a": {
     "fingerprint": "44122fdd",
@@ -2272,7 +2476,8 @@
     "starts": [
       150,
       1002
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/your-plan.m4a": {
     "fingerprint": "19c093e9",
@@ -2284,7 +2489,8 @@
       6671,
       9180,
       13218
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/quiz-3-wrong.m4a": {
     "fingerprint": "f658a48d",
@@ -2293,7 +2499,8 @@
     "starts": [
       150,
       1301
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/welcome.m4a": {
     "fingerprint": "6b6c5f82",
@@ -2304,7 +2511,8 @@
       4032,
       8211,
       17877
-    ]
+    ],
+    "checked": true
   },
   "for-support-people/summary.m4a": {
     "fingerprint": "307625fe",
@@ -2319,7 +2527,8 @@
       20381,
       22491,
       24309
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/skin.m4a": {
     "fingerprint": "3a5ae1b5",
@@ -2332,7 +2541,8 @@
       12046,
       19465,
       23738
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/first-look.m4a": {
     "fingerprint": "b17d7ab8",
@@ -2345,7 +2555,8 @@
       13573,
       17854,
       22380
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/checkin-looks-right.m4a": {
     "fingerprint": "26f9016a",
@@ -2355,7 +2566,8 @@
       150,
       1079,
       7489
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/normal-surprises.m4a": {
     "fingerprint": "38e955a2",
@@ -2367,7 +2579,8 @@
       15292,
       19412,
       24583
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/checkin-looks-wrong.m4a": {
     "fingerprint": "e23d8674",
@@ -2377,7 +2590,8 @@
       150,
       4680,
       7274
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/sleep.m4a": {
     "fingerprint": "9d685121",
@@ -2389,7 +2603,8 @@
       10785,
       16729,
       20803
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/weight.m4a": {
     "fingerprint": "4fc24ef0",
@@ -2401,7 +2616,8 @@
       10377,
       14022,
       20811
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/breathing.m4a": {
     "fingerprint": "1de869c6",
@@ -2414,7 +2630,8 @@
       16217,
       20129,
       20795
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/poop.m4a": {
     "fingerprint": "baf1dbf6",
@@ -2429,7 +2646,8 @@
       19235,
       23246,
       27160
-    ]
+    ],
+    "checked": true
   },
   "early-pregnancy-first-steps/confirm-pregnancy.m4a": {
     "fingerprint": "ee4c8ee8",
@@ -2444,7 +2662,8 @@
       22394,
       25586,
       32187
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/quiz-1-right.m4a": {
     "fingerprint": "0b342a15",
@@ -2453,7 +2672,8 @@
     "starts": [
       150,
       1157
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/your-questions.m4a": {
     "fingerprint": "59a1b272",
@@ -2466,7 +2686,8 @@
       9790,
       13359,
       15511
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/jaundice.m4a": {
     "fingerprint": "e9552b54",
@@ -2482,7 +2703,8 @@
       24746,
       27060,
       29278
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/summary.m4a": {
     "fingerprint": "5b0d9154",
@@ -2495,7 +2717,8 @@
       13844,
       18481,
       24056
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/quiz-1-wrong.m4a": {
     "fingerprint": "5cc5126b",
@@ -2504,7 +2727,8 @@
     "starts": [
       150,
       1187
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/quiz-2-right.m4a": {
     "fingerprint": "7d33c0ff",
@@ -2514,7 +2738,8 @@
       150,
       1163,
       4849
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/quiz-2-wrong.m4a": {
     "fingerprint": "dbdf2219",
@@ -2524,7 +2749,8 @@
       150,
       448,
       5404
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/quiz-3-right.m4a": {
     "fingerprint": "12b8cf66",
@@ -2536,7 +2762,8 @@
       5283,
       7220,
       11362
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/done.m4a": {
     "fingerprint": "bbc37957",
@@ -2546,7 +2773,8 @@
       150,
       1021,
       2646
-    ]
+    ],
+    "checked": true
   },
   "your-newborns-first-days/quiz-3-wrong.m4a": {
     "fingerprint": "7b86a654",
@@ -2558,7 +2786,8 @@
       5583,
       7394,
       11401
-    ]
+    ],
+    "checked": true
   },
   "newborn-care-in-the-hospital/welcome.m4a": {
     "fingerprint": "1f9efbd7",
@@ -2567,7 +2796,8 @@
     "starts": [
       150,
       12085
-    ]
+    ],
+    "checked": true
   },
   "newborn-care-in-the-hospital/vitamin-k.m4a": {
     "fingerprint": "30cdd1f8",
@@ -2580,7 +2810,8 @@
       15808,
       18483,
       21240
-    ]
+    ],
+    "checked": true
   },
   "newborn-care-in-the-hospital/eye-ointment.m4a": {
     "fingerprint": "1737b9fe",
@@ -2591,7 +2822,8 @@
       5130,
       10403,
       12582
-    ]
+    ],
+    "checked": true
   },
   "newborn-care-in-the-hospital/overview.m4a": {
     "fingerprint": "b8d7b7a2",
@@ -2604,7 +2836,8 @@
       10750,
       13585,
       19442
-    ]
+    ],
+    "checked": true
   },
   "newborn-care-in-the-hospital/checkin-care-right.m4a": {
     "fingerprint": "98decb7a",
@@ -2614,7 +2847,8 @@
       150,
       1176,
       5594
-    ]
+    ],
+    "checked": true
   },
   "newborn-care-in-the-hospital/checkin-care-wrong.m4a": {
     "fingerprint": "ef5d56c4",
@@ -2624,7 +2858,8 @@
       150,
       1347,
       5676
-    ]
+    ],
+    "checked": true
   },
   "newborn-care-in-the-hospital/hep-b.m4a": {
     "fingerprint": "95a76718",
@@ -2638,7 +2873,8 @@
       22541,
       26901,
       35742
-    ]
+    ],
+    "checked": true
   },
   "newborn-care-in-the-hospital/blood-test.m4a": {
     "fingerprint": "872b9720",
@@ -2651,7 +2887,8 @@
       13168,
       15819,
       18418
-    ]
+    ],
+    "checked": true
   },
   "newborn-care-in-the-hospital/your-say.m4a": {
     "fingerprint": "18a2907b",
@@ -2663,7 +2900,8 @@
       6675,
       12283,
       17991
-    ]
+    ],
+    "checked": true
   },
   "newborn-care-in-the-hospital/hearing-heart.m4a": {
     "fingerprint": "68a803f1",
@@ -2675,7 +2913,8 @@
       6823,
       15000,
       22693
-    ]
+    ],
+    "checked": true
   },
   "newborn-care-in-the-hospital/quiz-1-right.m4a": {
     "fingerprint": "de807f22",
@@ -2684,7 +2923,9 @@
     "starts": [
       150,
       915
-    ]
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches, transcript differs only in spelling or number format"
   },
   "newborn-care-in-the-hospital/quiz-2-right.m4a": {
     "fingerprint": "32a082e9",
@@ -2693,7 +2934,8 @@
     "starts": [
       150,
       786
-    ]
+    ],
+    "checked": true
   },
   "newborn-care-in-the-hospital/quiz-1-wrong.m4a": {
     "fingerprint": "7001ab98",
@@ -2702,7 +2944,8 @@
     "starts": [
       150,
       1064
-    ]
+    ],
+    "checked": true
   },
   "newborn-care-in-the-hospital/quiz-3-right.m4a": {
     "fingerprint": "a442082b",
@@ -2711,7 +2954,8 @@
     "starts": [
       150,
       977
-    ]
+    ],
+    "checked": true
   },
   "newborn-care-in-the-hospital/quiz-2-wrong.m4a": {
     "fingerprint": "d14be737",
@@ -2720,7 +2964,8 @@
     "starts": [
       150,
       1375
-    ]
+    ],
+    "checked": true
   },
   "newborn-care-in-the-hospital/done.m4a": {
     "fingerprint": "acccc2f1",
@@ -2730,7 +2975,9 @@
       150,
       1005,
       2370
-    ]
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches, transcript differs only in spelling or number format"
   },
   "newborn-care-in-the-hospital/quiz-3-wrong.m4a": {
     "fingerprint": "ba027601",
@@ -2739,7 +2986,8 @@
     "starts": [
       150,
       706
-    ]
+    ],
+    "checked": true
   },
   "newborn-care-in-the-hospital/your-plan.m4a": {
     "fingerprint": "40a38fad",
@@ -2751,7 +2999,8 @@
       8648,
       13476,
       17444
-    ]
+    ],
+    "checked": true
   },
   "newborn-care-in-the-hospital/summary.m4a": {
     "fingerprint": "8a305d2a",
@@ -2764,7 +3013,8 @@
       7907,
       15451,
       21382
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/welcome.m4a": {
     "fingerprint": "51c09a6d",
@@ -2774,7 +3024,8 @@
       150,
       8114,
       18600
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/why-and-choice.m4a": {
     "fingerprint": "3a3acbbb",
@@ -2786,7 +3037,8 @@
       10572,
       19862,
       24631
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/positions.m4a": {
     "fingerprint": "f7ca33b2",
@@ -2801,7 +3053,8 @@
       20804,
       26962,
       32070
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/checkin-latch-right.m4a": {
     "fingerprint": "8382f4ec",
@@ -2811,7 +3064,8 @@
       150,
       1120,
       5606
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/checkin-latch-wrong.m4a": {
     "fingerprint": "37ace7de",
@@ -2821,7 +3075,8 @@
       150,
       1119,
       6160
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/enough.m4a": {
     "fingerprint": "d928af28",
@@ -2835,7 +3090,8 @@
       15146,
       20980,
       27938
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/first-days.m4a": {
     "fingerprint": "7b3b59b9",
@@ -2847,7 +3103,8 @@
       14498,
       19827,
       26528
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/cues.m4a": {
     "fingerprint": "844b49f4",
@@ -2858,7 +3115,8 @@
       2266,
       9522,
       17160
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/latch.m4a": {
     "fingerprint": "656aab84",
@@ -2871,7 +3129,8 @@
       12750,
       20465,
       22519
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/challenges.m4a": {
     "fingerprint": "7c9ec425",
@@ -2886,7 +3145,8 @@
       28058,
       30897,
       36934
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/support-person.m4a": {
     "fingerprint": "f3aaae09",
@@ -2899,7 +3159,8 @@
       13472,
       17800,
       21347
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/get-help.m4a": {
     "fingerprint": "24b6fb88",
@@ -2911,7 +3172,8 @@
       9732,
       19088,
       25468
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/your-plan.m4a": {
     "fingerprint": "92a6679c",
@@ -2924,7 +3186,8 @@
       8364,
       10925,
       13641
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/summary.m4a": {
     "fingerprint": "c6ef0920",
@@ -2937,7 +3200,8 @@
       10639,
       17693,
       22423
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/quiz-1-right.m4a": {
     "fingerprint": "a90ca043",
@@ -2947,7 +3211,8 @@
       150,
       956,
       7163
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/quiz-2-right.m4a": {
     "fingerprint": "6f4b185c",
@@ -2956,7 +3221,8 @@
     "starts": [
       150,
       979
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/quiz-1-wrong.m4a": {
     "fingerprint": "23224ead",
@@ -2966,7 +3232,8 @@
       150,
       2180,
       8593
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/quiz-3-right.m4a": {
     "fingerprint": "6417606a",
@@ -2976,7 +3243,8 @@
       150,
       834,
       7687
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/quiz-2-wrong.m4a": {
     "fingerprint": "edbf23fe",
@@ -2985,7 +3253,8 @@
     "starts": [
       150,
       1282
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/quiz-3-wrong.m4a": {
     "fingerprint": "50ecd8c4",
@@ -2995,7 +3264,8 @@
       150,
       1191,
       8260
-    ]
+    ],
+    "checked": true
   },
   "breastfeeding-basics/done.m4a": {
     "fingerprint": "7f48716d",
@@ -3005,7 +3275,8 @@
       150,
       1251,
       3003
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/welcome.m4a": {
     "fingerprint": "7a5db3fc",
@@ -3015,7 +3286,8 @@
       150,
       9968,
       17197
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/your-choice.m4a": {
     "fingerprint": "58065dbd",
@@ -3028,7 +3300,8 @@
       15022,
       23610,
       29003
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/extra-care.m4a": {
     "fingerprint": "0fa75133",
@@ -3042,7 +3315,8 @@
       24975,
       31616,
       36591
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/making-formula.m4a": {
     "fingerprint": "f3080ce2",
@@ -3058,7 +3332,8 @@
       29373,
       35887,
       38233
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/storing.m4a": {
     "fingerprint": "4d085f80",
@@ -3070,7 +3345,8 @@
       7345,
       13217,
       19050
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/checkin-water-right.m4a": {
     "fingerprint": "cc6f27d4",
@@ -3080,7 +3356,8 @@
       150,
       1125,
       6105
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/checkin-water-wrong.m4a": {
     "fingerprint": "3c3404d6",
@@ -3090,7 +3367,8 @@
       150,
       1345,
       6296
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/how-much.m4a": {
     "fingerprint": "be045390",
@@ -3102,7 +3380,8 @@
       15947,
       27151,
       29058
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/giving-bottle.m4a": {
     "fingerprint": "4648e06d",
@@ -3116,7 +3395,8 @@
       22803,
       27078,
       31976
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/pumped-milk.m4a": {
     "fingerprint": "e4fafed9",
@@ -3127,7 +3407,8 @@
       12134,
       19189,
       24599
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/combining.m4a": {
     "fingerprint": "8fed1066",
@@ -3140,7 +3421,8 @@
       24021,
       30286,
       38389
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/your-plan.m4a": {
     "fingerprint": "17582263",
@@ -3153,7 +3435,8 @@
       8678,
       11308,
       13910
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/quiz-1-right.m4a": {
     "fingerprint": "b216bbc6",
@@ -3163,7 +3446,8 @@
       150,
       931,
       6437
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/quiz-1-wrong.m4a": {
     "fingerprint": "7b234954",
@@ -3173,7 +3457,8 @@
       150,
       1561,
       6657
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/summary.m4a": {
     "fingerprint": "9f9a7fe8",
@@ -3186,7 +3471,8 @@
       15418,
       20991,
       25600
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/quiz-2-right.m4a": {
     "fingerprint": "141a98ab",
@@ -3196,7 +3482,8 @@
       150,
       884,
       6004
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/quiz-2-wrong.m4a": {
     "fingerprint": "b8d7d15d",
@@ -3206,7 +3493,8 @@
       150,
       4247,
       5753
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/done.m4a": {
     "fingerprint": "ee9e7041",
@@ -3216,7 +3504,8 @@
       150,
       1235,
       2839
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/quiz-3-wrong.m4a": {
     "fingerprint": "d89e3117",
@@ -3226,7 +3515,8 @@
       150,
       1143,
       8458
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/quiz-1-wrong.m4a": {
     "fingerprint": "24faf86f",
@@ -3236,7 +3526,8 @@
       150,
       1073,
       7613
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/quiz-2-right.m4a": {
     "fingerprint": "d2a0722a",
@@ -3246,7 +3537,8 @@
       150,
       1139,
       5005
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/summary.m4a": {
     "fingerprint": "3a2c0e0d",
@@ -3260,7 +3552,8 @@
       19526,
       24681,
       31436
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/quiz-2-wrong.m4a": {
     "fingerprint": "cb4a0e10",
@@ -3270,7 +3563,8 @@
       150,
       1349,
       5605
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/quiz-3-right.m4a": {
     "fingerprint": "6f045742",
@@ -3280,7 +3574,8 @@
       150,
       1087,
       4676
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/done.m4a": {
     "fingerprint": "cd62efc5",
@@ -3290,7 +3585,8 @@
       150,
       1065,
       2568
-    ]
+    ],
+    "checked": true
   },
   "car-seat-safety/quiz-3-wrong.m4a": {
     "fingerprint": "4fd5a198",
@@ -3300,7 +3596,8 @@
       150,
       1268,
       4779
-    ]
+    ],
+    "checked": true
   },
   "formula-and-combination-feeding/quiz-3-right.m4a": {
     "fingerprint": "492df799",
@@ -3310,7 +3607,8 @@
       150,
       805,
       7091
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/welcome.m4a": {
     "fingerprint": "d83adbb7",
@@ -3319,7 +3617,8 @@
     "starts": [
       150,
       8893
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/tub-baths.m4a": {
     "fingerprint": "66361400",
@@ -3332,7 +3631,8 @@
       18382,
       24427,
       28206
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/bath-safety.m4a": {
     "fingerprint": "f35a2c7d",
@@ -3344,7 +3644,8 @@
       12150,
       14886,
       21078
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/checkin-bath-right.m4a": {
     "fingerprint": "7178b053",
@@ -3354,7 +3655,8 @@
       150,
       1154,
       4772
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/checkin-bath-wrong.m4a": {
     "fingerprint": "2c39771d",
@@ -3364,7 +3666,8 @@
       150,
       1325,
       4359
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/diapering.m4a": {
     "fingerprint": "9502a463",
@@ -3377,7 +3680,8 @@
       21731,
       28550,
       33271
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/diaper-rash.m4a": {
     "fingerprint": "21b317bb",
@@ -3389,7 +3693,8 @@
       8498,
       14856,
       20390
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/why-babies-cry.m4a": {
     "fingerprint": "86fdb699",
@@ -3402,7 +3707,8 @@
       17479,
       27965,
       30679
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/sponge-baths.m4a": {
     "fingerprint": "cc8f81cd",
@@ -3415,7 +3721,8 @@
       18154,
       23736,
       28527
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/checkin-crying-right.m4a": {
     "fingerprint": "4b1970cc",
@@ -3426,7 +3733,8 @@
       1090,
       2890,
       11114
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/checkin-crying-wrong.m4a": {
     "fingerprint": "7bcdf49a",
@@ -3437,7 +3745,8 @@
       1109,
       2825,
       10551
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/soothing.m4a": {
     "fingerprint": "d6ce6ad6",
@@ -3450,7 +3759,8 @@
       23042,
       28214,
       29577
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/never-shake.m4a": {
     "fingerprint": "757a0d5f",
@@ -3464,7 +3774,8 @@
       21976,
       24597,
       31387
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/calm-plan.m4a": {
     "fingerprint": "3a5cdc33",
@@ -3476,7 +3787,8 @@
       5200,
       8531,
       10704
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/quiz-1-right.m4a": {
     "fingerprint": "ddaf9f5f",
@@ -3486,7 +3798,8 @@
       150,
       1037,
       5988
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/when-to-call.m4a": {
     "fingerprint": "2168aa06",
@@ -3500,7 +3813,8 @@
       21252,
       28905,
       31780
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/quiz-1-wrong.m4a": {
     "fingerprint": "8d5c147d",
@@ -3510,7 +3824,8 @@
       150,
       6785,
       8484
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/summary.m4a": {
     "fingerprint": "8c28b8e1",
@@ -3525,7 +3840,8 @@
       25163,
       32010,
       34010
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/quiz-2-right.m4a": {
     "fingerprint": "03b28c75",
@@ -3535,7 +3851,8 @@
       150,
       1069,
       9639
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/quiz-3-right.m4a": {
     "fingerprint": "cb3db131",
@@ -3545,7 +3862,8 @@
       150,
       1011,
       8121
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/quiz-2-wrong.m4a": {
     "fingerprint": "815dc347",
@@ -3555,7 +3873,8 @@
       150,
       1445,
       9935
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/quiz-3-wrong.m4a": {
     "fingerprint": "abda8ff7",
@@ -3565,7 +3884,8 @@
       150,
       1187,
       8445
-    ]
+    ],
+    "checked": true
   },
   "diapers-baths-crying-and-soothing/done.m4a": {
     "fingerprint": "0c1673c0",
@@ -3575,7 +3895,8 @@
       150,
       1131,
       2715
-    ]
+    ],
+    "checked": true
   },
   "infant-cpr-and-choking/welcome.m4a": {
     "fingerprint": "4a8eeee1",
@@ -3585,7 +3906,8 @@
       150,
       4942,
       14404
-    ]
+    ],
+    "checked": true
   },
   "infant-cpr-and-choking/take-a-class.m4a": {
     "fingerprint": "167c1e8d",
@@ -3596,7 +3918,8 @@
       4240,
       11268,
       20945
-    ]
+    ],
+    "checked": true
   },
   "infant-cpr-and-choking/is-it-choking.m4a": {
     "fingerprint": "f9186f77",
@@ -3609,7 +3932,8 @@
       15333,
       25671,
       28005
-    ]
+    ],
+    "checked": true
   },
   "infant-cpr-and-choking/checkin-choking-right.m4a": {
     "fingerprint": "34e2fd94",
@@ -3620,7 +3944,8 @@
       944,
       4083,
       6731
-    ]
+    ],
+    "checked": true
   },
   "infant-cpr-and-choking/choking-steps.m4a": {
     "fingerprint": "d8a55359",
@@ -3633,7 +3958,8 @@
       20277,
       31926,
       38810
-    ]
+    ],
+    "checked": true
   },
   "infant-cpr-and-choking/checkin-choking-wrong.m4a": {
     "fingerprint": "db1589c2",
@@ -3644,7 +3970,8 @@
       1393,
       7489,
       11412
-    ]
+    ],
+    "checked": true
   },
   "infant-cpr-and-choking/checkin-cpr-wrong.m4a": {
     "fingerprint": "44f7b0c7",
@@ -3654,7 +3981,9 @@
       150,
       1195,
       6690
-    ]
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches, transcript differs only in spelling or number format"
   },
   "infant-cpr-and-choking/prevent-choking.m4a": {
     "fingerprint": "5436d3ce",
@@ -3667,7 +3996,8 @@
       16123,
       23291,
       25650
-    ]
+    ],
+    "checked": true
   },
   "infant-cpr-and-choking/emergency-plan.m4a": {
     "fingerprint": "c6c129cd",
@@ -3679,7 +4009,8 @@
       5728,
       7047,
       13457
-    ]
+    ],
+    "checked": true
   },
   "infant-cpr-and-choking/summary.m4a": {
     "fingerprint": "492a4bc7",
@@ -3693,7 +4024,8 @@
       27173,
       32028,
       35121
-    ]
+    ],
+    "checked": true
   },
   "infant-cpr-and-choking/quiz-1-right.m4a": {
     "fingerprint": "eb2bd955",
@@ -3703,7 +4035,8 @@
       150,
       1037,
       10519
-    ]
+    ],
+    "checked": true
   },
   "infant-cpr-and-choking/checkin-cpr-right.m4a": {
     "fingerprint": "ffa2a239",
@@ -3713,7 +4046,9 @@
       150,
       1001,
       6120
-    ]
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches, transcript differs only in spelling or number format"
   },
   "infant-cpr-and-choking/not-breathing.m4a": {
     "fingerprint": "7ceb7d3b",
@@ -3726,7 +4061,8 @@
       13631,
       21416,
       29469
-    ]
+    ],
+    "checked": true
   },
   "infant-cpr-and-choking/quiz-2-right.m4a": {
     "fingerprint": "0f9c8aa1",
@@ -3735,7 +4071,8 @@
     "starts": [
       150,
       1070
-    ]
+    ],
+    "checked": true
   },
   "infant-cpr-and-choking/quiz-1-wrong.m4a": {
     "fingerprint": "306e3dcf",
@@ -3745,7 +4082,8 @@
       150,
       1188,
       10724
-    ]
+    ],
+    "checked": true
   },
   "infant-cpr-and-choking/cpr-steps.m4a": {
     "fingerprint": "b96af7bb",
@@ -3759,7 +4097,9 @@
       24679,
       35774,
       40692
-    ]
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches, transcript differs only in spelling or number format"
   },
   "infant-cpr-and-choking/quiz-2-wrong.m4a": {
     "fingerprint": "5ef82053",
@@ -3768,7 +4108,8 @@
     "starts": [
       150,
       1162
-    ]
+    ],
+    "checked": true
   },
   "infant-cpr-and-choking/quiz-3-right.m4a": {
     "fingerprint": "11eb06ba",
@@ -3778,7 +4119,8 @@
       150,
       983,
       7072
-    ]
+    ],
+    "checked": true
   },
   "infant-cpr-and-choking/quiz-3-wrong.m4a": {
     "fingerprint": "23406dbc",
@@ -3788,7 +4130,8 @@
       150,
       1291,
       7136
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/welcome.m4a": {
     "fingerprint": "747a36f4",
@@ -3799,7 +4142,8 @@
       4487,
       7996,
       12026
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/shared-decisions.m4a": {
     "fingerprint": "2b0886da",
@@ -3813,7 +4157,8 @@
       11709,
       20779,
       22829
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/four-questions.m4a": {
     "fingerprint": "b0ba58f1",
@@ -3827,7 +4172,8 @@
       13502,
       16726,
       19231
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/checkin-time-right.m4a": {
     "fingerprint": "d73e47c7",
@@ -3836,7 +4182,8 @@
     "starts": [
       150,
       1045
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/how-much-time.m4a": {
     "fingerprint": "5c6207f9",
@@ -3849,7 +4196,8 @@
       15885,
       19683,
       23115
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/checkin-time-wrong.m4a": {
     "fingerprint": "9dd0b869",
@@ -3858,7 +4206,8 @@
     "starts": [
       150,
       1472
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/decision-video.m4a": {
     "fingerprint": "9c2f61b5",
@@ -3866,7 +4215,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/support-person-role.m4a": {
     "fingerprint": "0dd3b9f8",
@@ -3878,7 +4228,8 @@
       12184,
       16813,
       18984
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/understand-it.m4a": {
     "fingerprint": "aaa277b8",
@@ -3890,7 +4241,8 @@
       11067,
       14395,
       21612
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/not-yet-or-no.m4a": {
     "fingerprint": "7c8c0ab1",
@@ -3902,7 +4254,8 @@
       12751,
       15910,
       18307
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/what-matters.m4a": {
     "fingerprint": "149030da",
@@ -3914,7 +4267,8 @@
       6273,
       8520,
       15153
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/quiz-1-right.m4a": {
     "fingerprint": "bfa283d0",
@@ -3923,7 +4277,8 @@
     "starts": [
       150,
       1160
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/quiz-1-wrong.m4a": {
     "fingerprint": "0d2da576",
@@ -3932,7 +4287,8 @@
     "starts": [
       150,
       1583
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/summary.m4a": {
     "fingerprint": "48d19266",
@@ -3945,7 +4301,8 @@
       15038,
       19448,
       24658
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/quiz-2-right.m4a": {
     "fingerprint": "5e446923",
@@ -3954,7 +4311,8 @@
     "starts": [
       150,
       1070
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/quiz-2-wrong.m4a": {
     "fingerprint": "f4633b65",
@@ -3963,7 +4321,8 @@
     "starts": [
       150,
       1388
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/quiz-3-right.m4a": {
     "fingerprint": "b0c7719e",
@@ -3972,7 +4331,8 @@
     "starts": [
       150,
       1135
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/quiz-3-wrong.m4a": {
     "fingerprint": "584a76d4",
@@ -3981,7 +4341,8 @@
     "starts": [
       150,
       1150
-    ]
+    ],
+    "checked": true
   },
   "making-decisions-with-your-care-team/done.m4a": {
     "fingerprint": "ac95f03d",
@@ -3991,7 +4352,8 @@
       150,
       1103,
       2596
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/welcome.m4a": {
     "fingerprint": "f1db89e6",
@@ -4000,7 +4362,8 @@
     "starts": [
       150,
       5660
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/why-monitor.m4a": {
     "fingerprint": "d1509d2a",
@@ -4012,7 +4375,8 @@
       8499,
       13739,
       21882
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/listening.m4a": {
     "fingerprint": "aac7d6e6",
@@ -4023,7 +4387,8 @@
       6591,
       15280,
       21368
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/two-ways.m4a": {
     "fingerprint": "e01dd084",
@@ -4036,7 +4401,8 @@
       12222,
       19485,
       24548
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/checkin-ways-right.m4a": {
     "fingerprint": "b920711e",
@@ -4045,7 +4411,8 @@
     "starts": [
       150,
       917
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/continuous.m4a": {
     "fingerprint": "1b17eb86",
@@ -4058,7 +4425,8 @@
       14401,
       19318,
       22847
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/pattern-changes.m4a": {
     "fingerprint": "f60e2733",
@@ -4071,7 +4439,8 @@
       20623,
       23295,
       30074
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/checkin-ways-wrong.m4a": {
     "fingerprint": "af453200",
@@ -4080,7 +4449,8 @@
     "starts": [
       150,
       1385
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/when-continuous.m4a": {
     "fingerprint": "58f9c974",
@@ -4092,7 +4462,8 @@
       11920,
       19572,
       26700
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/quiz-1-right.m4a": {
     "fingerprint": "a01d426e",
@@ -4102,7 +4473,8 @@
       150,
       1195,
       4799
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/summary.m4a": {
     "fingerprint": "c8f08b5d",
@@ -4115,7 +4487,8 @@
       16680,
       18468,
       24840
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/quiz-1-wrong.m4a": {
     "fingerprint": "e62e019c",
@@ -4125,7 +4498,8 @@
       150,
       1512,
       5460
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/quiz-2-right.m4a": {
     "fingerprint": "31d3dace",
@@ -4134,7 +4508,8 @@
     "starts": [
       150,
       3772
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/your-questions.m4a": {
     "fingerprint": "52cda751",
@@ -4144,7 +4519,8 @@
       150,
       3458,
       16638
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/quiz-2-wrong.m4a": {
     "fingerprint": "3bf5cc54",
@@ -4153,7 +4529,8 @@
     "starts": [
       150,
       1549
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/quiz-3-right.m4a": {
     "fingerprint": "cba8366f",
@@ -4162,7 +4539,8 @@
     "starts": [
       150,
       836
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/internal.m4a": {
     "fingerprint": "ae4ec46f",
@@ -4175,7 +4553,8 @@
       14811,
       18184,
       22784
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/quiz-3-wrong.m4a": {
     "fingerprint": "a7029eb1",
@@ -4184,7 +4563,8 @@
     "starts": [
       150,
       1013
-    ]
+    ],
+    "checked": true
   },
   "monitoring-your-baby-in-labor/done.m4a": {
     "fingerprint": "a4e06173",
@@ -4194,7 +4574,8 @@
       150,
       948,
       2467
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/epidural-how.m4a": {
     "fingerprint": "9a640a86",
@@ -4207,7 +4588,8 @@
       16453,
       21296,
       24452
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/epidural-tradeoffs.m4a": {
     "fingerprint": "58387183",
@@ -4222,7 +4604,8 @@
       24548,
       27414,
       30935
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/checkin-epidural-right.m4a": {
     "fingerprint": "beb6be4f",
@@ -4232,7 +4615,8 @@
       150,
       1004,
       5067
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/checkin-epidural-wrong.m4a": {
     "fingerprint": "4d39faed",
@@ -4242,7 +4626,8 @@
       150,
       1720,
       5289
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/welcome.m4a": {
     "fingerprint": "c959cebc",
@@ -4252,7 +4637,8 @@
       150,
       4317,
       12138
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/your-choice.m4a": {
     "fingerprint": "bb13afa0",
@@ -4264,7 +4650,8 @@
       5043,
       12096,
       16449
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/three-options.m4a": {
     "fingerprint": "4f07955a",
@@ -4276,7 +4663,8 @@
       8851,
       13688,
       17955
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/iv-medicine.m4a": {
     "fingerprint": "8c10b6fd",
@@ -4289,7 +4677,8 @@
       14206,
       17567,
       25955
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/nitrous.m4a": {
     "fingerprint": "588a7129",
@@ -4302,7 +4691,8 @@
       18295,
       22918,
       26016
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/your-preferences.m4a": {
     "fingerprint": "bbd76ad3",
@@ -4315,7 +4705,8 @@
       13942,
       16222,
       17015
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/when-to-ask.m4a": {
     "fingerprint": "a2ec7c01",
@@ -4327,7 +4718,8 @@
       8119,
       16512,
       22484
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/summary.m4a": {
     "fingerprint": "80078320",
@@ -4340,7 +4732,8 @@
       13676,
       18039,
       22870
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/quiz-1-right.m4a": {
     "fingerprint": "51c26518",
@@ -4350,7 +4743,8 @@
       150,
       1082,
       5644
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/quiz-2-right.m4a": {
     "fingerprint": "5e1dcd31",
@@ -4359,7 +4753,8 @@
     "starts": [
       150,
       1238
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/quiz-1-wrong.m4a": {
     "fingerprint": "bdc0df22",
@@ -4369,7 +4764,8 @@
       150,
       1908,
       6787
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/quiz-2-wrong.m4a": {
     "fingerprint": "6975d957",
@@ -4378,7 +4774,8 @@
     "starts": [
       150,
       1252
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/quiz-3-right.m4a": {
     "fingerprint": "573485cc",
@@ -4387,7 +4784,8 @@
     "starts": [
       150,
       986
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/done.m4a": {
     "fingerprint": "f060ea1d",
@@ -4397,7 +4795,8 @@
       150,
       1150,
       2689
-    ]
+    ],
+    "checked": true
   },
   "medical-pain-relief/quiz-3-wrong.m4a": {
     "fingerprint": "9b354c32",
@@ -4406,7 +4805,8 @@
     "starts": [
       150,
       1112
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/welcome.m4a": {
     "fingerprint": "ff7eaf41",
@@ -4416,7 +4816,8 @@
       150,
       5220,
       7206
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/what-is.m4a": {
     "fingerprint": "02d331ed",
@@ -4429,7 +4830,8 @@
       12223,
       17679,
       20036
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/checkin-reasons-right.m4a": {
     "fingerprint": "473b8830",
@@ -4438,7 +4840,8 @@
     "starts": [
       150,
       974
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/reasons.m4a": {
     "fingerprint": "ea88b943",
@@ -4449,7 +4852,8 @@
       6555,
       19289,
       20973
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/at-39-weeks.m4a": {
     "fingerprint": "52d73f7a",
@@ -4461,7 +4865,8 @@
       14439,
       18295,
       24973
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/checkin-reasons-wrong.m4a": {
     "fingerprint": "cbd6858a",
@@ -4470,7 +4875,8 @@
     "starts": [
       150,
       1408
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/how-it-works.m4a": {
     "fingerprint": "8a3a66a3",
@@ -4483,7 +4889,8 @@
       9877,
       15299,
       18945
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/ripening.m4a": {
     "fingerprint": "5ff09ff3",
@@ -4495,7 +4902,8 @@
       14781,
       16614,
       23523
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/starting-contractions.m4a": {
     "fingerprint": "5548d3d6",
@@ -4508,7 +4916,8 @@
       15750,
       20122,
       26333
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/what-to-expect.m4a": {
     "fingerprint": "043428c4",
@@ -4520,7 +4929,8 @@
       9267,
       15527,
       20468
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/quiz-1-right.m4a": {
     "fingerprint": "02b37a85",
@@ -4529,7 +4939,8 @@
     "starts": [
       150,
       1002
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/your-questions.m4a": {
     "fingerprint": "fc349a6b",
@@ -4542,7 +4953,8 @@
       13515,
       15421,
       17950
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/risks.m4a": {
     "fingerprint": "1f9c2968",
@@ -4555,7 +4967,8 @@
       16661,
       20719,
       25443
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/summary.m4a": {
     "fingerprint": "afd07bb5",
@@ -4568,7 +4981,8 @@
       17079,
       20876,
       27123
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/quiz-1-wrong.m4a": {
     "fingerprint": "a37a2a5f",
@@ -4577,7 +4991,8 @@
     "starts": [
       150,
       1308
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/quiz-2-right.m4a": {
     "fingerprint": "f50d9745",
@@ -4587,7 +5002,8 @@
       150,
       1046,
       7868
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/quiz-2-wrong.m4a": {
     "fingerprint": "144741ff",
@@ -4597,7 +5013,8 @@
       150,
       1064,
       8029
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/quiz-3-wrong.m4a": {
     "fingerprint": "2558c686",
@@ -4606,7 +5023,8 @@
     "starts": [
       150,
       1160
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/done.m4a": {
     "fingerprint": "16fdd6d2",
@@ -4616,7 +5034,8 @@
       150,
       2504,
       3313
-    ]
+    ],
+    "checked": true
   },
   "induction-of-labor/quiz-3-right.m4a": {
     "fingerprint": "80051bb8",
@@ -4625,7 +5044,8 @@
     "starts": [
       150,
       768
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/welcome.m4a": {
     "fingerprint": "cb9637a5",
@@ -4635,7 +5055,8 @@
       150,
       4409,
       7899
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/what-is.m4a": {
     "fingerprint": "e62410bb",
@@ -4646,7 +5067,8 @@
       6674,
       14075,
       19021
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/checkin-what-right.m4a": {
     "fingerprint": "a5b58c7a",
@@ -4655,7 +5077,8 @@
     "starts": [
       150,
       1031
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/checkin-what-wrong.m4a": {
     "fingerprint": "d25ef7dc",
@@ -4664,7 +5087,8 @@
     "starts": [
       150,
       1407
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/when.m4a": {
     "fingerprint": "1f3e262b",
@@ -4677,7 +5101,8 @@
       11401,
       15229,
       21878
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/how.m4a": {
     "fingerprint": "0143e7a9",
@@ -4689,7 +5114,8 @@
       13156,
       17712,
       22125
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/for-baby.m4a": {
     "fingerprint": "ff1880fa",
@@ -4702,7 +5128,8 @@
       11507,
       16300,
       18187
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/your-questions.m4a": {
     "fingerprint": "68fa0cc3",
@@ -4712,7 +5139,8 @@
       150,
       3858,
       12571
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/for-you.m4a": {
     "fingerprint": "a9522f7d",
@@ -4724,7 +5152,8 @@
       11886,
       15460,
       20287
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/summary.m4a": {
     "fingerprint": "664b7a8a",
@@ -4737,7 +5166,8 @@
       12970,
       17170,
       28009
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/quiz-1-right.m4a": {
     "fingerprint": "a68c3b8f",
@@ -4746,7 +5176,8 @@
     "starts": [
       150,
       1113
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/quiz-1-wrong.m4a": {
     "fingerprint": "951f0991",
@@ -4755,7 +5186,8 @@
     "starts": [
       150,
       1190
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/quiz-3-right.m4a": {
     "fingerprint": "40b15691",
@@ -4765,7 +5197,8 @@
       150,
       3939,
       6131
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/quiz-2-right.m4a": {
     "fingerprint": "141aebc9",
@@ -4774,7 +5207,8 @@
     "starts": [
       150,
       985
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/quiz-3-wrong.m4a": {
     "fingerprint": "833a82cb",
@@ -4784,7 +5218,8 @@
       150,
       1326,
       6913
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/quiz-2-wrong.m4a": {
     "fingerprint": "70a525e7",
@@ -4793,7 +5228,8 @@
     "starts": [
       150,
       403
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/done.m4a": {
     "fingerprint": "ac19b5ba",
@@ -4803,7 +5239,8 @@
       150,
       2434,
       3234
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/welcome.m4a": {
     "fingerprint": "3deb7291",
@@ -4813,7 +5250,8 @@
       150,
       5671,
       9524
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/what-is.m4a": {
     "fingerprint": "92bca214",
@@ -4825,7 +5263,8 @@
       12406,
       14817,
       17101
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/checkin-reasons-right.m4a": {
     "fingerprint": "55419c1c",
@@ -4834,7 +5273,8 @@
     "starts": [
       150,
       845
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/planned-unplanned.m4a": {
     "fingerprint": "253d254c",
@@ -4846,7 +5286,8 @@
       12226,
       18075,
       21063
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/reasons.m4a": {
     "fingerprint": "8aff6fb1",
@@ -4857,7 +5298,8 @@
       8654,
       12598,
       25326
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/during.m4a": {
     "fingerprint": "eec224e6",
@@ -4870,7 +5312,8 @@
       10278,
       13780,
       18669
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/first-moments.m4a": {
     "fingerprint": "e39e531c",
@@ -4881,7 +5324,8 @@
       3962,
       14732,
       18984
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/recovery-hospital.m4a": {
     "fingerprint": "cfa81673",
@@ -4893,7 +5337,8 @@
       14975,
       18126,
       19169
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/recovery-home.m4a": {
     "fingerprint": "2cd8379e",
@@ -4906,7 +5351,8 @@
       16131,
       25289,
       27568
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/next-time.m4a": {
     "fingerprint": "ac5c4e62",
@@ -4917,7 +5363,8 @@
       3324,
       9872,
       17290
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/your-preferences.m4a": {
     "fingerprint": "a4de8c19",
@@ -4929,7 +5376,8 @@
       7015,
       13904,
       17222
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/quiz-1-right.m4a": {
     "fingerprint": "722af7b3",
@@ -4939,7 +5387,8 @@
       150,
       1097,
       7430
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/summary.m4a": {
     "fingerprint": "b4dd7f5d",
@@ -4953,7 +5402,8 @@
       15787,
       25732,
       28778
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/quiz-1-wrong.m4a": {
     "fingerprint": "667490a9",
@@ -4963,7 +5413,8 @@
       150,
       937,
       7504
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/checkin-reasons-wrong.m4a": {
     "fingerprint": "3f0a3dca",
@@ -4972,7 +5423,8 @@
     "starts": [
       150,
       1168
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/quiz-3-right.m4a": {
     "fingerprint": "2c5c4559",
@@ -4981,7 +5433,8 @@
     "starts": [
       150,
       1053
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/before.m4a": {
     "fingerprint": "1a156ed1",
@@ -4993,7 +5446,8 @@
       9958,
       17015,
       21676
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/quiz-2-right.m4a": {
     "fingerprint": "91dafb6a",
@@ -5002,7 +5456,8 @@
     "starts": [
       150,
       859
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/quiz-2-wrong.m4a": {
     "fingerprint": "ebbcdddc",
@@ -5011,7 +5466,8 @@
     "starts": [
       150,
       1059
-    ]
+    ],
+    "checked": true
   },
   "when-plans-change/welcome.m4a": {
     "fingerprint": "fccee27b",
@@ -5020,7 +5476,8 @@
     "starts": [
       150,
       7995
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/quiz-3-wrong.m4a": {
     "fingerprint": "3f31c5c3",
@@ -5029,7 +5486,8 @@
     "starts": [
       150,
       1716
-    ]
+    ],
+    "checked": true
   },
   "cesarean-birth/done.m4a": {
     "fingerprint": "5e8e7205",
@@ -5039,7 +5497,8 @@
       150,
       1093,
       2617
-    ]
+    ],
+    "checked": true
   },
   "when-plans-change/plans-change.m4a": {
     "fingerprint": "36a9ab22",
@@ -5051,7 +5510,8 @@
       6562,
       9996,
       13990
-    ]
+    ],
+    "checked": true
   },
   "when-plans-change/checkin-change-right.m4a": {
     "fingerprint": "3e4b29a6",
@@ -5060,7 +5520,8 @@
     "starts": [
       150,
       1034
-    ]
+    ],
+    "checked": true
   },
   "when-plans-change/in-the-moment.m4a": {
     "fingerprint": "a8abb7d9",
@@ -5072,7 +5533,8 @@
       7408,
       16134,
       19021
-    ]
+    ],
+    "checked": true
   },
   "when-plans-change/checkin-change-wrong.m4a": {
     "fingerprint": "7c7ef694",
@@ -5081,7 +5543,8 @@
     "starts": [
       150,
       1245
-    ]
+    ],
+    "checked": true
   },
   "when-plans-change/what-you-can-keep.m4a": {
     "fingerprint": "7bf91e63",
@@ -5094,7 +5557,8 @@
       11885,
       22128,
       24486
-    ]
+    ],
+    "checked": true
   },
   "when-plans-change/making-sense.m4a": {
     "fingerprint": "6cd1fa89",
@@ -5106,7 +5570,8 @@
       10191,
       11537,
       19165
-    ]
+    ],
+    "checked": true
   },
   "when-plans-change/afterward-feelings.m4a": {
     "fingerprint": "764470d9",
@@ -5118,7 +5583,8 @@
       10884,
       12946,
       18105
-    ]
+    ],
+    "checked": true
   },
   "when-plans-change/summary.m4a": {
     "fingerprint": "eb52c682",
@@ -5132,7 +5598,8 @@
       18190,
       23044,
       24695
-    ]
+    ],
+    "checked": true
   },
   "when-plans-change/quiz-1-wrong.m4a": {
     "fingerprint": "5c225ade",
@@ -5142,7 +5609,8 @@
       150,
       3000,
       7067
-    ]
+    ],
+    "checked": true
   },
   "when-plans-change/quiz-2-right.m4a": {
     "fingerprint": "1bbee251",
@@ -5151,7 +5619,8 @@
     "starts": [
       150,
       904
-    ]
+    ],
+    "checked": true
   },
   "when-plans-change/quiz-2-wrong.m4a": {
     "fingerprint": "1006e3d3",
@@ -5160,7 +5629,8 @@
     "starts": [
       150,
       1438
-    ]
+    ],
+    "checked": true
   },
   "when-plans-change/quiz-3-right.m4a": {
     "fingerprint": "ff724124",
@@ -5170,7 +5640,8 @@
       150,
       1000,
       8318
-    ]
+    ],
+    "checked": true
   },
   "when-plans-change/quiz-3-wrong.m4a": {
     "fingerprint": "67aee856",
@@ -5180,7 +5651,8 @@
       150,
       1562,
       8782
-    ]
+    ],
+    "checked": true
   },
   "when-plans-change/what-matters.m4a": {
     "fingerprint": "7e10ff93",
@@ -5192,7 +5664,8 @@
       6330,
       11703,
       15186
-    ]
+    ],
+    "checked": true
   },
   "when-plans-change/when-to-get-help.m4a": {
     "fingerprint": "e6d85f8a",
@@ -5204,7 +5677,8 @@
       15338,
       19756,
       23196
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/welcome.m4a": {
     "fingerprint": "902e1c4a",
@@ -5217,7 +5691,8 @@
       10416,
       18749,
       22958
-    ]
+    ],
+    "checked": true
   },
   "when-plans-change/quiz-1-right.m4a": {
     "fingerprint": "8c3930e4",
@@ -5227,7 +5702,8 @@
       150,
       947,
       2988
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/when-labor-starts.m4a": {
     "fingerprint": "4d840d16",
@@ -5239,7 +5715,8 @@
       9559,
       16788,
       23303
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/every-labor-different.m4a": {
     "fingerprint": "b2ec36a5",
@@ -5250,7 +5727,8 @@
       5169,
       14495,
       18185
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/signs-labor-close.m4a": {
     "fingerprint": "eeb41fb4",
@@ -5266,7 +5744,8 @@
       19756,
       24832,
       27711
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/checkin-bloody-show-right.m4a": {
     "fingerprint": "d5785074",
@@ -5278,7 +5757,8 @@
       4731,
       6774,
       10377
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/checkin-bloody-show-wrong.m4a": {
     "fingerprint": "6f062d9a",
@@ -5290,7 +5770,8 @@
       5302,
       7654,
       11241
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/timing-contractions-video.m4a": {
     "fingerprint": "fbf856f7",
@@ -5302,7 +5783,8 @@
       6634,
       11881,
       17541
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/checkin-timing.m4a": {
     "fingerprint": "47f044fe",
@@ -5310,7 +5792,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/what-is-a-contraction.m4a": {
     "fingerprint": "0b442802",
@@ -5325,7 +5808,8 @@
       17471,
       22786,
       24919
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/checkin-timing-right.m4a": {
     "fingerprint": "bac5b8ed",
@@ -5335,7 +5819,8 @@
       150,
       1264,
       8833
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/checkin-timing-wrong.m4a": {
     "fingerprint": "36a090d7",
@@ -5345,7 +5830,8 @@
       150,
       1073,
       8195
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/true-vs-false.m4a": {
     "fingerprint": "e184c13d",
@@ -5363,7 +5849,8 @@
       36227,
       39374,
       43930
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/your-call-plan.m4a": {
     "fingerprint": "33956c2e",
@@ -5375,7 +5862,8 @@
       14603,
       22937,
       24855
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/water-breaking.m4a": {
     "fingerprint": "9114487c",
@@ -5388,7 +5876,9 @@
       21274,
       24086,
       30296
-    ]
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches, transcript differs only in spelling or number format"
   },
   "how-labor-begins/preterm-signs.m4a": {
     "fingerprint": "87681675",
@@ -5399,7 +5889,8 @@
       5410,
       7597,
       21822
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/quiz-1-wrong.m4a": {
     "fingerprint": "3df3f37f",
@@ -5409,7 +5900,8 @@
       150,
       1524,
       4511
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/urgent-warning-signs.m4a": {
     "fingerprint": "af1b48d2",
@@ -5422,7 +5914,8 @@
       27081,
       30680,
       31817
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/quiz-2-wrong.m4a": {
     "fingerprint": "9e01d21a",
@@ -5431,7 +5924,8 @@
     "starts": [
       150,
       1741
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/quiz-3-right.m4a": {
     "fingerprint": "fcff0831",
@@ -5441,7 +5935,8 @@
       150,
       975,
       5191
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/quiz-3-wrong.m4a": {
     "fingerprint": "c3c66317",
@@ -5451,7 +5946,8 @@
       150,
       1311,
       5242
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/done.m4a": {
     "fingerprint": "d5440355",
@@ -5461,7 +5957,8 @@
       150,
       1068,
       2682
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/welcome.m4a": {
     "fingerprint": "c56da98d",
@@ -5472,7 +5969,8 @@
       1166,
       4877,
       9943
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/always-ok-to-call.m4a": {
     "fingerprint": "c3e3cb5f",
@@ -5484,7 +5982,8 @@
       12982,
       14227,
       19267
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/quiz-1-right.m4a": {
     "fingerprint": "ab127fdd",
@@ -5494,7 +5993,8 @@
       150,
       1161,
       4151
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/summary.m4a": {
     "fingerprint": "3b258fc3",
@@ -5509,7 +6009,8 @@
       20161,
       25377,
       27385
-    ]
+    ],
+    "checked": true
   },
   "how-labor-begins/quiz-2-right.m4a": {
     "fingerprint": "dd9403e8",
@@ -5518,7 +6019,8 @@
     "starts": [
       150,
       902
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/two-kinds-of-calls.m4a": {
     "fingerprint": "032b81ef",
@@ -5531,7 +6033,8 @@
       9427,
       12142,
       20126
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/checkin-511-right.m4a": {
     "fingerprint": "b1be5a0c",
@@ -5541,7 +6044,8 @@
       150,
       1078,
       4545
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/checkin-511-wrong.m4a": {
     "fingerprint": "4f33e4e6",
@@ -5551,7 +6055,8 @@
       150,
       1248,
       3419
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/five-one-one.m4a": {
     "fingerprint": "af5f903d",
@@ -5564,7 +6069,8 @@
       17091,
       20979,
       29773
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/water-breaks.m4a": {
     "fingerprint": "d91796b6",
@@ -5576,7 +6082,8 @@
       9168,
       15131,
       21530
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/bleeding.m4a": {
     "fingerprint": "f6503515",
@@ -5588,7 +6095,8 @@
       8382,
       12937,
       19009
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/practice-call-video.m4a": {
     "fingerprint": "2c8cd18d",
@@ -5596,7 +6104,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/urgent-warning-signs.m4a": {
     "fingerprint": "68af31af",
@@ -5607,7 +6116,8 @@
       2830,
       16540,
       25985
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/checkin-water-color.m4a": {
     "fingerprint": "12d8fdc6",
@@ -5615,7 +6125,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/call-card.m4a": {
     "fingerprint": "a1d1bda1",
@@ -5626,7 +6137,8 @@
       2576,
       10708,
       13710
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/checkin-water-color-right.m4a": {
     "fingerprint": "b19da789",
@@ -5636,7 +6148,8 @@
       150,
       991,
       3771
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/what-to-say.m4a": {
     "fingerprint": "231be9a3",
@@ -5647,7 +6160,8 @@
       3958,
       6152,
       22894
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/checkin-water-color-wrong.m4a": {
     "fingerprint": "1d7e9f0f",
@@ -5657,7 +6171,8 @@
       150,
       1417,
       4227
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/quiz-1-right.m4a": {
     "fingerprint": "8e0d2809",
@@ -5667,7 +6182,8 @@
       150,
       1140,
       5009
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/quiz-2-right.m4a": {
     "fingerprint": "76dad828",
@@ -5676,7 +6192,8 @@
     "starts": [
       150,
       1055
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/quiz-1-wrong.m4a": {
     "fingerprint": "8f5d16fb",
@@ -5686,7 +6203,8 @@
       150,
       1833,
       6086
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/quiz-2-wrong.m4a": {
     "fingerprint": "dc90ea2a",
@@ -5695,7 +6213,8 @@
     "starts": [
       150,
       1030
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/quiz-3-right.m4a": {
     "fingerprint": "5423a553",
@@ -5706,7 +6225,8 @@
       969,
       3405,
       4357
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/done.m4a": {
     "fingerprint": "38a989e6",
@@ -5716,7 +6236,8 @@
       150,
       970,
       2495
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/summary.m4a": {
     "fingerprint": "1766ef80",
@@ -5730,7 +6251,8 @@
       15032,
       19216,
       22443
-    ]
+    ],
+    "checked": true
   },
   "when-to-contact-your-care-team/quiz-3-wrong.m4a": {
     "fingerprint": "4c2f0e19",
@@ -5741,7 +6263,8 @@
       1091,
       5463,
       5685
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/welcome.m4a": {
     "fingerprint": "2c938d00",
@@ -5752,7 +6275,8 @@
       1195,
       5636,
       11499
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/three-stages.m4a": {
     "fingerprint": "323d437a",
@@ -5765,7 +6289,8 @@
       9146,
       13866,
       19133
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/cervix.m4a": {
     "fingerprint": "716d5c5a",
@@ -5779,7 +6304,8 @@
       14869,
       18076,
       22109
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/checkin-early-labor-right.m4a": {
     "fingerprint": "f5c33423",
@@ -5790,7 +6316,8 @@
       1158,
       5172,
       9862
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/early-labor.m4a": {
     "fingerprint": "657b1ff4",
@@ -5805,7 +6332,8 @@
       21776,
       24931,
       30761
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/checkin-early-labor-wrong.m4a": {
     "fingerprint": "4e10dfd1",
@@ -5816,7 +6344,8 @@
       894,
       4878,
       9851
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/dilation-video.m4a": {
     "fingerprint": "fbda52b7",
@@ -5824,7 +6353,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/transition.m4a": {
     "fingerprint": "b7153bf8",
@@ -5838,7 +6368,8 @@
       16011,
       21745,
       24695
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/active-labor.m4a": {
     "fingerprint": "992e6c2e",
@@ -5850,7 +6381,8 @@
       14801,
       21149,
       23596
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/placenta.m4a": {
     "fingerprint": "b86c9abe",
@@ -5862,7 +6394,8 @@
       9662,
       14075,
       18946
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/pushing.m4a": {
     "fingerprint": "8836a81d",
@@ -5876,7 +6409,8 @@
       13714,
       19968,
       25926
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/checkin-stage-two.m4a": {
     "fingerprint": "f475fa46",
@@ -5884,7 +6418,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/call-any-stage.m4a": {
     "fingerprint": "dec8d9c7",
@@ -5894,7 +6429,8 @@
       150,
       6728,
       20230
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/checkin-stage-two-right.m4a": {
     "fingerprint": "1a1a121e",
@@ -5904,7 +6440,9 @@
       150,
       1113,
       5941
-    ]
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches, transcript differs only in spelling or number format"
   },
   "stages-of-labor/checkin-stage-two-wrong.m4a": {
     "fingerprint": "0594d248",
@@ -5914,7 +6452,9 @@
       150,
       1189,
       6379
-    ]
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches, transcript differs only in spelling or number format"
   },
   "stages-of-labor/support-by-stage.m4a": {
     "fingerprint": "ee3202ad",
@@ -5927,7 +6467,8 @@
       18848,
       21104,
       26032
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/quiz-1-wrong.m4a": {
     "fingerprint": "ecb0c47e",
@@ -5937,7 +6478,8 @@
       150,
       1487,
       5402
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/support-plan.m4a": {
     "fingerprint": "041c2c2d",
@@ -5948,7 +6490,8 @@
       2589,
       13258,
       16377
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/summary.m4a": {
     "fingerprint": "d0e6049f",
@@ -5962,7 +6505,8 @@
       17670,
       20255,
       22751
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/quiz-2-wrong.m4a": {
     "fingerprint": "4bc61237",
@@ -5972,7 +6516,8 @@
       150,
       1279,
       7978
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/quiz-3-right.m4a": {
     "fingerprint": "92ca5c3d",
@@ -5982,7 +6527,8 @@
       150,
       1102,
       4216
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/quiz-2-right.m4a": {
     "fingerprint": "9e3ffdf1",
@@ -5992,7 +6538,8 @@
       150,
       1028,
       7556
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/quiz-3-wrong.m4a": {
     "fingerprint": "76a011ab",
@@ -6002,7 +6549,8 @@
       150,
       959,
       4102
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/done.m4a": {
     "fingerprint": "f1a7682a",
@@ -6012,7 +6560,8 @@
       150,
       1156,
       2774
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/welcome.m4a": {
     "fingerprint": "0b2ab368",
@@ -6023,7 +6572,8 @@
       1424,
       6343,
       11721
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/rest-and-move.m4a": {
     "fingerprint": "a18f01a4",
@@ -6037,7 +6587,8 @@
       20201,
       21712,
       27526
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/why-home.m4a": {
     "fingerprint": "88221b1c",
@@ -6049,7 +6600,8 @@
       14118,
       20758,
       23528
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/checkin-night-right.m4a": {
     "fingerprint": "60cabc12",
@@ -6060,7 +6612,8 @@
       881,
       3906,
       6018
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/eat-drink.m4a": {
     "fingerprint": "2a495b58",
@@ -6074,7 +6627,8 @@
       16347,
       21946,
       26629
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/checkin-night-wrong.m4a": {
     "fingerprint": "1f002dd4",
@@ -6085,7 +6639,8 @@
       1601,
       4620,
       6475
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/early-labor-video.m4a": {
     "fingerprint": "f2b997e3",
@@ -6093,7 +6648,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/comfort-tools.m4a": {
     "fingerprint": "ad2929a8",
@@ -6108,7 +6664,8 @@
       22330,
       23342,
       26865
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/tracking.m4a": {
     "fingerprint": "2610352f",
@@ -6120,7 +6677,8 @@
       12097,
       16596,
       19550
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/support-at-home.m4a": {
     "fingerprint": "8a7de697",
@@ -6134,7 +6692,8 @@
       14158,
       16842,
       19039
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/quiz-1-right.m4a": {
     "fingerprint": "44ea59fc",
@@ -6144,7 +6703,8 @@
       150,
       948,
       5096
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/when-to-leave.m4a": {
     "fingerprint": "035f5844",
@@ -6158,7 +6718,8 @@
       12744,
       14191,
       19145
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/call-now.m4a": {
     "fingerprint": "51722dbc",
@@ -6168,7 +6729,8 @@
       150,
       3766,
       20698
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/checkin-trip-right.m4a": {
     "fingerprint": "784bdaed",
@@ -6178,7 +6740,8 @@
       150,
       1267,
       2686
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/early-labor-plan.m4a": {
     "fingerprint": "7c3c768e",
@@ -6188,7 +6751,9 @@
       150,
       3222,
       17372
-    ]
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches, transcript differs only in spelling or number format"
   },
   "early-labor-at-home/checkin-trip-wrong.m4a": {
     "fingerprint": "5e04bc6b",
@@ -6198,7 +6763,8 @@
       150,
       1213,
       2748
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/quiz-1-right.m4a": {
     "fingerprint": "cd906106",
@@ -6209,7 +6775,8 @@
       1019,
       3804,
       7327
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/quiz-1-wrong.m4a": {
     "fingerprint": "6630f18c",
@@ -6220,7 +6787,8 @@
       892,
       3742,
       7255
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/quiz-2-wrong.m4a": {
     "fingerprint": "534e7f3a",
@@ -6229,7 +6797,8 @@
     "starts": [
       150,
       1040
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/quiz-3-right.m4a": {
     "fingerprint": "7fbd199d",
@@ -6238,7 +6807,8 @@
     "starts": [
       150,
       1119
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/quiz-3-wrong.m4a": {
     "fingerprint": "120a49a3",
@@ -6247,7 +6817,8 @@
     "starts": [
       150,
       1079
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/done.m4a": {
     "fingerprint": "eeac35e9",
@@ -6257,7 +6828,8 @@
       150,
       1256,
       2798
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/welcome.m4a": {
     "fingerprint": "e3c454a4",
@@ -6268,7 +6840,8 @@
       1467,
       5851,
       12355
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/quiz-2-right.m4a": {
     "fingerprint": "119d8b5c",
@@ -6277,7 +6850,8 @@
     "starts": [
       150,
       737
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/what-it-feels-like.m4a": {
     "fingerprint": "0c3ca27a",
@@ -6292,7 +6866,8 @@
       24707,
       28119,
       31156
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/checkin-pressure-right.m4a": {
     "fingerprint": "390666b9",
@@ -6304,7 +6879,8 @@
       4594,
       7525,
       12424
-    ]
+    ],
+    "checked": true
   },
   "early-labor-at-home/summary.m4a": {
     "fingerprint": "54de1b99",
@@ -6317,7 +6893,8 @@
       15347,
       19112,
       22148
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/checkin-pressure-wrong.m4a": {
     "fingerprint": "5a0e4cf3",
@@ -6329,7 +6906,8 @@
       4763,
       7702,
       12308
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/how-long.m4a": {
     "fingerprint": "d4e1771b",
@@ -6341,7 +6919,8 @@
       8088,
       12326,
       16014
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/how-to-push.m4a": {
     "fingerprint": "80e520dd",
@@ -6357,7 +6936,8 @@
       15978,
       23954,
       25237
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/positions.m4a": {
     "fingerprint": "f9e5e5ca",
@@ -6369,7 +6949,8 @@
       6667,
       14892,
       21786
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/pushing-video.m4a": {
     "fingerprint": "0cbedaa7",
@@ -6377,7 +6958,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/crowning.m4a": {
     "fingerprint": "9164f2f8",
@@ -6389,7 +6971,8 @@
       12136,
       15203,
       24987
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/baby-is-born.m4a": {
     "fingerprint": "4051c303",
@@ -6401,7 +6984,8 @@
       13938,
       16824,
       21016
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/support-while-pushing.m4a": {
     "fingerprint": "adeb3026",
@@ -6415,7 +6999,8 @@
       16925,
       18499,
       19534
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/tears.m4a": {
     "fingerprint": "27cd1d4a",
@@ -6430,7 +7015,8 @@
       18075,
       24272,
       27415
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/fast-birth.m4a": {
     "fingerprint": "c3b2e7ef",
@@ -6445,7 +7031,8 @@
       16361,
       24368,
       26879
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/pushing-preferences.m4a": {
     "fingerprint": "aa955ccb",
@@ -6454,7 +7041,8 @@
     "starts": [
       150,
       3582
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/summary.m4a": {
     "fingerprint": "c75080c1",
@@ -6468,7 +7056,8 @@
       15811,
       18265,
       25694
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/quiz-2-wrong.m4a": {
     "fingerprint": "a11ef1ac",
@@ -6477,7 +7066,8 @@
     "starts": [
       150,
       1628
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/quiz-3-right.m4a": {
     "fingerprint": "c66e4c4a",
@@ -6487,7 +7077,8 @@
       150,
       1017,
       3827
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/quiz-3-wrong.m4a": {
     "fingerprint": "71c46158",
@@ -6497,7 +7088,8 @@
       150,
       985,
       3875
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/quiz-1-right.m4a": {
     "fingerprint": "7b7952d1",
@@ -6507,7 +7099,8 @@
       150,
       856,
       5646
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/done.m4a": {
     "fingerprint": "faf5a466",
@@ -6517,7 +7110,8 @@
       150,
       2291,
       3077
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/quiz-1-wrong.m4a": {
     "fingerprint": "4e6acb3b",
@@ -6527,7 +7121,8 @@
       150,
       1074,
       6365
-    ]
+    ],
+    "checked": true
   },
   "pushing-and-birth/quiz-2-right.m4a": {
     "fingerprint": "11f8bc86",
@@ -6536,7 +7131,8 @@
     "starts": [
       150,
       1139
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/welcome.m4a": {
     "fingerprint": "0d3fdbe1",
@@ -6548,7 +7144,8 @@
       4590,
       15687,
       18140
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/third-stage.m4a": {
     "fingerprint": "7089ed20",
@@ -6561,7 +7158,8 @@
       14733,
       19581,
       25219
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/checkin-cord-right.m4a": {
     "fingerprint": "796e865f",
@@ -6570,7 +7168,8 @@
     "starts": [
       150,
       1020
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/preventing-bleeding.m4a": {
     "fingerprint": "4afe59c0",
@@ -6582,7 +7181,8 @@
       12842,
       17562,
       24439
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/cord-clamping.m4a": {
     "fingerprint": "ff6f6390",
@@ -6596,7 +7196,8 @@
       18868,
       25288,
       27555
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/checkin-cord-wrong.m4a": {
     "fingerprint": "8ad85efd",
@@ -6605,7 +7206,8 @@
     "starts": [
       150,
       1350
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/your-recovery.m4a": {
     "fingerprint": "add609b0",
@@ -6619,7 +7221,8 @@
       20501,
       24144,
       27597
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/golden-hour-video.m4a": {
     "fingerprint": "0cd1f778",
@@ -6627,7 +7230,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/heavy-bleeding.m4a": {
     "fingerprint": "9298ad95",
@@ -6641,7 +7245,8 @@
       26621,
       31057,
       31917
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/checkin-bleeding-right.m4a": {
     "fingerprint": "cef79b27",
@@ -6651,7 +7256,8 @@
       150,
       1664,
       6793
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/checkin-bleeding-wrong.m4a": {
     "fingerprint": "04abd2ed",
@@ -6661,7 +7267,8 @@
       150,
       1287,
       7348
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/first-feeding.m4a": {
     "fingerprint": "4212c04b",
@@ -6674,7 +7281,8 @@
       15710,
       18475,
       20730
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/skin-to-skin.m4a": {
     "fingerprint": "e537ca7a",
@@ -6688,7 +7296,8 @@
       17348,
       19462,
       23627
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/first-hour-wishes.m4a": {
     "fingerprint": "fe2a776b",
@@ -6701,7 +7310,8 @@
       9941,
       11762,
       16033
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/baby-checks.m4a": {
     "fingerprint": "7ede3617",
@@ -6714,7 +7324,8 @@
       9530,
       15414,
       19007
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/quiz-1-right.m4a": {
     "fingerprint": "fdb5d834",
@@ -6723,7 +7334,8 @@
     "starts": [
       150,
       697
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/quiz-1-wrong.m4a": {
     "fingerprint": "f8048422",
@@ -6732,7 +7344,8 @@
     "starts": [
       150,
       1095
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/summary.m4a": {
     "fingerprint": "a4ec8116",
@@ -6746,7 +7359,8 @@
       17667,
       21400,
       23489
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/quiz-2-right.m4a": {
     "fingerprint": "0904ac33",
@@ -6755,7 +7369,8 @@
     "starts": [
       150,
       1052
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/quiz-2-wrong.m4a": {
     "fingerprint": "d8c6894d",
@@ -6764,7 +7379,8 @@
     "starts": [
       150,
       1464
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/quiz-3-right.m4a": {
     "fingerprint": "91c006d2",
@@ -6773,7 +7389,8 @@
     "starts": [
       150,
       1191
-    ]
+    ],
+    "checked": true
   },
   "placenta-and-first-hour/quiz-3-wrong.m4a": {
     "fingerprint": "b9be9fdc",
@@ -6782,7 +7399,8 @@
     "starts": [
       150,
       1316
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/welcome.m4a": {
     "fingerprint": "e1a62b59",
@@ -6792,7 +7410,8 @@
       150,
       4368,
       18445
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/recovery-takes-time.m4a": {
     "fingerprint": "33d8b1fd",
@@ -6804,7 +7423,8 @@
       11587,
       19017,
       25190
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/cramping-and-pain.m4a": {
     "fingerprint": "7a28562c",
@@ -6816,7 +7436,8 @@
       12726,
       19813,
       25588
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/vaginal-birth-healing.m4a": {
     "fingerprint": "59f64268",
@@ -6829,7 +7450,8 @@
       19581,
       24864,
       27985
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/cesarean-healing.m4a": {
     "fingerprint": "7dbff739",
@@ -6843,7 +7465,8 @@
       20435,
       26695,
       32415
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/bleeding.m4a": {
     "fingerprint": "61fabf33",
@@ -6856,7 +7479,8 @@
       20830,
       25413,
       31562
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/checkin-bleeding-right.m4a": {
     "fingerprint": "5ce40467",
@@ -6866,7 +7490,8 @@
       150,
       5531,
       7451
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/checkin-bleeding-wrong.m4a": {
     "fingerprint": "3cf5ac09",
@@ -6876,7 +7501,8 @@
       150,
       1340,
       8654
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/checkin-leaking-right.m4a": {
     "fingerprint": "5a57f8c2",
@@ -6886,7 +7512,8 @@
       150,
       1006,
       6120
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/other-changes.m4a": {
     "fingerprint": "771e2014",
@@ -6899,7 +7526,8 @@
       16609,
       23578,
       27018
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/bathroom.m4a": {
     "fingerprint": "2b3ebcb2",
@@ -6913,7 +7541,8 @@
       21603,
       25650,
       31649
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/checkin-leaking-wrong.m4a": {
     "fingerprint": "74b30634",
@@ -6923,7 +7552,8 @@
       150,
       1181,
       6578
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/moving-again.m4a": {
     "fingerprint": "d56ee522",
@@ -6936,7 +7566,8 @@
       18620,
       32636,
       35363
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/recovery-plan.m4a": {
     "fingerprint": "d33ad1e4",
@@ -6948,7 +7579,8 @@
       8736,
       13667,
       17614
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/quiz-1-right.m4a": {
     "fingerprint": "40a8dea8",
@@ -6958,7 +7590,8 @@
       150,
       1033,
       7880
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/quiz-1-wrong.m4a": {
     "fingerprint": "5c91bca2",
@@ -6968,7 +7601,8 @@
       150,
       1437,
       8296
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/summary.m4a": {
     "fingerprint": "1d2b1796",
@@ -6980,7 +7614,8 @@
       10342,
       14529,
       23603
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/quiz-2-wrong.m4a": {
     "fingerprint": "98557460",
@@ -6990,7 +7625,8 @@
       150,
       1228,
       6699
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/done.m4a": {
     "fingerprint": "4d3eed32",
@@ -7000,7 +7636,8 @@
       150,
       994,
       2520
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/welcome.m4a": {
     "fingerprint": "dbb6f4b8",
@@ -7012,7 +7649,8 @@
       6258,
       7435,
       11759
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/the-year-after.m4a": {
     "fingerprint": "01387fc4",
@@ -7024,7 +7662,8 @@
       8491,
       13883,
       17604
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/quiz-2-right.m4a": {
     "fingerprint": "b7eca89e",
@@ -7034,7 +7673,8 @@
       150,
       1248,
       6451
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/quiz-3-right.m4a": {
     "fingerprint": "3d184d2a",
@@ -7044,7 +7684,8 @@
       150,
       1153,
       4998
-    ]
+    ],
+    "checked": true
   },
   "physical-recovery-after-birth/quiz-3-wrong.m4a": {
     "fingerprint": "438a1970",
@@ -7054,7 +7695,8 @@
       150,
       4381,
       4759
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/say-you-had-a-baby.m4a": {
     "fingerprint": "0fe8b2a6",
@@ -7067,7 +7709,8 @@
       13244,
       19560,
       25891
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/urgent-warning-signs.m4a": {
     "fingerprint": "88e5c9c3",
@@ -7090,7 +7733,8 @@
       35794,
       37942,
       39427
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/heavy-bleeding.m4a": {
     "fingerprint": "4c3ddc3c",
@@ -7101,7 +7745,8 @@
       7250,
       11778,
       20414
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/blood-pressure.m4a": {
     "fingerprint": "0c71cd23",
@@ -7113,7 +7758,8 @@
       8702,
       16168,
       25304
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/checkin-blood-pressure-right.m4a": {
     "fingerprint": "bedd9344",
@@ -7123,7 +7769,8 @@
       150,
       3719,
       10120
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/checkin-blood-pressure-wrong.m4a": {
     "fingerprint": "4c04b066",
@@ -7133,7 +7780,8 @@
       150,
       1247,
       9713
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/early-check-in.m4a": {
     "fingerprint": "7d46668a",
@@ -7144,7 +7792,8 @@
       3561,
       13116,
       20442
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/blood-clots.m4a": {
     "fingerprint": "1b0ea785",
@@ -7157,7 +7806,8 @@
       15016,
       18601,
       27318
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/speaking-up-video.m4a": {
     "fingerprint": "762cbfaf",
@@ -7165,7 +7815,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/blues-or-depression.m4a": {
     "fingerprint": "1517f7a2",
@@ -7180,7 +7831,8 @@
       22340,
       24763,
       28604
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/get-help-now.m4a": {
     "fingerprint": "3583f866",
@@ -7192,7 +7844,8 @@
       11071,
       23985,
       29770
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/checkin-mood-right.m4a": {
     "fingerprint": "55265363",
@@ -7203,7 +7856,8 @@
       1008,
       4233,
       10294
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/support-people.m4a": {
     "fingerprint": "20467300",
@@ -7216,7 +7870,8 @@
       12148,
       16173,
       22790
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/checkin-mood-wrong.m4a": {
     "fingerprint": "7920395d",
@@ -7227,7 +7882,8 @@
       1286,
       4712,
       11082
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/after-birth-plan.m4a": {
     "fingerprint": "e7ce0ee2",
@@ -7240,7 +7896,8 @@
       9875,
       11821,
       16885
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/quiz-1-right.m4a": {
     "fingerprint": "074be70b",
@@ -7249,7 +7906,8 @@
     "starts": [
       150,
       1548
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/summary.m4a": {
     "fingerprint": "34f2c3f2",
@@ -7262,7 +7920,8 @@
       11479,
       16927,
       24999
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/quiz-2-wrong.m4a": {
     "fingerprint": "4c3d9058",
@@ -7272,7 +7931,8 @@
       150,
       1831,
       10977
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/quiz-3-wrong.m4a": {
     "fingerprint": "807980b6",
@@ -7281,7 +7941,8 @@
     "starts": [
       150,
       1242
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/done.m4a": {
     "fingerprint": "4a787066",
@@ -7291,7 +7952,8 @@
       150,
       1055,
       2312
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/welcome.m4a": {
     "fingerprint": "163bf769",
@@ -7303,7 +7965,8 @@
       9357,
       18808,
       20476
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/quiz-1-wrong.m4a": {
     "fingerprint": "a30de971",
@@ -7312,7 +7975,8 @@
     "starts": [
       150,
       1231
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/quiz-2-right.m4a": {
     "fingerprint": "02ba282e",
@@ -7322,7 +7986,8 @@
       150,
       1284,
       9543
-    ]
+    ],
+    "checked": true
   },
   "postpartum-warning-signs/quiz-3-right.m4a": {
     "fingerprint": "74327134",
@@ -7331,7 +7996,8 @@
     "starts": [
       150,
       953
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/first-checkup.m4a": {
     "fingerprint": "8fdb769b",
@@ -7342,7 +8008,8 @@
       7959,
       16183,
       22813
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/trust-yourself.m4a": {
     "fingerprint": "2bbab899",
@@ -7353,7 +8020,8 @@
       8905,
       16250,
       18444
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/call-911.m4a": {
     "fingerprint": "0f2db8b5",
@@ -7367,7 +8035,8 @@
       19829,
       21902,
       24003
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/checkin-fever-right.m4a": {
     "fingerprint": "ed2a694a",
@@ -7378,7 +8047,8 @@
       801,
       1054,
       11662
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/fever.m4a": {
     "fingerprint": "c587e4f2",
@@ -7391,7 +8061,8 @@
       15188,
       18121,
       23253
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/jaundice.m4a": {
     "fingerprint": "875f1056",
@@ -7402,7 +8073,8 @@
       2868,
       8568,
       20673
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/breathing-and-color.m4a": {
     "fingerprint": "7aeb183c",
@@ -7413,7 +8085,8 @@
       6702,
       14979,
       27989
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/checkin-fever-wrong.m4a": {
     "fingerprint": "7584ded4",
@@ -7424,7 +8097,8 @@
       1273,
       10153,
       12180
-    ]
+    ],
+    "checked": true
   },
   "baby-months-7-to-9/baby-movement.m4a": {
     "fingerprint": "4f49a6a1",
@@ -7436,7 +8110,8 @@
       11865,
       19923,
       24624
-    ]
+    ],
+    "checked": true
   },
   "baby-months-1-to-3/implantation.m4a": {
     "fingerprint": "8ed8db5c",
@@ -7449,7 +8124,8 @@
       10800,
       12811,
       17771
-    ]
+    ],
+    "checked": true
   },
   "baby-months-1-to-3/conception.m4a": {
     "fingerprint": "1ef80fbb",
@@ -7460,7 +8136,8 @@
       5872,
       10297,
       13543
-    ]
+    ],
+    "checked": true
   },
   "baby-months-1-to-3/counting-weeks.m4a": {
     "fingerprint": "e0098ac9",
@@ -7474,7 +8151,8 @@
       16798,
       19706,
       23383
-    ]
+    ],
+    "checked": true
   },
   "baby-months-1-to-3/welcome.m4a": {
     "fingerprint": "aaaf25bd",
@@ -7487,7 +8165,8 @@
       13950,
       21241,
       26596
-    ]
+    ],
+    "checked": true
   },
   "baby-months-1-to-3/embryo.m4a": {
     "fingerprint": "efbc92b2",
@@ -7502,7 +8181,8 @@
       13490,
       16996,
       20147
-    ]
+    ],
+    "checked": true
   },
   "baby-months-1-to-3/fetus.m4a": {
     "fingerprint": "b9ed02cb",
@@ -7514,7 +8194,8 @@
       5929,
       10136,
       14633
-    ]
+    ],
+    "checked": true
   },
   "baby-months-1-to-3/early-weeks-matter.m4a": {
     "fingerprint": "6966ad2b",
@@ -7528,7 +8209,8 @@
       22899,
       26879,
       28123
-    ]
+    ],
+    "checked": true
   },
   "baby-months-1-to-3/checkin-embryo-right.m4a": {
     "fingerprint": "c3d55e09",
@@ -7538,7 +8220,8 @@
       150,
       1052,
       4254
-    ]
+    ],
+    "checked": true
   },
   "baby-months-1-to-3/your-body.m4a": {
     "fingerprint": "4d958e8c",
@@ -7552,7 +8235,8 @@
       17291,
       20328,
       23895
-    ]
+    ],
+    "checked": true
   },
   "baby-months-1-to-3/checkin-embryo-wrong.m4a": {
     "fingerprint": "f26c1107",
@@ -7562,7 +8246,8 @@
       150,
       1285,
       4545
-    ]
+    ],
+    "checked": true
   },
   "baby-months-1-to-3/quiz-1-right.m4a": {
     "fingerprint": "6276c537",
@@ -7572,7 +8257,8 @@
       150,
       898,
       4580
-    ]
+    ],
+    "checked": true
   },
   "baby-months-1-to-3/summary.m4a": {
     "fingerprint": "5eba6bce",
@@ -7586,7 +8272,8 @@
       14152,
       19213,
       24589
-    ]
+    ],
+    "checked": true
   },
   "baby-months-1-to-3/quiz-2-right.m4a": {
     "fingerprint": "4a9acaf0",
@@ -7596,7 +8283,8 @@
       150,
       1149,
       6284
-    ]
+    ],
+    "checked": true
   },
   "baby-months-1-to-3/quiz-2-wrong.m4a": {
     "fingerprint": "814901ee",
@@ -7606,7 +8294,8 @@
       150,
       1240,
       7149
-    ]
+    ],
+    "checked": true
   },
   "baby-months-1-to-3/done.m4a": {
     "fingerprint": "b98b8c3f",
@@ -7616,7 +8305,8 @@
       150,
       2837,
       3691
-    ]
+    ],
+    "checked": true
   },
   "baby-months-4-to-6/welcome.m4a": {
     "fingerprint": "96f36c16",
@@ -7628,7 +8318,8 @@
       4904,
       8142,
       13213
-    ]
+    ],
+    "checked": true
   },
   "baby-months-1-to-3/quiz-1.m4a": {
     "fingerprint": "edd3af3b",
@@ -7636,7 +8327,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "baby-months-1-to-3/quiz-1-wrong.m4a": {
     "fingerprint": "6f1d1921",
@@ -7646,7 +8338,8 @@
       150,
       1519,
       4640
-    ]
+    ],
+    "checked": true
   },
   "baby-months-4-to-6/growing-fast.m4a": {
     "fingerprint": "2676176c",
@@ -7659,7 +8352,9 @@
       12593,
       17850,
       20042
-    ]
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches, transcript differs only in spelling or number format"
   },
   "baby-months-1-to-3/quiz-2.m4a": {
     "fingerprint": "e3061a06",
@@ -7667,7 +8362,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "baby-months-4-to-6/first-movements.m4a": {
     "fingerprint": "4382aaaa",
@@ -7680,7 +8376,8 @@
       11109,
       15387,
       18553
-    ]
+    ],
+    "checked": true
   },
   "baby-months-4-to-6/anatomy-ultrasound.m4a": {
     "fingerprint": "0971384e",
@@ -7692,7 +8389,8 @@
       15817,
       19637,
       21440
-    ]
+    ],
+    "checked": true
   },
   "baby-months-4-to-6/hearing.m4a": {
     "fingerprint": "93153a20",
@@ -7703,7 +8401,8 @@
       3929,
       9372,
       13563
-    ]
+    ],
+    "checked": true
   },
   "baby-months-4-to-6/checkin-movement-right.m4a": {
     "fingerprint": "fa4a4611",
@@ -7713,7 +8412,8 @@
       150,
       1038,
       7508
-    ]
+    ],
+    "checked": true
   },
   "baby-months-4-to-6/your-body.m4a": {
     "fingerprint": "08e368cb",
@@ -7727,7 +8427,8 @@
       21682,
       24818,
       30052
-    ]
+    ],
+    "checked": true
   },
   "baby-months-4-to-6/checkin-movement-wrong.m4a": {
     "fingerprint": "850a8833",
@@ -7737,7 +8438,8 @@
       150,
       1514,
       8142
-    ]
+    ],
+    "checked": true
   },
   "baby-months-4-to-6/quiz-1-right.m4a": {
     "fingerprint": "579271c7",
@@ -7747,7 +8449,8 @@
       150,
       1057,
       11292
-    ]
+    ],
+    "checked": true
   },
   "baby-months-4-to-6/quiz-2-right.m4a": {
     "fingerprint": "e305c915",
@@ -7757,7 +8460,8 @@
       150,
       1102,
       5119
-    ]
+    ],
+    "checked": true
   },
   "baby-months-4-to-6/quiz-2-wrong.m4a": {
     "fingerprint": "d6f5501b",
@@ -7767,7 +8471,8 @@
       150,
       1329,
       5241
-    ]
+    ],
+    "checked": true
   },
   "baby-months-4-to-6/done.m4a": {
     "fingerprint": "40649366",
@@ -7777,7 +8482,8 @@
       150,
       2402,
       3181
-    ]
+    ],
+    "checked": true
   },
   "baby-months-4-to-6/quiz-1-wrong.m4a": {
     "fingerprint": "fd1ef409",
@@ -7787,7 +8493,8 @@
       150,
       1533,
       11318
-    ]
+    ],
+    "checked": true
   },
   "baby-months-7-to-9/welcome.m4a": {
     "fingerprint": "c71ac386",
@@ -7798,7 +8505,8 @@
       3980,
       8060,
       12574
-    ]
+    ],
+    "checked": true
   },
   "baby-months-7-to-9/gaining-weight.m4a": {
     "fingerprint": "8feb6a38",
@@ -7811,7 +8519,8 @@
       12418,
       17265,
       22524
-    ]
+    ],
+    "checked": true
   },
   "baby-months-7-to-9/term.m4a": {
     "fingerprint": "1cedc96a",
@@ -7824,7 +8533,8 @@
       13512,
       18458,
       27790
-    ]
+    ],
+    "checked": true
   },
   "baby-months-7-to-9/your-body.m4a": {
     "fingerprint": "3cc59c4a",
@@ -7839,7 +8549,8 @@
       15907,
       20232,
       24443
-    ]
+    ],
+    "checked": true
   },
   "baby-months-7-to-9/position.m4a": {
     "fingerprint": "2b47593f",
@@ -7850,7 +8561,8 @@
       3724,
       8680,
       11745
-    ]
+    ],
+    "checked": true
   },
   "baby-months-7-to-9/checkin-movement-right.m4a": {
     "fingerprint": "a3dd33c2",
@@ -7861,7 +8573,8 @@
       1084,
       3481,
       7892
-    ]
+    ],
+    "checked": true
   },
   "baby-months-7-to-9/baby-drops.m4a": {
     "fingerprint": "9eaafaf3",
@@ -7874,7 +8587,8 @@
       12436,
       18425,
       22412
-    ]
+    ],
+    "checked": true
   },
   "baby-months-7-to-9/quiz-1-right.m4a": {
     "fingerprint": "701d51e4",
@@ -7884,7 +8598,8 @@
       150,
       964,
       5234
-    ]
+    ],
+    "checked": true
   },
   "baby-months-7-to-9/summary.m4a": {
     "fingerprint": "12eb5901",
@@ -7898,7 +8613,8 @@
       17190,
       22459,
       24440
-    ]
+    ],
+    "checked": true
   },
   "baby-months-7-to-9/quiz-1-wrong.m4a": {
     "fingerprint": "d8c02cca",
@@ -7908,7 +8624,8 @@
       150,
       517,
       5611
-    ]
+    ],
+    "checked": true
   },
   "baby-months-7-to-9/quiz-2-right.m4a": {
     "fingerprint": "cbe5f856",
@@ -7919,7 +8636,9 @@
       1085,
       1833,
       5370
-    ]
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches, transcript differs only in spelling or number format"
   },
   "baby-months-7-to-9/quiz-2-wrong.m4a": {
     "fingerprint": "b0941358",
@@ -7930,7 +8649,8 @@
       2427,
       6674,
       8850
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/vacuum-video.m4a": {
     "fingerprint": "eed934f4",
@@ -7938,7 +8658,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/vacuum.m4a": {
     "fingerprint": "545ed0ab",
@@ -7950,7 +8671,8 @@
       4898,
       13139,
       18028
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/forceps-video.m4a": {
     "fingerprint": "f51cb537",
@@ -7958,7 +8680,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "assisted-vaginal-birth/forceps.m4a": {
     "fingerprint": "ac42f72b",
@@ -7970,7 +8693,8 @@
       8506,
       14905,
       19409
-    ]
+    ],
+    "checked": true
   },
   "stages-of-labor/pushing-video.m4a": {
     "fingerprint": "f137fb94",
@@ -7978,7 +8702,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/feeding-and-diapers.m4a": {
     "fingerprint": "ba2e2c64",
@@ -7989,29 +8714,8 @@
       3996,
       8008,
       17282
-    ]
-  },
-  "when-to-call-about-your-baby/checkin-diapers-right.m4a": {
-    "fingerprint": "7f4c2cc3",
-    "voice": "Sulafat",
-    "model": "gemini-3.8-flash-tts",
-    "starts": [
-      150,
-      1044,
-      5470,
-      10695
-    ]
-  },
-  "when-to-call-about-your-baby/checkin-diapers-wrong.m4a": {
-    "fingerprint": "7ba11b15",
-    "voice": "Sulafat",
-    "model": "gemini-3.8-flash-tts",
-    "starts": [
-      150,
-      1549,
-      6580,
-      12068
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/calming-video.m4a": {
     "fingerprint": "c46f1799",
@@ -8019,7 +8723,8 @@
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/crying.m4a": {
     "fingerprint": "ce71ce4d",
@@ -8031,7 +8736,8 @@
       7181,
       19150,
       22540
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/never-shake.m4a": {
     "fingerprint": "84ee268f",
@@ -8045,7 +8751,8 @@
       20192,
       22635,
       26394
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/baby-call-plan.m4a": {
     "fingerprint": "6d1699e2",
@@ -8058,7 +8765,8 @@
       9449,
       13009,
       16289
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/quiz-1-right.m4a": {
     "fingerprint": "99fcb43c",
@@ -8068,7 +8776,8 @@
       150,
       994,
       5050
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/cord-stump.m4a": {
     "fingerprint": "c2775118",
@@ -8080,7 +8789,8 @@
       9608,
       12650,
       21012
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/quiz-1-wrong.m4a": {
     "fingerprint": "bd827a06",
@@ -8090,7 +8800,8 @@
       150,
       1365,
       5299
-    ]
+    ],
+    "checked": true
   },
   "baby-months-7-to-9/checkin-movement-wrong.m4a": {
     "fingerprint": "b27c2ce4",
@@ -8101,7 +8812,8 @@
       1380,
       4067,
       8307
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/summary.m4a": {
     "fingerprint": "452a0d58",
@@ -8118,7 +8830,8 @@
       27591,
       31330,
       34519
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/quiz-2-right.m4a": {
     "fingerprint": "d8a35abb",
@@ -8127,7 +8840,8 @@
     "starts": [
       150,
       1125
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/quiz-3-wrong.m4a": {
     "fingerprint": "9466b258",
@@ -8138,7 +8852,8 @@
       1458,
       5418,
       9488
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/quiz-2-wrong.m4a": {
     "fingerprint": "27daf2b5",
@@ -8147,7 +8862,8 @@
     "starts": [
       150,
       1391
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/quiz-3-right.m4a": {
     "fingerprint": "e33f29f6",
@@ -8158,7 +8874,8 @@
       1135,
       4884,
       8600
-    ]
+    ],
+    "checked": true
   },
   "when-to-call-about-your-baby/done.m4a": {
     "fingerprint": "bda62a0c",
@@ -8168,7 +8885,8 @@
       150,
       2834,
       3623
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/baby-blues.m4a": {
     "fingerprint": "7cedf1cf",
@@ -8182,7 +8900,8 @@
       18851,
       23022,
       25303
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/welcome.m4a": {
     "fingerprint": "2b5634e4",
@@ -8192,7 +8911,8 @@
       150,
       10129,
       23244
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/anxiety.m4a": {
     "fingerprint": "6cec515e",
@@ -8204,7 +8924,8 @@
       14734,
       22363,
       29260
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/depression-signs.m4a": {
     "fingerprint": "80f24168",
@@ -8218,7 +8939,8 @@
       23129,
       25108,
       33367
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/checkin-blues-right.m4a": {
     "fingerprint": "8cc0f931",
@@ -8228,7 +8950,8 @@
       150,
       1160,
       8042
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/checkin-blues-wrong.m4a": {
     "fingerprint": "6212f70f",
@@ -8238,7 +8961,8 @@
       150,
       7201,
       10058
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/psychosis.m4a": {
     "fingerprint": "0faa5da6",
@@ -8252,7 +8976,8 @@
       23430,
       29705,
       31907
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/who-is-at-risk.m4a": {
     "fingerprint": "da7fe320",
@@ -8264,7 +8989,8 @@
       15082,
       24726,
       29485
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/getting-treatment.m4a": {
     "fingerprint": "b638e364",
@@ -8277,7 +9003,8 @@
       12522,
       19955,
       28716
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/partners.m4a": {
     "fingerprint": "fd69b4f0",
@@ -8290,7 +9017,8 @@
       15659,
       20943,
       27702
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/checkin-thoughts-right.m4a": {
     "fingerprint": "bb70d6e4",
@@ -8300,7 +9028,8 @@
       150,
       969,
       8861
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/checkin-thoughts-wrong.m4a": {
     "fingerprint": "67ea5066",
@@ -8310,7 +9039,8 @@
       150,
       1679,
       9144
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/emotional-health-plan.m4a": {
     "fingerprint": "a37cb1f0",
@@ -8322,7 +9052,8 @@
       9720,
       12149,
       14838
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/quiz-1-right.m4a": {
     "fingerprint": "5eb782d8",
@@ -8332,7 +9063,8 @@
       150,
       1087,
       4899
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/quiz-1-wrong.m4a": {
     "fingerprint": "282b9fca",
@@ -8342,7 +9074,8 @@
       150,
       984,
       5060
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/summary.m4a": {
     "fingerprint": "133ac9a4",
@@ -8356,7 +9089,9 @@
       22182,
       31785,
       33662
-    ]
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches, transcript differs only in spelling or number format"
   },
   "emotional-health-after-birth/quiz-2-right.m4a": {
     "fingerprint": "e104034d",
@@ -8366,7 +9101,8 @@
       150,
       1048,
       6988
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/quiz-2-wrong.m4a": {
     "fingerprint": "f66de567",
@@ -8376,7 +9112,8 @@
       150,
       1583,
       7993
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/quiz-3-right.m4a": {
     "fingerprint": "72097b10",
@@ -8386,7 +9123,8 @@
       150,
       883,
       6426
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/quiz-3-wrong.m4a": {
     "fingerprint": "ca1c562a",
@@ -8396,7 +9134,8 @@
       150,
       1292,
       6563
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/first-weeks.m4a": {
     "fingerprint": "dd528ed9",
@@ -8410,7 +9149,8 @@
       17350,
       20709,
       22155
-    ]
+    ],
+    "checked": true
   },
   "emotional-health-after-birth/done.m4a": {
     "fingerprint": "e9d207f1",
@@ -8420,7 +9160,8 @@
       150,
       2430,
       3105
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/visitors.m4a": {
     "fingerprint": "aebe1bb9",
@@ -8435,7 +9176,8 @@
       32323,
       39452,
       44839
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/checkin-visitor-right.m4a": {
     "fingerprint": "09c113ba",
@@ -8445,7 +9187,8 @@
       150,
       1167,
       7364
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/checkin-visitor-wrong.m4a": {
     "fingerprint": "125949f0",
@@ -8455,7 +9198,8 @@
       150,
       1275,
       7257
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/welcome.m4a": {
     "fingerprint": "c230d644",
@@ -8465,7 +9209,8 @@
       150,
       6784,
       14607
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/sleep.m4a": {
     "fingerprint": "e00b5165",
@@ -8478,7 +9223,8 @@
       17086,
       23381,
       29468
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/support-person.m4a": {
     "fingerprint": "b998378b",
@@ -8493,7 +9239,8 @@
       17010,
       19302,
       26112
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/practical-help.m4a": {
     "fingerprint": "bf8964c1",
@@ -8505,7 +9252,8 @@
       17770,
       20651,
       30627
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/food-and-drink.m4a": {
     "fingerprint": "3e103827",
@@ -8518,7 +9266,8 @@
       16932,
       26043,
       30173
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/care-for-you.m4a": {
     "fingerprint": "77c5e18e",
@@ -8530,7 +9279,8 @@
       10736,
       20141,
       22396
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/home-plan.m4a": {
     "fingerprint": "da99d32a",
@@ -8542,7 +9292,8 @@
       5206,
       7232,
       12495
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/quiz-1-wrong.m4a": {
     "fingerprint": "2d63c484",
@@ -8552,7 +9303,8 @@
       150,
       1317,
       5998
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/summary.m4a": {
     "fingerprint": "a7b3a70e",
@@ -8565,7 +9317,8 @@
       11658,
       17130,
       24517
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/quiz-2-right.m4a": {
     "fingerprint": "2b9a1839",
@@ -8574,7 +9327,8 @@
     "starts": [
       150,
       905
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/quiz-2-wrong.m4a": {
     "fingerprint": "09bf68eb",
@@ -8583,7 +9337,8 @@
     "starts": [
       150,
       1381
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/quiz-1-right.m4a": {
     "fingerprint": "6fdb8b3a",
@@ -8593,7 +9348,8 @@
       150,
       979,
       5635
-    ]
+    ],
+    "checked": true
   },
   "baby-months-4-to-6/summary.m4a": {
     "fingerprint": "9644d9c5",
@@ -8607,7 +9363,8 @@
       18394,
       21877,
       23878
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/quiz-3-right.m4a": {
     "fingerprint": "9c62744d",
@@ -8617,7 +9374,8 @@
       150,
       920,
       5905
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/done.m4a": {
     "fingerprint": "b75d8839",
@@ -8627,7 +9385,8 @@
       150,
       1172,
       2861
-    ]
+    ],
+    "checked": true
   },
   "rest-food-and-help-at-home/quiz-3-wrong.m4a": {
     "fingerprint": "653b2d7f",
@@ -8637,7 +9396,8 @@
       150,
       1399,
       6927
-    ]
+    ],
+    "checked": true
   },
   "your-postpartum-checkups/welcome.m4a": {
     "fingerprint": "49d8f013",
@@ -8646,7 +9406,8 @@
     "starts": [
       150,
       2934
-    ]
+    ],
+    "checked": true
   },
   "your-postpartum-checkups/visit-schedule.m4a": {
     "fingerprint": "48a9bfd6",
@@ -8659,7 +9420,8 @@
       16758,
       20218,
       27322
-    ]
+    ],
+    "checked": true
   },
   "your-postpartum-checkups/what-gets-checked.m4a": {
     "fingerprint": "37dbee23",
@@ -8672,7 +9434,8 @@
       18354,
       23991,
       29427
-    ]
+    ],
+    "checked": true
   },
   "your-postpartum-checkups/checkin-period-right.m4a": {
     "fingerprint": "60168cd2",
@@ -8682,7 +9445,8 @@
       150,
       1333,
       6967
-    ]
+    ],
+    "checked": true
   },
   "your-postpartum-checkups/birth-control.m4a": {
     "fingerprint": "84de0391",
@@ -8697,7 +9461,8 @@
       45409,
       47428,
       53489
-    ]
+    ],
+    "checked": true
   },
   "your-postpartum-checkups/pregnancy-conditions.m4a": {
     "fingerprint": "ff8d65c9",
@@ -8709,7 +9474,8 @@
       12402,
       18607,
       27501
-    ]
+    ],
+    "checked": true
   },
   "your-postpartum-checkups/sex-after-birth.m4a": {
     "fingerprint": "050d1cb0",
@@ -8722,7 +9488,8 @@
       20378,
       25058,
       32004
-    ]
+    ],
+    "checked": true
   },
   "your-postpartum-checkups/checkin-period-wrong.m4a": {
     "fingerprint": "95946b20",
@@ -8732,7 +9499,8 @@
       150,
       1582,
       7551
-    ]
+    ],
+    "checked": true
   },
   "your-postpartum-checkups/checkup-plan.m4a": {
     "fingerprint": "b21458fd",
@@ -8744,7 +9512,8 @@
       6221,
       8781,
       10874
-    ]
+    ],
+    "checked": true
   },
   "your-postpartum-checkups/your-visit.m4a": {
     "fingerprint": "9aace1c1",
@@ -8758,7 +9527,8 @@
       12544,
       16345,
       19258
-    ]
+    ],
+    "checked": true
   },
   "your-postpartum-checkups/spacing.m4a": {
     "fingerprint": "a6028f2d",
@@ -8770,7 +9540,8 @@
       13631,
       19533,
       26454
-    ]
+    ],
+    "checked": true
   },
   "your-postpartum-checkups/quiz-1-right.m4a": {
     "fingerprint": "906d9cd8",
@@ -8779,7 +9550,8 @@
     "starts": [
       150,
       802
-    ]
+    ],
+    "checked": true
   },
   "your-postpartum-checkups/summary.m4a": {
     "fingerprint": "01bd5c74",
@@ -8793,7 +9565,8 @@
       21531,
       26774,
       30538
-    ]
+    ],
+    "checked": true
   },
   "your-postpartum-checkups/quiz-1-wrong.m4a": {
     "fingerprint": "b0e09aba",
@@ -8802,7 +9575,8 @@
     "starts": [
       150,
       1494
-    ]
+    ],
+    "checked": true
   },
   "your-postpartum-checkups/quiz-2-right.m4a": {
     "fingerprint": "c946212f",
@@ -8811,7 +9585,8 @@
     "starts": [
       150,
       940
-    ]
+    ],
+    "checked": true
   },
   "your-postpartum-checkups/quiz-3-wrong.m4a": {
     "fingerprint": "ba2ab3a0",
@@ -8821,7 +9596,8 @@
       150,
       1304,
       8366
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/six-modules.m4a": {
     "fingerprint": "3ef92523",
@@ -8837,7 +9613,8 @@
       19157,
       23193,
       23648
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/player-tour-video.m4a": {
     "fingerprint": "aba06e43",
@@ -8852,7 +9629,8 @@
       13288,
       16786,
       20226
-    ]
+    ],
+    "checked": true
   },
   "your-postpartum-checkups/quiz-2-wrong.m4a": {
     "fingerprint": "ad901e9d",
@@ -8861,7 +9639,8 @@
     "starts": [
       150,
       1318
-    ]
+    ],
+    "checked": true
   },
   "your-postpartum-checkups/quiz-3-right.m4a": {
     "fingerprint": "3e3fbc8a",
@@ -8871,7 +9650,8 @@
       150,
       1026,
       7423
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/learning-tools.m4a": {
     "fingerprint": "ca8f12f7",
@@ -8886,7 +9666,8 @@
       13998,
       18154,
       22635
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/welcome.m4a": {
     "fingerprint": "90969d08",
@@ -8899,7 +9680,8 @@
       10655,
       15112,
       18478
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/safety-and-care-team.m4a": {
     "fingerprint": "6217ca83",
@@ -8915,7 +9697,8 @@
       15490,
       19246,
       21360
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/checkin-ask-instructor.m4a": {
     "fingerprint": "2dd9431b",
@@ -8924,7 +9707,8 @@
     "starts": [
       150,
       1943
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/ask-your-instructor.m4a": {
     "fingerprint": "3754aff3",
@@ -8940,7 +9724,8 @@
       17352,
       20082,
       25316
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/why-prepare.m4a": {
     "fingerprint": "beeffc76",
@@ -8953,7 +9738,8 @@
       18244,
       22418,
       27026
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/checkin-ask-instructor-right.m4a": {
     "fingerprint": "d7103cf0",
@@ -8965,7 +9751,8 @@
       5506,
       9148,
       14460
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/checkin-ask-instructor-wrong.m4a": {
     "fingerprint": "dd816536",
@@ -8977,7 +9764,8 @@
       6318,
       10131,
       15824
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/quiz-1-right.m4a": {
     "fingerprint": "a1143e62",
@@ -8987,7 +9775,8 @@
       150,
       1077,
       4031
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/reflection-what-to-learn.m4a": {
     "fingerprint": "0e57d091",
@@ -8999,7 +9788,8 @@
       5988,
       13738,
       15400
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/summary.m4a": {
     "fingerprint": "7d69a24e",
@@ -9017,7 +9807,8 @@
       34112,
       37199,
       39679
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/quiz-1-wrong.m4a": {
     "fingerprint": "0ed760b8",
@@ -9027,7 +9818,8 @@
       150,
       1224,
       3933
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/quiz-2-right.m4a": {
     "fingerprint": "0f932cde",
@@ -9037,7 +9829,8 @@
       150,
       1016,
       5130
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/quiz-2-wrong.m4a": {
     "fingerprint": "67844b8c",
@@ -9047,7 +9840,8 @@
       150,
       494,
       5753
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/quiz-3-wrong.m4a": {
     "fingerprint": "2ee2a02f",
@@ -9057,7 +9851,8 @@
       150,
       3189,
       4734
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/done.m4a": {
     "fingerprint": "15aac310",
@@ -9067,7 +9862,8 @@
       150,
       855,
       2498
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/welcome.m4a": {
     "fingerprint": "18bd0622",
@@ -9079,7 +9875,8 @@
       4596,
       6443,
       18177
-    ]
+    ],
+    "checked": true
   },
   "welcome-how-this-class-works/quiz-3-right.m4a": {
     "fingerprint": "9a197179",
@@ -9089,7 +9886,8 @@
       150,
       1118,
       3230
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/home-stretch.m4a": {
     "fingerprint": "1dc5870f",
@@ -9102,7 +9900,8 @@
       12108,
       16378,
       17871
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/braxton-hicks.m4a": {
     "fingerprint": "5a6ef7b4",
@@ -9116,7 +9915,8 @@
       19650,
       21288,
       29270
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/side-sleeping-video.m4a": {
     "fingerprint": "d9f0c3db",
@@ -9125,7 +9925,8 @@
     "starts": [
       150,
       1776
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/backache-heartburn.m4a": {
     "fingerprint": "a3bbfe6a",
@@ -9141,7 +9942,8 @@
       30678,
       38733,
       41190
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/sleep-bathroom-breathing.m4a": {
     "fingerprint": "35807eb5",
@@ -9160,7 +9962,8 @@
       34209,
       35689,
       39828
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/prenatal-visits.m4a": {
     "fingerprint": "18c0f776",
@@ -9172,7 +9975,8 @@
       11624,
       16045,
       24347
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/baby-movements.m4a": {
     "fingerprint": "5218da49",
@@ -9189,7 +9993,8 @@
       21474,
       28655,
       30940
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/swelling.m4a": {
     "fingerprint": "058dfe79",
@@ -9204,7 +10009,8 @@
       19076,
       23012,
       27329
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/checkin-movement-right.m4a": {
     "fingerprint": "5f556a49",
@@ -9216,7 +10022,8 @@
       7275,
       8914,
       11090
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/checkin-movement-wrong.m4a": {
     "fingerprint": "5d49f2ef",
@@ -9228,7 +10035,8 @@
       7229,
       8857,
       11208
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/safety-baby-movement.m4a": {
     "fingerprint": "b9e20a7a",
@@ -9240,7 +10048,8 @@
       6650,
       9022,
       13055
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/next-visit-vs-call-now.m4a": {
     "fingerprint": "4647ef7b",
@@ -9265,7 +10074,8 @@
       54795,
       58163,
       59553
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/reflection-questions-for-visit.m4a": {
     "fingerprint": "966e5293",
@@ -9277,7 +10087,8 @@
       8607,
       11097,
       18448
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/summary.m4a": {
     "fingerprint": "e19ae5c0",
@@ -9294,7 +10105,8 @@
       24106,
       32304,
       34208
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/quiz-1-wrong.m4a": {
     "fingerprint": "a6521764",
@@ -9305,7 +10117,8 @@
       1298,
       5406,
       8578
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/safety-urgent-signs.m4a": {
     "fingerprint": "10ef41ea",
@@ -9319,7 +10132,8 @@
       41342,
       45731,
       47928
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/quiz-2-wrong.m4a": {
     "fingerprint": "4aacab81",
@@ -9329,7 +10143,8 @@
       150,
       1527,
       5734
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/quiz-1-right.m4a": {
     "fingerprint": "f8d7706a",
@@ -9340,7 +10155,8 @@
       1006,
       4784,
       7849
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/quiz-2-right.m4a": {
     "fingerprint": "38ce962f",
@@ -9350,7 +10166,8 @@
       150,
       828,
       4892
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/done.m4a": {
     "fingerprint": "72a7c640",
@@ -9360,7 +10177,8 @@
       150,
       2638,
       3349
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/quiz-3-right.m4a": {
     "fingerprint": "90a7ce35",
@@ -9371,7 +10189,8 @@
       830,
       4038,
       7956
-    ]
+    ],
+    "checked": true
   },
   "third-trimester-body/quiz-3-wrong.m4a": {
     "fingerprint": "51b39fe3",
@@ -9382,7 +10201,8 @@
       1041,
       5209,
       9379
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/place-and-model-of-care.m4a": {
     "fingerprint": "101c24ef",
@@ -9395,7 +10215,8 @@
       22881,
       27332,
       30839
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/welcome.m4a": {
     "fingerprint": "5931c5b3",
@@ -9408,7 +10229,8 @@
       11908,
       17321,
       21712
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/doctors.m4a": {
     "fingerprint": "2680e383",
@@ -9421,7 +10243,8 @@
       19970,
       27320,
       33163
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/midwives.m4a": {
     "fingerprint": "d75b0e4d",
@@ -9437,7 +10260,8 @@
       26097,
       30904,
       35434
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/in-the-room.m4a": {
     "fingerprint": "a57f5785",
@@ -9453,7 +10277,8 @@
       22902,
       27870,
       36071
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/hospitals-and-levels.m4a": {
     "fingerprint": "21240cac",
@@ -9470,7 +10295,8 @@
       27873,
       33609,
       37958
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/settings-compared.m4a": {
     "fingerprint": "13bbb7f7",
@@ -9487,7 +10313,8 @@
       36463,
       40772,
       45056
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/who-is-a-good-candidate.m4a": {
     "fingerprint": "f4004e8d",
@@ -9505,7 +10332,8 @@
       38009,
       43951,
       53225
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/tour-and-questions-video.m4a": {
     "fingerprint": "ad6b0f35",
@@ -9516,7 +10344,8 @@
       4981,
       12296,
       14267
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/checkin-home-birth-wrong.m4a": {
     "fingerprint": "5e0ba7f8",
@@ -9527,7 +10356,8 @@
       1301,
       10459,
       16106
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/warning-signs-any-setting.m4a": {
     "fingerprint": "6e7a18a4",
@@ -9541,7 +10371,8 @@
       22959,
       29983,
       32309
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/your-questions.m4a": {
     "fingerprint": "291660fb",
@@ -9557,7 +10388,8 @@
       17340,
       19558,
       21526
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/quiz-1-right.m4a": {
     "fingerprint": "5874a144",
@@ -9567,7 +10399,8 @@
       150,
       871,
       9198
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/summary.m4a": {
     "fingerprint": "ac5a51e3",
@@ -9583,7 +10416,8 @@
       28506,
       31023,
       36530
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/quiz-1-wrong.m4a": {
     "fingerprint": "2b968382",
@@ -9593,7 +10427,8 @@
       150,
       335,
       10531
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/quiz-2-right.m4a": {
     "fingerprint": "fae0104b",
@@ -9603,7 +10438,8 @@
       150,
       668,
       6837
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/quiz-2-wrong.m4a": {
     "fingerprint": "2fd3e8d9",
@@ -9613,7 +10449,8 @@
       150,
       1103,
       7557
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/quiz-3-right.m4a": {
     "fingerprint": "ab782d34",
@@ -9624,7 +10461,8 @@
       1008,
       6814,
       10751
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/quiz-3-wrong.m4a": {
     "fingerprint": "7f75359a",
@@ -9635,7 +10473,8 @@
       1472,
       7555,
       8852
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/checkin-home-birth-right.m4a": {
     "fingerprint": "36864e5e",
@@ -9646,7 +10485,8 @@
       1236,
       10013,
       15455
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/transfer-plans.m4a": {
     "fingerprint": "e69607e7",
@@ -9659,7 +10499,8 @@
       17987,
       22453,
       25196
-    ]
+    ],
+    "checked": true
   },
   "building-your-support-team/welcome.m4a": {
     "fingerprint": "b2a26e64",
@@ -9671,7 +10512,8 @@
       6211,
       11985,
       17826
-    ]
+    ],
+    "checked": true
   },
   "care-team-and-birth-setting/done.m4a": {
     "fingerprint": "bcd9d320",
@@ -9681,7 +10523,8 @@
       150,
       1001,
       2479
-    ]
+    ],
+    "checked": true
   },
   "building-your-support-team/choosing-support-people.m4a": {
     "fingerprint": "f1c2b037",
@@ -9695,7 +10538,8 @@
       16254,
       23202,
       29393
-    ]
+    ],
+    "checked": true
   },
   "building-your-support-team/who-does-what.m4a": {
     "fingerprint": "f11be05f",
@@ -9711,7 +10555,8 @@
       23980,
       27127,
       30691
-    ]
+    ],
+    "checked": true
   },
   "building-your-support-team/what-support-people-do.m4a": {
     "fingerprint": "d5f60f9d",
@@ -9726,7 +10571,8 @@
       20300,
       23615,
       26737
-    ]
+    ],
+    "checked": true
   },
   "building-your-support-team/what-a-doula-does.m4a": {
     "fingerprint": "4b2f19d7",
@@ -9741,7 +10587,8 @@
       20539,
       22377,
       30334
-    ]
+    ],
+    "checked": true
   },
   "building-your-support-team/checkin-doula-role-right.m4a": {
     "fingerprint": "67ce2cc2",
@@ -9752,7 +10599,8 @@
       880,
       7497,
       11257
-    ]
+    ],
+    "checked": true
   },
   "building-your-support-team/checkin-doula-role-wrong.m4a": {
     "fingerprint": "b2fc5ef8",
@@ -9763,7 +10611,8 @@
       1083,
       8179,
       11871
-    ]
+    ],
+    "checked": true
   },
   "building-your-support-team/continuous-support-evidence.m4a": {
     "fingerprint": "4353b1d6",
@@ -9776,7 +10625,8 @@
       25151,
       29717,
       37582
-    ]
+    ],
+    "checked": true
   },
   "building-your-support-team/labor-rehearsal-video.m4a": {
     "fingerprint": "b37cb1e8",
@@ -9786,7 +10636,8 @@
       150,
       6864,
       10275
-    ]
+    ],
+    "checked": true
   },
   "building-your-support-team/finding-a-doula.m4a": {
     "fingerprint": "ed822055",
@@ -9800,7 +10651,8 @@
       18722,
       20329,
       26538
-    ]
+    ],
+    "checked": true
   },
   "building-your-support-team/birth-place-policies.m4a": {
     "fingerprint": "b3812737",
@@ -9815,7 +10667,8 @@
       19942,
       24057,
       26186
-    ]
+    ],
+    "checked": true
   },
   "building-your-support-team/summary.m4a": {
     "fingerprint": "62f03dc7",
@@ -9831,7 +10684,8 @@
       21950,
       28475,
       31168
-    ]
+    ],
+    "checked": true
   },
   "building-your-support-team/warning-signs-for-supporters.m4a": {
     "fingerprint": "562e8015",
@@ -9844,6 +10698,7 @@
       22798,
       28613,
       35934
-    ]
+    ],
+    "checked": true
   }
 }
