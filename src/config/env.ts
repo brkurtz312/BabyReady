@@ -44,6 +44,8 @@ export const firebaseEmulatorConfig = {
  * (appl_… for iOS, goog_… for Android), safe to ship in the app.
  */
 export const paywallEnabled = booleanValue(process.env.EXPO_PUBLIC_ENABLE_PAYWALL);
+/** The App Store page, once the app is live; the web points there to unlock the full class. */
+export const appStoreUrl = value(process.env.EXPO_PUBLIC_APP_STORE_URL);
 export const revenueCatKeys = {
   ios: value(process.env.EXPO_PUBLIC_REVENUECAT_IOS_KEY),
   android: value(process.env.EXPO_PUBLIC_REVENUECAT_ANDROID_KEY),

@@ -10,11 +10,11 @@
   ],
   "estimatedMinutes": 6,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Draft 2026-10-24 for the new How Your Baby Grows module, built around the March of Dimes month-by-month videos. Needs clinical review and every source confirmed against its slides. Sizes are rounded averages from ACOG's Changes During Pregnancy infographic. First movements are given as roughly 16 to 22 weeks, earlier in a later pregnancy; the anatomy ultrasound as about 18 to 22 weeks; hearing as \"by the end of this trimester\". Reviewer to confirm these ranges, and that ACOG supports the round ligament pain and fundal height lines on the body slide. Pictures are the reviewer's fetal and maternal development illustrations from the Pregnancy AI Assistant, padded to the class's 16:10 frame; that draft labeled the earliest stages in weeks after conception, while this class counts from the last period, so the pictures are placed by what they show."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-25",
+    "nextReviewBy": "2027-10-25",
+    "notes": "Clinically reviewed 2026-10-25 by Bryan Kurtz MD, FACOG, who confirmed every source against its slides. Draft 2026-10-24 for the new How Your Baby Grows module, built around the March of Dimes month-by-month videos. Needs clinical review and every source confirmed against its slides. Sizes are rounded averages from ACOG's Changes During Pregnancy infographic. First movements are given as roughly 16 to 22 weeks, earlier in a later pregnancy; the anatomy ultrasound as about 18 to 22 weeks; hearing as \"by the end of this trimester\". Reviewer to confirm these ranges, and that ACOG supports the round ligament pain and fundal height lines on the body slide. Pictures are the reviewer's fetal and maternal development illustrations from the Pregnancy AI Assistant, padded to the class's 16:10 frame; that draft labeled the earliest stages in weeks after conception, while this class counts from the last period, so the pictures are placed by what they show."
   },
   "sources": [
     {
@@ -22,28 +22,28 @@
       "organization": "ACOG",
       "title": "How Your Fetus Grows During Pregnancy (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/how-your-fetus-grows-during-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     },
     {
       "id": "acog-changes-during-pregnancy",
       "organization": "ACOG",
       "title": "Changes During Pregnancy (Infographic)",
       "url": "https://www.acog.org/womens-health/infographics/changes-during-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     },
     {
       "id": "acog-ultrasound-exams",
       "organization": "ACOG",
       "title": "Ultrasound Exams (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/ultrasound-exams",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     },
     {
       "id": "lamaze-braxton-hicks",
       "organization": "Lamaze",
       "title": "Braxton-Hicks Contractions (Giving Birth with Confidence)",
       "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/braxton-hicks-contractions",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-25"
     }
   ],
   "slides": [
