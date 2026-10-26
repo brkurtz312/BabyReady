@@ -59,6 +59,7 @@ export const narrationClips: Record<string, NarrationClip> = {
   'fd1ef409': { source: require('../../assets/narration/baby-months-4-to-6/quiz-1-wrong.m4a'), starts: [150, 1533, 11318] }, // baby-months-4-to-6/quiz-1-wrong.m4a
   'e305c915': { source: require('../../assets/narration/baby-months-4-to-6/quiz-2-right.m4a'), starts: [150, 1102, 5119] }, // baby-months-4-to-6/quiz-2-right.m4a
   'd6f5501b': { source: require('../../assets/narration/baby-months-4-to-6/quiz-2-wrong.m4a'), starts: [150, 1329, 5241] }, // baby-months-4-to-6/quiz-2-wrong.m4a
+  '9644d9c5': { source: require('../../assets/narration/baby-months-4-to-6/summary.m4a'), starts: [150, 1374, 7760, 13275, 18394, 21877, 23878] }, // baby-months-4-to-6/summary.m4a
   '96f36c16': { source: require('../../assets/narration/baby-months-4-to-6/welcome.m4a'), starts: [150, 1333, 4904, 8142, 13213] }, // baby-months-4-to-6/welcome.m4a
   '08e368cb': { source: require('../../assets/narration/baby-months-4-to-6/your-body.m4a'), starts: [150, 2994, 8539, 15553, 21682, 24818, 30052] }, // baby-months-4-to-6/your-body.m4a
   '9eaafaf3': { source: require('../../assets/narration/baby-months-7-to-9/baby-drops.m4a'), starts: [150, 4449, 7578, 12436, 18425, 22412] }, // baby-months-7-to-9/baby-drops.m4a
@@ -115,6 +116,19 @@ export const narrationClips: Record<string, NarrationClip> = {
   '8e81fa5f': { source: require('../../assets/narration/breathing-and-relaxation/welcome.m4a'), starts: [150, 7317] }, // breathing-and-relaxation/welcome.m4a
   'ca99500d': { source: require('../../assets/narration/breathing-and-relaxation/why-breathing.m4a'), starts: [150, 3725, 8506, 14950, 20084, 23037, 25628] }, // breathing-and-relaxation/why-breathing.m4a
   '67f0bfad': { source: require('../../assets/narration/breathing-and-relaxation/your-practice.m4a'), starts: [150, 4074, 5708, 10170] }, // breathing-and-relaxation/your-practice.m4a
+  'b3812737': { source: require('../../assets/narration/building-your-support-team/birth-place-policies.m4a'), starts: [150, 4466, 9051, 15295, 17126, 19942, 24057, 26186] }, // building-your-support-team/birth-place-policies.m4a
+  '67ce2cc2': { source: require('../../assets/narration/building-your-support-team/checkin-doula-role-right.m4a'), starts: [150, 880, 7497, 11257] }, // building-your-support-team/checkin-doula-role-right.m4a
+  'b2fc5ef8': { source: require('../../assets/narration/building-your-support-team/checkin-doula-role-wrong.m4a'), starts: [150, 1083, 8179, 11871] }, // building-your-support-team/checkin-doula-role-wrong.m4a
+  'f1c2b037': { source: require('../../assets/narration/building-your-support-team/choosing-support-people.m4a'), starts: [150, 3961, 9503, 12159, 16254, 23202, 29393] }, // building-your-support-team/choosing-support-people.m4a
+  '4353b1d6': { source: require('../../assets/narration/building-your-support-team/continuous-support-evidence.m4a'), starts: [150, 4287, 14426, 25151, 29717, 37582] }, // building-your-support-team/continuous-support-evidence.m4a
+  'ed822055': { source: require('../../assets/narration/building-your-support-team/finding-a-doula.m4a'), starts: [150, 3503, 7384, 11645, 18722, 20329, 26538] }, // building-your-support-team/finding-a-doula.m4a
+  'b37cb1e8': { source: require('../../assets/narration/building-your-support-team/labor-rehearsal-video.m4a'), starts: [150, 6864, 10275] }, // building-your-support-team/labor-rehearsal-video.m4a
+  '62f03dc7': { source: require('../../assets/narration/building-your-support-team/summary.m4a'), starts: [150, 1311, 2702, 8646, 14282, 18676, 21950, 28475, 31168] }, // building-your-support-team/summary.m4a
+  '562e8015': { source: require('../../assets/narration/building-your-support-team/warning-signs-for-supporters.m4a'), starts: [150, 5104, 15833, 22798, 28613, 35934] }, // building-your-support-team/warning-signs-for-supporters.m4a
+  'b2a26e64': { source: require('../../assets/narration/building-your-support-team/welcome.m4a'), starts: [150, 1307, 6211, 11985, 17826] }, // building-your-support-team/welcome.m4a
+  '4b2f19d7': { source: require('../../assets/narration/building-your-support-team/what-a-doula-does.m4a'), starts: [150, 3177, 7106, 13280, 18654, 20539, 22377, 30334] }, // building-your-support-team/what-a-doula-does.m4a
+  'd5f60f9d': { source: require('../../assets/narration/building-your-support-team/what-support-people-do.m4a'), starts: [150, 3188, 4556, 10667, 12756, 20300, 23615, 26737] }, // building-your-support-team/what-support-people-do.m4a
+  'f11be05f': { source: require('../../assets/narration/building-your-support-team/who-does-what.m4a'), starts: [150, 4504, 9629, 11149, 15385, 19193, 23980, 27127, 30691] }, // building-your-support-team/who-does-what.m4a
   'da32dc35': { source: require('../../assets/narration/car-seat-safety/car-seat-plan.m4a'), starts: [150, 2172, 5874, 8770, 13827, 18570, 20847] }, // car-seat-safety/car-seat-plan.m4a
   '5160b923': { source: require('../../assets/narration/car-seat-safety/checkin-hot-car-right.m4a'), starts: [150, 1005, 6235] }, // car-seat-safety/checkin-hot-car-right.m4a
   'be9a4939': { source: require('../../assets/narration/car-seat-safety/checkin-hot-car-wrong.m4a'), starts: [150, 1283, 6119] }, // car-seat-safety/checkin-hot-car-wrong.m4a
@@ -138,6 +152,28 @@ export const narrationClips: Record<string, NarrationClip> = {
   '7e5e397c': { source: require('../../assets/narration/car-seat-safety/used-seats-and-crashes.m4a'), starts: [150, 245, 1964, 11817, 13318, 17292, 24057] }, // car-seat-safety/used-seats-and-crashes.m4a
   '01144b24': { source: require('../../assets/narration/car-seat-safety/welcome.m4a'), starts: [150, 2237, 7979] }, // car-seat-safety/welcome.m4a
   '6fb2173d': { source: require('../../assets/narration/car-seat-safety/winter.m4a'), starts: [150, 5044, 10593, 15810, 21159] }, // car-seat-safety/winter.m4a
+  '36864e5e': { source: require('../../assets/narration/care-team-and-birth-setting/checkin-home-birth-right.m4a'), starts: [150, 1236, 10013, 15455] }, // care-team-and-birth-setting/checkin-home-birth-right.m4a
+  '5e0ba7f8': { source: require('../../assets/narration/care-team-and-birth-setting/checkin-home-birth-wrong.m4a'), starts: [150, 1301, 10459, 16106] }, // care-team-and-birth-setting/checkin-home-birth-wrong.m4a
+  '2680e383': { source: require('../../assets/narration/care-team-and-birth-setting/doctors.m4a'), starts: [150, 1798, 9752, 19970, 27320, 33163] }, // care-team-and-birth-setting/doctors.m4a
+  'bcd9d320': { source: require('../../assets/narration/care-team-and-birth-setting/done.m4a'), starts: [150, 1001, 2479] }, // care-team-and-birth-setting/done.m4a
+  '21240cac': { source: require('../../assets/narration/care-team-and-birth-setting/hospitals-and-levels.m4a'), starts: [150, 3738, 6408, 11884, 14083, 17490, 22107, 27873, 33609, 37958] }, // care-team-and-birth-setting/hospitals-and-levels.m4a
+  'a57f5785': { source: require('../../assets/narration/care-team-and-birth-setting/in-the-room.m4a'), starts: [150, 3764, 7723, 13780, 17202, 21163, 22902, 27870, 36071] }, // care-team-and-birth-setting/in-the-room.m4a
+  'd75b0e4d': { source: require('../../assets/narration/care-team-and-birth-setting/midwives.m4a'), starts: [150, 1793, 4881, 8360, 13937, 19370, 26097, 30904, 35434] }, // care-team-and-birth-setting/midwives.m4a
+  '101c24ef': { source: require('../../assets/narration/care-team-and-birth-setting/place-and-model-of-care.m4a'), starts: [150, 4250, 11769, 22881, 27332, 30839] }, // care-team-and-birth-setting/place-and-model-of-care.m4a
+  '5874a144': { source: require('../../assets/narration/care-team-and-birth-setting/quiz-1-right.m4a'), starts: [150, 871, 9198] }, // care-team-and-birth-setting/quiz-1-right.m4a
+  '2b968382': { source: require('../../assets/narration/care-team-and-birth-setting/quiz-1-wrong.m4a'), starts: [150, 335, 10531] }, // care-team-and-birth-setting/quiz-1-wrong.m4a
+  'fae0104b': { source: require('../../assets/narration/care-team-and-birth-setting/quiz-2-right.m4a'), starts: [150, 668, 6837] }, // care-team-and-birth-setting/quiz-2-right.m4a
+  '2fd3e8d9': { source: require('../../assets/narration/care-team-and-birth-setting/quiz-2-wrong.m4a'), starts: [150, 1103, 7557] }, // care-team-and-birth-setting/quiz-2-wrong.m4a
+  'ab782d34': { source: require('../../assets/narration/care-team-and-birth-setting/quiz-3-right.m4a'), starts: [150, 1008, 6814, 10751] }, // care-team-and-birth-setting/quiz-3-right.m4a
+  '7f75359a': { source: require('../../assets/narration/care-team-and-birth-setting/quiz-3-wrong.m4a'), starts: [150, 1472, 7555, 8852] }, // care-team-and-birth-setting/quiz-3-wrong.m4a
+  '13bbb7f7': { source: require('../../assets/narration/care-team-and-birth-setting/settings-compared.m4a'), starts: [150, 2376, 6833, 12088, 18858, 24033, 30685, 36463, 40772, 45056] }, // care-team-and-birth-setting/settings-compared.m4a
+  'ac5a51e3': { source: require('../../assets/narration/care-team-and-birth-setting/summary.m4a'), starts: [150, 1194, 2459, 11995, 16249, 24117, 28506, 31023, 36530] }, // care-team-and-birth-setting/summary.m4a
+  'ad6b0f35': { source: require('../../assets/narration/care-team-and-birth-setting/tour-and-questions-video.m4a'), starts: [150, 4981, 12296, 14267] }, // care-team-and-birth-setting/tour-and-questions-video.m4a
+  'e69607e7': { source: require('../../assets/narration/care-team-and-birth-setting/transfer-plans.m4a'), starts: [150, 256, 9883, 17987, 22453, 25196] }, // care-team-and-birth-setting/transfer-plans.m4a
+  '6e7a18a4': { source: require('../../assets/narration/care-team-and-birth-setting/warning-signs-any-setting.m4a'), starts: [150, 6779, 12312, 16039, 22959, 29983, 32309] }, // care-team-and-birth-setting/warning-signs-any-setting.m4a
+  '5931c5b3': { source: require('../../assets/narration/care-team-and-birth-setting/welcome.m4a'), starts: [150, 1067, 9942, 11908, 17321, 21712] }, // care-team-and-birth-setting/welcome.m4a
+  'f4004e8d': { source: require('../../assets/narration/care-team-and-birth-setting/who-is-a-good-candidate.m4a'), starts: [150, 3652, 11631, 17231, 21763, 26276, 28439, 37129, 38009, 43951, 53225] }, // care-team-and-birth-setting/who-is-a-good-candidate.m4a
+  '291660fb': { source: require('../../assets/narration/care-team-and-birth-setting/your-questions.m4a'), starts: [150, 2090, 6797, 9100, 12179, 14918, 17340, 19558, 21526] }, // care-team-and-birth-setting/your-questions.m4a
   '1a156ed1': { source: require('../../assets/narration/cesarean-birth/before.m4a'), starts: [150, 6849, 9958, 17015, 21676] }, // cesarean-birth/before.m4a
   '55419c1c': { source: require('../../assets/narration/cesarean-birth/checkin-reasons-right.m4a'), starts: [150, 845] }, // cesarean-birth/checkin-reasons-right.m4a
   '3f0a3dca': { source: require('../../assets/narration/cesarean-birth/checkin-reasons-wrong.m4a'), starts: [150, 1168] }, // cesarean-birth/checkin-reasons-wrong.m4a
@@ -581,11 +617,17 @@ export const narrationClips: Record<string, NarrationClip> = {
   '77c5e18e': { source: require('../../assets/narration/rest-food-and-help-at-home/care-for-you.m4a'), starts: [150, 7149, 10736, 20141, 22396] }, // rest-food-and-help-at-home/care-for-you.m4a
   '09c113ba': { source: require('../../assets/narration/rest-food-and-help-at-home/checkin-visitor-right.m4a'), starts: [150, 1167, 7364] }, // rest-food-and-help-at-home/checkin-visitor-right.m4a
   '125949f0': { source: require('../../assets/narration/rest-food-and-help-at-home/checkin-visitor-wrong.m4a'), starts: [150, 1275, 7257] }, // rest-food-and-help-at-home/checkin-visitor-wrong.m4a
+  'b75d8839': { source: require('../../assets/narration/rest-food-and-help-at-home/done.m4a'), starts: [150, 1172, 2861] }, // rest-food-and-help-at-home/done.m4a
   'dd528ed9': { source: require('../../assets/narration/rest-food-and-help-at-home/first-weeks.m4a'), starts: [150, 3839, 9655, 14103, 17350, 20709, 22155] }, // rest-food-and-help-at-home/first-weeks.m4a
   '3e103827': { source: require('../../assets/narration/rest-food-and-help-at-home/food-and-drink.m4a'), starts: [150, 3537, 12759, 16932, 26043, 30173] }, // rest-food-and-help-at-home/food-and-drink.m4a
   'da99d32a': { source: require('../../assets/narration/rest-food-and-help-at-home/home-plan.m4a'), starts: [150, 1967, 5206, 7232, 12495] }, // rest-food-and-help-at-home/home-plan.m4a
   'bf8964c1': { source: require('../../assets/narration/rest-food-and-help-at-home/practical-help.m4a'), starts: [150, 4280, 17770, 20651, 30627] }, // rest-food-and-help-at-home/practical-help.m4a
+  '6fdb8b3a': { source: require('../../assets/narration/rest-food-and-help-at-home/quiz-1-right.m4a'), starts: [150, 979, 5635] }, // rest-food-and-help-at-home/quiz-1-right.m4a
   '2d63c484': { source: require('../../assets/narration/rest-food-and-help-at-home/quiz-1-wrong.m4a'), starts: [150, 1317, 5998] }, // rest-food-and-help-at-home/quiz-1-wrong.m4a
+  '2b9a1839': { source: require('../../assets/narration/rest-food-and-help-at-home/quiz-2-right.m4a'), starts: [150, 905] }, // rest-food-and-help-at-home/quiz-2-right.m4a
+  '09bf68eb': { source: require('../../assets/narration/rest-food-and-help-at-home/quiz-2-wrong.m4a'), starts: [150, 1381] }, // rest-food-and-help-at-home/quiz-2-wrong.m4a
+  '9c62744d': { source: require('../../assets/narration/rest-food-and-help-at-home/quiz-3-right.m4a'), starts: [150, 920, 5905] }, // rest-food-and-help-at-home/quiz-3-right.m4a
+  '653b2d7f': { source: require('../../assets/narration/rest-food-and-help-at-home/quiz-3-wrong.m4a'), starts: [150, 1399, 6927] }, // rest-food-and-help-at-home/quiz-3-wrong.m4a
   'e00b5165': { source: require('../../assets/narration/rest-food-and-help-at-home/sleep.m4a'), starts: [150, 7146, 13109, 17086, 23381, 29468] }, // rest-food-and-help-at-home/sleep.m4a
   'a7b3a70e': { source: require('../../assets/narration/rest-food-and-help-at-home/summary.m4a'), starts: [150, 1197, 5133, 11658, 17130, 24517] }, // rest-food-and-help-at-home/summary.m4a
   'b998378b': { source: require('../../assets/narration/rest-food-and-help-at-home/support-person.m4a'), starts: [150, 3101, 4665, 8528, 14104, 17010, 19302, 26112] }, // rest-food-and-help-at-home/support-person.m4a
@@ -642,6 +684,29 @@ export const narrationClips: Record<string, NarrationClip> = {
   '323d437a': { source: require('../../assets/narration/stages-of-labor/three-stages.m4a'), starts: [150, 2370, 6716, 9146, 13866, 19133] }, // stages-of-labor/three-stages.m4a
   'b7153bf8': { source: require('../../assets/narration/stages-of-labor/transition.m4a'), starts: [150, 4147, 8370, 12009, 16011, 21745, 24695] }, // stages-of-labor/transition.m4a
   '2c938d00': { source: require('../../assets/narration/stages-of-labor/welcome.m4a'), starts: [150, 1195, 5636, 11499] }, // stages-of-labor/welcome.m4a
+  '5218da49': { source: require('../../assets/narration/third-trimester-body/baby-movements.m4a'), starts: [150, 3919, 5751, 11069, 12009, 15857, 18643, 21474, 28655, 30940] }, // third-trimester-body/baby-movements.m4a
+  'a3bbfe6a': { source: require('../../assets/narration/third-trimester-body/backache-heartburn.m4a'), starts: [150, 297, 10016, 19461, 25096, 30047, 30678, 38733, 41190] }, // third-trimester-body/backache-heartburn.m4a
+  '5a6ef7b4': { source: require('../../assets/narration/third-trimester-body/braxton-hicks.m4a'), starts: [150, 5013, 10299, 15380, 19650, 21288, 29270] }, // third-trimester-body/braxton-hicks.m4a
+  '5f556a49': { source: require('../../assets/narration/third-trimester-body/checkin-movement-right.m4a'), starts: [150, 1047, 7275, 8914, 11090] }, // third-trimester-body/checkin-movement-right.m4a
+  '5d49f2ef': { source: require('../../assets/narration/third-trimester-body/checkin-movement-wrong.m4a'), starts: [150, 1019, 7229, 8857, 11208] }, // third-trimester-body/checkin-movement-wrong.m4a
+  '72a7c640': { source: require('../../assets/narration/third-trimester-body/done.m4a'), starts: [150, 2638, 3349] }, // third-trimester-body/done.m4a
+  '1dc5870f': { source: require('../../assets/narration/third-trimester-body/home-stretch.m4a'), starts: [150, 2993, 7532, 12108, 16378, 17871] }, // third-trimester-body/home-stretch.m4a
+  '4647ef7b': { source: require('../../assets/narration/third-trimester-body/next-visit-vs-call-now.m4a'), starts: [150, 1782, 4000, 5827, 9650, 12094, 18431, 22373, 31271, 33355, 38392, 40844, 45118, 48226, 51401, 54795, 58163, 59553] }, // third-trimester-body/next-visit-vs-call-now.m4a
+  '18c0f776': { source: require('../../assets/narration/third-trimester-body/prenatal-visits.m4a'), starts: [150, 4253, 11624, 16045, 24347] }, // third-trimester-body/prenatal-visits.m4a
+  'f8d7706a': { source: require('../../assets/narration/third-trimester-body/quiz-1-right.m4a'), starts: [150, 1006, 4784, 7849] }, // third-trimester-body/quiz-1-right.m4a
+  'a6521764': { source: require('../../assets/narration/third-trimester-body/quiz-1-wrong.m4a'), starts: [150, 1298, 5406, 8578] }, // third-trimester-body/quiz-1-wrong.m4a
+  '38ce962f': { source: require('../../assets/narration/third-trimester-body/quiz-2-right.m4a'), starts: [150, 828, 4892] }, // third-trimester-body/quiz-2-right.m4a
+  '4aacab81': { source: require('../../assets/narration/third-trimester-body/quiz-2-wrong.m4a'), starts: [150, 1527, 5734] }, // third-trimester-body/quiz-2-wrong.m4a
+  '90a7ce35': { source: require('../../assets/narration/third-trimester-body/quiz-3-right.m4a'), starts: [150, 830, 4038, 7956] }, // third-trimester-body/quiz-3-right.m4a
+  '51b39fe3': { source: require('../../assets/narration/third-trimester-body/quiz-3-wrong.m4a'), starts: [150, 1041, 5209, 9379] }, // third-trimester-body/quiz-3-wrong.m4a
+  '966e5293': { source: require('../../assets/narration/third-trimester-body/reflection-questions-for-visit.m4a'), starts: [150, 1930, 8607, 11097, 18448] }, // third-trimester-body/reflection-questions-for-visit.m4a
+  'b9e20a7a': { source: require('../../assets/narration/third-trimester-body/safety-baby-movement.m4a'), starts: [150, 4924, 6650, 9022, 13055] }, // third-trimester-body/safety-baby-movement.m4a
+  '10ef41ea': { source: require('../../assets/narration/third-trimester-body/safety-urgent-signs.m4a'), starts: [150, 8510, 27855, 30568, 41342, 45731, 47928] }, // third-trimester-body/safety-urgent-signs.m4a
+  'd9f0c3db': { source: require('../../assets/narration/third-trimester-body/side-sleeping-video.m4a'), starts: [150, 1776] }, // third-trimester-body/side-sleeping-video.m4a
+  '35807eb5': { source: require('../../assets/narration/third-trimester-body/sleep-bathroom-breathing.m4a'), starts: [150, 3535, 5590, 9360, 14251, 19332, 22366, 27552, 29663, 34209, 35689, 39828] }, // third-trimester-body/sleep-bathroom-breathing.m4a
+  'e19ae5c0': { source: require('../../assets/narration/third-trimester-body/summary.m4a'), starts: [150, 1153, 2421, 10705, 16317, 18706, 22394, 24106, 32304, 34208] }, // third-trimester-body/summary.m4a
+  '058dfe79': { source: require('../../assets/narration/third-trimester-body/swelling.m4a'), starts: [150, 3235, 7808, 14121, 16241, 19076, 23012, 27329] }, // third-trimester-body/swelling.m4a
+  '18bd0622': { source: require('../../assets/narration/third-trimester-body/welcome.m4a'), starts: [150, 996, 4596, 6443, 18177] }, // third-trimester-body/welcome.m4a
   '603a27b0': { source: require('../../assets/narration/touch-water-and-comfort-tools/checkin-touch-right.m4a'), starts: [150, 907, 6373] }, // touch-water-and-comfort-tools/checkin-touch-right.m4a
   'af00135a': { source: require('../../assets/narration/touch-water-and-comfort-tools/checkin-touch-wrong.m4a'), starts: [150, 1059, 6909] }, // touch-water-and-comfort-tools/checkin-touch-wrong.m4a
   '0540b808': { source: require('../../assets/narration/touch-water-and-comfort-tools/counterpressure.m4a'), starts: [150, 3108, 11484, 18437, 23176] }, // touch-water-and-comfort-tools/counterpressure.m4a
@@ -683,6 +748,25 @@ export const narrationClips: Record<string, NarrationClip> = {
   'dd8cc441': { source: require('../../assets/narration/understanding-labor-pain/what-affects.m4a'), starts: [150, 2569, 11439, 17618, 19548, 23410] }, // understanding-labor-pain/what-affects.m4a
   'f2a8808b': { source: require('../../assets/narration/understanding-labor-pain/why-it-hurts.m4a'), starts: [150, 3602, 7391, 9744, 15175, 19399] }, // understanding-labor-pain/why-it-hurts.m4a
   '82e72412': { source: require('../../assets/narration/understanding-labor-pain/your-thoughts.m4a'), starts: [150, 4291, 8948, 10599, 14731] }, // understanding-labor-pain/your-thoughts.m4a
+  '3754aff3': { source: require('../../assets/narration/welcome-how-this-class-works/ask-your-instructor.m4a'), starts: [150, 1456, 5366, 6969, 13153, 15224, 17352, 20082, 25316] }, // welcome-how-this-class-works/ask-your-instructor.m4a
+  'd7103cf0': { source: require('../../assets/narration/welcome-how-this-class-works/checkin-ask-instructor-right.m4a'), starts: [150, 1220, 5506, 9148, 14460] }, // welcome-how-this-class-works/checkin-ask-instructor-right.m4a
+  'dd816536': { source: require('../../assets/narration/welcome-how-this-class-works/checkin-ask-instructor-wrong.m4a'), starts: [150, 1855, 6318, 10131, 15824] }, // welcome-how-this-class-works/checkin-ask-instructor-wrong.m4a
+  '2dd9431b': { source: require('../../assets/narration/welcome-how-this-class-works/checkin-ask-instructor.m4a'), starts: [150, 1943] }, // welcome-how-this-class-works/checkin-ask-instructor.m4a
+  '15aac310': { source: require('../../assets/narration/welcome-how-this-class-works/done.m4a'), starts: [150, 855, 2498] }, // welcome-how-this-class-works/done.m4a
+  'ca8f12f7': { source: require('../../assets/narration/welcome-how-this-class-works/learning-tools.m4a'), starts: [150, 3299, 5152, 7740, 10918, 13998, 18154, 22635] }, // welcome-how-this-class-works/learning-tools.m4a
+  'aba06e43': { source: require('../../assets/narration/welcome-how-this-class-works/player-tour-video.m4a'), starts: [150, 2635, 5483, 7368, 10333, 13288, 16786, 20226] }, // welcome-how-this-class-works/player-tour-video.m4a
+  'a1143e62': { source: require('../../assets/narration/welcome-how-this-class-works/quiz-1-right.m4a'), starts: [150, 1077, 4031] }, // welcome-how-this-class-works/quiz-1-right.m4a
+  '0ed760b8': { source: require('../../assets/narration/welcome-how-this-class-works/quiz-1-wrong.m4a'), starts: [150, 1224, 3933] }, // welcome-how-this-class-works/quiz-1-wrong.m4a
+  '0f932cde': { source: require('../../assets/narration/welcome-how-this-class-works/quiz-2-right.m4a'), starts: [150, 1016, 5130] }, // welcome-how-this-class-works/quiz-2-right.m4a
+  '67844b8c': { source: require('../../assets/narration/welcome-how-this-class-works/quiz-2-wrong.m4a'), starts: [150, 494, 5753] }, // welcome-how-this-class-works/quiz-2-wrong.m4a
+  '9a197179': { source: require('../../assets/narration/welcome-how-this-class-works/quiz-3-right.m4a'), starts: [150, 1118, 3230] }, // welcome-how-this-class-works/quiz-3-right.m4a
+  '2ee2a02f': { source: require('../../assets/narration/welcome-how-this-class-works/quiz-3-wrong.m4a'), starts: [150, 3189, 4734] }, // welcome-how-this-class-works/quiz-3-wrong.m4a
+  '0e57d091': { source: require('../../assets/narration/welcome-how-this-class-works/reflection-what-to-learn.m4a'), starts: [150, 2010, 5988, 13738, 15400] }, // welcome-how-this-class-works/reflection-what-to-learn.m4a
+  '6217ca83': { source: require('../../assets/narration/welcome-how-this-class-works/safety-and-care-team.m4a'), starts: [150, 1749, 3872, 6655, 12367, 13851, 15490, 19246, 21360] }, // welcome-how-this-class-works/safety-and-care-team.m4a
+  '3ef92523': { source: require('../../assets/narration/welcome-how-this-class-works/six-modules.m4a'), starts: [150, 2258, 5718, 9092, 12795, 16417, 19157, 23193, 23648] }, // welcome-how-this-class-works/six-modules.m4a
+  '7d69a24e': { source: require('../../assets/narration/welcome-how-this-class-works/summary.m4a'), starts: [150, 1383, 2883, 8774, 13987, 19252, 24600, 31457, 34112, 37199, 39679] }, // welcome-how-this-class-works/summary.m4a
+  '90969d08': { source: require('../../assets/narration/welcome-how-this-class-works/welcome.m4a'), starts: [150, 667, 1766, 10655, 15112, 18478] }, // welcome-how-this-class-works/welcome.m4a
+  'beeffc76': { source: require('../../assets/narration/welcome-how-this-class-works/why-prepare.m4a'), starts: [150, 2263, 12663, 18244, 22418, 27026] }, // welcome-how-this-class-works/why-prepare.m4a
   '764470d9': { source: require('../../assets/narration/when-plans-change/afterward-feelings.m4a'), starts: [150, 9042, 10884, 12946, 18105] }, // when-plans-change/afterward-feelings.m4a
   '3e4b29a6': { source: require('../../assets/narration/when-plans-change/checkin-change-right.m4a'), starts: [150, 1034] }, // when-plans-change/checkin-change-right.m4a
   '7c7ef694': { source: require('../../assets/narration/when-plans-change/checkin-change-wrong.m4a'), starts: [150, 1245] }, // when-plans-change/checkin-change-wrong.m4a
@@ -768,4 +852,22 @@ export const narrationClips: Record<string, NarrationClip> = {
   '4fc24ef0': { source: require('../../assets/narration/your-newborns-first-days/weight.m4a'), starts: [150, 6023, 10377, 14022, 20811] }, // your-newborns-first-days/weight.m4a
   '6b6c5f82': { source: require('../../assets/narration/your-newborns-first-days/welcome.m4a'), starts: [150, 4032, 8211, 17877] }, // your-newborns-first-days/welcome.m4a
   '59a1b272': { source: require('../../assets/narration/your-newborns-first-days/your-questions.m4a'), starts: [150, 4250, 6002, 9790, 13359, 15511] }, // your-newborns-first-days/your-questions.m4a
+  '84de0391': { source: require('../../assets/narration/your-postpartum-checkups/birth-control.m4a'), starts: [150, 7886, 15936, 18933, 22020, 45409, 47428, 53489] }, // your-postpartum-checkups/birth-control.m4a
+  '60168cd2': { source: require('../../assets/narration/your-postpartum-checkups/checkin-period-right.m4a'), starts: [150, 1333, 6967] }, // your-postpartum-checkups/checkin-period-right.m4a
+  '95946b20': { source: require('../../assets/narration/your-postpartum-checkups/checkin-period-wrong.m4a'), starts: [150, 1582, 7551] }, // your-postpartum-checkups/checkin-period-wrong.m4a
+  'b21458fd': { source: require('../../assets/narration/your-postpartum-checkups/checkup-plan.m4a'), starts: [150, 2350, 6221, 8781, 10874] }, // your-postpartum-checkups/checkup-plan.m4a
+  'ff8d65c9': { source: require('../../assets/narration/your-postpartum-checkups/pregnancy-conditions.m4a'), starts: [150, 3421, 12402, 18607, 27501] }, // your-postpartum-checkups/pregnancy-conditions.m4a
+  '906d9cd8': { source: require('../../assets/narration/your-postpartum-checkups/quiz-1-right.m4a'), starts: [150, 802] }, // your-postpartum-checkups/quiz-1-right.m4a
+  'b0e09aba': { source: require('../../assets/narration/your-postpartum-checkups/quiz-1-wrong.m4a'), starts: [150, 1494] }, // your-postpartum-checkups/quiz-1-wrong.m4a
+  'c946212f': { source: require('../../assets/narration/your-postpartum-checkups/quiz-2-right.m4a'), starts: [150, 940] }, // your-postpartum-checkups/quiz-2-right.m4a
+  'ad901e9d': { source: require('../../assets/narration/your-postpartum-checkups/quiz-2-wrong.m4a'), starts: [150, 1318] }, // your-postpartum-checkups/quiz-2-wrong.m4a
+  '3e3fbc8a': { source: require('../../assets/narration/your-postpartum-checkups/quiz-3-right.m4a'), starts: [150, 1026, 7423] }, // your-postpartum-checkups/quiz-3-right.m4a
+  'ba2ab3a0': { source: require('../../assets/narration/your-postpartum-checkups/quiz-3-wrong.m4a'), starts: [150, 1304, 8366] }, // your-postpartum-checkups/quiz-3-wrong.m4a
+  '050d1cb0': { source: require('../../assets/narration/your-postpartum-checkups/sex-after-birth.m4a'), starts: [150, 3277, 8417, 20378, 25058, 32004] }, // your-postpartum-checkups/sex-after-birth.m4a
+  'a6028f2d': { source: require('../../assets/narration/your-postpartum-checkups/spacing.m4a'), starts: [150, 4183, 13631, 19533, 26454] }, // your-postpartum-checkups/spacing.m4a
+  '01bd5c74': { source: require('../../assets/narration/your-postpartum-checkups/summary.m4a'), starts: [150, 1302, 10757, 16371, 21531, 26774, 30538] }, // your-postpartum-checkups/summary.m4a
+  '48a9bfd6': { source: require('../../assets/narration/your-postpartum-checkups/visit-schedule.m4a'), starts: [150, 4066, 8317, 16758, 20218, 27322] }, // your-postpartum-checkups/visit-schedule.m4a
+  '49d8f013': { source: require('../../assets/narration/your-postpartum-checkups/welcome.m4a'), starts: [150, 2934] }, // your-postpartum-checkups/welcome.m4a
+  '37dbee23': { source: require('../../assets/narration/your-postpartum-checkups/what-gets-checked.m4a'), starts: [150, 3555, 11705, 18354, 23991, 29427] }, // your-postpartum-checkups/what-gets-checked.m4a
+  '9aace1c1': { source: require('../../assets/narration/your-postpartum-checkups/your-visit.m4a'), starts: [150, 1811, 1979, 7128, 12544, 16345, 19258] }, // your-postpartum-checkups/your-visit.m4a
 };
