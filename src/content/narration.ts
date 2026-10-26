@@ -123,12 +123,15 @@ export const narrationClips: Record<string, NarrationClip> = {
   '4353b1d6': { source: require('../../assets/narration/building-your-support-team/continuous-support-evidence.m4a'), starts: [150, 4287, 14426, 25151, 29717, 37582] }, // building-your-support-team/continuous-support-evidence.m4a
   'ed822055': { source: require('../../assets/narration/building-your-support-team/finding-a-doula.m4a'), starts: [150, 3503, 7384, 11645, 18722, 20329, 26538] }, // building-your-support-team/finding-a-doula.m4a
   'b37cb1e8': { source: require('../../assets/narration/building-your-support-team/labor-rehearsal-video.m4a'), starts: [150, 6864, 10275] }, // building-your-support-team/labor-rehearsal-video.m4a
+  'fd8d35e5': { source: require('../../assets/narration/building-your-support-team/quiz-1-right.m4a'), starts: [150, 288, 8894] }, // building-your-support-team/quiz-1-right.m4a
+  'bb769447': { source: require('../../assets/narration/building-your-support-team/quiz-1-wrong.m4a'), starts: [150, 1146, 9437] }, // building-your-support-team/quiz-1-wrong.m4a
   '62f03dc7': { source: require('../../assets/narration/building-your-support-team/summary.m4a'), starts: [150, 1311, 2702, 8646, 14282, 18676, 21950, 28475, 31168] }, // building-your-support-team/summary.m4a
   '562e8015': { source: require('../../assets/narration/building-your-support-team/warning-signs-for-supporters.m4a'), starts: [150, 5104, 15833, 22798, 28613, 35934] }, // building-your-support-team/warning-signs-for-supporters.m4a
   'b2a26e64': { source: require('../../assets/narration/building-your-support-team/welcome.m4a'), starts: [150, 1307, 6211, 11985, 17826] }, // building-your-support-team/welcome.m4a
   '4b2f19d7': { source: require('../../assets/narration/building-your-support-team/what-a-doula-does.m4a'), starts: [150, 3177, 7106, 13280, 18654, 20539, 22377, 30334] }, // building-your-support-team/what-a-doula-does.m4a
   'd5f60f9d': { source: require('../../assets/narration/building-your-support-team/what-support-people-do.m4a'), starts: [150, 3188, 4556, 10667, 12756, 20300, 23615, 26737] }, // building-your-support-team/what-support-people-do.m4a
   'f11be05f': { source: require('../../assets/narration/building-your-support-team/who-does-what.m4a'), starts: [150, 4504, 9629, 11149, 15385, 19193, 23980, 27127, 30691] }, // building-your-support-team/who-does-what.m4a
+  '3502971d': { source: require('../../assets/narration/building-your-support-team/your-support-plan.m4a'), starts: [150, 2778, 6439, 8078, 13109, 17415, 21902] }, // building-your-support-team/your-support-plan.m4a
   'da32dc35': { source: require('../../assets/narration/car-seat-safety/car-seat-plan.m4a'), starts: [150, 2172, 5874, 8770, 13827, 18570, 20847] }, // car-seat-safety/car-seat-plan.m4a
   '5160b923': { source: require('../../assets/narration/car-seat-safety/checkin-hot-car-right.m4a'), starts: [150, 1005, 6235] }, // car-seat-safety/checkin-hot-car-right.m4a
   'be9a4939': { source: require('../../assets/narration/car-seat-safety/checkin-hot-car-wrong.m4a'), starts: [150, 1283, 6119] }, // car-seat-safety/checkin-hot-car-wrong.m4a

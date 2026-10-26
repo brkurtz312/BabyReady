@@ -10700,5 +10700,55 @@
       35934
     ],
     "checked": true
+  },
+  "when-to-call-about-your-baby/checkin-diapers-wrong.m4a": {
+    "fingerprint": "7ba11b15",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1549,
+      6580,
+      12068
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-26: wording matches; transcript wrote who's for who is"
+  },
+  "building-your-support-team/quiz-1-right.m4a": {
+    "fingerprint": "fd8d35e5",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      288,
+      8894
+    ],
+    "checked": true
+  },
+  "building-your-support-team/quiz-1-wrong.m4a": {
+    "fingerprint": "bb769447",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1146,
+      9437
+    ],
+    "checked": true
+  },
+  "building-your-support-team/your-support-plan.m4a": {
+    "fingerprint": "3502971d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2778,
+      6439,
+      8078,
+      13109,
+      17415,
+      21902
+    ],
+    "checked": true
   }
 }
