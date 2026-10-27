@@ -76,6 +76,31 @@ export const narrationClips: Record<string, NarrationClip> = {
   '1cedc96a': { source: require('../../assets/narration/baby-months-7-to-9/term.m4a'), starts: [150, 4416, 9137, 13512, 18458, 27790] }, // baby-months-7-to-9/term.m4a
   'c71ac386': { source: require('../../assets/narration/baby-months-7-to-9/welcome.m4a'), starts: [150, 3980, 8060, 12574] }, // baby-months-7-to-9/welcome.m4a
   '3cc59c4a': { source: require('../../assets/narration/baby-months-7-to-9/your-body.m4a'), starts: [150, 3593, 5815, 8612, 12317, 15907, 20232, 24443] }, // baby-months-7-to-9/your-body.m4a
+  '7b190d94': { source: require('../../assets/narration/birth-preferences/checkin-brain-right.m4a'), starts: [150, 1179, 6272, 9583] }, // birth-preferences/checkin-brain-right.m4a
+  '0581689a': { source: require('../../assets/narration/birth-preferences/checkin-brain-wrong.m4a'), starts: [150, 1046, 6594, 11109] }, // birth-preferences/checkin-brain-wrong.m4a
+  'efe97339': { source: require('../../assets/narration/birth-preferences/checkin-brain.m4a'), starts: [150] }, // birth-preferences/checkin-brain.m4a
+  'b5bab44a': { source: require('../../assets/narration/birth-preferences/checkin-pain-relief-right.m4a'), starts: [150, 1088, 5316] }, // birth-preferences/checkin-pain-relief-right.m4a
+  '73407120': { source: require('../../assets/narration/birth-preferences/checkin-pain-relief-wrong.m4a'), starts: [150, 1223, 5219] }, // birth-preferences/checkin-pain-relief-wrong.m4a
+  '5f7902cd': { source: require('../../assets/narration/birth-preferences/done.m4a'), starts: [150, 418, 2803] }, // birth-preferences/done.m4a
+  '41b92020': { source: require('../../assets/narration/birth-preferences/moving-eating-monitoring.m4a'), starts: [150, 1740, 2150, 9827, 13925, 21175, 21788, 23375, 26835, 35602, 36620, 40508] }, // birth-preferences/moving-eating-monitoring.m4a
+  '09d86541': { source: require('../../assets/narration/birth-preferences/pain-relief-preview.m4a'), starts: [150, 3023, 6669, 11925, 17864, 20014, 27360, 31378, 34375, 36192, 38935] }, // birth-preferences/pain-relief-preview.m4a
+  '245b8dbf': { source: require('../../assets/narration/birth-preferences/prenatal-visit-video.m4a'), starts: [150, 5153, 10033] }, // birth-preferences/prenatal-visit-video.m4a
+  'ebc14c2d': { source: require('../../assets/narration/birth-preferences/pushing-and-after-birth.m4a'), starts: [150, 4054, 9980, 13714, 16153, 23910, 26240, 28521, 34705, 37911, 40080] }, // birth-preferences/pushing-and-after-birth.m4a
+  '90f5a633': { source: require('../../assets/narration/birth-preferences/quiz-1-right.m4a'), starts: [150, 1108, 6161] }, // birth-preferences/quiz-1-right.m4a
+  'ac756369': { source: require('../../assets/narration/birth-preferences/quiz-1-wrong.m4a'), starts: [150, 1183, 5888] }, // birth-preferences/quiz-1-wrong.m4a
+  '86a0a1ad': { source: require('../../assets/narration/birth-preferences/quiz-2-right.m4a'), starts: [150, 1264] }, // birth-preferences/quiz-2-right.m4a
+  '46f5e497': { source: require('../../assets/narration/birth-preferences/quiz-2-wrong.m4a'), starts: [150, 1356] }, // birth-preferences/quiz-2-wrong.m4a
+  '0f3e692f': { source: require('../../assets/narration/birth-preferences/quiz-3-right.m4a'), starts: [150, 1145, 3507] }, // birth-preferences/quiz-3-right.m4a
+  '5943f449': { source: require('../../assets/narration/birth-preferences/quiz-3-wrong.m4a'), starts: [150, 1692, 3972] }, // birth-preferences/quiz-3-wrong.m4a
+  '1e205fa1': { source: require('../../assets/narration/birth-preferences/room-and-people.m4a'), starts: [150, 1700, 7113, 8267, 13239, 16935, 18977, 21080, 25605] }, // birth-preferences/room-and-people.m4a
+  'ab2a1534': { source: require('../../assets/narration/birth-preferences/script-vs-preferences.m4a'), starts: [150, 1870, 5538, 9344, 12620, 16803, 19813, 23259, 25963] }, // birth-preferences/script-vs-preferences.m4a
+  'aaabedd0': { source: require('../../assets/narration/birth-preferences/shared-decisions.m4a'), starts: [150, 4777, 9073, 10022, 11701, 14129, 15559, 17294, 19163, 21178, 23537, 25270, 27025, 28947, 32332] }, // birth-preferences/shared-decisions.m4a
+  'd1b8dbf7': { source: require('../../assets/narration/birth-preferences/summary.m4a'), starts: [150, 1255, 2430, 5385, 13553, 17809, 21479, 25238, 28408] }, // birth-preferences/summary.m4a
+  '94d75f4f': { source: require('../../assets/narration/birth-preferences/welcome.m4a'), starts: [150, 1158, 5746, 9996, 17242, 22662] }, // birth-preferences/welcome.m4a
+  '50a0f43a': { source: require('../../assets/narration/birth-preferences/what-are-preferences.m4a'), starts: [150, 5452, 7559, 11091, 18632] }, // birth-preferences/what-are-preferences.m4a
+  '10248977': { source: require('../../assets/narration/birth-preferences/when-things-change.m4a'), starts: [150, 3417, 7788, 8722, 10928, 15725, 16592, 29137, 31396] }, // birth-preferences/when-things-change.m4a
+  '6d956541': { source: require('../../assets/narration/birth-preferences/why-preferences.m4a'), starts: [150, 3683, 7797, 9419, 13863, 15580, 18081, 21509] }, // birth-preferences/why-preferences.m4a
+  '8a813a61': { source: require('../../assets/narration/birth-preferences/your-preferences.m4a'), starts: [150, 1477, 6104, 10695, 13249, 14338, 23421] }, // birth-preferences/your-preferences.m4a
   '7c9ec425': { source: require('../../assets/narration/breastfeeding-basics/challenges.m4a'), starts: [150, 3643, 13886, 17815, 22350, 28058, 30897, 36934] }, // breastfeeding-basics/challenges.m4a
   '8382f4ec': { source: require('../../assets/narration/breastfeeding-basics/checkin-latch-right.m4a'), starts: [150, 1120, 5606] }, // breastfeeding-basics/checkin-latch-right.m4a
   '37ace7de': { source: require('../../assets/narration/breastfeeding-basics/checkin-latch-wrong.m4a'), starts: [150, 1119, 6160] }, // breastfeeding-basics/checkin-latch-wrong.m4a
@@ -121,11 +146,17 @@ export const narrationClips: Record<string, NarrationClip> = {
   'b2fc5ef8': { source: require('../../assets/narration/building-your-support-team/checkin-doula-role-wrong.m4a'), starts: [150, 1083, 8179, 11871] }, // building-your-support-team/checkin-doula-role-wrong.m4a
   'f1c2b037': { source: require('../../assets/narration/building-your-support-team/choosing-support-people.m4a'), starts: [150, 3961, 9503, 12159, 16254, 23202, 29393] }, // building-your-support-team/choosing-support-people.m4a
   '4353b1d6': { source: require('../../assets/narration/building-your-support-team/continuous-support-evidence.m4a'), starts: [150, 4287, 14426, 25151, 29717, 37582] }, // building-your-support-team/continuous-support-evidence.m4a
+  'bdee984f': { source: require('../../assets/narration/building-your-support-team/done.m4a'), starts: [150, 2135, 2712] }, // building-your-support-team/done.m4a
   'ed822055': { source: require('../../assets/narration/building-your-support-team/finding-a-doula.m4a'), starts: [150, 3503, 7384, 11645, 18722, 20329, 26538] }, // building-your-support-team/finding-a-doula.m4a
   'b37cb1e8': { source: require('../../assets/narration/building-your-support-team/labor-rehearsal-video.m4a'), starts: [150, 6864, 10275] }, // building-your-support-team/labor-rehearsal-video.m4a
   'fd8d35e5': { source: require('../../assets/narration/building-your-support-team/quiz-1-right.m4a'), starts: [150, 288, 8894] }, // building-your-support-team/quiz-1-right.m4a
   'bb769447': { source: require('../../assets/narration/building-your-support-team/quiz-1-wrong.m4a'), starts: [150, 1146, 9437] }, // building-your-support-team/quiz-1-wrong.m4a
+  'b9988bb3': { source: require('../../assets/narration/building-your-support-team/quiz-2-right.m4a'), starts: [150, 1203, 5673] }, // building-your-support-team/quiz-2-right.m4a
+  '66e459b9': { source: require('../../assets/narration/building-your-support-team/quiz-2-wrong.m4a'), starts: [150, 1170, 5689] }, // building-your-support-team/quiz-2-wrong.m4a
+  '91ebac45': { source: require('../../assets/narration/building-your-support-team/quiz-3-right.m4a'), starts: [150, 1265, 4607] }, // building-your-support-team/quiz-3-right.m4a
+  'af9a571b': { source: require('../../assets/narration/building-your-support-team/quiz-3-wrong.m4a'), starts: [150, 1409, 4736] }, // building-your-support-team/quiz-3-wrong.m4a
   '62f03dc7': { source: require('../../assets/narration/building-your-support-team/summary.m4a'), starts: [150, 1311, 2702, 8646, 14282, 18676, 21950, 28475, 31168] }, // building-your-support-team/summary.m4a
+  'e4a0ba17': { source: require('../../assets/narration/building-your-support-team/support-after-birth.m4a'), starts: [150, 2718, 8543, 17370, 19331, 24598, 27129, 32737, 34359] }, // building-your-support-team/support-after-birth.m4a
   '562e8015': { source: require('../../assets/narration/building-your-support-team/warning-signs-for-supporters.m4a'), starts: [150, 5104, 15833, 22798, 28613, 35934] }, // building-your-support-team/warning-signs-for-supporters.m4a
   'b2a26e64': { source: require('../../assets/narration/building-your-support-team/welcome.m4a'), starts: [150, 1307, 6211, 11985, 17826] }, // building-your-support-team/welcome.m4a
   '4b2f19d7': { source: require('../../assets/narration/building-your-support-team/what-a-doula-does.m4a'), starts: [150, 3177, 7106, 13280, 18654, 20539, 22377, 30334] }, // building-your-support-team/what-a-doula-does.m4a
@@ -368,6 +399,28 @@ export const narrationClips: Record<string, NarrationClip> = {
   '7a5db3fc': { source: require('../../assets/narration/formula-and-combination-feeding/welcome.m4a'), starts: [150, 9968, 17197] }, // formula-and-combination-feeding/welcome.m4a
   '58065dbd': { source: require('../../assets/narration/formula-and-combination-feeding/your-choice.m4a'), starts: [150, 5499, 11386, 15022, 23610, 29003] }, // formula-and-combination-feeding/your-choice.m4a
   '17582263': { source: require('../../assets/narration/formula-and-combination-feeding/your-plan.m4a'), starts: [150, 1722, 3595, 8678, 11308, 13910] }, // formula-and-combination-feeding/your-plan.m4a
+  'ed2e025e': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/baby-going-home.m4a'), starts: [150, 3048, 8246, 12272, 14558, 16574, 18682, 23355] }, // getting-ready-bags-routes-car-seat/baby-going-home.m4a
+  '5ffd5537': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/car-seat-dos-donts.m4a'), starts: [150, 2429, 5718, 10474, 14680, 16670, 20655] }, // getting-ready-bags-routes-car-seat/car-seat-dos-donts.m4a
+  '7aeb2fa7': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/car-seat-safety.m4a'), starts: [150, 3527, 7738, 12777, 19940, 20307, 26918, 31215, 34461, 38031, 44026] }, // getting-ready-bags-routes-car-seat/car-seat-safety.m4a
+  'b4bc599a': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/checkin-car-seat-right.m4a'), starts: [150, 1228, 6074] }, // getting-ready-bags-routes-car-seat/checkin-car-seat-right.m4a
+  '51f09f18': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/checkin-car-seat-wrong.m4a'), starts: [150, 1461, 6557] }, // getting-ready-bags-routes-car-seat/checkin-car-seat-wrong.m4a
+  '2fa9fe8a': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/checkin-route-right.m4a'), starts: [150, 960, 4490] }, // getting-ready-bags-routes-car-seat/checkin-route-right.m4a
+  '50291c14': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/checkin-route-wrong.m4a'), starts: [150, 1416, 5095] }, // getting-ready-bags-routes-car-seat/checkin-route-wrong.m4a
+  '5aa93de9': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/harness-check-video.m4a'), starts: [150, 6064] }, // getting-ready-bags-routes-car-seat/harness-check-video.m4a
+  'fb2d797c': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/papers-and-questions.m4a'), starts: [150, 3447, 7748, 12227, 15303, 22799, 27082] }, // getting-ready-bags-routes-car-seat/papers-and-questions.m4a
+  '70688c24': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/plan-your-route.m4a'), starts: [150, 2248, 8356, 10163, 15508, 17177, 23013, 26045] }, // getting-ready-bags-routes-car-seat/plan-your-route.m4a
+  'a0cd7f35': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/quiz-1-right.m4a'), starts: [150, 1133, 5601] }, // getting-ready-bags-routes-car-seat/quiz-1-right.m4a
+  'f40ea46b': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/quiz-1-wrong.m4a'), starts: [150, 1180, 6516] }, // getting-ready-bags-routes-car-seat/quiz-1-wrong.m4a
+  '37a66b9f': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/quiz-2-right.m4a'), starts: [150, 931, 4773] }, // getting-ready-bags-routes-car-seat/quiz-2-right.m4a
+  '2ff3e7d9': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/quiz-2-wrong.m4a'), starts: [150, 978, 5400] }, // getting-ready-bags-routes-car-seat/quiz-2-wrong.m4a
+  '2e264ebc': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/quiz-3-right.m4a'), starts: [150, 1204, 5498] }, // getting-ready-bags-routes-car-seat/quiz-3-right.m4a
+  '18b305fa': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/quiz-3-wrong.m4a'), starts: [150, 1263, 5582] }, // getting-ready-bags-routes-car-seat/quiz-3-wrong.m4a
+  '254e882e': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/summary.m4a'), starts: [150, 1328, 2589, 8793, 12294, 16813, 21460, 24526, 29505, 31794, 33301] }, // getting-ready-bags-routes-car-seat/summary.m4a
+  '8369f10a': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/support-person-bag.m4a'), starts: [150, 2613, 6688, 12134, 16496, 19542] }, // getting-ready-bags-routes-car-seat/support-person-bag.m4a
+  '83f77320': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/welcome.m4a'), starts: [150, 2854, 4308, 7056, 11925, 18525, 21294] }, // getting-ready-bags-routes-car-seat/welcome.m4a
+  'ee2513dd': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/why-early.m4a'), starts: [150, 2688, 12896, 13736, 19732, 22792] }, // getting-ready-bags-routes-car-seat/why-early.m4a
+  '3b73e830': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/your-go-plan.m4a'), starts: [150, 1885, 5899, 10510, 13092, 16503, 17745] }, // getting-ready-bags-routes-car-seat/your-go-plan.m4a
+  'c8b9752d': { source: require('../../assets/narration/getting-ready-bags-routes-car-seat/your-labor-bag.m4a'), starts: [150, 5107, 7417, 10013, 14112, 17746, 20627, 22743, 31237, 37332, 41354] }, // getting-ready-bags-routes-car-seat/your-labor-bag.m4a
   'd5785074': { source: require('../../assets/narration/how-labor-begins/checkin-bloody-show-right.m4a'), starts: [150, 633, 4731, 6774, 10377] }, // how-labor-begins/checkin-bloody-show-right.m4a
   '6f062d9a': { source: require('../../assets/narration/how-labor-begins/checkin-bloody-show-wrong.m4a'), starts: [150, 1188, 5302, 7654, 11241] }, // how-labor-begins/checkin-bloody-show-wrong.m4a
   'bac5b8ed': { source: require('../../assets/narration/how-labor-begins/checkin-timing-right.m4a'), starts: [150, 1264, 8833] }, // how-labor-begins/checkin-timing-right.m4a
