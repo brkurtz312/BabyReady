@@ -23,6 +23,7 @@ import type { Course } from '../content/lessons';
 import { recommendedVideosFor, videoLinkHint, videoLinkWhere, type LibraryVideo } from '../content/videoLibrary';
 import { videoFor } from '../content/videos';
 import { NARRATION_RATE, pickNarrationVoice, splitSentences } from '../lib/narration';
+import { findClip, playClip, stopClip } from '../lib/narrator';
 import { BIRTH_READINESS_REFLECTION_MAX_LENGTH } from '../models/birthReadinessReflection';
 import type { CheckInQuestion, Lesson, Slide, Source } from '../models/lesson';
 import {
@@ -226,11 +227,19 @@ export function ClassPlayerScreen({
 
   function stopSpeech() {
     runRef.current += 1;
+    stopClip();
     void Speech.stop();
   }
 
   function speakOnce(text: string) {
     const run = ++runRef.current;
+    stopClip();
+    const clip = findClip(text);
+    if (clip) {
+      void Speech.stop().catch(() => undefined);
+      playClip(clip, 0);
+      return;
+    }
     void Speech.stop()
       .catch(() => undefined)
       .finally(() => {
@@ -263,6 +272,26 @@ export function ClassPlayerScreen({
     }
     setPlaying(true);
     setSentenceIndex(from);
+    // Recorded narration when there is a clip for this exact wording; otherwise the device voice.
+    const clip = findClip(narration);
+    if (clip && clip.starts.length === sentences.length) {
+      void Speech.stop().catch(() => undefined);
+      playClip(clip, from, {
+        onSentence: (n) => run === runRef.current && setSentenceIndex(n),
+        onDone: () => {
+          if (run !== runRef.current) return;
+          setPlaying(false);
+          onNarrationFinished();
+        },
+        onError: () => {
+          // If the clip can't play, don't trap anyone on a safety slide.
+          if (run !== runRef.current) return;
+          setPlaying(false);
+          setNarrationDone(true);
+        },
+      });
+      return;
+    }
     const say = (n: number) => {
       if (run !== runRef.current) return;
       if (n >= sentences.length) {
