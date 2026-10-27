@@ -43,13 +43,42 @@ export function playClip(clip: NarrationClip, from: number, callbacks: ClipCallb
   stopClip();
   let active = true;
   let sentence = from;
+  // On iPhone a play() sent before the new clip has loaded can be dropped, which left
+  // some slides silent until the learner pressed pause and play. So playback starts
+  // once the player reports the clip loaded, and is nudged again if it still hasn't
+  // begun shortly after.
+  let started = false;
+  let finished = false;
+  const timers: ReturnType<typeof setTimeout>[] = [];
   try {
     const audio = sharedPlayer();
+    const begin = () => {
+      if (started || !active) return;
+      started = true;
+      // Nudge: if it still isn't playing a moment later, ask again.
+      for (const wait of [700, 1500, 2500]) {
+        timers.push(setTimeout(() => active && !finished && !audio.playing && audio.play(), wait));
+      }
+      const start = (clip.starts[from] ?? 0) / 1000;
+      if (start > 0) {
+        void audio
+          .seekTo(start)
+          .catch(() => undefined)
+          .finally(() => active && audio.play());
+      } else {
+        audio.play();
+      }
+    };
     const subscription = audio.addListener('playbackStatusUpdate', (status) => {
       if (!active) return;
       if (status.didJustFinish) {
+        finished = true;
         stopClip();
         callbacks.onDone?.();
+        return;
+      }
+      if (!started) {
+        if (status.isLoaded) begin();
         return;
       }
       const ms = status.currentTime * 1000 + 50;
@@ -62,19 +91,13 @@ export function playClip(clip: NarrationClip, from: number, callbacks: ClipCallb
     });
     stopCurrent = () => {
       active = false;
+      timers.forEach(clearTimeout);
       subscription.remove();
       audio.pause();
     };
     audio.replace(clip.source);
-    const start = (clip.starts[from] ?? 0) / 1000;
-    if (start > 0) {
-      void audio
-        .seekTo(start)
-        .catch(() => undefined)
-        .finally(() => active && audio.play());
-    } else {
-      audio.play();
-    }
+    // If no "loaded" update arrives (already loaded, or a quiet player), start anyway.
+    timers.push(setTimeout(begin, 400));
   } catch {
     active = false;
     callbacks.onError?.();
