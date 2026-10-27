@@ -21,9 +21,12 @@ import {
   View,
 } from 'react-native';
 
+import { ASK_FOLLOW_UP as FOLLOW_UP, ASK_GREETING_TYPED, ASK_GREETING_WITH_MIC } from '../content/askLines';
 import { ASK_SUGGESTIONS } from '../content/askSuggestions';
 import { MAX_QUESTION_LENGTH, SAFETY_MESSAGES, type AskSafetyRoute } from '../lib/askSafety';
 import { NARRATION_RATE, pickNarrationVoice, splitSentences } from '../lib/narration';
+import { answerAudioSources } from '../lib/answerAudio';
+import { findClip, playClip, playSequence, stopClip } from '../lib/narrator';
 import { askLessonQuestion, type ConversationTurn } from '../services/askLessonQuestionService';
 
 const colors = {
@@ -39,7 +42,6 @@ const colors = {
   backdrop: 'rgba(29, 41, 64, 0.45)',
 };
 
-const FOLLOW_UP = 'Is there anything else you’d like to ask?';
 
 type Turn =
   | { id: number; role: 'learner'; text: string }
@@ -107,17 +109,40 @@ export function AskQuestionSheet({ visible, lessonId, lessonTitle, voiceOn, onCl
 
   function stopSpeaking() {
     runRef.current += 1;
+    stopClip();
     void Speech.stop();
   }
 
-  /** Speaks text one sentence at a time in the instructor's voice. */
-  function speak(text: string, onDone?: () => void) {
+  /**
+   * Speaks text in the narrator's voice: a recorded clip for fixed lines (greeting,
+   * follow-up, safety messages), or `audio`, the server's spoken answer. Falls back
+   * to the phone's voice, one sentence at a time, when neither fits.
+   */
+  function speak(text: string, onDone?: () => void, audio?: string[]) {
     const run = ++runRef.current;
     if (!voiceOn) {
       onDone?.();
       return;
     }
     const sentences = splitSentences(text);
+    const finished = () => run === runRef.current && onDone?.();
+    const clip = findClip(text);
+    if (clip && clip.starts.length === sentences.length) {
+      void Speech.stop().catch(() => undefined);
+      playClip(clip, 0, { onDone: finished, onError: () => speakWithDevice(run, sentences, onDone) });
+      return;
+    }
+    const sources = audio && audio.length === sentences.length ? answerAudioSources(audio) : null;
+    if (sources) {
+      void Speech.stop().catch(() => undefined);
+      playSequence(sources, { onDone: finished, onError: () => speakWithDevice(run, sentences, onDone) });
+      return;
+    }
+    speakWithDevice(run, sentences, onDone);
+  }
+
+  function speakWithDevice(run: number, sentences: string[], onDone?: () => void) {
+    if (run !== runRef.current) return;
     const say = (n: number) => {
       if (run !== runRef.current) return;
       if (n >= sentences.length) {
@@ -142,12 +167,9 @@ export function AskQuestionSheet({ visible, lessonId, lessonTitle, voiceOn, onCl
   useEffect(() => {
     if (!visible) return;
     if (turnsRef.current.length === 0) {
-      const greeting = `What would you like to ask about ${lessonTitle}?`;
-      const how = micAvailable
-        ? 'Tap the microphone and ask me out loud, or type your question.'
-        : 'Type your question below.';
-      addTurn({ role: 'instructor', kind: 'greeting', text: `${greeting} ${how}` });
-      speak(`${greeting} ${how}`);
+      const greeting = micAvailable ? ASK_GREETING_WITH_MIC : ASK_GREETING_TYPED;
+      addTurn({ role: 'instructor', kind: 'greeting', text: greeting });
+      speak(greeting);
     }
     return () => {
       stopSpeaking();
@@ -202,9 +224,14 @@ export function AskQuestionSheet({ visible, lessonId, lessonTitle, voiceOn, onCl
       return;
     }
     addTurn({ role: 'instructor', kind: 'answer', text: result.answer, from: result.from });
-    speak(`${result.answer} ${FOLLOW_UP}`, () => {
-      if (voiceModeRef.current) void startListening();
-    });
+    speak(
+      result.answer,
+      () =>
+        speak(FOLLOW_UP, () => {
+          if (voiceModeRef.current) void startListening();
+        }),
+      result.speech,
+    );
   }
 
   async function startListening() {
@@ -315,9 +342,14 @@ export function AskQuestionSheet({ visible, lessonId, lessonTitle, voiceOn, onCl
       <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={styles.sheetWrap}>
         <View accessibilityViewIsModal style={styles.sheet}>
           <View style={styles.header}>
-            <Text accessibilityRole="header" style={styles.title}>
-              Ask your instructor
-            </Text>
+            <View style={styles.headerText}>
+              <Text accessibilityRole="header" style={styles.title}>
+                Ask your instructor
+              </Text>
+              <Text numberOfLines={1} style={styles.lessonName}>
+                {lessonTitle}
+              </Text>
+            </View>
             <Pressable accessibilityRole="button" hitSlop={8} onPress={close} style={styles.secondary}>
               <Text style={styles.secondaryText}>Close</Text>
             </Pressable>
@@ -459,7 +491,9 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   header: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  headerText: { flexShrink: 1, gap: 2, marginRight: 12 },
   title: { color: colors.ink, fontSize: 22, fontWeight: '800' },
+  lessonName: { color: colors.muted, fontSize: 14, fontWeight: '600' },
   note: { color: colors.muted, fontSize: 13, lineHeight: 18 },
   turns: { gap: 10, paddingVertical: 8 },
   bubble: { borderRadius: 16, padding: 12, maxWidth: '88%', gap: 4 },

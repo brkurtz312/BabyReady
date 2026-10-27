@@ -9,6 +9,9 @@ import { textFingerprint } from './sentences';
  * after recording has no clip, and the player falls back to the device voice.
  */
 
+/** A clip to play: a recorded lesson clip, or a spoken answer saved on the device. */
+export type PlayableClip = { source: NarrationClip['source'] | { uri: string }; starts: number[] };
+
 export function findClip(text: string): NarrationClip | undefined {
   return narrationClips[textFingerprint(text)];
 }
@@ -39,7 +42,7 @@ export function stopClip() {
 }
 
 /** Plays a clip from the start of sentence `from`. */
-export function playClip(clip: NarrationClip, from: number, callbacks: ClipCallbacks = {}) {
+export function playClip(clip: PlayableClip, from: number, callbacks: ClipCallbacks = {}) {
   stopClip();
   let active = true;
   let sentence = from;
@@ -102,4 +105,17 @@ export function playClip(clip: NarrationClip, from: number, callbacks: ClipCallb
     active = false;
     callbacks.onError?.();
   }
+}
+
+/** Plays clips one after another, one per sentence; `onSentence` reports which. */
+export function playSequence(sources: PlayableClip['source'][], callbacks: ClipCallbacks = {}) {
+  const next = (i: number) => {
+    if (i >= sources.length) {
+      callbacks.onDone?.();
+      return;
+    }
+    callbacks.onSentence?.(i);
+    playClip({ source: sources[i], starts: [0] }, 0, { onDone: () => next(i + 1), onError: callbacks.onError });
+  };
+  next(0);
 }

@@ -9,6 +9,12 @@ export type NarrationClip = {
 };
 
 export const narrationClips: Record<string, NarrationClip> = {
+  '5364b610': { source: require('../../assets/narration/ask/follow-up.m4a'), starts: [150] }, // ask/follow-up.m4a
+  '69db0226': { source: require('../../assets/narration/ask/greeting-mic.m4a'), starts: [150, 2959] }, // ask/greeting-mic.m4a
+  '37aa28b4': { source: require('../../assets/narration/ask/greeting-typed.m4a'), starts: [150, 2606] }, // ask/greeting-typed.m4a
+  '2a7f3888': { source: require('../../assets/narration/ask/safety-crisis.m4a'), starts: [150, 2184, 13469] }, // ask/safety-crisis.m4a
+  'f1d4e395': { source: require('../../assets/narration/ask/safety-urgent.m4a'), starts: [150, 2447, 4811, 7829] }, // ask/safety-urgent.m4a
+  '3f767350': { source: require('../../assets/narration/ask/safety-water-broke.m4a'), starts: [150, 2123, 5251, 9747] }, // ask/safety-water-broke.m4a
   'a5b58c7a': { source: require('../../assets/narration/assisted-vaginal-birth/checkin-what-right.m4a'), starts: [150, 1031] }, // assisted-vaginal-birth/checkin-what-right.m4a
   'd25ef7dc': { source: require('../../assets/narration/assisted-vaginal-birth/checkin-what-wrong.m4a'), starts: [150, 1407] }, // assisted-vaginal-birth/checkin-what-wrong.m4a
   'ac19b5ba': { source: require('../../assets/narration/assisted-vaginal-birth/done.m4a'), starts: [150, 2434, 3234] }, // assisted-vaginal-birth/done.m4a

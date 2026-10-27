@@ -24,6 +24,8 @@ import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, rmSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
+import { ASK_FOLLOW_UP, ASK_GREETING_TYPED, ASK_GREETING_WITH_MIC } from '../src/content/askLines.ts';
+import { SAFETY_MESSAGES } from '../src/lib/askSafety.ts';
 import { splitSentences, textFingerprint } from '../src/lib/sentences.ts';
 
 const root = path.resolve(import.meta.dirname, '..');
@@ -87,10 +89,20 @@ function clipsFor(lessons) {
   return clips;
 }
 
+// The Ask panel's fixed lines: greeting, follow-up, and the safety messages.
+function askClips() {
+  const add = (name, text) => ({ file: `ask/${name}.m4a`, key: 'ask/ask', text });
+  return [
+    add('greeting-mic', ASK_GREETING_WITH_MIC),
+    add('greeting-typed', ASK_GREETING_TYPED),
+    add('follow-up', ASK_FOLLOW_UP),
+    ...Object.entries(SAFETY_MESSAGES).map(([route, m]) => add(`safety-${route}`, `${m.title} ${m.body}`)),
+  ];
+}
+
 // Identical lines ("Let's check in.") are recorded once and shared.
 const seen = new Set();
-const allClips = loadCourses()
-  .flatMap(clipsFor)
+const allClips = [...loadCourses().flatMap(clipsFor), ...askClips()]
   .filter((c) => !seen.has(c.text) && seen.add(c.text));
 const clips = only ? allClips.filter((c) => c.key === only || c.key.endsWith(`/${only}`)) : allClips;
 

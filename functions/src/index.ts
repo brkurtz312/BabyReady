@@ -12,6 +12,7 @@ import { cleanFrom } from './answerFrom';
 import { usageRecord } from './askCost';
 import { findLesson, lessonText } from './lessons';
 import { INACTIVE_DAYS, isInactive } from './retention';
+import { speakSentences } from './speech';
 
 initializeApp();
 
@@ -73,7 +74,8 @@ ${turn.text}`;
 
 export type AskResponse =
   | { kind: 'safety'; route: 'crisis' | 'urgent' | 'water-broke' }
-  | { kind: 'answer'; answer: string; from: string | null };
+  /** `speech`: the answer in the narrator's voice, one base64 MP3 per sentence, when it could be made. */
+  | { kind: 'answer'; answer: string; from: string | null; speech?: string[] };
 
 async function countQuestion(uid: string): Promise<boolean> {
   const day = new Date().toISOString().slice(0, 10);
@@ -156,11 +158,11 @@ export const askLessonQuestion = onCall(
     });
 
     if (response.stop_reason === 'refusal') {
-      return {
+      return withSpeech({
         kind: 'answer',
         answer: 'I can’t answer that one here. Please ask your care team.',
         from: null,
-      };
+      });
     }
 
     const text = response.content
@@ -168,13 +170,19 @@ export const askLessonQuestion = onCall(
       .join('')
       .trim();
     const match = text.match(/\n?From:\s*(.+)\s*$/i);
-    return {
+    return withSpeech({
       kind: 'answer',
       answer: (match ? text.slice(0, match.index) : text).trim(),
       from: match ? cleanFrom(match[1]) : null,
-    };
+    });
   },
 );
+
+/** Adds the answer in the narrator's voice; without it the app uses the phone's voice. */
+async function withSpeech(answer: { kind: 'answer'; answer: string; from: string | null }): Promise<AskResponse> {
+  const speech = await speakSentences(answer.answer);
+  return speech ? { ...answer, speech } : answer;
+}
 
 /** Deletes every document under users/{uid}: profile, progress, Brief, reflection answers, question counts. */
 async function deleteLearnerData(uid: string): Promise<void> {
