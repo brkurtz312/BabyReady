@@ -11481,5 +11481,69 @@
       26045
     ],
     "checked": true
+  },
+  "ask/follow-up.m4a": {
+    "fingerprint": "5364b610",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ],
+    "checked": true
+  },
+  "ask/greeting-typed.m4a": {
+    "fingerprint": "37aa28b4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2606
+    ],
+    "checked": true
+  },
+  "ask/greeting-mic.m4a": {
+    "fingerprint": "69db0226",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2959
+    ],
+    "checked": true
+  },
+  "ask/safety-crisis.m4a": {
+    "fingerprint": "2a7f3888",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2184,
+      13469
+    ],
+    "checked": true
+  },
+  "ask/safety-urgent.m4a": {
+    "fingerprint": "f1d4e395",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2447,
+      4811,
+      7829
+    ],
+    "checked": true
+  },
+  "ask/safety-water-broke.m4a": {
+    "fingerprint": "3f767350",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2123,
+      5251,
+      9747
+    ],
+    "checked": true
   }
 }

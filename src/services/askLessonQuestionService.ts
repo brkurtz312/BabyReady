@@ -6,7 +6,8 @@ import { functions } from '../lib/firebase';
 
 export type AskResult =
   | { kind: 'safety'; route: Exclude<AskSafetyRoute, 'ok'> }
-  | { kind: 'answer'; answer: string; from: string | null }
+  /** `speech`: the answer in the narrator's voice, one base64 MP3 per sentence, when the server made it. */
+  | { kind: 'answer'; answer: string; from: string | null; speech?: string[] }
   | { kind: 'error'; message: string };
 
 /** An earlier turn in the conversation, sent so follow-up questions make sense. */
@@ -16,7 +17,7 @@ const MAX_HISTORY_TURNS = 8;
 
 type AskResponse =
   | { kind: 'safety'; route: Exclude<AskSafetyRoute, 'ok'> }
-  | { kind: 'answer'; answer: string; from: string | null };
+  | { kind: 'answer'; answer: string; from: string | null; speech?: string[] };
 
 const UNAVAILABLE = 'Questions aren’t available right now. For anything about your own care, contact your care team.';
 
