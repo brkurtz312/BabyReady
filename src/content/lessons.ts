@@ -1,12 +1,11 @@
 import type { Lesson } from '../models/lesson';
 import { checkCourse } from '../lib/lessonRules';
 
-import welcomeHowThisClassWorks from '../../content/lessons/preparing-for-birth/01-welcome-how-this-class-works.json';
-import thirdTrimesterBody from '../../content/lessons/preparing-for-birth/02-third-trimester-body.json';
-import careTeamAndBirthSetting from '../../content/lessons/preparing-for-birth/03-care-team-and-birth-setting.json';
-import buildingYourSupportTeam from '../../content/lessons/preparing-for-birth/04-building-your-support-team.json';
-import birthPreferences from '../../content/lessons/preparing-for-birth/05-birth-preferences.json';
-import gettingReady from '../../content/lessons/preparing-for-birth/06-getting-ready-bags-routes-car-seat.json';
+import thirdTrimesterBody from '../../content/lessons/preparing-for-birth/01-third-trimester-body.json';
+import careTeamAndBirthSetting from '../../content/lessons/preparing-for-birth/02-care-team-and-birth-setting.json';
+import buildingYourSupportTeam from '../../content/lessons/preparing-for-birth/03-building-your-support-team.json';
+import birthPreferences from '../../content/lessons/preparing-for-birth/04-birth-preferences.json';
+import gettingReady from '../../content/lessons/preparing-for-birth/05-getting-ready-bags-routes-car-seat.json';
 
 import howLaborBegins from '../../content/lessons/labor-basics/01-how-labor-begins.json';
 import whenToContactYourCareTeam from '../../content/lessons/labor-basics/02-when-to-contact-your-care-team.json';
@@ -14,6 +13,8 @@ import stagesOfLabor from '../../content/lessons/labor-basics/03-stages-of-labor
 import earlyLaborAtHome from '../../content/lessons/labor-basics/04-early-labor-at-home.json';
 import pushingAndBirth from '../../content/lessons/labor-basics/05-pushing-and-birth.json';
 import placentaAndFirstHour from '../../content/lessons/labor-basics/06-placenta-and-first-hour.json';
+
+import welcomeHowThisClassWorks from '../../content/lessons/start-here/01-welcome-how-this-class-works.json';
 
 import earlyPregnancyFirstSteps from '../../content/lessons/early-pregnancy-basics/01-early-pregnancy-first-steps.json';
 import firstTrimesterCommonChanges from '../../content/lessons/early-pregnancy-basics/02-first-trimester-common-changes.json';
@@ -73,8 +74,9 @@ function minutes(lessons: Lesson[]): number {
   return lessons.reduce((total, lesson) => total + lesson.estimatedMinutes, 0);
 }
 
+const startHereLessons = sortedLessons([welcomeHowThisClassWorks]);
+
 const preparingForBirthLessons = sortedLessons([
-  welcomeHowThisClassWorks,
   thirdTrimesterBody,
   careTeamAndBirthSetting,
   buildingYourSupportTeam,
@@ -112,6 +114,13 @@ export const LABOR_BASICS_TITLE = 'Labor Basics and When to Call';
 /** The class courses, in the order they appear on the home screen. */
 export const courses: Course[] = [
   {
+    courseId: 'start-here',
+    title: 'Welcome: How This Class Works',
+    label: 'START HERE',
+    description: `How the class is organized, how to use the player, check-ins and your Birth Readiness Brief, and how to ask your instructor. About ${minutes(startHereLessons)} minutes.`,
+    lessons: startHereLessons,
+  },
+  {
     courseId: 'early-pregnancy-basics',
     title: 'Early Pregnancy Basics',
     label: 'FIRST TRIMESTER',
@@ -129,7 +138,7 @@ export const courses: Course[] = [
     courseId: 'preparing-for-birth',
     title: 'Preparing for Birth',
     label: 'CLASS · MODULE 1',
-    description: `Six lessons on your changing body, your care team and birth setting, your support team, birth preferences, and getting ready. About ${minutes(preparingForBirthLessons)} minutes.`,
+    description: `Five lessons on your changing body, your care team and birth setting, your support team, birth preferences, and getting ready. About ${minutes(preparingForBirthLessons)} minutes.`,
     lessons: preparingForBirthLessons,
   },
   {

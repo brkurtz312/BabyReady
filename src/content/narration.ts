@@ -814,7 +814,6 @@ export const narrationClips: Record<string, NarrationClip> = {
   'd7103cf0': { source: require('../../assets/narration/welcome-how-this-class-works/checkin-ask-instructor-right.m4a'), starts: [150, 1220, 5506, 9148, 14460] }, // welcome-how-this-class-works/checkin-ask-instructor-right.m4a
   'dd816536': { source: require('../../assets/narration/welcome-how-this-class-works/checkin-ask-instructor-wrong.m4a'), starts: [150, 1855, 6318, 10131, 15824] }, // welcome-how-this-class-works/checkin-ask-instructor-wrong.m4a
   '2dd9431b': { source: require('../../assets/narration/welcome-how-this-class-works/checkin-ask-instructor.m4a'), starts: [150, 1943] }, // welcome-how-this-class-works/checkin-ask-instructor.m4a
-  '15aac310': { source: require('../../assets/narration/welcome-how-this-class-works/done.m4a'), starts: [150, 855, 2498] }, // welcome-how-this-class-works/done.m4a
   'ca8f12f7': { source: require('../../assets/narration/welcome-how-this-class-works/learning-tools.m4a'), starts: [150, 3299, 5152, 7740, 10918, 13998, 18154, 22635] }, // welcome-how-this-class-works/learning-tools.m4a
   'aba06e43': { source: require('../../assets/narration/welcome-how-this-class-works/player-tour-video.m4a'), starts: [150, 2635, 5483, 7368, 10333, 13288, 16786, 20226] }, // welcome-how-this-class-works/player-tour-video.m4a
   'a1143e62': { source: require('../../assets/narration/welcome-how-this-class-works/quiz-1-right.m4a'), starts: [150, 1077, 4031] }, // welcome-how-this-class-works/quiz-1-right.m4a
@@ -825,8 +824,8 @@ export const narrationClips: Record<string, NarrationClip> = {
   '2ee2a02f': { source: require('../../assets/narration/welcome-how-this-class-works/quiz-3-wrong.m4a'), starts: [150, 3189, 4734] }, // welcome-how-this-class-works/quiz-3-wrong.m4a
   '0e57d091': { source: require('../../assets/narration/welcome-how-this-class-works/reflection-what-to-learn.m4a'), starts: [150, 2010, 5988, 13738, 15400] }, // welcome-how-this-class-works/reflection-what-to-learn.m4a
   '6217ca83': { source: require('../../assets/narration/welcome-how-this-class-works/safety-and-care-team.m4a'), starts: [150, 1749, 3872, 6655, 12367, 13851, 15490, 19246, 21360] }, // welcome-how-this-class-works/safety-and-care-team.m4a
-  '3ef92523': { source: require('../../assets/narration/welcome-how-this-class-works/six-modules.m4a'), starts: [150, 2258, 5718, 9092, 12795, 16417, 19157, 23193, 23648] }, // welcome-how-this-class-works/six-modules.m4a
-  '7d69a24e': { source: require('../../assets/narration/welcome-how-this-class-works/summary.m4a'), starts: [150, 1383, 2883, 8774, 13987, 19252, 24600, 31457, 34112, 37199, 39679] }, // welcome-how-this-class-works/summary.m4a
+  '115233be': { source: require('../../assets/narration/welcome-how-this-class-works/six-modules.m4a'), starts: [150, 3415, 9916, 11754, 14252, 17207, 21036, 24391, 27234, 27505, 31833] }, // welcome-how-this-class-works/six-modules.m4a
+  'd7b62c88': { source: require('../../assets/narration/welcome-how-this-class-works/summary.m4a'), starts: [150, 2224, 5396, 12444, 15377, 20976, 25900, 32774, 35166, 38041, 40244] }, // welcome-how-this-class-works/summary.m4a
   '90969d08': { source: require('../../assets/narration/welcome-how-this-class-works/welcome.m4a'), starts: [150, 667, 1766, 10655, 15112, 18478] }, // welcome-how-this-class-works/welcome.m4a
   'beeffc76': { source: require('../../assets/narration/welcome-how-this-class-works/why-prepare.m4a'), starts: [150, 2263, 12663, 18244, 22418, 27026] }, // welcome-how-this-class-works/why-prepare.m4a
   '764470d9': { source: require('../../assets/narration/when-plans-change/afterward-feelings.m4a'), starts: [150, 9042, 10884, 12946, 18105] }, // when-plans-change/afterward-feelings.m4a

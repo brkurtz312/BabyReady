@@ -1,5 +1,7 @@
 import type { Lesson } from '../../src/models/lesson';
 
+import welcomeHowThisClassWorks from '../../content/lessons/start-here/01-welcome-how-this-class-works.json';
+
 import earlyPregnancyFirstSteps from '../../content/lessons/early-pregnancy-basics/01-early-pregnancy-first-steps.json';
 import firstTrimesterCommonChanges from '../../content/lessons/early-pregnancy-basics/02-first-trimester-common-changes.json';
 import firstPrenatalVisit from '../../content/lessons/early-pregnancy-basics/03-first-prenatal-visit.json';
@@ -8,12 +10,11 @@ import babyMonths1To3 from '../../content/lessons/how-your-baby-grows/01-baby-mo
 import babyMonths4To6 from '../../content/lessons/how-your-baby-grows/02-baby-months-4-to-6.json';
 import babyMonths7To9 from '../../content/lessons/how-your-baby-grows/03-baby-months-7-to-9.json';
 
-import welcomeHowThisClassWorks from '../../content/lessons/preparing-for-birth/01-welcome-how-this-class-works.json';
-import thirdTrimesterBody from '../../content/lessons/preparing-for-birth/02-third-trimester-body.json';
-import careTeamAndBirthSetting from '../../content/lessons/preparing-for-birth/03-care-team-and-birth-setting.json';
-import buildingYourSupportTeam from '../../content/lessons/preparing-for-birth/04-building-your-support-team.json';
-import birthPreferences from '../../content/lessons/preparing-for-birth/05-birth-preferences.json';
-import gettingReady from '../../content/lessons/preparing-for-birth/06-getting-ready-bags-routes-car-seat.json';
+import thirdTrimesterBody from '../../content/lessons/preparing-for-birth/01-third-trimester-body.json';
+import careTeamAndBirthSetting from '../../content/lessons/preparing-for-birth/02-care-team-and-birth-setting.json';
+import buildingYourSupportTeam from '../../content/lessons/preparing-for-birth/03-building-your-support-team.json';
+import birthPreferences from '../../content/lessons/preparing-for-birth/04-birth-preferences.json';
+import gettingReady from '../../content/lessons/preparing-for-birth/05-getting-ready-bags-routes-car-seat.json';
 
 import howLaborBegins from '../../content/lessons/labor-basics/01-how-labor-begins.json';
 import whenToContactYourCareTeam from '../../content/lessons/labor-basics/02-when-to-contact-your-care-team.json';
@@ -55,13 +56,13 @@ import yourPostpartumCheckups from '../../content/lessons/postpartum-recovery/06
 // The server answers only from lesson content shipped with the function, never
 // from lesson text sent by the app. Every course's lessons are listed here.
 const lessons = [
+  welcomeHowThisClassWorks,
   earlyPregnancyFirstSteps,
   firstTrimesterCommonChanges,
   firstPrenatalVisit,
   babyMonths1To3,
   babyMonths4To6,
   babyMonths7To9,
-  welcomeHowThisClassWorks,
   thirdTrimesterBody,
   careTeamAndBirthSetting,
   buildingYourSupportTeam,

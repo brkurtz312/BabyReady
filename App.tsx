@@ -109,8 +109,9 @@ function BabyReadyApp() {
 
   const paywall = <PaywallSheet access={access} onClose={() => setPaywallOpen(false)} visible={paywallOpen} />;
 
+  // Found by lesson, not module, so progress saved before a lesson moved modules still resumes.
   const lastCourse = progress.lastLesson
-    ? courses.find((c) => c.courseId === progress.lastLesson?.courseId)
+    ? courses.find((c) => c.lessons.some((l) => l.lessonId === progress.lastLesson?.lessonId))
     : undefined;
   const lastLessonIndex = lastCourse
     ? lastCourse.lessons.findIndex((l) => l.lessonId === progress.lastLesson?.lessonId)

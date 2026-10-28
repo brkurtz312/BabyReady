@@ -9600,19 +9600,21 @@
     "checked": true
   },
   "welcome-how-this-class-works/six-modules.m4a": {
-    "fingerprint": "3ef92523",
+    "fingerprint": "115233be",
     "voice": "Sulafat",
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150,
-      2258,
-      5718,
-      9092,
-      12795,
-      16417,
-      19157,
-      23193,
-      23648
+      3415,
+      9916,
+      11754,
+      14252,
+      17207,
+      21036,
+      24391,
+      27234,
+      27505,
+      31833
     ],
     "checked": true
   },
@@ -9792,21 +9794,21 @@
     "checked": true
   },
   "welcome-how-this-class-works/summary.m4a": {
-    "fingerprint": "7d69a24e",
+    "fingerprint": "d7b62c88",
     "voice": "Sulafat",
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150,
-      1383,
-      2883,
-      8774,
-      13987,
-      19252,
-      24600,
-      31457,
-      34112,
-      37199,
-      39679
+      2224,
+      5396,
+      12444,
+      15377,
+      20976,
+      25900,
+      32774,
+      35166,
+      38041,
+      40244
     ],
     "checked": true
   },
