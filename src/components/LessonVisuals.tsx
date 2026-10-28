@@ -62,6 +62,9 @@ import Music from 'lucide-react-native/icons/music';
 import Lamp from 'lucide-react-native/icons/lamp';
 import Eye from 'lucide-react-native/icons/eye';
 import Sparkles from 'lucide-react-native/icons/sparkles';
+import Sprout from 'lucide-react-native/icons/sprout';
+import MapPin from 'lucide-react-native/icons/map-pin';
+import Ruler from 'lucide-react-native/icons/ruler';
 import Shield from 'lucide-react-native/icons/shield';
 import ClipboardCheck from 'lucide-react-native/icons/clipboard-check';
 import Refrigerator from 'lucide-react-native/icons/refrigerator';
@@ -389,7 +392,11 @@ function CareLevels() {
   );
 }
 
-function SixModules() {
+function ClassMap() {
+  const pregnancy: { icon: Icon; name: string }[] = [
+    { icon: Sprout, name: 'Early Pregnancy Basics' },
+    { icon: Ruler, name: 'How Your Baby Grows' },
+  ];
   const modules: { icon: Icon; name: string }[] = [
     { icon: Calendar, name: 'Preparing for Birth' },
     { icon: Phone, name: 'Labor Basics and When to Call' },
@@ -399,19 +406,40 @@ function SixModules() {
     { icon: Heart, name: 'Postpartum Recovery, Mood, and Red Flags' },
   ];
   return (
-    <Frame label="The six modules of the class. You are in module 1, Preparing for Birth.">
+    <Frame label="How the class is laid out. You are here, at Start here: Welcome, How This Class Works. Then two sections for pregnancy, Early Pregnancy Basics and How Your Baby Grows, then six modules: 1 Preparing for Birth, 2 Labor Basics and When to Call, 3 Comfort, Movement, and Support Skills, 4 Interventions and Flexible Decisions, 5 Feeding and Newborn Care, and 6 Postpartum Recovery, Mood, and Red Flags.">
+      <View style={[s.moduleCard, s.moduleHere, s.moduleWide]}>
+        <View style={s.moduleTop}>
+          <Text style={[s.moduleSection, { color: c.surface }]}>Start here</Text>
+          <MapPin color={c.surface} size={20} strokeWidth={1.8} />
+        </View>
+        <Text style={[s.moduleName, { color: c.surface }]}>Welcome: How This Class Works</Text>
+        <Text style={s.moduleHereText}>You are here</Text>
+      </View>
+      <Text style={s.moduleGroup}>For pregnancy</Text>
+      <View style={s.moduleGrid}>
+        {pregnancy.map((m) => {
+          const IconComponent = m.icon;
+          return (
+            <View key={m.name} style={s.moduleCard}>
+              <View style={s.moduleTop}>
+                <IconComponent color={c.lagoon} size={20} strokeWidth={1.8} />
+              </View>
+              <Text style={s.moduleName}>{m.name}</Text>
+            </View>
+          );
+        })}
+      </View>
+      <Text style={s.moduleGroup}>The six modules</Text>
       <View style={s.moduleGrid}>
         {modules.map((m, i) => {
           const IconComponent = m.icon;
-          const here = i === 0;
           return (
-            <View key={m.name} style={[s.moduleCard, here && s.moduleHere]}>
+            <View key={m.name} style={s.moduleCard}>
               <View style={s.moduleTop}>
-                <Text style={[s.moduleNumber, here && { color: c.surface }]}>{i + 1}</Text>
-                <IconComponent color={here ? c.surface : c.lagoon} size={20} strokeWidth={1.8} />
+                <Text style={s.moduleNumber}>{i + 1}</Text>
+                <IconComponent color={c.lagoon} size={20} strokeWidth={1.8} />
               </View>
-              <Text style={[s.moduleName, here && { color: c.surface }]}>{m.name}</Text>
-              {here ? <Text style={s.moduleHereText}>You are here</Text> : null}
+              <Text style={s.moduleName}>{m.name}</Text>
             </View>
           );
         })}
@@ -1014,7 +1042,7 @@ const VISUALS: Record<string, () => React.ReactElement> = {
   ),
 
   // Module 1: Preparing for Birth
-  'welcome-how-this-class-works/six-modules': () => <SixModules />,
+  'welcome-how-this-class-works/six-modules': () => <ClassMap />,
   'third-trimester-body/home-stretch': () => (
     <WeekScale
       label="Pregnancy by trimester. The third trimester starts at 28 weeks."
@@ -2086,6 +2114,9 @@ const s = StyleSheet.create({
     gap: 6,
   },
   moduleHere: { backgroundColor: c.lagoon },
+  moduleWide: { flexBasis: 'auto' },
+  moduleSection: { fontSize: 13, fontWeight: '800', letterSpacing: 0.5, textTransform: 'uppercase' },
+  moduleGroup: { color: c.lagoon, fontSize: 11, fontWeight: '800', letterSpacing: 0.8, marginTop: 10, marginBottom: 6, textTransform: 'uppercase' },
   moduleTop: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' },
   moduleNumber: { color: c.lagoon, fontSize: 20, fontWeight: '800' },
   moduleName: { color: c.ink, fontSize: 13, fontWeight: '700', lineHeight: 17 },
