@@ -1,5 +1,5 @@
 {
-  "courseId": "preparing-for-birth",
+  "courseId": "start-here",
   "lessonId": "welcome-how-this-class-works",
   "order": 1,
   "title": "Welcome: How This Class Works",
@@ -15,7 +15,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. Most slides are editorial (they explain the app and make no health claim); only the 'why-prepare' slide and the summary cite sources. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. Most slides are editorial (they explain the app and make no health claim); only the 'why-prepare' slide and the summary cite sources. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed. Moved 2026-10-28 to its own Start Here section at the top of the class, at the reviewer's request; the overview and summary slides now describe the two pregnancy sections and six modules, and the summary no longer leads into the third-trimester lesson. Wording only; no clinical content changed."
   },
   "sources": [
     {
@@ -46,7 +46,7 @@
       "type": "title",
       "heading": "Welcome: How This Class Works",
       "onScreen": [
-        "Module 1: Preparing for Birth"
+        "Start here"
       ],
       "narration": "Hi, and welcome. I'm so glad you're here. This class will walk you through birth, feeding, and the first weeks after your baby arrives, one short lesson at a time. In this first lesson, I'll show you how the class works, so you can get the most out of it. If you have a support person, invite them to watch with you. Let's begin.",
       "sourceIds": [],
@@ -59,14 +59,14 @@
     {
       "id": "six-modules",
       "type": "content",
-      "heading": "Six modules, one step at a time",
+      "heading": "Two pregnancy sections, then six modules",
       "onScreen": [
+        "For pregnancy: Early Pregnancy Basics  ·  How Your Baby Grows",
         "1. Preparing for Birth  ·  2. Labor Basics and When to Call",
-        "3. Comfort, Movement, and Support Skills",
-        "4. Interventions and Flexible Decisions",
+        "3. Comfort, Movement, and Support Skills  ·  4. Interventions and Flexible Decisions",
         "5. Feeding and Newborn Care  ·  6. Postpartum Recovery, Mood, and Red Flags"
       ],
-      "narration": "This class has six modules. Module one, where you are now, is Preparing for Birth. Module two is Labor Basics and When to Call. Module three is Comfort, Movement, and Support Skills. Module four is Interventions and Flexible Decisions. Module five is Feeding and Newborn Care. And module six is Postpartum Recovery, Mood, and Red Flags. Each module is made of short lessons. You can take them in order, or come back to any lesson whenever you like.",
+      "narration": "The class starts with two short sections for pregnancy. Early Pregnancy Basics covers the first weeks, and How Your Baby Grows follows your baby month by month. Then come six modules. Module one is Preparing for Birth. Module two is Labor Basics and When to Call. Module three is Comfort, Movement, and Support Skills. Module four is Interventions and Flexible Decisions. Module five is Feeding and Newborn Care. And module six is Postpartum Recovery, Mood, and Red Flags. Each one is made of short lessons. Start wherever fits where you are in pregnancy, and come back to any lesson whenever you like.",
       "sourceIds": [],
       "editorial": true,
       "visual": {
@@ -204,13 +204,13 @@
       "type": "summary",
       "heading": "What we covered",
       "onScreen": [
-        "Six modules, from preparing for birth to postpartum",
+        "Two pregnancy sections, then six modules through postpartum",
         "You control play, pause, back, captions, and mute",
         "Check-ins teach; reflections save to your Brief",
         "Red slides = warning signs, with a Call 911 button",
         "This is education; your care team's advice comes first"
       ],
-      "narration": "Nice work. Let's recap. This class has six modules, from preparing for birth all the way to recovery after birth. You can pause, go back, turn on captions, or mute anytime. Check-ins help you learn, and reflections save to your private Birth Readiness Brief. Red safety slides list warning signs and have a Call 911 button. Ask your instructor answers questions about the current lesson, but it's not for emergencies or personal advice. And this class is education. Your care team's advice always comes first. Next up, a short review quiz. Then we'll look at your body in the third trimester.",
+      "narration": "Nice work. Let's recap. The class has two short sections for pregnancy, then six modules, from preparing for birth all the way to recovery after birth. You can pause, go back, turn on captions, or mute anytime. Check-ins help you learn, and reflections save to your private Birth Readiness Brief. Red safety slides list warning signs and have a Call 911 button. Ask your instructor answers questions about the current lesson, but it's not for emergencies or personal advice. And this class is education. Your care team's advice always comes first. Next up, a short review quiz. Then pick where to start: Early Pregnancy Basics if you're early in pregnancy, or Preparing for Birth if your due date is getting closer.",
       "sourceIds": [
         "lamaze-braxton-hicks",
         "acog-prenatal-care"
@@ -248,6 +248,5 @@
       "correctIndex": 1,
       "explanation": "This class is education, not medical care. Your own care team knows your health and your pregnancy, so their advice comes first."
     }
-  ],
-  "nextLessonId": "third-trimester-body"
+  ]
 }

@@ -15,6 +15,7 @@ const root = path.resolve(import.meta.dirname, '..');
 
 // Course order and names, as on the app's home screen (src/content/lessons.ts).
 const COURSES = [
+  ['start-here', 'Welcome: How This Class Works'],
   ['early-pregnancy-basics', 'Early Pregnancy Basics'],
   ['how-your-baby-grows', 'How Your Baby Grows'],
   ['preparing-for-birth', 'Preparing for Birth'],
