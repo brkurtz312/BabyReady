@@ -9,13 +9,13 @@
     "Know what check-ins, reflections, safety slides, and review quizzes are for",
     "Know when to use Ask your instructor, and when to call your care team or 911 instead"
   ],
-  "estimatedMinutes": 5,
+  "estimatedMinutes": 6,
   "review": {
     "status": "reviewed",
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. Most slides are editorial (they explain the app and make no health claim); only the 'why-prepare' slide and the summary cite sources. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed. Moved 2026-10-28 to its own Start Here section at the top of the class, at the reviewer's request; the overview and summary slides now describe the two pregnancy sections and six modules, and the summary no longer leads into the third-trimester lesson. Wording only; no clinical content changed."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. Most slides are editorial (they explain the app and make no health claim); only the 'why-prepare' slide and the summary cite sources. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed. Moved 2026-10-28 to its own Start Here section at the top of the class, at the reviewer's request; the overview and summary slides now describe the two pregnancy sections and six modules, and the summary no longer leads into the third-trimester lesson. Wording only; no clinical content changed. Added 2026-10-28 at the reviewer's request: an editorial slide on the videos after lessons (trusted, evidence-based organizations; the Video Vault on the home screen; videos reviewed and updated regularly), with a matching line in the summary."
   },
   "sources": [
     {
@@ -145,6 +145,21 @@
       }
     },
     {
+      "id": "videos-after-lessons",
+      "type": "content",
+      "heading": "Videos from trusted health organizations",
+      "onScreen": [
+        "Many lessons end with videos to watch next",
+        "From trusted organizations like ACOG, AAP, CDC, and March of Dimes",
+        "Their guidance is based on medical evidence",
+        "Find them all in the Video Vault on the home screen",
+        "We review and update the videos regularly"
+      ],
+      "narration": "Many lessons end with a short list of videos to watch next. They come from trusted health organizations, like the American College of Obstetricians and Gynecologists, the American Academy of Pediatrics, the CDC, and March of Dimes, whose guidance is based on medical evidence. The videos open outside the class, on YouTube or the organization's own website. If you'd like to find one again, every video from the class is in the Video Vault, on the home screen, sorted by topic. We review the videos and update them regularly, so they stay current.",
+      "sourceIds": [],
+      "editorial": true
+    },
+    {
       "id": "why-prepare",
       "type": "content",
       "heading": "Why it helps to prepare",
@@ -207,10 +222,11 @@
         "Two pregnancy sections, then six modules through postpartum",
         "You control play, pause, back, captions, and mute",
         "Check-ins teach; reflections save to your Brief",
+        "Videos from trusted organizations, all in the Video Vault",
         "Red slides = warning signs, with a Call 911 button",
         "This is education; your care team's advice comes first"
       ],
-      "narration": "Nice work. Let's recap. The class has two short sections for pregnancy, then six modules, from preparing for birth all the way to recovery after birth. You can pause, go back, turn on captions, or mute anytime. Check-ins help you learn, and reflections save to your private Birth Readiness Brief. Red safety slides list warning signs and have a Call 911 button. Ask your instructor answers questions about the current lesson, but it's not for emergencies or personal advice. And this class is education. Your care team's advice always comes first. Next up, a short review quiz. Then pick where to start: Early Pregnancy Basics if you're early in pregnancy, or Preparing for Birth if your due date is getting closer.",
+      "narration": "Nice work. Let's recap. The class has two short sections for pregnancy, then six modules, from preparing for birth all the way to recovery after birth. You can pause, go back, turn on captions, or mute anytime. Check-ins help you learn, and reflections save to your private Birth Readiness Brief. Red safety slides list warning signs and have a Call 911 button. Ask your instructor answers questions about the current lesson, but it's not for emergencies or personal advice. Many lessons end with videos from trusted health organizations, and you'll find them all in the Video Vault. And this class is education. Your care team's advice always comes first. Next up, a short review quiz. Then pick where to start: Early Pregnancy Basics if you're early in pregnancy, or Preparing for Birth if your due date is getting closer.",
       "sourceIds": [
         "lamaze-braxton-hicks",
         "acog-prenatal-care"

@@ -9794,21 +9794,22 @@
     "checked": true
   },
   "welcome-how-this-class-works/summary.m4a": {
-    "fingerprint": "d7b62c88",
+    "fingerprint": "3077a7ee",
     "voice": "Sulafat",
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150,
-      2224,
-      5396,
-      12444,
-      15377,
-      20976,
-      25900,
-      32774,
-      35166,
-      38041,
-      40244
+      967,
+      2243,
+      9960,
+      14113,
+      18929,
+      23725,
+      30265,
+      36642,
+      38561,
+      41347,
+      44715
     ],
     "checked": true
   },
@@ -11545,6 +11546,19 @@
       2123,
       5251,
       9747
+    ],
+    "checked": true
+  },
+  "welcome-how-this-class-works/videos-after-lessons.m4a": {
+    "fingerprint": "85507c2a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4244,
+      17600,
+      22411,
+      29350
     ],
     "checked": true
   }
