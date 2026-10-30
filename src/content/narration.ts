@@ -303,6 +303,22 @@ export const narrationClips: Record<string, NarrationClip> = {
   '7735ef23': { source: require('../../assets/narration/early-pregnancy-first-steps/welcome.m4a'), starts: [150, 2393, 4134, 8706, 11038, 12624, 23429, 25702, 28669] }, // early-pregnancy-first-steps/welcome.m4a
   'f73502b2': { source: require('../../assets/narration/early-pregnancy-first-steps/who-gives-care.m4a'), starts: [150, 3515, 5971, 9953, 16317, 20170, 24355, 30460] }, // early-pregnancy-first-steps/who-gives-care.m4a
   '519bb5ee': { source: require('../../assets/narration/early-pregnancy-first-steps/your-next-steps.m4a'), starts: [150, 2041, 5810, 10107, 13859, 15486] }, // early-pregnancy-first-steps/your-next-steps.m4a
+  'd171ce61': { source: require('../../assets/narration/eating-well-during-pregnancy/checkin-food-safety-right.m4a'), starts: [150, 1092, 5634] }, // eating-well-during-pregnancy/checkin-food-safety-right.m4a
+  '2152b653': { source: require('../../assets/narration/eating-well-during-pregnancy/checkin-food-safety-wrong.m4a'), starts: [150, 1248, 5596] }, // eating-well-during-pregnancy/checkin-food-safety-wrong.m4a
+  '4ed262c7': { source: require('../../assets/narration/eating-well-during-pregnancy/drinks.m4a'), starts: [150, 1588, 3579, 5780, 8542, 12611, 16155, 20691] }, // eating-well-during-pregnancy/drinks.m4a
+  'ec729463': { source: require('../../assets/narration/eating-well-during-pregnancy/eating-for-two.m4a'), starts: [150, 3102, 6005, 10106, 14977, 18135, 22393] }, // eating-well-during-pregnancy/eating-for-two.m4a
+  'c2d8f1d3': { source: require('../../assets/narration/eating-well-during-pregnancy/fish.m4a'), starts: [150, 3961, 10380, 15754, 20865, 26054, 27961] }, // eating-well-during-pregnancy/fish.m4a
+  '8b3b87cb': { source: require('../../assets/narration/eating-well-during-pregnancy/foods-to-skip.m4a'), starts: [150, 5546, 9109, 13962, 16439, 20958, 25785, 29837, 32935] }, // eating-well-during-pregnancy/foods-to-skip.m4a
+  '50460e3c': { source: require('../../assets/narration/eating-well-during-pregnancy/healthy-plate.m4a'), starts: [150, 7487, 12227, 14954, 18305, 21820, 23876, 30388] }, // eating-well-during-pregnancy/healthy-plate.m4a
+  'c5dcf34f': { source: require('../../assets/narration/eating-well-during-pregnancy/key-nutrients.m4a'), starts: [150, 3018, 6568, 9835, 13064, 18789, 27036, 33545] }, // eating-well-during-pregnancy/key-nutrients.m4a
+  'ee0b4ae2': { source: require('../../assets/narration/eating-well-during-pregnancy/quiz-1-right.m4a'), starts: [150, 1214, 4835] }, // eating-well-during-pregnancy/quiz-1-right.m4a
+  '78d398ec': { source: require('../../assets/narration/eating-well-during-pregnancy/quiz-1-wrong.m4a'), starts: [150, 1267, 4399] }, // eating-well-during-pregnancy/quiz-1-wrong.m4a
+  '0f73b566': { source: require('../../assets/narration/eating-well-during-pregnancy/quiz-2-right.m4a'), starts: [150, 890, 5020] }, // eating-well-during-pregnancy/quiz-2-right.m4a
+  'f89004f4': { source: require('../../assets/narration/eating-well-during-pregnancy/quiz-2-wrong.m4a'), starts: [150, 1160, 5035] }, // eating-well-during-pregnancy/quiz-2-wrong.m4a
+  'd2dd656e': { source: require('../../assets/narration/eating-well-during-pregnancy/quiz-3-right.m4a'), starts: [150, 859, 2526] }, // eating-well-during-pregnancy/quiz-3-right.m4a
+  '77dbe998': { source: require('../../assets/narration/eating-well-during-pregnancy/quiz-3-wrong.m4a'), starts: [150, 1192, 3063] }, // eating-well-during-pregnancy/quiz-3-wrong.m4a
+  '7a541bc1': { source: require('../../assets/narration/eating-well-during-pregnancy/summary.m4a'), starts: [150, 1291, 7794, 12050, 15118, 18638, 24701, 30575, 33065] }, // eating-well-during-pregnancy/summary.m4a
+  '7d36643f': { source: require('../../assets/narration/eating-well-during-pregnancy/welcome.m4a'), starts: [150, 1082, 4561, 9323, 21043, 22809] }, // eating-well-during-pregnancy/welcome.m4a
   '6cec515e': { source: require('../../assets/narration/emotional-health-after-birth/anxiety.m4a'), starts: [150, 5750, 14734, 22363, 29260] }, // emotional-health-after-birth/anxiety.m4a
   '7cedf1cf': { source: require('../../assets/narration/emotional-health-after-birth/baby-blues.m4a'), starts: [150, 8521, 10354, 15093, 18851, 23022, 25303] }, // emotional-health-after-birth/baby-blues.m4a
   '8cc0f931': { source: require('../../assets/narration/emotional-health-after-birth/checkin-blues-right.m4a'), starts: [150, 1160, 8042] }, // emotional-health-after-birth/checkin-blues-right.m4a
@@ -326,6 +342,7 @@ export const narrationClips: Record<string, NarrationClip> = {
   'da7fe320': { source: require('../../assets/narration/emotional-health-after-birth/who-is-at-risk.m4a'), starts: [150, 5573, 15082, 24726, 29485] }, // emotional-health-after-birth/who-is-at-risk.m4a
   '022609c9': { source: require('../../assets/narration/first-prenatal-visit/checkin-last-period-right.m4a'), starts: [150, 938, 5045, 6938] }, // first-prenatal-visit/checkin-last-period-right.m4a
   'eac6fc83': { source: require('../../assets/narration/first-prenatal-visit/checkin-last-period-wrong.m4a'), starts: [150, 1139, 5004, 7148] }, // first-prenatal-visit/checkin-last-period-wrong.m4a
+  'ce6f9633': { source: require('../../assets/narration/first-prenatal-visit/done.m4a'), starts: [150, 2564, 3405] }, // first-prenatal-visit/done.m4a
   '081591cf': { source: require('../../assets/narration/first-prenatal-visit/first-visit-talk.m4a'), starts: [150, 2738, 7850, 10220, 13704, 20516, 24077, 26725] }, // first-prenatal-visit/first-visit-talk.m4a
   '6e579088': { source: require('../../assets/narration/first-prenatal-visit/honest-answers.m4a'), starts: [150, 2908, 6726, 12897, 18605] }, // first-prenatal-visit/honest-answers.m4a
   '55002177': { source: require('../../assets/narration/first-prenatal-visit/in-person-checks.m4a'), starts: [150, 5195, 6786, 11358, 18439, 24000] }, // first-prenatal-visit/in-person-checks.m4a
@@ -336,7 +353,7 @@ export const narrationClips: Record<string, NarrationClip> = {
   '8a207c64': { source: require('../../assets/narration/first-prenatal-visit/quiz-2-wrong.m4a'), starts: [150, 1458, 5760] }, // first-prenatal-visit/quiz-2-wrong.m4a
   '508be374': { source: require('../../assets/narration/first-prenatal-visit/quiz-3-right.m4a'), starts: [150, 1091, 3918, 8410] }, // first-prenatal-visit/quiz-3-right.m4a
   '634c1e4e': { source: require('../../assets/narration/first-prenatal-visit/quiz-3-wrong.m4a'), starts: [150, 1466, 4457, 9194] }, // first-prenatal-visit/quiz-3-wrong.m4a
-  '1790908a': { source: require('../../assets/narration/first-prenatal-visit/summary.m4a'), starts: [150, 1550, 2620, 7494, 14594, 17849, 23475, 25654, 27715, 30050] }, // first-prenatal-visit/summary.m4a
+  'e2d1d645': { source: require('../../assets/narration/first-prenatal-visit/summary.m4a'), starts: [150, 1258, 2351, 7204, 12128, 17533, 23007, 25421, 27341, 29386] }, // first-prenatal-visit/summary.m4a
   '9b654946': { source: require('../../assets/narration/first-prenatal-visit/visit-prep-video.m4a'), starts: [150] }, // first-prenatal-visit/visit-prep-video.m4a
   '0d51f924': { source: require('../../assets/narration/first-prenatal-visit/welcome.m4a'), starts: [150, 3924, 6718, 12560, 17035] }, // first-prenatal-visit/welcome.m4a
   '8010d9bf': { source: require('../../assets/narration/first-prenatal-visit/what-is-prenatal-care.m4a'), starts: [150, 5360, 11229, 14413, 19176, 24864] }, // first-prenatal-visit/what-is-prenatal-care.m4a

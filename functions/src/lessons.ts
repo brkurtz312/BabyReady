@@ -5,6 +5,7 @@ import welcomeHowThisClassWorks from '../../content/lessons/start-here/01-welcom
 import earlyPregnancyFirstSteps from '../../content/lessons/early-pregnancy-basics/01-early-pregnancy-first-steps.json';
 import firstTrimesterCommonChanges from '../../content/lessons/early-pregnancy-basics/02-first-trimester-common-changes.json';
 import firstPrenatalVisit from '../../content/lessons/early-pregnancy-basics/03-first-prenatal-visit.json';
+import eatingWellDuringPregnancy from '../../content/lessons/early-pregnancy-basics/04-eating-well-during-pregnancy.json';
 
 import babyMonths1To3 from '../../content/lessons/how-your-baby-grows/01-baby-months-1-to-3.json';
 import babyMonths4To6 from '../../content/lessons/how-your-baby-grows/02-baby-months-4-to-6.json';
@@ -60,6 +61,7 @@ const lessons = [
   earlyPregnancyFirstSteps,
   firstTrimesterCommonChanges,
   firstPrenatalVisit,
+  eatingWellDuringPregnancy,
   babyMonths1To3,
   babyMonths4To6,
   babyMonths7To9,

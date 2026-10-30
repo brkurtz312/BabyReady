@@ -808,20 +808,20 @@
     "checked": true
   },
   "first-prenatal-visit/summary.m4a": {
-    "fingerprint": "1790908a",
+    "fingerprint": "e2d1d645",
     "voice": "Sulafat",
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150,
-      1550,
-      2620,
-      7494,
-      14594,
-      17849,
-      23475,
-      25654,
-      27715,
-      30050
+      1258,
+      2351,
+      7204,
+      12128,
+      17533,
+      23007,
+      25421,
+      27341,
+      29386
     ],
     "checked": true
   },
@@ -11559,6 +11559,232 @@
       17600,
       22411,
       29350
+    ],
+    "checked": true
+  },
+  "first-prenatal-visit/done.m4a": {
+    "fingerprint": "ce6f9633",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2564,
+      3405
+    ],
+    "checked": true
+  },
+  "eating-well-during-pregnancy/welcome.m4a": {
+    "fingerprint": "7d36643f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1082,
+      4561,
+      9323,
+      21043,
+      22809
+    ],
+    "checked": true
+  },
+  "eating-well-during-pregnancy/healthy-plate.m4a": {
+    "fingerprint": "50460e3c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      7487,
+      12227,
+      14954,
+      18305,
+      21820,
+      23876,
+      30388
+    ],
+    "checked": true
+  },
+  "eating-well-during-pregnancy/eating-for-two.m4a": {
+    "fingerprint": "ec729463",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3102,
+      6005,
+      10106,
+      14977,
+      18135,
+      22393
+    ],
+    "checked": true
+  },
+  "eating-well-during-pregnancy/key-nutrients.m4a": {
+    "fingerprint": "c5dcf34f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3018,
+      6568,
+      9835,
+      13064,
+      18789,
+      27036,
+      33545
+    ],
+    "checked": true
+  },
+  "eating-well-during-pregnancy/fish.m4a": {
+    "fingerprint": "c2d8f1d3",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3961,
+      10380,
+      15754,
+      20865,
+      26054,
+      27961
+    ],
+    "checked": true
+  },
+  "eating-well-during-pregnancy/drinks.m4a": {
+    "fingerprint": "4ed262c7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1588,
+      3579,
+      5780,
+      8542,
+      12611,
+      16155,
+      20691
+    ],
+    "checked": true
+  },
+  "eating-well-during-pregnancy/foods-to-skip.m4a": {
+    "fingerprint": "8b3b87cb",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5546,
+      9109,
+      13962,
+      16439,
+      20958,
+      25785,
+      29837,
+      32935
+    ],
+    "checked": true
+  },
+  "eating-well-during-pregnancy/checkin-food-safety-right.m4a": {
+    "fingerprint": "d171ce61",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1092,
+      5634
+    ],
+    "checked": true
+  },
+  "eating-well-during-pregnancy/checkin-food-safety-wrong.m4a": {
+    "fingerprint": "2152b653",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1248,
+      5596
+    ],
+    "checked": true
+  },
+  "eating-well-during-pregnancy/summary.m4a": {
+    "fingerprint": "7a541bc1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1291,
+      7794,
+      12050,
+      15118,
+      18638,
+      24701,
+      30575,
+      33065
+    ],
+    "checked": true
+  },
+  "eating-well-during-pregnancy/quiz-2-wrong.m4a": {
+    "fingerprint": "f89004f4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1160,
+      5035
+    ],
+    "checked": true
+  },
+  "eating-well-during-pregnancy/quiz-3-right.m4a": {
+    "fingerprint": "d2dd656e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      859,
+      2526
+    ],
+    "checked": true
+  },
+  "eating-well-during-pregnancy/quiz-3-wrong.m4a": {
+    "fingerprint": "77dbe998",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1192,
+      3063
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-30: wording matches; transcript wrote twelve ounce for 12-ounce"
+  },
+  "eating-well-during-pregnancy/quiz-1-right.m4a": {
+    "fingerprint": "ee0b4ae2",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1214,
+      4835
+    ],
+    "checked": true
+  },
+  "eating-well-during-pregnancy/quiz-1-wrong.m4a": {
+    "fingerprint": "78d398ec",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1267,
+      4399
+    ],
+    "checked": true
+  },
+  "eating-well-during-pregnancy/quiz-2-right.m4a": {
+    "fingerprint": "0f73b566",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      890,
+      5020
     ],
     "checked": true
   }
