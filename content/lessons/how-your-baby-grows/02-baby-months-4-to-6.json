@@ -11,11 +11,11 @@
   ],
   "estimatedMinutes": 8,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Clinically reviewed 2026-10-25 by Bryan Kurtz MD, FACOG, who confirmed every source against its slides. Draft 2026-10-24 for the new How Your Baby Grows module, built around the March of Dimes month-by-month videos. Needs clinical review and every source confirmed against its slides. Sizes are rounded averages from ACOG's Changes During Pregnancy infographic. First movements are given as roughly 16 to 22 weeks, earlier in a later pregnancy; the anatomy ultrasound as about 18 to 22 weeks; hearing as \"by the end of this trimester\". Reviewer to confirm these ranges, and that ACOG supports the round ligament pain and fundal height lines on the body slide. Pictures are the reviewer's fetal and maternal development illustrations from the Pregnancy AI Assistant, padded to the class's 16:10 frame; that draft labeled the earliest stages in weeks after conception, while this class counts from the last period, so the pictures are placed by what they show. Draft 2026-10-30 at the reviewer's request: added 'Where the weight goes' (a breakdown table), 'What's right for you' (2009 IOM ranges by pre-pregnancy BMI, as used by ACOG and CDC; no BMI numbers shown, encouraging framing, no dieting unless advised), and a check-in, plus a summary line. For the reviewer: the breakdown figures are the commonly cited rounded values (secondary sources; not found on an approved page), the ranges are 25-35 normal, 28-40 underweight, 15-25 overweight, 11-20 obese, and the three new sources and their URLs need verifying."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-30",
+    "nextReviewBy": "2027-10-30",
+    "notes": "Clinically reviewed 2026-10-30 by Bryan Kurtz MD, FACOG, including the weight gain slides, which the reviewer approved as written. Clinically reviewed 2026-10-25 by Bryan Kurtz MD, FACOG, who confirmed every source against its slides. Draft 2026-10-24 for the new How Your Baby Grows module, built around the March of Dimes month-by-month videos. Needs clinical review and every source confirmed against its slides. Sizes are rounded averages from ACOG's Changes During Pregnancy infographic. First movements are given as roughly 16 to 22 weeks, earlier in a later pregnancy; the anatomy ultrasound as about 18 to 22 weeks; hearing as \"by the end of this trimester\". Reviewer to confirm these ranges, and that ACOG supports the round ligament pain and fundal height lines on the body slide. Pictures are the reviewer's fetal and maternal development illustrations from the Pregnancy AI Assistant, padded to the class's 16:10 frame; that draft labeled the earliest stages in weeks after conception, while this class counts from the last period, so the pictures are placed by what they show. Draft 2026-10-30 at the reviewer's request: added 'Where the weight goes' (a breakdown table), 'What's right for you' (2009 IOM ranges by pre-pregnancy BMI, as used by ACOG and CDC; no BMI numbers shown, encouraging framing, no dieting unless advised), and a check-in, plus a summary line. For the reviewer: the breakdown figures are the commonly cited rounded values (secondary sources; not found on an approved page), the ranges are 25-35 normal, 28-40 underweight, 15-25 overweight, 11-20 obese, and the three new sources and their URLs need verifying."
   },
   "sources": [
     {
@@ -23,49 +23,49 @@
       "organization": "ACOG",
       "title": "How Your Fetus Grows During Pregnancy (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/how-your-fetus-grows-during-pregnancy",
-      "verifiedOn": "2026-10-25"
+      "verifiedOn": "2026-10-30"
     },
     {
       "id": "acog-changes-during-pregnancy",
       "organization": "ACOG",
       "title": "Changes During Pregnancy (Infographic)",
       "url": "https://www.acog.org/womens-health/infographics/changes-during-pregnancy",
-      "verifiedOn": "2026-10-25"
+      "verifiedOn": "2026-10-30"
     },
     {
       "id": "acog-ultrasound-exams",
       "organization": "ACOG",
       "title": "Ultrasound Exams (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/ultrasound-exams",
-      "verifiedOn": "2026-10-25"
+      "verifiedOn": "2026-10-30"
     },
     {
       "id": "lamaze-braxton-hicks",
       "organization": "Lamaze",
       "title": "Braxton-Hicks Contractions (Giving Birth with Confidence)",
       "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/braxton-hicks-contractions",
-      "verifiedOn": "2026-10-25"
+      "verifiedOn": "2026-10-30"
     },
     {
       "id": "acog-nutrition",
       "organization": "ACOG",
       "title": "Nutrition During Pregnancy (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/nutrition-during-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-30"
     },
     {
       "id": "acog-co548-weight-gain",
       "organization": "ACOG",
       "title": "Weight Gain During Pregnancy (Committee Opinion No. 548)",
       "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2013/01/weight-gain-during-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-30"
     },
     {
       "id": "cdc-pregnancy-weight-gain",
       "organization": "CDC",
       "title": "Weight Gain During Pregnancy",
       "url": "https://www.cdc.gov/maternal-infant-health/pregnancy-weight/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-30"
     }
   ],
   "slides": [
