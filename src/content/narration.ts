@@ -57,16 +57,20 @@ export const narrationClips: Record<string, NarrationClip> = {
   '0971384e': { source: require('../../assets/narration/baby-months-4-to-6/anatomy-ultrasound.m4a'), starts: [150, 6600, 15817, 19637, 21440] }, // baby-months-4-to-6/anatomy-ultrasound.m4a
   'fa4a4611': { source: require('../../assets/narration/baby-months-4-to-6/checkin-movement-right.m4a'), starts: [150, 1038, 7508] }, // baby-months-4-to-6/checkin-movement-right.m4a
   '850a8833': { source: require('../../assets/narration/baby-months-4-to-6/checkin-movement-wrong.m4a'), starts: [150, 1514, 8142] }, // baby-months-4-to-6/checkin-movement-wrong.m4a
+  'c0069a6e': { source: require('../../assets/narration/baby-months-4-to-6/checkin-weight-right.m4a'), starts: [150, 6245] }, // baby-months-4-to-6/checkin-weight-right.m4a
+  'cf49eb78': { source: require('../../assets/narration/baby-months-4-to-6/checkin-weight-wrong.m4a'), starts: [150, 1468] }, // baby-months-4-to-6/checkin-weight-wrong.m4a
   '40649366': { source: require('../../assets/narration/baby-months-4-to-6/done.m4a'), starts: [150, 2402, 3181] }, // baby-months-4-to-6/done.m4a
   '4382aaaa': { source: require('../../assets/narration/baby-months-4-to-6/first-movements.m4a'), starts: [150, 6215, 9241, 11109, 15387, 18553] }, // baby-months-4-to-6/first-movements.m4a
   '2676176c': { source: require('../../assets/narration/baby-months-4-to-6/growing-fast.m4a'), starts: [150, 3233, 9044, 12593, 17850, 20042] }, // baby-months-4-to-6/growing-fast.m4a
+  '35c4c22f': { source: require('../../assets/narration/baby-months-4-to-6/healthy-gain.m4a'), starts: [150, 4840, 8687, 11949, 18814, 20328, 21637, 26480, 32052, 36116, 41461, 44734] }, // baby-months-4-to-6/healthy-gain.m4a
   '93153a20': { source: require('../../assets/narration/baby-months-4-to-6/hearing.m4a'), starts: [150, 3929, 9372, 13563] }, // baby-months-4-to-6/hearing.m4a
   '579271c7': { source: require('../../assets/narration/baby-months-4-to-6/quiz-1-right.m4a'), starts: [150, 1057, 11292] }, // baby-months-4-to-6/quiz-1-right.m4a
   'fd1ef409': { source: require('../../assets/narration/baby-months-4-to-6/quiz-1-wrong.m4a'), starts: [150, 1533, 11318] }, // baby-months-4-to-6/quiz-1-wrong.m4a
   'e305c915': { source: require('../../assets/narration/baby-months-4-to-6/quiz-2-right.m4a'), starts: [150, 1102, 5119] }, // baby-months-4-to-6/quiz-2-right.m4a
   'd6f5501b': { source: require('../../assets/narration/baby-months-4-to-6/quiz-2-wrong.m4a'), starts: [150, 1329, 5241] }, // baby-months-4-to-6/quiz-2-wrong.m4a
-  '9644d9c5': { source: require('../../assets/narration/baby-months-4-to-6/summary.m4a'), starts: [150, 1374, 7760, 13275, 18394, 21877, 23878] }, // baby-months-4-to-6/summary.m4a
+  '45acedbe': { source: require('../../assets/narration/baby-months-4-to-6/summary.m4a'), starts: [150, 1242, 6570, 12092, 17033, 24107, 27354, 31241] }, // baby-months-4-to-6/summary.m4a
   '96f36c16': { source: require('../../assets/narration/baby-months-4-to-6/welcome.m4a'), starts: [150, 1333, 4904, 8142, 13213] }, // baby-months-4-to-6/welcome.m4a
+  '4ff09e19': { source: require('../../assets/narration/baby-months-4-to-6/where-the-weight-goes.m4a'), starts: [150, 5917, 7605, 10210, 16413, 22032, 28998, 31330, 36995] }, // baby-months-4-to-6/where-the-weight-goes.m4a
   '08e368cb': { source: require('../../assets/narration/baby-months-4-to-6/your-body.m4a'), starts: [150, 2994, 8539, 15553, 21682, 24818, 30052] }, // baby-months-4-to-6/your-body.m4a
   '9eaafaf3': { source: require('../../assets/narration/baby-months-7-to-9/baby-drops.m4a'), starts: [150, 4449, 7578, 12436, 18425, 22412] }, // baby-months-7-to-9/baby-drops.m4a
   '4f49a6a1': { source: require('../../assets/narration/baby-months-7-to-9/baby-movement.m4a'), starts: [150, 5269, 11865, 19923, 24624] }, // baby-months-7-to-9/baby-movement.m4a
