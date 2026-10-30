@@ -1,0 +1,238 @@
+{
+  "courseId": "early-pregnancy-basics",
+  "lessonId": "eating-well-during-pregnancy",
+  "order": 4,
+  "title": "Eating Well During Pregnancy",
+  "learningGoals": [
+    "Build meals around fruits and vegetables, whole grains, protein, and calcium-rich foods",
+    "Know how much more to eat in each trimester",
+    "Know the key nutrients in pregnancy and the role of a prenatal vitamin",
+    "Choose low-mercury fish and know which fish to avoid",
+    "Know which foods to skip to avoid foodborne illness, including Listeria",
+    "Keep caffeine under 200 milligrams a day, drink plenty of water, and avoid alcohol"
+  ],
+  "estimatedMinutes": 7,
+  "review": {
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-30",
+    "nextReviewBy": "2027-10-30",
+    "notes": "Clinically reviewed 2026-10-30 by Bryan Kurtz MD, FACOG, who approved the lesson as written. Draft 2026-10-30 at the reviewer's request, as lesson 4 of Early Pregnancy Basics. Figures follow ACOG's Nutrition During Pregnancy FAQ: no extra calories in the first trimester, about 340 a day in the second and 450 in the third; folic acid 600 mcg, iron 27 mg, calcium 1,000 mg, vitamin D 600 IU, choline 450 mg; 8 to 12 ounces of low-mercury fish a week; high-mercury fish to avoid; caffeine under 200 mg a day; 8 to 12 cups of water a day. Foods to avoid follow ACOG and CDC Listeria guidance. For the reviewer: confirm the nutrient amounts, the fish lists, and the three sources and their URLs. Note that Your First Steps gives the CDC's 400 mcg folic acid for everyone who could become pregnant; this lesson gives ACOG's 600 mcg during pregnancy and says a prenatal vitamin usually covers it."
+  },
+  "sources": [
+    {
+      "id": "acog-nutrition",
+      "organization": "ACOG",
+      "title": "Nutrition During Pregnancy (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/nutrition-during-pregnancy",
+      "verifiedOn": "2026-10-30"
+    },
+    {
+      "id": "cdc-listeria-pregnancy",
+      "organization": "CDC",
+      "title": "Listeria: People at Higher Risk (Pregnant People)",
+      "url": "https://www.cdc.gov/listeria/risk-factors/index.html",
+      "verifiedOn": "2026-10-30"
+    },
+    {
+      "id": "cdc-alcohol-pregnancy",
+      "organization": "CDC",
+      "title": "About Alcohol Use During Pregnancy",
+      "url": "https://www.cdc.gov/alcohol-pregnancy/about/index.html",
+      "verifiedOn": "2026-10-30"
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Eating Well During Pregnancy",
+      "onScreen": [
+        "Early Pregnancy Basics"
+      ],
+      "narration": "Welcome back. In this lesson, we'll talk about eating well during pregnancy. Food can feel like one more thing to get right, so let's keep it simple. We'll cover what a healthy plate looks like, how much more you really need to eat, a few key nutrients, which fish to choose, which foods to skip for now, and what to drink. You don't need a perfect diet. Small, steady choices add up.",
+      "sourceIds": []
+    },
+    {
+      "id": "healthy-plate",
+      "type": "content",
+      "heading": "A healthy plate",
+      "onScreen": [
+        "Fill half your plate with fruits and vegetables",
+        "Choose whole grains, like oatmeal, brown rice, and whole-wheat bread",
+        "Add protein: beans, eggs, poultry, lean meat, nuts, or fish",
+        "Include dairy or other calcium-rich foods",
+        "Small, steady choices add up"
+      ],
+      "narration": "A simple way to eat well is to think about your plate. Fill about half of it with fruits and vegetables, in lots of colors. Choose whole grains, like oatmeal, brown rice, or whole-wheat bread. Add a protein, like beans, eggs, chicken, lean meat, nuts, or fish. And include dairy, or other foods with calcium. You don't have to get every meal right. If nausea makes eating hard right now, that's okay. Eat what you can, and come back to these ideas as you feel better.",
+      "sourceIds": [
+        "acog-nutrition"
+      ]
+    },
+    {
+      "id": "eating-for-two",
+      "type": "comparison",
+      "heading": "“Eating for two” isn’t double",
+      "onScreen": [
+        "Your body needs a little more as your baby grows, not twice as much"
+      ],
+      "narration": "You may have heard that you're eating for two. But your baby doesn't need twice the food. In the first trimester, most people don't need any extra calories. In the second trimester, you need about three hundred forty extra calories a day. That's about a cup of yogurt and a piece of fruit. And in the third trimester, about four hundred fifty extra a day. Your care team can help if your needs are different, for example if you're expecting twins.",
+      "sourceIds": [
+        "acog-nutrition"
+      ],
+      "columns": [
+        "Trimester",
+        "Extra calories a day"
+      ],
+      "rows": [
+        [
+          "First",
+          "Usually none"
+        ],
+        [
+          "Second",
+          "About 340, like a yogurt and a piece of fruit"
+        ],
+        [
+          "Third",
+          "About 450"
+        ]
+      ]
+    },
+    {
+      "id": "key-nutrients",
+      "type": "content",
+      "heading": "Key nutrients and your prenatal vitamin",
+      "onScreen": [
+        "Folic acid: helps your baby's brain and spine form",
+        "Iron: helps carry oxygen to your baby",
+        "Calcium and vitamin D: for strong bones and teeth",
+        "Choline and DHA: for your baby's brain",
+        "A daily prenatal vitamin helps fill the gaps"
+      ],
+      "narration": "A few nutrients matter a lot in pregnancy. Folic acid helps your baby's brain and spine form. Iron helps your blood carry oxygen to your baby. Calcium and vitamin D build strong bones and teeth. And choline and an omega-3 fat called DHA help your baby's brain grow. Food is the best source, but a daily prenatal vitamin helps fill the gaps, and it usually has the folic acid and iron you need. Take one prenatal vitamin a day, and don't add extra vitamins or supplements without asking your care team. Too much of some vitamins, like vitamin A, can be harmful.",
+      "sourceIds": [
+        "acog-nutrition"
+      ]
+    },
+    {
+      "id": "fish",
+      "type": "content",
+      "heading": "Fish: good for your baby, in the right kinds",
+      "onScreen": [
+        "Aim for 2 to 3 servings of low-mercury fish a week",
+        "Good choices: salmon, shrimp, cod, tilapia, and canned light tuna",
+        "Avoid: shark, swordfish, king mackerel, tilefish, bigeye tuna, marlin, and orange roughy",
+        "Cook fish well; skip raw fish like sushi for now"
+      ],
+      "narration": "Fish is a great source of protein and DHA for your baby's brain. Aim for two to three servings a week, about eight to twelve ounces in all, of fish that are low in mercury. Good choices include salmon, shrimp, cod, tilapia, and canned light tuna. Some fish are high in mercury, which can harm your baby's developing brain and nerves. Avoid shark, swordfish, king mackerel, tilefish, bigeye tuna, marlin, and orange roughy. And cook fish well. Skip raw fish, like sushi, until after your baby is born.",
+      "sourceIds": [
+        "acog-nutrition"
+      ]
+    },
+    {
+      "id": "foods-to-skip",
+      "type": "content",
+      "heading": "Foods to skip for now",
+      "onScreen": [
+        "Unpasteurized milk, cheese, and juice",
+        "Raw or undercooked meat, poultry, eggs, and fish",
+        "Deli meats and hot dogs, unless heated until steaming",
+        "Refrigerated smoked seafood, and raw sprouts",
+        "Wash fruits and vegetables well"
+      ],
+      "narration": "Some germs that live in food can make you very sick during pregnancy, and they can harm your baby. One of them, called Listeria, is a special concern. To lower your risk, skip unpasteurized milk, cheese, and juice. Check the label for the word pasteurized. Skip raw or undercooked meat, poultry, eggs, and fish. Deli meats and hot dogs are fine only if you heat them until they're steaming hot. Skip refrigerated smoked seafood, and raw sprouts. And wash fruits and vegetables well before you eat them. If you get a fever or flu-like symptoms after eating something you're unsure about, call your care team.",
+      "sourceIds": [
+        "acog-nutrition",
+        "cdc-listeria-pregnancy"
+      ]
+    },
+    {
+      "id": "drinks",
+      "type": "content",
+      "heading": "Caffeine, water, and alcohol",
+      "onScreen": [
+        "Keep caffeine under 200 milligrams a day, about one 12-ounce coffee",
+        "Drink 8 to 12 cups of water a day",
+        "No amount of alcohol is known to be safe"
+      ],
+      "narration": "Let's talk about drinks. A little caffeine is okay. Keep it under two hundred milligrams a day. That's about one twelve-ounce cup of coffee. Remember that tea, soda, and energy drinks have caffeine too. Drink plenty of water, about eight to twelve cups a day. Staying hydrated helps with tiredness, headaches, and constipation. And no amount of alcohol is known to be safe during pregnancy, so the safest choice is none.",
+      "sourceIds": [
+        "acog-nutrition",
+        "cdc-alcohol-pregnancy"
+      ]
+    },
+    {
+      "id": "checkin-food-safety",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's pause for a quick check-in.",
+      "sourceIds": [
+        "acog-nutrition",
+        "cdc-listeria-pregnancy"
+      ],
+      "question": {
+        "prompt": "You're craving a turkey sandwich from the deli. What's the safest way to have it?",
+        "options": [
+          "Eat it cold, straight from the deli case",
+          "Heat the turkey until it's steaming hot first",
+          "Skip turkey for the whole pregnancy"
+        ],
+        "correctIndex": 1,
+        "explanation": "Deli meats can carry Listeria, which is a special concern in pregnancy. Heating the meat until it's steaming hot makes it safe to eat."
+      }
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Half your plate fruits and vegetables, plus whole grains, protein, and calcium",
+        "A little more food as pregnancy goes on, not double",
+        "A daily prenatal vitamin helps fill the gaps",
+        "2 to 3 servings of low-mercury fish a week",
+        "Skip unpasteurized, raw, and undercooked foods; heat deli meats",
+        "Under 200 mg of caffeine, plenty of water, no alcohol"
+      ],
+      "narration": "Let's recap. Fill half your plate with fruits and vegetables, and add whole grains, protein, and calcium-rich foods. You need a little more food as pregnancy goes on, not twice as much. A daily prenatal vitamin helps fill the gaps. Enjoy two to three servings of low-mercury fish a week. Skip unpasteurized, raw, and undercooked foods, and heat deli meats until steaming. And keep caffeine under two hundred milligrams a day, drink plenty of water, and skip alcohol. Next, a few review questions. Congratulations on finishing Early Pregnancy Basics.",
+      "sourceIds": [
+        "acog-nutrition",
+        "cdc-listeria-pregnancy",
+        "cdc-alcohol-pregnancy"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "How many extra calories do most people need in the first trimester?",
+      "options": [
+        "Usually none",
+        "About 450 a day",
+        "Twice as many as before pregnancy"
+      ],
+      "correctIndex": 0,
+      "explanation": "Most people don't need extra calories in the first trimester. You need about 340 more a day in the second trimester and about 450 more in the third."
+    },
+    {
+      "prompt": "Which fish is a good choice during pregnancy?",
+      "options": [
+        "Swordfish",
+        "Salmon",
+        "King mackerel"
+      ],
+      "correctIndex": 1,
+      "explanation": "Salmon is low in mercury and a great source of DHA. Swordfish and king mackerel are high in mercury, so avoid them during pregnancy."
+    },
+    {
+      "prompt": "How much caffeine is okay in a day?",
+      "options": [
+        "Under 200 milligrams, about one 12-ounce coffee",
+        "As much as you like",
+        "None at all"
+      ],
+      "correctIndex": 0,
+      "explanation": "A little caffeine is okay. Keep it under 200 milligrams a day, about one 12-ounce cup of coffee, and remember tea, soda, and energy drinks count too."
+    }
+  ]
+}

@@ -16,7 +16,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Rebuilt 2026-10-15 from the earlier published Early Pregnancy Basics course. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed. Updated 2026-10-30: the summary now leads into the new lesson, Eating Well During Pregnancy, instead of congratulating the learner on finishing Early Pregnancy Basics; wording only."
   },
   "sources": [
     {
@@ -230,7 +230,7 @@
         "Make a visit plan that fits you",
         "Bring your questions"
       ],
-      "narration": "You did it. Let's recap. Your first prenatal visit is a chance to start building a plan with your care team. Much of it is a conversation about your health, your history, and your life. Bring the first day of your last period, your medicine list, and your health and pregnancy history. Share openly, and ask for help with food, rides, or support if you need it. Make a visit plan that fits you. And bring your questions. Next, a few review questions. Congratulations on finishing Early Pregnancy Basics.",
+      "narration": "You did it. Let's recap. Your first prenatal visit is a chance to start building a plan with your care team. Much of it is a conversation about your health, your history, and your life. Bring the first day of your last period, your medicine list, and your health and pregnancy history. Share openly, and ask for help with food, rides, or support if you need it. Make a visit plan that fits you. And bring your questions. Next, a few review questions. Then we’ll talk about eating well during pregnancy.",
       "sourceIds": [
         "acog-prenatal-care"
       ]
@@ -267,5 +267,6 @@
       "correctIndex": 2,
       "explanation": "Your care team can tailor your visits to you. Some may be by video, and exams and tests happen in person. You may need more visits if you have health needs."
     }
-  ]
+  ],
+  "nextLessonId": "eating-well-during-pregnancy"
 }
