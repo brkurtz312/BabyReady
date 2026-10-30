@@ -13,11 +13,11 @@
   ],
   "estimatedMinutes": 7,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Draft 2026-10-30 at the reviewer's request, as lesson 4 of Early Pregnancy Basics. Figures follow ACOG's Nutrition During Pregnancy FAQ: no extra calories in the first trimester, about 340 a day in the second and 450 in the third; folic acid 600 mcg, iron 27 mg, calcium 1,000 mg, vitamin D 600 IU, choline 450 mg; 8 to 12 ounces of low-mercury fish a week; high-mercury fish to avoid; caffeine under 200 mg a day; 8 to 12 cups of water a day. Foods to avoid follow ACOG and CDC Listeria guidance. For the reviewer: confirm the nutrient amounts, the fish lists, and the three sources and their URLs. Note that Your First Steps gives the CDC's 400 mcg folic acid for everyone who could become pregnant; this lesson gives ACOG's 600 mcg during pregnancy and says a prenatal vitamin usually covers it."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-10-30",
+    "nextReviewBy": "2027-10-30",
+    "notes": "Clinically reviewed 2026-10-30 by Bryan Kurtz MD, FACOG, who approved the lesson as written. Draft 2026-10-30 at the reviewer's request, as lesson 4 of Early Pregnancy Basics. Figures follow ACOG's Nutrition During Pregnancy FAQ: no extra calories in the first trimester, about 340 a day in the second and 450 in the third; folic acid 600 mcg, iron 27 mg, calcium 1,000 mg, vitamin D 600 IU, choline 450 mg; 8 to 12 ounces of low-mercury fish a week; high-mercury fish to avoid; caffeine under 200 mg a day; 8 to 12 cups of water a day. Foods to avoid follow ACOG and CDC Listeria guidance. For the reviewer: confirm the nutrient amounts, the fish lists, and the three sources and their URLs. Note that Your First Steps gives the CDC's 400 mcg folic acid for everyone who could become pregnant; this lesson gives ACOG's 600 mcg during pregnancy and says a prenatal vitamin usually covers it."
   },
   "sources": [
     {
@@ -25,21 +25,21 @@
       "organization": "ACOG",
       "title": "Nutrition During Pregnancy (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/nutrition-during-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-30"
     },
     {
       "id": "cdc-listeria-pregnancy",
       "organization": "CDC",
       "title": "Listeria: People at Higher Risk (Pregnant People)",
       "url": "https://www.cdc.gov/listeria/risk-factors/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-30"
     },
     {
       "id": "cdc-alcohol-pregnancy",
       "organization": "CDC",
       "title": "About Alcohol Use During Pregnancy",
       "url": "https://www.cdc.gov/alcohol-pregnancy/about/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-10-30"
     }
   ],
   "slides": [
