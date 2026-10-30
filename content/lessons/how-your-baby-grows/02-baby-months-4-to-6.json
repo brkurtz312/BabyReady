@@ -6,15 +6,16 @@
   "learningGoals": [
     "Know how fast your baby grows in the second trimester",
     "Know when many people first feel their baby move, and what it feels like",
-    "Know what the anatomy ultrasound checks and when it usually happens"
+    "Know what the anatomy ultrasound checks and when it usually happens",
+    "Know where pregnancy weight gain goes, and that a healthy range depends on your weight before pregnancy"
   ],
-  "estimatedMinutes": 6,
+  "estimatedMinutes": 8,
   "review": {
     "status": "reviewed",
     "reviewedBy": "Bryan Kurtz MD, FACOG",
-    "reviewedOn": "2026-10-25",
-    "nextReviewBy": "2027-10-25",
-    "notes": "Clinically reviewed 2026-10-25 by Bryan Kurtz MD, FACOG, who confirmed every source against its slides. Draft 2026-10-24 for the new How Your Baby Grows module, built around the March of Dimes month-by-month videos. Needs clinical review and every source confirmed against its slides. Sizes are rounded averages from ACOG's Changes During Pregnancy infographic. First movements are given as roughly 16 to 22 weeks, earlier in a later pregnancy; the anatomy ultrasound as about 18 to 22 weeks; hearing as \"by the end of this trimester\". Reviewer to confirm these ranges, and that ACOG supports the round ligament pain and fundal height lines on the body slide. Pictures are the reviewer's fetal and maternal development illustrations from the Pregnancy AI Assistant, padded to the class's 16:10 frame; that draft labeled the earliest stages in weeks after conception, while this class counts from the last period, so the pictures are placed by what they show."
+    "reviewedOn": "2026-10-30",
+    "nextReviewBy": "2027-10-30",
+    "notes": "Clinically reviewed 2026-10-30 by Bryan Kurtz MD, FACOG, including the weight gain slides, which the reviewer approved as written. Clinically reviewed 2026-10-25 by Bryan Kurtz MD, FACOG, who confirmed every source against its slides. Draft 2026-10-24 for the new How Your Baby Grows module, built around the March of Dimes month-by-month videos. Needs clinical review and every source confirmed against its slides. Sizes are rounded averages from ACOG's Changes During Pregnancy infographic. First movements are given as roughly 16 to 22 weeks, earlier in a later pregnancy; the anatomy ultrasound as about 18 to 22 weeks; hearing as \"by the end of this trimester\". Reviewer to confirm these ranges, and that ACOG supports the round ligament pain and fundal height lines on the body slide. Pictures are the reviewer's fetal and maternal development illustrations from the Pregnancy AI Assistant, padded to the class's 16:10 frame; that draft labeled the earliest stages in weeks after conception, while this class counts from the last period, so the pictures are placed by what they show. Draft 2026-10-30 at the reviewer's request: added 'Where the weight goes' (a breakdown table), 'What's right for you' (2009 IOM ranges by pre-pregnancy BMI, as used by ACOG and CDC; no BMI numbers shown, encouraging framing, no dieting unless advised), and a check-in, plus a summary line. For the reviewer: the breakdown figures are the commonly cited rounded values (secondary sources; not found on an approved page), the ranges are 25-35 normal, 28-40 underweight, 15-25 overweight, 11-20 obese, and the three new sources and their URLs need verifying."
   },
   "sources": [
     {
@@ -22,28 +23,49 @@
       "organization": "ACOG",
       "title": "How Your Fetus Grows During Pregnancy (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/how-your-fetus-grows-during-pregnancy",
-      "verifiedOn": "2026-10-25"
+      "verifiedOn": "2026-10-30"
     },
     {
       "id": "acog-changes-during-pregnancy",
       "organization": "ACOG",
       "title": "Changes During Pregnancy (Infographic)",
       "url": "https://www.acog.org/womens-health/infographics/changes-during-pregnancy",
-      "verifiedOn": "2026-10-25"
+      "verifiedOn": "2026-10-30"
     },
     {
       "id": "acog-ultrasound-exams",
       "organization": "ACOG",
       "title": "Ultrasound Exams (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/ultrasound-exams",
-      "verifiedOn": "2026-10-25"
+      "verifiedOn": "2026-10-30"
     },
     {
       "id": "lamaze-braxton-hicks",
       "organization": "Lamaze",
       "title": "Braxton-Hicks Contractions (Giving Birth with Confidence)",
       "url": "https://lamaze.org/Giving-Birth-with-Confidence/GBWC-Post/braxton-hicks-contractions",
-      "verifiedOn": "2026-10-25"
+      "verifiedOn": "2026-10-30"
+    },
+    {
+      "id": "acog-nutrition",
+      "organization": "ACOG",
+      "title": "Nutrition During Pregnancy (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/nutrition-during-pregnancy",
+      "verifiedOn": "2026-10-30"
+    },
+    {
+      "id": "acog-co548-weight-gain",
+      "organization": "ACOG",
+      "title": "Weight Gain During Pregnancy (Committee Opinion No. 548)",
+      "url": "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2013/01/weight-gain-during-pregnancy",
+      "verifiedOn": "2026-10-30"
+    },
+    {
+      "id": "cdc-pregnancy-weight-gain",
+      "organization": "CDC",
+      "title": "Weight Gain During Pregnancy",
+      "url": "https://www.cdc.gov/maternal-infant-health/pregnancy-weight/index.html",
+      "verifiedOn": "2026-10-30"
     }
   ],
   "slides": [
@@ -151,6 +173,95 @@
       }
     },
     {
+      "id": "where-the-weight-goes",
+      "type": "comparison",
+      "heading": "Where the weight goes",
+      "onScreen": [
+        "Most of what you gain is your baby and the support your body builds for them",
+        "Only part of it is stored fat, and that's fuel for feeding your baby"
+      ],
+      "columns": [
+        "What grows",
+        "About how much"
+      ],
+      "rows": [
+        [
+          "Your baby",
+          "7 to 8 pounds"
+        ],
+        [
+          "Placenta",
+          "1 to 2 pounds"
+        ],
+        [
+          "Amniotic fluid",
+          "About 2 pounds"
+        ],
+        [
+          "A larger uterus",
+          "About 2 pounds"
+        ],
+        [
+          "Breast tissue",
+          "1 to 3 pounds"
+        ],
+        [
+          "Extra blood",
+          "About 3 to 4 pounds"
+        ],
+        [
+          "Extra body fluid",
+          "About 2 to 4 pounds"
+        ],
+        [
+          "Stored energy for feeding",
+          "About 5 to 9 pounds"
+        ]
+      ],
+      "narration": "It can feel strange to watch the scale go up. So let's look at where the weight actually goes. Your baby is only part of it, about seven to eight pounds at birth. The placenta weighs a pound or two, and the amniotic fluid around your baby is about two pounds more. Your uterus grows from the size of a pear to hold all of it, adding about two pounds. Your breasts grow as they get ready to make milk. Your blood volume rises a lot, to carry oxygen to your baby, and your body holds extra fluid too. And some is stored energy, which your body uses after birth, especially if you breastfeed. Put together, nearly all of it is your body doing exactly what it should.",
+      "sourceIds": [
+        "acog-nutrition"
+      ]
+    },
+    {
+      "id": "healthy-gain",
+      "type": "content",
+      "heading": "What's right for you",
+      "onScreen": [
+        "How much to gain depends on your weight before pregnancy",
+        "A common range is 25 to 35 pounds; yours may be higher or lower",
+        "Most of the gain comes in the second and third trimesters",
+        "Eat well, stay active, and don't diet during pregnancy unless your care team advises it",
+        "Ask your care team what range is right for you"
+      ],
+      "narration": "How much weight is healthy to gain depends on where you started before pregnancy. For many people, the range is twenty-five to thirty-five pounds. If you started at a lower weight, it may be a little more. If you started at a higher weight, it may be less, often fifteen to twenty-five, or eleven to twenty pounds. Expecting twins? It's more. Most of the gain comes in the second and third trimesters, a little at a time. Eating a variety of healthy foods and staying active help you gain at a steady pace. This isn't the time to diet, unless your care team suggests it. Your care team will track your weight at each visit, and they can tell you the range that's right for you. And if the number on the scale worries you, say so. It's a great thing to talk about together.",
+      "sourceIds": [
+        "acog-co548-weight-gain",
+        "cdc-pregnancy-weight-gain",
+        "acog-nutrition"
+      ]
+    },
+    {
+      "id": "checkin-weight",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's pause for a quick check-in.",
+      "sourceIds": [
+        "acog-nutrition"
+      ],
+      "question": {
+        "prompt": "Your baby will weigh about 7 to 8 pounds at birth, but you've gained more than that. Where does the rest go?",
+        "options": [
+          "It's all extra fat",
+          "Your placenta, amniotic fluid, a larger uterus, breast tissue, extra blood and fluid, and stored energy",
+          "Mostly water that you should try to cut back on"
+        ],
+        "correctIndex": 1,
+        "explanation": "Most of what you gain is your baby and the support your body builds for them: the placenta, amniotic fluid, a larger uterus, breast tissue, extra blood and fluid, and some stored energy for feeding."
+      }
+    },
+    {
       "id": "checkin-movement",
       "type": "checkin",
       "heading": "Quick check-in",
@@ -178,9 +289,10 @@
         "Your baby grows fast: more than 6 inches by 20 weeks",
         "First movements: often 16 to 22 weeks",
         "The anatomy ultrasound: around 18 to 22 weeks",
+        "Weight gain is mostly your baby and the support your body builds",
         "Your baby can hear your voice"
       ],
-      "narration": "Let's recap. In the second trimester, your baby grows quickly, to more than six inches long by twenty weeks. Many people feel their baby's first flutters between about sixteen and twenty-two weeks. The anatomy ultrasound, around eighteen to twenty-two weeks, checks how your baby is growing. And by the end of these months, your baby can hear your voice. Next, a few review questions. Then on to the final stretch, months seven to nine.",
+      "narration": "Let's recap. In the second trimester, your baby grows quickly, to more than six inches long by twenty weeks. Many people feel their baby's first flutters between about sixteen and twenty-two weeks. The anatomy ultrasound, around eighteen to twenty-two weeks, checks how your baby is growing. Most of the weight you gain is your baby and the support your body builds for them, and your care team can tell you the range that's right for you. And by the end of these months, your baby can hear your voice. Next, a few review questions. Then on to the final stretch, months seven to nine.",
       "sourceIds": [
         "acog-fetus-grows",
         "acog-ultrasound-exams"

@@ -9352,17 +9352,18 @@
     "checked": true
   },
   "baby-months-4-to-6/summary.m4a": {
-    "fingerprint": "9644d9c5",
+    "fingerprint": "45acedbe",
     "voice": "Sulafat",
     "model": "gemini-3.8-flash-tts",
     "starts": [
       150,
-      1374,
-      7760,
-      13275,
-      18394,
-      21877,
-      23878
+      1242,
+      6570,
+      12092,
+      17033,
+      24107,
+      27354,
+      31241
     ],
     "checked": true
   },
@@ -11559,6 +11560,64 @@
       17600,
       22411,
       29350
+    ],
+    "checked": true
+  },
+  "baby-months-4-to-6/checkin-weight-wrong.m4a": {
+    "fingerprint": "cf49eb78",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1468
+    ],
+    "checked": true
+  },
+  "baby-months-4-to-6/checkin-weight-right.m4a": {
+    "fingerprint": "c0069a6e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      6245
+    ],
+    "checked": true
+  },
+  "baby-months-4-to-6/where-the-weight-goes.m4a": {
+    "fingerprint": "4ff09e19",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5917,
+      7605,
+      10210,
+      16413,
+      22032,
+      28998,
+      31330,
+      36995
+    ],
+    "checked": true,
+    "checkedBy": "listened 2026-10-30: wording matches; transcript differs only in punctuation"
+  },
+  "baby-months-4-to-6/healthy-gain.m4a": {
+    "fingerprint": "35c4c22f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4840,
+      8687,
+      11949,
+      18814,
+      20328,
+      21637,
+      26480,
+      32052,
+      36116,
+      41461,
+      44734
     ],
     "checked": true
   },
