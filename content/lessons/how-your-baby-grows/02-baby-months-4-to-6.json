@@ -15,7 +15,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-30",
     "nextReviewBy": "2027-10-30",
-    "notes": "Clinically reviewed 2026-10-30 by Bryan Kurtz MD, FACOG, including the weight gain slides, which the reviewer approved as written. Clinically reviewed 2026-10-25 by Bryan Kurtz MD, FACOG, who confirmed every source against its slides. Draft 2026-10-24 for the new How Your Baby Grows module, built around the March of Dimes month-by-month videos. Needs clinical review and every source confirmed against its slides. Sizes are rounded averages from ACOG's Changes During Pregnancy infographic. First movements are given as roughly 16 to 22 weeks, earlier in a later pregnancy; the anatomy ultrasound as about 18 to 22 weeks; hearing as \"by the end of this trimester\". Reviewer to confirm these ranges, and that ACOG supports the round ligament pain and fundal height lines on the body slide. Pictures are the reviewer's fetal and maternal development illustrations from the Pregnancy AI Assistant, padded to the class's 16:10 frame; that draft labeled the earliest stages in weeks after conception, while this class counts from the last period, so the pictures are placed by what they show. Draft 2026-10-30 at the reviewer's request: added 'Where the weight goes' (a breakdown table), 'What's right for you' (2009 IOM ranges by pre-pregnancy BMI, as used by ACOG and CDC; no BMI numbers shown, encouraging framing, no dieting unless advised), and a check-in, plus a summary line. For the reviewer: the breakdown figures are the commonly cited rounded values (secondary sources; not found on an approved page), the ranges are 25-35 normal, 28-40 underweight, 15-25 overweight, 11-20 obese, and the three new sources and their URLs need verifying."
+    "notes": "Clinically reviewed 2026-10-30 by Bryan Kurtz MD, FACOG, including the weight gain slides, which the reviewer approved as written. Clinically reviewed 2026-10-25 by Bryan Kurtz MD, FACOG, who confirmed every source against its slides. Draft 2026-10-24 for the new How Your Baby Grows module, built around the March of Dimes month-by-month videos. Needs clinical review and every source confirmed against its slides. Sizes are rounded averages from ACOG's Changes During Pregnancy infographic. First movements are given as roughly 16 to 22 weeks, earlier in a later pregnancy; the anatomy ultrasound as about 18 to 22 weeks; hearing as \"by the end of this trimester\". Reviewer to confirm these ranges, and that ACOG supports the round ligament pain and fundal height lines on the body slide. Pictures are the reviewer's fetal and maternal development illustrations from the Pregnancy AI Assistant, padded to the class's 16:10 frame; that draft labeled the earliest stages in weeks after conception, while this class counts from the last period, so the pictures are placed by what they show. Draft 2026-10-30 at the reviewer's request: added 'Where the weight goes' (a breakdown table), 'What's right for you' (2009 IOM ranges by pre-pregnancy BMI, as used by ACOG and CDC; no BMI numbers shown, encouraging framing, no dieting unless advised), and a check-in, plus a summary line. For the reviewer: the breakdown figures are the commonly cited rounded values (secondary sources; not found on an approved page), the ranges are 25-35 normal, 28-40 underweight, 15-25 overweight, 11-20 obese, and the three new sources and their URLs need verifying. Reordered 2026-11-02 at the reviewer's request: the movement check-in now comes before the weight gain slides, so two check-ins don't run back to back; no wording changed."
   },
   "sources": [
     {
@@ -173,6 +173,26 @@
       }
     },
     {
+      "id": "checkin-movement",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let's pause for a quick check-in.",
+      "sourceIds": [
+        "acog-fetus-grows"
+      ],
+      "question": {
+        "prompt": "You're 17 weeks into your first pregnancy and haven't felt your baby move yet. What's true?",
+        "options": [
+          "Something must be wrong",
+          "That's common. Many people first feel movement between about 16 and 22 weeks",
+          "Babies don't move until the third trimester"
+        ],
+        "correctIndex": 1,
+        "explanation": "First movements often come between about sixteen and twenty-two weeks, and later in a first pregnancy. If you have questions, ask at your next visit."
+      }
+    },
+    {
       "id": "where-the-weight-goes",
       "type": "comparison",
       "heading": "Where the weight goes",
@@ -259,26 +279,6 @@
         ],
         "correctIndex": 1,
         "explanation": "Most of what you gain is your baby and the support your body builds for them: the placenta, amniotic fluid, a larger uterus, breast tissue, extra blood and fluid, and some stored energy for feeding."
-      }
-    },
-    {
-      "id": "checkin-movement",
-      "type": "checkin",
-      "heading": "Quick check-in",
-      "onScreen": [],
-      "narration": "Let's pause for a quick check-in.",
-      "sourceIds": [
-        "acog-fetus-grows"
-      ],
-      "question": {
-        "prompt": "You're 17 weeks into your first pregnancy and haven't felt your baby move yet. What's true?",
-        "options": [
-          "Something must be wrong",
-          "That's common. Many people first feel movement between about 16 and 22 weeks",
-          "Babies don't move until the third trimester"
-        ],
-        "correctIndex": 1,
-        "explanation": "First movements often come between about sixteen and twenty-two weeks, and later in a first pregnancy. If you have questions, ask at your next visit."
       }
     },
     {
