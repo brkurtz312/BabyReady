@@ -33,6 +33,11 @@ const ARTWORK: Record<string, ImageSourcePropType> = {
   'first-prenatal-visit/what-to-bring': require('../../assets/lessons/first-prenatal-visit/what-to-bring.jpg'),
   'first-prenatal-visit/honest-answers': require('../../assets/lessons/first-prenatal-visit/honest-answers.jpg'),
   'first-prenatal-visit/make-a-plan': require('../../assets/lessons/first-prenatal-visit/make-a-plan.jpg'),
+  // Prenatal Care, made with scripts/make-artwork.mjs and approved in review.
+  'your-prenatal-visits/welcome': require('../../assets/lessons/your-prenatal-visits/welcome.jpg'),
+  'prenatal-testing/welcome': require('../../assets/lessons/prenatal-testing/welcome.jpg'),
+  'prenatal-testing/anatomy-scan': require('../../assets/lessons/prenatal-testing/anatomy-scan.jpg'),
+  'vaccines-and-rh/welcome': require('../../assets/lessons/vaccines-and-rh/welcome.jpg'),
   'welcome-how-this-class-works/welcome': require('../../assets/lessons/welcome-how-this-class-works/welcome.jpg'),
   'welcome-how-this-class-works/learning-tools': require('../../assets/lessons/welcome-how-this-class-works/learning-tools.jpg'),
   'welcome-how-this-class-works/safety-and-care-team': require('../../assets/lessons/welcome-how-this-class-works/safety-and-care-team.jpg'),
