@@ -395,6 +395,7 @@ function CareLevels() {
 function ClassMap() {
   const pregnancy: { icon: Icon; name: string }[] = [
     { icon: Sprout, name: 'Early Pregnancy Basics' },
+    { icon: Stethoscope, name: 'Prenatal Care' },
     { icon: Ruler, name: 'How Your Baby Grows' },
   ];
   const modules: { icon: Icon; name: string }[] = [
@@ -406,7 +407,7 @@ function ClassMap() {
     { icon: Heart, name: 'Postpartum Recovery, Mood, and Red Flags' },
   ];
   return (
-    <Frame label="How the class is laid out. You are here, at Start here: Welcome, How This Class Works. Then two sections for pregnancy, Early Pregnancy Basics and How Your Baby Grows, then six modules: 1 Preparing for Birth, 2 Labor Basics and When to Call, 3 Comfort, Movement, and Support Skills, 4 Interventions and Flexible Decisions, 5 Feeding and Newborn Care, and 6 Postpartum Recovery, Mood, and Red Flags.">
+    <Frame label="How the class is laid out. You are here, at Start here: Welcome, How This Class Works. Then three sections for pregnancy, Early Pregnancy Basics, Prenatal Care, and How Your Baby Grows, then six modules: 1 Preparing for Birth, 2 Labor Basics and When to Call, 3 Comfort, Movement, and Support Skills, 4 Interventions and Flexible Decisions, 5 Feeding and Newborn Care, and 6 Postpartum Recovery, Mood, and Red Flags.">
       <View style={[s.moduleCard, s.moduleHere, s.moduleWide]}>
         <View style={s.moduleTop}>
           <Text style={[s.moduleSection, { color: c.surface }]}>Start here</Text>
