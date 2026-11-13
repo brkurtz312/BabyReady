@@ -21,6 +21,10 @@ import firstTrimesterCommonChanges from '../../content/lessons/early-pregnancy-b
 import firstPrenatalVisit from '../../content/lessons/early-pregnancy-basics/03-first-prenatal-visit.json';
 import eatingWellDuringPregnancy from '../../content/lessons/early-pregnancy-basics/04-eating-well-during-pregnancy.json';
 
+import yourPrenatalVisits from '../../content/lessons/prenatal-care/01-your-prenatal-visits.json';
+import prenatalTesting from '../../content/lessons/prenatal-care/02-prenatal-testing.json';
+import vaccinesAndRh from '../../content/lessons/prenatal-care/03-vaccines-and-rh.json';
+
 import babyMonths1To3 from '../../content/lessons/how-your-baby-grows/01-baby-months-1-to-3.json';
 import babyMonths4To6 from '../../content/lessons/how-your-baby-grows/02-baby-months-4-to-6.json';
 import babyMonths7To9 from '../../content/lessons/how-your-baby-grows/03-baby-months-7-to-9.json';
@@ -101,6 +105,8 @@ const earlyPregnancyLessons = sortedLessons([
   eatingWellDuringPregnancy,
 ]);
 
+const prenatalCareLessons = sortedLessons([yourPrenatalVisits, prenatalTesting, vaccinesAndRh]);
+
 const howYourBabyGrowsLessons = sortedLessons([babyMonths1To3, babyMonths4To6, babyMonths7To9]);
 
 const comfortAndSupportLessons = sortedLessons([understandingLaborPain, breathingAndRelaxation, positionsAndMovement, touchWaterAndComfortTools, forSupportPeople]);
@@ -128,6 +134,13 @@ export const courses: Course[] = [
     label: 'FIRST TRIMESTER',
     description: `Four short lessons for the early weeks: first steps, common changes and when to reach out, your first prenatal visit, and eating well. About ${minutes(earlyPregnancyLessons)} minutes.`,
     lessons: earlyPregnancyLessons,
+  },
+  {
+    courseId: 'prenatal-care',
+    title: 'Prenatal Care',
+    label: 'THROUGHOUT PREGNANCY',
+    description: `Three lessons on your prenatal visits, the tests you'll be offered (NIPT, the anatomy ultrasound, diabetes screening, and group B strep), and vaccines and your Rh factor. About ${minutes(prenatalCareLessons)} minutes.`,
+    lessons: prenatalCareLessons,
   },
   {
     courseId: 'how-your-baby-grows',

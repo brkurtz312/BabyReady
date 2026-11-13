@@ -1041,6 +1041,33 @@ const VISUALS: Record<string, () => React.ReactElement> = {
     />
   ),
 
+  // Prenatal Care
+  'your-prenatal-visits/visit-schedule': () => (
+    <WeekScale
+      label="A common visit schedule: about every 4 weeks until 28 weeks, every 2 weeks from 28 to 36 weeks, and every week from 36 weeks until birth."
+      start={8}
+      end={40}
+      zones={[
+        { from: 8, to: 28, label: 'Every 4 weeks', tone: 'lagoon' },
+        { from: 28, to: 36, label: 'Every 2 weeks', tone: 'marigold' },
+        { from: 36, to: 40, label: 'Every week', tone: 'sky' },
+      ]}
+      ticks={[8, 16, 24, 28, 36, 40]}
+      axisLabel="Weeks of pregnancy. Your schedule may be tailored to you."
+    />
+  ),
+  'prenatal-testing/testing-timeline': () => (
+    <IconPanel
+      label="Key tests by trimester: NIPT from 9 to 10 weeks, the anatomy ultrasound at 18 to 22 weeks, diabetes screening at 24 to 28 weeks, and group B strep at 36 to 37 weeks."
+      items={[
+        { icon: TestTube, label: 'NIPT: from 9–10 weeks' },
+        { icon: Eye, label: 'Anatomy ultrasound: 18–22 weeks' },
+        { icon: CupSoda, label: 'Diabetes screen: 24–28 weeks' },
+        { icon: ClipboardCheck, label: 'Group B strep: 36–37 weeks' },
+      ]}
+    />
+  ),
+
   // Module 1: Preparing for Birth
   'welcome-how-this-class-works/six-modules': () => <ClassMap />,
   'third-trimester-body/home-stretch': () => (

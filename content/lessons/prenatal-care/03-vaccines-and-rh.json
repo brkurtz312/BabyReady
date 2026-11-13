@@ -1,0 +1,314 @@
+{
+  "courseId": "prenatal-care",
+  "lessonId": "vaccines-and-rh",
+  "order": 3,
+  "title": "Vaccines and Your Rh Factor",
+  "learningGoals": [
+    "Know how vaccines in pregnancy protect you and your newborn",
+    "Know when each recommended vaccine is given",
+    "Know your two options for protecting your baby from RSV",
+    "Understand what Rh-negative means for your pregnancy",
+    "Know when RhoGAM is given, and when to speak up"
+  ],
+  "estimatedMinutes": 10,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Draft for clinical review. Vaccine guidance changed during 2025 and 2026. As drafted (November 2026): CDC lists Tdap, flu, and RSV for pregnancy and a 2026-27 COVID-19 vaccine for all adults; ACOG routinely recommends all four in pregnancy. RSV window: CDC September to January, ACOG September 1 to March 1 for 2026-27; the lesson says ’during RSV season’ and defers dates to the care team. Re-verify every season. Rh: confirm the cfDNA fetal RhD testing language."
+  },
+  "sources": [
+    {
+      "id": "cdc-pregnancy-vaccines",
+      "organization": "CDC",
+      "title": "Vaccine Recommendations Before, During, and After Pregnancy",
+      "url": "https://www.cdc.gov/vaccines-pregnancy/recommended-vaccines/index.html",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-2026-respiratory",
+      "organization": "ACOG",
+      "title": "2026–27 Respiratory Virus Season Immunization Recommendations",
+      "url": "https://www.acog.org/news/news-releases/2026/09/acog-releases-2026-27-respiratory-virus-season-immunization-recommendations",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-immunization-schedule",
+      "organization": "ACOG",
+      "title": "2026 Maternal Immunization Schedule",
+      "url": "https://dam.acog.org/download/assets/maternal-immunization-schedule.pdf/3937a78064d811f1a3716ea82fd3e91e",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-rh-factor",
+      "organization": "ACOG",
+      "title": "The Rh Factor: How It Can Affect Your Pregnancy",
+      "url": "https://www.acog.org/womens-health/faqs/the-rh-factor-how-it-can-affect-your-pregnancy",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Vaccines and Your Rh Factor",
+      "onScreen": [
+        "Prenatal Care"
+      ],
+      "narration": "Welcome to the last lesson in Prenatal Care. We’ll cover two ways your care team helps protect your baby before birth: vaccines during pregnancy, and RhoGAM, a shot for people with Rh-negative blood. By the end, you’ll know what’s recommended, when, and what to ask.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "Pregnant person in a clinic getting a shot in the upper arm, relaxed, a small bandage ready on a tray."
+      }
+    },
+    {
+      "id": "why-vaccines",
+      "type": "content",
+      "heading": "Two people protected by one shot",
+      "onScreen": [
+        "Pregnancy makes some infections more serious for you",
+        "Your antibodies cross the placenta to your baby",
+        "Protection in the first months, before your baby can get these shots"
+      ],
+      "narration": "Vaccines during pregnancy protect two people at once. Pregnancy changes your immune system, so illnesses like flu and COVID-19 can hit harder. When you get vaccinated, your body makes antibodies, and some of them cross the placenta to your baby. That gives your newborn protection in the first months of life, before they’re old enough to get these vaccines themselves.",
+      "sourceIds": [
+        "cdc-pregnancy-vaccines"
+      ]
+    },
+    {
+      "id": "vaccine-schedule",
+      "type": "comparison",
+      "heading": "Vaccines and when to get them",
+      "onScreen": [
+        "Several can be given at the same visit"
+      ],
+      "narration": "Here’s when each vaccine is usually given. Tdap, which protects against whooping cough, is given in every pregnancy, between twenty-seven and thirty-six weeks, ideally early in that window. The flu shot can be given in any trimester during flu season. The RSV vaccine is given between thirty-two and thirty-six weeks during RSV season. A COVID-19 vaccine can be given in any trimester. And if your first-visit blood work shows you're not immune to hepatitis B, you can start that vaccine series during pregnancy. Live vaccines, like MMR and chickenpox, aren’t given during pregnancy, so if you need them, you’ll get them after your baby is born. Several vaccines can be given at the same visit.",
+      "sourceIds": [
+        "cdc-pregnancy-vaccines",
+        "acog-immunization-schedule"
+      ],
+      "columns": [
+        "Vaccine",
+        "When"
+      ],
+      "rows": [
+        [
+          "Tdap (whooping cough)",
+          "Every pregnancy, 27 to 36 weeks, early in that window"
+        ],
+        [
+          "Flu shot",
+          "Any trimester, during flu season"
+        ],
+        [
+          "RSV vaccine",
+          "32 to 36 weeks, during RSV season"
+        ],
+        [
+          "COVID-19",
+          "Any trimester"
+        ],
+        [
+          "Hepatitis B",
+          "If your first-visit blood test shows you’re not immune"
+        ],
+        [
+          "MMR, chickenpox (live vaccines)",
+          "Not during pregnancy; after birth if needed"
+        ]
+      ]
+    },
+    {
+      "id": "guidance-today",
+      "type": "content",
+      "heading": "Where recommendations stand",
+      "onScreen": [
+        "Recommendations changed in 2025 and 2026",
+        "CDC: Tdap, flu, and RSV in pregnancy; COVID-19 for all adults",
+        "ACOG: all four, specifically during pregnancy",
+        "Ask your care team what’s right for you"
+      ],
+      "narration": "You may have heard that vaccine recommendations have been changing, and that’s true. As of fall 2026, the CDC recommends Tdap, flu, and RSV vaccines during pregnancy, and a COVID-19 vaccine for all adults. The American College of Obstetricians and Gynecologists, the main group for pregnancy care doctors, recommends all four vaccines specifically during pregnancy. Guidance can change from season to season, so ask your care team which vaccines they recommend for you, and when.",
+      "sourceIds": [
+        "cdc-pregnancy-vaccines",
+        "acog-2026-respiratory"
+      ]
+    },
+    {
+      "id": "rsv-choice",
+      "type": "content",
+      "heading": "RSV: two ways to protect your baby",
+      "onScreen": [
+        "Option 1: RSV vaccine for you, 32 to 36 weeks",
+        "Option 2: an RSV antibody shot for your baby after birth",
+        "Most babies need only one",
+        "Had the RSV vaccine in a past pregnancy? Your baby gets the antibody shot"
+      ],
+      "narration": "RSV is a common virus that can make young babies very sick. There are two ways to protect your newborn. You can get the RSV vaccine between thirty-two and thirty-six weeks during RSV season, which passes protection to your baby. Or your baby can get an RSV antibody shot after birth. Most babies need only one or the other. The RSV vaccine is given in only one pregnancy, so if you got it before, your baby will get the antibody shot instead. Talk with your care team about which option fits your due date.",
+      "sourceIds": [
+        "cdc-pregnancy-vaccines",
+        "acog-2026-respiratory"
+      ]
+    },
+    {
+      "id": "checkin-tdap",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let’s check in.",
+      "sourceIds": [
+        "cdc-pregnancy-vaccines"
+      ],
+      "question": {
+        "prompt": "You got a Tdap shot during your last pregnancy, two years ago. Do you need it again this pregnancy?",
+        "options": [
+          "No, once is enough",
+          "Yes, Tdap is recommended in every pregnancy",
+          "Only if your baby is born early"
+        ],
+        "correctIndex": 1,
+        "explanation": "Tdap is recommended in every pregnancy, between 27 and 36 weeks, so each baby gets a fresh supply of antibodies against whooping cough."
+      }
+    },
+    {
+      "id": "rh-factor",
+      "type": "content",
+      "heading": "What Rh-negative means",
+      "onScreen": [
+        "Rh is a protein on red blood cells",
+        "Most people are Rh-positive",
+        "Checked with your first-visit blood work",
+        "Rh-negative parent + Rh-positive baby = a possible mismatch",
+        "Usually doesn’t harm this baby, but can affect future pregnancies"
+      ],
+      "narration": "Now let’s talk about your Rh factor. Rh is a protein that can be on the surface of red blood cells. Most people have it, which makes them Rh-positive. People who don’t are Rh-negative. Your Rh factor is checked with your first-visit blood work. If you’re Rh-negative and your baby is Rh-positive, some of your baby’s blood can mix with yours, especially at birth. Your body may then make antibodies against Rh-positive blood. That usually doesn’t harm this baby, but in a future pregnancy, those antibodies can attack an Rh-positive baby’s red blood cells and cause serious anemia.",
+      "sourceIds": [
+        "acog-rh-factor"
+      ]
+    },
+    {
+      "id": "rhogam",
+      "type": "content",
+      "heading": "How RhoGAM protects future pregnancies",
+      "onScreen": [
+        "A shot that keeps your body from making Rh antibodies",
+        "Around 28 weeks",
+        "Within 72 hours after birth, if your baby is Rh-positive",
+        "After bleeding, pregnancy loss, amniocentesis or CVS, or a hit to the belly",
+        "Some teams test your blood for the baby’s Rh type first"
+      ],
+      "narration": "RhoGAM, also called Rh immune globulin, is a shot that keeps your body from making those antibodies. If you’re Rh-negative, you’ll usually get it around twenty-eight weeks. After birth, your baby’s blood type is checked, and if your baby is Rh-positive, you’ll get another dose within seventy-two hours. You may also need it any time your baby’s blood could mix with yours: after vaginal bleeding, a miscarriage or other pregnancy loss, an amniocentesis or CVS, or a fall or hit to your belly. Some care teams use a blood test to check your baby’s Rh type first, so you only get RhoGAM if your baby is Rh-positive.",
+      "sourceIds": [
+        "acog-rh-factor"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Simple diagram: parent’s blood cells (no Rh marker) and baby’s blood cells (with Rh marker), with a RhoGAM shield between them."
+      }
+    },
+    {
+      "id": "rh-speak-up",
+      "type": "content",
+      "heading": "If you’re Rh-negative, speak up",
+      "onScreen": [
+        "Know your blood type, and keep it with you",
+        "Call your care team for any bleeding",
+        "Call after a fall, car accident, or hit to your belly",
+        "In the ER or a new clinic, say: ’I’m Rh-negative and pregnant’"
+      ],
+      "narration": "If you’re Rh-negative, it helps to speak up. Know your blood type and keep it in your phone. Call your care team if you have any bleeding, or after a fall, a car accident, or any hit to your belly, even if you feel fine. Your baby may need to be checked, and you may need RhoGAM. And if you ever go to an emergency room or a new clinic, tell them right away that you’re Rh-negative and pregnant.",
+      "sourceIds": [
+        "acog-rh-factor"
+      ]
+    },
+    {
+      "id": "checkin-rh",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "One more check-in.",
+      "sourceIds": [
+        "acog-rh-factor"
+      ],
+      "question": {
+        "prompt": "You’re Rh-negative and 22 weeks pregnant. You slip and land hard on your belly, but you feel okay. What should you do?",
+        "options": [
+          "Wait for your 28-week RhoGAM shot",
+          "Call your care team now",
+          "Only call if you start bleeding"
+        ],
+        "correctIndex": 1,
+        "explanation": "Call now, even if you feel fine. A hit to the belly is a reason to check on your baby, and you may need RhoGAM before 28 weeks."
+      }
+    },
+    {
+      "id": "my-notes",
+      "type": "reflection",
+      "heading": "Your vaccine and Rh notes",
+      "onScreen": [
+        "Your blood type and Rh factor",
+        "Vaccines you’ve had this pregnancy, and dates",
+        "Vaccines still to plan",
+        "Your RSV plan: vaccine for you, or antibody for baby"
+      ],
+      "narration": "Let’s put this in your Birth Readiness Brief. Write down your blood type and Rh factor, the vaccines you’ve had this pregnancy and when, the ones still to plan, and your RSV plan. Bring it to your next visit and to the hospital.",
+      "sourceIds": [
+        "cdc-pregnancy-vaccines",
+        "acog-rh-factor"
+      ],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "My vaccine and Rh notes"
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Vaccines in pregnancy protect you and your newborn",
+        "Tdap every pregnancy, 27 to 36 weeks; flu and COVID-19 any trimester",
+        "RSV: vaccine at 32 to 36 weeks, or an antibody shot for baby",
+        "Rh-negative: RhoGAM around 28 weeks and after birth if needed",
+        "Call for bleeding or a hit to the belly"
+      ],
+      "narration": "Let’s recap. Vaccines during pregnancy protect you and give your newborn early protection. Tdap is given every pregnancy between twenty-seven and thirty-six weeks, and flu and COVID-19 vaccines can be given in any trimester. For RSV, you can get the vaccine at thirty-two to thirty-six weeks, or your baby can get an antibody shot after birth. If you’re Rh-negative, you’ll usually get RhoGAM around twenty-eight weeks and again after birth if your baby is Rh-positive. And call your care team for any bleeding or a hit to your belly. Next, a few review questions. Congratulations on finishing Prenatal Care.",
+      "sourceIds": [
+        "cdc-pregnancy-vaccines",
+        "acog-rh-factor"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "How does a vaccine during pregnancy help your newborn?",
+      "options": [
+        "It doesn’t; only you are protected",
+        "Your antibodies cross the placenta and protect your baby early on",
+        "It replaces all of your baby’s vaccines"
+      ],
+      "correctIndex": 1,
+      "explanation": "Antibodies you make pass to your baby, protecting them in the first months, before they can get these vaccines themselves."
+    },
+    {
+      "prompt": "Which vaccine is NOT given during pregnancy?",
+      "options": [
+        "Flu shot",
+        "Tdap",
+        "MMR"
+      ],
+      "correctIndex": 2,
+      "explanation": "MMR is a live vaccine, so it isn’t given during pregnancy. If you need it, you’ll get it after your baby is born."
+    },
+    {
+      "prompt": "You’re Rh-negative and your baby is born Rh-positive. When should you get RhoGAM?",
+      "options": [
+        "Within 72 hours after birth",
+        "At your next pregnancy",
+        "Only if your baby is sick"
+      ],
+      "correctIndex": 0,
+      "explanation": "RhoGAM within 72 hours after birth keeps your body from making antibodies that could affect a future pregnancy."
+    }
+  ]
+}
