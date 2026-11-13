@@ -11846,5 +11846,778 @@
       5020
     ],
     "checked": true
+  },
+  "your-prenatal-visits/checkin-bp.m4a": {
+    "fingerprint": "c3f01f5d",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ],
+    "checked": true
+  },
+  "your-prenatal-visits/checkin-bp-right.m4a": {
+    "fingerprint": "e57f854c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1326,
+      6872
+    ],
+    "checked": true
+  },
+  "your-prenatal-visits/welcome.m4a": {
+    "fingerprint": "ba71cd37",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1795,
+      6108,
+      14250
+    ],
+    "checked": true
+  },
+  "your-prenatal-visits/every-visit.m4a": {
+    "fingerprint": "c6b4c3a1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3810,
+      10894,
+      14152,
+      16998,
+      23340
+    ],
+    "checked": true
+  },
+  "your-prenatal-visits/checkin-bp-wrong.m4a": {
+    "fingerprint": "883e5e32",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1671,
+      6339
+    ],
+    "checked": true
+  },
+  "your-prenatal-visits/visit-schedule.m4a": {
+    "fingerprint": "7c39ee05",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1676,
+      14483,
+      21941,
+      29220
+    ],
+    "checked": true
+  },
+  "your-prenatal-visits/visit-video.m4a": {
+    "fingerprint": "26965a83",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ],
+    "checked": true
+  },
+  "your-prenatal-visits/upcoming.m4a": {
+    "fingerprint": "c9161841",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1583,
+      3253,
+      7933,
+      9949,
+      11141
+    ],
+    "checked": true
+  },
+  "your-prenatal-visits/visit-agenda.m4a": {
+    "fingerprint": "92aabd36",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2986,
+      9694,
+      13220,
+      20655,
+      27046,
+      31288
+    ],
+    "checked": true
+  },
+  "your-prenatal-visits/between-visits.m4a": {
+    "fingerprint": "a1328d9f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4581,
+      19364,
+      31421
+    ],
+    "checked": true
+  },
+  "your-prenatal-visits/quiz-1-right.m4a": {
+    "fingerprint": "8e0cc9a9",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1124,
+      5326
+    ],
+    "checked": true
+  },
+  "your-prenatal-visits/quiz-2-right.m4a": {
+    "fingerprint": "13c46c62",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      975,
+      5153
+    ],
+    "checked": true
+  },
+  "your-prenatal-visits/quiz-2-wrong.m4a": {
+    "fingerprint": "ce096284",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1167,
+      5137
+    ],
+    "checked": true
+  },
+  "your-prenatal-visits/quiz-3-right.m4a": {
+    "fingerprint": "dbcf8ac1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1154,
+      5491
+    ],
+    "checked": true
+  },
+  "your-prenatal-visits/done.m4a": {
+    "fingerprint": "377acc30",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1000,
+      3180
+    ],
+    "checked": true
+  },
+  "your-prenatal-visits/quiz-1-wrong.m4a": {
+    "fingerprint": "745a4967",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1320,
+      5265
+    ],
+    "checked": true
+  },
+  "your-prenatal-visits/quiz-3-wrong.m4a": {
+    "fingerprint": "71f8879f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1456,
+      6072
+    ],
+    "checked": true
+  },
+  "prenatal-testing/welcome.m4a": {
+    "fingerprint": "385995ea",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1172,
+      5174,
+      17584
+    ],
+    "checked": true
+  },
+  "prenatal-testing/testing-timeline.m4a": {
+    "fingerprint": "8340587c",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3322,
+      8363,
+      14148,
+      17494
+    ],
+    "checked": true
+  },
+  "prenatal-testing/screening-vs-diagnostic.m4a": {
+    "fingerprint": "1b765e47",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2444,
+      6059,
+      10351,
+      13422,
+      20307,
+      26077
+    ],
+    "checked": true
+  },
+  "prenatal-testing/first-labs.m4a": {
+    "fingerprint": "03f8b509",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3898,
+      9934,
+      12092,
+      21237,
+      24788,
+      27842,
+      30342
+    ],
+    "checked": true
+  },
+  "your-prenatal-visits/summary.m4a": {
+    "fingerprint": "9d04ccab",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1303,
+      5597,
+      10620,
+      14371,
+      16295,
+      18134,
+      20889
+    ],
+    "checked": true
+  },
+  "prenatal-testing/nipt.m4a": {
+    "fingerprint": "c5007564",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      7420,
+      13768,
+      16773,
+      22347,
+      31029,
+      34052
+    ],
+    "checked": true
+  },
+  "prenatal-testing/nipt-results.m4a": {
+    "fingerprint": "48b67a34",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      5390,
+      19305,
+      25910,
+      31129,
+      36586
+    ],
+    "checked": true
+  },
+  "prenatal-testing/checkin-nipt-right.m4a": {
+    "fingerprint": "d980d567",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      905,
+      1190
+    ],
+    "checked": true
+  },
+  "prenatal-testing/checkin-nipt-wrong.m4a": {
+    "fingerprint": "d5bb8149",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1284,
+      4078
+    ],
+    "checked": true
+  },
+  "prenatal-testing/checkin-glucose.m4a": {
+    "fingerprint": "81914872",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150
+    ],
+    "checked": true
+  },
+  "prenatal-testing/other-screens.m4a": {
+    "fingerprint": "185a3b40",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2532,
+      10180,
+      14482,
+      21865,
+      27817
+    ],
+    "checked": true
+  },
+  "prenatal-testing/anatomy-scan.m4a": {
+    "fingerprint": "4fe67e9e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4525,
+      11964,
+      17343,
+      23164,
+      27690
+    ],
+    "checked": true
+  },
+  "prenatal-testing/checkin-glucose-right.m4a": {
+    "fingerprint": "c76c5869",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      727,
+      3333,
+      7374
+    ],
+    "checked": true
+  },
+  "prenatal-testing/glucose.m4a": {
+    "fingerprint": "cd397730",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      7480,
+      16218,
+      21181,
+      25121,
+      30559,
+      33897,
+      39821
+    ],
+    "checked": true
+  },
+  "prenatal-testing/checkin-glucose-wrong.m4a": {
+    "fingerprint": "a0299f83",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1165,
+      3779,
+      7356
+    ],
+    "checked": true
+  },
+  "prenatal-testing/week-28-labs.m4a": {
+    "fingerprint": "9600ccb1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      257,
+      3999,
+      8737,
+      13680
+    ],
+    "checked": true
+  },
+  "prenatal-testing/gbs.m4a": {
+    "fingerprint": "20425640",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      8851,
+      11329,
+      14638,
+      19622,
+      23787,
+      29724
+    ],
+    "checked": true
+  },
+  "prenatal-testing/quiz-1-wrong.m4a": {
+    "fingerprint": "cf5516a9",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1323,
+      6331
+    ],
+    "checked": true
+  },
+  "prenatal-testing/quiz-2-right.m4a": {
+    "fingerprint": "7453e29a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      775,
+      7392
+    ],
+    "checked": true
+  },
+  "prenatal-testing/quiz-2-wrong.m4a": {
+    "fingerprint": "588fe3d8",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1017,
+      6882
+    ],
+    "checked": true
+  },
+  "prenatal-testing/quiz-1-right.m4a": {
+    "fingerprint": "99d9bb4f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1066,
+      6750
+    ],
+    "checked": true
+  },
+  "prenatal-testing/quiz-3-right.m4a": {
+    "fingerprint": "c407c0e7",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1229,
+      7414
+    ],
+    "checked": true
+  },
+  "prenatal-testing/quiz-3-wrong.m4a": {
+    "fingerprint": "7aedb0b1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1446,
+      7178
+    ],
+    "checked": true
+  },
+  "prenatal-testing/done.m4a": {
+    "fingerprint": "22b91d6a",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1132,
+      2670
+    ],
+    "checked": true
+  },
+  "prenatal-testing/extra-monitoring.m4a": {
+    "fingerprint": "7512ca07",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3005,
+      6545,
+      12164,
+      19172,
+      29079,
+      31338
+    ],
+    "checked": true
+  },
+  "prenatal-testing/summary.m4a": {
+    "fingerprint": "4d767fd3",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1181,
+      4107,
+      6732,
+      14202,
+      18133,
+      21859,
+      28506,
+      30701
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/welcome.m4a": {
+    "fingerprint": "902504c5",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3030,
+      13345
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/why-vaccines.m4a": {
+    "fingerprint": "5f1a99ca",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3615,
+      10075,
+      16222
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/checkin-tdap-right.m4a": {
+    "fingerprint": "740cab34",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      939
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/rsv-choice.m4a": {
+    "fingerprint": "c9f323e3",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4573,
+      6834,
+      14414,
+      18447,
+      20915,
+      27845
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/checkin-tdap-wrong.m4a": {
+    "fingerprint": "2927cb02",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1511
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/vaccine-schedule.m4a": {
+    "fingerprint": "64259e32",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3515,
+      11893,
+      15809,
+      21652,
+      25417,
+      32658,
+      40824
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/rhogam.m4a": {
+    "fingerprint": "1c6ff2f8",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      10995,
+      18560,
+      22615,
+      30699
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/rh-speak-up.m4a": {
+    "fingerprint": "303d9dad",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      3274,
+      5864,
+      12384,
+      17436
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/checkin-rh-right.m4a": {
+    "fingerprint": "64fc3f4f",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1064,
+      2321
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/guidance-today.m4a": {
+    "fingerprint": "82911cc9",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      4945,
+      15401,
+      25286
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/checkin-rh-wrong.m4a": {
+    "fingerprint": "b05e3fa1",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1121,
+      3480
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/rh-factor.m4a": {
+    "fingerprint": "465d1b71",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2549,
+      6931,
+      12488,
+      15999,
+      23448,
+      27767,
+      30259
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/quiz-1-right.m4a": {
+    "fingerprint": "89e0cbe4",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1094
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/quiz-2-right.m4a": {
+    "fingerprint": "ecfda939",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1066,
+      5068
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/quiz-2-wrong.m4a": {
+    "fingerprint": "dbea5c7b",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1181,
+      5750
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/my-notes.m4a": {
+    "fingerprint": "d3c4a059",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      2399,
+      10781
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/quiz-1-wrong.m4a": {
+    "fingerprint": "8099f442",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1330
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/quiz-3-right.m4a": {
+    "fingerprint": "7353b490",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      973
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/quiz-3-wrong.m4a": {
+    "fingerprint": "b3ef790e",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1420
+    ],
+    "checked": true
+  },
+  "vaccines-and-rh/summary.m4a": {
+    "fingerprint": "88fabdc2",
+    "voice": "Sulafat",
+    "model": "gemini-3.8-flash-tts",
+    "starts": [
+      150,
+      1456,
+      6593,
+      15248,
+      23135,
+      31077,
+      35014,
+      37104
+    ],
+    "checked": true
   }
 }
