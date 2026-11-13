@@ -1,0 +1,366 @@
+{
+  "courseId": "prenatal-care",
+  "lessonId": "prenatal-testing",
+  "order": 2,
+  "title": "Prenatal Testing",
+  "learningGoals": [
+    "Know the difference between screening and diagnostic tests",
+    "Understand NIPT and what its results do and don’t mean",
+    "Know what the anatomy ultrasound looks at",
+    "Know when and how you’re screened for gestational diabetes",
+    "Know why group B strep testing matters near the end of pregnancy"
+  ],
+  "estimatedMinutes": 14,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Draft for clinical review. Aligned with the Pregnancy AI Assistant prenatal testing reference (ACOG/CDC). NIPT timing: from 9 or 10 weeks depending on the lab (Natera Panorama from 9 weeks). Anatomy ultrasound: 18 to 22 weeks, confirmed by Bryan Kurtz MD. Confirm glucose language covers one-step and two-step approaches, and the GBS window (36 0/7 to 37 6/7 weeks)."
+  },
+  "sources": [
+    {
+      "id": "acog-routine-tests",
+      "organization": "ACOG",
+      "title": "Routine Tests During Pregnancy",
+      "url": "https://www.acog.org/womens-health/faqs/routine-tests-during-pregnancy",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-genetic-screening",
+      "organization": "ACOG",
+      "title": "Prenatal Genetic Screening Tests",
+      "url": "https://www.acog.org/womens-health/faqs/prenatal-genetic-screening-tests",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-ultrasound",
+      "organization": "ACOG",
+      "title": "Ultrasound Exams",
+      "url": "https://www.acog.org/womens-health/faqs/ultrasound-exams",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-gdm",
+      "organization": "ACOG",
+      "title": "Gestational Diabetes",
+      "url": "https://www.acog.org/womens-health/faqs/gestational-diabetes",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-group-b-strep",
+      "organization": "CDC",
+      "title": "About Group B Strep",
+      "url": "https://www.cdc.gov/group-b-strep/about/index.html",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Prenatal Testing",
+      "onScreen": [
+        "Prenatal Care"
+      ],
+      "narration": "Welcome back. In this lesson, we’ll go through the tests you’ll be offered during pregnancy. There are a lot of them, so we’ll focus on four that matter most: NIPT in the first trimester, the anatomy ultrasound and diabetes screening in the second, and group B strep testing in the third. Along the way, you’ll learn what results really mean.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "Close-up of a gloved hand holding a small blood tube, softly lit; a calendar with circled dates in the background."
+      }
+    },
+    {
+      "id": "screening-vs-diagnostic",
+      "type": "comparison",
+      "heading": "Screening vs. diagnostic tests",
+      "onScreen": [
+        "Every test is your choice"
+      ],
+      "narration": "First, an important difference. A screening test tells you the chance that something is present. It’s usually a blood test or ultrasound, with no risk to the pregnancy. A diagnostic test tells you yes or no. Diagnostic tests like CVS and amniocentesis are very accurate, but they carry a small risk of miscarriage. Many people start with screening, then decide about diagnostic testing if a screen comes back high. Every test is your choice, and it’s okay to take time to decide.",
+      "sourceIds": [
+        "acog-genetic-screening"
+      ],
+      "columns": [
+        "Screening test",
+        "Diagnostic test"
+      ],
+      "rows": [
+        [
+          "Tells you the chance",
+          "Tells you yes or no"
+        ],
+        [
+          "Blood test or ultrasound",
+          "CVS or amniocentesis"
+        ],
+        [
+          "No risk to the pregnancy",
+          "Small risk of miscarriage"
+        ],
+        [
+          "Offered to everyone",
+          "Offered after a high-chance screen, or by choice"
+        ]
+      ]
+    },
+    {
+      "id": "testing-timeline",
+      "type": "content",
+      "heading": "Your testing timeline",
+      "onScreen": [
+        "First trimester: first-visit labs and NIPT",
+        "Second trimester: anatomy ultrasound, then diabetes screening",
+        "Third trimester: group B strep test"
+      ],
+      "narration": "Here’s how the key tests fit across your pregnancy. In the first trimester, you’ll have blood work at your first visit and be offered NIPT. In the second trimester, you’ll have the anatomy ultrasound, then diabetes screening. In the third trimester, you’ll be tested for group B strep. Let’s take them one at a time.",
+      "sourceIds": [
+        "acog-routine-tests"
+      ],
+      "visual": {
+        "kind": "diagram",
+        "description": "Testing timeline across the three trimesters: NIPT from 9 to 10 weeks, anatomy ultrasound at 18 to 22 weeks, diabetes screening at 24 to 28 weeks, and group B strep at 36 to 37 weeks."
+      }
+    },
+    {
+      "id": "first-labs",
+      "type": "content",
+      "heading": "First-visit blood and urine tests",
+      "onScreen": [
+        "Blood type, Rh factor, and antibody screen",
+        "Blood count, to check for anemia",
+        "Infections: HIV, syphilis, hepatitis B and C, and often gonorrhea and chlamydia",
+        "Immunity to rubella and chickenpox",
+        "Urine test for infection",
+        "Pap test, if you’re due",
+        "Carrier screening, if you choose"
+      ],
+      "narration": "At your first visit, a few tubes of blood cover a lot. They check your blood type and Rh factor, which we’ll come back to in the next lesson, plus an antibody screen. They check your blood count for anemia. They test for infections like HIV, syphilis, and hepatitis B and C, and often gonorrhea and chlamydia, because treating these protects your baby. They check whether you’re immune to rubella and chickenpox. A urine test looks for a hidden bladder infection. You may have a Pap test if you’re due for one. And you’ll be offered carrier screening, which checks whether you carry genes for conditions like cystic fibrosis, spinal muscular atrophy, or fragile X.",
+      "sourceIds": [
+        "acog-routine-tests"
+      ]
+    },
+    {
+      "id": "nipt",
+      "type": "content",
+      "heading": "First trimester: NIPT",
+      "onScreen": [
+        "Also called cell-free DNA screening",
+        "A blood draw from you, from 9 or 10 weeks on, depending on the lab",
+        "Screens for Down syndrome, trisomy 18, and trisomy 13",
+        "Can also show the baby’s sex, if you want to know",
+        "Offered to everyone, at any age",
+        "A screen, not a diagnosis"
+      ],
+      "narration": "NIPT, also called cell-free DNA screening, is one of the most important tests early in pregnancy. It’s a simple blood draw from you, as early as nine or ten weeks, depending on the lab your care team uses. Many people have it between ten and thirteen weeks. Your blood carries tiny pieces of DNA from the placenta, which usually matches your baby’s. The test screens for Down syndrome, trisomy eighteen, and trisomy thirteen, and it can also show your baby’s sex if you’d like to know. It’s offered to everyone, at any age. NIPT is very accurate, but it’s still a screen, not a diagnosis.",
+      "sourceIds": [
+        "acog-genetic-screening"
+      ]
+    },
+    {
+      "id": "nipt-results",
+      "type": "content",
+      "heading": "Understanding NIPT results",
+      "onScreen": [
+        "Low chance: most results, and very reassuring",
+        "High chance: not a diagnosis",
+        "Next step: talk with a genetic counselor",
+        "A diagnostic test can tell you for sure: CVS at 10 to 13 weeks, or amniocentesis from 15 weeks",
+        "Sometimes no result: a redraw usually works"
+      ],
+      "narration": "Most NIPT results come back low chance, which is very reassuring. If a result comes back high chance, it does not mean your baby definitely has the condition. The next step is talking with a genetic counselor, who can explain what the result means for you, and offer a diagnostic test to know for sure: CVS, done between ten and thirteen weeks, or amniocentesis, done from fifteen weeks on. Experts advise confirming with a diagnostic test before making any decisions. Sometimes a test can’t give a result, often because there wasn’t enough DNA from the placenta yet. A second blood draw usually works.",
+      "sourceIds": [
+        "acog-genetic-screening"
+      ]
+    },
+    {
+      "id": "other-screens",
+      "type": "content",
+      "heading": "Other screening options",
+      "onScreen": [
+        "First-trimester screen: ultrasound plus blood test, 11 to 14 weeks",
+        "Quad screen: blood test, 15 to 22 weeks",
+        "AFP blood test: checks for spinal cord problems like spina bifida",
+        "Your team will help you choose what fits"
+      ],
+      "narration": "NIPT isn’t the only option. A first-trimester screen combines an ultrasound measurement of the back of your baby’s neck with a blood test, between eleven and fourteen weeks. A quad screen is a blood test between fifteen and twenty-two weeks. Both look at the chance of chromosome conditions, and the quad screen also screens for problems with the spine, like spina bifida. If you have NIPT, you may still be offered a separate AFP blood test for those spine problems. Your care team will help you choose what fits you.",
+      "sourceIds": [
+        "acog-genetic-screening"
+      ]
+    },
+    {
+      "id": "checkin-nipt",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let’s check in.",
+      "sourceIds": [
+        "acog-genetic-screening"
+      ],
+      "question": {
+        "prompt": "Your NIPT result says high chance for Down syndrome. What does that mean?",
+        "options": [
+          "Your baby definitely has Down syndrome",
+          "There’s an increased chance, and a diagnostic test can tell you for sure",
+          "The test was done wrong"
+        ],
+        "correctIndex": 1,
+        "explanation": "NIPT is a screening test. A high-chance result means talking with a genetic counselor and considering a diagnostic test like CVS or amniocentesis to know for sure."
+      }
+    },
+    {
+      "id": "anatomy-scan",
+      "type": "content",
+      "heading": "Second trimester: the anatomy ultrasound",
+      "onScreen": [
+        "Usually between 18 and 22 weeks",
+        "Looks at the brain, heart, spine, kidneys, arms, legs, and face",
+        "Checks the placenta, amniotic fluid, and growth",
+        "Can often show the baby’s sex, if you want to know",
+        "Coming back for another look is common"
+      ],
+      "narration": "The anatomy ultrasound is usually done between eighteen and twenty-two weeks. It’s a detailed look at your baby, from head to toe: the brain, heart, spine, kidneys, arms, legs, and face. It also checks where the placenta is, the amount of amniotic fluid, and how your baby is growing. It often takes longer than other ultrasounds, and you can usually learn your baby’s sex if you want to. If your baby is in a tricky position, you may be asked to come back for another look. That’s common, and it doesn’t mean something is wrong.",
+      "sourceIds": [
+        "acog-ultrasound"
+      ],
+      "visual": {
+        "kind": "illustration",
+        "description": "Sonographer pointing to a screen showing a generic, softly rendered fetal profile; parent on the exam table watching, partner holding their hand."
+      }
+    },
+    {
+      "id": "glucose",
+      "type": "content",
+      "heading": "Second trimester: diabetes screening",
+      "onScreen": [
+        "Usually between 24 and 28 weeks",
+        "Earlier if you have risk factors",
+        "For the one-hour test, you usually don’t need to fast",
+        "Drink a sweet drink, then a blood draw",
+        "If high, a longer test confirms",
+        "Gestational diabetes is common and manageable"
+      ],
+      "narration": "Between twenty-four and twenty-eight weeks, you’ll be screened for gestational diabetes, a type of diabetes that starts in pregnancy. You may be tested earlier if you have risk factors, like a higher weight, gestational diabetes in a past pregnancy, or a family history of diabetes. In the most common approach, you drink a sweet drink, and your blood is checked about an hour later. You usually don't need to fast for this test, unless your team tells you to. If that number is high, a longer test, usually done after fasting, confirms whether you have it. Some practices use a single two-hour test instead. Gestational diabetes is common, and it’s managed with food choices, activity, and sometimes medicine. It usually goes away after birth.",
+      "sourceIds": [
+        "acog-gdm"
+      ]
+    },
+    {
+      "id": "checkin-glucose",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Another check-in.",
+      "sourceIds": [
+        "acog-gdm"
+      ],
+      "question": {
+        "prompt": "Your one-hour glucose screen comes back high. What usually happens next?",
+        "options": [
+          "You’re diagnosed with diabetes right away",
+          "A longer glucose test to confirm",
+          "Nothing, it doesn’t matter"
+        ],
+        "correctIndex": 1,
+        "explanation": "The one-hour test is a screen. Many people with a high result have a normal longer test. The longer test confirms whether you have gestational diabetes."
+      }
+    },
+    {
+      "id": "week-28-labs",
+      "type": "content",
+      "heading": "Around 28 weeks: a few repeat checks",
+      "onScreen": [
+        "Blood count again, for anemia",
+        "Repeat HIV and syphilis tests (required in many states)",
+        "Rh-negative: antibody screen, then RhoGAM"
+      ],
+      "narration": "Around twenty-eight weeks, some first-visit tests are repeated. Your blood count is checked again, since anemia is more common as your blood volume grows. HIV and syphilis tests are often repeated, and many states require it. If you’re Rh-negative, you’ll have another antibody screen, then RhoGAM. We’ll explain RhoGAM in the next lesson.",
+      "sourceIds": [
+        "acog-routine-tests"
+      ]
+    },
+    {
+      "id": "gbs",
+      "type": "content",
+      "heading": "Third trimester: group B strep",
+      "onScreen": [
+        "Tested at 36 to 37 weeks",
+        "A quick swab of the vagina and rectum",
+        "About 1 in 4 pregnant people carry it",
+        "Harmless to you, but can pass to your baby during birth",
+        "If positive: IV antibiotics during labor",
+        "Tell your team your result when labor starts or your water breaks"
+      ],
+      "narration": "Near the end of pregnancy, between thirty-six and thirty-seven weeks, you’ll be tested for group B strep. It’s a quick swab of the vagina and rectum, and some practices let you do it yourself. About one in four pregnant people carry group B strep. It’s usually harmless to you, and it doesn’t mean you’re sick or did anything wrong. But it can pass to your baby during birth and cause a serious infection. If you test positive, you’ll get antibiotics through an IV during labor, which greatly lowers that risk. Tell your team your result when you call in labor or if your water breaks.",
+      "sourceIds": [
+        "cdc-group-b-strep"
+      ]
+    },
+    {
+      "id": "extra-monitoring",
+      "type": "content",
+      "heading": "When you might need extra monitoring",
+      "onScreen": [
+        "Growth ultrasounds later in pregnancy",
+        "Non-stress test: tracks your baby’s heart rate",
+        "Biophysical profile: ultrasound plus heart rate check",
+        "Common reasons: high blood pressure, diabetes, growth concerns, less movement, past 41 weeks"
+      ],
+      "narration": "Some pregnancies need extra checks later on. You might have more ultrasounds to follow your baby’s growth. A non-stress test tracks your baby’s heart rate for about twenty to forty minutes while you rest. A biophysical profile adds an ultrasound look at your baby’s movement, breathing, muscle tone, and fluid. These are common if you have high blood pressure or diabetes, if there’s a concern about growth, if your baby is moving less, or if you go past forty-one weeks. Needing them doesn’t mean something is wrong. It means your team is watching closely.",
+      "sourceIds": [
+        "acog-routine-tests"
+      ]
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Screening tells chance; diagnostic tells yes or no",
+        "NIPT: from 9 to 10 weeks, a screen, not a diagnosis",
+        "Anatomy ultrasound: 18 to 22 weeks",
+        "Diabetes screening: 24 to 28 weeks",
+        "Around 28 weeks: repeat labs, and RhoGAM if Rh-negative",
+        "Group B strep: 36 to 37 weeks, antibiotics in labor if positive"
+      ],
+      "narration": "Let’s recap. Screening tests tell you the chance of something. Diagnostic tests tell you yes or no. NIPT is offered from nine or ten weeks on, and a high-chance result needs a diagnostic test to confirm. The anatomy ultrasound is between eighteen and twenty-two weeks. Diabetes screening is between twenty-four and twenty-eight weeks. And group B strep testing is at thirty-six to thirty-seven weeks, with antibiotics during labor if it’s positive. Next, a few review questions. Then we’ll talk about vaccines and your Rh factor.",
+      "sourceIds": [
+        "acog-genetic-screening",
+        "acog-routine-tests"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "When can NIPT be done?",
+      "options": [
+        "From about 9 to 10 weeks on",
+        "Only after 30 weeks",
+        "Only after birth"
+      ],
+      "correctIndex": 0,
+      "explanation": "NIPT can be done from about 9 to 10 weeks of pregnancy, depending on the lab. It’s a blood draw from you."
+    },
+    {
+      "prompt": "What does the anatomy ultrasound at 18 to 22 weeks look at?",
+      "options": [
+        "Only the baby’s sex",
+        "Your baby’s organs, growth, the placenta, and fluid",
+        "Your blood sugar"
+      ],
+      "correctIndex": 1,
+      "explanation": "It’s a detailed head-to-toe look at your baby, plus the placenta, amniotic fluid, and growth. Learning the sex is optional."
+    },
+    {
+      "prompt": "You tested positive for group B strep. What usually happens?",
+      "options": [
+        "You need a C-section",
+        "You get IV antibiotics during labor",
+        "You take antibiotics for the rest of pregnancy"
+      ],
+      "correctIndex": 1,
+      "explanation": "Antibiotics through an IV during labor greatly lower the chance of passing group B strep to your baby. Group B strep alone isn’t a reason for a C-section."
+    }
+  ],
+  "nextLessonId": "vaccines-and-rh"
+}

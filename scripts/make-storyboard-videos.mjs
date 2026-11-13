@@ -44,7 +44,7 @@ const keys = Object.keys(boards).filter((k) => !k.startsWith('_') && (!only.leng
 const maxSeconds = {};
 for (const course of readdirSync(path.join(root, 'content/lessons'))) {
   const dir = path.join(root, 'content/lessons', course);
-  for (const file of execFileSync('ls', [dir]).toString().split('\n').filter((f) => f.endsWith('.json'))) {
+    for (const file of readdirSync(dir).filter((f) => f.endsWith('.json'))) {
     const lesson = JSON.parse(readFileSync(path.join(dir, file), 'utf8'));
     for (const slide of lesson.slides) if (slide.video) maxSeconds[`${lesson.lessonId}/${slide.id}`] = slide.video.maxSeconds;
   }

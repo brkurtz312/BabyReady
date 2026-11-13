@@ -675,6 +675,31 @@ export const narrationClips: Record<string, NarrationClip> = {
   '01387fc4': { source: require('../../assets/narration/postpartum-warning-signs/the-year-after.m4a'), starts: [150, 2756, 8491, 13883, 17604] }, // postpartum-warning-signs/the-year-after.m4a
   '88e5c9c3': { source: require('../../assets/narration/postpartum-warning-signs/urgent-warning-signs.m4a'), starts: [150, 3098, 6425, 9676, 11233, 12904, 16563, 19855, 22287, 24467, 27727, 30560, 33248, 35794, 37942, 39427] }, // postpartum-warning-signs/urgent-warning-signs.m4a
   'dbb6f4b8': { source: require('../../assets/narration/postpartum-warning-signs/welcome.m4a'), starts: [150, 3034, 6258, 7435, 11759] }, // postpartum-warning-signs/welcome.m4a
+  '4fe67e9e': { source: require('../../assets/narration/prenatal-testing/anatomy-scan.m4a'), starts: [150, 4525, 11964, 17343, 23164, 27690] }, // prenatal-testing/anatomy-scan.m4a
+  'c76c5869': { source: require('../../assets/narration/prenatal-testing/checkin-glucose-right.m4a'), starts: [150, 727, 3333, 7374] }, // prenatal-testing/checkin-glucose-right.m4a
+  'a0299f83': { source: require('../../assets/narration/prenatal-testing/checkin-glucose-wrong.m4a'), starts: [150, 1165, 3779, 7356] }, // prenatal-testing/checkin-glucose-wrong.m4a
+  '81914872': { source: require('../../assets/narration/prenatal-testing/checkin-glucose.m4a'), starts: [150] }, // prenatal-testing/checkin-glucose.m4a
+  'd980d567': { source: require('../../assets/narration/prenatal-testing/checkin-nipt-right.m4a'), starts: [150, 905, 1190] }, // prenatal-testing/checkin-nipt-right.m4a
+  'd5bb8149': { source: require('../../assets/narration/prenatal-testing/checkin-nipt-wrong.m4a'), starts: [150, 1284, 4078] }, // prenatal-testing/checkin-nipt-wrong.m4a
+  '22b91d6a': { source: require('../../assets/narration/prenatal-testing/done.m4a'), starts: [150, 1132, 2670] }, // prenatal-testing/done.m4a
+  '7512ca07': { source: require('../../assets/narration/prenatal-testing/extra-monitoring.m4a'), starts: [150, 3005, 6545, 12164, 19172, 29079, 31338] }, // prenatal-testing/extra-monitoring.m4a
+  '03f8b509': { source: require('../../assets/narration/prenatal-testing/first-labs.m4a'), starts: [150, 3898, 9934, 12092, 21237, 24788, 27842, 30342] }, // prenatal-testing/first-labs.m4a
+  '20425640': { source: require('../../assets/narration/prenatal-testing/gbs.m4a'), starts: [150, 8851, 11329, 14638, 19622, 23787, 29724] }, // prenatal-testing/gbs.m4a
+  'cd397730': { source: require('../../assets/narration/prenatal-testing/glucose.m4a'), starts: [150, 7480, 16218, 21181, 25121, 30559, 33897, 39821] }, // prenatal-testing/glucose.m4a
+  '48b67a34': { source: require('../../assets/narration/prenatal-testing/nipt-results.m4a'), starts: [150, 5390, 19305, 25910, 31129, 36586] }, // prenatal-testing/nipt-results.m4a
+  'c5007564': { source: require('../../assets/narration/prenatal-testing/nipt.m4a'), starts: [150, 7420, 13768, 16773, 22347, 31029, 34052] }, // prenatal-testing/nipt.m4a
+  '185a3b40': { source: require('../../assets/narration/prenatal-testing/other-screens.m4a'), starts: [150, 2532, 10180, 14482, 21865, 27817] }, // prenatal-testing/other-screens.m4a
+  '99d9bb4f': { source: require('../../assets/narration/prenatal-testing/quiz-1-right.m4a'), starts: [150, 1066, 6750] }, // prenatal-testing/quiz-1-right.m4a
+  'cf5516a9': { source: require('../../assets/narration/prenatal-testing/quiz-1-wrong.m4a'), starts: [150, 1323, 6331] }, // prenatal-testing/quiz-1-wrong.m4a
+  '7453e29a': { source: require('../../assets/narration/prenatal-testing/quiz-2-right.m4a'), starts: [150, 775, 7392] }, // prenatal-testing/quiz-2-right.m4a
+  '588fe3d8': { source: require('../../assets/narration/prenatal-testing/quiz-2-wrong.m4a'), starts: [150, 1017, 6882] }, // prenatal-testing/quiz-2-wrong.m4a
+  'c407c0e7': { source: require('../../assets/narration/prenatal-testing/quiz-3-right.m4a'), starts: [150, 1229, 7414] }, // prenatal-testing/quiz-3-right.m4a
+  '7aedb0b1': { source: require('../../assets/narration/prenatal-testing/quiz-3-wrong.m4a'), starts: [150, 1446, 7178] }, // prenatal-testing/quiz-3-wrong.m4a
+  '1b765e47': { source: require('../../assets/narration/prenatal-testing/screening-vs-diagnostic.m4a'), starts: [150, 2444, 6059, 10351, 13422, 20307, 26077] }, // prenatal-testing/screening-vs-diagnostic.m4a
+  '4d767fd3': { source: require('../../assets/narration/prenatal-testing/summary.m4a'), starts: [150, 1181, 4107, 6732, 14202, 18133, 21859, 28506, 30701] }, // prenatal-testing/summary.m4a
+  '8340587c': { source: require('../../assets/narration/prenatal-testing/testing-timeline.m4a'), starts: [150, 3322, 8363, 14148, 17494] }, // prenatal-testing/testing-timeline.m4a
+  '9600ccb1': { source: require('../../assets/narration/prenatal-testing/week-28-labs.m4a'), starts: [150, 257, 3999, 8737, 13680] }, // prenatal-testing/week-28-labs.m4a
+  '385995ea': { source: require('../../assets/narration/prenatal-testing/welcome.m4a'), starts: [150, 1172, 5174, 17584] }, // prenatal-testing/welcome.m4a
   '4051c303': { source: require('../../assets/narration/pushing-and-birth/baby-is-born.m4a'), starts: [150, 6741, 13938, 16824, 21016] }, // pushing-and-birth/baby-is-born.m4a
   '390666b9': { source: require('../../assets/narration/pushing-and-birth/checkin-pressure-right.m4a'), starts: [150, 1104, 4594, 7525, 12424] }, // pushing-and-birth/checkin-pressure-right.m4a
   '5a0e4cf3': { source: require('../../assets/narration/pushing-and-birth/checkin-pressure-wrong.m4a'), starts: [150, 1097, 4763, 7702, 12308] }, // pushing-and-birth/checkin-pressure-wrong.m4a
@@ -831,6 +856,26 @@ export const narrationClips: Record<string, NarrationClip> = {
   'dd8cc441': { source: require('../../assets/narration/understanding-labor-pain/what-affects.m4a'), starts: [150, 2569, 11439, 17618, 19548, 23410] }, // understanding-labor-pain/what-affects.m4a
   'f2a8808b': { source: require('../../assets/narration/understanding-labor-pain/why-it-hurts.m4a'), starts: [150, 3602, 7391, 9744, 15175, 19399] }, // understanding-labor-pain/why-it-hurts.m4a
   '82e72412': { source: require('../../assets/narration/understanding-labor-pain/your-thoughts.m4a'), starts: [150, 4291, 8948, 10599, 14731] }, // understanding-labor-pain/your-thoughts.m4a
+  '64fc3f4f': { source: require('../../assets/narration/vaccines-and-rh/checkin-rh-right.m4a'), starts: [150, 1064, 2321] }, // vaccines-and-rh/checkin-rh-right.m4a
+  'b05e3fa1': { source: require('../../assets/narration/vaccines-and-rh/checkin-rh-wrong.m4a'), starts: [150, 1121, 3480] }, // vaccines-and-rh/checkin-rh-wrong.m4a
+  '740cab34': { source: require('../../assets/narration/vaccines-and-rh/checkin-tdap-right.m4a'), starts: [150, 939] }, // vaccines-and-rh/checkin-tdap-right.m4a
+  '2927cb02': { source: require('../../assets/narration/vaccines-and-rh/checkin-tdap-wrong.m4a'), starts: [150, 1511] }, // vaccines-and-rh/checkin-tdap-wrong.m4a
+  '82911cc9': { source: require('../../assets/narration/vaccines-and-rh/guidance-today.m4a'), starts: [150, 4945, 15401, 25286] }, // vaccines-and-rh/guidance-today.m4a
+  'd3c4a059': { source: require('../../assets/narration/vaccines-and-rh/my-notes.m4a'), starts: [150, 2399, 10781] }, // vaccines-and-rh/my-notes.m4a
+  '89e0cbe4': { source: require('../../assets/narration/vaccines-and-rh/quiz-1-right.m4a'), starts: [150, 1094] }, // vaccines-and-rh/quiz-1-right.m4a
+  '8099f442': { source: require('../../assets/narration/vaccines-and-rh/quiz-1-wrong.m4a'), starts: [150, 1330] }, // vaccines-and-rh/quiz-1-wrong.m4a
+  'ecfda939': { source: require('../../assets/narration/vaccines-and-rh/quiz-2-right.m4a'), starts: [150, 1066, 5068] }, // vaccines-and-rh/quiz-2-right.m4a
+  'dbea5c7b': { source: require('../../assets/narration/vaccines-and-rh/quiz-2-wrong.m4a'), starts: [150, 1181, 5750] }, // vaccines-and-rh/quiz-2-wrong.m4a
+  '7353b490': { source: require('../../assets/narration/vaccines-and-rh/quiz-3-right.m4a'), starts: [150, 973] }, // vaccines-and-rh/quiz-3-right.m4a
+  'b3ef790e': { source: require('../../assets/narration/vaccines-and-rh/quiz-3-wrong.m4a'), starts: [150, 1420] }, // vaccines-and-rh/quiz-3-wrong.m4a
+  '465d1b71': { source: require('../../assets/narration/vaccines-and-rh/rh-factor.m4a'), starts: [150, 2549, 6931, 12488, 15999, 23448, 27767, 30259] }, // vaccines-and-rh/rh-factor.m4a
+  '303d9dad': { source: require('../../assets/narration/vaccines-and-rh/rh-speak-up.m4a'), starts: [150, 3274, 5864, 12384, 17436] }, // vaccines-and-rh/rh-speak-up.m4a
+  '1c6ff2f8': { source: require('../../assets/narration/vaccines-and-rh/rhogam.m4a'), starts: [150, 10995, 18560, 22615, 30699] }, // vaccines-and-rh/rhogam.m4a
+  'c9f323e3': { source: require('../../assets/narration/vaccines-and-rh/rsv-choice.m4a'), starts: [150, 4573, 6834, 14414, 18447, 20915, 27845] }, // vaccines-and-rh/rsv-choice.m4a
+  '88fabdc2': { source: require('../../assets/narration/vaccines-and-rh/summary.m4a'), starts: [150, 1456, 6593, 15248, 23135, 31077, 35014, 37104] }, // vaccines-and-rh/summary.m4a
+  '64259e32': { source: require('../../assets/narration/vaccines-and-rh/vaccine-schedule.m4a'), starts: [150, 3515, 11893, 15809, 21652, 25417, 32658, 40824] }, // vaccines-and-rh/vaccine-schedule.m4a
+  '902504c5': { source: require('../../assets/narration/vaccines-and-rh/welcome.m4a'), starts: [150, 3030, 13345] }, // vaccines-and-rh/welcome.m4a
+  '5f1a99ca': { source: require('../../assets/narration/vaccines-and-rh/why-vaccines.m4a'), starts: [150, 3615, 10075, 16222] }, // vaccines-and-rh/why-vaccines.m4a
   '3754aff3': { source: require('../../assets/narration/welcome-how-this-class-works/ask-your-instructor.m4a'), starts: [150, 1456, 5366, 6969, 13153, 15224, 17352, 20082, 25316] }, // welcome-how-this-class-works/ask-your-instructor.m4a
   'd7103cf0': { source: require('../../assets/narration/welcome-how-this-class-works/checkin-ask-instructor-right.m4a'), starts: [150, 1220, 5506, 9148, 14460] }, // welcome-how-this-class-works/checkin-ask-instructor-right.m4a
   'dd816536': { source: require('../../assets/narration/welcome-how-this-class-works/checkin-ask-instructor-wrong.m4a'), starts: [150, 1855, 6318, 10131, 15824] }, // welcome-how-this-class-works/checkin-ask-instructor-wrong.m4a
@@ -953,4 +998,22 @@ export const narrationClips: Record<string, NarrationClip> = {
   '49d8f013': { source: require('../../assets/narration/your-postpartum-checkups/welcome.m4a'), starts: [150, 2934] }, // your-postpartum-checkups/welcome.m4a
   '37dbee23': { source: require('../../assets/narration/your-postpartum-checkups/what-gets-checked.m4a'), starts: [150, 3555, 11705, 18354, 23991, 29427] }, // your-postpartum-checkups/what-gets-checked.m4a
   '9aace1c1': { source: require('../../assets/narration/your-postpartum-checkups/your-visit.m4a'), starts: [150, 1811, 1979, 7128, 12544, 16345, 19258] }, // your-postpartum-checkups/your-visit.m4a
+  'a1328d9f': { source: require('../../assets/narration/your-prenatal-visits/between-visits.m4a'), starts: [150, 4581, 19364, 31421] }, // your-prenatal-visits/between-visits.m4a
+  'e57f854c': { source: require('../../assets/narration/your-prenatal-visits/checkin-bp-right.m4a'), starts: [150, 1326, 6872] }, // your-prenatal-visits/checkin-bp-right.m4a
+  '883e5e32': { source: require('../../assets/narration/your-prenatal-visits/checkin-bp-wrong.m4a'), starts: [150, 1671, 6339] }, // your-prenatal-visits/checkin-bp-wrong.m4a
+  'c3f01f5d': { source: require('../../assets/narration/your-prenatal-visits/checkin-bp.m4a'), starts: [150] }, // your-prenatal-visits/checkin-bp.m4a
+  '377acc30': { source: require('../../assets/narration/your-prenatal-visits/done.m4a'), starts: [150, 1000, 3180] }, // your-prenatal-visits/done.m4a
+  'c6b4c3a1': { source: require('../../assets/narration/your-prenatal-visits/every-visit.m4a'), starts: [150, 3810, 10894, 14152, 16998, 23340] }, // your-prenatal-visits/every-visit.m4a
+  '8e0cc9a9': { source: require('../../assets/narration/your-prenatal-visits/quiz-1-right.m4a'), starts: [150, 1124, 5326] }, // your-prenatal-visits/quiz-1-right.m4a
+  '745a4967': { source: require('../../assets/narration/your-prenatal-visits/quiz-1-wrong.m4a'), starts: [150, 1320, 5265] }, // your-prenatal-visits/quiz-1-wrong.m4a
+  '13c46c62': { source: require('../../assets/narration/your-prenatal-visits/quiz-2-right.m4a'), starts: [150, 975, 5153] }, // your-prenatal-visits/quiz-2-right.m4a
+  'ce096284': { source: require('../../assets/narration/your-prenatal-visits/quiz-2-wrong.m4a'), starts: [150, 1167, 5137] }, // your-prenatal-visits/quiz-2-wrong.m4a
+  'dbcf8ac1': { source: require('../../assets/narration/your-prenatal-visits/quiz-3-right.m4a'), starts: [150, 1154, 5491] }, // your-prenatal-visits/quiz-3-right.m4a
+  '71f8879f': { source: require('../../assets/narration/your-prenatal-visits/quiz-3-wrong.m4a'), starts: [150, 1456, 6072] }, // your-prenatal-visits/quiz-3-wrong.m4a
+  '9d04ccab': { source: require('../../assets/narration/your-prenatal-visits/summary.m4a'), starts: [150, 1303, 5597, 10620, 14371, 16295, 18134, 20889] }, // your-prenatal-visits/summary.m4a
+  'c9161841': { source: require('../../assets/narration/your-prenatal-visits/upcoming.m4a'), starts: [150, 1583, 3253, 7933, 9949, 11141] }, // your-prenatal-visits/upcoming.m4a
+  '92aabd36': { source: require('../../assets/narration/your-prenatal-visits/visit-agenda.m4a'), starts: [150, 2986, 9694, 13220, 20655, 27046, 31288] }, // your-prenatal-visits/visit-agenda.m4a
+  '7c39ee05': { source: require('../../assets/narration/your-prenatal-visits/visit-schedule.m4a'), starts: [150, 1676, 14483, 21941, 29220] }, // your-prenatal-visits/visit-schedule.m4a
+  '26965a83': { source: require('../../assets/narration/your-prenatal-visits/visit-video.m4a'), starts: [150] }, // your-prenatal-visits/visit-video.m4a
+  'ba71cd37': { source: require('../../assets/narration/your-prenatal-visits/welcome.m4a'), starts: [150, 1795, 6108, 14250] }, // your-prenatal-visits/welcome.m4a
 };

@@ -1,0 +1,286 @@
+{
+  "courseId": "prenatal-care",
+  "lessonId": "your-prenatal-visits",
+  "order": 1,
+  "title": "Your Prenatal Visits",
+  "learningGoals": [
+    "Know how often prenatal visits usually happen, and why they get closer together",
+    "Understand what your care team checks at most visits, and why",
+    "Know what each stage of pregnancy usually brings",
+    "Recognize warning signs that shouldn’t wait for your next visit",
+    "Plan for your upcoming visits and tests"
+  ],
+  "estimatedMinutes": 9,
+  "review": {
+    "status": "draft",
+    "reviewedBy": null,
+    "reviewedOn": null,
+    "nextReviewBy": null,
+    "notes": "Draft for clinical review. Builds on Early Pregnancy Basics lesson 3 (first prenatal visit), so the first-visit content is not repeated here. The warning-signs safety slide matches the CDC Hear Her list used in Early Pregnancy Basics lesson 2. Confirm the visit schedule framing (typical low-risk schedule, tailored per ACOG) and the agenda-by-stage table. Video slide needs a storyboard video."
+  },
+  "sources": [
+    {
+      "id": "acog-prenatal-care",
+      "organization": "ACOG",
+      "title": "Prenatal Care (FAQ)",
+      "url": "https://www.acog.org/womens-health/faqs/prenatal-care",
+      "verifiedOn": null
+    },
+    {
+      "id": "acog-routine-tests",
+      "organization": "ACOG",
+      "title": "Routine Tests During Pregnancy",
+      "url": "https://www.acog.org/womens-health/faqs/routine-tests-during-pregnancy",
+      "verifiedOn": null
+    },
+    {
+      "id": "cdc-hear-her-warning-signs",
+      "organization": "CDC",
+      "title": "Hear Her: Urgent Maternal Warning Signs",
+      "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
+      "verifiedOn": null
+    }
+  ],
+  "slides": [
+    {
+      "id": "welcome",
+      "type": "title",
+      "heading": "Your Prenatal Visits",
+      "onScreen": [
+        "Prenatal Care"
+      ],
+      "narration": "Welcome to Prenatal Care. In Early Pregnancy Basics, you got ready for your first prenatal visit. Now let’s look at the visits that come after it: how often they happen, what your care team checks, and what each stage of pregnancy brings. In the next two lessons, we’ll cover prenatal testing, and then vaccines and your Rh factor.",
+      "sourceIds": [],
+      "visual": {
+        "kind": "illustration",
+        "description": "A pregnant person and a support person in a bright clinic waiting room, smiling, one holding a small notebook. Diverse people, soft blue and warm beige colors."
+      }
+    },
+    {
+      "id": "visit-schedule",
+      "type": "content",
+      "heading": "How often you’ll go",
+      "onScreen": [
+        "Every 4 weeks until about 28 weeks",
+        "Every 2 weeks from 28 to 36 weeks",
+        "Every week from 36 weeks until birth",
+        "More visits if you need extra care"
+      ],
+      "narration": "After your first visit, here’s a common schedule for a healthy pregnancy. You’ll usually go about every four weeks until around twenty-eight weeks, then every two weeks until thirty-six weeks, then every week until your baby is born. Visits get closer together because more changes happen near the end. Remember, your plan can be tailored to you. Your care team may add visits if you’re carrying twins, have high blood pressure or diabetes, or need closer watching, and some visits may be by video.",
+      "sourceIds": [
+        "acog-prenatal-care"
+      ],
+      "visual": {
+        "kind": "diagram",
+        "description": "Visit schedule on a weeks-of-pregnancy scale: about every 4 weeks until 28 weeks, every 2 weeks from 28 to 36, and weekly from 36 weeks until birth."
+      }
+    },
+    {
+      "id": "every-visit",
+      "type": "comparison",
+      "heading": "What happens at most visits",
+      "onScreen": [
+        "Quick checks, each with a purpose"
+      ],
+      "narration": "Most visits after the first are shorter, and they follow a pattern. Your care team checks your blood pressure, because high blood pressure can be an early sign of a serious condition called preeclampsia. They check your weight to see how you and your baby are growing. They may test your urine for protein or sugar. Later on, they measure your belly to track your baby’s growth, and at most visits they listen to your baby’s heartbeat. Then it’s time for your questions.",
+      "sourceIds": [
+        "acog-prenatal-care",
+        "acog-routine-tests"
+      ],
+      "columns": [
+        "What they check",
+        "Why it matters"
+      ],
+      "rows": [
+        [
+          "Blood pressure",
+          "Early sign of preeclampsia"
+        ],
+        [
+          "Weight",
+          "How you and your baby are growing"
+        ],
+        [
+          "Urine (at some visits)",
+          "Protein, sugar, or infection"
+        ],
+        [
+          "Belly measurement (later)",
+          "Your baby’s growth"
+        ],
+        [
+          "Baby’s heartbeat",
+          "How your baby is doing"
+        ],
+        [
+          "Your questions and how you feel",
+          "Your health, body and mind"
+        ]
+      ]
+    },
+    {
+      "id": "checkin-bp",
+      "type": "checkin",
+      "heading": "Quick check-in",
+      "onScreen": [],
+      "narration": "Let’s check in.",
+      "sourceIds": [
+        "acog-prenatal-care"
+      ],
+      "question": {
+        "prompt": "Why does your care team check your blood pressure at every visit?",
+        "options": [
+          "To decide your due date",
+          "To watch for early signs of preeclampsia",
+          "To find out the baby’s sex"
+        ],
+        "correctIndex": 1,
+        "explanation": "Rising blood pressure can be an early sign of preeclampsia, a serious condition. Checking at every visit helps your team catch it early."
+      }
+    },
+    {
+      "id": "visit-agenda",
+      "type": "comparison",
+      "heading": "What’s on the agenda, by stage",
+      "onScreen": [
+        "Each stage has its own focus"
+      ],
+      "narration": "Each stage of pregnancy brings its own topics. Around ten to thirteen weeks, you’ll review your first blood work and talk about genetic screening choices like NIPT. Around eighteen to twenty-two weeks comes the anatomy ultrasound. From twenty-four to twenty-eight weeks, you’ll have diabetes screening, and if you’re Rh-negative, RhoGAM around twenty-eight weeks. In the thirties, you’ll talk about your birth plan, your baby’s position, and signs of preterm labor. At thirty-six weeks comes the group B strep test, and weekly visits begin. And if you go past forty-one weeks, you’ll have extra checks on your baby and talk about induction.",
+      "sourceIds": [
+        "acog-prenatal-care",
+        "acog-routine-tests"
+      ],
+      "columns": [
+        "Weeks",
+        "What you’ll likely cover"
+      ],
+      "rows": [
+        [
+          "10–13",
+          "First blood work results; NIPT and other screening choices"
+        ],
+        [
+          "18–22",
+          "Anatomy ultrasound"
+        ],
+        [
+          "24–28",
+          "Diabetes screening; RhoGAM at 28 if Rh-negative"
+        ],
+        [
+          "30–35",
+          "Birth plan, baby’s position, preterm labor signs"
+        ],
+        [
+          "36",
+          "Group B strep test; weekly visits begin"
+        ],
+        [
+          "41+",
+          "Extra checks on your baby; induction options"
+        ]
+      ]
+    },
+    {
+      "id": "between-visits",
+      "type": "safety",
+      "heading": "Don’t wait for your next visit",
+      "onScreen": [
+        "Vaginal bleeding or leaking fluid",
+        "Severe headache that won’t go away, or vision changes",
+        "Trouble breathing, chest pain, or a racing heart",
+        "Severe belly pain that doesn’t go away",
+        "Fever of 100.4°F or higher",
+        "Extreme swelling of hands or face",
+        "Baby moving less than usual (later in pregnancy)",
+        "Thoughts of harming yourself or your baby",
+        "If it feels like an emergency, call 911"
+      ],
+      "narration": "Your next visit may be weeks away, but some things shouldn’t wait. Call your care team right away for vaginal bleeding or leaking fluid, a severe headache that won’t go away or changes in your vision, trouble breathing, chest pain, or a racing heart, severe belly pain that doesn’t go away, a fever of 100.4 degrees or higher, extreme swelling of your hands or face, your baby moving less than usual later in pregnancy, or thoughts of harming yourself or your baby. If it feels like an emergency, call 911.",
+      "sourceIds": [
+        "cdc-hear-her-warning-signs"
+      ]
+    },
+    {
+      "id": "visit-video",
+      "type": "video",
+      "heading": "A visit, start to finish",
+      "onScreen": [
+        "Notice how quick the checks are, and how much time is for questions"
+      ],
+      "narration": "Let’s watch a typical visit, start to finish.",
+      "sourceIds": [
+        "acog-prenatal-care"
+      ],
+      "video": {
+        "brief": "A visit at about 24 weeks: check-in, a weight check, blood pressure, the midwife measures the belly and listens to the baby's heartbeat with a handheld listener. The patient brings out a written list of questions; the midwife answers and mentions the glucose test coming up at the next visit. Calm, warm, realistic clinic. No clinical numbers on screen. Ends with: 'Quick checks, and plenty of time for your questions.'",
+        "maxSeconds": 75
+      }
+    },
+    {
+      "id": "upcoming",
+      "type": "reflection",
+      "heading": "Plan for your next visits",
+      "onScreen": [
+        "When is your next visit?",
+        "Which tests are coming up?",
+        "What do you want to ask about them?"
+      ],
+      "narration": "Let’s make a plan. When is your next visit? Which tests or checks are coming up for your stage of pregnancy? And what do you want to ask about them? Write it down here. It saves to your Birth Readiness Brief, so you’ll have it with you at your visit.",
+      "sourceIds": [
+        "acog-prenatal-care"
+      ],
+      "savesTo": "birthReadinessBrief",
+      "prompt": "When is your next visit, which tests are coming up, and what do you want to ask?"
+    },
+    {
+      "id": "summary",
+      "type": "summary",
+      "heading": "What we covered",
+      "onScreen": [
+        "Visits get closer together as your due date nears",
+        "Most visits: blood pressure, weight, baby’s growth and heartbeat",
+        "Each stage brings its own tests and topics",
+        "Warning signs: call now, don’t wait",
+        "Plan your next visits and questions"
+      ],
+      "narration": "Let’s recap. Prenatal visits get closer together as your due date gets nearer. At most visits, your team checks your blood pressure, weight, and your baby’s growth and heartbeat. Each stage of pregnancy brings its own tests and topics. For warning signs, call right away; don’t wait for your next visit. And plan ahead for your next visits and questions. Next, a few review questions. Then we’ll look at prenatal testing.",
+      "sourceIds": [
+        "acog-prenatal-care"
+      ]
+    }
+  ],
+  "reviewQuiz": [
+    {
+      "prompt": "At 30 weeks, how often do most people with a healthy pregnancy have prenatal visits?",
+      "options": [
+        "Every 4 weeks",
+        "Every 2 weeks",
+        "Every day"
+      ],
+      "correctIndex": 1,
+      "explanation": "From about 28 to 36 weeks, visits are usually every 2 weeks. After 36 weeks, they’re usually weekly."
+    },
+    {
+      "prompt": "Your next visit is in two weeks, and today you have a headache that won’t go away and blurry vision. What should you do?",
+      "options": [
+        "Mention it at your next visit",
+        "Call your care team now",
+        "Take a nap and see"
+      ],
+      "correctIndex": 1,
+      "explanation": "A headache that won’t go away and vision changes are warning signs. Call right away, and call 911 if it feels like an emergency."
+    },
+    {
+      "prompt": "At about 36 weeks, which test is usually done?",
+      "options": [
+        "Group B strep test",
+        "The anatomy ultrasound",
+        "Your first blood type test"
+      ],
+      "correctIndex": 0,
+      "explanation": "The group B strep test is usually done at 36 to 37 weeks. Weekly visits usually start around then, too."
+    }
+  ],
+  "nextLessonId": "prenatal-testing"
+}

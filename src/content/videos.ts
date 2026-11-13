@@ -18,6 +18,7 @@ const VIDEOS: Record<string, number> = {
   'early-labor-at-home/early-labor-video': require('../../assets/lessons/early-labor-at-home/early-labor-video.mp4'),
   'early-pregnancy-first-steps/nausea-tips-video': require('../../assets/lessons/early-pregnancy-first-steps/nausea-tips-video.mp4'),
   'first-prenatal-visit/visit-prep-video': require('../../assets/lessons/first-prenatal-visit/visit-prep-video.mp4'),
+  'your-prenatal-visits/visit-video': require('../../assets/lessons/your-prenatal-visits/visit-video.mp4'),
   'first-trimester-common-changes/calling-video': require('../../assets/lessons/first-trimester-common-changes/calling-video.mp4'),
   'getting-ready-bags-routes-car-seat/harness-check-video': require('../../assets/lessons/getting-ready-bags-routes-car-seat/harness-check-video.mp4'),
   'how-labor-begins/timing-contractions-video': require('../../assets/lessons/how-labor-begins/timing-contractions-video.mp4'),
