@@ -28,6 +28,7 @@ import { NARRATION_RATE, pickNarrationVoice, splitSentences } from '../lib/narra
 import { answerAudioSources } from '../lib/answerAudio';
 import { findClip, playClip, playSequence, stopClip } from '../lib/narrator';
 import { askLessonQuestion, type ConversationTurn } from '../services/askLessonQuestionService';
+import { ASK_CONSENT, hasAskConsent, setAskConsent } from '../lib/askConsent';
 
 const colors = {
   bg: '#EEF3F6',
@@ -83,6 +84,8 @@ export function AskQuestionSheet({ visible, lessonId, lessonTitle, voiceOn, onCl
   const [heard, setHeard] = useState('');
   const [micError, setMicError] = useState<string | null>(null);
   const [micAvailable] = useState(recognitionAvailable);
+  /** Permission to send questions to the AI: unknown until read from the device. */
+  const [consent, setConsent] = useState<'unknown' | 'granted' | 'needed'>('unknown');
 
   const nextId = useRef(1);
   const voiceIdRef = useRef<string | undefined>(undefined);
@@ -163,9 +166,21 @@ export function AskQuestionSheet({ visible, lessonId, lessonTitle, voiceOn, onCl
       .finally(() => say(0));
   }
 
-  // Greet the learner each time the panel opens on a new lesson.
+  // Check for permission to use the AI each time the panel opens.
   useEffect(() => {
     if (!visible) return;
+    let live = true;
+    void hasAskConsent().then((granted) => {
+      if (live) setConsent(granted ? 'granted' : 'needed');
+    });
+    return () => {
+      live = false;
+    };
+  }, [visible]);
+
+  // Greet the learner each time the panel opens on a new lesson, once they've allowed AI answers.
+  useEffect(() => {
+    if (!visible || consent !== 'granted') return;
     if (turnsRef.current.length === 0) {
       const greeting = micAvailable ? ASK_GREETING_WITH_MIC : ASK_GREETING_TYPED;
       addTurn({ role: 'instructor', kind: 'greeting', text: greeting });
@@ -176,7 +191,7 @@ export function AskQuestionSheet({ visible, lessonId, lessonTitle, voiceOn, onCl
     };
     // Runs when the panel opens; the greeting depends only on the lesson.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [visible]);
+  }, [visible, consent]);
 
   // A different lesson starts a fresh conversation.
   useEffect(() => {
@@ -197,7 +212,8 @@ export function AskQuestionSheet({ visible, lessonId, lessonTitle, voiceOn, onCl
 
   async function ask(text: string, viaVoice: boolean) {
     const question = text.trim();
-    if (!question || busy) return;
+    // Nothing reaches the AI without the learner's permission.
+    if (!question || busy || consent !== 'granted') return;
     voiceModeRef.current = viaVoice;
     stopSpeaking();
     const history = historyForServer();
@@ -333,6 +349,21 @@ export function AskQuestionSheet({ visible, lessonId, lessonTitle, voiceOn, onCl
     onClose();
   }
 
+  function allowAi() {
+    void setAskConsent(true);
+    setConsent('granted');
+  }
+
+  function turnOffAi() {
+    stopSpeaking();
+    void setAskConsent(false);
+    runRef.current += 1;
+    setTurns([]);
+    setDraft('');
+    setBusy(false);
+    setConsent('needed');
+  }
+
   const suggestions = ASK_SUGGESTIONS[lessonId] ?? [];
   const showSuggestions = !turns.some((t) => t.role === 'learner');
 
@@ -355,78 +386,109 @@ export function AskQuestionSheet({ visible, lessonId, lessonTitle, voiceOn, onCl
             </Pressable>
           </View>
           <Text style={styles.note}>
-            Answers come only from this lesson. For anything about your own symptoms or care, contact your care team.
+            Answers are written by AI, using only this lesson. For anything about your own symptoms or care, contact your
+            care team.
           </Text>
 
-          <ScrollView ref={scrollRef} contentContainerStyle={styles.turns} keyboardShouldPersistTaps="handled">
-            {turns.map((turn) => (
-              <TurnView key={turn.id} turn={turn} />
-            ))}
-            {busy ? (
-              <View style={[styles.bubble, styles.instructorBubble, styles.thinking]}>
-                <ActivityIndicator color={colors.lagoon} />
-                <Text style={styles.muted}>Thinking…</Text>
-              </View>
-            ) : null}
-            {listening ? (
-              <View accessibilityLiveRegion="polite" style={[styles.bubble, styles.learnerBubble]}>
-                <Text style={styles.listeningLabel}>Listening…</Text>
-                {heard ? <Text style={styles.bubbleText}>{heard}</Text> : null}
-              </View>
-            ) : null}
-            {showSuggestions && !busy && !listening ? (
-              <View style={styles.chips}>
-                {suggestions.map((s) => (
-                  <Pressable accessibilityRole="button" key={s} onPress={() => void ask(s, false)} style={styles.chip}>
-                    <Text style={styles.chipText}>{s}</Text>
-                  </Pressable>
+          {consent === 'needed' ? (
+            <ScrollView contentContainerStyle={styles.turns}>
+              <View style={[styles.bubble, styles.instructorBubble, styles.consent]}>
+                <Text accessibilityRole="header" style={styles.consentTitle}>
+                  {ASK_CONSENT.title}
+                </Text>
+                {ASK_CONSENT.body.map((line) => (
+                  <Text key={line} style={styles.bubbleText}>
+                    {line}
+                  </Text>
                 ))}
+                <View style={styles.consentButtons}>
+                  <Pressable accessibilityRole="button" onPress={close} style={styles.secondary}>
+                    <Text style={styles.secondaryText}>{ASK_CONSENT.notNow}</Text>
+                  </Pressable>
+                  <Pressable accessibilityRole="button" onPress={allowAi} style={styles.primary}>
+                    <Text style={styles.primaryText}>{ASK_CONSENT.allow}</Text>
+                  </Pressable>
+                </View>
               </View>
-            ) : null}
-          </ScrollView>
-
-          {micError ? (
-            <Text accessibilityLiveRegion="polite" style={styles.micError}>
-              {micError}
-            </Text>
+            </ScrollView>
           ) : null}
 
-          <View style={styles.inputRow}>
-            {micAvailable ? (
-              <Pressable
-                accessibilityHint={listening ? 'Stops listening and sends what you said.' : 'Ask your question out loud.'}
-                accessibilityLabel={listening ? 'Stop listening' : 'Ask out loud'}
-                accessibilityRole="button"
-                accessibilityState={{ disabled: busy }}
-                disabled={busy}
-                onPress={() => (listening ? stopListening() : void startListening())}
-                style={[styles.micButton, listening && styles.micButtonOn, busy && styles.disabled]}
-              >
-                <Text style={styles.micText}>{listening ? '■' : '🎤'}</Text>
+          {consent === 'granted' ? (
+            <>
+              <ScrollView ref={scrollRef} contentContainerStyle={styles.turns} keyboardShouldPersistTaps="handled">
+                {turns.map((turn) => (
+                  <TurnView key={turn.id} turn={turn} />
+                ))}
+                {busy ? (
+                  <View style={[styles.bubble, styles.instructorBubble, styles.thinking]}>
+                    <ActivityIndicator color={colors.lagoon} />
+                    <Text style={styles.muted}>Thinking…</Text>
+                  </View>
+                ) : null}
+                {listening ? (
+                  <View accessibilityLiveRegion="polite" style={[styles.bubble, styles.learnerBubble]}>
+                    <Text style={styles.listeningLabel}>Listening…</Text>
+                    {heard ? <Text style={styles.bubbleText}>{heard}</Text> : null}
+                  </View>
+                ) : null}
+                {showSuggestions && !busy && !listening ? (
+                  <View style={styles.chips}>
+                    {suggestions.map((s) => (
+                      <Pressable accessibilityRole="button" key={s} onPress={() => void ask(s, false)} style={styles.chip}>
+                        <Text style={styles.chipText}>{s}</Text>
+                      </Pressable>
+                    ))}
+                  </View>
+                ) : null}
+              </ScrollView>
+
+              {micError ? (
+                <Text accessibilityLiveRegion="polite" style={styles.micError}>
+                  {micError}
+                </Text>
+              ) : null}
+
+              <View style={styles.inputRow}>
+                {micAvailable ? (
+                  <Pressable
+                    accessibilityHint={listening ? 'Stops listening and sends what you said.' : 'Ask your question out loud.'}
+                    accessibilityLabel={listening ? 'Stop listening' : 'Ask out loud'}
+                    accessibilityRole="button"
+                    accessibilityState={{ disabled: busy }}
+                    disabled={busy}
+                    onPress={() => (listening ? stopListening() : void startListening())}
+                    style={[styles.micButton, listening && styles.micButtonOn, busy && styles.disabled]}
+                  >
+                    <Text style={styles.micText}>{listening ? '■' : '🎤'}</Text>
+                  </Pressable>
+                ) : null}
+                <TextInput
+                  accessibilityLabel="Type your question about this lesson"
+                  editable={!busy && !listening}
+                  maxLength={MAX_QUESTION_LENGTH}
+                  multiline
+                  onChangeText={setDraft}
+                  placeholder="Type your question"
+                  placeholderTextColor={colors.muted}
+                  style={styles.input}
+                  textAlignVertical="top"
+                  value={draft}
+                />
+                <Pressable
+                  accessibilityRole="button"
+                  accessibilityState={{ disabled: busy || !draft.trim() }}
+                  disabled={busy || !draft.trim()}
+                  onPress={() => void ask(draft, false)}
+                  style={[styles.primary, (busy || !draft.trim()) && styles.disabled]}
+                >
+                  <Text style={styles.primaryText}>Ask</Text>
+                </Pressable>
+              </View>
+              <Pressable accessibilityRole="button" hitSlop={8} onPress={turnOffAi} style={styles.turnOff}>
+                <Text style={styles.turnOffText}>{ASK_CONSENT.turnOff}</Text>
               </Pressable>
-            ) : null}
-            <TextInput
-              accessibilityLabel="Type your question about this lesson"
-              editable={!busy && !listening}
-              maxLength={MAX_QUESTION_LENGTH}
-              multiline
-              onChangeText={setDraft}
-              placeholder="Type your question"
-              placeholderTextColor={colors.muted}
-              style={styles.input}
-              textAlignVertical="top"
-              value={draft}
-            />
-            <Pressable
-              accessibilityRole="button"
-              accessibilityState={{ disabled: busy || !draft.trim() }}
-              disabled={busy || !draft.trim()}
-              onPress={() => void ask(draft, false)}
-              style={[styles.primary, (busy || !draft.trim()) && styles.disabled]}
-            >
-              <Text style={styles.primaryText}>Ask</Text>
-            </Pressable>
-          </View>
+            </>
+          ) : null}
         </View>
       </KeyboardAvoidingView>
     </Modal>
@@ -462,7 +524,7 @@ function TurnView({ turn }: { turn: Turn }) {
   }
   return (
     <View style={[styles.bubble, styles.instructorBubble]}>
-      <Text style={styles.speaker}>Instructor</Text>
+      <Text style={styles.speaker}>Instructor (AI)</Text>
       <Text style={styles.bubbleText}>{turn.text}</Text>
       {turn.kind === 'answer' ? (
         <>
@@ -475,6 +537,11 @@ function TurnView({ turn }: { turn: Turn }) {
 }
 
 const styles = StyleSheet.create({
+  consent: { gap: 10 },
+  consentTitle: { color: colors.ink, fontSize: 18, fontWeight: '700' },
+  consentButtons: { flexDirection: 'row', gap: 10, justifyContent: 'flex-end', marginTop: 4 },
+  turnOff: { alignSelf: 'center', paddingTop: 8 },
+  turnOffText: { color: colors.muted, fontSize: 13, textDecorationLine: 'underline' },
   backdrop: { position: 'absolute', top: 0, right: 0, bottom: 0, left: 0, backgroundColor: colors.backdrop },
   sheetWrap: { flex: 1, justifyContent: 'flex-end' },
   sheet: {
