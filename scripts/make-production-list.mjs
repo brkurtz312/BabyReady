@@ -17,6 +17,7 @@ const root = path.resolve(import.meta.dirname, '..');
 const COURSES = [
   ['start-here', 'Welcome: How This Class Works'],
   ['early-pregnancy-basics', 'Early Pregnancy Basics'],
+  ['prenatal-care', 'Prenatal Care'],
   ['how-your-baby-grows', 'How Your Baby Grows'],
   ['preparing-for-birth', 'Preparing for Birth'],
   ['labor-basics', 'Labor Basics and When to Call'],

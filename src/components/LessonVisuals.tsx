@@ -1067,6 +1067,17 @@ const VISUALS: Record<string, () => React.ReactElement> = {
       ]}
     />
   ),
+  'vaccines-and-rh/rhogam': () => (
+    <IconPanel
+      label="When RhoGAM is given: around 28 weeks, within 72 hours after birth if the baby is Rh-positive, after bleeding, pregnancy loss, or a procedure like amniocentesis, and after a fall or hit to the belly."
+      items={[
+        { icon: Calendar, label: 'Around 28 weeks' },
+        { icon: Baby, label: 'Within 72 hours after birth, if baby is Rh-positive' },
+        { icon: Droplet, label: 'After bleeding, loss, or a procedure' },
+        { icon: TriangleAlert, label: 'After a fall or hit to the belly', tone: 'alert' },
+      ]}
+    />
+  ),
 
   // Module 1: Preparing for Birth
   'welcome-how-this-class-works/six-modules': () => <ClassMap />,

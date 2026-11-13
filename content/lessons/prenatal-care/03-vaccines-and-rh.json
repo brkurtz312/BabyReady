@@ -60,7 +60,7 @@
       "sourceIds": [],
       "visual": {
         "kind": "illustration",
-        "description": "Pregnant person in a clinic getting a shot in the upper arm, relaxed, a small bandage ready on a tray."
+        "description": "A pregnant person sitting in a bright clinic, smiling and chatting with a nurse after a vaccine, a small round bandage on her upper arm. Diverse people, soft teal and warm cream colors."
       }
     },
     {
@@ -204,8 +204,8 @@
         "acog-rh-factor"
       ],
       "visual": {
-        "kind": "illustration",
-        "description": "Simple diagram: parent’s blood cells (no Rh marker) and baby’s blood cells (with Rh marker), with a RhoGAM shield between them."
+        "kind": "icon-list",
+        "description": "When RhoGAM is given: around 28 weeks, within 72 hours after birth if the baby is Rh-positive, after bleeding, pregnancy loss, or a procedure like amniocentesis, and after a fall or hit to the belly."
       }
     },
     {
