@@ -15,7 +15,7 @@
     "reviewedBy": "Bryan Kurtz MD, FACOG",
     "reviewedOn": "2026-10-17",
     "nextReviewBy": "2027-10-17",
-    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. Most slides are editorial (they explain the app and make no health claim); only the 'why-prepare' slide and the summary cite sources. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed. Moved 2026-10-28 to its own Start Here section at the top of the class, at the reviewer's request; the overview and summary slides now describe the two pregnancy sections and six modules, and the summary no longer leads into the third-trimester lesson. Wording only; no clinical content changed. Added 2026-10-28 at the reviewer's request: an editorial slide on the videos after lessons (trusted, evidence-based organizations; the Video Vault on the home screen; videos reviewed and updated regularly), with a matching line in the summary."
+    "notes": "Clinically reviewed 2026-10-17 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafted 2026-10-15. Most slides are editorial (they explain the app and make no health claim); only the 'why-prepare' slide and the summary cite sources. Updated 2026-10-18: the title slide's label was standardized to the module name; no clinical content changed. Moved 2026-10-28 to its own Start Here section at the top of the class, at the reviewer's request; the overview and summary slides now describe the two pregnancy sections and six modules, and the summary no longer leads into the third-trimester lesson. Wording only; no clinical content changed. Added 2026-10-28 at the reviewer's request: an editorial slide on the videos after lessons (trusted, evidence-based organizations; the Video Vault on the home screen; videos reviewed and updated regularly), with a matching line in the summary. Updated 2026-11-13: the overview, class map, and summary now include the new Prenatal Care section. Wording only; no clinical content changed."
   },
   "sources": [
     {
@@ -66,7 +66,7 @@
         "Due date getting closer? Begin with Preparing for Birth",
         "Come back to any lesson anytime"
       ],
-      "narration": "The class starts with two short sections for pregnancy. Early Pregnancy Basics covers the first weeks, and How Your Baby Grows follows your baby month by month. Then come six modules. Module one is Preparing for Birth. Module two is Labor Basics and When to Call. Module three is Comfort, Movement, and Support Skills. Module four is Interventions and Flexible Decisions. Module five is Feeding and Newborn Care. And module six is Postpartum Recovery, Mood, and Red Flags. Each one is made of short lessons. Start wherever fits where you are in pregnancy, and come back to any lesson whenever you like.",
+      "narration": "The class starts with three short sections for pregnancy. Early Pregnancy Basics covers the first weeks, Prenatal Care walks you through your visits, tests, and vaccines, and How Your Baby Grows follows your baby month by month. Then come six modules. Module one is Preparing for Birth. Module two is Labor Basics and When to Call. Module three is Comfort, Movement, and Support Skills. Module four is Interventions and Flexible Decisions. Module five is Feeding and Newborn Care. And module six is Postpartum Recovery, Mood, and Red Flags. Each one is made of short lessons. Start wherever fits where you are in pregnancy, and come back to any lesson whenever you like.",
       "sourceIds": [],
       "editorial": true,
       "visual": {
@@ -219,14 +219,14 @@
       "type": "summary",
       "heading": "What we covered",
       "onScreen": [
-        "Two pregnancy sections, then six modules through postpartum",
+        "Three pregnancy sections, then six modules through postpartum",
         "You control play, pause, back, captions, and mute",
         "Check-ins teach; reflections save to your Brief",
         "Videos from trusted organizations, all in the Video Vault",
         "Red slides = warning signs, with a Call 911 button",
         "This is education; your care team's advice comes first"
       ],
-      "narration": "Nice work. Let's recap. The class has two short sections for pregnancy, then six modules, from preparing for birth all the way to recovery after birth. You can pause, go back, turn on captions, or mute anytime. Check-ins help you learn, and reflections save to your private Birth Readiness Brief. Red safety slides list warning signs and have a Call 911 button. Ask your instructor answers questions about the current lesson, but it's not for emergencies or personal advice. Many lessons end with videos from trusted health organizations, and you'll find them all in the Video Vault. And this class is education. Your care team's advice always comes first. Next up, a short review quiz. Then pick where to start: Early Pregnancy Basics if you're early in pregnancy, or Preparing for Birth if your due date is getting closer.",
+      "narration": "Nice work. Let's recap. The class has three short sections for pregnancy, then six modules, from preparing for birth all the way to recovery after birth. You can pause, go back, turn on captions, or mute anytime. Check-ins help you learn, and reflections save to your private Birth Readiness Brief. Red safety slides list warning signs and have a Call 911 button. Ask your instructor answers questions about the current lesson, but it's not for emergencies or personal advice. Many lessons end with videos from trusted health organizations, and you'll find them all in the Video Vault. And this class is education. Your care team's advice always comes first. Next up, a short review quiz. Then pick where to start: Early Pregnancy Basics if you're early in pregnancy, or Preparing for Birth if your due date is getting closer.",
       "sourceIds": [
         "lamaze-braxton-hicks",
         "acog-prenatal-care"
