@@ -1044,5 +1044,62 @@
         "text": "Hold through the contraction, then release. Keep asking what helps."
       }
     ]
+  },
+  "your-prenatal-visits/visit-video": {
+    "cast": "a woman about 24 weeks pregnant with a gently rounded pregnant belly, medium-dark skin, shoulder-length black twists, wearing a soft teal maternity top and full-length dark trousers; a nurse, a man with short grey hair in navy scrubs; and a midwife, a woman with warm brown skin and a dark low bun in a cream cardigan over teal scrubs. The pregnant woman is always fully clothed; her top is never lifted",
+    "scenes": [
+      {
+        "type": "title",
+        "text": "A visit, start to finish"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "A bright, friendly clinic front desk: the pregnant woman smiles as she checks in with a receptionist, a small bag over her shoulder.",
+        "caption": "Check in. Most visits are shorter than your first."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "In a clinic hallway, the pregnant woman stands on a simple floor scale while the nurse notes something on a tablet. The scale has a plain display with no numbers.",
+        "caption": "A quick weight check,"
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "In a calm exam room, the pregnant woman sits in a chair with a blood pressure cuff on her upper arm, relaxed, while the nurse looks at a small monitor with a plain screen and no numbers.",
+        "caption": "and your blood pressure, at every visit."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The pregnant woman reclines on a padded exam table, fully clothed, a light blanket over her legs, while the midwife lays a soft measuring tape over her top along her rounded belly.",
+        "caption": "They measure your belly to track your baby's growth."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The pregnant woman, still fully clothed and reclining with the blanket over her legs, smiles with delight while the midwife holds a small handheld heartbeat listener against her belly over her top.",
+        "caption": "Then, listening to your baby's heartbeat."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "Sitting up on the exam table, the pregnant woman unfolds a short handwritten list of questions while the midwife sits on a stool facing her, listening closely.",
+        "caption": "Bring out your list of questions."
+      },
+      {
+        "type": "image",
+        "seconds": 7,
+        "prompt": "The midwife smiles and gestures toward a simple wall calendar with a plain grid and no numbers or words, as the pregnant woman nods and puts her list away.",
+        "caption": "Ask what's next,",
+        "sub": "like the glucose test at your next visit."
+      },
+      {
+        "type": "end",
+        "seconds": 7,
+        "text": "Quick checks, and plenty of time for your questions."
+      }
+    ]
   }
 }
