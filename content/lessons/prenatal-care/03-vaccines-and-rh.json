@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 10,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Draft for clinical review. Vaccine guidance changed during 2025 and 2026. As drafted (November 2026): CDC lists Tdap, flu, and RSV for pregnancy and a 2026-27 COVID-19 vaccine for all adults; ACOG routinely recommends all four in pregnancy. RSV window: CDC September to January, ACOG September 1 to March 1 for 2026-27; the lesson says ’during RSV season’ and defers dates to the care team. Re-verify every season. Rh: confirm the cfDNA fetal RhD testing language."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-11-13",
+    "nextReviewBy": "2027-11-13",
+    "notes": "Clinically reviewed 2026-11-13 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafting notes: Vaccine guidance changed during 2025 and 2026. As drafted (November 2026): CDC lists Tdap, flu, and RSV for pregnancy and a 2026-27 COVID-19 vaccine for all adults; ACOG routinely recommends all four in pregnancy. RSV window: CDC September to January, ACOG September 1 to March 1 for 2026-27; the lesson says ’during RSV season’ and defers dates to the care team. Re-verify every season. Rh: confirm the cfDNA fetal RhD testing language."
   },
   "sources": [
     {
@@ -24,28 +24,28 @@
       "organization": "CDC",
       "title": "Vaccine Recommendations Before, During, and After Pregnancy",
       "url": "https://www.cdc.gov/vaccines-pregnancy/recommended-vaccines/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-11-13"
     },
     {
       "id": "acog-2026-respiratory",
       "organization": "ACOG",
       "title": "2026–27 Respiratory Virus Season Immunization Recommendations",
       "url": "https://www.acog.org/news/news-releases/2026/09/acog-releases-2026-27-respiratory-virus-season-immunization-recommendations",
-      "verifiedOn": null
+      "verifiedOn": "2026-11-13"
     },
     {
       "id": "acog-immunization-schedule",
       "organization": "ACOG",
       "title": "2026 Maternal Immunization Schedule",
       "url": "https://dam.acog.org/download/assets/maternal-immunization-schedule.pdf/3937a78064d811f1a3716ea82fd3e91e",
-      "verifiedOn": null
+      "verifiedOn": "2026-11-13"
     },
     {
       "id": "acog-rh-factor",
       "organization": "ACOG",
       "title": "The Rh Factor: How It Can Affect Your Pregnancy",
       "url": "https://www.acog.org/womens-health/faqs/the-rh-factor-how-it-can-affect-your-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-11-13"
     }
   ],
   "slides": [

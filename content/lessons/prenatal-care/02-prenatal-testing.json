@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 14,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Draft for clinical review. Aligned with the Pregnancy AI Assistant prenatal testing reference (ACOG/CDC). NIPT timing: from 9 or 10 weeks depending on the lab (Natera Panorama from 9 weeks). Anatomy ultrasound: 18 to 22 weeks, confirmed by Bryan Kurtz MD. Confirm glucose language covers one-step and two-step approaches, and the GBS window (36 0/7 to 37 6/7 weeks)."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-11-13",
+    "nextReviewBy": "2027-11-13",
+    "notes": "Clinically reviewed 2026-11-13 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafting notes: Aligned with the Pregnancy AI Assistant prenatal testing reference (ACOG/CDC). NIPT timing: from 9 or 10 weeks depending on the lab (Natera Panorama from 9 weeks). Anatomy ultrasound: 18 to 22 weeks, confirmed by Bryan Kurtz MD. Confirm glucose language covers one-step and two-step approaches, and the GBS window (36 0/7 to 37 6/7 weeks)."
   },
   "sources": [
     {
@@ -24,35 +24,35 @@
       "organization": "ACOG",
       "title": "Routine Tests During Pregnancy",
       "url": "https://www.acog.org/womens-health/faqs/routine-tests-during-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-11-13"
     },
     {
       "id": "acog-genetic-screening",
       "organization": "ACOG",
       "title": "Prenatal Genetic Screening Tests",
       "url": "https://www.acog.org/womens-health/faqs/prenatal-genetic-screening-tests",
-      "verifiedOn": null
+      "verifiedOn": "2026-11-13"
     },
     {
       "id": "acog-ultrasound",
       "organization": "ACOG",
       "title": "Ultrasound Exams",
       "url": "https://www.acog.org/womens-health/faqs/ultrasound-exams",
-      "verifiedOn": null
+      "verifiedOn": "2026-11-13"
     },
     {
       "id": "acog-gdm",
       "organization": "ACOG",
       "title": "Gestational Diabetes",
       "url": "https://www.acog.org/womens-health/faqs/gestational-diabetes",
-      "verifiedOn": null
+      "verifiedOn": "2026-11-13"
     },
     {
       "id": "cdc-group-b-strep",
       "organization": "CDC",
       "title": "About Group B Strep",
       "url": "https://www.cdc.gov/group-b-strep/about/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-11-13"
     }
   ],
   "slides": [
