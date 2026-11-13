@@ -12,11 +12,11 @@
   ],
   "estimatedMinutes": 9,
   "review": {
-    "status": "draft",
-    "reviewedBy": null,
-    "reviewedOn": null,
-    "nextReviewBy": null,
-    "notes": "Draft for clinical review. Builds on Early Pregnancy Basics lesson 3 (first prenatal visit), so the first-visit content is not repeated here. The warning-signs safety slide matches the CDC Hear Her list used in Early Pregnancy Basics lesson 2. Confirm the visit schedule framing (typical low-risk schedule, tailored per ACOG) and the agenda-by-stage table. Video slide needs a storyboard video."
+    "status": "reviewed",
+    "reviewedBy": "Bryan Kurtz MD, FACOG",
+    "reviewedOn": "2026-11-13",
+    "nextReviewBy": "2027-11-13",
+    "notes": "Clinically reviewed 2026-11-13 by Bryan Kurtz MD, FACOG; every source confirmed against its slides. Drafting notes: Builds on Early Pregnancy Basics lesson 3 (first prenatal visit), so the first-visit content is not repeated here. The warning-signs safety slide matches the CDC Hear Her list used in Early Pregnancy Basics lesson 2. Confirm the visit schedule framing (typical low-risk schedule, tailored per ACOG) and the agenda-by-stage table. Video slide needs a storyboard video."
   },
   "sources": [
     {
@@ -24,21 +24,21 @@
       "organization": "ACOG",
       "title": "Prenatal Care (FAQ)",
       "url": "https://www.acog.org/womens-health/faqs/prenatal-care",
-      "verifiedOn": null
+      "verifiedOn": "2026-11-13"
     },
     {
       "id": "acog-routine-tests",
       "organization": "ACOG",
       "title": "Routine Tests During Pregnancy",
       "url": "https://www.acog.org/womens-health/faqs/routine-tests-during-pregnancy",
-      "verifiedOn": null
+      "verifiedOn": "2026-11-13"
     },
     {
       "id": "cdc-hear-her-warning-signs",
       "organization": "CDC",
       "title": "Hear Her: Urgent Maternal Warning Signs",
       "url": "https://www.cdc.gov/hearher/maternal-warning-signs/index.html",
-      "verifiedOn": null
+      "verifiedOn": "2026-11-13"
     }
   ],
   "slides": [
